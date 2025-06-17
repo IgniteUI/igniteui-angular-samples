@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DateParser } from '../../../date-parser';
 import { IgxCalendarComponent, IgxCalendarHeaderTemplateDirective, IgxCalendarSubheaderTemplateDirective } from 'igniteui-angular';
 import { TitleCasePipe } from '@angular/common';
@@ -12,8 +12,8 @@ import { TitleCasePipe } from '@angular/common';
 })
 
 export class CalendarSample4Component {
+  parser = inject(DateParser);
+
   public intlDateTimeFormat = new Intl.DateTimeFormat() as any;
   public formatParts: boolean = this.intlDateTimeFormat.formatToParts;
-
-  constructor(public parser: DateParser) { }
 }

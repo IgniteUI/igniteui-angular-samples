@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IgxIconService, IgxCardComponent, IgxCardHeaderComponent, IgxAvatarComponent, IgxIconComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxButtonDirective, IgxSuffixDirective } from 'igniteui-angular';
 
 @Component({
@@ -8,6 +8,8 @@ import { IgxIconService, IgxCardComponent, IgxCardHeaderComponent, IgxAvatarComp
     imports: [IgxCardComponent, IgxCardHeaderComponent, IgxAvatarComponent, IgxIconComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxButtonDirective, IgxSuffixDirective]
 })
 export class IconServiceSampleComponent {
+    private iconService = inject(IgxIconService);
+
     private weather = [{
         icon: 'partly_cloudy',
         description: '18° Partly Cloudy'
@@ -25,7 +27,7 @@ export class IconServiceSampleComponent {
         return this.weather.at(0).description
     };
 
-    constructor(private iconService: IgxIconService) {
+    constructor() {
         // Add the SVG assets to the icon service collection
         this.iconService.addSvgIcon('partly_cloudy', 'assets/images/icons/partly_cloudy.svg', 'weather');
         this.iconService.addSvgIcon('sunny', 'assets/images/icons/sunny.svg', 'weather');

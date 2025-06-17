@@ -1,5 +1,5 @@
 
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { IgxTimePickerComponent, IgxLabelDirective, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
@@ -8,6 +8,6 @@ import { IgxTimePickerComponent, IgxLabelDirective, IgxButtonDirective } from 'i
     templateUrl: './timepicker-styling.component.html',
     imports: [IgxTimePickerComponent, IgxLabelDirective, IgxButtonDirective]
 })
-export class TimePickerStylingComponent {
-    constructor(public element: ElementRef) { }
+export class TimePickerStylingComponent {    element = inject(ElementRef);
+
  }

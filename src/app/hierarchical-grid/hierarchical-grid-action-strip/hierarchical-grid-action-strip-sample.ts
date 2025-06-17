@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectorRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
+import { Component, ViewChild, ChangeDetectorRef, AfterViewInit, ViewChildren, QueryList, inject } from '@angular/core';
 import { IgxHierarchicalGridComponent, RowType, Transaction, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -11,6 +11,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent]
 })
 export class HGridActionStripSampleComponent implements AfterViewInit{
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true })
     public grid: IgxHierarchicalGridComponent;
 
@@ -20,7 +22,7 @@ export class HGridActionStripSampleComponent implements AfterViewInit{
     public data: any[];
     public discardedTransactionsPerRecord: Map<number, Transaction[]> = new Map<number, Transaction[]>();
 
-    constructor(private cdr: ChangeDetectorRef) {
+    constructor() {
         this.data = SINGERS;
     }
 

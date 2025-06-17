@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { IgxExcelExporterOptions, IgxExcelExporterService, IgxGridComponent, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxColumnComponent } from 'igniteui-angular';
 
 import { EXCEL_DATA, LOCAL_DATA } from './data';
@@ -15,6 +15,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxGridComponent, PasteHandler, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridPasteSampleComponent {
+    private excelExportService = inject(IgxExcelExporterService);
+
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
@@ -24,7 +26,7 @@ export class GridPasteSampleComponent {
     ];
     public pasteMode = this.comboData[0];
 
-    constructor(private excelExportService: IgxExcelExporterService) {
+    constructor() {
         this.data = LOCAL_DATA;
     }
 

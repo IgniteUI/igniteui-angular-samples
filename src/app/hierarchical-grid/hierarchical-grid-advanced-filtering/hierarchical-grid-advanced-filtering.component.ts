@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChild, ChangeDetectorRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChild, ChangeDetectorRef, inject } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
 import { IgxHierarchicalGridComponent, IgxGridToolbarComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxGridToolbarDirective, FilteringExpressionsTree, IgxDateFilteringOperand, IgxStringFilteringOperand, IgxNumberFilteringOperand, FilteringLogic } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -11,12 +11,14 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 })
 
 export class HGridAdvancedFilteringSampleComponent implements AfterViewInit{
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild('hGrid', { static: true })
     private hGrid: IgxHierarchicalGridComponent;
 
     public localData;
 
-    constructor(private cdr: ChangeDetectorRef) {
+    constructor() {
         this.localData = SINGERS;
     }
     

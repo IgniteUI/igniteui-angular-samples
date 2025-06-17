@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, inject } from '@angular/core';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { IgxSwitchComponent, IgxTreeGridComponent, IgxColumnComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -10,6 +10,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxSwitchComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class TGridEditingLifecycleComponent {
+    private renderer = inject(Renderer2);
+
     @ViewChild('logger')
     public logger: ElementRef;
 
@@ -19,7 +21,7 @@ export class TGridEditingLifecycleComponent {
     public $rowEdit = false;
     public data;
 
-    public constructor(private renderer: Renderer2) {
+    public constructor() {
         this.data = generateEmployeeFlatData();
     }
 

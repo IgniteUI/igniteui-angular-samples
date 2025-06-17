@@ -1,7 +1,7 @@
 /* eslint-disable id-blacklist */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { FilteringLogic, IForOfState, SortingDirection, FilteringExpressionsTree } from 'igniteui-angular';
 import { BehaviorSubject, Observable } from 'rxjs';
 
@@ -24,10 +24,12 @@ export enum FILTER_OPERATION {
 
 @Injectable()
 export class RemoteFilteringService {
+    private _http = inject(HttpClient);
+
     public remoteData: Observable<any[]>;
     private _remoteData: BehaviorSubject<any[]>;
 
-    constructor(private _http: HttpClient) {
+    constructor() {
         this._remoteData = new BehaviorSubject([]);
         this.remoteData = this._remoteData.asObservable();
     }

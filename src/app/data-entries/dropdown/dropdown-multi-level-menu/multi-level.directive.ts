@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, HostListener, Input, OnDestroy } from '@angular/core';
+import { AfterViewInit, Directive, HostListener, Input, OnDestroy, inject } from '@angular/core';
 import { Subject, fromEvent } from 'rxjs';
 import { map, take, takeUntil } from 'rxjs/operators';
 import { MultiLevelService } from './multi-level.service';
@@ -15,6 +15,9 @@ import {
     selector: '[multiLevel]'
 })
 export class MultiLevelDirective implements AfterViewInit, OnDestroy {
+  private _host = inject(IgxDropDownItemComponent);
+  private _multiLevelService = inject(MultiLevelService);
+
   @Input()
   public innerDropdown!: IgxDropDownComponent;
 
@@ -31,11 +34,6 @@ export class MultiLevelDirective implements AfterViewInit, OnDestroy {
       closeAnimation: undefined
     })
   };
-
-  constructor(
-    private _host: IgxDropDownItemComponent,
-    private _multiLevelService: MultiLevelService
-  ) { }
 
   public ngAfterViewInit(): void {
     this._multiLevelService.add(this.innerDropdown);

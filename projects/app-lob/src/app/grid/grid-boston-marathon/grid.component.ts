@@ -1,18 +1,9 @@
-import {
-    Component,
-    HostListener,
-    OnDestroy,
-    OnInit,
-    ViewChild,
-    Inject,
-    ElementRef,
-    AfterViewInit
-} from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, ViewChild, ElementRef, AfterViewInit, DOCUMENT, inject } from '@angular/core';
 import { IgxGridComponent, IgxNumberSummaryOperand, IgxStringFilteringOperand, IgxSummaryResult, CellType, OverlaySettings, IgxOverlayService, AbsolutePosition, OverlayClosingEventArgs, IgxSwitchComponent, IgxInputGroupComponent, IgxInputDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxBadgeComponent, IgxCircularProgressBarComponent } from 'igniteui-angular';
 import { Athlete, АthletesData, SpeedDescriptor } from '../../data/athletesData';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';
-import { NgClass, DecimalPipe, DOCUMENT } from '@angular/common';
+import { NgClass, DecimalPipe } from '@angular/common';
 import { IgxSparklineCoreModule } from 'igniteui-angular-charts';
 
 @Component({
@@ -22,6 +13,9 @@ import { IgxSparklineCoreModule } from 'igniteui-angular-charts';
     imports: [IgxSwitchComponent, FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxBadgeComponent, IgxSparklineCoreModule, IgxCircularProgressBarComponent, NgClass, DecimalPipe]
 })
 export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
+    overlayService = inject<IgxOverlayService>(IgxOverlayService);
+    private document = inject<Document>(DOCUMENT);
+
 
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1!: IgxGridComponent;
@@ -77,8 +71,6 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     get hideBeatsPerMinute(): boolean {
         return (this.windowWidth && this.windowWidth < 860) || !this.live;
     }
-
-    constructor(@Inject(IgxOverlayService) public overlayService: IgxOverlayService, @Inject(DOCUMENT) private document: Document) {}
     public ngOnInit(): void {
         this.currentYear = new Date().getFullYear();
         this.localData = АthletesData.slice(0, 30).sort((a, b) => b.TrackProgress - a.TrackProgress);

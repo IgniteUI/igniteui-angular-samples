@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, PLATFORM_ID, inject } from '@angular/core';
 import { IPaginatorResourceStrings, IgxPaginatorComponent, IgxTreeGridComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSwitchComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -13,6 +13,8 @@ import { isPlatformBrowser } from '@angular/common';
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSwitchComponent, FormsModule]
 })
 export class TreeGridPagerSampleComponent implements OnInit, AfterViewInit {
+    private platformId = inject(PLATFORM_ID);
+
     @ViewChild('paginator', { read: IgxPaginatorComponent, static: false })
     paginator: IgxPaginatorComponent;
 
@@ -32,8 +34,6 @@ export class TreeGridPagerSampleComponent implements OnInit, AfterViewInit {
         // eslint-disable-next-line @typescript-eslint/naming-convention
         igx_paginator_label: 'Records per page'
     };
-
-    constructor(@Inject(PLATFORM_ID) private platformId: any) { }
 
     public ngOnInit(): void {
         this.data = ORDERS_DATA;

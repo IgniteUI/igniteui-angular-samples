@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxTabHeaderLabelDirective } from 'igniteui-angular';
@@ -10,9 +10,9 @@ import { IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxTabHea
     imports: [IgxTabsComponent, IgxTabItemComponent, RouterLinkActive, IgxTabHeaderComponent, RouterLink, IgxTabHeaderLabelDirective, RouterOutlet]
 })
 export class TabsSample4Component implements OnInit {
-    public path: string;
+    private router = inject(Router);
 
-    constructor(private router: Router) { }
+    public path: string;
 
     public ngOnInit() {
         this.path = this.router.url;

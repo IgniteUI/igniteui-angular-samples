@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService } from 'igniteui-angular';
 
@@ -9,15 +9,14 @@ import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService } from 'igni
     templateUrl: './csv-export.component.html'
 })
 export class CsvExportComponent {
+  private csvExportService = inject(IgxCsvExporterService);
+
 
   public localData = [
     { Name: 'Eric Ridley', Age: '26' },
     { Name: 'Alanis Brook', Age: '22' },
     { Name: 'Jonathan Morris', Age: '23' }
   ];
-
-  constructor(private csvExportService: IgxCsvExporterService) {
-  }
 
   public exportCsvButtonHandler() {
     const opt: IgxCsvExporterOptions = new IgxCsvExporterOptions('CSVExportFileFromData', CsvFileTypes.CSV);

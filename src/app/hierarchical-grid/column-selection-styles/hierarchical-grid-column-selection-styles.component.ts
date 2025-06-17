@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -10,11 +10,11 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 export class HGridColumnSelectionStylesComponent implements OnInit, AfterViewInit {
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild(IgxHierarchicalGridComponent)
     public hGrid: IgxHierarchicalGridComponent;
     public data;
-
-    constructor(private cdr: ChangeDetectorRef){}
 
     public formatter = (a) => a;
 

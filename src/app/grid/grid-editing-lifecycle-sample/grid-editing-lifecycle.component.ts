@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, inject } from '@angular/core';
 import { contains } from '@igniteui/material-icons-extended';
 import { DATA } from '../../data/nwindData';
 import { IgxSwitchComponent, IgxGridComponent, IgxColumnComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
@@ -11,6 +11,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxSwitchComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class GridEditingLifecycleComponent {
+    private renderer = inject(Renderer2);
+
     @ViewChild('logger')
     public logger: ElementRef;
 
@@ -21,7 +23,7 @@ export class GridEditingLifecycleComponent {
     public data;
 
 
-    public constructor(private renderer: Renderer2) {
+    public constructor() {
         this.data = DATA;
     }
 

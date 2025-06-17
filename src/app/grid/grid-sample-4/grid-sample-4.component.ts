@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, TemplateRef, ViewChild, OnInit, AfterViewInit, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, TemplateRef, ViewChild, OnInit, AfterViewInit, OnDestroy, inject } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { debounceTime } from 'rxjs/operators';
 import { RemoteServiceVirt } from '../../services/remoteVirtualization.service';
@@ -14,6 +14,9 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 })
 
 export class GridRemoteVirtualizationSampleComponent implements OnInit, AfterViewInit, OnDestroy{
+    private _remoteService = inject(RemoteServiceVirt);
+    cdr = inject(ChangeDetectorRef);
+
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;
     @ViewChild('remoteDataLoadingLarge', { read: TemplateRef, static: true })
     public remoteDataLoadingLargeTemplate: TemplateRef<any>;
@@ -26,8 +29,6 @@ export class GridRemoteVirtualizationSampleComponent implements OnInit, AfterVie
 
     private _columnCellCustomTemplates: Map<IgxColumnComponent, TemplateRef<any>>;
     private _prevRequest: any;
-
-    constructor(private _remoteService: RemoteServiceVirt, public cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.remoteData = this._remoteService.data;

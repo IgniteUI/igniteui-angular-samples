@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxGridComponent, IPinningConfig, IRowDragStartEventArgs, RowPinningPosition, RowType, IgxDropDirective, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent } from 'igniteui-angular';
-import { IgxRowDirective } from 'igniteui-angular/lib/grids/row.directive';
+import { IDropDroppedEventArgs, IgxGridComponent, IPinningConfig, IRowDragStartEventArgs, RowPinningPosition, RowType, IgxDropDirective, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxRowDirective } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

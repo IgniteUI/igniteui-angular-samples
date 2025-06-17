@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -16,9 +16,9 @@ export interface IDataState {
 
 @Injectable()
 export class RemoteLoDService {
-    public url = `https://services.odata.org/V4/Northwind/Northwind.svc/`;
+    private http = inject(HttpClient);
 
-    constructor(private http: HttpClient) { }
+    public url = `https://services.odata.org/V4/Northwind/Northwind.svc/`;
 
     public getData(dataState?: IDataState): Observable<any[]> {
         return this.http.get(this.buildUrl(dataState)).pipe(

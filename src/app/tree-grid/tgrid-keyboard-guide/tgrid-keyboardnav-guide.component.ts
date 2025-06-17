@@ -1,7 +1,7 @@
 /* eslint-disable @angular-eslint/component-class-suffix */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IgxColumnComponent, IgxColumnGroupComponent, CellType, IgxListComponent, IgxOverlayService, IgxTreeGridComponent, IActiveNodeChangeEventArgs, IgxPaginatorComponent, IgxGridToolbarComponent, IgxCellTemplateDirective, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
@@ -174,6 +174,9 @@ const summaryCombinations: Item[] = [
     imports: [IgxTreeGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxCellTemplateDirective, IgxListComponent, IgxListItemComponent, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
+    private cdr = inject(ChangeDetectorRef);
+    private _overlay = inject(IgxOverlayService);
+
     @ViewChild(IgxTreeGridComponent, { static: true })
     public tgrid: IgxTreeGridComponent;
 
@@ -194,8 +197,6 @@ export class TGridKeyboardnavGuide implements OnInit, OnDestroy {
 
     private _destroyer = new Subject<void>();
     private _keyboardHandler = new KeyboardHandler([], GridSection.THEAD);
-
-    public constructor(private cdr: ChangeDetectorRef, private _overlay: IgxOverlayService) { }
 
     public onActiveNodeChange(evt: IActiveNodeChangeEventArgs) {
         if (this.tgrid.crudService.cell) {

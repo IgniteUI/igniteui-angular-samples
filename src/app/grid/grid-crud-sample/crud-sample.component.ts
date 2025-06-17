@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild, OnDestroy, inject } from '@angular/core';
 import { GridPagingMode, IGridEditDoneEventArgs, IgxGridComponent, IgxGridRow, IgxSnackbarComponent, IRowDataEventArgs, NoopFilteringStrategy, NoopSortingStrategy, IgxPaginatorComponent, IgxColumnComponent, IgxActionStripComponent, IgxGridEditingActionsComponent } from 'igniteui-angular';
 import { Observable, Subject } from 'rxjs';
 import { Invoice } from '../../data/invoiceData';
@@ -13,6 +13,9 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxActionStripComponent, IgxGridEditingActionsComponent, IgxSnackbarComponent]
 })
 export class CRUDSampleComponent implements OnInit, OnDestroy {
+    private _crudService = inject(CRUDService);
+    cdr = inject(ChangeDetectorRef);
+
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;
     @ViewChild('snackbar', { static: false }) public snackbar: IgxSnackbarComponent;
 
@@ -31,8 +34,6 @@ export class CRUDSampleComponent implements OnInit, OnDestroy {
     private destroy$ = new Subject<void>();
 
     private _perPage = 10;
-
-    constructor(private _crudService: CRUDService, public cdr: ChangeDetectorRef) { }
 
     public ngOnInit(): void {
         this.remoteData$ = this._crudService.data$;

@@ -1,4 +1,4 @@
-import { Component, Inject, OnDestroy, ViewContainerRef } from '@angular/core';
+import { Component, OnDestroy, ViewContainerRef, inject } from '@angular/core';
 import { IgxOverlayService, IgxButtonDirective } from 'igniteui-angular';
 import { MyDynamicCardComponent} from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
@@ -8,12 +8,10 @@ import { MyDynamicCardComponent} from '../overlay-dynamic-card/overlay-dynamic-c
     imports: [IgxButtonDirective]
 })
 export class OverlaySampleMain1Component implements OnDestroy {
-    private _overlayId: string;
+    private overlayService = inject<IgxOverlayService>(IgxOverlayService);
+    private viewContainerRef = inject(ViewContainerRef);
 
-    constructor(
-        @Inject(IgxOverlayService) private overlayService: IgxOverlayService,
-        private viewContainerRef: ViewContainerRef
-    ) { }
+    private _overlayId: string;
 
     public showOverlay() {
         if (!this._overlayId) {
