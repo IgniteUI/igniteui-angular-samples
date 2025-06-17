@@ -2,9 +2,8 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-switch-theme: switch-theme(
+  $thumb-off-color: #7cadd5,
   $thumb-on-color: #ecaa53,
-  $track-on-color: #f0cb9c
 );
 
 @include css-vars($custom-switch-theme);
- 

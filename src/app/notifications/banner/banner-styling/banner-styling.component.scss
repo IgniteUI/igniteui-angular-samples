@@ -1,10 +1,7 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-banner-theme: banner-theme(
-  $banner-message-color: #151515,
-  $banner-background: #dedede,
-  $banner-illustration-color: #666666
+  $banner-background: #011627,
 );
 
 @include css-vars($custom-banner-theme);
- 

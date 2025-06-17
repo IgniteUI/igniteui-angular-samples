@@ -2,10 +2,9 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-panel-theme: expansion-panel-theme(
-  $expanded-margin: 10px,
-  $body-color: #282885,
-  $header-focus-background: #efefef
+  $header-background: #011627,
+  $body-background: #f0ece7,
+  $expanded-margin: 10px
 );
 
 @include css-vars($custom-panel-theme);
- 

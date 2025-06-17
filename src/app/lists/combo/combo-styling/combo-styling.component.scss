@@ -2,31 +2,18 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-drop-down-theme: drop-down-theme(
-  $background-color: #d9f5d6,
-  $header-text-color: #1a5214,
-  $item-text-color: #1a5214,
-
-  $focused-item-background: #72da67,
-  $focused-item-text-color: #1a5214,
-  $hover-item-background: #a0e698,
-  $hover-item-text-color: #1a5214,
-
-  $selected-item-background: #a0e698,
-  $selected-item-text-color: #1a5214,
-  $selected-hover-item-background: #72da67,
-  $selected-hover-item-text-color: #1a5214,
-  $selected-focus-item-background: #72da67,
-  $selected-focus-item-text-color: #1a5214,
+  $background-color: #57a5cd,
 );
 
 $custom-combo-theme: combo-theme(
-  $search-separator-border-color: #1a5214
+  $search-separator-border-color: #1d3743,
+  $toggle-button-background: #57a5cd,
 );
 
 $custom-checkbox-theme: checkbox-theme(
   $border-radius: 10px,
-  $fill-color: #1a5214,
-  $empty-color: #1a5214,
+  $fill-color: #1d3743,
+  $empty-color: #1d3743,
 );
 
 :host ::ng-deep {
@@ -34,4 +21,3 @@ $custom-checkbox-theme: checkbox-theme(
   @include css-vars($custom-combo-theme);
   @include css-vars($custom-checkbox-theme);
 }
- 
