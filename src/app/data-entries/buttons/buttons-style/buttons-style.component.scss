@@ -1,10 +1,25 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-$custom-button-theme: contained-button-theme(
-  $background: #345779,
+$custom-contained-theme: contained-button-theme(
+  $background: #348ae0
+);
+
+$custom-flat-theme: flat-button-theme(
+  $foreground: var(--ig-error-800)
+);
+
+$custom-outlined-theme: outlined-button-theme(
+  $foreground: var(--ig-success-500)
+);
+
+$custom-fab-theme: fab-button-theme(
+  $background: #ffc506
 );
 
 .button-sample {
-  @include css-vars($custom-button-theme);
-}
+  @include css-vars($custom-contained-theme);
+  @include css-vars($custom-flat-theme);
+  @include css-vars($custom-outlined-theme);
+  @include css-vars($custom-fab-theme);
+};
