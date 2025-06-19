@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
 import { IgxExcelExporterOptions, IgxExcelExporterService, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -47,6 +47,8 @@ class MyChildSummary {
 })
 
 export class HGridSummaryExportComponent {
+    private excelExportService = inject(IgxExcelExporterService);
+
     @ViewChild('hGrid', { static: true })
     private hGrid: IgxHierarchicalGridComponent;
 
@@ -54,7 +56,7 @@ export class HGridSummaryExportComponent {
     public mySummary = MySummary;
     public myChildSummary = MyChildSummary;
 
-    constructor(private excelExportService: IgxExcelExporterService) {
+    constructor() {
         this.data = SINGERS;
     }
 

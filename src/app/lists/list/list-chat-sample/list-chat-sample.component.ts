@@ -1,11 +1,4 @@
-import {
-    AfterViewInit,
-    Component,
-    ElementRef,
-    TemplateRef,
-    ViewChild,
-    ViewEncapsulation
-} from '@angular/core';
+import { AfterViewInit, Component, ElementRef, TemplateRef, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { ContactsService } from './services/contacts.service';
 import { IMessage, MessagesService } from './services/messages.service';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +13,9 @@ import { NgClass, NgTemplateOutlet, DatePipe } from '@angular/common';
     imports: [FormsModule, IgxListComponent, IgxListItemComponent, IgxAvatarComponent, NgClass, NgTemplateOutlet, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, DatePipe]
 })
 export class ListChatSampleComponent implements AfterViewInit {
+    messagesService = inject(MessagesService);
+    contactsService = inject(ContactsService);
+
     @ViewChild('form', { static: true })
     public form: ElementRef;
 
@@ -31,11 +27,6 @@ export class ListChatSampleComponent implements AfterViewInit {
 
     public message: string;
     private myId = 4;
-
-    constructor(
-        public messagesService: MessagesService,
-        public contactsService: ContactsService
-    ) { }
 
     public getMessageTemplate(message: IMessage): TemplateRef<any> {
         if (message.authorId === this.myId) {

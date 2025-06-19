@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, Renderer2 } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, Renderer2, inject } from '@angular/core';
 import { IgxIconComponent, IgxListComponent, IgxListItemComponent, IgxDropDirective, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxDragDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent } from 'igniteui-angular';
 
 import { FormsModule } from '@angular/forms';
@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 })
 
 export class EmailSampleComponent {
+    private cdr = inject(ChangeDetectorRef);
+    private renderer = inject(Renderer2);
+
 
     @Input()
     public ghostTemplate: any;
@@ -33,11 +36,6 @@ export class EmailSampleComponent {
         { sender: 'Elsi Hansdottir', title: 'SEO Keywords', checked: false},
         { sender: 'Benito Noboa', title: 'Last Chance: Win an Amazon Gift Card', checked: false}
     ];
-
-    constructor(
-        private cdr: ChangeDetectorRef,
-        private renderer: Renderer2
-    ) { }
 
     public toggleCheck(email: any, checkbox: any): void {
         this.emails.forEach(x => x.checked = false);

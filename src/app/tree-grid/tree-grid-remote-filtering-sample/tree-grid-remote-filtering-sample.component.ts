@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxTreeGridComponent, NoopFilteringStrategy, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { Observable, Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
@@ -16,14 +16,14 @@ const DEBOUNCE_TIME = 300;
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, AsyncPipe]
 })
 export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
+    private _remoteService = inject(RemoteFilteringService);
+    private _cdr = inject(ChangeDetectorRef);
+
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;
     public remoteData: Observable<any[]>;
     public noopFilterStrategy = NoopFilteringStrategy.instance();
 
     private destroy$ = new Subject<void>();
-
-    constructor(private _remoteService: RemoteFilteringService, private _cdr: ChangeDetectorRef) {
-    }
 
     public ngOnInit() {
         this.remoteData = this._remoteService.remoteData;

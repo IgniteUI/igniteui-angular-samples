@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, inject } from '@angular/core';
 import { ColumnPinningPosition, IgxGridComponent, IgxIconService, IPinningConfig, RowType, RowPinningPosition, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 import { icons } from '../../services/svgIcons';
@@ -14,12 +14,14 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
 })
 
 export class GridRowPinningExtraColumnSampleComponent implements AfterViewInit {
+    private iconService = inject(IgxIconService);
+
     @ViewChild('grid', {read: IgxGridComponent, static: true})
     public grid: IgxGridComponent;
     public data: any[];
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top, columns: ColumnPinningPosition.End };
 
-    constructor(private iconService: IgxIconService) {
+    constructor() {
         this.data = DATA;
     }
 

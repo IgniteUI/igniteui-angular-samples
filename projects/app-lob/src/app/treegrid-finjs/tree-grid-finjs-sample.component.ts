@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
+import { Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding, inject } from '@angular/core';
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment, IGroupingExpression, IgxButtonGroupComponent, IgxGroupedTreeGridSorting, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, ITreeGridAggregation, OverlaySettings, PositionSettings, TreeGridFilteringStrategy, VerticalAlignment, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxGridToolbarHidingComponent, IgxGridToolbarExporterComponent, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxTreeGridGroupingPipe } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
@@ -15,6 +15,9 @@ import { IgxPreventDocumentScrollDirective } from '../../../../../src/app/direct
 })
 
 export class TreeGridFinJSComponent implements OnDestroy, OnInit {
+    private elRef = inject(ElementRef);
+    dataService = inject(SignalRService);
+
     @ViewChild('grid1', { static: true }) public grid1!: IgxTreeGridComponent;
     @ViewChild('buttonGroup1', { static: true }) public buttonGroup1!: IgxButtonGroupComponent;
     @ViewChild('slider1', { static: true }) public volumeSlider!: IgxSliderComponent;
@@ -94,7 +97,7 @@ export class TreeGridFinJSComponent implements OnDestroy, OnInit {
     private selectedButton: number;
     private _timer: any;
 
-    constructor(private elRef: ElementRef, public dataService: SignalRService) {
+    constructor() {
         this.dataService.startConnection();
         this.overlaySettings.outlet = this.outlet;
         this.data$ = this.dataService.data;

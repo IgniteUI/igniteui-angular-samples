@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -11,6 +11,8 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridColumnSelectionStylesComponent implements OnInit, AfterViewInit {
+    private cd = inject(ChangeDetectorRef);
+
     @ViewChild(IgxTreeGridComponent)
     public tGrid: IgxTreeGridComponent;
     public data;
@@ -25,9 +27,6 @@ export class TreeGridColumnSelectionStylesComponent implements OnInit, AfterView
         { field: 'OrderDate', header: 'Order Date', selectable: false, formatter: this.formatDate },
         { field: 'Delivered', header: 'Delivered', selectable: true }
     ];
-
-    constructor(private cd: ChangeDetectorRef) {
-    }
 
     public ngOnInit(): void {
         this.data = ORDERS_DATA;

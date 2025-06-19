@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxInputGroupComponent, IgxInputDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxRippleDirective, IgxLabelDirective } from 'igniteui-angular';
 
@@ -10,12 +10,14 @@ import { IgxInputGroupComponent, IgxInputDirective, IgxRadioGroupDirective, IgxR
     imports: [FormsModule, ReactiveFormsModule, IgxInputGroupComponent, IgxInputDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxRippleDirective, IgxLabelDirective]
 })
 export class RadioGroupSampleComponent {
+    private _formBuilder = inject(FormBuilder);
+
     public fruitsForm: FormGroup;
     public fruits = ['Apple', 'Mango', 'Banana', 'Orange'];
     public newModel: FruitData;
     public model: FruitData;
 
-    constructor(private _formBuilder: FormBuilder) {
+    constructor() {
         // Simulate getting data from external service
         this.model = {
             favFruit: this.fruits[0],

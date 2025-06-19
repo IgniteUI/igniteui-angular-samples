@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxColumnComponent, IgxGridComponent, IgxQueryBuilderComponent } from 'igniteui-angular';
 
 const API_ENDPOINT = 'https://data-northwind.indigo.design';
@@ -11,6 +11,9 @@ const API_ENDPOINT = 'https://data-northwind.indigo.design';
     imports: [IgxQueryBuilderComponent, IgxGridComponent, IgxColumnComponent]
 })
 export class QueryBuilderRequestSampleComponent implements OnInit, AfterViewInit {
+    private http = inject(HttpClient);
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChild('grid', { static: true })
     public grid: IgxGridComponent;
 
@@ -19,8 +22,6 @@ export class QueryBuilderRequestSampleComponent implements OnInit, AfterViewInit
     public ordersFields: any[];
     public expressionTree: IExpressionTree;
     public data: any[] = [];
-
-    constructor(private http: HttpClient, private cdr: ChangeDetectorRef) {}
 
     public ngOnInit(): void {
         this.customersFields = [
@@ -37,7 +38,7 @@ export class QueryBuilderRequestSampleComponent implements OnInit, AfterViewInit
             { field: "shipperId", dataType: "number" },
             { field: "orderDate", dataType: "date" },
             { field: "requiredDate", dataType: "date" },
-            { field: "shipVia", dataType: "number" },
+            { field: "shipVia", dataType: "string" },
             { field: "freight", dataType: "number" },
             { field: "shipName", dataType: "string" },
             { field: "completed", dataType: "boolean" }
@@ -74,6 +75,12 @@ export class QueryBuilderRequestSampleComponent implements OnInit, AfterViewInit
     }
 
     private calculateColsInView() {
-        this.grid.columns.forEach(column => column.hidden = !this.expressionTree.returnFields.includes(column.field));
+        if (this.expressionTree.returnFields.length === 0 || this.expressionTree.returnFields[0] === '*') {
+            const selectedEntity = this.entities.find(entity => entity.name === this.expressionTree.entity);
+            const selectedEntityFields = selectedEntity.fields.map(field => field.field);
+            this.grid.columns.forEach(column => column.hidden = !selectedEntityFields.includes(column.field));
+        } else {
+            this.grid.columns.forEach(column => column.hidden = !this.expressionTree.returnFields.includes(column.field));
+        }
     }
 }

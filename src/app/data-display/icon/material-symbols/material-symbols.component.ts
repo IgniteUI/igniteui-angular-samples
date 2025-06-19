@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IgxIconService, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
@@ -8,7 +8,8 @@ import { IgxIconService, IgxIconComponent } from 'igniteui-angular';
     imports: [IgxIconComponent]
 })
 export class MaterialSymbolsComponent implements OnInit {
-    constructor(private iconService: IgxIconService) { }
+    private iconService = inject(IgxIconService);
+
 
     public ngOnInit() {
         this.iconService.registerFamilyAlias('material-symbols', 'material-symbols-outlined');

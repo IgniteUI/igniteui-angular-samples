@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, GridColumnDataType, IgxColumnComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxSelectComponent, OverlaySettings, SortingDirection, IgxSwitchComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxButtonDirective, IgxCellTemplateDirective, IgxPaginatorComponent } from 'igniteui-angular';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { Subject } from 'rxjs';
@@ -19,6 +19,13 @@ import { AsyncPipe, CurrencyPipe } from '@angular/common';
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterViewInit, DoCheck {
+    dataService = inject(SignalRService);
+    private paneService = inject(FloatingPanesService);
+    private cdr = inject(ChangeDetectorRef);
+    private componentFactoryResolver = inject(ComponentFactoryResolver);
+    private elementRef = inject(ElementRef);
+    private renderer = inject(Renderer2);
+
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     @ViewChild('grid2', { static: true }) public grid2: IgxGridComponent;
     @ViewChild(GridHostDirective) public host: GridHostDirective;
@@ -152,8 +159,6 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
     ];
 
     private destroy$ = new Subject<any>();
-
-    constructor(public dataService: SignalRService, private paneService: FloatingPanesService, private cdr: ChangeDetectorRef, private componentFactoryResolver: ComponentFactoryResolver, private elementRef: ElementRef, private renderer:Renderer2) {}
 
     public ngOnInit() {
         this.dataService.startConnection(this.frequency, this.dataVolume, true, false);

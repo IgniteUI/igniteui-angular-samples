@@ -1,15 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 @Injectable()
 export class RemotePagingService {
+    private http = inject(HttpClient);
+
     public url = `https://services.odata.org/V4/Northwind/Northwind.svc/`;
     private key = 'value';
-
-    constructor(private http: HttpClient) {
-    }
 
     public buildUrl(dataState, index?: number, perPage?: number) {
         let qS = '';

@@ -1,6 +1,6 @@
 <div class="grid__wrapper">
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hgrid" [data]="localdata" [autoGenerate]="false" [allowAdvancedFiltering]="true"
-        [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
+    <igx-hierarchical-grid #hGrid [igxPreventDocumentScroll]="true" class="hgrid" [data]="localData" [autoGenerate]="false" [allowAdvancedFiltering]="true"
+        [height]="'600px'" [width]="'100%'" [rowHeight]="'65px'">
         <igx-grid-toolbar></igx-grid-toolbar>
 
         <igx-column field="Artist"></igx-column>
@@ -16,22 +16,24 @@
         <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number"></igx-column>
 
         <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [allowAdvancedFiltering]="true">
-        <igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+            <igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
             <igx-column field="Album"></igx-column>
             <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
             <igx-column field="BillboardReview" header="Billboard Review" dataType="number"></igx-column>
             <igx-column field="USBillboard200" header="US Billboard 200" dataType="number"></igx-column>
-        <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" >
+            <igx-column field="Artist" header="Artist" [hidden]="true"></igx-column>
+
+            <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false" >
                 <igx-column field="Number" header="No."></igx-column>
                 <igx-column field="Title"></igx-column>
                 <igx-column field="Released" dataType="date"></igx-column>
                 <igx-column field="Genre"></igx-column>
-        </igx-row-island>
+            </igx-row-island>
         </igx-row-island>
 
         <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false" [allowAdvancedFiltering]="true">
-<igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
+            <igx-grid-toolbar *igxGridToolbar="let childGrid"></igx-grid-toolbar>
 
             <igx-column field="Tour"></igx-column>
             <igx-column field="StartedOn" header="Started on"></igx-column>

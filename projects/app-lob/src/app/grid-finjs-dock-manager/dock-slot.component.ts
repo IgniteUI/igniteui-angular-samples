@@ -1,13 +1,13 @@
 // eslint-disable-next-line max-len
-import { AfterViewInit, Component, Directive, EventEmitter, HostBinding, Input, OnInit, OnDestroy, Output, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, Directive, EventEmitter, HostBinding, Input, OnInit, OnDestroy, Output, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[gridHost]'
 })
-export class GridHostDirective {
-    constructor(public viewContainerRef: ViewContainerRef) { }
+export class GridHostDirective {    viewContainerRef = inject(ViewContainerRef);
+
 }
 
 @Component({

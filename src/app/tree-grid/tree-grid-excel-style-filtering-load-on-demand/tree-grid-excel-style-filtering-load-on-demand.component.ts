@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { IFilteringExpressionsTree, IgxColumnComponent, IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxCellTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { RemoteValuesService } from './remoteValues.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -11,10 +11,10 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent]
 })
 export class TreeGridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
+    private remoteValuesService = inject(RemoteValuesService);
+
 
     public data: any[];
-
-    constructor(private remoteValuesService: RemoteValuesService) { }
 
     public ngOnInit() {
         this.data = this.remoteValuesService.getRecordsData();
