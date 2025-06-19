@@ -2,7 +2,6 @@
   <igx-nav-drawer #navdrawer [enableGestures]="drawerState.enableGestures" [isOpen]="drawerState.open" [(pin)]="drawerState.pin"
     [position]="drawerState.position" [width]="drawerState.width" (opened)="refresh()" (closed)="refresh()">
     <ng-template igxDrawer>
-      <nav>
         <div class="nav-header">
           <img class="logo" src="assets/images/rsrcs/igniteui-angular_logo.svg" alt="Ignite UI for Angular Logo">
         </div>
@@ -48,7 +47,6 @@
             </span>
           </span>
         }
-      </nav>
     </ng-template>
   </igx-nav-drawer>
 

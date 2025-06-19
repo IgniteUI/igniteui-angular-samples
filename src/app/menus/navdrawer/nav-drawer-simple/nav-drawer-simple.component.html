@@ -1,7 +1,6 @@
 <div class="content-wrap">
   <igx-nav-drawer id="navigation" #drawer [isOpen]="true" [pinThreshold]="5000">
     <ng-template igxDrawer>
-      <nav>
         <span igxDrawerItem [isHeader]="true">Components</span>
 
         @for (item of navItems; track item) {
@@ -10,7 +9,6 @@
             <span>{{ item.text }}</span>
           </span>
         }
-      </nav>
     </ng-template>
   </igx-nav-drawer>
 
