@@ -1,10 +1,7 @@
 /* eslint-disable @typescript-eslint/member-delimiter-style */
 import { AnimationReferenceMetadata } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
-import {
-    AbsolutePosition, IgxListModule, IgxDialogModule,
-    IgxDialogComponent, IgxOverlayService, IListItemClickEventArgs
-} from 'igniteui-angular';
+import { AbsolutePosition, IgxListModule, IgxDialogModule, IgxDialogComponent, IgxOverlayService, IListItemClickEventArgs, IgxListComponent, IgxListItemComponent } from 'igniteui-angular';
 import { blink, fadeIn, fadeOut, flipBottom, flipHorBck, flipHorFwd, flipLeft, flipRight,
     flipTop, flipVerBck, flipVerFwd, growVerIn, growVerOut, heartbeat,
     pulsateBck, pulsateFwd, rotateInBl, rotateInBottom, rotateInBr,
@@ -27,10 +24,12 @@ import { blink, fadeIn, fadeOut, flipBottom, flipHorBck, flipHorFwd, flipLeft, f
     swingOutBottomBck, swingOutBottomFwd, swingOutLeftBck, swingOutLefttFwd,
     swingOutRightBck, swingOutRightFwd, swingOutTopBck, swingOutTopFwd } from 'igniteui-angular/animations';
 
+
 @Component({
     selector: 'app-animations-sample-1',
     styleUrls: ['./animations-sample-1.component.scss'],
-    templateUrl: './animations-sample-1.component.html'
+    templateUrl: './animations-sample-1.component.html',
+    imports: [IgxListComponent, IgxListItemComponent, IgxDialogComponent]
 })
 export class AnimationsSampleComponent {
     @ViewChild('dialog', { static: true, read: IgxDialogComponent })

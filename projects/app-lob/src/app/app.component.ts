@@ -1,17 +1,17 @@
 import { DOCUMENT } from '@angular/common';
 import { Component, HostListener, Inject, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { SEOService } from './seo.service';
 
 @Component({
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
-    templateUrl: './app.component.html'
+    templateUrl: './app.component.html',
+    imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {
     public title = 'app-lob';
-    private isIE = !((window as any).ActiveXObject) && 'ActiveXObject' in window;
     private theme = 'default-theme';
     private styleElem: HTMLStyleElement;
     private typefacesLoaded = ['Titillium Web', 'Roboto'];
@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
         )
             .subscribe((event) => {
                 this.seoService.updateHeadProperties(event.snapshot.data['title'] ?? event.parent.snapshot.data['title'],
-                    event.snapshot.data['title'] ?? event.parent.snapshot.data['description'], window.location.href);
+                    event.snapshot.data['title'] ?? event.parent.snapshot.data['description'], this.document.defaultView.location.href);
             });
         this.createThemeStyle();
     }
@@ -42,7 +42,7 @@ export class AppComponent implements OnInit {
         if (e.origin === e.data.origin && typeof e.data.themeStyle === 'string') {
             this.styleElem.textContent = e.data.themeStyle;
 
-            const typeface = window.getComputedStyle(this.document.body).fontFamily.replace(/[\'\"]/g, '');
+            const typeface = this.document.defaultView.getComputedStyle(this.document.body).fontFamily.replace(/[\'\"]/g, '');
             if (!(typeface.match(/,/g) || []).length &&
                 !this.typefacesLoaded.includes(typeface)) {
                 this.typefacesLoaded.push(typeface);
@@ -60,17 +60,13 @@ export class AppComponent implements OnInit {
         typefaceElem.rel = 'stylesheet';
         typefaceElem.id = 'ignteui-theme-typeface';
         typefaceElem.href = this.typefaceUrl + typeface.split(' ').join('+');
-        document.head.insertBefore(typefaceElem, this.document.head.lastElementChild);
+        this.document.head.insertBefore(typefaceElem, this.document.head.lastElementChild);
     }
 
     private createThemeStyle() {
-        if (this.isIE) {
-            this.document.body.classList.add(this.theme);
-        } else {
-            this.styleElem = document.createElement('style');
-            this.styleElem.id = 'igniteui-theme';
-            document.head.insertBefore(this.styleElem, this.document.head.lastElementChild);
-            this.document.body.classList.add('custom-body');
-        }
+        this.styleElem = this.document.createElement('style');
+        this.styleElem.id = 'igniteui-theme';
+        this.document.head.insertBefore(this.styleElem, this.document.head.lastElementChild);
+        this.document.body.classList.add('custom-body');
     }
 }

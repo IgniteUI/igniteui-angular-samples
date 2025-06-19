@@ -30,7 +30,7 @@ gulp.task("generate-live-editing", async () => {
             }
         }
         :
-        (argv.appCrm  ?
+        (argv.appCrm ?
             {
                 platform: 'angular',
                 projectDir: "./projects/app-crm",
@@ -84,7 +84,7 @@ const createPrependerdLobStructure = (cb) => {
 
 const addPrerenderedLobPages = (cb) => {
     const { metadata } = require('./projects/app-lob/src/app/metadata');
-    const indexFilePath = path.resolve(__dirname, './', 'dist/app-lob', 'index.html');
+    const indexFilePath = path.resolve(__dirname, './', 'dist/app-lob/browser', 'index.html');
 
     // read in the index.html file
     fs.readFile(indexFilePath, 'utf8', function (err, data) {
@@ -213,16 +213,18 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     const paths = sampleFile.path.replace("./", "").split("/");
                     let tempPath = "";
                     paths.forEach(p => {
-                        tempPath += p + "/";
+                        tempPath += p;
                         if (p.indexOf(".") !== -1 && p !== codesandboxConfigFolder) {
                             fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
-                        } else
+                        } else {
                             if (p === 'Dockerfile') {
                                 fs.writeFileSync(sampleAppPath + "/" + tempPath, sampleContent);
                             } else if (!fs.existsSync(sampleAppPath + "/" + tempPath)) {
                                 fs.mkdirSync(sampleAppPath + "/" + tempPath)
                             }
-                    })
+                        }
+                        tempPath += "/";
+                    });
                 });
                 i++;
                 console.log(`Processing ${fileName}.json with SCSS styling`);
@@ -236,10 +238,6 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
 const processDemosWithScss = () => processApp("src", "angular-demos", "data");
 const processDemosLobWithScss = () => processApp("projects/app-lob/src", "angular-demos-lob", "services");
 const processDemosCrmWithScss = () => processApp("projects/app-crm/src", "angular-demos-grid-crm");
-
-let repositoryfyAngularDemos;
-let repositoryfyAngularDemosLob;
-let repositoryfyAngularDemosCrm;
 
 const copyGitHooks = async (cb) => {
 

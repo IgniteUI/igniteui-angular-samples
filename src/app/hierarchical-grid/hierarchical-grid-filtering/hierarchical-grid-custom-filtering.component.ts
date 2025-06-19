@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
-import { IgxBooleanFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular';
+import { IgxBooleanFilteringOperand, IgxStringFilteringOperand, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IFilteringOperation } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+
 
 @Component({
     selector: 'app-hierarchical-grid-custom-filtering',
     styleUrls: ['./hierarchical-grid-custom-filtering.component.scss'],
-    templateUrl: 'hierarchical-grid-custom-filtering.component.html'
+    templateUrl: 'hierarchical-grid-custom-filtering.component.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 
 export class HGridCustomFilteringSampleComponent {
@@ -23,9 +26,9 @@ export class HGridCustomFilteringSampleComponent {
 export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
     private constructor() {
         super();
-        const customOperations = [
+        const customOperations: IFilteringOperation[] = [
             {
-                iconName: 'contains',
+                iconName: 'filter_contains',
                 isUnary: false,
                 logic: (target: string, searchVal: string, ignoreCase?: boolean) => {
                     ignoreCase = false;
@@ -36,7 +39,7 @@ export class CaseSensitiveFilteringOperand extends IgxStringFilteringOperand {
                 name: 'Contains (case sensitive)'
             },
             {
-                iconName: 'does-not-contain',
+                iconName: 'filter_does_not_contain',
                 isUnary: false,
                 logic: (target: string, searchVal: string, ignoreCase?: boolean) => {
                     ignoreCase = false;

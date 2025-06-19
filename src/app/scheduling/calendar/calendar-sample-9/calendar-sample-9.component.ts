@@ -1,15 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-    IgxButtonGroupComponent}
+import { IgxButtonGroupComponent, IgxCalendarComponent, IgxButtonDirective }
 from 'igniteui-angular';
+
 
 const orientations = ["horizontal", "vertical"] as const;
 type Orientation = (typeof orientations)[number];
 
 @Component({
-  selector: 'app-calendar',
-  styleUrls: ['./calendar-sample-9.component.scss'],
-  templateUrl: './calendar-sample-9.component.html'
+    selector: 'app-calendar',
+    styleUrls: ['./calendar-sample-9.component.scss'],
+    templateUrl: './calendar-sample-9.component.html',
+    imports: [IgxCalendarComponent, IgxButtonGroupComponent, IgxButtonDirective]
 })
 
 export class CalendarSample9Component {

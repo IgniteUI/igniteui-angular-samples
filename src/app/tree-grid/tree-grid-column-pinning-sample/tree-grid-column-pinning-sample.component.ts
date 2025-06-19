@@ -1,13 +1,15 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ViewChild } from '@angular/core';
-import { ColumnType, IgxIconService, IgxTreeGridComponent } from 'igniteui-angular';
+import { ColumnType, IgxIconService, IgxTreeGridComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { icons } from "../../services/svgIcons";
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 const FILTERING_ICONS_FONT_SET = "filtering-icons";
 @Component({
-  selector: 'app-tree-grid-column-pinning-sample',
-  styleUrls: ['./tree-grid-column-pinning-sample.component.scss'],
-  templateUrl: './tree-grid-column-pinning-sample.component.html'
+    selector: 'app-tree-grid-column-pinning-sample',
+    styleUrls: ['./tree-grid-column-pinning-sample.component.scss'],
+    templateUrl: './tree-grid-column-pinning-sample.component.html',
+    imports: [IgxCellHeaderTemplateDirective, IgxIconComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridColumnPinningSampleComponent implements AfterViewInit {
     @ViewChild('treeGrid', { static: true }) public treeGrid: IgxTreeGridComponent;

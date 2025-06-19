@@ -1,13 +1,17 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxColumnComponent, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxButtonDirective } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from '../../services/remotePaging.service';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { AsyncPipe } from '@angular/common';
+import { RouterLink } from '@angular/router';
 @Component({
     encapsulation: ViewEncapsulation.None,
     providers: [RemotePagingService],
     selector: 'app-custom-remote-paging-grid-sample',
     styleUrls: ['./custom-remote-paging-sample.component.scss'],
-    templateUrl: './custom-remote-paging-sample.component.html'
+    templateUrl: './custom-remote-paging-sample.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxButtonDirective, RouterLink, AsyncPipe]
 })
 export class CustomRemotePagingGridSampleComponent implements OnInit, AfterViewInit, OnDestroy {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;

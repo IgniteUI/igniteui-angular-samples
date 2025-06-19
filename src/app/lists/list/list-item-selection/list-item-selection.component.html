@@ -1,24 +1,27 @@
 <igx-input-group type="search" class="search">
-    <igx-prefix>
-        <igx-icon>search</igx-icon>
-    </igx-prefix>
-    <input #search igxInput placeholder="Search Contacts" [(ngModel)]="searchContact">
-    <igx-suffix *ngIf="search.value.length > 0" (click)="searchContact = null">
-        <igx-icon>clear</igx-icon>
+  <igx-prefix>
+    <igx-icon>search</igx-icon>
+  </igx-prefix>
+  <input #search igxInput placeholder="Search Contacts" [(ngModel)]="searchContact">
+  @if (search.value.length > 0) {
+    <igx-suffix (click)="searchContact = null">
+      <igx-icon>clear</igx-icon>
     </igx-suffix>
+  }
 </igx-input-group>
 
 <div class="list-sample">
-    <igx-list>
-        <igx-list-item [isHeader]="true">Contacts</igx-list-item>
-        <igx-list-item [ngClass]="contact.selected ? 'selected' : ''" (click)="selectItem(contact)"
-            *ngFor="let contact of contacts | igxFilter: filterContacts;">
-            <igx-avatar igxListThumbnail [src]="contact.photo" shape="circle"></igx-avatar>
-            <span igxListLineTitle>{{ contact.name }}</span>
-            <span igxListLineSubTitle>{{ contact.phone }}</span>
-            <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" igxRipple="pink"
-                [igxRippleCentered]="true" (click)="toggleFavorite(contact, $event)"
-                (mousedown)="mousedown($event)">star</igx-icon>
-        </igx-list-item>
-    </igx-list>
+  <igx-list>
+    <igx-list-item [isHeader]="true">Contacts</igx-list-item>
+    @for (contact of contacts | igxFilter: filterContacts; track contact) {
+      <igx-list-item [selected]="contact.selected" (click)="contact.selected = !contact.selected">
+        <igx-avatar igxListThumbnail [src]="contact.photo" shape="circle"></igx-avatar>
+        <span igxListLineTitle>{{ contact.name }}</span>
+        <span igxListLineSubTitle>{{ contact.phone }}</span>
+        <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" igxRipple="pink"
+          [igxRippleCentered]="true" (click)="toggleFavorite(contact, $event)"
+        (mousedown)="mousedown($event)">star</igx-icon>
+      </igx-list-item>
+    }
+  </igx-list>
 </div>

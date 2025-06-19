@@ -1,11 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { ColumnType, IgxTreeGridComponent } from 'igniteui-angular';
+import { ColumnType, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { DatePipe } from '@angular/common';
 
 @Component({
-  selector: 'app-tree-grid-summary-sample',
-  styleUrls: ['./tree-grid-summary-sample.component.scss'],
-  templateUrl: './tree-grid-summary-sample.component.html'
+    selector: 'app-tree-grid-summary-sample',
+    styleUrls: ['./tree-grid-summary-sample.component.scss'],
+    templateUrl: './tree-grid-summary-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxIconComponent, DatePipe]
 })
 export class TreeGridSummarySampleComponent {
 

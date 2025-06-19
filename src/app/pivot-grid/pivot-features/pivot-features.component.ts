@@ -1,9 +1,6 @@
 import { Component } from "@angular/core";
 
-import {
-    IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate,
-    IgxPivotDateDimension, FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand
-} from "igniteui-angular"
+import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand, IgxPivotGridComponent, IgxPivotDataSelectorComponent } from "igniteui-angular"
 import { SALES_DATA } from "../../data/dataToAnalyze";
 
 export class IgxTotalSaleAggregate {
@@ -36,7 +33,8 @@ export class IgxTotalSaleAggregate {
 @Component({
     selector: 'app-pivot-features-sample',
     styleUrls: ['./pivot-features.component.scss'],
-    templateUrl: './pivot-features.component.html'
+    templateUrl: './pivot-features.component.html',
+    imports: [IgxPivotGridComponent, IgxPivotDataSelectorComponent]
 })
 export class PivotFeaturesComponent {
     public data = SALES_DATA;

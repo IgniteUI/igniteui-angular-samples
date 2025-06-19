@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxPrefixDirective, IgxIconButtonDirective, IgxSuffixDirective, IgxIconComponent, IgxTabContentComponent } from 'igniteui-angular';
+
 
 @Component({
     selector: 'app-tabs-header-prefix-suffix',
-    templateUrl: './tabs-header-prefix-suffix.html'
+    templateUrl: './tabs-header-prefix-suffix.html',
+    imports: [IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxPrefixDirective, IgxIconButtonDirective, IgxSuffixDirective, IgxIconComponent, IgxTabContentComponent]
 })
 export class TabsHeaderPrefixSuffixComponent {
     public tabs = [{

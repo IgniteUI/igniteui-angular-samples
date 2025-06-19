@@ -1,110 +1,112 @@
 <div class="grid__wrapper">
-    <div class="controls-holder">
-        <div class="switches">
-            <button igxButton="contained" (click)="restoreGridState()">
-                <igx-icon class="btn-icon">restore</igx-icon>
-                <span>Restore</span>
-            </button>
-            <button igxButton="contained" (click)="saveGridState()">
-                <igx-icon class="btn-icon">save</igx-icon>
-                <span>Save</span>
-            </button>
-            <button igxButton="contained" [routerLink]="['../hGrid-state-about']">
-                <igx-icon class="btn-icon">forward</igx-icon>
-                <span>Leave</span>
-            </button>
-            <button igxButton="contained" (click)="clearStorage()">
-                <igx-icon class="btn-icon">delete</igx-icon>
-                <span>Clear</span>
-            </button>
-            <button igxButton="contained" (click)="reloadPage()">
-                <igx-icon class="btn-icon">refresh</igx-icon>
-                <span>Reload</span>
-            </button>
-        </div>
-
-        <div class="switches">
-            <ul>
-                <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../hGrid-state-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
-                <li>Use the control buttons to SAVE / RESTORE / DELETE / grid state or LEAVE the page.</li>
-                <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
-            </ul>
-        </div>
-
-        <div class="switches">
-            <div class="control-item">
-                <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
-            </div>
-            <div class="control-item" *ngFor="let f of features">
-                <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
-                    {{ f.shortName }}
-                </igx-checkbox>
-            </div>
-        </div>
+  <div class="controls-holder">
+    <div class="switches">
+      <button igxButton="contained" (click)="restoreGridState()">
+        <igx-icon class="btn-icon">restore</igx-icon>
+        <span>Restore</span>
+      </button>
+      <button igxButton="contained" (click)="saveGridState()">
+        <igx-icon class="btn-icon">save</igx-icon>
+        <span>Save</span>
+      </button>
+      <button igxButton="contained" [routerLink]="['../hGrid-state-about']">
+        <igx-icon class="btn-icon">forward</igx-icon>
+        <span>Leave</span>
+      </button>
+      <button igxButton="contained" (click)="clearStorage()">
+        <igx-icon class="btn-icon">delete</igx-icon>
+        <span>Clear</span>
+      </button>
+      <button igxButton="contained" (click)="reloadPage()">
+        <igx-icon class="btn-icon">refresh</igx-icon>
+        <span>Reload</span>
+      </button>
     </div>
 
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid class="hgrid" igxGridState
-        [data]="localData" [height]="'500px'" [width]="'98%'" [rowHeight]="'65px'"
-        [primaryKey]="'Photo'"
+    <div class="switches">
+      <ul>
+        <li>Clicking the SAVE button or leaving the page <a [routerLink]="['../hGrid-state-about']"><strong>here</strong></a> will save grid state to localStorage.</li>
+        <li>Use the control buttons to SAVE / RESTORE / DELETE / grid state or LEAVE the page.</li>
+        <li>Select/Deselect checkboxes to control saving / restoring feature state.</li>
+      </ul>
+    </div>
+
+    <div class="switches">
+      <div class="control-item">
+        <igx-checkbox [checked]="true" (change)="onChange($event, 'toggleAll')">All</igx-checkbox>
+      </div>
+      @for (f of features; track f) {
+        <div class="control-item">
+          <igx-checkbox (change)="onChange($event, f.key)" [checked]="options[f.key]">
+            {{ f.shortName }}
+          </igx-checkbox>
+        </div>
+      }
+    </div>
+  </div>
+
+  <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hierarchicalGrid class="hgrid" igxGridState
+    [data]="localData" [height]="'500px'" [width]="'98%'" [rowHeight]="'65px'"
+    [primaryKey]="'Photo'"
+    [autoGenerate]="false"
+    [columnSelection]="'multiple'"
+    [cellSelection]="'multiple'">
+    <igx-paginator></igx-paginator>
+    <igx-grid-toolbar>
+      <igx-grid-toolbar-actions>
+        <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+        <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
+
+    <igx-column field="Artist" [sortable]="true"></igx-column>
+    <igx-column field="Photo" [editable]="false" [sortable]="true">
+      <ng-template igxCell let-cell="cell">
+        <div class="cell__inner_2">
+          <img [src]="cell.value" class="photo" />
+        </div>
+      </ng-template>
+    </igx-column>
+    <igx-column field="Debut" dataType="number" [formatter]="formatter" [sortable]="true"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [sortable]="true"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number" [sortable]="true"></igx-column>
+
+    <igx-row-island [height]="null" [key]="'Albums'"
+      [autoGenerate]="false"
+      [primaryKey]="'Album'"
+      rowSelection='multiple'
+      [allowFiltering]='true'
+      [columnSelection]="'multiple'"
+      [cellSelection]="'multiple'">
+      <igx-column field="Album" [sortable]="true"></igx-column>
+      <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [sortable]="true"></igx-column>
+      <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
+      <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
+      <igx-row-island [height]="null" [key]="'Songs'"
         [autoGenerate]="false"
+        [primaryKey]="'Number'"
+        rowSelection='multiple'
+        [allowFiltering]='true'
         [columnSelection]="'multiple'"
         [cellSelection]="'multiple'">
-        <igx-paginator></igx-paginator>
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
-                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+        <igx-column field="Number" header="No." [sortable]="true"></igx-column>
+        <igx-column field="Title" [sortable]="true"></igx-column>
+        <igx-column field="Released" dataType="date" [sortable]="true"></igx-column>
+        <igx-column field="Genre"></igx-column>
+      </igx-row-island>
+    </igx-row-island>
 
-            <igx-column field="Artist" [sortable]="true"></igx-column>
-            <igx-column field="Photo" [editable]="false" [sortable]="true">
-                <ng-template igxCell let-cell="cell">
-                    <div class="cell__inner_2">
-                        <img [src]="cell.value" class="photo" />
-                    </div>
-                </ng-template>
-            </igx-column>
-            <igx-column field="Debut" dataType="number" [formatter]="formatter" [sortable]="true"></igx-column>
-            <igx-column field="GrammyNominations" header="Grammy Nominations" dataType="number" [sortable]="true"></igx-column>
-            <igx-column field="GrammyAwards" header="Grammy Awards" dataType="number" [sortable]="true"></igx-column>
-
-            <igx-row-island [height]="null" [key]="'Albums'"
-                [autoGenerate]="false"
-                [primaryKey]="'Album'"
-                rowSelection='multiple'
-                [allowFiltering]='true'
-                [columnSelection]="'multiple'"
-                [cellSelection]="'multiple'">
-                <igx-column field="Album" [sortable]="true"></igx-column>
-                <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'" [sortable]="true"></igx-column>
-                <igx-column field="BillboardReview" header="Billboard Review" [sortable]="true"></igx-column>
-                <igx-column field="USBillboard200" header="US Billboard 200" [sortable]="true"></igx-column>
-            <igx-row-island [height]="null" [key]="'Songs'"
-                [autoGenerate]="false"
-                [primaryKey]="'Number'"
-                rowSelection='multiple'
-                [allowFiltering]='true'
-                [columnSelection]="'multiple'"
-                [cellSelection]="'multiple'">
-                    <igx-column field="Number" header="No." [sortable]="true"></igx-column>
-                    <igx-column field="Title" [sortable]="true"></igx-column>
-                    <igx-column field="Released" dataType="date" [sortable]="true"></igx-column>
-                    <igx-column field="Genre"></igx-column>
-            </igx-row-island>
-        </igx-row-island>
-
-        <igx-row-island [height]="null" [key]="'Tours'"
-            [autoGenerate]="false"
-            [primaryKey]="'Tour'"
-            rowSelection='multiple'
-            [allowFiltering]='true'
-            [columnSelection]="'multiple'"
-            [cellSelection]="'multiple'">
-            <igx-column field="Tour" [sortable]="true"></igx-column>
-            <igx-column field="StartedOn" header="Started on" [sortable]="true"></igx-column>
-            <igx-column field="Location" [sortable]="true"></igx-column>
-            <igx-column field="Headliner" [sortable]="true"></igx-column>
-        </igx-row-island>
-    </igx-hierarchical-grid>
+    <igx-row-island [height]="null" [key]="'Tours'"
+      [autoGenerate]="false"
+      [primaryKey]="'Tour'"
+      rowSelection='multiple'
+      [allowFiltering]='true'
+      [columnSelection]="'multiple'"
+      [cellSelection]="'multiple'">
+      <igx-column field="Tour" [sortable]="true"></igx-column>
+      <igx-column field="StartedOn" header="Started on" [sortable]="true"></igx-column>
+      <igx-column field="Location" [sortable]="true"></igx-column>
+      <igx-column field="Headliner" [sortable]="true"></igx-column>
+    </igx-row-island>
+  </igx-hierarchical-grid>
 </div>

@@ -1,11 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { ActivatedRoute } from '@angular/router';
+import { NgClass } from '@angular/common';
+import { IgxHierarchicalGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-hierarchical-grid-toolbar-pinning',
     styleUrls: ['./hierarchical-grid-toolbar-pinning.component.scss'],
-    templateUrl: 'hierarchical-grid-toolbar-pinning.component.html'
+    templateUrl: 'hierarchical-grid-toolbar-pinning.component.html',
+    imports: [NgClass, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxRowIslandComponent]
 })
 export class HGridToolbarPinningComponent implements OnInit {
     public localdata;

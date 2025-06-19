@@ -1,12 +1,15 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-tree-grid-paging-sample',
     styleUrls: ['./tree-grid-paging-sample.component.scss'],
-    templateUrl: 'tree-grid-paging-sample.component.html'
+    templateUrl: 'tree-grid-paging-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective]
 })
 
 export class TreeGridPagingSampleComponent implements OnInit {

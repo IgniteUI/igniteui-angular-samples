@@ -1,9 +1,12 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { IgxDialogComponent, IgxOverlayOutletDirective, IgxButtonDirective, IgxAvatarComponent, IgxIconButtonDirective, IgxIconComponent, IgxLayoutDirective, IgxCardComponent, IgxFlexDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxCardActionsComponent, IgxDialogActionsDirective, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListActionDirective } from 'igniteui-angular';
+import { NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, NgbRating, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionButton, NgbCollapse, NgbAccordionCollapse, NgbAccordionBody } from '@ng-bootstrap/ng-bootstrap';
+
 @Component({
-  selector: 'app-bootstrap-sample',
-  styleUrls: ['./bootstrap-sample.component.scss'],
-  templateUrl: './bootstrap-sample.component.html'
+    selector: 'app-bootstrap-sample',
+    styleUrls: ['./bootstrap-sample.component.scss'],
+    templateUrl: './bootstrap-sample.component.html',
+    imports: [IgxButtonDirective, NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, IgxAvatarComponent, IgxIconButtonDirective, IgxIconComponent, IgxLayoutDirective, IgxCardComponent, IgxFlexDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, NgbRating, IgxCardActionsComponent, IgxDialogComponent, IgxDialogActionsDirective, IgxSuffixDirective, IgxOverlayOutletDirective, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionButton, NgbCollapse, NgbAccordionCollapse, NgbAccordionBody, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListActionDirective]
 })
 
 export class BootstrapComponent implements OnInit{

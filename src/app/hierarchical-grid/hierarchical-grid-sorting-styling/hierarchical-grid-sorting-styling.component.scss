@@ -1,23 +1,12 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-theme: grid-theme(
-    $sorted-header-icon-color: #ffb06a,
-    $sortable-header-icon-hover-color: black
+  $sorted-header-icon-color: #ffb06a,
+  $sortable-header-icon-hover-color: black
 );
 
 :host ::ng-deep {
-	@include css-vars($custom-theme);
+  @include css-vars($custom-theme);
 }
-
-.photo {
-    vertical-align: middle;
-    max-height: 62px;
-}
-
-.cell__inner_2 {
-    margin: 1px
-}
-
-.hgrid-sample{
-    padding: 16px;
-}
+ 

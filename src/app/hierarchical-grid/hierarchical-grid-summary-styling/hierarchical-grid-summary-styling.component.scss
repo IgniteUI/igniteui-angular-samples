@@ -1,27 +1,22 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+$summaries-background: #e0f3ff;
 
 $custom-theme: grid-summary-theme(
-    $background-color: #e0f3ff,
-    $focus-background-color: rgba( #94d1f7, .3 ),
+    $background-color: $summaries-background,
+    $focus-background-color: rgba(#94d1f7, 0.3),
     $label-color: #e41c77,
     $result-color: black,
     $pinned-border-width: 2px,
     $pinned-border-style: dotted,
-    $pinned-border-color: #e41c77
+    $pinned-border-color: #e41c77,
 );
 
-:host ::ng-deep {
-	@include css-vars($custom-theme);
-}
+:host {
+    --igx-grid-summaries-patch-background: #{$summaries-background};
 
-.photo {
-    vertical-align: middle;
-    max-height: 62px;
-}
-.cell__inner_2 {
-    margin: 1px
-}
-
-.hgrid-sample{
-    padding: 16px;
+    ::ng-deep {
+        @include css-vars($custom-theme);
+    }
 }

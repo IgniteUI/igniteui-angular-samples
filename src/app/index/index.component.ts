@@ -1,6 +1,6 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { NavigationStart, Route, Router } from '@angular/router';
-import { IgxNavigationDrawerComponent, IgxTreeComponent } from 'igniteui-angular';
+import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
+import { IgxNavigationDrawerComponent, IgxTreeComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
 import { fromEvent, Subscription } from 'rxjs';
 import { filter, map, debounceTime } from 'rxjs/operators';
 import { dataDisplayRoutesData } from '../data-display/data-display-routes-data';
@@ -18,11 +18,15 @@ import { schedulingRoutesData } from '../scheduling/scheduling-routes-data';
 import { servicesRoutesData } from '../services/services-routes-data';
 import { themingRoutesData } from '../theming/theming-routes-data';
 import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
+import { FormsModule } from '@angular/forms';
+import { DOCUMENT } from '@angular/common';
+
 
 @Component({
     selector: 'app-index',
     styleUrls: ['./index.component.scss'],
-    templateUrl: './index.component.html'
+    templateUrl: './index.component.html',
+    imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, RouterLinkActive, RouterLink, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxTreeComponent, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, IgxFlexDirective, IgxNavbarComponent, RouterOutlet]
 })
 export class IndexComponent implements OnInit, AfterViewInit {
 
@@ -119,7 +123,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     private searchSub: Subscription;
 
-    constructor(private router: Router, private cdr: ChangeDetectorRef) {
+    constructor(private router: Router, private cdr: ChangeDetectorRef, @Inject(DOCUMENT) private document: Document) {
         this.appRoutes = this.getAllSampleRoutes('/samples',
             router.config.filter((c) => c.path === 'samples')[0].children, this.modulesRoutes);
     }
@@ -169,7 +173,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
             const parents = this.tree.findNodes(loadedParentItem.name);
             if (parents?.length) {
                 parents[0].expanded = true;
-                parents[0].nativeElement.scrollIntoView();
+                parents[0].nativeElement?.scrollIntoView();
             }
             const children = this.tree.findNodes(loadedChildItem.displayName);
             if (children?.length) {
@@ -205,7 +209,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     // toggle a header element from the navigation
     public toggleParent(nodeId) {
-        const theSpan = document.getElementById(nodeId);
+        const theSpan = this.document.getElementById(nodeId);
         if (theSpan != null) {
             if (theSpan.style.display === 'inline') {
                 theSpan.style.display = 'none';
@@ -217,7 +221,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     // convert a header element's visibility to a material icon name
     public convertNodeStateToIcon(nodeId) {
-        const theSpan = document.getElementById(nodeId);
+        const theSpan = this.document.getElementById(nodeId);
         if (theSpan != null) {
             const theSpanDisplay = theSpan.style.display;
             if (theSpanDisplay === 'inline') {

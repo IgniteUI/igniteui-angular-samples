@@ -1,15 +1,19 @@
 /*eslint-disable*/
 import { Component, OnInit } from "@angular/core";
-import { registerLocaleData} from "@angular/common";
+import { registerLocaleData, NgClass } from "@angular/common";
 import localeBG from '@angular/common/locales/bg';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
 import localeJA from '@angular/common/locales/ja';
+import { IgxSelectComponent, IgxPrefixDirective, IgxSelectItemComponent, IgxHintDirective, IgxSuffixDirective, IgxIconComponent, IgxInputGroupComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxInputDirective, IgxGridComponent, IgxColumnComponent } from "igniteui-angular";
+import { FormsModule } from "@angular/forms";
+import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
 
 @Component({
     selector: "grid-column-data-types-sample",
     styleUrls: ["./grid-column-data-types-sample.component.scss"],
-    templateUrl: "grid-column-data-types-sample.component.html"
+    templateUrl: "grid-column-data-types-sample.component.html",
+    imports: [IgxSelectComponent, FormsModule, IgxPrefixDirective, IgxSelectItemComponent, IgxHintDirective, IgxSuffixDirective, IgxIconComponent, IgxInputGroupComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxInputDirective, NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridColumnDataTypesSampleComponent implements OnInit {
 

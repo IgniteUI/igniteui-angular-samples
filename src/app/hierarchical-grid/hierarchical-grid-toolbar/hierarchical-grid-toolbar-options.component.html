@@ -1,58 +1,66 @@
 <div class="hgrid__wrapper">
-    <div class="control_panel">
-        <igx-input-group>
-            <label for="toolbarTitle" igxLabel>Toolbar title</label>
-            <input name="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
-        </igx-input-group>
-        <div>
-            <igx-switch [(ngModel)]="enableFiltering">Advanced Filtering</igx-switch>
-            <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
-            <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
-            <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
-        </div>
+  <div class="control_panel">
+    <igx-input-group>
+      <label for="toolbarTitle" igxLabel>Toolbar title</label>
+      <input name="toolbarTitle" type="text" igxInput [(ngModel)]="toolbarTitle" />
+    </igx-input-group>
+    <div>
+      <igx-switch [(ngModel)]="enableFiltering">Advanced Filtering</igx-switch>
+      <igx-switch [(ngModel)]="enableHiding">Column hiding</igx-switch>
+      <igx-switch [(ngModel)]="enablePinning">Column pinning</igx-switch>
+      <igx-switch [(ngModel)]="enableExport">Exporting</igx-switch>
     </div>
-    <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid class="hgrid" [data]="data" height="390px" width="100%" rowHeight="65px">
+  </div>
+  <igx-hierarchical-grid [igxPreventDocumentScroll]="true"  #hierarchicalGrid class="hgrid" [data]="data" height="390px" width="100%" rowHeight="65px">
     <igx-grid-toolbar>
-        <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
-        <igx-grid-toolbar-actions>
-            <igx-grid-toolbar-advanced-filtering *ngIf="enableFiltering"></igx-grid-toolbar-advanced-filtering>
-            <igx-grid-toolbar-hiding *ngIf="enableHiding"></igx-grid-toolbar-hiding>
-            <igx-grid-toolbar-pinning *ngIf="enablePinning"></igx-grid-toolbar-pinning>
-            <igx-grid-toolbar-exporter *ngIf="enableExport"></igx-grid-toolbar-exporter>
-        </igx-grid-toolbar-actions>
+      <igx-grid-toolbar-title>{{ toolbarTitle }}</igx-grid-toolbar-title>
+      <igx-grid-toolbar-actions>
+        @if (enableFiltering) {
+          <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
+        }
+        @if (enableHiding) {
+          <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+        }
+        @if (enablePinning) {
+          <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+        }
+        @if (enableExport) {
+          <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
+        }
+      </igx-grid-toolbar-actions>
     </igx-grid-toolbar>
 
-        <igx-column field="Artist" width="150px"></igx-column>
-        <igx-column field="Photo">
-            <ng-template igxCell let-cell="cell">
-                <div class="cell__inner_2">
-                    <img [src]="cell.value" class="photo" />
-                </div>
-            </ng-template>
-        </igx-column>
-        <igx-column field="Debut"></igx-column>
-        <igx-column field="GrammyNominations" header="Grammy Nominations" width="200px"></igx-column>
-        <igx-column field="GrammyAwards" header="Grammy Awards" width="200px"></igx-column>
+    <igx-column field="Artist" width="150px"></igx-column>
+    <igx-column field="Photo">
+      <ng-template igxCell let-cell="cell">
+        <div class="cell__inner_2">
+          <img [src]="cell.value" class="photo" />
+        </div>
+      </ng-template>
+    </igx-column>
+    <igx-column field="Debut"></igx-column>
+    <igx-column field="GrammyNominations" header="Grammy Nominations" width="200px"></igx-column>
+    <igx-column field="GrammyAwards" header="Grammy Awards" width="200px"></igx-column>
 
-        <igx-row-island [height]="null" key="Albums" [autoGenerate]="false">
-            <igx-column field="Album"></igx-column>
-            <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
-            <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
-            <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
-        <igx-row-island [height]="null" key="Songs" [autoGenerate]="false">
-                <igx-column field="Number" header="No."></igx-column>
-                <igx-column field="Title"></igx-column>
-                <igx-column field="Released" dataType="date"></igx-column>
-                <igx-column field="Genre"></igx-column>
-        </igx-row-island>
+    <igx-row-island [height]="null" key="Albums" [autoGenerate]="false">
+      <igx-column field="Album"></igx-column>
+      <igx-column field="LaunchDate" header="Launch Date" [dataType]="'date'"></igx-column>
+      <igx-column field="BillboardReview" header="Billboard Review"></igx-column>
+      <igx-column field="USBillboard200" header="US Billboard 200"></igx-column>
+      <igx-row-island [height]="null" key="Songs" [autoGenerate]="false">
+        <igx-column field="Number" header="No."></igx-column>
+        <igx-column field="Title"></igx-column>
+        <igx-column field="Released" dataType="date"></igx-column>
+        <igx-column field="Genre"></igx-column>
+      </igx-row-island>
     </igx-row-island>
 
     <igx-row-island [height]="null" key="Tours" [autoGenerate]="false">
-        <igx-column field="Tour"></igx-column>
-        <igx-column field="StartedOn" header="Started on"></igx-column>
-        <igx-column field="Location"></igx-column>
-        <igx-column field="Headliner"></igx-column>
+      <igx-column field="Tour"></igx-column>
+      <igx-column field="StartedOn" header="Started on"></igx-column>
+      <igx-column field="Location"></igx-column>
+      <igx-column field="Headliner"></igx-column>
     </igx-row-island>
 
-    </igx-hierarchical-grid>
+  </igx-hierarchical-grid>
 </div>

@@ -1,11 +1,15 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent} from 'igniteui-angular';
+import { IgxGridComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxChipsAreaComponent, IgxChipComponent, IgxIconButtonDirective, IgxRippleDirective, IgxColumnComponent } from 'igniteui-angular';
 import { MARKET_DATA } from './data';
+
+import { FormsModule } from '@angular/forms';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-search-sample',
     styleUrls: ['./grid-search-sample.component.scss'],
-    templateUrl: './grid-search-sample.component.html'
+    templateUrl: './grid-search-sample.component.html',
+    imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxChipsAreaComponent, IgxChipComponent, IgxIconButtonDirective, IgxRippleDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridSearchSampleComponent implements OnInit {
 

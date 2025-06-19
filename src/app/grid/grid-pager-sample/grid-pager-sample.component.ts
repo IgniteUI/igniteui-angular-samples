@@ -1,11 +1,15 @@
-import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef, Inject, PLATFORM_ID } from '@angular/core';
 import { athletesData } from '../../data/athletesData';
-import { IPaginatorResourceStrings, IgxPaginatorComponent } from 'igniteui-angular';
+import { IPaginatorResourceStrings, IgxPaginatorComponent, IgxGridComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSwitchComponent } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { DecimalPipe, isPlatformBrowser } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-grid-pager-sample',
     styleUrls: ['./grid-pager-sample.component.scss'],
-    templateUrl: './grid-pager-sample.component.html'
+    templateUrl: './grid-pager-sample.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSwitchComponent, FormsModule, DecimalPipe]
 })
 export class GridPagerSampleComponent implements OnInit, AfterViewInit {
     @ViewChild('paginator', { read: IgxPaginatorComponent, static: false })
@@ -21,16 +25,18 @@ export class GridPagerSampleComponent implements OnInit, AfterViewInit {
         igx_paginator_label: 'Records per page'
     };
 
-    constructor(private cdr: ChangeDetectorRef) {}
+    constructor(private cdr: ChangeDetectorRef, @Inject(PLATFORM_ID) private platformId: any) {}
 
     public ngOnInit(): void {
         this.data = athletesData;
     }
 
     public ngAfterViewInit(): void {
-        requestAnimationFrame(() => {
-            this.paginator.resourceStrings = this.paginatorResourceStrings;
-        });
-        this.cdr.detectChanges();
+        if (isPlatformBrowser(this.platformId)) {
+            requestAnimationFrame(() => {
+                this.paginator.resourceStrings = this.paginatorResourceStrings;
+            });
+            this.cdr.detectChanges();
+        }
     }
 }

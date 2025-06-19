@@ -4,18 +4,11 @@
 /* eslint-disable no-shadow */
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import {
-    IgxColumnComponent,
-    IgxColumnGroupComponent,
-    CellType,
-    IgxGridComponent,
-    IgxListComponent,
-    SortingDirection,
-    IActiveNodeChangeEventArgs
-} from 'igniteui-angular';
+import { IgxColumnComponent, IgxColumnGroupComponent, CellType, IgxGridComponent, IgxListComponent, SortingDirection, IActiveNodeChangeEventArgs, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridDetailTemplateDirective, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { DATA } from '../../data/customers';
+import { NgClass } from '@angular/common';
 
 enum GridSection {
     THEAD = 'igx-grid__thead-wrapper',
@@ -170,7 +163,8 @@ const summaryCombinations: Item[] = [
                 animate('.3s', style({ opacity: .4 }))
             ])
         ])
-    ]
+    ],
+    imports: [IgxGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridDetailTemplateDirective, IgxColumnGroupComponent, IgxColumnComponent, IgxListComponent, IgxListItemComponent, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class GridKeyboardnavGuide implements OnInit, OnDestroy {
 

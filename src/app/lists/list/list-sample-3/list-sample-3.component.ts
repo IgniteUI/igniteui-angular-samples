@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective } from 'igniteui-angular';
+
 @Component({
-  selector: 'app-contact-list',
-  styleUrls: ['./list-sample-3.component.scss'],
-  templateUrl: './list-sample-3.component.html'
+    selector: 'app-contact-list',
+    styleUrls: ['./list-sample-3.component.scss'],
+    templateUrl: './list-sample-3.component.html',
+    imports: [IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective]
 })
 export class ListSample3Component {
   public contacts = [

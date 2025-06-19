@@ -1,19 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {
-    GridColumnDataType,
-    ColumnType,
-    IgxDateFilteringOperand,
-    IgxHierarchicalGridComponent,
-    IgxNumberFilteringOperand,
-    IgxStringFilteringOperand,
-    OverlaySettings
-} from 'igniteui-angular';
+import { GridColumnDataType, ColumnType, IgxDateFilteringOperand, IgxHierarchicalGridComponent, IgxNumberFilteringOperand, IgxStringFilteringOperand, OverlaySettings, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxFilterCellTemplateDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxDatePickerComponent, IgxPickerToggleComponent, IgxPickerClearComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+
 
 @Component({
     selector: 'app-hierarchical-grid-filtering-template',
     styleUrls: ['./hierarchical-grid-filtering-template.component.scss'],
-    templateUrl: 'hierarchical-grid-filtering-template.component.html'
+    templateUrl: 'hierarchical-grid-filtering-template.component.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxFilterCellTemplateDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxDatePickerComponent, IgxPickerToggleComponent, IgxPickerClearComponent]
 })
 
 export class HGridFilteringTemplateSampleComponent implements OnInit {

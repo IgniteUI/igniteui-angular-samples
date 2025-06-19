@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
+import { IgxCheckboxComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
     selector: 'app-checkbox-sample-3',
     styleUrls: ['./checkbox-sample-3.component.scss'],
-    templateUrl: './checkbox-sample-3.component.html'
+    templateUrl: './checkbox-sample-3.component.html',
+    imports: [IgxCheckboxComponent, FormsModule]
 })
 export class CheckboxSample3Component {
     public tasks = [

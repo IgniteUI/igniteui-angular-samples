@@ -1,13 +1,16 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, RowType } from 'igniteui-angular';
+import { IgxGridComponent, RowType, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     providers: [FinancialDataService],
     selector: 'app-grid-row-styles-sample',
     styleUrls: ['./grid-rowStyles.component.scss'],
-    templateUrl: 'grid-rowStyles.component.html'
+    templateUrl: 'grid-rowStyles.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 
 export class GridRowStylesComponent {

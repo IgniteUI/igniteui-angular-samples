@@ -1,12 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgModel } from '@angular/forms';
-import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
+import { IGridEditEventArgs, IgxGridComponent, IgxToastComponent, VerticalAlignment, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-grid-editing-event',
     templateUrl: 'grid-editing-events.component.html',
-    styleUrls: ['grid-editing-events.component.scss']
+    styleUrls: ['grid-editing-events.component.scss'],
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxToastComponent]
 })
 export class GridEditingEventsComponent implements OnInit {
     @ViewChild(IgxToastComponent, { read: IgxToastComponent, static: true })

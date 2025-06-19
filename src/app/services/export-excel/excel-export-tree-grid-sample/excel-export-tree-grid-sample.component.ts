@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../../../tree-grid/data/orders';
+import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-scroll.directive';
+
 
 @Component({
-  selector: 'app-excel-export-tree-grid-sample',
-  styleUrls: ['./excel-export-tree-grid-sample.component.scss'],
-  templateUrl: './excel-export-tree-grid-sample.component.html'
+    selector: 'app-excel-export-tree-grid-sample',
+    styleUrls: ['./excel-export-tree-grid-sample.component.scss'],
+    templateUrl: './excel-export-tree-grid-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective]
 })
 export class TreeGridExcelExportSample1Component implements OnInit {
 

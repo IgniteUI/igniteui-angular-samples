@@ -1,28 +1,29 @@
-@use '../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-column-actions-theme: column-actions-theme(
-    $background-color: steelblue,
-    $title-color: gold
+  $background-color: #292826,
+  $title-color: #ffcd0f
 );
 
-$custom-button: button-theme($foreground: gold, $disabled-foreground: black);
+$custom-button: button-theme(
+  $foreground: #ffcd0f, 
+  $disabled-foreground: #292826
+);
+
+$dark-checkbox-theme: checkbox-theme(
+  $label-color: #ffcd0f,
+  $empty-color: #ffcd0f,
+  $fill-color: #ffcd0f,
+  $tick-color: #292826
+);
 
 :host ::ng-deep {
-	@include css-vars($custom-column-actions-theme);
-
-	.igx-column-actions {
-		@include css-vars($custom-button);
-	}
+  @include css-vars($custom-column-actions-theme);
+    
+  .igx-column-actions {
+    @include css-vars($custom-button);
+    @include css-vars($dark-checkbox-theme);
+  }
 }
-
-.hgrid_wrapper {
-    margin: 16px;
-}
-
-.photo {
-    vertical-align: middle;
-    max-height: 62px;
-}
-.cell__inner_2 {
-    margin: 1px
-}
+ 

@@ -1,10 +1,13 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { IgxChartIntegrationDirective, OPTIONS_TYPE, CHART_TYPE } from 'igniteui-angular-extras';
+import { AfterViewInit, ChangeDetectorRef, ViewContainerRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren, TemplateRef } from '@angular/core';
+import { IgxChartIntegrationDirective, IgxConditionalFormattingDirective, IgxContextMenuDirective, OPTIONS_TYPE, CHART_TYPE, IDeterminedChartTypesArgs } from 'igniteui-angular-extras';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { FinancialData } from '../../data/financialData';
 import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxDividerDirective, IgxBadgeComponent, IColumnSelectionEventArgs } from 'igniteui-angular';
+import { NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
+import { debounceTime } from 'rxjs/operators';
 
 @Pipe({
     name: 'filterType'
@@ -50,9 +53,13 @@ export class HastDuplicateLayouts implements PipeTransform {
     selector: 'app-data-analysis-dock-manager',
     templateUrl: './data-analysis-dock-manager.component.html',
     styleUrls: ['./data-analysis-dock-manager.component.scss'],
-    providers: [FloatingPanesService]
+    providers: [FloatingPanesService],
+    imports: [IgxGridComponent, IgxConditionalFormattingDirective, IgxChartIntegrationDirective, IgxContextMenuDirective, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgClass, IgxDividerDirective, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
+    @ViewChild('grid', { read: IgxGridComponent, static: true })
+    public grid: IgxGridComponent;
 
     @ViewChild('dock', { read: ElementRef })
     public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
@@ -63,6 +70,10 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     @ViewChildren(DockSlotComponent)
     public dockSlots: QueryList<DockSlotComponent>;
 
+    @ViewChild('template', { read: TemplateRef })
+    public emptyChartTemplate: TemplateRef<any>;
+
+    public availableCharts: CHART_TYPE[] = [];
     public allCharts: CHART_TYPE[] = [];
     public data;
     public chartData = [];
@@ -77,7 +88,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     }
 
     public ngAfterViewInit() {
-        this.allCharts = this.chartIntegration.getAvailableCharts();
+        this.allCharts = this.chartIntegration.getAllChartTypes();
+        this.cdr.detectChanges();
         const pieChartOptions = {
             labelsPosition: 4,
             allowSliceExplosion: true,
@@ -91,6 +103,30 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 chart.indexOf('Bar') === -1 ||
                 chart !== CHART_TYPE.PIE)
             .forEach(chart => this.chartIntegration.setChartComponentOptions(chart, OPTIONS_TYPE.X_AXIS, { labelAngle: 30 }));
+
+        this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
+            if (args.chartsAvailability.size === 0 || args.chartsForCreation.length === 0) {
+                this.chartIntegration.disableCharts(this.allCharts);
+            } else {
+                args.chartsAvailability.forEach((isAvailable, chart) => {
+                    if (args.chartsForCreation.indexOf(chart) === -1) {
+                        this.chartIntegration.disableCharts([chart]);
+                    } else {
+                        this.chartIntegration.enableCharts([chart]);
+                    }
+                });
+            }
+            this.availableCharts = this.chartIntegration.getAvailableCharts();
+        });
+        this.cdr.detectChanges();
+
+        this.grid.rangeSelected.subscribe(range => {
+            this.createChartCommonLogic();
+        });
+
+        this.grid.columnSelectionChanging.pipe(debounceTime(100)).subscribe((args: IColumnSelectionEventArgs) => {
+            this.createChartCommonLogic();
+        });
     }
 
     // eslint-disable-next-line @typescript-eslint/member-ordering
@@ -158,12 +194,47 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
         this.paneService.appendPane(splitPane);
         const chartHost = this.getChartHostFromSlot(type);
         chartHost.viewContainerRef.clear();
-        this.chartIntegration.chartFactory
         const chart = this.chartIntegration.chartFactory(type, chartHost.viewContainerRef);
 
         this.dockManager.nativeElement.layout.floatingPanes.push(splitPane);
         this.docLayout = { ...this.dockManager.nativeElement.layout };
         this.selectedCharts[type] = chart;
         this.cdr.detectChanges();
+    }
+
+    public createChartCommonLogic() {
+        if (Object.keys(this.selectedCharts).length !== 0) {
+            setTimeout(() => {
+                Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
+                    const chartHost = this.getChartHostFromSlot(c);
+                    if (this.availableCharts.indexOf(c) !== -1) {
+                        if (c !== CHART_TYPE.PIE && typeof this.selectedCharts[c] === 'object') {
+                            this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
+                        } else {
+                            chartHost.viewContainerRef.clear();
+                            this.selectedCharts[c] = this.chartIntegration.chartFactory(c, chartHost.viewContainerRef);
+                        }
+                    } else {
+                        this.clearViewContainer(chartHost.viewContainerRef);
+                        const embeddedView = chartHost.viewContainerRef.createEmbeddedView(this.emptyChartTemplate);
+                        embeddedView.detectChanges();
+                        this.selectedCharts[c] = 'Empty';
+                    }
+                });
+            });
+        }
+    }
+
+    private clearViewContainer(viewContainerRef: ViewContainerRef) {
+        for (let i = viewContainerRef.length - 1; i >= 0; i--) {
+            const viewRef = viewContainerRef.get(i);
+            if (viewRef) {
+                const componentInstance = (viewRef as any).context;
+                if (componentInstance && (componentInstance as any).destroy) {
+                    (componentInstance as any).destroy();
+                }
+            }
+        }
+        viewContainerRef.clear();
     }
 }

@@ -1,17 +1,17 @@
 import { Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding } from '@angular/core';
-import {
-    AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment,
-    IGroupingExpression, IgxButtonGroupComponent, IgxGroupedTreeGridSorting, IgxOverlayOutletDirective, IgxSliderComponent,
-    IgxTreeGridComponent, ITreeGridAggregation, OverlaySettings, PositionSettings, TreeGridFilteringStrategy, VerticalAlignment
-} from 'igniteui-angular';
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment, IGroupingExpression, IgxButtonGroupComponent, IgxGroupedTreeGridSorting, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, ITreeGridAggregation, OverlaySettings, PositionSettings, TreeGridFilteringStrategy, VerticalAlignment, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxGridToolbarHidingComponent, IgxGridToolbarExporterComponent, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxTreeGridGroupingPipe } from 'igniteui-angular';
 import { Contract, REGIONS } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
+import { FormsModule } from '@angular/forms';
+import { AsyncPipe, CurrencyPipe, DatePipe } from '@angular/common';
+import { IgxPreventDocumentScrollDirective } from '../../../../../src/app/directives/prevent-scroll.directive';
 
 @Component({
     providers: [SignalRService],
     selector: 'app-tree-grid-finjs-sample',
     styleUrls: ['./tree-grid-finjs-sample.component.scss'],
-    templateUrl: './tree-grid-finjs-sample.component.html'
+    templateUrl: './tree-grid-finjs-sample.component.html',
+    imports: [IgxSliderComponent, FormsModule, IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxGridToolbarHidingComponent, IgxGridToolbarExporterComponent, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxOverlayOutletDirective, AsyncPipe, CurrencyPipe, DatePipe, IgxTreeGridGroupingPipe]
 })
 
 export class TreeGridFinJSComponent implements OnDestroy, OnInit {

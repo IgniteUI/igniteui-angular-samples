@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
 
+import { IgxRadioComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+
 @Component({
     selector: 'app-radio-sample-2',
     styleUrls: ['./radio-sample-2.component.scss'],
-    templateUrl: './radio-sample-2.component.html'
+    templateUrl: './radio-sample-2.component.html',
+    imports: [IgxRadioComponent, FormsModule]
 })
 export class RadioSample2Component {
     public colors = [{

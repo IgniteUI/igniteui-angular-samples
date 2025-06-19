@@ -1,17 +1,12 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import {
-    ConnectedPositioningStrategy,
-    HorizontalAlignment,
-    IgxToggleDirective,
-    VerticalAlignment,
-    OverlaySettings
-} from 'igniteui-angular';
+import { ConnectedPositioningStrategy, HorizontalAlignment, IgxToggleDirective, VerticalAlignment, OverlaySettings, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-toggle',
-  styleUrls: ['./toggle-samples.scss'],
-  templateUrl: './toggle.component.html'
+    selector: 'app-toggle',
+    styleUrls: ['./toggle-samples.scss'],
+    templateUrl: './toggle.component.html',
+    imports: [IgxButtonDirective, IgxToggleDirective]
 })
 export class ToggleComponent {
     @ViewChild(IgxToggleDirective, { static: true }) public igxToggle: IgxToggleDirective;

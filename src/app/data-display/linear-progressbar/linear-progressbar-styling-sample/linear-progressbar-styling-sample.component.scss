@@ -1,15 +1,11 @@
-@use '../../../../variables' as *;
-
-igx-linear-bar {
-    margin-top: 20px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-theme: progress-linear-theme(
-    $track-color: #D3D3D3,
-    $fill-color-default: #ECAA53,
-    $text-color: #ECAA53
+  $track-color: #d3d3d3,
+  $fill-color-default: #ecaa53,
+  $text-color: #ecaa53,
 );
 
-:host {
-    @include css-vars($custom-theme);
-}
+@include css-vars($custom-theme);
+ 

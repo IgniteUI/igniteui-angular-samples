@@ -1,13 +1,11 @@
-@use '../../../../variables' as *;
+@use "igniteui-angular/theming" as *;
 
 $custom-navbar-theme: navbar-theme(
-    $text-color: #151515,
-    $background: #dedede,
-    $idle-icon-color: #151515,
-    $hover-icon-color: #8c8c8c
+  $text-color: #151515,
+  $background: #dedede,
+  $idle-icon-color: #151515,
+  $hover-icon-color: #8c8c8c
 );
 
-:host {
-    @include css-vars($custom-navbar-theme);
-}
-
+@include css-vars($custom-navbar-theme);
+ 

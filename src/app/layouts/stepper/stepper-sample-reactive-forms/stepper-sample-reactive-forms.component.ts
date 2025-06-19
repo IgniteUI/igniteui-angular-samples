@@ -1,6 +1,7 @@
 import { ChangeDetectorRef, Component, ViewChild } from '@angular/core';
-import {  FormControl, FormGroup, Validators  } from '@angular/forms';
-import { IgxStepperComponent } from 'igniteui-angular';
+import { FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxCardComponent, IgxCardMediaDirective, IgxCardContentDirective, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, IgxBadgeComponent } from 'igniteui-angular';
+import { NgClass, DatePipe } from '@angular/common';
 
 export interface BusinessInformation{
     name: FormControl<string | null>,
@@ -35,7 +36,8 @@ export interface ShippingDetails{
 @Component({
     selector: 'app-stepper-sample-reactive-forms',
     styleUrls: ['./stepper-sample-reactive-forms.component.scss'],
-    templateUrl: './stepper-sample-reactive-forms.component.html'
+    templateUrl: './stepper-sample-reactive-forms.component.html',
+    imports: [IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxBadgeComponent, IgxCardComponent, NgClass, IgxCardMediaDirective, IgxCardContentDirective, FormsModule, ReactiveFormsModule, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, DatePipe]
 })
 export class StepperSampleReactiveFormsComponent {
     @ViewChild('stepper', { static: true })
@@ -73,12 +75,12 @@ export class StepperSampleReactiveFormsComponent {
         'Nevada', 'New York', 'New Jersey', 'Ohio', 'Texas', 'Virginia', 'Washington'
     ];
     public selectedCard: any;
-    
+
     public businessInformation:FormGroup<BusinessInformation>;
     public personalInformation:FormGroup<PersonalInformation>;
     public shippingDetails:FormGroup<ShippingDetails>;
-    
-    constructor(private cdr: ChangeDetectorRef) {        
+
+    constructor(private cdr: ChangeDetectorRef) {
         this.businessInformation = new FormGroup<BusinessInformation>({
             name: new FormControl('', Validators.required),
             physicalAddress: new FormControl('', Validators.required),

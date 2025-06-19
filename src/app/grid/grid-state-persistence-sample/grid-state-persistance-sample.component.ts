@@ -1,15 +1,18 @@
 import { Component, TemplateRef, ViewChild } from '@angular/core';
 
-import { IGridStateOptions, IgxGridStateDirective, IgxGridComponent, NoopSortingStrategy, IgxColumnComponent } from 'igniteui-angular';
+import { IGridStateOptions, IgxGridStateDirective, IgxGridComponent, NoopSortingStrategy, IgxColumnComponent, IgxButtonDirective, IgxIconComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { FinancialDataService } from '../../services/financial.service';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     providers: [FinancialDataService],
     selector: 'app-grid-state-persistance-sample',
     styleUrls: ['./grid-state-persistance-sample.component.scss'],
-    templateUrl: 'grid-state-persistance-sample.component.html'
+    templateUrl: 'grid-state-persistance-sample.component.html',
+    imports: [IgxButtonDirective, IgxIconComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridStateDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 
 export class GridStatePersistenceSampleComponent {

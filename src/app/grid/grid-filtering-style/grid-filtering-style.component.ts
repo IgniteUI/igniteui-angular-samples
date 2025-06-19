@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { DATA } from '../../data/nwindData';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { CurrencyPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-grid-filtering-style',
-  styleUrls: ['./grid-filtering-style.component.scss'],
-  templateUrl: './grid-filtering-style.component.html'
+    selector: 'app-grid-filtering-style',
+    styleUrls: ['./grid-filtering-style.component.scss'],
+    templateUrl: './grid-filtering-style.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, CurrencyPipe]
 })
 export class GridFilteringStyleComponent implements OnInit {
     public data: any[];

@@ -1,18 +1,16 @@
 /* eslint-disable max-len */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-    DefaultSortingStrategy,
-    IgxGridComponent,
-    SortingDirection
-} from 'igniteui-angular';
+import { DefaultSortingStrategy, IgxGridComponent, SortingDirection, IgxGridToolbarComponent, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
-import { DatePipe } from '@angular/common';
+import { DatePipe, CurrencyPipe } from '@angular/common';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     encapsulation: ViewEncapsulation.None,
     selector: 'app-grid-groupby-custom-sample',
     styleUrls: ['./grid-groupby-custom-sample.component.scss'],
-    templateUrl: './grid-groupby-custom-sample.component.html'
+    templateUrl: './grid-groupby-custom-sample.component.html',
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent, CurrencyPipe, DatePipe]
 })
 export class GridGroupByCustomSampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })

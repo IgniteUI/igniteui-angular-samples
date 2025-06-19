@@ -1,12 +1,15 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent, RowType } from 'igniteui-angular';
+import { IgxGridComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent, RowType, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxCellValidationErrorDirective } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { NgTemplateOutlet } from '@angular/common';
 
 @Component({
     selector: 'app-hierarchical-grid-validation-style',
     styleUrls: ['./hierarchical-grid-validation-style.component.scss'],
-    templateUrl: 'hierarchical-grid-validation-style.component.html'
+    templateUrl: 'hierarchical-grid-validation-style.component.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, IgxRowIslandComponent]
 })
 export class HGridValidationStyleComponent {
     @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;

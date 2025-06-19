@@ -1,0 +1,91 @@
+trigger:
+  branches:
+    include:
+    - master
+    - vnext
+
+# This pipeline is meant to build specific branches for deployment. It's not meant to be a part of PR validation. Ensure that this pipeline is reserved for deployment purposes.
+pr: none
+
+name: $(BuildDefinitionName)_$(Year:yyyy).$(Month).$(DayOfMonth)$(Rev:.r)
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+- group: live-editing-samples-pat
+- name: ReplacementText
+  value: '@infragistics/igniteui-angular-extras'
+
+steps:
+  - checkout: self
+    persistCredentials: true
+    clean: true
+    fetchTags: true
+
+  - task: NodeTool@0
+    displayName: Use Node 20.x
+    inputs:
+      versionSpec: 20.x
+
+  - task: PowerShell@2
+    displayName: 'Replace with licensed angular-extras'
+    inputs:
+      targetType: 'inline'
+      script: |
+        # List of files to update
+        $files = @(
+            "projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.component.ts",
+            "projects/app-lob/src/app/grid-dynamic-chart-data/data-analysis-dock-manager/data-analysis-dock-manager.component.ts",
+            "package.json")
+        foreach ($file in $files) {
+          (Get-Content -Path $file) -replace 'igniteui-angular-extras', '$(ReplacementText)' | Set-Content -Path $file
+        }
+
+  - task: CmdLine@2
+    displayName: 'Create empty .npmrc file in the project root dir'
+    inputs:
+      script: 'touch $(Build.SourcesDirectory)/.npmrc'
+      failOnStderr: true
+
+  - task: Npm@1
+    displayName: 'Register licensed npm registry in .npmrc'
+    inputs:
+      command: 'custom'
+      workingDir: '$(Build.SourcesDirectory)'
+      customCommand: 'config -L project set @infragistics:registry=https://packages.infragistics.com/npm/js-licensed/'
+      customEndpoint: 'public proget'
+
+  - task: npmAuthenticate@0
+    inputs:
+      workingFile: '$(Build.SourcesDirectory)/.npmrc'
+      customEndpoint: 'public proget'
+
+  - task: Npm@1
+    displayName: npm install
+    inputs:
+      command: install
+      workingDir: $(Build.SourcesDirectory)
+      verbose: false
+      customEndpoint: 'public proget'
+    env:
+      AZURE_PIPELINES: true
+
+  - task: CmdLine@2
+    displayName: Clone submodule
+    inputs:
+      script: git clone --recurse-submodules https://github.com/IgniteUI/igniteui-live-editing-samples igniteui-live-editing-samples
+      workingDirectory: $(Build.SourcesDirectory)
+
+  - template: templates/cd-template.yml
+    parameters:
+      customCommand: run generate-live-editing:app-lob
+      gitHubToken: $(GITHUB_TOKEN)
+      workingDir: $(Build.SourcesDirectory)
+      submoduleDir: angular-demos-lob
+      baseHref: \/angular-demos-lob\/
+      targetFolder: dist/app-lob
+      findRegex: angular-demos
+      npmBuildCommand: 'run build-ci:app-lob'
+      repositoryfy: true
+      repositoryfyCommand: 'repositoryfyAngularDemosLob'

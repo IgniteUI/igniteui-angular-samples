@@ -2,10 +2,12 @@ import { ChangeDetectorRef, Component, HostBinding, HostListener, Input, ViewChi
 import { IgxDialogComponent } from 'igniteui-angular';
 import { IPlanet } from '../data';
 
+
 @Component({
     selector: 'app-planet',
     styleUrls: ['./planet.component.scss'],
-    templateUrl: 'planet.component.html'
+    templateUrl: 'planet.component.html',
+    imports: [IgxDialogComponent]
 })
 
 export class PlanetComponent {

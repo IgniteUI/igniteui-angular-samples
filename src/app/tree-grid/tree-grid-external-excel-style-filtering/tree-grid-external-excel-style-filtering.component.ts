@@ -1,11 +1,15 @@
 import { Component, ViewChild, ChangeDetectionStrategy, OnInit } from '@angular/core';
 import { ORDERS_DATA } from '../data/orders';
+import { IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxGridExcelStyleFilteringComponent, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-tree-grid-external-excel-style-filtering',
     templateUrl: './tree-grid-external-excel-style-filtering.component.html',
-    styleUrls: ['./tree-grid-external-excel-style-filtering.component.scss']
+    styleUrls: ['./tree-grid-external-excel-style-filtering.component.scss'],
+    imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxGridExcelStyleFilteringComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective]
 })
 export class TreeGridExternalExcelStyleFilteringComponent implements OnInit {
     public data: any[];

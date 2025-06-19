@@ -1,10 +1,13 @@
 import { Component } from '@angular/core';
 import { Card } from '../card.blueprint';
+import { IgxCardComponent, IgxLayoutDirective, IgxFlexDirective, IgxCardHeaderComponent, IgxAvatarComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective } from 'igniteui-angular';
+
 
 @Component({
     selector: 'app-card-sample-3',
     styleUrls: ['./card-sample-3.component.scss'],
-    templateUrl: './card-sample-3.component.html'
+    templateUrl: './card-sample-3.component.html',
+    imports: [IgxCardComponent, IgxLayoutDirective, IgxFlexDirective, IgxCardHeaderComponent, IgxAvatarComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective]
 })
 export class CardSample3Component {
     public horizontal = true;

@@ -1,6 +1,6 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
-import { NavigationStart, Route, Router } from '@angular/router';
-import { IgxNavigationDrawerComponent } from 'igniteui-angular';
+import { AfterViewInit, ChangeDetectorRef, Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
+import { IgxNavigationDrawerComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
 import { filter } from 'rxjs/operators';
 import { pivotGridsRoutesData } from '../../../../../src/app/pivot-grid/pivot-grid-routes-data';
 import { gridDynamicChartRoutesData } from '../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data';
@@ -10,11 +10,15 @@ import { gridsRoutesData } from '../grid/grid-routes-data';
 import { hierarchicalGridRoutesData } from '../hierarchical-grid/hierarchical-grid-routes-data';
 import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
 import { treegridfinjsRoutesData } from '../treegrid-finjs/treegrid-finjs-routes-data';
+import { FormsModule } from '@angular/forms';
+import { DOCUMENT } from '@angular/common';
+
 
 @Component({
     selector: 'app-index',
     styleUrls: ['./index.component.scss'],
-    templateUrl: './index.component.html'
+    templateUrl: './index.component.html',
+    imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, RouterLinkActive, RouterLink, IgxIconButtonDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxFlexDirective, IgxNavbarComponent, RouterOutlet]
 })
 export class IndexComponent implements OnInit, AfterViewInit {
 
@@ -78,7 +82,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     private allNavItems: INavigationItem[] = [];
 
-    constructor(private router: Router, private cdr: ChangeDetectorRef) {
+    constructor(private router: Router, private cdr: ChangeDetectorRef, @Inject(DOCUMENT) private document: Document) {
         this.appRoutes = this.getAllSampleRoutes('/samples',
             router.config.filter((c) => c.path === 'samples')[0].children, this.modulesRoutes);
     }
@@ -121,7 +125,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
                 (routeItem) => routeItem.displayName === loadedRouteItem.displayName)[0];
 
             this.toggleParent('header' + loadedParentItem.name);
-            document.getElementById('child' + loadedChildItem.displayName).scrollIntoView();
+            this.document.getElementById('child' + loadedChildItem.displayName)?.scrollIntoView();
             this.cdr.detectChanges();
         }
     }
@@ -137,7 +141,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     // toggle a header element from the navigation
     public toggleParent(nodeId) {
-        const theSpan = document.getElementById(nodeId);
+        const theSpan = this.document.getElementById(nodeId);
         if (theSpan != null) {
             if (theSpan.style.display === 'inline') {
                 theSpan.style.display = 'none';
@@ -149,7 +153,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
     // convert a header element's visibility to a material icon name
     public convertNodeStateToIcon(nodeId) {
-        const theSpan = document.getElementById(nodeId);
+        const theSpan = this.document.getElementById(nodeId);
         if (theSpan != null) {
             const theSpanDisplay = theSpan.style.display;
             if (theSpanDisplay === 'inline') {
@@ -162,7 +166,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     }
 
     public refresh() {
-        window.dispatchEvent(new Event('resize'));
+        this.document.defaultView.dispatchEvent(new Event('resize'));
     }
 
     private getAllSampleRoutes(basePath: string, appModuleRoutes: Route[], modulesRoutes: any[]): any[] {

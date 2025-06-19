@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
 import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService } from 'igniteui-angular';
 
 @Component({
-  selector: 'app-csv-export',
-  styleUrls: ['./csv-export.component.scss'],
-  templateUrl: './csv-export.component.html'
+    selector: 'app-csv-export',
+    styleUrls: ['./csv-export.component.scss'],
+    templateUrl: './csv-export.component.html'
 })
 export class CsvExportComponent {
 

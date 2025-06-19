@@ -4,6 +4,7 @@ export const layoutsRoutesData = {
     'accordion-sample-1': { displayName: 'Accordion 1', parentName: 'Accordion' },
     'accordion-sample-2': { displayName: 'Accordion 2', parentName: 'Accordion' },
     'accordion-sample-3': { displayName: 'Accordion 3', parentName: 'Accordion' },
+    'accordion-style': { displayName: 'Accordion Styling', parentName: 'Accordion' },
     'avatar-sample-1': { displayName: 'Avatar with Initials', parentName: 'Avatar' },
     'avatar-sample-2': { displayName: 'Avatar with Image', parentName: 'Avatar' },
     'avatar-sample-4': { displayName: 'Avatar with Icon', parentName: 'Avatar' },
@@ -59,5 +60,6 @@ export const layoutsRoutesData = {
     'divider-sample-1': { displayName: 'Default Divider', parentName: 'Divider' },
     'divider-sample-2': { displayName: 'Vertical Divider', parentName: 'Divider' },
     'divider-sample-3': { displayName: 'Dashed Divider', parentName: 'Divider' },
-    'divider-sample-4': { displayName: 'Inset Divider', parentName: 'Divider' }
-};
+    'divider-sample-4': { displayName: 'Inset Divider', parentName: 'Divider' },
+    'tile-manager-sample': { displayName: 'Tile Manager Overview', parentName: 'Tile Manager' }
+}

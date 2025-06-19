@@ -1,23 +1,27 @@
 <article class="sample-column">
-    <h5>Category</h5>
-    <div>
-        <igx-list (itemClicked)="categoryItemClicked($event)">
-            <igx-list-item *ngFor="let category of animationsCategories">
-                {{ category }}
-            </igx-list-item>
-        </igx-list>
-    </div>
+  <h5>Category</h5>
+  <div>
+    <igx-list (itemClicked)="categoryItemClicked($event)">
+      @for (category of animationsCategories; track category) {
+        <igx-list-item>
+          {{ category }}
+        </igx-list-item>
+      }
+    </igx-list>
+  </div>
 </article>
 <article class="sample-column">
-    <h5>Animation</h5>
-    <div>
-        <igx-list class="animate" (itemClicked)="playAnimation($event)">
-            <igx-list-item *ngFor="let animation of animations">
-                {{ animation.name }}
-            </igx-list-item>
-        </igx-list>
-    </div>
+  <h5>Animation</h5>
+  <div>
+    <igx-list class="animate" (itemClicked)="playAnimation($event)">
+      @for (animation of animations; track animation) {
+        <igx-list-item>
+          {{ animation.name }}
+        </igx-list-item>
+      }
+    </igx-list>
+  </div>
 </article>
 <igx-dialog #dialog title="Ignite UI Angular Animations" message="Click the button or outside to close"
-    class="custom-dialog" rightButtonLabel="Close" (rightButtonSelect)="dialog.close()">
+  class="custom-dialog" rightButtonLabel="Close" (rightButtonSelect)="dialog.close()">
 </igx-dialog>

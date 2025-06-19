@@ -1,11 +1,14 @@
 import { Component, ViewChild, ChangeDetectorRef, AfterViewInit, ViewChildren, QueryList } from '@angular/core';
-import { IgxHierarchicalGridComponent, RowType, Transaction, IgxColumnComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, RowType, Transaction, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+
 
 @Component({
     selector: 'app-grid-row-action-strip',
     styleUrls: [`hierarchical-grid-action-strip-sample.scss`],
-    templateUrl: 'hierarchical-grid-action-strip-sample.html'
+    templateUrl: 'hierarchical-grid-action-strip-sample.html',
+    imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent]
 })
 export class HGridActionStripSampleComponent implements AfterViewInit{
     @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true })

@@ -1,4 +1,4 @@
-import { AfterViewInit, Directive, HostListener, QueryList, ViewChildren } from '@angular/core';
+import { Directive, HostListener, QueryList, ViewChildren } from '@angular/core';
 import { IgxInputGroupComponent } from 'igniteui-angular';
 
 @Directive({

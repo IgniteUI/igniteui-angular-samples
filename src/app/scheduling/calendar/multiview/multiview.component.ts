@@ -1,10 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxCalendarComponent, IgxDialogComponent } from 'igniteui-angular';
+import { IgxCalendarComponent, IgxDialogComponent, IgxButtonDirective } from 'igniteui-angular';
+
 
 @Component({
-  selector: 'app-calendar',
-  styleUrls: ['./multiview.component.scss'],
-  templateUrl: './multiview.component.html'
+    selector: 'app-calendar',
+    styleUrls: ['./multiview.component.scss'],
+    templateUrl: './multiview.component.html',
+    imports: [IgxCalendarComponent, IgxDialogComponent, IgxButtonDirective]
 })
 export class CalendarMultiViewComponent {
     @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;

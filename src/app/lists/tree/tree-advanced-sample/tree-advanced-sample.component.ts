@@ -1,15 +1,17 @@
-import { Component, AfterViewInit, OnDestroy } from '@angular/core';
-import { IgxIconService, IgxTreeNodeComponent } from 'igniteui-angular';
+import { Component, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { IgxIconService, IgxTreeNodeComponent, IgxTreeComponent, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective } from 'igniteui-angular';
 import { icons } from './services/svgIcons';
 import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from '../../../data/tree-file-data';
 import { DataService } from './services/data.service';
 import { Subject } from 'rxjs';
 import { take, takeUntil } from 'rxjs/operators';
+import { isPlatformBrowser, NgTemplateOutlet } from '@angular/common';
 @Component({
     selector: 'app-tree-advanced-sample',
     templateUrl: './tree-advanced-sample.component.html',
     styleUrls: ['./tree-advanced-sample.component.scss'],
-    providers: [DataService]
+    providers: [DataService],
+    imports: [IgxTreeComponent, IgxTreeNodeComponent, NgTemplateOutlet, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective]
 })
 export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     public family = 'tree-icons';
@@ -19,7 +21,7 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     public remoteRoot = REMOTE_ROOT;
     public remoteData: SelectableNodeData[] = [];
     private destroy$ = new Subject<void>();
-    constructor(private iconService: IgxIconService, private dataService: DataService) {
+    constructor(private iconService: IgxIconService, private dataService: DataService, @Inject(PLATFORM_ID) private platformId: any) {
         this.dataService.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             this.loading = false;
             this.remoteData = data;
@@ -28,11 +30,13 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
 
     public ngAfterViewInit() {
         const treeIcons = icons;
-        treeIcons.forEach(icon => {
-            if (!this.iconService.isSvgIconCached(icon.name, this.family)) {
-                this.iconService.addSvgIconFromText(icon.name, icon.value, this.family);
-            }
-        });
+        if (isPlatformBrowser(this.platformId)) {
+            treeIcons.forEach(icon => {
+                if (!this.iconService.isSvgIconCached(icon.name, this.family)) {
+                    this.iconService.addSvgIconFromText(icon.name, icon.value, this.family);
+                }
+            });
+        }
     }
 
     public refreshData(node: IgxTreeNodeComponent<NodeData>) {

@@ -1,8 +1,9 @@
 import { Component, Directive, Input, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, IgxCellValidationErrorDirective, IgxColumnMinValidatorDirective, IgxButtonDirective } from 'igniteui-angular';
 import { IGridFormGroupCreatedEventArgs } from 'igniteui-angular/lib/grids/common/grid.interface';
 import { employeesData } from '../../data/employeesData';
+import { NgTemplateOutlet, DatePipe } from '@angular/common';
 
 export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -28,7 +29,8 @@ export class PhoneFormatDirective extends Validators {
 @Component({
     selector: 'app-grid-validator-service-extended',
     styleUrls: ['./grid-validator-service-extended.component.scss'],
-    templateUrl: './grid-validator-service-extended.component.html'
+    templateUrl: './grid-validator-service-extended.component.html',
+    imports: [IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, PhoneFormatDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, IgxColumnMinValidatorDirective, IgxButtonDirective, DatePipe]
 })
 export class GridValidatorServiceExtendedComponent {
 

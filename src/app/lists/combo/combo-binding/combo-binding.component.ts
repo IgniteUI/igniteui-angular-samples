@@ -1,11 +1,14 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxComboComponent } from 'igniteui-angular';
+import { IgxComboComponent, IgxButtonDirective, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective } from 'igniteui-angular';
 import { CITIES, ICity } from './cities';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
     selector: 'app-combo-binding',
     templateUrl: 'combo-binding.component.html',
-    styleUrls: ['combo-binding.component.scss']
+    styleUrls: ['combo-binding.component.scss'],
+    imports: [IgxComboComponent, FormsModule, IgxButtonDirective, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective]
 })
 export class ComboBindingComponent {
     @ViewChild('noValueKey', { read: IgxComboComponent })

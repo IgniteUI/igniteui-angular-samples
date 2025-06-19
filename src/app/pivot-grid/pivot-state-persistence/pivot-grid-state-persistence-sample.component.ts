@@ -1,12 +1,10 @@
 import { AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren } from "@angular/core";
-import { NavigationStart, Router } from "@angular/router";
+import { NavigationStart, Router, RouterLink } from "@angular/router";
 
-import {
-    IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate,
-    IgxPivotDateDimension, IgxGridStateDirective, IgxPivotGridComponent, IgxCheckboxComponent, GridFeatures, IGridStateOptions, IGridState, IPivotValue, IPivotDimension, IPivotAggregator, GridColumnDataType
-} from "igniteui-angular"
+import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, IgxGridStateDirective, IgxPivotGridComponent, IgxCheckboxComponent, GridFeatures, IGridStateOptions, IGridState, IPivotValue, IPivotDimension, IPivotAggregator, GridColumnDataType, IgxButtonDirective, IgxIconComponent } from "igniteui-angular"
 import { take } from "rxjs/operators";
 import { SALES_DATA } from "../../data/dataToAnalyze";
+
 
 export class IgxTotalSaleAggregate {
     public static totalSale: PivotAggregation = (members, data: any) =>
@@ -38,7 +36,8 @@ export class IgxTotalSaleAggregate {
 @Component({
     selector: 'app-pivot-grid-state-persistence-sample',
     styleUrls: ['./pivot-grid-state-persistence-sample.component.scss'],
-    templateUrl: './pivot-grid-state-persistence-sample.component.html'
+    templateUrl: './pivot-grid-state-persistence-sample.component.html',
+    imports: [IgxButtonDirective, IgxIconComponent, RouterLink, IgxCheckboxComponent, IgxPivotGridComponent, IgxGridStateDirective]
 })
 export class PivotGridStatePersistenceSampleComponent implements OnInit, AfterViewInit {
     @ViewChild(IgxGridStateDirective, { static: true }) public state: IgxGridStateDirective;

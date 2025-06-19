@@ -1,12 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent, TreeGridFilteringStrategy } from 'igniteui-angular';
+import { IgxTreeGridComponent, TreeGridFilteringStrategy, IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxGridExcelStyleFilteringComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
+
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-tree-grid-tree-filter-view',
     styleUrls: ['./tree-grid-tree-filter-view.component.scss'],
-    templateUrl: 'tree-grid-tree-filter-view.component.html'
+    templateUrl: 'tree-grid-tree-filter-view.component.html',
+    imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxGridExcelStyleFilteringComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective]
 })
 
 export class TreeGridTreeFilterViewComponent implements OnInit {

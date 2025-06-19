@@ -1,4 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
+import { IgxButtonGroupComponent } from 'igniteui-angular';
 
 type Button = {
     label: string,
@@ -9,7 +10,8 @@ type Button = {
 @Component({
     selector: 'app-button-group-sample-5',
     styleUrls: ['./button-group-sample-5.component.scss'],
-    templateUrl: './button-group-sample-5.component.html'
+    templateUrl: './button-group-sample-5.component.html',
+    imports: [IgxButtonGroupComponent]
 })
 export class ButtonGroupSample5Component implements OnInit {
     public rippleColor = 'grey';

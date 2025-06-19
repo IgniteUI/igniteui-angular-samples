@@ -1,13 +1,17 @@
 <igx-select [(ngModel)]="selected">
-    <label igxLabel>Pick a fruit</label>
-    <igx-prefix>
-        <span class="bio-prefix">BIO</span>
-    </igx-prefix>
-    <igx-suffix *ngIf="selected">
-        <igx-icon (click)="clearSelection($event)">clear</igx-icon>
+  <label igxLabel>Pick a fruit</label>
+  <igx-prefix>
+    <span class="bio-prefix">BIO</span>
+  </igx-prefix>
+  @if (selected) {
+    <igx-suffix>
+      <igx-icon (click)="clearSelection($event)">clear</igx-icon>
     </igx-suffix>
-    <igx-hint>Choose a banana</igx-hint>
-    <igx-select-item *ngFor="let item of items" [value]="item">
-        {{item}}
+  }
+  <igx-hint>Choose a banana</igx-hint>
+  @for (item of items; track item) {
+    <igx-select-item [value]="item">
+      {{item}}
     </igx-select-item>
+  }
 </igx-select>

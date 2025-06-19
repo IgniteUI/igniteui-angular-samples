@@ -1,12 +1,15 @@
-import { AfterViewInit, Component,ElementRef, OnInit, ViewChild } from '@angular/core';
-import { IBaseChipEventArgs, IgxDropDownComponent, OverlaySettings, IgxTreeGridComponent, IRowSelectionEventArgs, ConnectedPositioningStrategy } from 'igniteui-angular';
+import { AfterViewInit, Component,ElementRef, Inject, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
+import { IBaseChipEventArgs, IgxDropDownComponent, OverlaySettings, IgxTreeGridComponent, IRowSelectionEventArgs, ConnectedPositioningStrategy, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxColumnComponent } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './nested-employee-data';
+import { isPlatformBrowser } from '@angular/common';
+
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-tree-grid-hierarchical-selection',
     styleUrls: ['./dropdown-tree-grid-hierarchical-selection.component.scss'],
-    templateUrl: './dropdown-tree-grid-hierarchical-selection.component.html'
+    templateUrl: './dropdown-tree-grid-hierarchical-selection.component.html',
+    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxDropDownComponent, IgxTreeGridComponent, IgxColumnComponent]
 })
 export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, AfterViewInit {
     @ViewChild('treeGrid', { static: true })
@@ -17,6 +20,8 @@ export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, A
     public employees!: any[];
     public selectedRows!: any[];
 
+    constructor(@Inject(PLATFORM_ID) private platformId: any) { }
+
     public ngOnInit(): void {
         this.employees = EMPLOYEE_DATA;
 
@@ -25,10 +30,12 @@ export class DropdownTreeGridHierarchicalSelectionComponent implements OnInit, A
         this.igxTreeGrid.selectedRows.forEach((row) => this.selectedRows.push(this.employees.find(employee => employee.ID == row)));
     }
     public ngAfterViewInit(): void {
-        requestAnimationFrame(() => {
-            this._overlaySettings.target = this.igxButton.nativeElement;
-            this.igxDropDown.open(this._overlaySettings);
-        });
+        if (isPlatformBrowser(this.platformId)) {
+            requestAnimationFrame(() => {
+                this._overlaySettings.target = this.igxButton.nativeElement;
+                this.igxDropDown.open(this._overlaySettings);
+            });
+        }
      }
     public onRowSelectionChanging(args: IRowSelectionEventArgs, grid: IgxTreeGridComponent) {
         this.selectedRows = [];

@@ -1,10 +1,31 @@
-import { Component, OnInit, Pipe, PipeTransform, ViewChild } from '@angular/core';
-import { DateRangeType, IgxCalendarComponent, IgxDropDownComponent } from 'igniteui-angular';
+import { Component, OnInit, Pipe, PipeTransform, ViewChild, forwardRef } from '@angular/core';
+import { IgxCalendarComponent, IgxDropDownComponent, IgxInputGroupComponent, IgxToggleActionDirective, IgxInputDirective, IgxAutocompleteDirective, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxIconButtonDirective, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective, IgxButtonDirective, DateRangeType } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
     selector: 'app-datepicker-sample-9',
     styleUrls: ['./datepicker-sample-9.component.scss'],
-    templateUrl: './datepicker-sample-9.component.html'
+    templateUrl: './datepicker-sample-9.component.html',
+    imports: [
+    IgxInputGroupComponent,
+    IgxToggleActionDirective,
+    FormsModule,
+    IgxInputDirective,
+    IgxAutocompleteDirective,
+    IgxLabelDirective,
+    IgxPrefixDirective,
+    IgxIconComponent,
+    IgxSuffixDirective,
+    IgxIconButtonDirective,
+    IgxDropDownComponent,
+    IgxDropDownItemComponent,
+    IgxDropDownItemNavigationDirective,
+    IgxCalendarComponent,
+    IgxButtonDirective,
+    forwardRef(() => AutocompletePipeStartsWith),
+    forwardRef(() => PipeWithoutTownFrom)
+]
 })
 export class DatepickerSample9Component implements OnInit {
     @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;
@@ -92,14 +113,19 @@ export class DatepickerSample9Component implements OnInit {
         }
     }
 }
-@Pipe({ name: 'startsWith' })
+
+@Pipe({
+    name: 'startsWith'
+})
 export class AutocompletePipeStartsWith implements PipeTransform {
     public transform(collection: any[], term = '') {
         return collection.filter((item) => item.toString().toLowerCase().startsWith(term.toString().toLowerCase()));
     }
 }
 
-@Pipe({ name: 'withoutTownFrom' })
+@Pipe({
+    name: 'withoutTownFrom'
+})
 export class PipeWithoutTownFrom implements PipeTransform {
     public transform(collection: any[], townFrom: string) {
         return collection.filter((item) => item !== townFrom);

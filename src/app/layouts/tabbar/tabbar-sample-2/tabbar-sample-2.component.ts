@@ -1,10 +1,13 @@
 /* eslint-disable @typescript-eslint/quotes */
 import { Component } from "@angular/core";
+import { IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavContentComponent } from "igniteui-angular";
+
 
 @Component({
-  selector: "app-tabbar-sample-2",
-  styleUrls: ["./tabbar-sample-2.component.scss"],
-  templateUrl: "./tabbar-sample-2.component.html"
+    selector: "app-tabbar-sample-2",
+    styleUrls: ["./tabbar-sample-2.component.scss"],
+    templateUrl: "./tabbar-sample-2.component.html",
+    imports: [IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavContentComponent]
 })
 export class TabbarSample2Component {
 

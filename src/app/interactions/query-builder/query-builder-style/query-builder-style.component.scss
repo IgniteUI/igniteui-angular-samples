@@ -1,115 +1,66 @@
-@use '../../../../variables' as *;
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $yellow: #ffcd0f;
 $black: #292826;
 $muted-yellow: #ffe482;
 
-$custom-query-builder: query-builder-theme($background: $black,
-        $header-background: $black,
-        $header-foreground: $yellow);
+$custom-query-builder: query-builder-theme(
+  $schema: $dark-material-schema,
+  $background: $black,
+  $subquery-header-background: #373532,
+  $subquery-border-color: #4e4d4a,
+  $header-background: $black,
+  $header-foreground: $yellow,
+  $color-expression-group-and: #4e78ea,
+  $color-expression-group-or: #b64fcb
+);
 
-$custom-button: button-theme($schema: $dark-material-schema,
-        $background: $black,
-        $foreground: $yellow,
-        $hover-foreground: $black,
-        $hover-background: $yellow,
-        $focus-foreground: $yellow,
-        $focus-background: $black,
-        $border-color: $yellow);
+$custom-button: button-theme(
+  $schema: $dark-material-schema,
+  $background: $black,
+  $foreground: $yellow,
+  $hover-foreground: $black,
+  $hover-background: $yellow,
+  $focus-foreground: $yellow,
+  $focus-background: $black,
+  $border-color: $yellow
+);
 
-$custom-contained-button: button-theme($schema: $dark-material-schema,
-        $background: $yellow,
-        $foreground: $black,
-        $active-background: $muted-yellow,
-        $active-foreground: $black,
-        $hover-background: $muted-yellow,
-        $hover-foreground: $black,
-        $border-color: $yellow,
-        $active-border-color: $muted-yellow,
-        $hover-border-color: $muted-yellow,
-        $focus-border-color: $yellow);
+$custom-input-group: input-group-theme(
+  $focused-secondary-color: $yellow
+);
 
-$custom-button-group: button-group-theme($schema: $dark-material-schema,
-        $item-background: $black,
-        $item-text-color: $yellow,
-        $item-border-color: $yellow,
-        $item-selected-background: $yellow,
-        $item-hover-background: $yellow,
-        $item-selected-hover-background: $yellow);
+$custom-chip: chip-theme(
+  $schema: $dark-material-schema,
+  $background: $yellow,
+  $text-color: $black
+);
 
-$custom-input-group: input-group-theme($schema: $dark-material-schema,
-        $idle-text-color: $yellow,
-        $focused-text-color: $yellow,
-        $filled-text-color: $yellow,
-        $idle-bottom-line-color: $muted-yellow,
-        $focused-secondary-color: $yellow);
+$custom-icon-button: icon-button-theme(
+  $schema: $dark-material-schema,
+  $background: $yellow,
+  $foreground: $black
+);
 
-$custom-chip: chip-theme($schema: $dark-material-schema,
-        $background: $yellow,
-        $text-color: $black);
-
-$custom-drop-down: drop-down-theme($schema: $dark-material-schema,
-        $background-color: $black,
-        $item-text-color: $yellow,
-        $hover-item-background: $yellow,
-        $hover-item-text-color: $black,
-        $focused-item-background: $yellow,
-        $focused-item-text-color: $black,
-        $selected-item-background: $yellow,
-        $selected-item-text-color: $black,
-        $selected-focus-item-background: $yellow,
-        $selected-focus-item-text-color: $black,
-        $selected-hover-item-background: $yellow,
-        $selected-hover-item-text-color: $black);
-
+@include css-vars($custom-query-builder);
 
 :host {
-    display: block;
-    margin: 16px;
+  ::ng-deep {
+    @include theme($palette: $dark-material-palette);
+    @include css-vars($custom-input-group);
+    @include css-vars($custom-chip);
+    @include css-vars($custom-icon-button);
 
-    ::ng-deep {
-        @include css-vars($custom-drop-down);
-        @include css-vars($custom-query-builder);
-        @include css-vars($custom-button-group);
-        @include css-vars($custom-input-group);
-        @include css-vars($custom-chip);
-        @include css-vars($custom-drop-down);
-
-        [igxButton] {
-            @include css-vars($custom-button);
-        }
-
-        [igxButton="contained"] {
-            @include css-vars($custom-contained-button);
-        }
-
-        igx-query-builder {
-            h6 {
-                color: $yellow
-            }
-
-            .igx-filter-tree__expression-actions igx-icon {
-                color: $yellow
-            }
-
-            .igx-filter-tree__expression-actions igx-icon:hover {
-                color: $muted-yellow
-            }
-
-            .igx-filter-tree__expression-actions igx-icon:focus {
-                color: $muted-yellow
-            }
-
-            .igx-filter-contextual-menu {
-                border: 1px solid $yellow
-            }
-
-            .igx-filter-contextual-menu__close-btn {
-                position: absolute;
-                background: $black;
-                border-color: $yellow;
-                color: $yellow;
-            }
-        }
+    .igx-filter-tree__buttons {
+      @include css-vars($custom-button);
     }
+  }
 }
+
+.wrapper{
+    margin: 10px;
+    height: 100%;
+    overflow-y: auto;
+}
+ 

@@ -1,15 +1,17 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxCalendarComponent } from 'igniteui-angular';
+import { IgxCalendarComponent, IgxSelectComponent, IgxPrefixDirective, IgxSelectItemComponent } from 'igniteui-angular';
 import { registerLocaleData } from '@angular/common';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
 import localeAR from '@angular/common/locales/ar';
 import localeZH from '@angular/common/locales/zh';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-2.component.scss'],
-    templateUrl: './calendar-sample-2.component.html'
+    templateUrl: './calendar-sample-2.component.html',
+    imports: [IgxSelectComponent, FormsModule, IgxPrefixDirective, IgxSelectItemComponent, IgxCalendarComponent]
 })
 export class CalendarSample2Component implements OnInit{
     @ViewChild('calendar', { read: IgxCalendarComponent }) public calendar: IgxCalendarComponent;

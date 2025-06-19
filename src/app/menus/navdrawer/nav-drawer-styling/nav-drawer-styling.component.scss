@@ -1,31 +1,15 @@
-@use '../../../../variables' as *;
-
-.content-wrap {
-    display: flex;
-    height: 100%;
-}
-
-main {
-    height: 100%;
-    overflow: auto;
-    padding: 16px;
-    h5 {
-        padding: 8px 0;
-    }
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-theme: navdrawer-theme(
-    $background: #2d313a,
-    $item-active-background: #ecc256,
-    $item-header-text-color: #f3c03e
+  $background: #2d313a,
+  $item-active-background: #ecc256,
+  $item-header-text-color: #f3c03e
 );
     
 :host {
-    display: block;
-    height: 100%;
-
-    ::ng-deep{
-        @include css-vars($custom-theme);
-    }
+  ::ng-deep {
+    @include css-vars($custom-theme);
+  }
 }
 

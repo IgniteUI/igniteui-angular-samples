@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
+import { IgxSimpleComboComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
     selector: 'app-simple-combo-usage',
     templateUrl: 'simple-combo-usage.component.html',
-    styleUrls: ['simple-combo-usage.component.scss']
+    styleUrls: ['simple-combo-usage.component.scss'],
+    imports: [IgxSimpleComboComponent, FormsModule]
 })
 export class SimpleComboUsageComponent implements OnInit {
     public cities: City[];

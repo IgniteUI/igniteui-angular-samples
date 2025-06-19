@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { IgxFilterOptions } from 'igniteui-angular';
+import { IgxFilterOptions, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxRippleDirective, IgxFilterPipe } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-list-item-selection',
     templateUrl: './list-item-selection.component.html',
-    styleUrls: ['./list-item-selection.component.scss']
+    styleUrls: ['./list-item-selection.component.scss'],
+    imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxRippleDirective, IgxFilterPipe]
 })
 export class ListItemSelectionComponent {
     public searchContact: string;
@@ -50,13 +52,6 @@ export class ListItemSelectionComponent {
     public toggleFavorite(contact: any, event: Event) {
         event.stopPropagation();
         contact.isFavorite = !contact.isFavorite;
-    }
-
-    public selectItem(item) {
-        if (!item.selected) {
-            this.contacts.forEach(c => c.selected = false);
-            item.selected = true;
-        }
     }
 
     get filterContacts() {

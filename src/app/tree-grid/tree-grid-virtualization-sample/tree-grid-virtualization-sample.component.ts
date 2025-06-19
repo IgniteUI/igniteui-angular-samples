@@ -1,14 +1,17 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
     providers: [FinancialDataService],
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'tree-grid-virtualization-sample',
     styleUrls: ['./tree-grid-virtualization-sample.component.scss'],
-    templateUrl: 'tree-grid-virtualization-sample.component.html'
+    templateUrl: 'tree-grid-virtualization-sample.component.html',
+    imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 
 export class TreeGridVirtualizationSampleComponent {

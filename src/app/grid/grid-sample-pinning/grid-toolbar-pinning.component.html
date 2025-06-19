@@ -1,13 +1,15 @@
 <div [ngClass]="{'grid__wrapper': true, 'dark-theme': useDarkTheme }" style='width: 100%;'>
-    <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [width]="'100%'" [height]="'480px'">
-        <igx-grid-toolbar>
-            <igx-grid-toolbar-actions>
-                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-            </igx-grid-toolbar-actions>
-        </igx-grid-toolbar>
+  <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [width]="'100%'" [height]="'480px'">
+    <igx-grid-toolbar>
+      <igx-grid-toolbar-actions>
+        <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+      </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
 
-        <igx-column #col *ngFor="let c of columns" [field]="c.field" [header]="c.header" [width]="c.width" [pinned]='c.pinned'
-            [hidden]='c.hidden' [headerClasses]="'customHeaderSyle'">
-        </igx-column>
-    </igx-grid>
+    @for (c of columns; track c) {
+      <igx-column #col [field]="c.field" [header]="c.header" [width]="c.width" [pinned]='c.pinned'
+        [hidden]='c.hidden' [headerClasses]="'customHeaderSyle'">
+      </igx-column>
+    }
+  </igx-grid>
 </div>

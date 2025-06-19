@@ -25,7 +25,7 @@ import localeHI from '@angular/common/locales/hi';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
 import { DATA } from '../../../data/nwindData';
-import { IgxGridComponent, GridResourceStringsEN, IGridResourceStrings } from 'igniteui-angular';
+import { IgxGridComponent, GridResourceStringsEN, IGridResourceStrings, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxSelectComponent, IgxSelectItemComponent, IgxColumnComponent } from 'igniteui-angular';
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
     IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,
@@ -33,11 +33,13 @@ import {
     IgxResourceStringsPT, IgxResourceStringsRO, IgxResourceStringsSV, IgxResourceStringsTR,
     IgxResourceStringsZHHANS, IgxResourceStringsZHHANT
 } from 'igniteui-angular-i18n';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-localization-all-resources',
     styleUrls: ['./localization-all-resources.component.scss'],
-    templateUrl: 'localization-all-resources.component.html'
+    templateUrl: 'localization-all-resources.component.html',
+    imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxSelectComponent, FormsModule, IgxSelectItemComponent, IgxColumnComponent]
 })
 export class LocalizationAllResourcesComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

@@ -1,5 +1,6 @@
-import {IgxAvatarModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import { IgxAvatarModule } from 'igniteui-angular';
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class AvatarConfigGenerator implements IConfigGenerator {
 
 
@@ -8,31 +9,20 @@ export class AvatarConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'AvatarSample3Component',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxAvatarModule', 'AvatarSample3Component'],
-                ngDeclarations: ['AvatarSample3Component'],
-                ngImports: ['IgxAvatarModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/avatar/"
         }));
 
         configs.push(new Config({
             component: 'AvatarStylingSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxAvatarModule', 'AvatarStylingSampleComponent'],
-                ngDeclarations: ['AvatarStylingSampleComponent'],
-                ngImports: ['IgxAvatarModule']
-            }),
+            additionalFiles: ["/src/app/layouts/avatar/avatar-styling/layout.scss"],
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/avatar/"
         }));
 
         configs.push(new Config({
             component: 'AvatarCSSVariablesComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxAvatarModule', 'AvatarCSSVariablesComponent'],
-                ngDeclarations: ['AvatarCSSVariablesComponent'],
-                ngImports: ['IgxAvatarModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/avatar/"
         }));
 

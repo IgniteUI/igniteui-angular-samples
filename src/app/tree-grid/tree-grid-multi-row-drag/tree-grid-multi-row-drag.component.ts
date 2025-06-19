@@ -1,11 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IDropDroppedEventArgs, IgxTreeGridComponent } from 'igniteui-angular';
+import { GridSelectionMode, IDropDroppedEventArgs, IgxTreeGridComponent, IgxDropDirective, IgxIconComponent, IgxPaginatorComponent, IgxColumnComponent, IgxRowDragGhostDirective } from 'igniteui-angular';
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
     selector: 'app-tree-grid-multi-row-drag',
     styleUrls: ['tree-grid-multi-row-drag.component.scss'],
-    templateUrl: 'tree-grid-multi-row-drag.component.html'
+    templateUrl: 'tree-grid-multi-row-drag.component.html',
+    imports: [IgxDropDirective, IgxIconComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxRowDragGhostDirective]
 })
 export class TreeGridMultiRowDragComponent {
     @ViewChild(IgxTreeGridComponent, { read: IgxTreeGridComponent, static: true })

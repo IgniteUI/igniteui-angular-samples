@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
+import { IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxSwitchComponent, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-dropdown-sample-5',
     styleUrls: ['./dropdown-sample-5.component.scss'],
-    templateUrl: './dropdown-sample-5.component.html'
+    templateUrl: './dropdown-sample-5.component.html',
+    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxSwitchComponent, FormsModule, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent]
 })
 export class DropDownSample5Component {
     public disableMeats = false;

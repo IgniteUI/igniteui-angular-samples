@@ -3,10 +3,12 @@
     <ng-template igxDrawer>
         <span igxDrawerItem [isHeader]="true">Components</span>
 
-        <span *ngFor="let item of navItems" igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
-          <igx-icon family="material">{{ item.name }}</igx-icon>
-          <span>{{ item.text }}</span>
-        </span>
+        @for (item of navItems; track item) {
+          <span igxDrawerItem [active]="item.text === selected" igxRipple (click)="navigate(item)">
+            <igx-icon family="material">{{ item.name }}</igx-icon>
+            <span>{{ item.text }}</span>
+          </span>
+        }
     </ng-template>
   </igx-nav-drawer>
 

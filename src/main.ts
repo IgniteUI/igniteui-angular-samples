@@ -1,16 +1,14 @@
 import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
-import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
-
 import { defineCustomElements } from 'igniteui-dockmanager/loader';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { AppComponent } from './app/app.component';
+import { AppConfig } from './app/app.config';
 
 if (environment.production) {
     enableProdMode();
 }
 
-platformBrowserDynamic().bootstrapModule(AppModule, { ngZoneEventCoalescing: true, ngZoneRunCoalescing: true })
-  .catch((err) => console.log(err));
+bootstrapApplication(AppComponent, AppConfig).catch(err => console.log(err));
 
 defineCustomElements(window);

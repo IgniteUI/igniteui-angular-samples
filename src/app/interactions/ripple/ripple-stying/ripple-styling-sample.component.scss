@@ -1,27 +1,9 @@
-@use '../../../../variables' as *;
-
-.section {
-    flex-flow: row wrap;
-    display: flex;
-    justify-content: center;
-}
-
-.sample-column {
-    min-width: 270px;
-}
-
-.sample-button{
-    width: 7rem;
-}
-
-h5 {
-    margin-bottom: 16px;
-}
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
 $custom-ripple-theme: ripple-theme(
-  $color: color($color: 'secondary', $variant: 200)
+  $color: #383779,
 );
 
-:host {
-	@include css-vars($custom-ripple-theme);
-}
+@include css-vars($custom-ripple-theme);
+ 

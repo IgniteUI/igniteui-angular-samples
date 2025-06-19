@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { IgxListComponent, IgxToastComponent } from 'igniteui-angular';
+import { IgxListComponent, IgxToastComponent, IgxSliderComponent, IgxListItemLeftPanningTemplateDirective, IgxIconComponent, IgxListItemRightPanningTemplateDirective, IgxListItemComponent, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxButtonDirective } from 'igniteui-angular';
+import { FormsModule } from '@angular/forms';
+
 
 @Component({
     selector: 'app-contact-list2',
     styleUrls: ['./list-sample-7.component.scss'],
-    templateUrl: './list-sample-7.component.html'
+    templateUrl: './list-sample-7.component.html',
+    imports: [IgxSliderComponent, FormsModule, IgxListComponent, IgxListItemLeftPanningTemplateDirective, IgxIconComponent, IgxListItemRightPanningTemplateDirective, IgxListItemComponent, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxToastComponent, IgxButtonDirective]
 })
 export class ListSample7Component implements OnInit {
     @ViewChild('toast', { static: true })

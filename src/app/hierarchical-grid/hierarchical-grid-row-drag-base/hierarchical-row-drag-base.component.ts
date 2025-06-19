@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType, IgxDropDirective, IgxIconComponent, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 // eslint-disable-next-line no-shadow
 enum DragIcon {
@@ -12,7 +13,8 @@ enum DragIcon {
 @Component({
     selector: 'app-hierarchical-row-drag-base',
     styleUrls: ['./hierarchical-row-drag-base.component.scss'],
-    templateUrl: 'hierarchical-row-drag-base.component.html'
+    templateUrl: 'hierarchical-row-drag-base.component.html',
+    imports: [IgxDropDirective, IgxIconComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 
 export class HGridRowDragBaseComponent {

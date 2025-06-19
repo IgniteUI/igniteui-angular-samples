@@ -1,7 +1,10 @@
-import {IgxAvatarModule,
-IgxChipsModule,
-IgxIconModule} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
+import {
+    IgxAvatarModule,
+    IgxChipsModule,
+    IgxIconModule
+} from 'igniteui-angular';
+import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';
 export class ChipConfigGenerator implements IConfigGenerator {
 
 
@@ -10,36 +13,20 @@ export class ChipConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'ChipSimpleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxChipsModule', 'IgxIconModule', 'ChipSimpleComponent'],
-                ngDeclarations: ['ChipSimpleComponent'],
-                ngImports: ['IgxChipsModule', 'IgxIconModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));
 
         configs.push(new Config({
             component: 'ChipAreaSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: [
-                    'IgxChipsModule',
-                    'IgxIconModule',
-                    'IgxAvatarModule',
-                    'ChipAreaSampleComponent'
-                ],
-                ngDeclarations: ['ChipAreaSampleComponent'],
-                ngImports: ['IgxChipsModule', 'IgxIconModule', 'IgxAvatarModule']
-            }),
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));
 
         configs.push(new Config({
             component: 'ChipStylingSampleComponent',
-            appModuleConfig: new AppModuleConfig({
-                imports: ['IgxChipsModule', 'IgxIconModule', 'ChipStylingSampleComponent'],
-                ngDeclarations: ['ChipStylingSampleComponent'],
-                ngImports: ['IgxChipsModule', 'IgxIconModule']
-            }),
+            additionalFiles: ["/src/app/data-display/chip/chip-styling/layout.scss"],
+            appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));
 

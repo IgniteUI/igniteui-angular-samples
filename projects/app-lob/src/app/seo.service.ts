@@ -4,7 +4,6 @@ import { Meta, Title } from '@angular/platform-browser';
 @Injectable({
     providedIn: 'root'
 })
-
 export class SEOService {
     private defaultTitle = 'Build Better Modern Web Experiences, Faster with Angular Components';
     // eslint-disable-next-line max-len

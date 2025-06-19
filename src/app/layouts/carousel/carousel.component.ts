@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular';
+
 
 @Component({
-  selector: 'app-carousel',
-  styleUrls: ['./carousel.component.scss'],
-  templateUrl: './carousel.component.html'
+    selector: 'app-carousel',
+    styleUrls: ['./carousel.component.scss'],
+    templateUrl: './carousel.component.html',
+    imports: [IgxCarouselComponent, IgxSlideComponent]
 })
 
 export class CarouselComponent {

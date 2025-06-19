@@ -1,12 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
-import {
-    ColumnType,
-    IgxExcelExporterOptions,
-    IgxExcelExporterService,
-    IgxGridComponent,
-    IgxNumberSummaryOperand,
-    IgxSummaryResult } from 'igniteui-angular';
+import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService, IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { DatePipe } from '@angular/common';
 
 class MySummary {
 
@@ -22,9 +18,10 @@ class MySummary {
     }
 }
 @Component({
-  selector: 'app-grid-summary-export',
-  styleUrls: ['./grid-summary-export.component.scss'],
-  templateUrl: './grid-summary-export.component.html'
+    selector: 'app-grid-summary-export',
+    styleUrls: ['./grid-summary-export.component.scss'],
+    templateUrl: './grid-summary-export.component.html',
+    imports: [IgxButtonDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxIconComponent, DatePipe]
 })
 export class GridSummaryExportComponent {
     @ViewChild('grid', { read: IgxGridComponent, static: true })

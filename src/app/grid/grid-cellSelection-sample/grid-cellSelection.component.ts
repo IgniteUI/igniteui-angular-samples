@@ -1,11 +1,14 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IgxButtonGroupComponent, IgxColumnComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+
 
 @Component({
     selector: 'app-grid-cell-selection',
     styleUrls: ['./grid-cellSelection.component.scss'],
-    templateUrl: 'grid-cellSelection.component.html'
+    templateUrl: 'grid-cellSelection.component.html',
+    imports: [IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxButtonDirective, IgxIconComponent, IgxSnackbarComponent]
 })
 export class GridCellSelectionComponent implements OnInit {
     @ViewChild('grid', { static: true }) public grid: IgxGridComponent;

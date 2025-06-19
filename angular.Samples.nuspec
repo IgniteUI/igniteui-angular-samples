@@ -10,6 +10,6 @@
     <description>This is a package that can be used with Octopus deployer</description>
     </metadata>
     <files>
-        <file src="dist\$path$\**\*.*" target="\" />
+        <file src="dist\$path$\browser\**\*.*" target="\" />
     </files>
 </package>
