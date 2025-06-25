@@ -8,6 +8,7 @@ import { DisplayDensityComponent } from './display-density/display-density.compo
 import { CardSampleShadowComponent} from './shadows/card-sample-shadow/card-sample-shadow';
 import { ShadowsSampleComponent } from './shadows/shadows-sample-1/shadows-sample.component';
 import { ShadowsSample2Component } from './shadows/shadows-sample-2/shadows-sample-2.component';
+import { TailwindSampleComponent } from './tailwind/tailwind-sample.component';
 import { themingRoutesData } from './theming-routes-data';
 
 export const ThemingRoutes: Routes = [
@@ -56,5 +57,10 @@ export const ThemingRoutes: Routes = [
         component: BootstrapComponent,
         data: themingRoutesData['bootstrap-sample'],
         path: 'bootstrap-sample'
+    },
+    {
+        component: TailwindSampleComponent,
+        data: themingRoutesData['tailwind-sample'],
+        path: 'tailwind-sample'
     }
 ];
