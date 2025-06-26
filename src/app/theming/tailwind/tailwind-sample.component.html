@@ -1,55 +1,11 @@
-<div class="sample-wrapper flex flex-wrap gap-6">
-    <div class="sample-column card-wrapper">
-        <h5>Custom card with tailwind utility classes</h5>
-        <div
-            class="card mt-2 flex flex-col max-w-[400px] border-2 border-secondary-400 border-gray-200 rounded shadow-elevation-4 bg-surface-500 overflow-hidden">
-            <div class="flex items-center px-4 py-3 bg-primary-100">
-                <img [src]="card.imageUrl" [alt]="card.title" class="w-16 h-16 rounded object-cover mr-4" />
-                <div>
-                    <h5 class="card-title type-style-h6">{{ card.title }}</h5>
-                    <h6 class="card-subtitle type-style-subtitle-2">{{ card.subtitle }}</h6>
-                </div>
-            </div>
-
-            <div class="card-content px-4 py-4 text-gray-900">
-                <p class="type-style-body-2">{{ card.content }}</p>
-            </div>
-
-            <div class="card-actions flex justify-around items-center px-2 py-2 bg-primary-100">
-                @for (icon of card.icons; track icon) {
-                <button
-                    class="bg-transparent border-none cursor-pointer text-shadow-2xs text-shadow-secondary-500 text-primary-500-contrast/80 hover:text-secondary-500">
-                    <i class="material-icons mt-1">{{ icon }}</i>
-                </button>
-                }
-            </div>
-        </div>
+<main class="font-ig text-base grid surface-500 px-6 py-6">
+  <div class="text-center shadow-elevation-4 pb-8">
+    <p class="type-style-body-1 text-primary-600">404</p>
+    <h1 class="type-style-h1 mt-4 text-gray-900">Page not found</h1>
+    <p class="type-style-body-1 mt-6 text-gray-500">Sorry, we couldn’t find the page you’re looking for.</p>
+    <div class="mt-10 flex items-center justify-center gap-x-6">
+      <a href="#" class="type-style-button rounded-md bg-primary-500 text-primary-500-contrast px-3.5 py-2.5 shadow-elevation-2 hover:bg-primary-600 transition duration-150 ease-in-out">Go back home</a>
+      <a href="#" class="type-style-button text-gray-900 hover:text-primary-600 transition duration-150 ease-in-out">Contact support <span aria-hidden="true">&rarr;</span></a>
     </div>
-
-    <div class="sample-column card-wrapper">
-        <h5>IG Angular Card</h5>
-        <igx-card class="max-w-[400px] mt-2">
-            <igx-card-header class="bg-primary-100">
-                <h5 igxCardHeaderTitle>{{card.title}}</h5>
-                <h5 igxCardHeaderSubtitle>{{card.subtitle}}</h5>
-                <igx-card-media width="64px" height="64px">
-                    <img [src]="card.imageUrl">
-                </igx-card-media>
-            </igx-card-header>
-
-            <igx-card-content>
-                <p class="text-gray-800">{{card.content}}</p>
-            </igx-card-content>
-
-            <igx-divider></igx-divider>
-
-            <igx-card-actions class="bg-primary-100" layout="justify">
-                @for (icon of card.icons; track icon) {
-                <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" igxEnd>
-                    <igx-icon>{{icon}}</igx-icon>
-                </button>
-                }
-            </igx-card-actions>
-        </igx-card>
-    </div>
-</div>
+  </div>
+</main>
