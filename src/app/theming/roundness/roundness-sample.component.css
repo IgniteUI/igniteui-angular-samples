@@ -1,0 +1,23 @@
+.chip1{
+    --ig-radius-factor: 0;
+}
+
+.chip2{
+    --ig-radius-factor: 1;
+}
+
+.chip-wrapper {
+    text-align: center;
+}
+
+.sample-container {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    padding-top: 30px;
+}
+
+p{
+    font-size: 17px;
+    font-weight: bold;
+}
