@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-
 import { IgxSwitchComponent } from 'igniteui-angular';
 
 @Component({
@@ -9,9 +8,9 @@ import { IgxSwitchComponent } from 'igniteui-angular';
     imports: [IgxSwitchComponent]
 })
 export class SwitchStylingComponent {
-  public settings = [
-    { name: 'WiFi', state: false},
-    { name: 'Bluetooth', state: true},
-    { name: 'Device visibility', state: false}
-  ];
+    public settings = [
+      { name: 'WiFi', state: false},
+      { name: 'Bluetooth', state: true},
+      { name: 'Device visibility', state: false}
+    ];
 }

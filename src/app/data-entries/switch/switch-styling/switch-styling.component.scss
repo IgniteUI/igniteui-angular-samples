@@ -1,9 +1,19 @@
 @use "layout.scss";
-@use "igniteui-angular/theming" as *;
 
-$custom-switch-theme: switch-theme(
-  $thumb-off-color: #7cadd5,
-  $thumb-on-color: #ecaa53,
-);
+igx-switch {
+    --thumb-on-color: #e3f0ff;
+    --thumb-off-color: #fff;
+    --track-on-color: #0064d9;
+    --track-off-color: #788fa6;
+    --track-on-hover-color: #0058bf;
+    --border-radius-track: 1rem;
+    --focus-outline-color: #0032a5;
+    --border-on-color: transparent;
+    --border-color: transparent;
+    --border-on-hover-color: transparent;
+    --border-hover-color: transparent;
+}
 
-@include css-vars($custom-switch-theme);
+igx-switch:hover {
+    --track-off-color: #637d97;
+}

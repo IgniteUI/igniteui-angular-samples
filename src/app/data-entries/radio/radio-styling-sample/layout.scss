@@ -1,9 +1,38 @@
+@use "igniteui-angular/theming" as *;
+@use "igniteui-angular/lib/core/styles/components/radio/radio-component" as radio;
+@use "sass:map";
+
+:host {
+    ::ng-deep{
+        $_radio-schema: map.get($light-fluent-schema, radio);
+        @include radio(radio-theme($schema: $_radio-schema));
+        @include radio.component();
+
+        igx-radio.igx-radio--checked .igx-radio__composite::after {
+            --fill-color: #556b81;
+        }
+
+        igx-radio .igx-radio__composite::after, igx-radio .igx-radio__composite::before, igx-radio .igx-radio__composite{
+            width: 1.125rem;
+            height: 1.125rem;
+        }
+
+        igx-radio .igx-radio__composite {
+            min-width: 1.125rem;
+        }
+
+        .igx-radio__ripple {
+            display: none;
+        }
+    }
+}
+
 igx-radio + igx-radio {
-  margin-top: 16px;
+    margin-top: 16px;
 }
 
 .radio-wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
 }
