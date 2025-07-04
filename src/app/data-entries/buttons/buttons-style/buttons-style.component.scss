@@ -1,25 +1,324 @@
 @use "layout.scss";
-@use "igniteui-angular/theming" as *;
+ 
+.buttons-sample-1 .igx-button--contained {
+    --background: #000;
+    --hover-background: #000000bf;
+    --active-background: #000000f2;
+    --focus-visible-background: #000;
+    --focus-visible-foreground: #fff;
+}
+ 
+.buttons-sample-1 .igx-button--outlined {
+    --foreground: #000000e0;
+    --border-color: #d9d9d9;
+    --hover-foreground: #4096ff;
+    --hover-border-color: #4096ff;
+    --active-foreground: #0958d9;
+    --active-border-color: #0958d9;
+}
+ 
+.buttons-sample-1 .igx-button--flat {
+    --foreground: #000000e0;
+    --active-background: #00000026;
+    --active-foreground: #000000e0;
+}
 
-$custom-contained-theme: contained-button-theme(
-  $background: #348ae0
-);
+.buttons-sample-1 .filled .igx-button--flat { 
+    --background: #0000000a;
+    --hover-background: #0000000f;
+    --focus-visible-background: #0000000a;
+}
 
-$custom-flat-theme: flat-button-theme(
-  $foreground: var(--ig-error-800)
-);
+.buttons-sample-1 .filled .igx-button--flat, .buttons-sample-1 .text .igx-button--flat {
+    --hover-foreground: #000000e0;
+}
 
-$custom-outlined-theme: outlined-button-theme(
-  $foreground: var(--ig-success-500)
-);
+.buttons-sample-1 .text .igx-button--flat { 
+    --hover-background:   #0000000a;
+}
 
-$custom-fab-theme: fab-button-theme(
-  $background: #ffc506
-);
+.buttons-sample-1 .link .igx-button--flat { 
+    --hover-foreground: #69b1ff;
+    --active-foreground: #0958d9;
+}
 
-.button-sample {
-  @include css-vars($custom-contained-theme);
-  @include css-vars($custom-flat-theme);
-  @include css-vars($custom-outlined-theme);
-  @include css-vars($custom-fab-theme);
-};
+.buttons-sample-1 .igx-button--flat, .buttons-sample-1 .igx-button--outlined {
+    --focus-visible-foreground: #000;
+}
+
+.buttons-sample-1 .igx-button--outlined, .buttons-sample-1 .text .igx-button--flat, .buttons-sample-1 .link .igx-button--flat {
+    --focus-visible-background: transparent;
+}
+
+.buttons-sample-2 .igx-button--contained {
+    --background: #1677ff;
+    --hover-background: #4096ff;
+    --active-background: #0958d9;
+    --focus-visible-background: #1677ff;
+    --focus-visible-foreground: #fff;
+}
+
+.buttons-sample-2 .igx-button--outlined {
+    --foreground: #1677ff;
+    --border-color: #1677ff;
+    --hover-foreground: #4096ff;
+    --hover-border-color: #4096ff;
+    --active-foreground: #0958d9;
+    --active-border-color: #0958d9;
+}
+
+.buttons-sample-2 .filled .igx-button--flat {
+    --background: #e6f4ff;
+    --hover-background: #bae0ff;
+    --hover-foreground: #1677ff;
+    --active-foreground: #1677ff;
+    --focus-visible-background: #e6f4ff;
+}
+
+.buttons-sample-2 .filled .igx-button--flat, .buttons-sample-2 .text .igx-button--flat { 
+    --active-background: #91caff;
+}
+
+.buttons-sample-2 .text .igx-button--flat, .buttons-sample-2 .link .igx-button--flat {
+    --hover-foreground: #4096ff;
+    --active-foreground: #0958d9;
+}
+
+.buttons-sample-2 .igx-button--flat {
+    --foreground: #1677ff;
+}
+
+.buttons-sample-2 .text .igx-button--flat {
+    --hover-background: #e6f4ff;
+}
+
+.buttons-sample-2 .igx-button--flat, .buttons-sample-2 .igx-button--outlined {
+    --focus-visible-foreground: #1677ff;
+}
+
+.buttons-sample-2 .igx-button--outlined, .buttons-sample-2 .text .igx-button--flat, .buttons-sample-2 .link .igx-button--flat {
+    --focus-visible-background: transparent;
+}
+
+.buttons-sample-3 .igx-button--contained{
+    --background: #ff4d4f;
+    --hover-background: #ff7875;
+    --active-background: #d9363e;
+    --focus-visible-background: #ff4d4f;
+    --focus-visible-foreground: #fff;
+}
+ 
+.buttons-sample-3 .igx-button--outlined {
+    --foreground: #ff4d4f;
+    --border-color: #ff4d4f;
+    --hover-foreground: #ff7875;
+    --hover-border-color: #ffa39e;
+    --active-foreground: #d9363e;
+    --active-border-color: #d9363e;
+}
+ 
+.buttons-sample-3 .filled .igx-button--flat {
+    --background: #fff2f0;
+    --hover-background: #ffdfdc;
+    --hover-foreground: #ff4d4f;
+    --active-foreground: #ff4d4f;
+    --focus-visible-background: #fff2f0;
+}
+
+.buttons-sample-3 .filled .igx-button--flat, .buttons-sample-3 .text .igx-button--flat { 
+    --active-background: #ffccc7;
+}
+
+.buttons-sample-3 .text .igx-button--flat, .buttons-sample-3 .link .igx-button--flat {
+    --hover-foreground: #ff7875;
+    --active-foreground: #d9363e;
+}
+
+.buttons-sample-3 .igx-button--flat {
+    --foreground: #ff4d4f;
+}
+
+.buttons-sample-3 .text .igx-button--flat {
+    --hover-background: #fff2f0;
+}
+
+.buttons-sample-3 .igx-button--flat, .buttons-sample-3 .igx-button--outlined {
+    --focus-visible-foreground: #ff4d4f;
+}
+
+.buttons-sample-3 .igx-button--outlined, .buttons-sample-3 .text .igx-button--flat, .buttons-sample-3 .link .igx-button--flat {
+    --focus-visible-background: transparent;
+}
+
+.buttons-sample-4 .igx-button--contained {
+    --background: #eb2f96;
+    --hover-background: #f759ab;
+    --active-background: #c41d7f;
+    --focus-visible-background: #eb2f96;
+    --focus-visible-foreground: #fff;
+}
+ 
+.buttons-sample-4 .igx-button--outlined {
+    --foreground: #eb2f96;
+    --border-color: #eb2f96;
+    --hover-foreground: #f759ab;
+    --hover-border-color: #f759ab;
+    --active-foreground: #c41d7f;
+    --active-border-color: #c41d7f;
+}
+ 
+.buttons-sample-4 .filled .igx-button--flat {
+    --background: #fff0f6;
+    --hover-background: #ffd6e7;
+    --hover-foreground: #eb2f96;
+    --active-foreground: #eb2f96;
+    --focus-visible-background: #fff0f6;
+}
+
+.buttons-sample-4 .filled .igx-button--flat, .buttons-sample-4 .text .igx-button--flat { 
+    --active-background: #ffadd2;
+}
+
+.buttons-sample-4 .text .igx-button--flat, .buttons-sample-4 .link .igx-button--flat {
+    --hover-foreground: #f759ab;
+    --active-foreground: #c41d7f;
+}
+
+.buttons-sample-4 .igx-button--flat {
+    --foreground: #eb2f96;
+}
+
+.buttons-sample-4 .text .igx-button--flat {
+    --hover-background: #fff0f6;
+}
+
+.buttons-sample-4 .igx-button--flat, .buttons-sample-4 .igx-button--outlined {
+    --focus-visible-foreground: #eb2f96;
+}
+
+.buttons-sample-4 .igx-button--outlined, .buttons-sample-4 .text .igx-button--flat, .buttons-sample-4 .link .igx-button--flat {
+    --focus-visible-background: transparent;
+}
+
+.buttons-sample-5 .igx-button--contained {
+    --background: #722ed1;
+    --hover-background: #9254de;
+    --active-background: #531dab;
+    --focus-visible-background: #722ed1;
+    --focus-visible-foreground: #fff;
+}
+ 
+.buttons-sample-5 .igx-button--outlined {
+    --foreground: #722ed1;
+    --border-color: #722ed1;
+    --hover-foreground: #9254de;
+    --hover-border-color: #9254de;
+    --active-foreground: #531dab;
+    --active-border-color: #531dab;
+}
+ 
+.buttons-sample-5 .filled .igx-button--flat {
+    --background: #f9f0ff;
+    --hover-background: #efdbff;
+    --hover-foreground: #722ed1;
+    --active-foreground: #722ed1;
+    --focus-visible-background: #f9f0ff;
+}
+
+.buttons-sample-5 .filled .igx-button--flat, .buttons-sample-5 .text .igx-button--flat { 
+    --active-background: #d3adf7;
+}
+
+.buttons-sample-5 .text .igx-button--flat, .buttons-sample-5 .link .igx-button--flat {
+    --hover-foreground: #9254de;
+    --active-foreground: #531dab;
+}
+
+.buttons-sample-5 .igx-button--flat {
+    --foreground: #722ed1;
+}
+
+.buttons-sample-5 .text .igx-button--flat {
+    --hover-background: #f9f0ff;
+}
+
+.buttons-sample-5 .igx-button--flat, .buttons-sample-5 .igx-button--outlined {
+    --focus-visible-foreground: #722ed1;
+}
+
+.buttons-sample-5 .igx-button--outlined, .buttons-sample-5 .text .igx-button--flat, .buttons-sample-5 .link .igx-button--flat {
+    --focus-visible-background: transparent;
+}
+
+.buttons-sample-6 .igx-button--contained {
+    --background: #13c2c2;
+    --hover-background: #36cfc9;
+    --active-background: #08979c;
+    --focus-visible-background: #13c2c2;
+    --focus-visible-foreground: #fff;
+}
+ 
+.buttons-sample-6 .igx-button--outlined {
+    --foreground: #13c2c2;
+    --border-color: #13c2c2;
+    --hover-foreground: #36cfc9;
+    --hover-border-color: #36cfc9;
+    --active-foreground: #08979c;
+    --active-border-color: #08979c;
+}
+ 
+.buttons-sample-6 .filled .igx-button--flat{
+    --background: #e6fffb;
+    --hover-background: #b5f5ec;
+    --hover-foreground: #13c2c2;
+    --active-foreground: #13c2c2;
+    --focus-visible-background: #e6fffb;
+}
+
+.buttons-sample-6 .filled .igx-button--flat, .buttons-sample-6 .text .igx-button--flat { 
+    --active-background: #b5f5ec;
+}
+
+.buttons-sample-6 .igx-button--flat {
+    --foreground: #13c2c2;
+}
+
+.buttons-sample-6 .text .igx-button--flat, .buttons-sample-6 .link .igx-button--flat {
+    --hover-foreground: #36cfc9;
+    --active-foreground: #08979c;
+}
+
+.buttons-sample-6 .text .igx-button--flat {
+    --hover-background: #e6fffb;
+}
+
+.buttons-sample-6 .igx-button--flat, .buttons-sample-6 .igx-button--outlined {
+    --focus-visible-foreground: #13c2c2;
+}
+
+.buttons-sample-6 .igx-button--outlined, .buttons-sample-6 .text .igx-button--flat, .buttons-sample-6 .link .igx-button--flat {
+    --focus-visible-background: transparent;
+}
+
+.button-sample .igx-button--contained{
+    --foreground: #fff;
+    --hover-foreground: #fff;
+    --active-foreground: #fff;
+}
+
+.button-sample .igx-button--outlined {
+    --background: #fff;
+    --hover-background: #fff;
+    --active-background: #fff;
+}
+
+.button-sample button {
+    --ig-size: var(--ig-size-medium);
+
+    padding: 0px 7px;
+    min-width: unset;
+}
+
+.button-sample .igx-button {
+    --ig-font-family: 'alibaba-sans', sans-serif;
+}

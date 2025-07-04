@@ -1,10 +1,22 @@
 @use "layout.scss";
-@use "igniteui-angular/theming" as *;
+  
+igx-checkbox {
+    --tick-color: #0064d9;
+    --tick-color-hover: #e3f0ff;
+    --fill-color: transparent;
+    --fill-color-hover: #e3f0ff;
+    --label-color: #131e29;
+    --focus-outline-color: #0032a5;
+    --border-radius: 0.25rem;
+    --ig-font-family: Arial, Helvetica, sans-serif;
+    --ig-subtitle-1-font-size: 14px;
+}
 
-$custom-checkbox-theme: checkbox-theme(
-  $empty-color: #ecaa53,
-  $fill-color: #ecaa53,
-  $border-radius: 5px
-);
+igx-checkbox:hover {
+    --empty-fill-color: #e3f0ff;
+}
 
-@include css-vars($custom-checkbox-theme);
+#checkbox-1.igx-checkbox--focused:after {
+    inset: 8px -4px 8px 8px;
+    border-radius: 8px;
+}

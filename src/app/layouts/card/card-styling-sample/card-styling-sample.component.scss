@@ -1,9 +1,53 @@
 @use "layout.scss";
-@use "igniteui-angular/theming" as *;
 
-$colorful-card: card-theme(
-  $background: #011627,
-  $subtitle-text-color: #ecaa53,
-);
+igx-chip {
+    --border-radius: 4px;
+    --background: #fafafa;
+    --border-color: #d9d9d9;
+    --ig-body-2-font-size: 0.75rem;
+    --hover-background: #d9d9d9;
+    --focus-background: #d9d9d9;
+}
 
-@include css-vars($colorful-card);
+igx-card {
+    --border-radius: 8px;
+    --outline-color: #f0f0f0;
+    --resting-shadow: none;
+    --hover-shadow: none;
+    --header-text-color: #000000e0;
+    --ig-font-family: 'alibaba-sans', sans-serif;
+
+    width: 300px;
+    border: none;
+}
+
+.igx-card-header{
+
+    igx-avatar {
+        --background: transparent;
+
+        height: 30px;
+        width: 30px;
+    }
+
+    h3 {
+        --ig-h6-font-size: 1rem;
+    }
+
+    p {
+        --ig-body-1-font-size: 0.875rem;
+
+        margin-top: 8px;
+        color: #00000073;
+    }
+}
+
+.igx-icon-button--flat {
+    --foreground: #00000073;
+    --hover-foreground: #1677ff;
+    --hover-background: none;
+}
+
+igx-divider {
+    --color: #f0f0f0
+}

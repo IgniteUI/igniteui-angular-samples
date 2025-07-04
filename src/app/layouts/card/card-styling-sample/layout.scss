@@ -1,4 +1,52 @@
-.card-wrapper {
-  max-width: 320px;
-  min-width: 220px;
+:host {
+    ::ng-deep {
+      igx-chip .igx-chip__item {
+          padding: 0 5px;
+          height: 22px;
+        }
+    }
+}
+
+.border {
+    border: 0.0625rem solid var(--outline-color);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top: none;
+}
+
+.igx-card-header{
+    width: unset;
+    padding: unset;
+    align-items: baseline;
+    margin: 24px 24px 0 24px;
+    height: 70px;
+}
+
+.igx-card-content {
+    padding: 0;
+
+    igx-chip {
+        padding: 5px;
+    
+        &:nth-of-type(1) {
+            margin-left: 5px;
+        }
+    }
+
+    igx-divider {
+        margin-top: 5px;
+    }
+}
+
+igx-icon {
+    width: 14px;
+}
+
+igx-card-actions {
+    justify-content: space-evenly;
+    padding: 0.4rem 0;
+
+    igx-divider { 
+        height: 1.50rem;
+    }
 }

@@ -1,4 +1,33 @@
+@use "igniteui-angular/theming" as *;
+@use "igniteui-angular/lib/core/styles/components/checkbox/checkbox-component" as checkbox;
+@use "sass:map";
+
+:host {
+    ::ng-deep {
+        $_checkbox-schema: map.get($light-fluent-schema, checkbox);
+        @include checkbox(checkbox-theme($schema: $_checkbox-schema));
+        @include checkbox.component();
+
+        igx-checkbox.igx-checkbox--checked .igx-checkbox__composite-wrapper .igx-checkbox__composite {
+            border-color: var(--empty-color);
+        }
+
+        igx-checkbox .igx-checkbox__composite {
+            min-width: 1.125rem;
+            height: 1.125rem;
+        }
+
+        igx-checkbox.igx-checkbox--checked:hover .igx-checkbox__composite-wrapper .igx-checkbox__composite {
+            border-color: var(--empty-color);
+        }
+
+        igx-checkbox .igx-checkbox__label {
+            margin-inline-start: 0rem;
+        }
+    }
+}
+
 igx-checkbox {
     display: flex;
-    padding: 16px;
+    margin: 20px 0 0 20px;
 }

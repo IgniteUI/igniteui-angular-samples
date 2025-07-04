@@ -1,9 +1,57 @@
+@use "igniteui-angular/theming" as *;
+@use "igniteui-angular/lib/core/styles/components/switch/switch-component" as switch;
+@use 'sass:map';
+
+:host {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
+
+    ::ng-deep {
+        $_switch-schema: map.get($light-fluent-schema, switch);
+        @include switch(switch-theme($schema: $_switch-schema));
+        @include switch.component();
+
+        igx-switch:hover .igx-switch__composite .igx-switch__thumb {
+            --border-hover-color: #fff;
+        }
+
+        igx-switch .igx-switch__composite {
+            width: 2.75rem;
+            height: 1.25rem;
+            padding-left: 0.125rem;
+
+            .igx-switch__composite-thumb {
+                width: 1.60rem;
+                height: 16px;
+                min-width: 1.60rem;
+                transform: translateX(-0.5px);
+
+                .igx-switch__thumb {
+                    width: 1.60rem;
+                    height: 16px;
+                    min-width: 1.60rem;
+                }
+            }
+        }
+
+        igx-switch.igx-switch--checked .igx-switch__composite .igx-switch__composite-thumb {
+            transform: translateX(0.85rem);
+        }
+
+        igx-switch.igx-switch--focused .igx-switch__composite::after {
+            border-radius: 1rem;
+        }
+    }
+}
+
 igx-switch {
-  margin-top: 24px;
+    margin-top: 24px;
+    width: max-content;
 }
 
 .switch-wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 16px;
 }

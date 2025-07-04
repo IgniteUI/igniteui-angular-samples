@@ -1,28 +1,33 @@
 <div class="sample-column card-wrapper">
-  <igx-card elevated>
-    <igx-card-media height="180px">
-      <img [src]="card.imageUrl">
-    </igx-card-media>
-
-    <igx-card-header>
-      <h3 igxCardHeaderTitle>{{ card.title }}</h3>
-      <h5 igxCardHeaderSubtitle>{{ card.subtitle }}</h5>
-    </igx-card-header>
-
-    <igx-card-content>
-      <p>{{ card.content }}</p>
-    </igx-card-content>
-
-    <igx-card-actions>
-      @for (icon of card.icons; track icon) {
-        <button igxIconButton="flat"
-          igxRipple
-          [igxRippleCentered]="true"
-          igxEnd>
-          <igx-icon [style.color]="'#ECAA53'">{{icon}}</igx-icon>
-        </button>
-      }
-    </igx-card-actions>
-
-  </igx-card>
+    <igx-card elevated>
+        <igx-card-media height="180px">
+            <img src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png">
+        </igx-card-media>
+        <div class="border">
+            <igx-card-header>
+                <igx-avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8"></igx-avatar>
+                <div>
+                    <h3 igxCardHeaderTitle>{{ card.title }}</h3>
+                    <p>{{ card.subtitle }}</p>
+                </div>
+            </igx-card-header>
+            <igx-card-content>
+                <igx-chip>#artic</igx-chip>
+                <igx-chip>#fox</igx-chip>
+                <igx-chip>#card</igx-chip>
+                <igx-divider></igx-divider>
+            </igx-card-content>
+            <igx-card-actions>
+                @for (icon of card.icons; track icon; let i = $index) {
+                    <button igxIconButton="flat">
+                    <igx-icon name={{icon}}></igx-icon>
+                    </button>
+                    @if (i < 2) { 
+                        <igx-divider [vertical]="true">
+                        </igx-divider>
+                    }
+                }
+            </igx-card-actions>
+        </div>
+    </igx-card>
 </div>

@@ -1,11 +1,37 @@
 @use "layout.scss";
-@use "igniteui-angular/theming" as *;
 
-$custom-theme: chip-theme(
-  $background: #57a5cd,
-  $selected-background: #ecaa53,
-  $remove-icon-color: #d81414,
-  $border-radius: 5px,
-);
+igx-chip {
+    --text-color: #fff;
+    --hover-text-color: #fff;
+    --focus-text-color: #fff;
+    --border-radius: 5px;
+}
 
-@include css-vars($custom-theme);
+igx-chip[id='1'] {
+    --background: #000;
+    --hover-background: #000;
+    --focus-background: #323232;
+}
+
+igx-chip[id='2'] {
+    --background: #cd201f;
+    --hover-background: #cd201f;
+    --focus-background: #9f1717;
+}
+
+igx-chip[id='3']{
+    --background: #3b5999;
+    --hover-background: #3b5999;
+    --focus-background: #2c4378;
+}
+
+igx-chip[id='4']{
+    --background: #55acee;
+    --hover-background: #55acee;
+    --focus-background: #4682af;
+}
+
+igx-icon.igx-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+}
