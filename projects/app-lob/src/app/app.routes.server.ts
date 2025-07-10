@@ -2,6 +2,14 @@ import { RenderMode, ServerRoute } from '@angular/ssr';
 
 export const serverRoutes: ServerRoute[] = [
     {
+        path: 'home',
+        renderMode: RenderMode.Prerender
+    },
+        {
+        path: 'grid/grid-master-detail',
+        renderMode: RenderMode.Prerender
+    },
+    {
         path: 'treegrid-finjs',
         renderMode: RenderMode.Client // TODO: Fails with Prerender
     },
@@ -19,6 +27,6 @@ export const serverRoutes: ServerRoute[] = [
     },
     {
         path: '**',
-        renderMode: RenderMode.Prerender
+        renderMode: RenderMode.Client
     }
 ];
