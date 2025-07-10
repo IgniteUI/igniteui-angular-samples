@@ -39,7 +39,12 @@
                 "node_modules"
               ]
             },
-            "browser": "src/main.ts"
+            "browser": "src/main.ts",
+            "server": "src/main.server.ts",
+            "outputMode": "static",
+            "ssr": {
+                "entry": "src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -159,7 +164,12 @@
               ]
             },
             "preserveSymlinks": true,
-            "browser": "projects/app-lob/src/main.ts"
+            "browser": "projects/app-lob/src/main.ts",
+            "server": "projects/app-lob/src/main.server.ts",
+            "outputMode": "static",
+            "ssr": {
+              "entry": "projects/app-lob/src/server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -284,7 +294,12 @@
                 "node_modules"
               ]
             },
-            "browser": "projects/app-crm/src/main.ts"
+            "browser": "projects/app-crm/src/main.ts",
+            "server": "projects/app-crm/src/main.server.ts",
+            "outputMode": "static",
+            "ssr": {
+              "entry": "projects/app-crm/src/server.ts"
+            }
           },
           "configurations": {
             "production": {
