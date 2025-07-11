@@ -14,7 +14,7 @@ export class ComboFeaturesComponent implements OnInit{
     // eslint-disable-next-line @typescript-eslint/naming-convention
     public GROUP_KEY = 'region';
     public lData: any[];
-    public filterable = true;
+    public disableFiltering = false;
     public showSearchCaseIcon = false;
     public customValues = true;
     public disabled = false;
