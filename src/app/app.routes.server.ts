@@ -103,7 +103,7 @@ export const serverRoutes: ServerRoute[] = [
     },
     {
         path: 'samples/grid/**',
-        renderMode: RenderMode.Client // TODO: Fails with Prerender
+        renderMode: RenderMode.Prerender // TODO: Fails with Prerender
     },
     {
         path: '**',
