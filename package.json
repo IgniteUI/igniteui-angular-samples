@@ -27,7 +27,7 @@
     "start:app-lob:live-editing": "gulp generate-live-editing --appDv=true && node node_modules/@angular/cli/bin/ng serve app-lob -o",
     "lint:app-crm": "ng lint app-crm",
     "build-ci": "gulp overwrite-package-json && ng build --configuration production",
-    "build-ci:app-lob": "gulp overwrite-package-json && ng build app-lob --configuration production && gulp prerenderPages",
+    "build-ci:app-lob": "gulp overwrite-package-json && ng build app-lob --configuration production",
     "build-ci:app-crm": "gulp overwrite-package-json && ng build app-crm --configuration production",
     "repositoryfyAngularDemos": "gulp repositoryfyAngularDemos",
     "repositoryfyAngularDemos:prod": "gulp repositoryfyAngularDemos --configuration production",
