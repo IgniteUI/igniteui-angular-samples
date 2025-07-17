@@ -5,7 +5,7 @@ import {
     IgxCardHeaderComponent,
     IgxChipComponent,
     IgxIconComponent,
-    IgxPrefixDirective,
+    IgxPrefixDirective
 } from "igniteui-angular";
 
 @Component({
@@ -18,7 +18,7 @@ import {
         IgxCardContentDirective,
         IgxChipComponent,
         IgxIconComponent,
-        IgxPrefixDirective,
-    ],
+        IgxPrefixDirective
+    ]
 })
 export class RoundnessComponent {}
