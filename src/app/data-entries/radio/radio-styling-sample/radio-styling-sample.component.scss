@@ -1,4 +1,7 @@
 @use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+// CSS only approach
 
 igx-radio {
     --empty-color: #556b81;
@@ -20,3 +23,16 @@ igx-radio.igx-radio--focused::after {
     inset: 1px -4px 1px -2px;
     border-radius: 8px;
 }
+
+// SASS approach
+
+// $custom-radio-theme: radio-theme(
+//   $empty-color: #556b81,
+//   $label-color: #131e29,
+//   $fill-color: #0064d9,
+//   $focus-outline-color: #0032a5,
+//   $fill-color-hover: #0064d9,
+//   $hover-color: transparent
+// );
+
+//   @include css-vars($custom-radio-theme);

@@ -1,4 +1,7 @@
 @use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+// CSS only approach
 
 igx-switch {
     --thumb-on-color: #e3f0ff;
@@ -17,3 +20,22 @@ igx-switch {
 igx-switch:hover {
     --track-off-color: #637d97;
 }
+
+// SASS approach
+
+// $custom-switch-theme: switch-theme(
+//   $thumb-on-color: #e3f0ff,
+//   $track-on-color: #0064d9,
+//   $track-on-hover-color: #0058bf,
+//   $thumb-off-color: #fff,
+//   $track-off-color: #788fa6,
+//   $border-radius-track: 1rem,
+//   $focus-outline-color: #0032a5,
+//   $border-on-color: transparent,
+//   $border-on-hover-color: transparent,
+//   $border-color: transparent,
+//   $border-hover-color: transparent,
+// );
+
+// @include css-vars($custom-switch-theme)
+ 

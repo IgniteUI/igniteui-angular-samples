@@ -1,4 +1,7 @@
 @use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+// CSS only approach
 
 igx-chip {
     --text-color: #fff;
@@ -19,13 +22,13 @@ igx-chip[id='2'] {
     --focus-background: #9f1717;
 }
 
-igx-chip[id='3']{
+igx-chip[id='3'] {
     --background: #3b5999;
     --hover-background: #3b5999;
     --focus-background: #2c4378;
 }
 
-igx-chip[id='4']{
+igx-chip[id='4'] {
     --background: #55acee;
     --hover-background: #55acee;
     --focus-background: #4682af;
@@ -35,3 +38,15 @@ igx-icon.igx-icon {
     width: 0.75rem;
     height: 0.75rem;
 }
+
+// SASS approach
+
+// $custom-chip-theme: chip-theme(
+//   $background: #cd201f,
+//   $text-color: #fff,
+//   $hover-background: #cd201f,
+//   $focus-background: #9f1717,
+// );
+
+// @include css-vars($custom-chip-theme)
+ 

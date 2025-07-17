@@ -1,5 +1,8 @@
 @use "layout.scss";
- 
+@use "igniteui-angular/theming" as *;
+
+// CSS only approach
+
 .buttons-sample-1 .igx-button--contained {
     --background: #000;
     --hover-background: #000000bf;
@@ -322,3 +325,21 @@
 .button-sample .igx-button {
     --ig-font-family: 'alibaba-sans', sans-serif;
 }
+
+// SASS approach
+
+// $custom-button-theme: button-theme(
+//   $background: #f9f0ff,
+//   $foreground: #722ed1,
+//   $border-color: #722ed1,
+//   $hover-background: #efdbff,
+//   $hover-foreground: #9254de,
+//   $hover-border-color: #9254de,
+//   $active-border-color: #531dab,
+//   $active-foreground: #531dab,
+//   $focus-visible-background: #f9f0ff,
+// );
+
+// .button-sample {
+//   @include css-vars($custom-button-theme) 
+// }

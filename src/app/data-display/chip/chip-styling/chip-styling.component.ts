@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject  } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxChipsAreaComponent, IgxChipComponent, IgxIconComponent, IgxPrefixDirective, IgxIconService } from 'igniteui-angular';
 
 

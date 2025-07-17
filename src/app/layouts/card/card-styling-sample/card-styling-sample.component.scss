@@ -1,13 +1,7 @@
 @use "layout.scss";
+@use "igniteui-angular/theming" as *;
 
-igx-chip {
-    --border-radius: 4px;
-    --background: #fafafa;
-    --border-color: #d9d9d9;
-    --ig-body-2-font-size: 0.75rem;
-    --hover-background: #d9d9d9;
-    --focus-background: #d9d9d9;
-}
+// CSS only approach
 
 igx-card {
     --border-radius: 8px;
@@ -42,6 +36,15 @@ igx-card {
     }
 }
 
+igx-chip {
+    --border-radius: 4px;
+    --background: #fafafa;
+    --border-color: #d9d9d9;
+    --ig-body-2-font-size: 0.75rem;
+    --hover-background: #d9d9d9;
+    --focus-background: #d9d9d9;
+}
+
 .igx-icon-button--flat {
     --foreground: #00000073;
     --hover-foreground: #1677ff;
@@ -51,3 +54,40 @@ igx-card {
 igx-divider {
     --color: #f0f0f0
 }
+
+// SASS approach
+
+// $custom-card-theme: card-theme(
+//   $border-radius: 8px,
+//   $outline-color: #f0f0f0,
+//   $resting-shadow: none,
+//   $hover-shadow: none,
+//   $header-text-color: #000000e0,
+// );
+
+// $custom-chip-theme: chip-theme(
+//   $border-radius: 4px,
+//   $background: #fafafa,
+//   $border-color: #d9d9d9,
+//   $hover-background: #d9d9d9,
+//   $focus-background: #d9d9d9,
+// );
+
+// $custom-icon-button-theme: icon-button-theme(
+//   $foreground: #00000073,
+//   $hover-foreground: #1677ff,
+//   $hover-background: none,
+//   $border-color: transparent
+// );
+
+// $custom-divider-theme: divider-theme(
+//   $color: #f0f0f0
+// );
+
+// @include css-vars($custom-card-theme);
+// @include css-vars($custom-chip-theme);
+// @include css-vars($custom-divider-theme);
+// .igx-icon-button--flat {
+//   @include css-vars($custom-icon-button-theme);
+// };
+ 
