@@ -61,7 +61,7 @@ steps:
       workingDir: ${{ parameters.workingDir }}
       verbose: false
       customCommand: ${{ parameters.customCommand }}
-  
+
 #  - task: PowerShell@2
 #    displayName: 'Replace with licensed igniteui-angular'
 #    inputs:
@@ -126,10 +126,10 @@ steps:
     displayName: 'Update web.config file'
     workingDirectory: ${{ parameters.workingDir }}
 
-#  - script: |
-#      mv "$(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser/index.csr.html" "$(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser/index.html"
-#      echo "File renamed successfully."
-#    displayName: Rename index.csr.html to index.html
+  - script: |
+     mv "$(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser/index.csr.html" "$(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser/index.html"
+     echo "File renamed successfully."
+    displayName: Rename index.csr.html to index.html
 
   - script: |
       sourcePath="$(Build.SourcesDirectory)/${{ parameters.targetFolder }}/browser"
