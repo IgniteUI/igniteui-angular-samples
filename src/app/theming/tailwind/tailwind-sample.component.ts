@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
     standalone: true,
     selector: 'app-tailwind-sample',
     styleUrls: ['./tailwind-sample.component.scss'],
-    templateUrl: './tailwind-sample.component.html',
+    templateUrl: './tailwind-sample.component.html'
 })
 
 export class TailwindSampleComponent {}
