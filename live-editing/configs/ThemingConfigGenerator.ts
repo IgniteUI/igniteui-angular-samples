@@ -62,6 +62,14 @@ export class ThemingConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/theming/angular/'
         }));
 
+        configs.push(new Config({
+            component: 'TailwindSampleComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: '/theming/tailwind/',
+            additionalDependencies: ['tailwindcss', '@tailwindcss/postcss'],
+            additionalFiles: [".postcssrc.json"],
+        }));
+
         return configs;
     }
 }
