@@ -1,0 +1,18 @@
+<div class="grid__wrapper">
+  <igx-grid [igxPreventDocumentScroll]="true" #grid1 [data]="data" [width]="'100%'" [height]="'570px'" [mergeStrategy]="perProjectMergeStrategy" [cellMergeMode]="cellMergeMode" >
+    <igx-column field="ActionID" header="Order ID" [hidden]="true">
+    </igx-column>
+    <igx-column field="ProjectName" header="Project Name" [merge]="true">
+    </igx-column>
+    <igx-column field="Type" header="Type" [merge]="true">
+    </igx-column>
+    <igx-column field="Priority" header="Priority" [merge]="true">
+    </igx-column>
+    <igx-column field="Status" header="Status" [merge]="true">
+    </igx-column>
+    <igx-column field="ActionName" header="Action">
+    </igx-column>
+    <igx-column field="Created" header="Created" [dataType]="'date'">
+    </igx-column>
+  </igx-grid>
+</div>
