@@ -4,7 +4,7 @@
         [cellMergeMode]="cellMergeMode" [mergeStrategy]="mergeStrategy">
         <igx-grid-toolbar>
             <igx-select [(ngModel)]="cellMergeMode">
-                <label igxLabel>Select Merge Type</label>
+                <label igxLabel>Select Merge Mode</label>
                 @for (type of mergeTypes; track type) {
                 <igx-select-item [value]="type.value">
                     {{type.name}}

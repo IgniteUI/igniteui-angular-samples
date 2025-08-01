@@ -30,9 +30,9 @@ export class TreeGridCellMergeComponent {
             dir: SortingDirection.Asc, fieldName: 'Country'
         }
     ];
-    public mergeTypes = [{ name: 'Merge always', value: GridCellMergeMode.always }, { name: 'Merge on sort', value: GridCellMergeMode.onSort }];
+    public mergeTypes = [{ name: 'Always', value: GridCellMergeMode.always }, { name: 'On sort', value: GridCellMergeMode.onSort }];
 
-    public mergeStrategies =  [{ name: 'Default Merge Strategy', value: new DefaultTreeGridMergeStrategy() }, { name: 'By Level Merge Strategy', value: new ByLevelTreeGridMergeStrategy() }];
+    public mergeStrategies =  [{ name: 'Default Strategy', value: new DefaultTreeGridMergeStrategy() }, { name: 'By Level Strategy', value: new ByLevelTreeGridMergeStrategy() }];
     public mergeStrategy = this.mergeStrategies[0].value;
     public strategySelection(e) {
         this.mergeStrategy = e.newSelection.value;
