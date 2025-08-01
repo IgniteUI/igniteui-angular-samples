@@ -1,0 +1,36 @@
+<div class="grid__wrapper">
+    <igx-tree-grid #treeGrid [igxPreventDocumentScroll]="true" [data]="data" width="100%" height="800px"
+        [sortingExpressions]="sortExpr" [autoGenerate]="false" primaryKey="ID" foreignKey="ParentID"
+        [cellMergeMode]="cellMergeMode" [mergeStrategy]="mergeStrategy">
+        <igx-grid-toolbar>
+            <igx-select [(ngModel)]="cellMergeMode">
+                <label igxLabel>Select Merge Type</label>
+                @for (type of mergeTypes; track type) {
+                <igx-select-item [value]="type.value">
+                    {{type.name}}
+                </igx-select-item>
+                }
+            </igx-select>
+
+            <igx-select (selectionChanging)="strategySelection($event)">
+                <label igxLabel>Select Merge Strategy</label>
+                @for (type of mergeStrategies; track type) {
+                <igx-select-item [value]="type.value" [selected]="type.value === treeGrid.mergeStrategy">
+                    {{type.name}}
+                </igx-select-item>
+                }
+            </igx-select>
+        </igx-grid-toolbar>
+        <igx-column [field]="'Name'" dataType="string" width="250px"></igx-column>
+        <igx-column [field]="'Title'" dataType="string" width="250px" [merge]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'HireDate'" dataType="date" width="200px"></igx-column>
+        <igx-column [field]="'Country'" dataType="string" width="200px" [merge]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'City'" dataType="string" width="200px" [merge]="true" [sortable]="true"></igx-column>
+        <igx-column [field]="'Age'" dataType="number" width="200px"></igx-column>
+        <igx-column [field]="'Address'" dataType="string" width="200px"></igx-column>
+        <igx-column [field]="'Fax'" dataType="string" width="200px"></igx-column>
+        <igx-column [field]="'PostalCode'" dataType="string" width="200px"></igx-column>
+        <igx-column [field]="'Phone'" dataType="string" width="200px"></igx-column>
+
+    </igx-tree-grid>
+</div>

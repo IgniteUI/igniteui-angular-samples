@@ -100,6 +100,7 @@ import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/tr
 import { TreeGridValidatorServiceCrossFieldComponent } from './tree-grid-validator-service-cross-field/tree-grid-validator-service-cross-field.component';
 import { TreeGridValidationStyleComponent } from './tree-grid-validation-style/tree-grid-validation-style.component';
 import { TreeGridSummaryExportComponent } from './tree-grid-summary-export/tree-grid-summary-export.component';
+import { TreeGridCellMergeComponent } from './tree-grid-cell-merge-sample/tree-grid-cell-merge-sample.component';
 
 export const TreeGridRoutes: Routes = [
     {
@@ -596,5 +597,10 @@ export const TreeGridRoutes: Routes = [
         component: TreeGridSummaryExportComponent,
         data: treeGridRoutesData['treegrid-summary-export'],
         path: 'treegrid-summary-export'
+    },
+    {
+        component: TreeGridCellMergeComponent,
+        data: treeGridRoutesData['treegrid-cell-merge'],
+        path: 'treegrid-cell-merge'
     }
 ];
