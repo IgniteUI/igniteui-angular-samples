@@ -5,9 +5,9 @@
 :host {
     ::ng-deep {
         @include button($flat: flat-button-theme($schema: $light-bootstrap-schema),
-				$contained: contained-button-theme($schema: $light-bootstrap-schema),
-				$outlined: outlined-button-theme($schema: $light-bootstrap-schema),
-				$fab: fab-button-theme($schema: $light-bootstrap-schema));
+        $contained: contained-button-theme($schema: $light-bootstrap-schema),
+        $outlined: outlined-button-theme($schema: $light-bootstrap-schema),
+        $fab: fab-button-theme($schema: $light-bootstrap-schema));
         @include button.component();
     }
 }
@@ -30,8 +30,8 @@
 }
 
 [igxbutton] {
-	  --ig-button-font-weight: 400;
-	  --ig-button-text-transform: capitalize;
+    --ig-button-font-weight: 400;
+    --ig-button-text-transform: capitalize;
     min-height: 1.5rem;
     outline: rem(1px) solid #fff;
 }

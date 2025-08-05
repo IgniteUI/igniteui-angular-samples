@@ -8,8 +8,8 @@
         @include switch(switch-theme($schema: $_switch-schema));
         @include switch.component();
 
-				// Note: This is not the standard approach for styling the component.
-				// We're using it here solely to mirror the UI5 sample.
+        // Note: This is not the standard approach for styling the component.
+        // We're using it here solely to mirror the UI5 sample.
         igx-switch:hover .igx-switch__thumb {
             --border-hover-color: #fff;
         }
@@ -18,14 +18,14 @@
             width: 2.75rem;
             height: 1.25rem;
             padding-left: 0.125rem;
-				 }
+         }
 
         .igx-switch__composite-thumb {
             width: 1.60rem;
             height: 1rem;
             min-width: 1.60rem;
             transform: translateX(-0.5px);
-				}
+        }
 
         .igx-switch__thumb {
             width: 1.60rem;

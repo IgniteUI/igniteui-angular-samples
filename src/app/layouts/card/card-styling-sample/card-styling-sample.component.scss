@@ -15,21 +15,21 @@ igx-card {
 }
 
 igx-avatar {
-	  --background: transparent;
-	  --size: #{rem(30px)};
+    --background: transparent;
+    --size: #{rem(30px)};
 }
 
 .igx-card-header {
-	  --ig-h6-font-size: 1rem;
-		--ig-body-1-font-size: 0.875rem;
+    --ig-h6-font-size: 1rem;
+    --ig-body-1-font-size: 0.875rem;
 }
 
 .igx-card-header__subtitle {
-		--ig-subtitle-2-font-weight: 400;
-		--ig-subtitle-2-line-height: #{rem(28px)};
-		--ig-subtitle-2-letter-spacing: #{rem(0.5px)};
-		--subtitle-text-color: rgba(0, 0, 0, 0.45);
-		margin: 0.5rem 0 1rem;
+    --ig-subtitle-2-font-weight: 400;
+    --ig-subtitle-2-line-height: #{rem(28px)};
+    --ig-subtitle-2-letter-spacing: #{rem(0.5px)};
+    --subtitle-text-color: rgba(0, 0, 0, 0.45);
+    margin: 0.5rem 0 1rem;
 }
 
 igx-chip {
