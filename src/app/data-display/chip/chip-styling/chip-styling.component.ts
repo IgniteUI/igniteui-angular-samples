@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { facebook, linkedin } from '@igniteui/material-icons-extended';
 import { 
   IgxChipsAreaComponent, 
@@ -16,7 +16,7 @@ import { NgClass } from '@angular/common';
   imports: [IgxChipsAreaComponent, IgxChipComponent, IgxIconComponent, IgxPrefixDirective, NgClass]
 })
 
-export class ChipStylingSampleComponent {
+export class ChipStylingSampleComponent implements OnInit {
   changeDetectionRef = inject(ChangeDetectorRef);
   private iconService = inject(IgxIconService)
   public ngOnInit() {

@@ -6,7 +6,7 @@ import { IgxButtonDirective, THEME_TOKEN, ThemeToken } from 'igniteui-angular';
     styleUrls: ['./buttons-style.component.scss'],
     templateUrl: './buttons-style.component.html',
     imports: [IgxButtonDirective],
-    providers: [{provide: THEME_TOKEN, useFactory: () => new ThemeToken('bootstrap')}],
+    providers: [{provide: THEME_TOKEN, useFactory: () => new ThemeToken('bootstrap')}]
 })
 export class ButtonsStyleComponent {
     range = Array(6);
