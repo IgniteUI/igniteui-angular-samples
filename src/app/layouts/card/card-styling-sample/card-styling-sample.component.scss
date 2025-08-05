@@ -1,43 +1,39 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-// CSS only approach
+// CSS variables approach
 
 igx-card {
-    --border-radius: 8px;
+    --border-radius: #{rem(8px)};
     --outline-color: #f0f0f0;
     --resting-shadow: none;
     --hover-shadow: none;
-    --header-text-color: #000000e0;
+    --header-text-color: rgba(0, 0, 0, 0.88);
     --ig-font-family: 'alibaba-sans', sans-serif;
-
-    width: 300px;
+    width: rem(300px);
     border: none;
 }
 
-.igx-card-header{
+igx-avatar {
+	  --background: transparent;
+	  --size: #{rem(30px)};
+}
 
-    igx-avatar {
-        --background: transparent;
+.igx-card-header {
+	  --ig-h6-font-size: 1rem;
+		--ig-body-1-font-size: 0.875rem;
+}
 
-        height: 30px;
-        width: 30px;
-    }
-
-    h3 {
-        --ig-h6-font-size: 1rem;
-    }
-
-    p {
-        --ig-body-1-font-size: 0.875rem;
-
-        margin-top: 8px;
-        color: #00000073;
-    }
+.igx-card-header__subtitle {
+		--ig-subtitle-2-font-weight: 400;
+		--ig-subtitle-2-line-height: #{rem(28px)};
+		--ig-subtitle-2-letter-spacing: #{rem(0.5px)};
+		--subtitle-text-color: rgba(0, 0, 0, 0.45);
+		margin: 0.5rem 0 1rem;
 }
 
 igx-chip {
-    --border-radius: 4px;
+    --border-radius: 0.25rem;
     --background: #fafafa;
     --border-color: #d9d9d9;
     --ig-body-2-font-size: 0.75rem;
@@ -55,7 +51,7 @@ igx-divider {
     --color: #f0f0f0
 }
 
-// SASS approach
+// Sass theme approach
 
 // $custom-card-theme: card-theme(
 //   $border-radius: 8px,

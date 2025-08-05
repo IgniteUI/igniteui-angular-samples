@@ -1,8 +1,8 @@
-<igx-chips-area (reorder)="chipsOrderChanged($event)">
-    @for (chip of chipList; track chip) {
-        <igx-chip [id]="chip.id">
-        <igx-icon igxPrefix name={{chip.icon}}></igx-icon>
-            {{chip.text}}
-        </igx-chip>
-    }
+<igx-chips-area>
+  @for (chip of chipList; track chip) {
+    <igx-chip [ngClass]="chip.class">
+      <igx-icon igxPrefix name={{chip.icon}}></igx-icon>
+      {{chip.text}}
+    </igx-chip>
+  }
 </igx-chips-area>

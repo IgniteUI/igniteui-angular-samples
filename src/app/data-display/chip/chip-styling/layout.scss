@@ -1,17 +1,17 @@
 :host {
-  ::ng-deep {
-      igx-chip .igx-chip__item{
-          height: 20px;
-          font-size: 12px;
-      }
-  }
+    ::ng-deep {
+        .igx-chip__item {
+            height: 1.25rem;
+            font-size: 0.75rem;
+        }
+    }
 }
 
 igx-chip {
-    margin-right: 5px;
-    margin-top: 20px;
+    margin-right: 0.5rem;
+    margin-top: 1.25rem;
 }
 
 igx-chips-area {
-    margin-left: 20px;
+    margin-left: 1.25rem;
 }

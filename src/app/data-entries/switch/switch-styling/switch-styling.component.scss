@@ -1,7 +1,7 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-// CSS only approach
+// CSS variables approach
 
 igx-switch {
     --thumb-on-color: #e3f0ff;
@@ -21,7 +21,7 @@ igx-switch:hover {
     --track-off-color: #637d97;
 }
 
-// SASS approach
+// Sass theme approach
 
 // $custom-switch-theme: switch-theme(
 //   $thumb-on-color: #e3f0ff,

@@ -8,26 +8,28 @@
         @include checkbox(checkbox-theme($schema: $_checkbox-schema));
         @include checkbox.component();
 
-        igx-checkbox.igx-checkbox--checked .igx-checkbox__composite-wrapper .igx-checkbox__composite {
+				// Note: This is not the standard approach for styling the component.
+				// We're using it here solely to mirror the UI5 sample.
+        .igx-checkbox--checked .igx-checkbox__composite-wrapper .igx-checkbox__composite {
             border-color: var(--empty-color);
         }
 
-        igx-checkbox .igx-checkbox__composite {
+        .igx-checkbox__composite {
             min-width: 1.125rem;
             height: 1.125rem;
         }
 
-        igx-checkbox.igx-checkbox--checked:hover .igx-checkbox__composite-wrapper .igx-checkbox__composite {
+        .igx-checkbox--checked:hover .igx-checkbox__composite-wrapper .igx-checkbox__composite {
             border-color: var(--empty-color);
         }
 
-        igx-checkbox .igx-checkbox__label {
-            margin-inline-start: 0rem;
+        .igx-checkbox__label {
+            margin-inline-start: auto;
         }
     }
 }
 
 igx-checkbox {
     display: flex;
-    margin: 20px 0 0 20px;
+    margin: 1.25rem 0 0 1.25rem;
 }

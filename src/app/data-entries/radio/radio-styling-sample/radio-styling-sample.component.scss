@@ -1,15 +1,14 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-// CSS only approach
+// CSS variables approach
 
 igx-radio {
     --empty-color: #556b81;
     --label-color: #131e29;
     --fill-color: #0064d9;
     --focus-outline-color: #0032a5;
-
-    --ig-subtitle-1-font-size: 14px;
+    --ig-subtitle-1-font-size: #{rem(14px)};
     --ig-font-family: Arial,Helvetica,sans-serif;
 }
 
@@ -19,12 +18,12 @@ igx-radio:hover {
     --hover-color: transparent;
 }
 
-igx-radio.igx-radio--focused::after {
-    inset: 1px -4px 1px -2px;
-    border-radius: 8px;
+.igx-radio--focused::after {
+    inset: rem(1px) rem(-4px) rem(1px) rem(-2px);
+    border-radius: rem(8px);
 }
 
-// SASS approach
+// Sass theme approach
 
 // $custom-radio-theme: radio-theme(
 //   $empty-color: #556b81,

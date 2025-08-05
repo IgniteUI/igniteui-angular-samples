@@ -1,7 +1,7 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-// CSS only approach
+// CSS variables approach
 
 igx-checkbox {
     --tick-color: #0064d9;
@@ -12,7 +12,7 @@ igx-checkbox {
     --focus-outline-color: #0032a5;
     --border-radius: 0.25rem;
     --ig-font-family: Arial, Helvetica, sans-serif;
-    --ig-subtitle-1-font-size: 14px;
+    --ig-subtitle-1-font-size: 0.875rem;
 }
 
 igx-checkbox:hover {
@@ -20,11 +20,11 @@ igx-checkbox:hover {
 }
 
 #checkbox-1.igx-checkbox--focused:after {
-    inset: 8px -4px 8px 8px;
-    border-radius: 8px;
+    inset: 0.5rem -0.25rem 0.5rem 0.5rem;
+    border-radius: 0.5rem;
 }
 
-// SASS approach
+// Sass theme approach
 
 // $custom-checkbox-theme: checkbox-theme(
 //   $tick-color: #0064d9,
