@@ -5,9 +5,11 @@ export const dataDisplayRoutesData = {
     "badge-sample-2": { displayName: "Simple Badge", parentName: "Badge" },
     "badge-sample-3": { displayName: "Badge for List Items", parentName: "Badge" },
     "badge-styling-sample": { displayName: "Badge Styling Sample", parentName: "Badge" },
+    "badge-tailwind-styling-sample": { displayName: "Badge Tailwind Styling Sample", parentName: "Badge" },
     "chip-simple": { displayName: "Chip Simple", parentName: "Chip" },
     "chip-area-sample": { displayName: "Chip Area Sample", parentName: "Chip" },
     "chip-styling": { displayName: "Chip Styling", parentName: "Chip" },
+    "chip-tailwind-styling": { displayName: "Chip Tailwind Styling", parentName: "Chip" },
     "circular-progressbar": { displayName: "Circular Progressbar Sample", parentName: "Circular Progressbar" },
     "circular-dynamic-sample": { displayName: "Circular Dynamic Sample", parentName: "Circular Progressbar" },
     // tslint:disable-next-line:max-line-length

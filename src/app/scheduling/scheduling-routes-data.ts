@@ -14,6 +14,7 @@ export const schedulingRoutesData = {
     'calendar-years-view': { displayName: 'Calendar Years View', parentName: 'Calendar' },
     'multiview-calendar': {displayName: 'Multiview Calendar', parentName: 'Calendar'},
     'calendar-styling-sample': { displayName: 'Calendar Styling', parentName: 'Calendar' },
+    'calendar-tailwind-styling-sample': { displayName: 'Calendar Tailwind Styling', parentName: 'Calendar' },
     'datepicker-dropdown': { displayName: 'Editable Datepicker', parentName: 'Datepicker' },
     'datepicker-sample-1': { displayName: 'Simple Datepicker', parentName: 'Datepicker' },
     'datepicker-sample-2': { displayName: 'One-way data bound Datepicker', parentName: 'Datepicker' },

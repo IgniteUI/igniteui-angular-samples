@@ -2,9 +2,11 @@ import { BadgeIconComponent } from './badge/badge-icon/badge-icon.component';
 import { BadgeSample2Component } from './badge/badge-sample-2/badge-sample-2.component';
 import { BadgeSample3Component } from './badge/badge-sample-3/badge-sample-3.component';
 import { BadgeStylingSampleComponent } from './badge/badge-styling-sample/badge-styling-sample.component';
+import { BadgeTailwindStylingSampleComponent } from './badge/badge-tailwind-styling-sample/badge-tailwind-styling-sample.component';
 import { ChipAreaSampleComponent } from './chip/chip-area-sample/chip-area-sample.component';
 import { ChipSimpleComponent } from './chip/chip-simple/chip-simple.component';
 import { ChipStylingSampleComponent } from './chip/chip-styling/chip-styling.component';
+import { ChipTailwindStylingSampleComponent } from './chip/chip-tailwind-styling/chip-tailwind-styling.component';
 import { CircularDynamicSampleComponent } from './circular-progressbar/circular-dynamic-sample/circular-dynamic-sample.component';
 // eslint-disable-next-line max-len
 import { CircularIndeterminateProgressbarComponent } from './circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component';
@@ -62,6 +64,11 @@ export const DataDisplayRoutes: Routes = [
         component: BadgeStylingSampleComponent,
         data: dataDisplayRoutesData['badge-styling-sample'],
         path: 'badge-styling-sample'
+    },
+    {
+        component: BadgeTailwindStylingSampleComponent,
+        data: dataDisplayRoutesData['badge-tailwind-styling-sample'],
+        path: 'badge-tailwind-styling-sample'
     },
     {
         component: ChipAreaSampleComponent,
@@ -212,6 +219,11 @@ export const DataDisplayRoutes: Routes = [
         component: ChipStylingSampleComponent,
         data: dataDisplayRoutesData['chip-styling'],
         path: 'chip-styling'
+    },
+    {
+        component: ChipTailwindStylingSampleComponent,
+        data: dataDisplayRoutesData['chip-tailwind-styling'],
+        path: 'chip-tailwind-styling'
     },
     {
         component: MaterialSymbolsComponent,

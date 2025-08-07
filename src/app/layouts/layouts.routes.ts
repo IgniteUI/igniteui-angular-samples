@@ -5,12 +5,14 @@ import { AvatarSample2Component } from './avatar/avatar-sample-2/avatar-sample-2
 import { AvatarSample3Component } from './avatar/avatar-sample-3/avatar-sample-3.component';
 import { AvatarSample4Component } from './avatar/avatar-sample-4/avatar-sample-4.component';
 import { AvatarStylingSampleComponent } from './avatar/avatar-styling/avatar-styling.component';
+import { AvatarTailwindStylingSampleComponent } from './avatar/avatar-tailwind-styling/avatar-tailwind-styling.component';
 import { AvatarCSSVariablesComponent } from './avatar/avatar-css-variables/avatar-css-variables.component';
 import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
 import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
 import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
 import { CardSample4Component } from './card/card-sample-4/card-sample-4.component';
 import { CardStylingSampleComponent } from './card/card-styling-sample/card-styling-sample.component';
+import { CardTailwindStylingSampleComponent } from './card/card-tailwind-styling-sample/card-tailwind-styling-sample.component';
 import { CardComponent } from './card/card.component';
 import {
     CarouselAnimationsSampleComponent
@@ -52,6 +54,7 @@ import { TabbarSample1Component } from './tabbar/tabbar-sample-1/tabbar-sample-1
 import { TabbarSample2Component } from './tabbar/tabbar-sample-2/tabbar-sample-2.component';
 import { TabbarSample3Component } from './tabbar/tabbar-sample-3/components/tabbar-sample-3.component';
 import { TabbarStyleComponent } from './tabbar/tabbar-style/tabbar-style.component';
+import { TabbarTailwindStyleComponent } from './tabbar/tabbar-tailwind-style/tabbar-tailwind-style.component';
 import { TabbarView1Component } from './tabbar/views/view1/view1.component';
 import { TabbarView2Component } from './tabbar/views/view2/view2.component';
 import { TabbarView3Component } from './tabbar/views/view3/view3.component';
@@ -123,6 +126,11 @@ export const LayoutsRoutes: Routes = [
         component: AvatarStylingSampleComponent,
         data: layoutsRoutesData['avatar-styling'],
         path: 'avatar-styling'
+    },
+    {
+        component: AvatarTailwindStylingSampleComponent,
+        data: layoutsRoutesData['avatar-tailwind-styling'],
+        path: 'avatar-tailwind-styling'
     },
     {
         component: AvatarCSSVariablesComponent,
@@ -320,6 +328,11 @@ export const LayoutsRoutes: Routes = [
         path: 'tabbar-style'
     },
     {
+        component: TabbarTailwindStyleComponent,
+        data: layoutsRoutesData['tabbar-tailwind-style'],
+        path: 'tabbar-tailwind-style'
+    },
+    {
         component: TabsSample1Component,
         data: layoutsRoutesData['tabs-sample-1'],
         path: 'tabs-sample-1'
@@ -384,6 +397,11 @@ export const LayoutsRoutes: Routes = [
         component: CardStylingSampleComponent,
         data: layoutsRoutesData['card-styling-sample'],
         path: 'card-styling-sample'
+    },
+    {
+        component: CardTailwindStylingSampleComponent,
+        data: layoutsRoutesData['card-tailwind-styling-sample'],
+        path: 'card-tailwind-styling-sample'
     },
     {
         component: TileManagerComponent,

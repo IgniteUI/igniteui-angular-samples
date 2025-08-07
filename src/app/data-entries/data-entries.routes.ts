@@ -7,6 +7,7 @@ import { ButtonGroupSample3Component } from './buttonGroup/button-group-sample-3
 import { ButtonGroupSampleComponent } from './buttonGroup/button-group-sample-4/button-group-sample.component';
 import { ButtonGroupSample5Component } from './buttonGroup/button-group-sample-5/button-group-sample-5.component';
 import { ButtonGroupStyleComponent } from './buttonGroup/button-group-style/button-group-style.component';
+import { ButtonGroupTailwindStyleComponent } from './buttonGroup/button-group-tailwind-style/button-group-tailwind-style.component';
 import { ButtonsDisabledComponent } from './buttons/buttons-disabled-sample/buttons-disabled-sample';
 import { ButtonsDisplayDensityComponent } from './buttons/buttons-display-density/buttons-display-density.component';
 import { ButtonsRoundnessComponent } from './buttons/buttons-roundness-sample/buttons-roundness-sample';
@@ -19,10 +20,12 @@ import { ButtonsSample6Component } from './buttons/buttons-sample-6/buttons-samp
 import { ButtonsSample7Component } from './buttons/buttons-sample-7/buttons-sample-7.component';
 import { ButtonsSample8Component } from './buttons/buttons-sample-8/buttons-sample-8.component';
 import { ButtonsStyleComponent } from './buttons/buttons-style/buttons-style.component';
+import { ButtonsTailwindStyleComponent } from './buttons/buttons-tailwind-style/buttons-tailwind-style.component';
 import { CheckboxSample1Component } from './checkbox/checkbox-sample-1/checkbox-sample-1.component';
 import { CheckboxSample2Component } from './checkbox/checkbox-sample-2/checkbox-sample-2.component';
 import { CheckboxSample3Component } from './checkbox/checkbox-sample-3/checkbox-sample-3.component';
 import { CheckboxStylingComponent } from './checkbox/checkbox-styling/checkbox-styling.component';
+import { CheckboxTailwindStylingComponent } from './checkbox/checkbox-tailwind-styling/checkbox-tailwind-styling.component';
 import { dataEntriesRoutesData } from './data-entries-routes-data';
 import { DropDownRemoteComponent } from './dropdown/drop-down-remote-virtual/drop-down-remote.component';
 import { DropDownVirtualComponent } from './dropdown/drop-down-virtual/drop-down-virtual.component';
@@ -121,6 +124,11 @@ export const DataEntriesRoutes: Routes = [
         path: 'button-group-style'
     },
     {
+        component: ButtonGroupTailwindStyleComponent,
+        data: dataEntriesRoutesData['button-group-tailwind-style'],
+        path: 'button-group-tailwind-style'
+    },
+    {
         component: ButtonsRoundnessComponent,
         data: dataEntriesRoutesData['buttons-roundness-sample'],
         path: 'buttons-roundness-sample'
@@ -176,6 +184,11 @@ export const DataEntriesRoutes: Routes = [
         path: 'buttons-style'
     },
     {
+        component: ButtonsTailwindStyleComponent,
+        data: dataEntriesRoutesData['buttons-tailwind-style'],
+        path: 'buttons-tailwind-style'
+    },
+    {
         component: CheckboxSample1Component,
         data: dataEntriesRoutesData['checkbox-sample-1'],
         path: 'checkbox-sample-1'
@@ -194,6 +207,11 @@ export const DataEntriesRoutes: Routes = [
         component: CheckboxStylingComponent,
         data: dataEntriesRoutesData['checkbox-styling'],
         path: 'checkbox-styling'
+    },
+    {
+        component: CheckboxTailwindStylingComponent,
+        data: dataEntriesRoutesData['checkbox-tailwind-styling'],
+        path: 'checkbox-tailwind-styling'
     },
     {
         component: DropdownMenuComponent,

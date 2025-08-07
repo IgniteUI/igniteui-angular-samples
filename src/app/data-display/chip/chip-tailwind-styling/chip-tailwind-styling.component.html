@@ -1,0 +1,25 @@
+<igx-chips-area (reorder)="chipsOrderChanged($event)">
+  @for (chip of chipList; track chip) {
+    <igx-chip
+      class="!material-chip-color-[#99BAA6]
+      ![--remove-icon-color:#C92828]"
+      [id]="chip.id"
+      [selectable]="true"
+      [selectIcon]="mySelectIcon"
+      [removable]="true"
+      [removeIcon]="myRemoveIcon"
+      (remove)="chipRemoved($event)"
+      [draggable]="true">
+      <igx-icon igxPrefix>{{chip.icon}}</igx-icon>
+      {{chip.text}}
+    </igx-chip>
+  }
+</igx-chips-area>
+
+<ng-template #mySelectIcon>
+  <igx-icon>check_circle</igx-icon>
+</ng-template>
+
+<ng-template #myRemoveIcon>
+  <igx-icon>delete</igx-icon>
+</ng-template>
