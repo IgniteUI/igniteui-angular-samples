@@ -4,7 +4,7 @@ import {
     IgxGridComponent,
     IgxCellHeaderTemplateDirective,
     IgxIconComponent,
-    IgxIconService,
+    IgxIconService
 } from "igniteui-angular";
 import { DATA } from "../../data/customers";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
@@ -18,8 +18,8 @@ import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scro
         IgxPreventDocumentScrollDirective,
         IgxColumnComponent,
         IgxCellHeaderTemplateDirective,
-        IgxIconComponent,
-    ],
+        IgxIconComponent
+    ]
 })
 export class PinningStylingComponent implements OnInit {
     private iconService = inject(IgxIconService);
@@ -29,7 +29,7 @@ export class PinningStylingComponent implements OnInit {
         this.iconService.setFamily("fas", {
             className: "fas",
             type: "font",
-            prefix: "fa-",
+            prefix: "fa-"
         });
     }
 
@@ -43,20 +43,20 @@ export class PinningStylingComponent implements OnInit {
                 field: "ContactName",
                 header: "Contact Name",
                 width: 200,
-                pinned: true,
+                pinned: true
             },
             {
                 field: "ContactTitle",
                 header: "Contact Title",
                 width: 200,
-                pinned: true,
+                pinned: true
             },
             { field: "Address", header: "Address", width: 300 },
             { field: "City", header: "City", width: 120 },
             { field: "Region", header: "Region", width: 120 },
             { field: "PostalCode", header: "Postal Code", width: 150 },
             { field: "Phone", header: "Phone", width: 150 },
-            { field: "Fax", header: "Fax", width: 150 },
+            { field: "Fax", header: "Fax", width: 150 }
         ];
         this.data = DATA;
     }
