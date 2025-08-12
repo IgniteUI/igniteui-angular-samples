@@ -2,18 +2,18 @@
 @use "igniteui-angular/theming" as *;
 
 // CSS variables approach
- 
+
 igx-input-group {
-	--border-color: #0f62fe;
-	--size: #{rem(40px)};
-	--idle-bottom-line-color: #8d8d8d;
-	--hover-bottom-line-color: #8d8d8d;
-	--hover-placeholder-color: var(--ig-gray-600);
-	--idle-secondary-color: var(--ig-gray-600);
-	--focused-secondary-color: var(--ig-gray-700);
-	--focused-bottom-line-color: #8d8d8d;
-	--box-background-hover: var(--ig-gray-100);
-	--helper-text-color: var(--ig-gray-600);
+    --border-color: #0f62fe;
+    --size: #{rem(40px)};
+    --idle-bottom-line-color: #8d8d8d;
+    --hover-bottom-line-color: #8d8d8d;
+    --hover-placeholder-color: var(--ig-gray-600);
+    --idle-secondary-color: var(--ig-gray-600);
+    --focused-secondary-color: var(--ig-gray-700);
+    --focused-bottom-line-color: #8d8d8d;
+    --box-background-hover: var(--ig-gray-100);
+    --helper-text-color: var(--ig-gray-600);
 }
 
 // Sass theme approach
