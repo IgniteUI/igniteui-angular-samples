@@ -1,12 +1,135 @@
 @use "igniteui-angular/theming" as *;
 
-.calendar-wrapper {
-  max-width: 600px;
-  min-width: 200px;
-  margin: 8px;
+:host {
+    ::ng-deep {
+
+        // Note: This is not the standard approach for styling the component.
+        // We're using it here solely to mirror the UI5 sample.
+
+        [title="Week"] .igx-days-view__label.igx-days-view__label--week-number {
+            opacity: 0;
+        }
+
+        igx-icon {
+            --color: var(--primary);
+            --size: #{rem(20px)};
+        }
+
+        .igx-calendar-view__item-inner {
+            color: var(--primary)
+        }
+
+        .igx-days-view__date--selected span {
+            font-weight: 700;
+        }
+
+        .igx-days-view__date--current span {
+            border-width: .125rem;
+        }
+
+        .igx-days-view__date--weekend:not(.igx-days-view__date--inactive):not(.igx-days-view__date--selected) span:not(:hover) {
+            background: var(--background-weekend);
+        }
+
+        .igx-days-view__date--active ::after {
+            border: .125rem solid #0032A5;
+            width: 1.25rem;
+            height: 1.25rem;
+            border-radius: 0.1875rem;
+            left: rem(3px);
+        }
+
+        .igx-days-view__date--active.igx-days-view__date--current :after {
+            left: rem(2px);
+        }
+
+        .igx-calendar-view__item:not(.igx-calendar-view__item--selected) .igx-calendar-view__item-inner:hover {
+            box-shadow: inset 0 0 0 0.0625rem #BCC3CA;
+        }
+
+        .igx-calendar-view {
+            padding: 1rem 0.375rem;
+        }
+
+        .igx-calendar-picker__prev {
+            position: absolute;
+        }
+
+        .igx-calendar-picker__next {
+            position: absolute;
+            right: 0;
+        }
+
+        .igx-calendar-picker__nav {
+            position: relative;
+            left: 0;
+            bottom: 1.7rem;
+        }
+
+        .igx-calendar-picker__next:hover,
+        .igx-calendar-picker__prev:hover {
+            background-color: var(--background);
+            border-radius: 0.5rem;
+            box-shadow: inset 0 0 0 0.0625rem #BCC3CA;
+        }
+
+        .igx-calendar-picker__next,
+        .igx-calendar-picker__prev {
+            padding: rem(6px);
+        }
+
+        .igx-calendar-picker {
+            display: unset;
+        }
+
+        .igx-calendar-picker__dates {
+            justify-content: center;
+            position: relative;
+            top: 0.25rem;
+            gap: 1rem;
+            height: 2rem;
+
+            span:not(.igx-calendar__aria-off-screen) {
+                font-size: rem(14px);
+                padding: rem(4px) rem(10px);
+
+                &:hover {
+                    background-color: var(--background);
+                    border-radius: 0.5rem;
+                    box-shadow: inset 0 0 0 0.0625rem #BCC3CA;
+                }
+            }
+        }
+
+        .igx-calendar__pickers--days {
+            height: 1.5rem;
+        }
+
+        .igx-calendar-picker {
+            padding-inline: 1rem;
+        }
+    }
 }
 
-.igx-calendar {
-  --ig-size: 2;
-  box-shadow: elevation(4);
+.calendar-wrapper {
+    max-width: rem(600px);
+    margin: 0.5rem;
+}
+
+igx-calendar {
+    --current-border: #A100C2;
+    --primary: #0064D9;
+    --background: #EAECEE;
+    --background-weekend: #E8E8E8;
+    --background-hover: #F5F6F8;
+
+    width: rem(290px);
+    min-height: rem(282px);
+    box-sizing: border-box;
+    padding-top: 0.4rem;
+    box-shadow: elevation(4);
+    --ig-font-family: Arial, sans-serif;
+    --ig-subtitle-1-font-weight: 600;
+    --ig-size: 1;
+    --ig-radius-factor: 0.4;
 }
