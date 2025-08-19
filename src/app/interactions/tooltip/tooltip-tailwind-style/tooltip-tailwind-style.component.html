@@ -1,0 +1,10 @@
+<igx-avatar class="avatar" #target="tooltipTarget" [igxTooltipTarget]="tooltipRef"
+    src="assets/images/avatar/10.jpg" size="medium" shape="circle"
+    [igxToggleOutlet]="outlet">
+</igx-avatar>
+
+<div #outlet="overlay-outlet" igxOverlayOutlet>
+    <div class="!material-tooltip-background-[#90B69F] ![--border-radius:6px]" #tooltipRef="tooltip" igxTooltip>
+        Her name is Madelyn James
+    </div>
+</div>

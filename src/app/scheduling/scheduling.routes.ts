@@ -42,6 +42,7 @@ import { DateTimeBasicComponent } from './datetimeeditor/datetime-basic/datetime
 import { MonthpickerSample1Component } from './monthpicker/monthpicker-sample-1/monthpicker-sample-1.component';
 import { MonthpickerSample3Component } from './monthpicker/monthpicker-sample-3/monthpicker-sample-3.component';
 import { MonthpickerStylingComponent } from './monthpicker/monthpicker-styling/monthpicker-styling.component';
+import { MonthpickerTailwindStylingComponent } from './monthpicker/monthpicker-tailwind-styling/monthpicker-tailwind-styling.component';
 import { schedulingRoutesData } from './scheduling-routes-data';
 import { TimepickerDropdownComponent } from './timepicker/timepicker-dropdown/timepicker-dropdown.component';
 import { TimePickerSample1Component } from './timepicker/timepicker-sample-1/timepicker-sample-1.component';
@@ -235,6 +236,11 @@ export const SchedulingRoutes: Routes = [
         component: MonthpickerStylingComponent,
         data: schedulingRoutesData['monthpicker-styling'],
         path: 'monthpicker-styling'
+    },
+    {
+        component: MonthpickerTailwindStylingComponent,
+        data: schedulingRoutesData['monthpicker-tailwind-styling'],
+        path: 'monthpicker-tailwind-styling'
     },
     {
         component: CalendarMultiViewComponent,

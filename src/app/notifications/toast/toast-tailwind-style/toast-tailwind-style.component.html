@@ -1,0 +1,11 @@
+<div class="sample-wrapper">
+    <article class="sample-column">
+        <div class="preview bottom"></div>
+        <div class="btn-group">
+            <button igxButton="contained" igxRipple="white" (click)="openToast(toast, position.Bottom)" [disabled]="toast.isVisible">Show Toast</button>
+            <button igxButton="contained" igxRipple="white" (click)="toast.close()" [disabled]="!toast.isVisible">Hide Toast</button>
+        </div>
+    </article>
+
+    <igx-toast class="!material-toast-background-[#90B69F] ![--border-radius:6px]" #toast [autoHide]="false" [outlet]="elem">This is the toast message.</igx-toast>
+</div>

@@ -33,6 +33,7 @@ export const schedulingRoutesData = {
     'monthpicker-sample-1': { displayName: 'Default Month Picker', parentName: 'Monthpicker' },
     'monthpicker-sample-3': { displayName: 'Localized Month Picker', parentName: 'Monthpicker' },
     'monthpicker-styling': { displayName: 'Styled Month Picker', parentName: 'Monthpicker' },
+    'monthpicker-tailwind-styling': { displayName: 'Tailwind Styled Month Picker', parentName: 'Monthpicker' },
     'timepicker-dropdown': { displayName: 'Timepicker Overview', parentName: 'Timepicker' },
     'timepicker-sample-1': { displayName: 'Timepicker Dialog', parentName: 'Timepicker' },
     'timepicker-sample-4': { displayName: 'Timepicker Validation', parentName: 'Timepicker' },

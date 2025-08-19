@@ -18,6 +18,7 @@ import { IconSample3Component } from './icon/icon-sample-3/icon-sample-3.compone
 import { IconSample4Component } from './icon/icon-sample-4/icon-sample-4.component';
 import { IconSample5Component } from './icon/icon-sample-5/icon-sample-5.component';
 import { IconStylingSampleComponent } from './icon/icon-styling-sample/icon-styling-sample.component';
+import { IconTailwindStylingSampleComponent } from './icon/icon-tailwind-styling-sample/icon-tailwind-styling-sample.component';
 import { IconServiceSampleComponent } from './icon/icon-service-sample/icon-service-sample.component';
 import { SvgIconSampleComponent } from './icon/svg-icon-sample/svg-icon-sample.component';
 import { IgxForComponent } from './igxFor/igxFor.component';
@@ -214,6 +215,11 @@ export const DataDisplayRoutes: Routes = [
         component: IconStylingSampleComponent,
         data: dataDisplayRoutesData['icon-styling'],
         path: 'icon-styling'
+    },
+    {
+        component: IconTailwindStylingSampleComponent,
+        data: dataDisplayRoutesData['icon-tailwind-styling'],
+        path: 'icon-tailwind-styling'
     },
     {
         component: ChipStylingSampleComponent,

@@ -1,0 +1,35 @@
+.sample-holder {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+.my-expansion-panel {
+  max-width: 500px;
+  min-width: 300px;
+  width: 100%;
+}
+
+.example-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  ::selection  {
+    background: #ECAA53
+  }
+  span {
+    display: block;
+    margin-bottom: 16px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  margin-bottom: 8px;
+  border-radius: 8px;
+}

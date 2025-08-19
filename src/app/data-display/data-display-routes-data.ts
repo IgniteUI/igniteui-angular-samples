@@ -18,6 +18,7 @@ export const dataDisplayRoutesData = {
     "icon-sample-1": { displayName: "Simple Icons", parentName: "Icon" },
     "icon-service": { displayName: "Icon Service", parentName: "Icon" },
     "icon-styling": { displayName: "Icon Styling", parentName: "Icon" },
+    "icon-tailwind-styling": { displayName: "Icon Tailwind Styling", parentName: "Icon" },
     "svg-icon-sample": { displayName: "SVG Icons", parentName: "Icon" },
     "material-symbols": { displayName: "Material Symbols", parentName: "Icon" },
     "material-icons-extended": { displayName: "Material Icons Extended", parentName: "Icon" },
