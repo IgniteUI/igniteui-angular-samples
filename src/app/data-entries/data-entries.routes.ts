@@ -7,6 +7,7 @@ import { ButtonGroupSample3Component } from './buttonGroup/button-group-sample-3
 import { ButtonGroupSampleComponent } from './buttonGroup/button-group-sample-4/button-group-sample.component';
 import { ButtonGroupSample5Component } from './buttonGroup/button-group-sample-5/button-group-sample-5.component';
 import { ButtonGroupStyleComponent } from './buttonGroup/button-group-style/button-group-style.component';
+import { ButtonGroupTailwindStyleComponent } from './buttonGroup/button-group-tailwind-style/button-group-tailwind-style.component';
 import { ButtonsDisabledComponent } from './buttons/buttons-disabled-sample/buttons-disabled-sample';
 import { ButtonsDisplayDensityComponent } from './buttons/buttons-display-density/buttons-display-density.component';
 import { ButtonsRoundnessComponent } from './buttons/buttons-roundness-sample/buttons-roundness-sample';
@@ -19,10 +20,12 @@ import { ButtonsSample6Component } from './buttons/buttons-sample-6/buttons-samp
 import { ButtonsSample7Component } from './buttons/buttons-sample-7/buttons-sample-7.component';
 import { ButtonsSample8Component } from './buttons/buttons-sample-8/buttons-sample-8.component';
 import { ButtonsStyleComponent } from './buttons/buttons-style/buttons-style.component';
+import { ButtonsTailwindStyleComponent } from './buttons/buttons-tailwind-style/buttons-tailwind-style.component';
 import { CheckboxSample1Component } from './checkbox/checkbox-sample-1/checkbox-sample-1.component';
 import { CheckboxSample2Component } from './checkbox/checkbox-sample-2/checkbox-sample-2.component';
 import { CheckboxSample3Component } from './checkbox/checkbox-sample-3/checkbox-sample-3.component';
 import { CheckboxStylingComponent } from './checkbox/checkbox-styling/checkbox-styling.component';
+import { CheckboxTailwindStylingComponent } from './checkbox/checkbox-tailwind-styling/checkbox-tailwind-styling.component';
 import { dataEntriesRoutesData } from './data-entries-routes-data';
 import { DropDownRemoteComponent } from './dropdown/drop-down-remote-virtual/drop-down-remote.component';
 import { DropDownVirtualComponent } from './dropdown/drop-down-virtual/drop-down-virtual.component';
@@ -43,6 +46,7 @@ import { InputGroupSample4Component } from './input-group/input-group-sample-4/i
 import { InputGroupSample5Component } from './input-group/input-group-sample-5/input-group-sample-5.component';
 import { InputGroupSample6Component } from './input-group/input-group-sample-6/input-group-sample-6.component';
 import { InputGroupStyleComponent } from './input-group/input-group-styling/input-group-styling.component';
+import { InputGroupTailwindStyleComponent } from './input-group/input-group-tailwind-styling/input-group-tailwind-styling.component';
 import { InputTextSelectionComponent } from './input-group/input-text-selection/input-text-selection.component';
 import { TypedFormComponent } from './input-group/typed-form/typed-form.component';
 import { ReactiveFormsSampleComponent } from '../how-to/reactive-forms/reactive-forms.component';
@@ -52,15 +56,18 @@ import { RadioSample1Component } from './radio/radio-sample-1/radio-sample-1.com
 import { RadioSample2Component } from './radio/radio-sample-2/radio-sample-2.component';
 import { RadioSample3Component } from './radio/radio-sample-3/radio-sample-3.component';
 import { RadioStylingSampleComponent } from './radio/radio-styling-sample/radio-styling-sample.component';
+import { RadioTailwindStylingSampleComponent } from './radio/radio-tailwind-styling-sample/radio-tailwind-styling-sample.component';
 import { SelectHeaderFooterComponent } from './select/select-header-footer/select-header-footer.component';
 import { SelectInputDirectivesComponent } from './select/select-input-directives/select-input-directives';
 import { SelectSample1Component } from './select/select-sample-1/select-sample-1.component';
 import { SelectSample2Component } from './select/select-sample-2/select-sample-2.component';
 import { SelectSample4Component } from './select/select-sample-4/select-sample-4.component';
 import { SelectStylingComponent } from './select/select-styling/select-styling.component';
+import { SelectTailwindStylingComponent } from './select/select-tailwind-styling/select-tailwind-styling.component';
 import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1.component';
 import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
+import { SwitchTailwindStylingComponent } from './switch/switch-tailwind-styling/switch-tailwind-styling.component';
 import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
 import { TemplateDrivenFormValidationComponent } from './input-group/template-driven-form-validation/template-driven-form-validation.component';
 import { ReactiveFormValidationComponent } from './input-group/reactive-form-validation/reactive-form-validation.component';
@@ -73,6 +80,7 @@ import { DisabledIconButtonComponent } from './icon-button/disabled-icon-button/
 import { SVGIconButtonComponent } from './icon-button/svg-icon-button/svg-icon-button.component';
 import { IconButtonSizeComponent } from './icon-button/icon-button-size/icon-button-size.component';
 import { IconButtonStylingComponent } from './icon-button/icon-button-styling/icon-button-styling.component';
+import { IconButtonTailwindStylingComponent } from './icon-button/icon-button-tailwind-styling/icon-button-tailwind-styling.component';
 
 export const DataEntriesRoutes: Routes = [
     {
@@ -119,6 +127,11 @@ export const DataEntriesRoutes: Routes = [
         component: ButtonGroupStyleComponent,
         data: dataEntriesRoutesData['button-group-style'],
         path: 'button-group-style'
+    },
+    {
+        component: ButtonGroupTailwindStyleComponent,
+        data: dataEntriesRoutesData['button-group-tailwind-style'],
+        path: 'button-group-tailwind-style'
     },
     {
         component: ButtonsRoundnessComponent,
@@ -176,6 +189,11 @@ export const DataEntriesRoutes: Routes = [
         path: 'buttons-style'
     },
     {
+        component: ButtonsTailwindStyleComponent,
+        data: dataEntriesRoutesData['buttons-tailwind-style'],
+        path: 'buttons-tailwind-style'
+    },
+    {
         component: CheckboxSample1Component,
         data: dataEntriesRoutesData['checkbox-sample-1'],
         path: 'checkbox-sample-1'
@@ -194,6 +212,11 @@ export const DataEntriesRoutes: Routes = [
         component: CheckboxStylingComponent,
         data: dataEntriesRoutesData['checkbox-styling'],
         path: 'checkbox-styling'
+    },
+    {
+        component: CheckboxTailwindStylingComponent,
+        data: dataEntriesRoutesData['checkbox-tailwind-styling'],
+        path: 'checkbox-tailwind-styling'
     },
     {
         component: DropdownMenuComponent,
@@ -296,6 +319,11 @@ export const DataEntriesRoutes: Routes = [
         path: 'icon-button-styling'
     },
     {
+        component: IconButtonTailwindStylingComponent,
+        data: dataEntriesRoutesData['icon-button-tailwind-styling'],
+        path: 'icon-button-tailwind-styling'
+    },
+    {
         component: InputGroupSample1Component,
         data: dataEntriesRoutesData['input-group-sample-1'],
         path: 'input-group-sample-1'
@@ -329,6 +357,11 @@ export const DataEntriesRoutes: Routes = [
         component: InputGroupStyleComponent,
         data: dataEntriesRoutesData['input-group-style'],
         path: 'input-group-style'
+    },
+    {
+        component: InputGroupTailwindStyleComponent,
+        data: dataEntriesRoutesData['input-group-tailwind-style'],
+        path: 'input-group-tailwind-style'
     },
     {
         component: ReactiveFormsSampleComponent,
@@ -366,6 +399,11 @@ export const DataEntriesRoutes: Routes = [
         path: 'radio-styling-sample'
     },
     {
+        component: RadioTailwindStylingSampleComponent,
+        data: dataEntriesRoutesData['radio-tailwind-styling-sample'],
+        path: 'radio-tailwind-styling-sample'
+    },
+    {
         component: RatingInFormComponent,
         data: dataEntriesRoutesData['rating-in-form'],
         path: 'rating-form'
@@ -386,6 +424,11 @@ export const DataEntriesRoutes: Routes = [
         path: 'switch-styling'
     },
     {
+        component: SwitchTailwindStylingComponent,
+        data: dataEntriesRoutesData['switch-tailwind-styling'],
+        path: 'switch-tailwind-styling'
+    },
+    {
         component: SelectSample1Component,
         data: dataEntriesRoutesData['select-sample-1'],
         path: 'select-sample-1'
@@ -404,6 +447,11 @@ export const DataEntriesRoutes: Routes = [
         component: SelectStylingComponent,
         data: dataEntriesRoutesData['select-styling'],
         path: 'select-styling'
+    },
+     {
+        component: SelectTailwindStylingComponent,
+        data: dataEntriesRoutesData['select-tailwind-styling'],
+        path: 'select-tailwind-styling'
     },
     {
         component: SelectInputDirectivesComponent,
