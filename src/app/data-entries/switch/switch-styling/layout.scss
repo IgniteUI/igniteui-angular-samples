@@ -10,27 +10,28 @@
 
         // Note: This is not the standard approach for styling the component.
         // We're using it here solely to mirror the UI5 sample.
+				
         igx-switch:hover .igx-switch__thumb {
             --border-hover-color: #fff;
         }
 
         .igx-switch__composite {
-            width: 2.75rem;
-            height: 1.25rem;
-            padding-left: 0.125rem;
+            width: rem(44px);
+            height: rem(20px);
+            padding-left: rem(2px);
          }
 
         .igx-switch__composite-thumb {
-            width: 1.60rem;
+            width: rem(25px);
             height: 1rem;
-            min-width: 1.60rem;
+            min-width: rem(25px);
             transform: translateX(-0.5px);
         }
 
         .igx-switch__thumb {
-            width: 1.60rem;
+            width: rem(25px);
             height: 1rem;
-            min-width: 1.60rem;
+            min-width: rem(25px);
         }
 
         .igx-switch--checked .igx-switch__composite .igx-switch__composite-thumb {
@@ -44,7 +45,7 @@
 }
 
 igx-switch {
-    margin-top: 1.5rem;
+    margin-top: rem(24px);
     width: max-content;
 }
 

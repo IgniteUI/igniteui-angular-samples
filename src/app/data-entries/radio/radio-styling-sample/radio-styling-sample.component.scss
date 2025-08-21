@@ -8,8 +8,6 @@ igx-radio {
     --label-color: #131e29;
     --fill-color: #0064d9;
     --focus-outline-color: #0032a5;
-    --ig-subtitle-1-font-size: #{rem(14px)};
-    --ig-font-family: Arial,Helvetica,sans-serif;
 }
 
 igx-radio:hover {
@@ -18,20 +16,15 @@ igx-radio:hover {
     --hover-color: transparent;
 }
 
-.igx-radio--focused::after {
-    inset: rem(1px) rem(-4px) rem(1px) rem(-2px);
-    border-radius: rem(8px);
-}
-
 // Sass theme approach
 
 // $custom-radio-theme: radio-theme(
-//   $empty-color: #556b81,
-//   $label-color: #131e29,
-//   $fill-color: #0064d9,
-//   $focus-outline-color: #0032a5,
-//   $fill-color-hover: #0064d9,
-//   $hover-color: transparent
+//     $empty-color: #556b81,
+//     $label-color: #131e29,
+//     $fill-color: #0064d9,
+//     $focus-outline-color: #0032a5,
+//     $fill-color-hover: #0064d9,
+//     $hover-color: transparent
 // );
 
-//   @include css-vars($custom-radio-theme);
+// @include css-vars($custom-radio-theme);

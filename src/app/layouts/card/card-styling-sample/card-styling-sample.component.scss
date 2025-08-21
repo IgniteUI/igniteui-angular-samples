@@ -9,9 +9,6 @@ igx-card {
     --resting-shadow: none;
     --hover-shadow: none;
     --header-text-color: rgba(0, 0, 0, 0.88);
-    --ig-font-family: 'alibaba-sans', sans-serif;
-    width: rem(300px);
-    border: none;
 }
 
 igx-avatar {
@@ -19,24 +16,10 @@ igx-avatar {
     --size: #{rem(30px)};
 }
 
-.igx-card-header {
-    --ig-h6-font-size: 1rem;
-    --ig-body-1-font-size: 0.875rem;
-}
-
-.igx-card-header__subtitle {
-    --ig-subtitle-2-font-weight: 400;
-    --ig-subtitle-2-line-height: #{rem(28px)};
-    --ig-subtitle-2-letter-spacing: #{rem(0.5px)};
-    --subtitle-text-color: rgba(0, 0, 0, 0.45);
-    margin: 0.5rem 0 1rem;
-}
-
 igx-chip {
-    --border-radius: 0.25rem;
+    --border-radius: #{rem(4px)};
     --background: #fafafa;
     --border-color: #d9d9d9;
-    --ig-body-2-font-size: 0.75rem;
     --hover-background: #d9d9d9;
     --focus-background: #d9d9d9;
 }
@@ -54,36 +37,42 @@ igx-divider {
 // Sass theme approach
 
 // $custom-card-theme: card-theme(
-//   $border-radius: 8px,
-//   $outline-color: #f0f0f0,
-//   $resting-shadow: none,
-//   $hover-shadow: none,
-//   $header-text-color: #000000e0,
+//     $border-radius: rem(8px),
+//     $outline-color: #f0f0f0,
+//     $resting-shadow: none,
+//     $hover-shadow: none,
+//     $header-text-color: #000000e0,
+// );
+
+// $custom-avatar-theme: avatar-theme(
+//     $background: transparent,
+//     $size: rem(30px)
 // );
 
 // $custom-chip-theme: chip-theme(
-//   $border-radius: 4px,
-//   $background: #fafafa,
-//   $border-color: #d9d9d9,
-//   $hover-background: #d9d9d9,
-//   $focus-background: #d9d9d9,
+//     $border-radius: rem(4px),
+//     $background: #fafafa,
+//     $border-color: #d9d9d9,
+//     $hover-background: #d9d9d9,
+//     $focus-background: #d9d9d9,
 // );
 
 // $custom-icon-button-theme: icon-button-theme(
-//   $foreground: #00000073,
-//   $hover-foreground: #1677ff,
-//   $hover-background: none,
-//   $border-color: transparent
+//     $foreground: #00000073,
+//     $hover-foreground: #1677ff,
+//     $hover-background: none,
+//     $border-color: transparent
 // );
 
 // $custom-divider-theme: divider-theme(
-//   $color: #f0f0f0
+//     $color: #f0f0f0
 // );
 
 // @include css-vars($custom-card-theme);
+// @include css-vars($custom-avatar-theme);
 // @include css-vars($custom-chip-theme);
 // @include css-vars($custom-divider-theme);
 // .igx-icon-button--flat {
-//   @include css-vars($custom-icon-button-theme);
+//     @include css-vars($custom-icon-button-theme);
 // };
  

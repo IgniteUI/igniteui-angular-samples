@@ -34,17 +34,14 @@ igx-chip {
     --focus-background: #4682af;
 }
 
-igx-icon {
-    --size: 0.75rem;
-}
-
 // Sass theme approach
 
 // $custom-chip-theme: chip-theme(
-//   $background: #cd201f,
-//   $text-color: #fff,
-//   $hover-background: #cd201f,
-//   $focus-background: #9f1717,
+//     $background: #cd201f,
+//     $text-color: #fff,
+//     $hover-background: #cd201f,
+//     $focus-background: #9f1717,
+//     $border-radius: rem(5px)
 // );
 
 // @include css-vars($custom-chip-theme)

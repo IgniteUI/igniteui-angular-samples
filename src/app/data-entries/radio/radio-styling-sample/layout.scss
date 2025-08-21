@@ -10,6 +10,7 @@
 
         // Note: This is not the standard approach for styling the component.
         // We're using it here solely to mirror the UI5 sample.
+				
         .igx-radio--checked .igx-radio__composite::after {
             --fill-color: #556b81;
         }
@@ -17,12 +18,12 @@
         .igx-radio__composite::after, 
         .igx-radio__composite::before, 
         .igx-radio__composite {
-            width: 1.125rem;
-            height: 1.125rem;
+            width: rem(18px);
+            height: rem(18px);
         }
 
         .igx-radio__composite {
-            min-width: 1.125rem;
+            min-width: rem(18px);
         }
 
         .igx-radio__ripple {
@@ -35,8 +36,18 @@ igx-radio + igx-radio {
     margin-top: 1rem;
 }
 
+igx-radio {
+    --ig-subtitle-1-font-size: #{rem(14px)};
+    --ig-font-family: Arial,Helvetica,sans-serif;
+}
+
 .radio-wrapper {
     display: flex;
     flex-flow: column nowrap;
     padding: 1rem;
+}
+
+.igx-radio--focused::after {
+    inset: rem(1px) rem(-4px) rem(1px) rem(-2px);
+    border-radius: rem(8px);
 }

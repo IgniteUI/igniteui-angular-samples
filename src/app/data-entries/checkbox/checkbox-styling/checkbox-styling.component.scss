@@ -10,31 +10,24 @@ igx-checkbox {
     --fill-color-hover: #e3f0ff;
     --label-color: #131e29;
     --focus-outline-color: #0032a5;
-    --border-radius: 0.25rem;
-    --ig-font-family: Arial, Helvetica, sans-serif;
-    --ig-subtitle-1-font-size: 0.875rem;
+    --border-radius: #{rem(4px)};
 }
 
 igx-checkbox:hover {
     --empty-fill-color: #e3f0ff;
 }
 
-#checkbox-1.igx-checkbox--focused:after {
-    inset: 0.5rem -0.25rem 0.5rem 0.5rem;
-    border-radius: 0.5rem;
-}
-
 // Sass theme approach
 
 // $custom-checkbox-theme: checkbox-theme(
-//   $tick-color: #0064d9,
-//   $tick-color-hover: #e3f0ff,
-//   $fill-color: transparent,
-//   $fill-color-hover: #e3f0ff,
-//   $label-color: #131e29,
-//   $focus-outline-color: #0032a5,
-//   $empty-color: #131e29,
-//   $border-radius: 0.25rem,
+//     $tick-color: #0064d9,
+//     $tick-color-hover: #e3f0ff,
+//     $fill-color: transparent,
+//     $fill-color-hover: #e3f0ff,
+//     $label-color: #131e29,
+//     $focus-outline-color: #0032a5,
+//     $empty-color: #131e29,
+//     $border-radius: rem(4px),
 // );
 
 // @include css-vars($custom-checkbox-theme) 

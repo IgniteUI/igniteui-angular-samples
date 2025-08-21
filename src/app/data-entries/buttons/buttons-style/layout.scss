@@ -14,7 +14,7 @@
 
 [class^=buttons-sample] {
     display: flex;
-    margin: 1rem 0.5rem 0.5rem 1rem;
+    margin: 1rem rem(8px) rem(8px) 1rem;
 }
 
 .button-sample {
@@ -32,6 +32,16 @@
 [igxbutton] {
     --ig-button-font-weight: 400;
     --ig-button-text-transform: capitalize;
-    min-height: 1.5rem;
+    min-height: rem(24px);
     outline: rem(1px) solid #fff;
+}
+
+.button-sample button {
+    --ig-size: var(--ig-size-medium);
+    padding: 0px rem(7px);
+    min-width: unset;
+}
+
+.button-sample .igx-button {
+    --ig-font-family: 'alibaba-sans', sans-serif;
 }
