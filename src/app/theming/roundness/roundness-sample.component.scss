@@ -1,0 +1,17 @@
+@use "igniteui-angular/theming" as *;
+
+.sample-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: rem(16px);
+    padding: rem(32px);
+}
+
+.square-chip {
+    --ig-radius-factor: 0;
+}
+
+.round-chip {
+    --ig-radius-factor: 1;
+}

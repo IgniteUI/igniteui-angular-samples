@@ -5,6 +5,7 @@ import { AngularMaterialComponent } from './angular/angular-sample.component';
 import { BootstrapComponent } from './bootstrap/bootstrap-sample.component';
 import { DefaultThemeSampleComponent } from './default-theme-sample/default-theme-sample.component';
 import { DisplayDensityComponent } from './display-density/display-density.component';
+import { RoundnessComponent } from './roundness/roundness-sample.component';
 import { CardSampleShadowComponent} from './shadows/card-sample-shadow/card-sample-shadow';
 import { ShadowsSampleComponent } from './shadows/shadows-sample-1/shadows-sample.component';
 import { ShadowsSample2Component } from './shadows/shadows-sample-2/shadows-sample-2.component';
@@ -31,6 +32,11 @@ export const ThemingRoutes: Routes = [
         // tslint:disable-next-line:no-string-literal
         data: themingRoutesData['density'],
         path: 'density'
+    },
+    {
+        component: RoundnessComponent,
+        data: themingRoutesData['roundness'],
+        path: 'roundness'
     },
     {
         component: CardSampleShadowComponent,
