@@ -1,3 +1,11 @@
+import {
+    IgxCardComponent,
+    IgxCardContentDirective,
+    IgxCardHeaderComponent,
+    IgxChipComponent,
+    IgxIconComponent,
+    IgxPrefixDirective,
+} from "igniteui-angular";
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 export class ThemingConfigGenerator implements IConfigGenerator {
@@ -34,6 +42,12 @@ export class ThemingConfigGenerator implements IConfigGenerator {
             component: 'DisplayDensityComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: '/theming/'
+        }));
+
+        configs.push(new Config({
+            component: 'RoundnessComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: '/theming/roundness/'
         }));
 
         configs.push(new Config({
