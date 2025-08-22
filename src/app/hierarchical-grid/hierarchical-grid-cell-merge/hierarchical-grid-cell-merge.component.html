@@ -1,0 +1,44 @@
+<div class="grid__wrapper">
+    <igx-hierarchical-grid [igxPreventDocumentScroll]="true" #hGrid [data]="localData" [moving]="true" [sortingExpressions]="sortExpr"
+        [cellMergeMode]="cellMergeMode" [height]="'740px'" [width]="'100%'" [allowFiltering]="true" >
+        <igx-grid-toolbar>
+            <igx-select [(ngModel)]="cellMergeMode">
+                <label igxLabel>Select Merge Type Root</label>
+                @for (type of mergeTypes; track type) {
+                <igx-select-item [value]="type.value">
+                    {{type.name}}
+                </igx-select-item>
+                }
+            </igx-select>
+            <igx-select (selectionChanging)="strategySelection($event, hGrid)">
+                <label igxLabel>Select Merge Type Child</label>
+                @for (type of mergeTypes; track type) {
+                <igx-select-item [value]="type.value" [selected]="type.value === cellMergeModeRowIsland">
+                    {{type.name}}
+                </igx-select-item>
+                }
+            </igx-select>
+        </igx-grid-toolbar>
+        <igx-column field="CompanyName" [sortable]="true" [resizable]="true"></igx-column>
+        <igx-column field="ContactName" [sortable]="true" [resizable]="true"></igx-column>
+        <igx-column field="ContactTitle" [sortable]="true" [resizable]="true" [merge]="true"></igx-column>
+        <igx-column field="Address" [sortable]="true" [resizable]="true"></igx-column>
+        <igx-column field="City" [sortable]="true" [resizable]="true" [merge]="true"></igx-column>
+        <igx-column field="PostalCode" [sortable]="true" [resizable]="true"></igx-column>
+        <igx-column field="Country" [sortable]="true" [resizable]="true" [merge]="true"></igx-column>
+        <igx-column field="Phone" [sortable]="true" [resizable]="true"></igx-column>
+        <igx-column field="Fax" [sortable]="true" [resizable]="true"></igx-column>
+        <igx-row-island [height]="null" [key]="'ChildCompanies'" [moving]="true" [autoGenerate]="false"
+            [sortingExpressions]="sortExpr" [cellMergeMode]="cellMergeModeRowIsland">
+            <igx-column field="CompanyName" [sortable]="true" [resizable]="true"></igx-column>
+            <igx-column field="ContactName" [sortable]="true" [resizable]="true"></igx-column>
+            <igx-column field="ContactTitle" [sortable]="true" [resizable]="true" [merge]="true"></igx-column>
+            <igx-column field="Address" [sortable]="true" [resizable]="true"></igx-column>
+            <igx-column field="City" [sortable]="true" [resizable]="true" [merge]="true"></igx-column>
+            <igx-column field="PostalCode" [sortable]="true" [resizable]="true"></igx-column>
+            <igx-column field="Country" [sortable]="true" [resizable]="true" [merge]="true"></igx-column>
+            <igx-column field="Phone" [sortable]="true" [resizable]="true"></igx-column>
+            <igx-column field="Fax" [sortable]="true" [resizable]="true"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
+</div>
