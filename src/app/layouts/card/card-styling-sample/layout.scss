@@ -31,16 +31,16 @@
     padding: unset;
     align-items: baseline;
     margin: rem(24px) rem(24px) 0 rem(24px);
-    height: rem(70px);
+    height: rem(65px);
 }
 
 .igx-card-header__subtitle {
     --ig-subtitle-2-font-weight: 400;
-    --ig-subtitle-2-line-height: #{rem(28px)};
+    --ig-subtitle-2-line-height: #{rem(22px)};
     --ig-subtitle-2-letter-spacing: #{rem(0.5px)};
     --subtitle-text-color: rgba(0, 0, 0, 0.45);
 
-    margin: #{rem(8px)} 0 1rem;
+    margin: rem(8px) 0 rem(12px);
 }
 
 .igx-card-content {
@@ -63,6 +63,10 @@
 
 igx-icon {
     --igx-icon-size: #{rem(14px)};
+}
+
+igx-avatar {
+    border-radius: rem(20px);
 }
 
 igx-card-actions {
