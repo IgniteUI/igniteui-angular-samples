@@ -3,6 +3,8 @@ const fs = require("fs");
 const path = require("path");
 const es = require('event-stream');
 const fsExtra = require("fs-extra");
+const yargs = require("yargs");
+const { hideBin } = require('yargs/helpers');
 
 require('ts-node').register({
     transpileOnly: true,
@@ -14,7 +16,7 @@ require('ts-node').register({
 });
 
 const { generateLiveEditing } = require('igniteui-live-editing');
-const argv = require("yargs").argv;
+const argv = yargs(hideBin(process.argv)).parse();
 
 const submodule = "igniteui-live-editing-samples";
 
