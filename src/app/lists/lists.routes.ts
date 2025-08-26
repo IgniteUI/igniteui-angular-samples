@@ -5,6 +5,7 @@ import { ComboMainComponent } from './combo/combo-main/combo-main.component';
 import { ComboOverlayComponent } from './combo/combo-overlay/combo-overlay.component';
 import { ComboRemoteComponent } from './combo/combo-remote/combo-remote.component';
 import { ComboStylingComponent } from './combo/combo-styling/combo-styling.component';
+import { ComboTailwindStylingComponent } from './combo/combo-tailwind-styling/combo-tailwind-styling.component';
 import { ComboValueKeyComponent } from './combo/combo-valuekey/combo-valuekey.component';
 import { ComboTemplateComponent } from './combo/combo-template/combo-template.component';
 import { ListChatSampleComponent } from './list/list-chat-sample/list-chat-sample.component';
@@ -16,11 +17,13 @@ import { ListSample5Component } from './list/list-sample-5/list-sample-5.compone
 import { ListSample6Component } from './list/list-sample-6/list-sample-6.component';
 import { ListSample7Component } from './list/list-sample-7/list-sample-7.component';
 import { ListSample8Component } from './list/list-sample-8/list-sample-8.component';
+import { ListTailwindStylingComponent } from './list/list-tailwind-styling/list-tailwind-styling.component';
 import { ListComponent } from './list/list.component';
 import { listsRoutesData } from './lists-routes-data';
 import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sample.component';
 import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
 import { TreeStylingComponent } from './tree/tree-styling/tree-styling.component';
+import { TreeTailwindStylingComponent } from './tree/tree-tailwind-styling/tree-tailwind-styling.component';
 import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
 import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-combo-usage.component';
 import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
@@ -48,6 +51,11 @@ export const ListsRoutes: Routes = [
         component: ComboStylingComponent,
         data: listsRoutesData['combo-styling'],
         path: 'combo-styling'
+    },
+    {
+        component: ComboTailwindStylingComponent,
+        data: listsRoutesData['combo-tailwind-styling'],
+        path: 'combo-tailwind-styling'
     },
     {
         component: ComboValueKeyComponent,
@@ -140,6 +148,11 @@ export const ListsRoutes: Routes = [
         path: 'list-sample-8'
     },
     {
+        component: ListTailwindStylingComponent,
+        data: listsRoutesData['list-tailwind-styling'],
+        path: 'list-tailwind-styling'
+    },
+    {
         component: ListChatSampleComponent,
         data: listsRoutesData['list-chat-sample'],
         path: 'list-chat-sample'
@@ -163,5 +176,10 @@ export const ListsRoutes: Routes = [
         component: TreeStylingComponent,
         data: listsRoutesData['tree-styling'],
         path: 'tree-styling'
+    },
+    {
+        component: TreeTailwindStylingComponent,
+        data: listsRoutesData['tree-tailwind-styling'],
+        path: 'tree-tailwind-styling'
     }
 ];

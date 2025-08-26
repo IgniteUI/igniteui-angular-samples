@@ -1,0 +1,15 @@
+<div class="list-sample">
+  <igx-list class="!material-list-background-[#81B698] ![--item-background:#A3C7B2]" #mainIgxList>
+    <igx-list-item [isHeader]="true">Contacts</igx-list-item>
+    @for (contact of contacts; track contact) {
+      <igx-list-item #item>
+        <igx-avatar igxListThumbnail [src]="contact.photo" shape="circle"></igx-avatar>
+        <span igxListLineTitle>{{ contact.name }}</span>
+        <span igxListLineSubTitle>{{ contact.phone }}</span>
+        <igx-icon igxListAction [style.color]="contact.isFavorite ? 'orange' : 'lightgray'" igxRipple="white"
+          [igxRippleCentered]="true" (click)="toggleFavorite(contact, $event)"
+        (mousedown)="mousedown($event)">star</igx-icon>
+      </igx-list-item>
+    }
+  </igx-list>
+</div>
