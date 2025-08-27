@@ -1,3 +1,27 @@
+.mrl-layout {
+	igx-input-group {
+		--ig-size: 1;
+		--size: 22px;
+		--idle-bottom-line-color: transparent;
+		--hover-bottom-line-color: transparent;
+		--focused-bottom-line-color: transparent;
+		--focused-secondary-color: transparent;
+		
+		.igx-input-group__bundle-start,
+		.igx-input-group__bundle-end {
+			display: none;
+		}
+		
+		.igx-input-group__bundle {
+			top: 0;
+		}
+	}
+	
+	igx-chip {
+		--ig-size: var(--ig-size-medium);
+	}
+}
+
 .igx-grid__thead-wrapper {
     position: initial !important;
 }
@@ -206,7 +230,7 @@
     width: 800px;
 }
 
-.bottomButton { 
+.bottomButton {
     margin: 5px;
 }
 
