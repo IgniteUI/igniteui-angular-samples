@@ -1,3 +1,53 @@
+@use "igniteui-angular/theming" as *;
+@use "igniteui-angular/lib/core/styles/components/input/input-group-component" as input;
+@use "sass:map";
+
+:host {
+    ::ng-deep {
+        $_input-schema: map.get($light-indigo-schema, input-group);
+        @include input-group(input-group-theme($schema: $_input-schema));
+        @include input.component();
+
+        // Note: This is not the standard approach for styling the component.
+        // We're using it here solely to mirror the Carbon sample.
+
+        .igx-input-group__bundle {
+            background: var(--box-background-hover);
+
+            [igxinput].igx-input-group__input {
+                letter-spacing: rem(0.16px);
+                padding-block: 0;
+                padding-inline: rem(12px);
+                font-size: rem(14px);
+            }
+
+            input::placeholder {
+                font-size: rem(14px);
+                font-style: normal;
+                opacity: 0.7;
+                font-weight: 300;
+                font-family: "IBM Plex Sans", sans-serif;
+            }
+        }
+
+        .igx-input-group--focused .igx-input-group__bundle::after {
+            border-block-end: 0;
+            inset: 0;
+            pointer-events: none;
+            box-shadow: inset 0 0 0 rem(2px) var(--border-color);
+        }
+
+        .igx-input-group__label, igx-hint {
+            font-weight: 300;
+        }
+    }
+}
+
+igx-input-group {
+    --ig-font-family: "IBM Plex Sans", sans-serif;
+}
+
 .sample-column {
-  max-width: 550px;
+    max-width: rem(300px);
+    margin-top: rem(24px);
 }
