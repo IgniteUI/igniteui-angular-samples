@@ -1,0 +1,90 @@
+import { Component, ViewChild, ViewEncapsulation, OnInit, inject } from '@angular/core';
+import { NgClass } from '@angular/common';
+import {
+    IgxColumnComponent,
+    IgxGridComponent,
+    IgxGridToolbarComponent,
+    IgxGridToolbarActionsComponent,
+    IgxGridToolbarPinningComponent,
+    IgxDropDownComponent,
+    IgxDropDownItemComponent,
+    IgxButtonDirective,
+    IgxToggleActionDirective,
+    IgxDropDownItemNavigationDirective,
+    ColumnPinningPosition,
+    IPinningConfig
+} from 'igniteui-angular';
+import { DATA } from '../../data/customers';
+import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+    encapsulation: ViewEncapsulation.None,
+    providers: [],
+    selector: 'app-grid-sample',
+    styleUrls: ['grid-toolbar-pinning-both-sides.component.scss'],
+    templateUrl: 'grid-toolbar-pinning-both-sides.component.html',
+    imports: [
+        NgClass,
+        IgxGridComponent,
+        IgxPreventDocumentScrollDirective,
+        IgxGridToolbarComponent,
+        IgxGridToolbarActionsComponent,
+        IgxGridToolbarPinningComponent,
+        IgxColumnComponent,
+        IgxDropDownComponent,
+        IgxDropDownItemComponent,
+        IgxButtonDirective,
+        IgxToggleActionDirective,
+        IgxDropDownItemNavigationDirective
+    ]
+})
+
+export class GridBothSideToolbarPinningSampleComponent implements OnInit{
+    private activatedRoute = inject(ActivatedRoute);
+
+    @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
+
+    public useDarkTheme: boolean = false;
+    public data: any[];
+    public columns: any[];
+    public pinningConfig: IPinningConfig  = { columns: ColumnPinningPosition.End };
+
+    public ngOnInit(): void {
+        this.columns = [
+            { field: 'CompanyName', header: 'Company Name', width: 300 },
+            { field: 'ContactName', header: 'Contact Name', width: 200, pinned: true, pinningPosition: ColumnPinningPosition.Start },
+            { field: 'ContactTitle', header: 'Contact Title', width: 200, pinned: true, pinningPosition: ColumnPinningPosition.End },
+            { field: 'Address', header: 'Address', width: 300},
+            { field: 'City', header: 'City', width: 120 },
+            { field: 'Region', header: 'Region', width: 120 },
+            { field: 'PostalCode', header: 'Postal Code', width: 150 },
+            { field: 'Phone', header: 'Phone', width: 150 },
+            { field: 'Fax', header: 'Fax', width: 150 }
+        ];
+        this.data = DATA;
+
+        this.activatedRoute.queryParams.subscribe(params => {
+            this.useDarkTheme = params.dark === 'true';
+        });
+    }
+
+    public pinLeft(){
+        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+            col.pinningPosition = ColumnPinningPosition.Start;
+            col.pinned = true;
+        });
+    }
+    public pinRight(){
+        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+            col.pinningPosition = ColumnPinningPosition.End;
+            col.pinned = true;
+        });
+    }
+
+    public unpinColumn(){
+        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+            col.pinned = false;
+        });
+    }
+}
