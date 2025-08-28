@@ -1,4 +1,4 @@
-<div class="sample-wrapper">
+<div class="sample-wrapper mrl-layout">
   <section style="height: 800px;">
     <div style="display: flex; justify-content: center; flex-wrap: wrap; margin-top: 15px; margin-bottom: 15px;">
       <div class="settingsInputWrapper">
@@ -13,12 +13,15 @@
               [id]="block.key" [data]="block" [selected]="block.key === selectedBlock.key" [draggable]="true"
               (chipClick)="selectedBlock = block" (pointerenter)="onPointerOver(chip)" (pointerleave)="onPointerLeave(chip)">
               {{block.key}}
-              <div class="material-icons igx-icon"
-                [style.opacity]="chip.data.hovered ? '1' : '0'" [style.z-index]="chip.data.hovered ? '1' : '-1'" [style.width]="chip.data.hovered ? '24px' : '0px'"
-                style="transition: opacity 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955); transition: width 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);"
-                igxSuffix igxIconButton="flat" (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickBlock(blockIndex)">
-                <igx-icon  id="igx-icon-150" >cancel</igx-icon>
-              </div>
+
+                <igx-icon
+                    [style.opacity]="chip.data.hovered ? '1' : '0'" [style.z-index]="chip.data.hovered ? '1' : '-1'" [style.width]="chip.data.hovered ? '24px' : '0px'"
+                    style="transition: opacity 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955); transition: width 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);"
+                    (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickBlock(blockIndex)"
+                    igxSuffix
+                    id="igx-icon-150">
+                    cancel
+                </igx-icon>
             </igx-chip>
           }
           <igx-chip #addBlock [style.margin]="'5px'" [data]="{ clicked: false }" (chipClick)="onAddBlockClick(addBlock)">
@@ -28,7 +31,7 @@
             }
             @if (addBlock.data.clicked) {
               <igx-input-group>
-                <input style="width: 15ch; padding: unset; border: none; height: 25px;" igxInput type="text" placeholder="Layout Name" (keydown)="inputKeyDownBlock($event, addBlock)" (blur)="inputBlur($event, addBlock)"/>
+                <input igxInput type="text" placeholder="Layout Name" (keydown)="inputKeyDownBlock($event, addBlock)" (blur)="inputBlur($event, addBlock)"/>
               </igx-input-group>
             }
           </igx-chip>
@@ -104,27 +107,28 @@
 
     <div  style="width: 100%; margin-bottom: 15px; text-align:center; min-height: 50px;" >
       <span>Drag a column into a layout cell to apply:</span>
-      <igx-chips-area style="margin: auto; justify-content: center;">
+      <igx-chips-area style="margin: auto; justify-content: center; gap: 10px;">
         @for (col of columnsList; track col; let colIndex = $index) {
-          <igx-chip #chip [style.margin]="'5px'" [data]="col" [draggable]="true"
+          <igx-chip #chip  [data]="col" [draggable]="true"
             (pointerenter)="onPointerOver(chip)" (pointerleave)="onPointerLeave(chip)">
             {{col.key}}
-            <div class="material-icons igx-icon"
+              <igx-icon
               [style.opacity]="chip.data.hovered ? '1' : '0'" [style.z-index]="chip.data.hovered ? '1' : '-1'" [style.width]="chip.data.hovered ? '24px' : '0px'"
               style="transition: opacity 150ms cubic-bezier(0.455, 0.03, 0.515, 0.955); transition: width 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955);"
-              igxSuffix igxIconButton="flat" (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickColumn(colIndex)">
-              <igx-icon  id="igx-icon-150" >cancel</igx-icon>
-            </div>
+              igxSuffix (pointerdown)="onRemovePointerDown($event)" (mousedown)="onRemovePointerDown($event)" (click)="onRemoveClickColumn(colIndex)"
+              id="igx-icon-150">
+                cancel
+              </igx-icon>
           </igx-chip>
         }
-        <igx-chip #addChip [style.margin]="'5px'" [data]="{ clicked: false }" (chipClick)="onAddChipClick(addChip)">
+        <igx-chip #addChip [data]="{ clicked: false }" (chipClick)="onAddChipClick(addChip)">
           <igx-icon igxPrefix>add_circle_outline</igx-icon>
           @if (!addChip.data.clicked) {
             <span>{{"Add Column"}}</span>
           }
           @if (addChip.data.clicked) {
             <igx-input-group>
-              <input style="width: 10ch; padding: unset; border: none; height: 25px;" igxInput type="text" placeholder="Column Key" (keydown)="inputKeyDown($event, addChip)" (blur)="inputBlur($event, addChip)"/>
+              <input igxInput type="text" placeholder="Column Key" (keydown)="inputKeyDown($event, addChip)" (blur)="inputBlur($event, addChip)"/>
             </igx-input-group>
           }
         </igx-chip>
