@@ -1,8 +1,11 @@
-import { Config, IConfigGenerator} from 'igniteui-live-editing'
+import { Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class QueryBuilderConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
+
+        const HTTPConfig = structuredClone(BaseAppConfig);
+        HTTPConfig.providers.push({ 'provider': 'provideHttpClient(),', 'import': '@angular/common/http' });
 
         configs.push(new Config({
             component: 'QueryBuilderSample1Component',
@@ -23,12 +26,19 @@ export class QueryBuilderConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/interactions/query-builder/"
         }));
 
-        // configs.push(new Config({
-        //     component: 'QueryBuilderSqlSampleComponent',
-        //     additionalDependencies: ["sql-formatter"],
-        //     appConfig: BaseAppConfig,
-        //     shortenComponentPathBy: "/interactions/query-builder/"
-        // })); // sql-formatter is not available in the live editing environment and cannot be enabled per config atm
+        configs.push(new Config({
+            component: 'QueryBuilderRequestSampleComponent',
+            additionalFiles: ["/src/app/interactions/query-builder/query-builder-style/layout.scss"],
+            appConfig: HTTPConfig,
+            shortenComponentPathBy: "/interactions/query-builder/"
+        }));
+
+        configs.push(new Config({
+            component: 'QueryBuilderSqlSampleComponent',
+            additionalDependencies: ["sql-formatter"],
+            appConfig: HTTPConfig,
+            shortenComponentPathBy: "/interactions/query-builder/"
+        }));
 
         return configs;
     }
