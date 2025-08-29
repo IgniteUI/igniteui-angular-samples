@@ -87,20 +87,20 @@
   },
   "overrides": {
     "@ng-bootstrap/ng-bootstrap": {
-      "@angular/common": "^20.2.1",
-      "@angular/core": "^20.2.1",
-      "@angular/forms": "^20.2.1",
-      "@angular/localize": "^20.2.1"
+      "@angular/common": "^20.2.2",
+      "@angular/core": "^20.2.2",
+      "@angular/forms": "^20.2.2",
+      "@angular/localize": "^20.2.2"
     },
     "igniteui-angular-core": {
-      "@angular/core": "^20.2.1",
-      "@angular/common": "^20.2.1",
-      "@angular/compiler": "^20.2.1"
+      "@angular/core": "^20.2.2",
+      "@angular/common": "^20.2.2",
+      "@angular/compiler": "^20.2.2"
     },
     "igniteui-angular-charts": {
-      "@angular/core": "^20.2.1",
-      "@angular/common": "^20.2.1",
-      "@angular/compiler": "^20.2.1"
+      "@angular/core": "^20.2.2",
+      "@angular/common": "^20.2.2",
+      "@angular/compiler": "^20.2.2"
     }
   },
   "devDependencies": {
