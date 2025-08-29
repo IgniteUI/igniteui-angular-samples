@@ -86,5 +86,6 @@ export const hierarchicalGridRoutesData = {
     'hierarchical-grid-validator-service-extended': { displayName: 'Hierarchical Grid Validator Service Extended', parentName: 'Hierarchical Grid' },
     'hGrid-columnAutosizing-sample': { displayName: 'HGrid Column Autosizing Sample', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-cross-field-validation': { displayName: 'Hierarchical Grid Cross-field Validation', parentName: 'Hierarchical Grid' },
-    'hierarchical-grid-summary-export': { displayName: 'Hierarchical Grid Summary Export', parentName: 'Hierarchical Grid' }
+    'hierarchical-grid-summary-export': { displayName: 'Hierarchical Grid Summary Export', parentName: 'Hierarchical Grid' },
+    'hierarchical-grid-both-sides-pinning': { displayName: 'Hierarchical Grid Both Sides Pinning', parentName: 'Hierarchical Grid' }
 };

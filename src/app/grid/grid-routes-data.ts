@@ -45,6 +45,7 @@ export const gridsRoutesData = {
     'grid-sample-2': { displayName: 'Grid Financial Sample', parentName: 'Grid' },
     'grid-sample-pinning': { displayName: 'Grid Header Template with Pinning', parentName: 'Grid' },
     'grid-sample-toolbar-pinning': { displayName: 'Grid Toolbar Pinning', parentName: 'Grid' },
+    'grid-toolbar-pinning-both-sides': { displayName: 'Grid Toolbar Pinning Both Sides', parentName: 'Grid' },
     'grid-sample-4': { displayName: 'Grid Remote Virtualization', parentName: 'Grid' },
     'grid-remote-filtering': { displayName: 'Grid Remote Filtering', parentName: 'Grid' },
     'grid-selection': { displayName: 'Grid Selection', parentName: 'Grid' },

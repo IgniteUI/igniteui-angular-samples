@@ -131,6 +131,7 @@ import { GridValidatorServiceExtendedComponent } from './grid-validator-service-
 import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-export.component';
 import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sample/grid-state-persistance-sample.component';
 import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-cascading-combos.component';
+import { GridBothSideToolbarPinningSampleComponent } from './grid-sample-pinning-both-sides/grid-toolbar-pinning-both-sides.component';
 
 // tslint:enable:max-line-length
 
@@ -369,6 +370,11 @@ export const GridsRoutes: Routes = [
         component: PinningToolbarSampleComponent,
         data: gridsRoutesData['grid-sample-toolbar-pinning'],
         path: 'grid-sample-toolbar-pinning'
+    },
+    {
+        component: GridBothSideToolbarPinningSampleComponent,
+        data: gridsRoutesData['grid-toolbar-pinning-both-sides'],
+        path: 'grid-toolbar-pinning-both-sides'
     },
     {
         component: GridRemoteVirtualizationSampleComponent,
