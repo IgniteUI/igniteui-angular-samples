@@ -18,7 +18,7 @@ import {
     IgxDropDownItemComponent,
     IgxButtonDirective,
     IgxToggleActionDirective,
-    IgxDropDownItemNavigationDirective,
+    IgxDropDownItemNavigationDirective
 } from "igniteui-angular";
 import { employeesData } from "../../data/employeesData";
 import { athletesData } from "../../data/athletesData";
@@ -48,8 +48,8 @@ import { DatePipe } from "@angular/common";
         IgxDropDownItemComponent,
         IgxButtonDirective,
         IgxToggleActionDirective,
-        IgxDropDownItemNavigationDirective,
-    ],
+        IgxDropDownItemNavigationDirective
+    ]
 })
 export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
     @ViewChild("grid1", { static: true })
