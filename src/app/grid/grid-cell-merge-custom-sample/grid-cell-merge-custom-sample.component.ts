@@ -35,7 +35,7 @@ export class GridCellMergeCustomSampleComponent {
             { ActionID: "9", ProjectName: "VR Device", ActionName: "Additional options", Type: "Request", Priority: "High", Status: "Rejected", Created: new Date("2016-09-02"), LastEdit: new Date("2016-09-08") },
             { ActionID: "10", ProjectName: "VR Device", ActionName: "Data Log", Type: "Request", Priority: "High", Status: "New", Created: new Date("2017-03-25"), LastEdit: new Date("2017-05-08") },
             { ActionID: "12", ProjectName: "VR Device", ActionName: "Motion Blur", Type: "Bug", Priority: "High", Status: "New", Created: new Date("2017-03-25"), LastEdit: new Date("2017-05-08") },
-            { ActionID: "11", ProjectName: "VR Device", ActionName: "Left Sensors Delay", Type: "Bug", Priority: "High", Status: "Fixed", Created: new Date("2017-03-25"), LastEdit: new Date("2017-05-08") },
+            { ActionID: "11", ProjectName: "VR Device", ActionName: "Left Sensors Delay", Type: "Bug", Priority: "High", Status: "Fixed", Created: new Date("2017-03-25"), LastEdit: new Date("2017-05-08") }
         ];
     }
 }
