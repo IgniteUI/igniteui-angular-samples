@@ -38,28 +38,12 @@ export class TreeGridBothSidesPinningSampleComponent implements OnInit {
   public data: any[];
   public columns: any[];
   public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
+  public start = ColumnPinningPosition.Start;
+  public end = ColumnPinningPosition.End;
 
-  private _columnsPinned = true;
 
   public ngOnInit(): void {
     this.data = generateEmployeeDetailedFlatData();
-  }
-
-  public toggleColumnPinning(col: IgxColumnComponent): void {
-    col.pinned ? col.unpin() : col.pin();
-  }
-
-  public setPinningPosition(side: 'start' | 'end'): void {
-    const pos = side === 'start' ? ColumnPinningPosition.Start : ColumnPinningPosition.End;
-    this.pinningConfig = { columns: pos };
-  }
-
-  public get columnsPinned(): boolean {
-    return this._columnsPinned;
-  }
-
-  public set columnsPinned(pinned) {
-    this._columnsPinned = !this._columnsPinned;
   }
 
   public pinLeft(){

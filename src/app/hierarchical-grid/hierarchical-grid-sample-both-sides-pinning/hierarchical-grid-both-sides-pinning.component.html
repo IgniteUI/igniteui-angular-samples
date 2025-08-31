@@ -11,6 +11,7 @@
     [moving]="true"
   >
     <igx-grid-toolbar>
+        <igx-grid-toolbar-title>Hierarchical Grid</igx-grid-toolbar-title>
             <igx-grid-toolbar-actions>
                 <button igxButton="contained" (click)="unpinColumn()"> Unpin Column </button>
                 <button igxButton="contained" (click)="pinLeft()"> Pin Left </button>
@@ -90,7 +91,13 @@
       </ng-template>
     </igx-column>
 
-    <igx-row-island [height]="null" [key]="'AgentData'" [autoGenerate]="false" [pinning]="pinningConfig" columnSelection="multiple">
+    <igx-row-island [height]="null" [key]="'AgentData'" [moving]="true" [autoGenerate]="false" [pinning]="pinningConfig" columnSelection="multiple">
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>Agent Data</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <button igxButton="contained">Add Agent</button>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
       <igx-column field="avatar" header="Agent's Photo" width="80">
         <ng-template igxCell let-cell="cell">
           <div class="cell__inner avatar-cell">
@@ -104,7 +111,7 @@
       <igx-column field="email" header="Work E-mail" width="250"></igx-column>
       <igx-column field="work_phone" header="Work Phone" width="160"></igx-column>
 
-      <igx-column field="street" header="Street" width="200" [pinned]="true"></igx-column>
+      <igx-column field="street" header="Street" width="200" [pinned]="true" [pinningPosition]="start"></igx-column>
       <igx-column field="city" header="City" [pinned]="true"></igx-column>
       <igx-column field="post_code" header="Post Code"></igx-column>
       <igx-column field="state" header="State"></igx-column>

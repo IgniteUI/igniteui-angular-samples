@@ -19,6 +19,7 @@ import {
     IgxButtonDirective,
     IgxToggleActionDirective,
     IgxDropDownItemNavigationDirective,
+    IgxGridToolbarTitleComponent,
 } from "igniteui-angular";
 import { employeesData } from "../../data/employeesData";
 import { athletesData } from "../../data/athletesData";
@@ -34,7 +35,6 @@ import { DatePipe } from "@angular/common";
         IgxHierarchicalGridComponent,
         IgxGridToolbarComponent,
         IgxGridToolbarActionsComponent,
-        IgxGridToolbarPinningComponent,
         IgxColumnComponent,
         IgxCellTemplateDirective,
         IgxTooltipTargetDirective,
@@ -44,12 +44,9 @@ import { DatePipe } from "@angular/common";
         IgxIconComponent,
         IgxRowIslandComponent,
         DatePipe,
-        IgxDropDownComponent,
-        IgxDropDownItemComponent,
         IgxButtonDirective,
-        IgxToggleActionDirective,
-        IgxDropDownItemNavigationDirective,
-    ],
+        IgxGridToolbarTitleComponent
+    ]
 })
 export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
     @ViewChild("grid1", { static: true })
@@ -60,6 +57,8 @@ export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
     public columns: any[];
     public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
     private _columnsPinned = true;
+    public start = ColumnPinningPosition.Start;
+    public end = ColumnPinningPosition.End;
 
     public ngOnInit(): void {
         this.data = athletesData;
@@ -77,30 +76,6 @@ export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
             x.AgentData = [this.employeesData[i]];
             i++;
         });
-    }
-
-    // Toggle individual column pin state (unchanged)
-    public toggleColumn(col: IgxColumnComponent): void {
-        col.pinned ? col.unpin() : col.pin();
-    }
-
-    // NEW: Set global pinning position via toolbar dropdown
-    public setPinningPosition(side: "start" | "end"): void {
-        const pos =
-            side === "start"
-                ? ColumnPinningPosition.Start
-                : ColumnPinningPosition.End;
-
-        // Reassign a new object so change detection updates both grid and row island
-        this.pinningConfig = { columns: pos };
-    }
-
-    public get columnsPinned(): boolean {
-        return this._columnsPinned;
-    }
-
-    public set columnsPinned(pinned) {
-        this._columnsPinned = !this._columnsPinned;
     }
 
     private generateReadableDate(timestamp: string): Date {

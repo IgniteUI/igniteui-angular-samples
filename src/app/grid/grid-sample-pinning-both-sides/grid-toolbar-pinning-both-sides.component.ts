@@ -30,13 +30,9 @@ import { ActivatedRoute } from '@angular/router';
         IgxPreventDocumentScrollDirective,
         IgxGridToolbarComponent,
         IgxGridToolbarActionsComponent,
-        IgxGridToolbarPinningComponent,
         IgxColumnComponent,
-        IgxDropDownComponent,
-        IgxDropDownItemComponent,
         IgxButtonDirective,
-        IgxToggleActionDirective,
-        IgxDropDownItemNavigationDirective
+        IgxToggleActionDirective
     ]
 })
 

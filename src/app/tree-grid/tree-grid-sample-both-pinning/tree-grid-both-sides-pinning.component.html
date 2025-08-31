@@ -21,8 +21,8 @@
         </igx-grid-toolbar>
     </igx-grid-toolbar>
 
-    <igx-column [field]="'Name'" dataType="string" width="250px" [disablePinning]="true"></igx-column>
-    <igx-column [field]="'Title'" dataType="string" width="250px" [pinned]="true"></igx-column>
+    <igx-column [field]="'Name'" dataType="string" width="250px" [pinned]="true" [pinningPosition]="start"></igx-column>
+    <igx-column [field]="'Title'" dataType="string" width="250px" [pinned]="true" [pinningPosition]="end"></igx-column>
     <igx-column [field]="'ID'" dataType="number" width="100px"></igx-column>
     <igx-column [field]="'HireDate'" header="Hire Date" dataType="date" width="200px"></igx-column>
     <igx-column [field]="'Age'" dataType="number" width="200px"></igx-column>
