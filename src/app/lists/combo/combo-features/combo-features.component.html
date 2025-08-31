@@ -1,12 +1,12 @@
 
 <igx-combo #combo class="combo" [data]="lData" [displayKey]="'field'" [valueKey]="'field'"
     placeholder="Location(s)" searchPlaceholder="Search..." [allowCustomValues]="customValues"
-    (addition)="handleAddition($event)"
+    (addition)="handleAddition($event)" [disableFiltering]="disableFiltering"
     [showSearchCaseIcon]="showSearchCaseIcon" [itemsMaxHeight]="255" [disabled]="disabled">
 </igx-combo>
 
-<igx-switch [(ngModel)]="filterable">Enable Filtering</igx-switch><br />
-<igx-switch [disabled]="!filterable" [(ngModel)]="showSearchCaseIcon">Show Case-sensitive Icon</igx-switch><br />
+<igx-switch [(ngModel)]="disableFiltering">Disable Filtering</igx-switch><br />
+<igx-switch [disabled]="disableFiltering" [(ngModel)]="showSearchCaseIcon">Show Case-sensitive Icon</igx-switch><br />
 <igx-switch [(ngModel)]="customValues">Allow Custom Values</igx-switch><br />
 <igx-switch (change)="enableGroups($event)">Enable Grouping</igx-switch><br />
 <igx-switch [(ngModel)]="disabled">Disable Combo</igx-switch>
