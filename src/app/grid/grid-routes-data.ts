@@ -2,6 +2,8 @@
 
 export const gridsRoutesData = {
     'grid-groupby': { displayName: 'Grid GroupBy', parentName: 'Grid' },
+    'grid-cellMerge': { displayName: 'Grid Cell Merge', parentName: 'Grid' },
+    'grid-cellMerge-custom': { displayName: 'Grid Cell Merge Custom', parentName: 'Grid' },
     'grid-groupby-custom': {displayName: 'Grid GroupBy Custom', parentName: 'Grid'},
     'grid-groupby-paging': { displayName: 'Grid GroupBy Paging', parentName: 'Grid' },
     'grid-groupby-styling': { displayName: 'Grid GroupBy Styling', parentName: 'Grid' },

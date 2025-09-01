@@ -44,7 +44,7 @@ import {
     IgcFormsModule
 } from 'igniteui-angular';
 import { Config, IConfigGenerator } from 'igniteui-live-editing'
-import { BaseAppConfig } from './BaseConfig';;
+import { BaseAppConfig } from './BaseConfig';
 export class GridConfigGenerator implements IConfigGenerator {
     public additionalImports = {
         IgxPreventDocumentScrollDirective: '../../src/app/directives/prevent-scroll.directive',
@@ -865,6 +865,18 @@ export class GridConfigGenerator implements IConfigGenerator {
             component: 'RatingInFormComponent',
             additionalFiles: [],
             additionalDependencies: ['igniteui-webcomponents'],
+            appConfig: BaseAppConfig
+        }));
+
+        configs.push(new Config({
+            component: 'GridCellMergeCustomSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts'],
+            appConfig: BaseAppConfig
+        }));
+
+        configs.push(new Config({
+            component: 'GridCellMergeSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts'],
             appConfig: BaseAppConfig
         }));
 

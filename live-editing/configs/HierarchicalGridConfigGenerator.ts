@@ -645,6 +645,15 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             component: 'HGridSummaryExportComponent'
         }));
 
+        configs.push(new Config({
+            component: 'HGridCellMergeComponent',
+            appConfig: BaseAppConfig,
+            additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/hierarchical-data.ts'
+            ]
+        }));
+
         return configs;
     }
 }
