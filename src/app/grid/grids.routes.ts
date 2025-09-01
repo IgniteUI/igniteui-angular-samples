@@ -132,6 +132,8 @@ import { GridSummaryExportComponent } from './grid-summary-export/grid-summary-e
 import { GridStatePersistenceSampleComponent } from './grid-state-persistence-sample/grid-state-persistance-sample.component';
 import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-cascading-combos.component';
 import { GridBothSideToolbarPinningSampleComponent } from './grid-sample-pinning-both-sides/grid-toolbar-pinning-both-sides.component';
+import { GridCellMergeSampleComponent } from './grid-cell-merge-sample/grid-cell-merge-sample.component';
+import { GridCellMergeCustomSampleComponent } from './grid-cell-merge-custom-sample/grid-cell-merge-custom-sample.component';
 
 // tslint:enable:max-line-length
 
@@ -155,6 +157,16 @@ export const GridsRoutes: Routes = [
         component: GridGroupBySampleComponent,
         data: gridsRoutesData['grid-groupby'],
         path: 'grid-groupby'
+    },
+    {
+        component: GridCellMergeSampleComponent,
+        data: gridsRoutesData['grid-cellMerge'],
+        path: 'grid-cellMerge'
+    },
+    {
+        component: GridCellMergeCustomSampleComponent,
+        data: gridsRoutesData['grid-cellMerge-custom'],
+        path: 'grid-cellMerge-custom'
     },
     {
         component: GridGroupByStylingComponent,
