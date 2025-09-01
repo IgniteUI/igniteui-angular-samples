@@ -791,6 +791,15 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/tree-grid/'
         }));
 
+        configs.push(new Config({
+            component: 'TreeGridCellMergeComponent',
+            appConfig: BaseAppConfig,
+            additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/tree-grid/data/employees-flat-detailed.ts'
+            ]
+        }));
+
         return configs;
     }
 }

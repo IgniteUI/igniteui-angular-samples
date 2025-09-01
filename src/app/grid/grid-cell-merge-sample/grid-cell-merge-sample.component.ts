@@ -1,5 +1,15 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DefaultSortingStrategy, GridSelectionMode, IgxGridComponent, ISortingExpression, SortingDirection, IgxColumnComponent, IgxCellTemplateDirective, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent, GridCellMergeMode, IgxSelectComponent, IgxSelectItemComponent, IgxGridToolbarComponent, IgxLabelDirective } from 'igniteui-angular';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import {
+    GridSelectionMode,
+    IgxGridComponent,
+    IgxColumnComponent,
+    IgxCellTemplateDirective,
+    GridCellMergeMode,
+    IgxSelectComponent,
+    IgxSelectItemComponent,
+    IgxGridToolbarComponent,
+    IgxLabelDirective
+} from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';

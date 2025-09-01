@@ -1,9 +1,6 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DefaultSortingStrategy, GridSelectionMode, IgxGridComponent, ISortingExpression, SortingDirection, IgxColumnComponent, IgxCellTemplateDirective, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent, GridCellMergeMode, IgxSelectComponent, IgxSelectItemComponent, IgxGridToolbarComponent, IgxLabelDirective, DefaultMergeStrategy } from 'igniteui-angular';
-import { INVOICE_DATA } from '../../data/invoiceData';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { IgxGridComponent, IgxColumnComponent, GridCellMergeMode,DefaultMergeStrategy } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
-import { FormsModule } from '@angular/forms';
-
 
 @Component({
     encapsulation: ViewEncapsulation.None,
@@ -14,14 +11,14 @@ import { FormsModule } from '@angular/forms';
         IgxGridComponent,
         IgxPreventDocumentScrollDirective,
         IgxColumnComponent
-        ]
+    ]
 })
 export class GridCellMergeCustomSampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
     public cellMergeMode: GridCellMergeMode = 'always';
-    public perProjectMergeStrategy =  new PerProjectMergeStrategy();
+    public perProjectMergeStrategy = new PerProjectMergeStrategy();
     constructor() {
         this.data = [
             { ActionID: "1", ProjectName: "IOT Switch Project", ActionName: "Data Import", Type: "Request", Priority: "Low", Status: "New", Created: new Date("2017-03-25"), LastEdit: new Date("2017-05-08") },
