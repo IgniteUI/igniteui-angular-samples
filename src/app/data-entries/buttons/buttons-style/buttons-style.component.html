@@ -1,17 +1,22 @@
-<div class="buttons-sample">
-  <div class="button-sample">
-    <button igxButton="contained" igxRipple>Contained Button</button>
+@for (item of range; let i = $index; track i) {
+  <div [class]="'buttons-sample-' + (i + 1)">
+    <div class="button-sample">
+      <button igxButton="contained">Solid</button>
+    </div>
+    <div class="button-sample">
+      <button igxButton="outlined">Outlined</button>
+    </div>
+    <div class="button-sample dashed">
+      <button igxButton="outlined">Dashed</button>
+    </div>
+    <div class="button-sample filled">
+      <button igxButton="flat">Filled</button>
+    </div>
+    <div class="button-sample text">
+      <button igxButton="flat">Text</button>
+    </div>
+    <div class="button-sample link">
+      <button igxButton="flat">Link</button>
+    </div>
   </div>
-  <div class="button-sample">
-    <button igxButton="flat" igxRipple>Flat Button</button>
-  </div>
-  <div class="button-sample">
-    <button igxButton="outlined" igxRipple>Outlined Button</button>
-  </div>
-  <div class="button-sample">
-    <button igxButton="fab" igxRipple>Fab Button</button>
-  </div>
-  <div class="button-sample">
-    <button igxButton="contained" [disabled]="'true'">Disabled</button>
-  </div>
-</div>
+}
