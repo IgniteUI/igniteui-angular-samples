@@ -14,7 +14,7 @@ import {
     IgxIconComponent,
     IgxRowIslandComponent,
     IgxButtonDirective,
-    IgxGridToolbarTitleComponent,
+    IgxGridToolbarTitleComponent
 } from "igniteui-angular";
 import { employeesData } from "../../data/employeesData";
 import { athletesData } from "../../data/athletesData";

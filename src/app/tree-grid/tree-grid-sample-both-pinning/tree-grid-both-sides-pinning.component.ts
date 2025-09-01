@@ -6,7 +6,7 @@ import {
     IPinningConfig,
     IgxGridToolbarComponent,
     IgxGridToolbarActionsComponent,
-    IgxButtonDirective,
+    IgxButtonDirective
 } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
