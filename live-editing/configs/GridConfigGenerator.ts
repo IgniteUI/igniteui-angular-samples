@@ -880,6 +880,12 @@ export class GridConfigGenerator implements IConfigGenerator {
             appConfig: BaseAppConfig
         }));
 
+        configs.push(new Config({
+            component: 'GridBothSideToolbarPinningSampleComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/customers.ts'],
+            appConfig: BaseAppConfig
+        }));
+
         return configs;
     }
 }
