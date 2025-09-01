@@ -654,6 +654,16 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
             ]
         }));
 
+        configs.push(new Config({
+            component: 'HierarchicalGridBothSidePinningSampleComponent',
+            appConfig: BaseAppConfig,
+            additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/data/employeesData.ts',
+                '/src/app/data/athletesData.ts'
+            ]
+        }));
+
         return configs;
     }
 }

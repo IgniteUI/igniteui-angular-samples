@@ -100,6 +100,7 @@ import { TreeGridSummaryTemplateComponent } from './treegrid-summary-template/tr
 import { TreeGridValidatorServiceCrossFieldComponent } from './tree-grid-validator-service-cross-field/tree-grid-validator-service-cross-field.component';
 import { TreeGridValidationStyleComponent } from './tree-grid-validation-style/tree-grid-validation-style.component';
 import { TreeGridSummaryExportComponent } from './tree-grid-summary-export/tree-grid-summary-export.component';
+import { TreeGridBothSidesPinningSampleComponent } from './tree-grid-sample-both-pinning/tree-grid-both-sides-pinning.component';
 import { TreeGridCellMergeComponent } from './tree-grid-cell-merge-sample/tree-grid-cell-merge-sample.component';
 
 export const TreeGridRoutes: Routes = [
@@ -492,6 +493,11 @@ export const TreeGridRoutes: Routes = [
         component: TreeGridRightPinningSampleComponent,
         data: treeGridRoutesData['tree-grid-sample-right-pinning'],
         path: 'tree-grid-sample-right-pinning'
+    },
+    {
+        component: TreeGridBothSidesPinningSampleComponent,
+        data: treeGridRoutesData['tree-grid-both-sides-pinning'],
+        path: 'tree-grid-both-sides-pinning'
     },
     {
         component: TreeGridColumnSelectionComponent,
