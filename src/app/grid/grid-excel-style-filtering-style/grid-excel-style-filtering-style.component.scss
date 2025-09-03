@@ -5,28 +5,19 @@ $yellow: #ffcd0f;
 $black: #292826;
 
 $custom-grid: grid-theme(
-  $filtering-row-background: $yellow
+  $filtering-row-background: $yellow,
+  $excel-filtering-header-foreground: $black,
+  $excel-filtering-subheader-foreground: $black,
+  $excel-filtering-actions-foreground: #006400,
+  $excel-filtering-actions-hover-foreground: $yellow,
+  $excel-filtering-actions-disabled-foreground: var(--ig-gray-500)
 );
 
-$custom-flat-button: button-theme(
-  $background: $yellow,
-  $foreground: $black,
-  $hover-background: $black,
-  $hover-foreground: $yellow
-);
-
-$custom-contained-button: button-theme(
+$custom-button: button-theme(
   $background: $black,
   $foreground: $yellow,
   $hover-background: $black,
   $hover-foreground: $yellow
-);
-
-$custom-button-group: button-group-theme(
-  $item-background: $yellow,
-  $item-text-color: $black,
-  $item-hover-background: $black,
-  $item-hover-text-color: $yellow
 );
 
 $custom-input-group: input-group-theme(
@@ -49,8 +40,6 @@ $custom-checkbox: checkbox-theme(
 
 $custom-drop-down: drop-down-theme(
   $background-color: $yellow,
-  $selected-item-background: lighten($black, 10%),
-  $selected-focus-item-background: lighten($black, 15%),
   $item-text-color: $black,
   $hover-item-background: $black,
   $hover-item-text-color: $yellow
@@ -63,11 +52,9 @@ $custom-drop-down: drop-down-theme(
     @include css-vars($custom-input-group);
     @include css-vars($custom-checkbox);
     @include css-vars($custom-list);
-    @include css-vars($custom-flat-button);
-    @include css-vars($custom-button-group);
     
-    .igx-excel-filter__apply {
-      @include css-vars($custom-contained-button);
+    .igx-excel-filter__menu-footer {
+      @include css-vars($custom-button);
     }
   }
 }
