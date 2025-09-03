@@ -101,6 +101,8 @@ import { HierarchicalGridValidatorServiceCrossCellComponent } from './hierarchic
 import { HGridValidationStyleComponent } from './hierarchical-grid-validation-style/hierarchical-grid-validation-style.component';
 import { HierarchicalGridValidatorServiceExtendedComponent } from './hierarchical-grid-validator-service-extended/hierarchical-grid-validator-service-extended.component';
 import { HGridSummaryExportComponent } from './hgrid-summary-export/hgrid-summary-export.component';
+import { HierarchicalGridBothSidePinningSampleComponent } from './hierarchical-grid-sample-both-sides-pinning/hierarchical-grid-both-sides-pinning.component';
+import { HGridCellMergeComponent } from './hierarchical-grid-cell-merge/hierarchical-grid-cell-merge.component';
 
 export const HierarchicalGridRoutes: Routes = [
     {
@@ -488,6 +490,11 @@ export const HierarchicalGridRoutes: Routes = [
         path: 'hierarchical-grid-sample-right-pinning'
     },
     {
+        component: HierarchicalGridBothSidePinningSampleComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-both-sides-pinning'],
+        path: 'hierarchical-grid-both-sides-pinning'
+    },
+    {
         component: HierarchicalGridColumnSelectionComponent,
         data: hierarchicalGridRoutesData['column-selection'],
         path: 'column-selection'
@@ -581,5 +588,10 @@ export const HierarchicalGridRoutes: Routes = [
         component: HGridSummaryExportComponent,
         data: hierarchicalGridRoutesData['hierarchical-grid-summary-export'],
         path: 'hierarchical-grid-summary-export'
+    },
+    {
+        component: HGridCellMergeComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-cell-merge'],
+        path: 'hierarchical-grid-cell-merge'
     }
 ];

@@ -2,6 +2,8 @@
 
 export const gridsRoutesData = {
     'grid-groupby': { displayName: 'Grid GroupBy', parentName: 'Grid' },
+    'grid-cellMerge': { displayName: 'Grid Cell Merge', parentName: 'Grid' },
+    'grid-cellMerge-custom': { displayName: 'Grid Cell Merge Custom', parentName: 'Grid' },
     'grid-groupby-custom': {displayName: 'Grid GroupBy Custom', parentName: 'Grid'},
     'grid-groupby-paging': { displayName: 'Grid GroupBy Paging', parentName: 'Grid' },
     'grid-groupby-styling': { displayName: 'Grid GroupBy Styling', parentName: 'Grid' },
@@ -45,6 +47,7 @@ export const gridsRoutesData = {
     'grid-sample-2': { displayName: 'Grid Financial Sample', parentName: 'Grid' },
     'grid-sample-pinning': { displayName: 'Grid Header Template with Pinning', parentName: 'Grid' },
     'grid-sample-toolbar-pinning': { displayName: 'Grid Toolbar Pinning', parentName: 'Grid' },
+    'grid-toolbar-pinning-both-sides': { displayName: 'Grid Toolbar Pinning Both Sides', parentName: 'Grid' },
     'grid-sample-4': { displayName: 'Grid Remote Virtualization', parentName: 'Grid' },
     'grid-remote-filtering': { displayName: 'Grid Remote Filtering', parentName: 'Grid' },
     'grid-selection': { displayName: 'Grid Selection', parentName: 'Grid' },
