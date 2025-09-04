@@ -2,6 +2,7 @@
 
 export const treeGridRoutesData = {
     'treegrid-cell-merge': { displayName: 'TreeGrid Cell Merge', parentName: 'TreeGrid' },
+    'treegrid-cell-merge-custom': { displayName: 'TreeGrid Cell Merge Custom', parentName: 'TreeGrid' },
     'tree-grid-row-drag': { displayName: 'Tree Grid Row Drag', parentName: 'TreeGrid' },
     'tree-grid-multi-row-drag': { displayName: 'Tree Grid Multi Row Drag', parentName: 'TreeGrid' },
     'tree-grid-row-drag-base': { displayName: 'Tree Grid Row Drag - Base', parentName: 'TreeGrid' },

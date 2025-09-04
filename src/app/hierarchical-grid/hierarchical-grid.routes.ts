@@ -103,6 +103,7 @@ import { HierarchicalGridValidatorServiceExtendedComponent } from './hierarchica
 import { HGridSummaryExportComponent } from './hgrid-summary-export/hgrid-summary-export.component';
 import { HierarchicalGridBothSidePinningSampleComponent } from './hierarchical-grid-sample-both-sides-pinning/hierarchical-grid-both-sides-pinning.component';
 import { HGridCellMergeComponent } from './hierarchical-grid-cell-merge/hierarchical-grid-cell-merge.component';
+import { HGridCellMergeCustomComponent } from './hierarchical-grid-cell-merge-custom/hierarchical-grid-cell-merge-custom.component';
 
 export const HierarchicalGridRoutes: Routes = [
     {
@@ -593,5 +594,10 @@ export const HierarchicalGridRoutes: Routes = [
         component: HGridCellMergeComponent,
         data: hierarchicalGridRoutesData['hierarchical-grid-cell-merge'],
         path: 'hierarchical-grid-cell-merge'
+    },
+    {
+        component: HGridCellMergeCustomComponent,
+        data: hierarchicalGridRoutesData['hierarchical-grid-cell-merge-custom'],
+        path: 'hierarchical-grid-cell-merge-custom'
     }
 ];

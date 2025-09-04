@@ -102,6 +102,7 @@ import { TreeGridValidationStyleComponent } from './tree-grid-validation-style/t
 import { TreeGridSummaryExportComponent } from './tree-grid-summary-export/tree-grid-summary-export.component';
 import { TreeGridBothSidesPinningSampleComponent } from './tree-grid-sample-both-pinning/tree-grid-both-sides-pinning.component';
 import { TreeGridCellMergeComponent } from './tree-grid-cell-merge-sample/tree-grid-cell-merge-sample.component';
+import { TreeGridCellMergeCustomComponent } from './tree-grid-cell-merge-custom-sample/tree-grid-cell-merge-custom-sample.component';
 
 export const TreeGridRoutes: Routes = [
     {
@@ -608,5 +609,10 @@ export const TreeGridRoutes: Routes = [
         component: TreeGridCellMergeComponent,
         data: treeGridRoutesData['treegrid-cell-merge'],
         path: 'treegrid-cell-merge'
+    },
+    {
+        component: TreeGridCellMergeCustomComponent,
+        data: treeGridRoutesData['treegrid-cell-merge-custom'],
+        path: 'treegrid-cell-merge-custom'
     }
 ];
