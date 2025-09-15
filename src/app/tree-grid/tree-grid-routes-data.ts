@@ -1,6 +1,7 @@
 // tslint:disable:object-literal-sort-keys
 
 export const treeGridRoutesData = {
+    'treegrid-cell-merge': { displayName: 'TreeGrid Cell Merge', parentName: 'TreeGrid' },
     'tree-grid-row-drag': { displayName: 'Tree Grid Row Drag', parentName: 'TreeGrid' },
     'tree-grid-multi-row-drag': { displayName: 'Tree Grid Multi Row Drag', parentName: 'TreeGrid' },
     'tree-grid-row-drag-base': { displayName: 'Tree Grid Row Drag - Base', parentName: 'TreeGrid' },
@@ -125,5 +126,6 @@ export const treeGridRoutesData = {
     'tree-grid-cross-field-validator-service': { displayName: 'Tree Grid Cross Field Validator Service', parentName: 'TreeGrid' },
     'tree-grid-validation-style': { displayName: 'Tree Grid Validation Styles', parentName: 'TreeGrid' },
     'tree-grid-validator-service-extended': { displayName: 'Tree Grid Validator Service Extended', parentName: 'TreeGrid' },
-    'treegrid-summary-export': { displayName: 'Tree Grid Summary Export', parentName: 'TreeGrid' }
+    'treegrid-summary-export': { displayName: 'Tree Grid Summary Export', parentName: 'TreeGrid' },
+    'tree-grid-both-sides-pinning': { displayName: 'Tree Grid Both Sides Pinning', parentName: 'TreeGrid' }
 };
