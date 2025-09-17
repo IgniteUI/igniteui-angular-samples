@@ -1,7 +1,7 @@
 <igx-chips-area (reorder)="chipsOrderChanged($event)">
   @for (chip of chipList; track chip) {
     <igx-chip
-      class="!light-chip-color-[#99BAA6]
+      class="!light-chip ![--background:#99BAA6]
       ![--remove-icon-color:#C92828]"
       [id]="chip.id"
       [selectable]="true"

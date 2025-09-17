@@ -1,6 +1,6 @@
 <div class="switch-wrapper">
   @for (setting of settings; track setting) {
-    <igx-switch class="!light-switch-color-[#7B9E89] ![--label-color:#4F6A5A]" [checked]="setting.state">
+    <igx-switch class="!light-switch ![--track-off-color:#7B9E89] ![--track-on-color:#7B9E89]" [checked]="setting.state">
       {{ setting.name }}
     </igx-switch>
   }

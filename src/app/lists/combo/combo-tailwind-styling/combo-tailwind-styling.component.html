@@ -1,5 +1,5 @@
 <div class="control-wrapper">
-    <igx-combo class="!light-combo-toggle-button-[#99BAA6] ![--clear-button-foreground:#99BAA6]" [width]="'430px'" [data]="weaponsData" [displayKey]="'field'" [valueKey]="'field'" [overlaySettings]="{outlet: elem}"
+    <igx-combo class="!light-combo ![--toggle-button-background:#99BAA6] ![--clear-button-foreground:#99BAA6]" [width]="'430px'" [data]="weaponsData" [displayKey]="'field'" [valueKey]="'field'" [overlaySettings]="{outlet: elem}"
         [groupKey]="'weaponRange'" placeholder="Pick up two weapons" searchPlaceholder="Search..."
         [itemsMaxHeight]="255" (selectionChanging)="setWeaponsLimit($event)">
     </igx-combo>
