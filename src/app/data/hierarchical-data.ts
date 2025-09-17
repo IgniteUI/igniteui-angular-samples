@@ -364,6 +364,18 @@ export const HIERARCHICAL_DATA = [
         Country: 'Italy',
         Phone: '011-4988260',
         Fax: '011-4988261'
+    },
+    {
+        ID: "EASTC",
+        CompanyName: "Eastern Connection",
+        ContactName: "Ann Devon",
+        ContactTitle: 'Sales Representative',
+        Address: 'Via Monte Bianco 34',
+        City: 'Torino', Region: null,
+        PostalCode: '10100',
+        Country: 'Italy',
+        Phone: '011-4988260',
+        Fax: '011-4988261'
     }
 ];
 
