@@ -106,7 +106,7 @@
       "@angular/compiler": "^20.2.2"
     },
     "igniteui-angular-extras": {
-      "igniteui-angular": "20.1.0-rc.0"
+      "igniteui-angular": "20.1.0-rc.2"
     }
   },
   "devDependencies": {
