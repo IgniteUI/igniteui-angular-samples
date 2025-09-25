@@ -801,6 +801,15 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'TreeGridCellMergeCustomComponent',
+            appConfig: BaseAppConfig,
+            additionalFiles: [
+                '/src/app/directives/prevent-scroll.directive.ts',
+                '/src/app/tree-grid/data/employees-flat-detailed.ts'
+            ]
+        }));
+
+        configs.push(new Config({
             component: 'TreeGridBothSidesPinningSampleComponent',
             additionalFiles: [
                 '/src/app/directives/prevent-scroll.directive.ts',
