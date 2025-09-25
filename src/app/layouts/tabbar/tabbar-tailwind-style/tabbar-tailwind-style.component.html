@@ -1,0 +1,44 @@
+<igx-bottom-nav class="!light-bottom-nav ![--background:#011627] ![--icon-selected-color:#FF8040] ![--label-selected-color:#FF8040]">
+  <igx-bottom-nav-item>
+    <igx-bottom-nav-header>
+      <igx-icon igxBottomNavHeaderIcon>library_music</igx-icon>
+      <span igxBottomNavHeaderLabel>Songs</span>
+    </igx-bottom-nav-header>
+    <igx-bottom-nav-content>
+      @for (song of songsList; track song) {
+        <div class="item">
+          <span class="item-line1">{{song.title}}</span><br/>
+          <span class="item-line2">{{song.artist}}</span>
+        </div>
+      }
+    </igx-bottom-nav-content>
+  </igx-bottom-nav-item>
+  <igx-bottom-nav-item>
+    <igx-bottom-nav-header>
+      <igx-icon igxBottomNavHeaderIcon>video_library</igx-icon>
+      <span igxBottomNavHeaderLabel>Movies</span>
+    </igx-bottom-nav-header>
+    <igx-bottom-nav-content>
+      @for (movie of moviesList; track movie) {
+        <div class="item">
+          <span class="item-line1">{{movie.title}}</span><br/>
+          <span class="item-line2">{{movie.genre}}</span>
+        </div>
+      }
+    </igx-bottom-nav-content>
+  </igx-bottom-nav-item>
+  <igx-bottom-nav-item>
+    <igx-bottom-nav-header>
+      <igx-icon igxBottomNavHeaderIcon>library_books</igx-icon>
+      <span igxBottomNavHeaderLabel>Books</span>
+    </igx-bottom-nav-header>
+    <igx-bottom-nav-content>
+      @for (book of booksList; track book) {
+        <div class="item">
+          <span class="item-line1">{{book.title}}</span><br/>
+          <span class="item-line2">{{book.author}}</span>
+        </div>
+      }
+    </igx-bottom-nav-content>
+  </igx-bottom-nav-item>
+</igx-bottom-nav>
