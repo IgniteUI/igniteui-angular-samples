@@ -10,4 +10,4 @@ not > 0.5%
 not last 2 versions
 not dead
 not IE 9-11
-Safari >=15
+Safari >=15.7
