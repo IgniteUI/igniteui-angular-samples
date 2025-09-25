@@ -1,0 +1,36 @@
+<div class="grid__wrapper">
+  <igx-tree-grid
+    #grid1
+    [data]="data"
+    primaryKey="ID"
+    foreignKey="ParentID"
+    [autoGenerate]="false"
+    [width]="'100%'"
+    [height]="'480px'"
+    columnSelection="multiple"
+    [pinning]="pinningConfig"
+    [moving]="true"
+  >
+    <igx-grid-toolbar>
+      <igx-grid-toolbar>
+            <igx-grid-toolbar-actions>
+                <button igxButton="contained" (click)="unpinColumn()"> Unpin Column </button>
+                <button igxButton="contained" (click)="pinLeft()"> Pin Left </button>
+                <button igxButton="contained" (click)="pinRight()"> Pin Right </button>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+    </igx-grid-toolbar>
+
+    <igx-column [field]="'Name'" dataType="string" width="250px" [pinned]="true" [pinningPosition]="start"></igx-column>
+    <igx-column [field]="'Title'" dataType="string" width="250px" [pinned]="true" [pinningPosition]="end"></igx-column>
+    <igx-column [field]="'ID'" dataType="number" width="100px"></igx-column>
+    <igx-column [field]="'HireDate'" header="Hire Date" dataType="date" width="200px"></igx-column>
+    <igx-column [field]="'Age'" dataType="number" width="200px"></igx-column>
+    <igx-column [field]="'Address'" dataType="string" width="200px" [disablePinning]="true"></igx-column>
+    <igx-column [field]="'City'" dataType="string" width="200px"></igx-column>
+    <igx-column [field]="'Country'" dataType="string" width="200px"></igx-column>
+    <igx-column [field]="'Fax'" dataType="string" width="200px"></igx-column>
+    <igx-column [field]="'PostalCode'" header="Postal Code" dataType="string" width="200px"></igx-column>
+    <igx-column [field]="'Phone'" dataType="string" width="200px"></igx-column>
+  </igx-tree-grid>
+</div>

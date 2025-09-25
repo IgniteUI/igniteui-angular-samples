@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 
 export const hierarchicalGridRoutesData = {
+    'hierarchical-grid-cell-merge': { displayName: 'Hierarchical Grid Cell Merging', parentName: 'Hierarchical Grid' },
+    'hierarchical-grid-cell-merge-custom': { displayName: 'Hierarchical Grid Cell Merging Custom', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-editing': { displayName: 'Hierarchical Grid Editing', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-editing-events': { displayName: 'Hierarchical Grid Editing Events', parentName: 'Hierarchical Grid'},
     'hierarchical-grid-editing-style': { displayName: 'Hierarchical Grid Editing Style', parentName: 'Hierarchical Grid'},
@@ -86,5 +88,6 @@ export const hierarchicalGridRoutesData = {
     'hierarchical-grid-validator-service-extended': { displayName: 'Hierarchical Grid Validator Service Extended', parentName: 'Hierarchical Grid' },
     'hGrid-columnAutosizing-sample': { displayName: 'HGrid Column Autosizing Sample', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-cross-field-validation': { displayName: 'Hierarchical Grid Cross-field Validation', parentName: 'Hierarchical Grid' },
-    'hierarchical-grid-summary-export': { displayName: 'Hierarchical Grid Summary Export', parentName: 'Hierarchical Grid' }
+    'hierarchical-grid-summary-export': { displayName: 'Hierarchical Grid Summary Export', parentName: 'Hierarchical Grid' },
+    'hierarchical-grid-both-sides-pinning': { displayName: 'Hierarchical Grid Both Sides Pinning', parentName: 'Hierarchical Grid' }
 };
