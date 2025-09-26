@@ -1,4 +1,79 @@
-.card-wrapper {
-  max-width: 320px;
-  min-width: 220px;
+@use "igniteui-angular/theming" as *;
+
+:host {
+    ::ng-deep {
+      .igx-chip__item {
+            padding: 0 rem(5px);
+            height: rem(22px);
+        }
+    }
+}
+
+.igx-card {
+    --ig-font-family: 'alibaba-sans', sans-serif;
+
+    width: rem(300px);
+    border: none;
+}
+
+.border {
+    border: rem(1px) solid var(--outline-color);
+    border-bottom-right-radius: rem(8px);
+    border-bottom-left-radius: rem(8px);
+    border-top: none;
+}
+
+.igx-card-header{
+    --ig-h6-font-size: 1rem;
+    --ig-body-1-font-size: #{rem(14px)};
+
+    width: unset;
+    padding: unset;
+    align-items: baseline;
+    margin: rem(24px) rem(24px) 0 rem(24px);
+    height: rem(65px);
+}
+
+.igx-card-header__subtitle {
+    --ig-subtitle-2-font-weight: 400;
+    --ig-subtitle-2-line-height: #{rem(22px)};
+    --ig-subtitle-2-letter-spacing: #{rem(0.5px)};
+    --subtitle-text-color: rgba(0, 0, 0, 0.45);
+
+    margin: rem(8px) 0 rem(12px);
+}
+
+.igx-card-content {
+    padding: 0;
+
+    igx-chip {
+        --ig-body-2-font-size: #{rem(12px)};
+        
+        padding: rem(5px);
+    
+        &:nth-of-type(1) {
+            margin-left: rem(5px);
+        }
+    }
+
+    igx-divider {
+        margin-top: rem(5px);
+    }
+}
+
+igx-icon {
+    --igx-icon-size: #{rem(14px)};
+}
+
+igx-avatar {
+    border-radius: rem(20px);
+}
+
+igx-card-actions {
+    justify-content: space-evenly;
+    padding: rem(6px) 0;
+
+    igx-divider { 
+        height: rem(24px);
+    }
 }

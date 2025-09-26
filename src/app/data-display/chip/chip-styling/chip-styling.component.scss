@@ -1,11 +1,48 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-$custom-theme: chip-theme(
-  $background: #57a5cd,
-  $selected-background: #ecaa53,
-  $remove-icon-color: #d81414,
-  $border-radius: 5px,
-);
+// CSS variables approach
 
-@include css-vars($custom-theme);
+igx-chip {
+    --text-color: #fff;
+    --hover-text-color: #fff;
+    --focus-text-color: #fff;
+    --border-radius: #{rem(5px)};
+}
+
+.xcom {
+    --background: #000;
+    --hover-background: #000;
+    --focus-background: #323232;
+}
+
+.youtube {
+    --background: #cd201f;
+    --hover-background: #cd201f;
+    --focus-background: #9f1717;
+}
+
+.facebook {
+    --background: #3b5999;
+    --hover-background: #3b5999;
+    --focus-background: #2c4378;
+}
+
+.linkedin {
+    --background: #55acee;
+    --hover-background: #55acee;
+    --focus-background: #4682af;
+}
+
+// Sass theme approach
+
+// $custom-chip-theme: chip-theme(
+//     $background: #cd201f,
+//     $text-color: #fff,
+//     $hover-background: #cd201f,
+//     $focus-background: #9f1717,
+//     $border-radius: rem(5px)
+// );
+
+// @include css-vars($custom-chip-theme)
+ 

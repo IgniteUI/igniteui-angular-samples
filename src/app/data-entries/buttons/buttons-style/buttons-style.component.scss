@@ -1,25 +1,216 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
+@use "sass:map";
 
-$custom-contained-theme: contained-button-theme(
-  $background: #348ae0
+// CSS variables approach
+
+$list: (
+    "sample-1": (
+        "primary": #000,
+        "secondary": rgba(0, 0, 0, 0.75),
+        "active": rgba(0, 0, 0, 0.95),
+        "focus": #fff,
+        "hover": #4096ff,
+        "foreground": rgba(0, 0, 0, 0.88),
+        "border": #d9d9d9,
+        "active-foreground": #0958d9,
+        "flat-foreground": #69b1ff,
+        "flat-background": rgba(0, 0, 0, 0.04),
+        "flat-active": rgba(0, 0, 0, 0.15),
+        "flat-hover": rgba(0, 0, 0, 0.06),
+    ),
+    "sample-2": (
+        "primary": #1677ff,
+        "secondary": #4096ff,
+        "active": #0958d9,
+        "focus": #fff,
+        "flat-background": #e6f4ff,
+        "flat-hover": #bae0ff,
+        "flat-active": #91caff,
+    ),
+    "sample-3": (
+        "primary": #ff4d4f,
+        "secondary": #ff7875,
+        "active": #d9363e,
+        "focus": #fff,
+        "flat-background": #fff2f0,
+        "flat-hover": #ffdfdc,
+        "flat-active": #ffccc7,
+    ),
+    "sample-4": (
+        "primary": #eb2f96,
+        "secondary": #f759ab,
+        "active": #c41d7f,
+        "focus": #fff,
+        "flat-background": #fff0f6,
+        "flat-hover": #ffd6e7,
+        "flat-active": #ffadd2,
+    ),
+    "sample-5": (
+        "primary": #722ed1,
+        "secondary": #9254de,
+        "active": #531dab,
+        "focus": #fff,
+        "flat-background": #f9f0ff,
+        "flat-hover": #efdbff,
+        "flat-active": #d3adf7,
+    ),
+    "sample-6": (
+        "primary": #13c2c2,
+        "secondary": #36cfc9,
+        "active": #08979c,
+        "focus": #fff,
+        "flat-background": #e6fffb,
+        "flat-hover": #b5f5ec,
+        "flat-active": #b5f5ec,
+    ),
 );
 
-$custom-flat-theme: flat-button-theme(
-  $foreground: var(--ig-error-800)
-);
+@each $variant, $style in $list {
+    .buttons-#{$variant} [igxbutton="contained"] {
+        --background: #{map-get($style, "primary")};
+        --hover-background: #{map-get($style, "secondary")};
+        --active-background: #{map-get($style, "active")};
+        --focus-visible-background: #{map-get($style, "primary")};
+        --focus-visible-foreground: #{map-get($style, "focus")};
+        --focus-hover-background: #{map-get($style, "secondary")};
+        --focus-hover-foreground: #{map-get($style, "focus")};
+        --focus-background: #{map-get($style, "active")};
+    }
 
-$custom-outlined-theme: outlined-button-theme(
-  $foreground: var(--ig-success-500)
-);
+    @if $variant == "sample-1" {
+        .buttons-#{$variant} [igxbutton="outlined"] {
+            --foreground: #{map-get($style, "foreground")};
+            --border-color: #{map-get($style, "border")};
+            --hover-foreground: #{map-get($style, "hover")};
+            --hover-border-color: #{map-get($style, "hover")};
+            --active-foreground: #{map-get($style, "active-foreground")};
+            --active-border-color: #{map-get($style, "active-foreground")};
+            --focus-hover-background: #{map-get($style, "focus")};
+            --focus-hover-foreground: #{map-get($style, "hover")};
+            --focus-background: #{map-get($style, "focus")};
+            --focus-foreground: #{map-get($style, "active-foreground")};
+            --focus-visible-border-color: #{map-get($style, "border")};
+        }
 
-$custom-fab-theme: fab-button-theme(
-  $background: #ffc506
-);
+        .buttons-#{$variant} [igxbutton="flat"] {
+            --foreground: #{map-get($style, "foreground")};
+            --active-foreground: #{map-get($style, "foreground")};
+        }
 
-.button-sample {
-  @include css-vars($custom-contained-theme);
-  @include css-vars($custom-flat-theme);
-  @include css-vars($custom-outlined-theme);
-  @include css-vars($custom-fab-theme);
-};
+        .buttons-#{$variant} .filled [igxbutton="flat"] {
+            --background: #{map-get($style, "flat-background")};
+            --hover-background: #{map-get($style, "flat-hover")};
+            --focus-visible-background: #{map-get($style, "flat-background")};
+        }
+
+        .buttons-#{$variant} .filled [igxbutton="flat"],
+        .buttons-#{$variant} .text [igxbutton="flat"] {
+            --hover-foreground: #{map-get($style, "foreground")};
+            --focus-hover-background: #{map-get($style, "flat-hover")};
+            --focus-background: #{map-get($style, "flat-active")};
+            --focus-foreground: #{map-get($style, "foreground")};
+            --focus-hover-foreground: #{map-get($style, "foreground")};
+            --active-background: #{map-get($style, "flat-active")};
+        }
+
+        .buttons-#{$variant} .text [igxbutton="flat"] {
+            --hover-background: #{map-get($style, "flat-background")};
+        }
+
+        .buttons-#{$variant} .link [igxbutton="flat"] {
+            --hover-foreground: #{map-get($style, "flat-foreground")};
+            --active-foreground: #{map-get($style, "active-foreground")};
+        }
+    }
+
+    @else {
+        .buttons-#{$variant} [igxbutton="outlined"] {
+            --foreground: #{map-get($style, "primary")};
+            --border-color: #{map-get($style, "primary")};
+            --hover-foreground: #{map-get($style, "secondary")};
+            --hover-border-color: #{map-get($style, "secondary")};
+            --active-foreground: #{map-get($style, "active")};
+            --active-border-color: #{map-get($style, "active")};
+            --focus-hover-background: #{map-get($style, "focus")};
+            --focus-hover-foreground: #{map-get($style, "secondary")};
+            --focus-background: #{map-get($style, "focus")};
+            --focus-foreground: #{map-get($style, "active")};
+            --focus-visible-border-color: #{map-get($style, "primary")};
+        }
+
+        .buttons-#{$variant} .filled [igxbutton="flat"] {
+            --background: #{map-get($style, "flat-background")};
+            --hover-background: #{map-get($style, "flat-hover")};
+            --hover-foreground: #{map-get($style, "primary")};
+            --active-foreground: #{map-get($style, "primary")};
+            --focus-visible-background: #{map-get($style, "flat-background")};
+            --focus-hover-foreground: #{map-get($style, "primary")};
+            --focus-foreground: #{map-get($style, "primary")};
+        }
+
+        .buttons-#{$variant} .filled [igxbutton="flat"],
+        .buttons-#{$variant} .text [igxbutton="flat"] {
+            --active-background: #{map-get($style, "flat-active")};
+        }
+
+        .buttons-#{$variant} .text [igxbutton="flat"],
+        .buttons-#{$variant} .link [igxbutton="flat"] {
+            --hover-foreground: #{map-get($style, "secondary")};
+            --active-foreground: #{map-get($style, "active")};
+            --focus-hover-foreground: #{map-get($style, "secondary")};
+            --focus-foreground: #{map-get($style, "active")};
+        }
+
+        .buttons-#{$variant} [igxbutton="flat"] {
+            --foreground: #{map-get($style, "primary")};
+            --focus-hover-background: #{map-get($style, "flat-hover")};
+            --focus-background: #{map-get($style, "flat-active")};
+        }
+
+        .buttons-#{$variant} .text [igxbutton="flat"] {
+            --hover-background: #{map-get($style, "flat-background")};
+        }
+    }
+
+    .buttons-#{$variant} [igxbutton="flat"],
+    .buttons-#{$variant} [igxbutton="outlined"] {
+        --focus-visible-foreground: #{map-get($style, "primary")};
+    }
+
+    .buttons-#{$variant} [igxbutton="outlined"],
+    .buttons-#{$variant} .text [igxbutton="flat"],
+    .buttons-#{$variant} .link [igxbutton="flat"] {
+        --focus-visible-background: transparent;
+    }
+}
+
+.button-sample [igxbutton="contained"] {
+    --foreground: #fff;
+    --hover-foreground: #fff;
+    --active-foreground: #fff;
+}
+
+.button-sample [igxbutton="outlined"] {
+    --background: transparent;
+    --hover-background: transparent;
+    --active-background: transparent;
+}
+
+// Sass theme approach
+
+// $custom-button-theme: button-theme(
+//     $background: #f9f0ff,
+//     $foreground: #722ed1,
+//     $border-color: #722ed1,
+//     $hover-background: #efdbff,
+//     $hover-foreground: #9254de,
+//     $hover-border-color: #9254de,
+//     $active-border-color: #531dab,
+//     $active-foreground: #531dab,
+//     $focus-visible-background: #f9f0ff,
+// );
+
+// .button-sample {
+//     @include css-vars($custom-button-theme) 
+// }
