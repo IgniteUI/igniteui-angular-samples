@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
-import { DateRange, IgxDateRangePickerComponent, OverlaySettings, IgxPickerActionsDirective, IgxButtonDirective } from 'igniteui-angular';
+import { DateRange, IgxDateRangePickerComponent, OverlaySettings, IgxPickerActionsDirective, IgxButtonDirective, IChangeCheckboxEventArgs, CustomDateRange } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -19,16 +19,26 @@ export class DateRangePickerRangeButtonsComponent {
         end: new Date(new Date().setDate(new Date().getDate() + 2))
     };
 
+    public today = new Date();
+
+    public nextSeven = new Date(
+      this.today.getFullYear(),
+      this.today.getMonth(),
+      this.today.getDate() + 7
+    );
+
+    public customRanges: CustomDateRange[] = [
+      {
+        label: 'Next 7 days',
+        dateRange: {
+          start: this.today,
+          end: this.nextSeven
+        }
+      }
+    ];
+
     public overlaySettings: OverlaySettings = {
         outlet: this.element,
         modal: true
     };
-
-    public selectDays(count: number) {
-        const today: Date = new Date();
-        this.range = {
-            start: new Date(new Date().setDate(today.getDate() - count + 1)),
-            end: today
-        };
-    }
 }
