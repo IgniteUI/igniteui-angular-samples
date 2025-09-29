@@ -59,11 +59,11 @@ export const serverRoutes: ServerRoute[] = [
     },
     {
         path: 'scheduling/**',
-        renderMode: RenderMode.Prerender
+        renderMode: RenderMode.Client // TODO: Calendar components have SSR hydration issues
     },
     {
         path: 'samples/scheduling/**',
-        renderMode: RenderMode.Prerender
+        renderMode: RenderMode.Client // TODO: Calendar components have SSR hydration issues
     },
     {
         path: 'menus/**',
