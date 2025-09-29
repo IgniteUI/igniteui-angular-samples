@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, DOCUMENT, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, DOCUMENT, PLATFORM_ID, inject } from '@angular/core';
 import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { IgxNavigationDrawerComponent, IgxTreeComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
 import { fromEvent, Subscription } from 'rxjs';
@@ -19,6 +19,7 @@ import { servicesRoutesData } from '../services/services-routes-data';
 import { themingRoutesData } from '../theming/theming-routes-data';
 import { treeGridRoutesData } from '../tree-grid/tree-grid-routes-data';
 import { FormsModule } from '@angular/forms';
+import { isPlatformBrowser } from '@angular/common';
 
 
 
@@ -32,6 +33,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
     private router = inject(Router);
     private cdr = inject(ChangeDetectorRef);
     private document = inject<Document>(DOCUMENT);
+    private platformId = inject(PLATFORM_ID);
 
 
     @ViewChild('navdrawer', { read: IgxNavigationDrawerComponent, static: true })
@@ -168,7 +170,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
         const loadedRouteItem = this.appRoutes.filter(
             (route: any) => route.path === this.router.url)[0];
 
-        if (loadedRouteItem) {
+        if (loadedRouteItem && isPlatformBrowser((this.platformId))) {
             // Get parent (INavItem)
             const loadedParentItem = this.currentNavItems.filter(
                 (navItem) => navItem.name === loadedRouteItem.parentName)[0];

@@ -2,6 +2,7 @@
 
 export const hierarchicalGridRoutesData = {
     'hierarchical-grid-cell-merge': { displayName: 'Hierarchical Grid Cell Merging', parentName: 'Hierarchical Grid' },
+    'hierarchical-grid-cell-merge-custom': { displayName: 'Hierarchical Grid Cell Merging Custom', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-editing': { displayName: 'Hierarchical Grid Editing', parentName: 'Hierarchical Grid' },
     'hierarchical-grid-editing-events': { displayName: 'Hierarchical Grid Editing Events', parentName: 'Hierarchical Grid'},
     'hierarchical-grid-editing-style': { displayName: 'Hierarchical Grid Editing Style', parentName: 'Hierarchical Grid'},
