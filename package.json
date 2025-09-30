@@ -64,6 +64,7 @@
     "@microsoft/signalr": "^8.0.7",
     "@ng-bootstrap/ng-bootstrap": "^19.0.1",
     "@popperjs/core": "2.11.8",
+    "@tailwindcss/postcss": "^4.1.10",
     "@types/file-saver": "^2.0.2",
     "@types/hammerjs": "^2.0.39",
     "angular-in-memory-web-api": "^0.20.0",
@@ -80,8 +81,10 @@
     "igniteui-live-editing": "^3.1.0",
     "igniteui-webcomponents": "^6.2.0",
     "minireset.css": "0.0.6",
+    "postcss": "^8.5.5",
     "rxjs": "^7.8.2",
     "sql-formatter": "^15.4.11",
+    "tailwindcss": "^4.1.10",
     "tslib": "^2.6.1",
     "zone.js": "~0.15.0"
   },
