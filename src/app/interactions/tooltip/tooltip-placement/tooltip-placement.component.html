@@ -1,0 +1,15 @@
+<div class="container">
+    @for (position of positions; track position) {
+    <div igxTooltip>
+        {{ position }}
+    </div>
+    }
+
+    <button
+        class="tooltip-position"
+        igxButton="outlined"
+        (click)="showPositions()"
+    >
+        Click to trigger all supported positions
+    </button>
+</div>
