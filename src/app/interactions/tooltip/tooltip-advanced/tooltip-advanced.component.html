@@ -1,0 +1,200 @@
+<div class="container" #outlet="overlay-outlet" igxOverlayOutlet>
+    <igx-card class="triggerWrapper">
+        <igx-card-header>
+            <h3 igxCardHeaderTitle>Containing list</h3>
+        </igx-card-header>
+        <igx-list class="trigger" [igxTooltipTarget]="trigger1" [hideDelay]="0" [showDelay]="0">
+            <igx-list-item>
+                <p igxListLineTitle>Credits</p>
+                <span igxListAction>($2.4T)</span>
+            </igx-list-item>
+        </igx-list>
+    </igx-card>
+    <div class="list" #trigger1="tooltip" igxTooltip>
+        <igx-list>
+            <h6>Credits</h6>
+            <igx-list-item>
+                <igx-icon name="dollar"></igx-icon>Amount - 1,678,345
+            </igx-list-item>
+            <div class="toolsWrapper">
+                <igx-list-item [isHeader]="true">Tools</igx-list-item>
+                <igx-list-item>
+                    <igx-icon name="filter"></igx-icon>Filter
+                </igx-list-item>
+                <igx-list-item>
+                    <igx-icon name="link"></igx-icon>Retail Banking
+                </igx-list-item>
+                <igx-list-item>
+                    <igx-icon name="info"></igx-icon>More Info
+                </igx-list-item>
+            </div>
+        </igx-list>
+    </div>
+    <igx-card class="triggerWrapper">
+        <igx-card-header>
+            <h3 igxCardHeaderTitle>Containing chart</h3>
+        </igx-card-header>
+        <igx-list class="trigger" [igxTooltipTarget]="trigger2" [hideDelay]="0" [showDelay]="0">
+            <igx-list-item>
+                <p igxListLineTitle>Individual Income Taxes</p>
+                <span>($2.4T)</span>
+            </igx-list-item>
+        </igx-list>
+    </igx-card>
+    <div class="chart" #trigger2="tooltip" igxTooltip>
+        <h6>Individual Income Taxes</h6>
+        <igx-category-chart
+            [dataSource]="incomeTaxesData"
+            [chartType]="'SplineArea'"
+            [includedProperties]="['year', 'revenue']"
+            [yAxisTitle]="'IFT'"
+            [yAxisTitleLeftMargin]="10"
+            [yAxisTitleRightMargin]="5"
+            [yAxisLabelLeftMargin]="0"
+            [markerTypes]="'none'"
+            [toolTipType]="'none'"
+            [isHorizontalZoomEnabled]="false"
+            [isVerticalZoomEnabled]="false"
+        >
+        </igx-category-chart>
+        <p class="content">
+            In fiscal year (FY) 2024, the largest source of federal revenue was
+            Individual Income Taxes (49.3% of total revenue). So far in fiscal
+            year 2025, the largest source of federal revenue is Individual
+            Income Taxes (50.6% of total revenue).
+        </p>
+    </div>
+    <igx-card class="triggerWrapper">
+        <igx-card-header>
+            <h3 igxCardHeaderTitle>Containing badge</h3>
+        </igx-card-header>
+        <igx-list class="trigger" [igxTooltipTarget]="trigger3" [hideDelay]="0" [showDelay]="0">
+            <igx-list-item>
+                <div class="avatarWrapper" igxListThumbnail>
+                    <igx-avatar
+                        id="avatar"
+                        src="https://www.infragistics.com/angular-demos-lob/assets/images/avatar/10.jpg"
+                        shape="circle"
+                    >
+                    </igx-avatar>
+                    <igx-badge>
+                        <igx-icon name="block"></igx-icon>
+                    </igx-badge>
+                </div>
+                <p igxListLineTitle>Eliza Morales</p>
+            </igx-list-item>
+        </igx-list>
+    </igx-card>
+    <div class="employee" #trigger3="tooltip" igxTooltip>
+        <div class="avatarWrapper">
+            <igx-avatar
+                id="avatar"
+                src="https://www.infragistics.com/angular-demos-lob/assets/images/avatar/10.jpg"
+                shape="circle"
+            >
+            </igx-avatar>
+            <igx-badge>
+                <igx-icon name="block"></igx-icon>
+            </igx-badge>
+        </div>
+        <div class="textWrapper">
+            <h6>Eliza Morales</h6>
+            <p class="occupation">Software Engineer</p>
+            <p class="status">In a meeting</p>
+            <p class="availability">Available at 2:00 pm</p>
+        </div>
+    </div>
+    <igx-card class="triggerWrapper">
+        <igx-card-header>
+            <h3 igxCardHeaderTitle>Containing icon</h3>
+        </igx-card-header>
+        <igx-list class="trigger" [igxTooltipTarget]="trigger4" [hideDelay]="0" [showDelay]="0" [hasArrow]="true" [igxToggleOutlet]="outlet">
+            <igx-list-item>
+                <div class="avatarWrapper" igxListThumbnail>
+                    <igx-avatar
+                        id="avatar"
+                        src="https://www.infragistics.com/angular-demos-lob/assets/images/avatar/5.jpg"
+                        shape="circle"
+                    >
+                    </igx-avatar>
+                    <igx-badge>
+                        <igx-icon name="block"></igx-icon>
+                    </igx-badge>
+                </div>
+                <p igxListLineTitle>Aron Watson</p>
+            </igx-list-item>
+        </igx-list>
+    </igx-card>
+    <div class="multiline" #trigger4="tooltip" igxTooltip>
+        <igx-icon name="block"></igx-icon>
+        <p>
+            Notifications are silenced while I focus. Please reach out only for
+            urgent matters.
+        </p>
+    </div>
+
+    <igx-card class="triggerWrapper">
+        <igx-card-header>
+            <h3 igxCardHeaderTitle>Containing buttons</h3>
+        </igx-card-header>
+        <igx-list class="trigger" [igxTooltipTarget]="trigger5" [hideDelay]="0" [showDelay]="0">
+            <igx-list-item>
+                <div class="headingWrapper" igxListLineTitle>
+                    <igx-icon name="btc"></igx-icon>
+                    <h6 class="heading">BTC</h6>
+                </div>
+                <p igxListAction class="secondary">Daily: + $45</p>
+            </igx-list-item>
+        </igx-list>
+    </igx-card>
+    <div class="btcBtn" #trigger5="tooltip" igxTooltip>
+        <igx-card class="contentWrapper">
+            <div class="titleWrapper">
+                <h6>BTC</h6>
+                <igx-icon name="btc"></igx-icon>
+            </div>
+            <div class="exchangeWrapper">
+                <p class="detail">Exchange Balance</p>
+                <p class="subtitle">USD 356.12.45</p>
+            </div>
+            <div class="assetsWrapper">
+                <p class="detail">Assets Balance</p>
+                <p class="subtitle">USD 46.28.79</p>
+            </div>
+        </igx-card>
+        <div class="footerWrapper">
+            <button igxButton="flat">Deposit</button>
+            <button igxButton="flat">Withdraw</button>
+        </div>
+    </div>
+    <igx-card class="triggerWrapper">
+        <igx-card-header>
+            <h3 igxCardHeaderTitle>Advanced sticky tooltip</h3>
+        </igx-card-header>
+        <igx-list class="trigger" [igxTooltipTarget]="trigger6" [sticky]="true" [hideDelay]="0" [showDelay]="0">
+            <igx-list-item>
+                <div class="headingWrapper" igxListLineTitle>
+                    <igx-icon name="btc"></igx-icon>
+                    <h6 class="heading">BTC</h6>
+                </div>
+                <p igxListAction class="secondary">Daily: + 2,6%</p>
+            </igx-list-item>
+        </igx-list>
+    </igx-card>
+    <div class="btc" #trigger6="tooltip" igxTooltip>
+        <igx-card class="contentWrapper">
+            <div class="titleWrapper">
+                <h6>BTC</h6>
+                <igx-icon name="btc"></igx-icon>
+            </div>
+            <div class="exchangeWrapper">
+                <p class="detail">Exchange Balance</p>
+                <p class="subtitle">USD 356.12.45</p>
+            </div>
+            <div class="assetsWrapper">
+                <p class="detail">Assets Balance</p>
+                <p class="subtitle">USD 46.28.79</p>
+            </div>
+        </igx-card>
+    </div>
+</div>

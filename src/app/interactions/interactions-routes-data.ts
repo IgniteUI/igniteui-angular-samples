@@ -32,6 +32,8 @@ export const interactionsRoutesData = {
     'toggle-sample-4': { displayName: 'Offset Toggle', parentName: 'Toggle' },
     'tooltip-simple': { displayName: 'Simple Tooltip', parentName: 'Tooltip' },
     'tooltip-rich': { displayName: 'Rich Tooltip', parentName: 'Tooltip' },
+    'tooltip-placement': { displayName: 'Tooltip Placement', parentName: 'Tooltip' },
+    'tooltip-advanced': { displayName: 'Advanced Tooltip', parentName: 'Tooltip' },
     'tooltip-style': { displayName: 'Tooltip Style', parentName: 'Tooltip' },
     'overlay-sample-main-1': { displayName: 'Overlay Main Sample 1', parentName: 'Overlay' },
     'overlay-sample-main-2': { displayName: 'Overlay Main Sample 2', parentName: 'Overlay' },
