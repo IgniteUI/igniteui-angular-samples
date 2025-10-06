@@ -169,7 +169,7 @@ export class IndexComponent implements OnInit, AfterViewInit {
         const loadedRouteItem = this.appRoutes.filter(
             (route: any) => route.path === this.router.url)[0];
 
-        if (loadedRouteItem && isPlatformBrowser(this.platformId)) {
+        if (loadedRouteItem && isPlatformBrowser((this.platformId))) {
             // Get parent (INavItem)
             const loadedParentItem = this.currentNavItems.filter(
                 (navItem) => navItem.name === loadedRouteItem.parentName)[0];
