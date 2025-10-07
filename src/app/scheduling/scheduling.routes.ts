@@ -12,6 +12,7 @@ import { CalendarSample8Component } from './calendar/calendar-sample-8/calendar-
 import { CalendarSample9Component } from './calendar/calendar-sample-9/calendar-sample-9.component';
 import { CalendarRtlSampleComponent } from './calendar/calendar-rtl-sample/calendar-rtl-sample.component';
 import { CalendarStylingSampleComponent } from './calendar/calendar-styling-sample/calendar-styling-sample.component';
+import { CalendarTailwindStylingSampleComponent } from './calendar/calendar-tailwind-styling-sample/calendar-tailwind-styling-sample.component';
 import { CalendarYearsViewComponent } from './calendar/calendar-years-view/calendar-years-view.component';
 import { CalendarMultiViewComponent } from './calendar/multiview/multiview.component';
 import { DatepickerDropdownComponent } from './datepicker/datepicker-dropdown/datepicker-dropdown.component';
@@ -41,6 +42,7 @@ import { DateTimeBasicComponent } from './datetimeeditor/datetime-basic/datetime
 import { MonthpickerSample1Component } from './monthpicker/monthpicker-sample-1/monthpicker-sample-1.component';
 import { MonthpickerSample3Component } from './monthpicker/monthpicker-sample-3/monthpicker-sample-3.component';
 import { MonthpickerStylingComponent } from './monthpicker/monthpicker-styling/monthpicker-styling.component';
+import { MonthpickerTailwindStylingComponent } from './monthpicker/monthpicker-tailwind-styling/monthpicker-tailwind-styling.component';
 import { schedulingRoutesData } from './scheduling-routes-data';
 import { TimepickerDropdownComponent } from './timepicker/timepicker-dropdown/timepicker-dropdown.component';
 import { TimePickerSample1Component } from './timepicker/timepicker-sample-1/timepicker-sample-1.component';
@@ -104,6 +106,11 @@ export const SchedulingRoutes: Routes = [
         component: CalendarStylingSampleComponent,
         data: schedulingRoutesData['calendar-styling-sample'],
         path: 'calendar-styling-sample'
+    },
+    {
+        component: CalendarTailwindStylingSampleComponent,
+        data: schedulingRoutesData['calendar-tailwind-styling-sample'],
+        path: 'calendar-tailwind-styling-sample'
     },
     {
         component: CalendarDaysViewComponent,
@@ -229,6 +236,11 @@ export const SchedulingRoutes: Routes = [
         component: MonthpickerStylingComponent,
         data: schedulingRoutesData['monthpicker-styling'],
         path: 'monthpicker-styling'
+    },
+    {
+        component: MonthpickerTailwindStylingComponent,
+        data: schedulingRoutesData['monthpicker-tailwind-styling'],
+        path: 'monthpicker-tailwind-styling'
     },
     {
         component: CalendarMultiViewComponent,

@@ -22,6 +22,7 @@ import { OverlayScrollSample2Component } from './overlay/overlay-scroll-2/overla
 import { OverlayStylingComponent } from './overlay/overlay-styling/overlay-styling.component';
 import { QueryBuilderSample1Component } from './query-builder/query-builder-sample-1/query-builder-sample-1.component';
 import { QueryBuilderStyleComponent } from './query-builder/query-builder-style/query-builder-style.component';
+import { QueryBuilderTailwindStyleComponent } from './query-builder/query-builder-tailwind-style/query-builder-tailwind-style.component';
 import { QueryBuilderTemplateSampleComponent } from './query-builder/query-builder-template-sample/query-builder-template-sample.component';
 import { QueryBuilderSqlSampleComponent } from './query-builder/query-builder-sql-sample/query-builder-sql-sample.component';
 import { QueryBuilderRequestSampleComponent } from './query-builder/query-builder-request-sample/query-builder-request-sample.component';
@@ -47,6 +48,7 @@ import {
     SliderSecondaryTicksMirrorComponent
 } from './slider/slider-secondary-ticks-mirror/slider-secondary-ticks-mirror.component';
 import { AppSliderStylingComponent } from './slider/slider-styling-sample/app-slider-styling.component';
+import { SliderTailwindStylingComponent } from './slider/slider-tailwind-styling-sample/slider-tailwind-styling.component';
 import { TickLabelsTemplateComponent } from './slider/slider-tick-labels-template/tick-labels-template.component';
 import {
     SliderTicksBottomtotopLabelsComponent
@@ -60,6 +62,7 @@ import { ToggleComponent } from './toggle/toggle.component';
 import { TooltipRichComponent } from './tooltip/tooltip-rich/tooltip-rich.component';
 import { TooltipSimpleComponent } from './tooltip/tooltip-simple/tooltip-simple.component';
 import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.component';
+import { TooltipTailwindStyleComponent } from './tooltip/tooltip-tailwind-style/tooltip-tailwind-style.component';
 
 export const InteractionsRoutes: Routes = [
     {
@@ -148,6 +151,11 @@ export const InteractionsRoutes: Routes = [
         path: 'slider-styling-sample'
     },
     {
+        component: SliderTailwindStylingComponent,
+        data: interactionsRoutesData['slider-tailwind-styling-sample'],
+        path: 'slider-tailwind-styling-sample'
+    },
+    {
         component: RippleSample2Component,
         data: interactionsRoutesData['ripple-sample-2'],
         path: 'ripple-sample-2'
@@ -211,6 +219,11 @@ export const InteractionsRoutes: Routes = [
         component: TooltipStyleComponent,
         data: interactionsRoutesData['tooltip-style'],
         path: 'tooltip-style'
+    },
+    {
+        component: TooltipTailwindStyleComponent,
+        data: interactionsRoutesData['tooltip-tailwind-style'],
+        path: 'tooltip-tailwind-style'
     },
     {
         component: OverlaySampleMain1Component,
@@ -301,6 +314,11 @@ export const InteractionsRoutes: Routes = [
         component: QueryBuilderStyleComponent,
         data: interactionsRoutesData['query-builder-style'],
         path: 'query-builder-style'
+    },
+    {
+        component: QueryBuilderTailwindStyleComponent,
+        data: interactionsRoutesData['query-builder-tailwind-style'],
+        path: 'query-builder-tailwind-style'
     },
     {
         component: QueryBuilderTemplateSampleComponent,

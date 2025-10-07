@@ -13,6 +13,7 @@ import { NavbarSample1Component } from './navbar/navbar-sample-1/navbar-sample-1
 import { NavbarSample2Component } from './navbar/navbar-sample-2/navbar-sample-2.component';
 import { NavbarSample3Component } from './navbar/navbar-sample-3/navbar-sample-3.component';
 import { NavbarStyleComponent } from './navbar/navbar-style/navbar-style.component';
+import { NavbarTailwindStyleComponent } from './navbar/navbar-tailwind-style/navbar-tailwind-style.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NavDrawerMiniComponent } from './navdrawer/nav-drawer-mini/nav-drawer-mini.component';
 import { NavDrawerPinComponent } from './navdrawer/nav-drawer-pin/nav-drawer-pin.component';
@@ -108,6 +109,11 @@ export const MenusRoutes: Routes = [
         component: NavbarStyleComponent,
         data: menusRoutesData['navbar-style'],
         path: 'navbar-style'
+    },
+    {
+        component: NavbarTailwindStyleComponent,
+        data: menusRoutesData['navbar-tailwind-style'],
+        path: 'navbar-tailwind-style'
     },
     {
         component: NavbarCustomTitleComponent,
