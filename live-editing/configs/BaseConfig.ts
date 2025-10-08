@@ -7,5 +7,7 @@ export const BaseAppConfig = {
     providers: [
         { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' }
     ],
-    router: false
+    routesConfig: {
+        router: false
+    }
 }
