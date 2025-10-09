@@ -1,0 +1,23 @@
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+// $custom-drop-down-theme: drop-down-theme(
+//   $background-color: #57a5cd,
+// );
+
+// $custom-combo-theme: combo-theme(
+//   $search-separator-border-color: #1d3743,
+//   $toggle-button-background: #57a5cd,
+// );
+
+// $custom-checkbox-theme: checkbox-theme(
+//   $border-radius: 10px,
+//   $fill-color: #1d3743,
+//   $empty-color: #1d3743,
+// );
+
+// :host ::ng-deep {
+//   @include css-vars($custom-drop-down-theme);
+//   @include css-vars($custom-combo-theme);
+//   @include css-vars($custom-checkbox-theme);
+// }

@@ -18,6 +18,7 @@ export const interactionsRoutesData = {
     'slider-timeframe': { displayName: 'Slider Timeframe', parentName: 'Slider' },
     'slider-tick-labels-template': { displayName: 'Slider Tick labels template', parentName: 'Slider' },
     'slider-styling-sample': { displayName: 'Slider styling sample', parentName: 'Slider' },
+    'slider-tailwind-styling-sample': { displayName: 'Slider tailwind styling sample', parentName: 'Slider' },
     'ripple-sample-2': { displayName: 'Ripple Target', parentName: 'Ripple' },
     'ripple-sample-3': { displayName: 'Ripple Centered Effect', parentName: 'Ripple' },
     'ripple-sample-4': { displayName: 'Ripple Duration', parentName: 'Ripple' },
@@ -35,6 +36,7 @@ export const interactionsRoutesData = {
     'tooltip-placement': { displayName: 'Tooltip Placement', parentName: 'Tooltip' },
     'tooltip-advanced': { displayName: 'Advanced Tooltip', parentName: 'Tooltip' },
     'tooltip-style': { displayName: 'Tooltip Style', parentName: 'Tooltip' },
+    'tooltip-tailwind-style': { displayName: 'Tooltip Tailwind Style', parentName: 'Tooltip' },
     'overlay-sample-main-1': { displayName: 'Overlay Main Sample 1', parentName: 'Overlay' },
     'overlay-sample-main-2': { displayName: 'Overlay Main Sample 2', parentName: 'Overlay' },
     'overlay-sample-main-3': { displayName: 'Overlay Main Sample 3', parentName: 'Overlay' },
@@ -52,6 +54,7 @@ export const interactionsRoutesData = {
     'icons-sample': { displayName: 'Icons sample', parentName: 'Drag and Drop' },
     'query-builder-sample-1': { displayName: 'Query Builder Sample 1', parentName: 'Query Builder' },
     'query-builder-style': { displayName: 'Query Builder Style Sample', parentName: 'Query Builder' },
+    'query-builder-tailwind-style': { displayName: 'Query Builder Tailwind Style Sample', parentName: 'Query Builder' },
     'query-builder-template-sample': { displayName: 'Query Builder Template Sample', parentName: 'Query Builder' },
     'query-builder-sql-sample': { displayName: 'Query Builder SQL Sample', parentName: 'Query Builder' },
     'query-builder-request-sample': { displayName: 'Query Builder Request Sample', parentName: 'Query Builder' }
