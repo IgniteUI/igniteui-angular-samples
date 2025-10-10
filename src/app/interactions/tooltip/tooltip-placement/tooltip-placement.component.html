@@ -1,8 +1,8 @@
 <div class="container">
     @for (position of positions; track position) {
-    <div igxTooltip>
-        {{ position }}
-    </div>
+        <div #tooltip="tooltip" igxTooltip>
+            {{ position }} <igx-icon (click)="tooltip.close()">close</igx-icon>
+        </div>
     }
 
     <button

@@ -6,14 +6,15 @@ import {
     VerticalAlignment,
     PositionSettings,
     OverlaySettings,
-    TooltipPositionStrategy
+    TooltipPositionStrategy,
+    IgxIconComponent
 } from "igniteui-angular";
 
 @Component({
     selector: "app-tooltip-placement",
     styleUrls: ["./tooltip-placement.component.scss"],
     templateUrl: "./tooltip-placement.component.html",
-    imports: [IgxButtonDirective, IgxTooltipDirective]
+    imports: [IgxButtonDirective, IgxTooltipDirective, IgxIconComponent]
 })
 export class TooltipPlacementComponent {
     @ViewChildren(IgxTooltipDirective)
