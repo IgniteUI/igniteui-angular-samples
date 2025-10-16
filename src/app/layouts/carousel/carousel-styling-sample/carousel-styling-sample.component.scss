@@ -1,0 +1,15 @@
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+// Create expansion panel theme
+$custom-panel-theme: carousel-theme(
+  $button-background: rgb(124 50 221 / 60%),
+  $button-arrow-color: #c5bcd0,
+  $button-hover-arrow-color: #F3E8FF,
+  $indicator-background: rgb(124 50 221 / 60%),
+  $indicator-border-color: #a29aab,
+  $button-shadow: var(--ig-elevation-5)
+);
+
+// Apply the custom themes to the components mixins.
+@include css-vars($custom-panel-theme); 
