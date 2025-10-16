@@ -150,12 +150,12 @@ export const LayoutsRoutes: Routes = [
         data: layoutsRoutesData['carousel-with-components-sample'],
         path: 'carousel-with-components-sample'
     },
-		{
+    {
         component: CarouselTailwindSampleComponent,
         data: layoutsRoutesData['carousel-tailwind-sample'],
         path: 'carousel-tailwind-sample'
     },
-		{
+    {
         component: CarouselStylingSampleComponent,
         data: layoutsRoutesData['carousel-styling-sample'],
         path: 'carousel-styling-sample'
