@@ -41,13 +41,13 @@ export class CarouselConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/layouts/carousel/"
         }));
 
-				configs.push(new Config({
+        configs.push(new Config({
             component: 'CarouselStylingSampleComponent',
-						additionalFiles: ["/src/app/layouts/carousel/carousel-styling-sample/layout.scss"],
+            additionalFiles: ["/src/app/layouts/carousel/carousel-styling-sample/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/carousel/"
         }));
-				
+        
         return configs;
     }
 }
