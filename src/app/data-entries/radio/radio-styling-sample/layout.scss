@@ -10,7 +10,7 @@
 
         // Note: This is not the standard approach for styling the component.
         // We're using it here solely to mirror the UI5 sample.
-				
+        
         .igx-radio--checked .igx-radio__composite::after {
             --fill-color: #556b81;
         }
@@ -50,4 +50,5 @@ igx-radio {
 .igx-radio--focused::after {
     inset: rem(1px) rem(-4px) rem(1px) rem(-2px);
     border-radius: rem(8px);
+    box-shadow: 0 0 0 rem(2px) var(--focus-outline-color);
 }

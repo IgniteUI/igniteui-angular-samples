@@ -39,6 +39,7 @@ igx-checkbox {
 }
 
 #checkbox-1.igx-checkbox--focused:after {
-    inset: rem(8px) rem(-4px) rem(8px) rem(8px);
+    inset: rem(7px) rem(-6px) rem(7px) rem(6px);
     border-radius: rem(8px);
+    box-shadow: 0 0 0 rem(2px) var(--focus-outline-color);
 }

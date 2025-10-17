@@ -6,6 +6,7 @@
 igx-switch {
     --thumb-on-color: #e3f0ff;
     --thumb-off-color: #fff;
+    --thumb-off-hover-color: #ededed;
     --track-on-color: #0064d9;
     --track-off-color: #788fa6;
     --track-on-hover-color: #0058bf;
@@ -17,10 +18,6 @@ igx-switch {
     --border-hover-color: transparent;
 }
 
-igx-switch:hover {
-    --track-off-color: #637d97;
-}
-
 // Sass theme approach
 
 // $custom-switch-theme: switch-theme(
@@ -28,6 +25,7 @@ igx-switch:hover {
 //     $track-on-color: #0064d9,
 //     $track-on-hover-color: #0058bf,
 //     $thumb-off-color: #fff,
+//     $thumb-off-hover-color: #ededed,
 //     $track-off-color: #788fa6,
 //     $border-radius-track: 1rem,
 //     $focus-outline-color: #0032a5,
@@ -38,4 +36,3 @@ igx-switch:hover {
 // );
 
 // @include css-vars($custom-switch-theme)
- 

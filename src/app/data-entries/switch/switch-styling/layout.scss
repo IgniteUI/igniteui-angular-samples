@@ -10,7 +10,7 @@
 
         // Note: This is not the standard approach for styling the component.
         // We're using it here solely to mirror the UI5 sample.
-				
+        
         igx-switch:hover .igx-switch__thumb {
             --border-hover-color: #fff;
         }
@@ -40,6 +40,7 @@
 
         .igx-switch--focused .igx-switch__composite::after {
             border-radius: 1rem;
+            box-shadow: 0 0 0 rem(2px) var(--focus-outline-color);
         }
     }
 }
@@ -47,6 +48,10 @@
 igx-switch {
     margin-top: rem(24px);
     width: max-content;
+}
+
+igx-switch:hover {
+    --track-off-color: #637d97;
 }
 
 .switch-wrapper {
