@@ -7,6 +7,7 @@ export const listsRoutesData = {
     'combo-binding': { displayName: 'Combo Without ValueKey', parentName: 'Combo' },
     'combo-remote': { displayName: 'Remote Combo', parentName: 'Combo' },
     'combo-styling': { displayName: 'Combo Styling', parentName: 'Combo' },
+    'combo-tailwind-styling': { displayName: 'Combo Tailwind Styling', parentName: 'Combo' },
     'combo-template': { displayName: 'Templating Combo', parentName: 'Combo' },
     'combo-overlay': { displayName: 'Combo Overlay', parentName: 'Combo' },
     'simple-combo-main': { displayName: 'Main Simple Combo', parentName: 'Combo'},
@@ -23,10 +24,12 @@ export const listsRoutesData = {
     'list-sample-6': { displayName: 'List Loading', parentName: 'List' },
     'list-sample-7': { displayName: 'List Item Panning', parentName: 'List' },
     'list-sample-8': { displayName: 'List Theming', parentName: 'List' },
+    'list-tailwind-styling': { displayName: 'List Tailwind Styling', parentName: 'List' },
     'list-chat-sample': { displayName: 'Chat Component', parentName: 'List' },
     'list-item-selection': { displayName: 'List Item Selection', parentName: 'List' },
     // eslint-disable-next-line quote-props
     'tree-basic-sample': { displayName: 'Tree Basic Sample', parentName: 'Tree' },
     'tree-advanced-sample': { displayName: 'Tree Advanced Sample', parentName: 'Tree' },
-    'tree-styling': { displayName: 'Tree Styling', parentName: 'Tree' }
+    'tree-styling': { displayName: 'Tree Styling', parentName: 'Tree' },
+    'tree-tailwind-styling': { displayName: 'Tree Tailwind Styling', parentName: 'Tree' }
 };

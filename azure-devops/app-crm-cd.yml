@@ -24,9 +24,9 @@ steps:
     fetchTags: true
 
   - task: NodeTool@0
-    displayName: Use Node 20.x
+    displayName: Use Node 22.x
     inputs:
-      versionSpec: 20.x
+      versionSpec: 22.x
 
   - task: PowerShell@2
     displayName: 'Replace with licensed angular-extras'

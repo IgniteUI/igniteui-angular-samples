@@ -2,7 +2,11 @@
 
 $custom-navbar-theme: navbar-theme(
   $background: #011627,
-  $idle-icon-color: #ecaa53,
+);
+
+$custom-icon-button-theme: flat-icon-button-theme(
+  $foreground: #ecaa53,
 );
 
 @include css-vars($custom-navbar-theme);
+@include css-vars($custom-icon-button-theme);
