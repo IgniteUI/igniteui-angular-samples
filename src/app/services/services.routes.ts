@@ -6,12 +6,13 @@ import { CsvExportComponent } from './export-csv/csv-export.component';
 import { ExcelExportSample1Component } from './export-excel/excel-export-sample-1/excel-export-sample-1.component';
 import { TreeGridExcelExportSample1Component } from './export-excel/excel-export-tree-grid-sample/excel-export-tree-grid-sample.component';
 import { ExcelExportComponent } from './export-excel/excel-export.component';
-import { LocalizationAllResourcesComponent } from './localization-samples/localization-all-resources/localization-all-resources.component';
-import { LocalizationSample1Component } from './localization-samples/localization-sample-1/localization-sample-1.component';
-import { LocalizationSample2Component } from './localization-samples/localization-sample-2/localization-sample-2.component';
-import { LocalizationSample3Component } from './localization-samples/localization-sample-3/localization-sample-3.component';
+import { LocalizationAllResourcesOldComponent } from './localization-samples-old/localization-all-resources/localization-all-resources.component';
+import { LocalizationSample1Component } from './localization-samples-old/localization-sample-1/localization-sample-1.component';
+import { LocalizationSample2Component } from './localization-samples-old/localization-sample-2/localization-sample-2.component';
+import { LocalizationSample3Component } from './localization-samples-old/localization-sample-3/localization-sample-3.component';
 import { servicesRoutesData } from './services-routes-data';
 import { TransactionBaseComponent } from './transaction/transaction-base/transaction-base.component';
+import { LocalizationAllResourcesComponent } from './localization-samples/localization-all-resources/localization-all-resources.component';
 // tslint:enable:max-line-length
 
 export const ServicesRoutes: Routes = [
@@ -59,6 +60,11 @@ export const ServicesRoutes: Routes = [
         component: LocalizationSample3Component,
         data: servicesRoutesData['localization-sample-3'],
         path: 'localization-sample-3'
+    },
+    {
+        component: LocalizationAllResourcesOldComponent,
+        data: servicesRoutesData['localization-all-resources-old'],
+        path: 'localization-all-resources-old'
     },
     {
         component: LocalizationAllResourcesComponent,
