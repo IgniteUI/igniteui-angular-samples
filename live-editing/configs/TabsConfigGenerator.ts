@@ -45,10 +45,16 @@ export class TabsConfigGenerator implements IConfigGenerator {
                 "/src/app/layouts/tabs/views/view2/view2.component.ts",
                 "/src/app/layouts/tabs/views/view2/view2.component.html",
                 "/src/app/layouts/tabs/views/view3/view3.component.ts",
-                "/src/app/layouts/tabs/views/view3/view3.component.html"
+                "/src/app/layouts/tabs/views/view3/view3.component.html",
+                "/src/app/layouts/tabs/tabs-sample-4/routes.ts"
             ],
-            /* TODO: Adding the correct router config needs to be done separately */
-            appConfig: { ...BaseAppConfig, ...{ router: true }},
+             appConfig: {
+                ...BaseAppConfig,
+                routesConfig: {
+                    router: true,
+                    routesImportPath: './tabs-sample-4/routes'
+                }
+            },
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
