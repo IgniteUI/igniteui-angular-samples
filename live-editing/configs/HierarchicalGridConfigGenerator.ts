@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable max-len */
-import {ReactiveFormsModule} from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {
     IgxActionStripModule,
@@ -517,12 +517,18 @@ export class HierarchicalGridConfigGenerator implements IConfigGenerator {
                 '/src/app/data/singersData.ts',
                 '/src/app/hierarchical-grid/models.ts',
                 '/src/app/hierarchical-grid/hierarchical-grid-save-state/about.component.ts',
-                '/src/app/hierarchical-grid/hierarchical-grid-save-state/about.component.html'
+                '/src/app/hierarchical-grid/hierarchical-grid-save-state/about.component.html',
+                '/src/app/hierarchical-grid/hierarchical-grid-save-state/routes.ts'
             ],
-            appConfig: BaseAppConfig,
+            appConfig: {
+                ...BaseAppConfig,
+                routesConfig: {
+                    router: true,
+                    routesImportPath: './hierarchical-grid/hierarchical-grid-save-state/routes'
+                }
+            },
             component: 'HGridSaveStateComponent'
         });
-        hGridSaveStateSampleConfig.usesRouting = true;
         configs.push(hGridSaveStateSampleConfig);
 
         configs.push(new Config({
