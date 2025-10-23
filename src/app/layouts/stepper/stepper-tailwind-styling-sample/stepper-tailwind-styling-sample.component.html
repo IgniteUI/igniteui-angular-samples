@@ -1,0 +1,37 @@
+<igx-stepper class="!light-stepper ![--step-background:#7B9E89] ![--border-radius-step-header:6px]" #stepper (activeStepChanging)="activeStepChanging($event)">
+    <ng-template igxStepActiveIndicator>
+        <igx-icon>edit</igx-icon>
+    </ng-template>
+    <ng-template igxStepCompletedIndicator>
+        <igx-icon>check</igx-icon>
+    </ng-template>
+    <igx-step>
+        <span igxStepTitle>Order</span>
+        <span igxStepSubtitle>required</span>
+        <div igxStepContent>
+            <div class="sample-step-actions">
+                <button igxButton="contained" (click)="stepper.next()">NEXT</button>
+            </div>
+        </div>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Payment</span>
+        <span igxStepSubtitle>Optional</span>
+        <div igxStepContent>
+            <div class="sample-step-actions">
+                <button igxButton="contained" (click)="stepper.prev()">PREVIOUS</button>
+                <button igxButton="contained" (click)="stepper.next()">NEXT</button>
+            </div>
+        </div>
+    </igx-step>
+    <igx-step>
+        <span igxStepTitle>Confirmation</span>
+        <span igxStepSubtitle>required</span>
+        <div igxStepContent>
+            <div class="sample-step-actions">
+                <button igxButton="contained" (click)="stepper.prev()">PREVIOUS</button>
+                <button igxButton="contained" (click)="reset()">RESET</button>
+            </div>
+        </div>
+    </igx-step>
+</igx-stepper>

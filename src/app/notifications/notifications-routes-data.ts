@@ -10,10 +10,12 @@ export const notificationsRoutesData = {
     'snackbar-sample-4': { displayName: 'Snackbar in List', parentName: 'Snackbar' },
     'snackbar-sample-5': { displayName: 'Display custom content', parentName: 'Snackbar' },
     'snackbar-style': { displayName: 'Snackbar Style', parentName: 'Snackbar' },
+    'snackbar-tailwind-style': { displayName: 'Snackbar Tailwind Style', parentName: 'Snackbar' },
     'toast-sample-1': { displayName: 'Toast Overview', parentName: 'Toast' },
     'toast-sample-2': { displayName: 'Show Toast', parentName: 'Toast' },
     'toast-sample-3': { displayName: 'Hide/Auto Hide Toast', parentName: 'Toast' },
     'toast-sample-4': { displayName: 'Toast Display Time', parentName: 'Toast' },
     'toast-sample-5': { displayName: 'Toast Positioning', parentName: 'Toast' },
-    'toast-style': { displayName: 'Toast Style', parentName: 'Toast' }
+    'toast-style': { displayName: 'Toast Style', parentName: 'Toast' },
+    'toast-tailwind-style': { displayName: 'Toast Tailwind Style', parentName: 'Toast' }
 };
