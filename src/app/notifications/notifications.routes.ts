@@ -11,12 +11,14 @@ import { SnackbarSample2Component } from './snackbar/snackbar-sample-2/snackbar-
 import { SnackbarSample4Component } from './snackbar/snackbar-sample-4/snackbar-sample-4.component';
 import { SnackbarSample5Component } from './snackbar/snackbar-sample-5/snackbar-sample-5.component';
 import { SnackbarStyleComponent } from './snackbar/snackbar-style/snackbar-style.component';
+import { SnackbarTailwindStyleComponent } from './snackbar/snackbar-tailwind-style/snackbar-tailwind-style.component';
 import { ToastSample1Component } from './toast/toast-sample-1/toast-sample-1.component';
 import { ToastSample2Component } from './toast/toast-sample-2/toast-sample-2.component';
 import { ToastSample3Component } from './toast/toast-sample-3/toast-sample-3.component';
 import { ToastSample4Component } from './toast/toast-sample-4/toast-sample-4.component';
 import { ToastSample5Component } from './toast/toast-sample-5/toast-sample-5.component';
 import { ToastStyleComponent } from './toast/toast-style/toast-style.component';
+import { ToastTailwindStyleComponent } from './toast/toast-tailwind-style/toast-tailwind-style.component';
 
 export const NotificationsRoutes: Routes = [
     {
@@ -70,6 +72,11 @@ export const NotificationsRoutes: Routes = [
         path: 'snackbar-style'
     },
     {
+        component: SnackbarTailwindStyleComponent,
+        data: notificationsRoutesData['snackbar-tailwind-style'],
+        path: 'snackbar-tailwind-style'
+    },
+    {
         component: SnackbarSample5Component,
         data: notificationsRoutesData['snackbar-sample-5'],
         path: 'snackbar-sample-5'
@@ -103,5 +110,10 @@ export const NotificationsRoutes: Routes = [
         component: ToastStyleComponent,
         data: notificationsRoutesData['toast-style'],
         path: 'toast-style'
+    },
+    {
+        component: ToastTailwindStyleComponent,
+        data: notificationsRoutesData['toast-tailwind-style'],
+        path: 'toast-tailwind-style'
     }
 ];

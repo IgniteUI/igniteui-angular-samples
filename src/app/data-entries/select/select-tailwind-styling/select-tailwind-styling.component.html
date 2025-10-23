@@ -1,0 +1,10 @@
+<div class="select-wrapper">
+  <igx-select class="!light-select ![--toggle-button-background:#99BAA6]" [overlaySettings]="customOverlaySettings">
+    <label igxLabel>Select An Item</label>
+    @for (item of items; track item) {
+      <igx-select-item [value]="item">
+        {{item}}
+      </igx-select-item>
+    }
+  </igx-select>
+</div>
