@@ -22,7 +22,7 @@ igx-checkbox:hover {
 
 // $custom-checkbox-theme: checkbox-theme(
 //     $tick-color: #0064d9,
-// 		 $tick-width: 2,
+//     $tick-width: 2,
 //     $tick-color-hover: #e3f0ff,
 //     $fill-color: transparent,
 //     $fill-color-hover: #e3f0ff,
@@ -31,6 +31,6 @@ igx-checkbox:hover {
 //     $empty-color: #131e29,
 //     $border-radius: rem(4px),
 // );
-
-// @include css-vars($custom-checkbox-theme) 
- 
+//
+// @include css-vars($custom-checkbox-theme);
+//
