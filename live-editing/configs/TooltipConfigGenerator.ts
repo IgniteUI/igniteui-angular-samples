@@ -24,6 +24,20 @@ export class TooltipConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
+        // Placement Tooltip Sample
+        configs.push(new Config({
+            component: 'TooltipPlacementComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/tooltip/"
+        }));
+
+        // Advanced Tooltip Sample
+        configs.push(new Config({
+            component: 'TooltipAdvancedComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/tooltip/"
+        }));
+
         // Style Tooltip Sample
         configs.push(new Config({
             component: 'TooltipStyleComponent',

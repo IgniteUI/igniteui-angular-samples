@@ -5,12 +5,14 @@ import { AvatarSample2Component } from './avatar/avatar-sample-2/avatar-sample-2
 import { AvatarSample3Component } from './avatar/avatar-sample-3/avatar-sample-3.component';
 import { AvatarSample4Component } from './avatar/avatar-sample-4/avatar-sample-4.component';
 import { AvatarStylingSampleComponent } from './avatar/avatar-styling/avatar-styling.component';
+import { AvatarTailwindStylingSampleComponent } from './avatar/avatar-tailwind-styling/avatar-tailwind-styling.component';
 import { AvatarCSSVariablesComponent } from './avatar/avatar-css-variables/avatar-css-variables.component';
 import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
 import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
 import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
 import { CardSample4Component } from './card/card-sample-4/card-sample-4.component';
 import { CardStylingSampleComponent } from './card/card-styling-sample/card-styling-sample.component';
+import { CardTailwindStylingSampleComponent } from './card/card-tailwind-styling-sample/card-tailwind-styling-sample.component';
 import { CardComponent } from './card/card.component';
 import {
     CarouselAnimationsSampleComponent
@@ -21,6 +23,12 @@ import {
 import {
     CarouselWithComponentsSampleComponent
 } from './carousel/carousel-with-components-sample/carousel-with-components-sample.component';
+import {
+    CarouselTailwindSampleComponent
+} from './carousel/carousel-tailwind-sample/carousel-tailwind-sample.component';
+import {
+    CarouselStylingSampleComponent
+} from './carousel/carousel-styling-sample/carousel-styling-sample.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DividerDashedComponent } from './divider/dashed/divider-dashed.component';
 import { DividerDefaultComponent } from './divider/default/divider-default.component';
@@ -33,6 +41,7 @@ import { ExpansionPanelSample3Component } from './expansion-panel/expansion-samp
 import { ExpansionPanelSample4Component } from './expansion-panel/expansion-sample-4/expansion-sample-4.component';
 import { ExpansionPanelSample5Component } from './expansion-panel/expansion-sample-5/expansion-sample-5.component';
 import { ExpansionPanelStylingComponent } from './expansion-panel/expansion-styling/expansion-styling.component';
+import { ExpansionPanelTailwindStylingComponent } from './expansion-panel/expansion-tailwind-styling/expansion-tailwind-styling.component';
 import { LayoutAlignItemsComponent } from './layout/layout-align-items/layout-align-items.component';
 import { LayoutContentSpaceComponent } from './layout/layout-content-space/layout-content-space.component';
 import { LayoutCustomOrderComponent } from './layout/layout-custom-order/layout-custom-order.component';
@@ -48,10 +57,12 @@ import {
 } from './splitter/splitter-horizontal-sample/splitter-horizontal-sample.component';
 import { SplitterNestedSampleComponent } from './splitter/splitter-nested-sample/splitter-nested-sample.component';
 import { SplitterStylingSampleComponent } from './splitter/splitter-styling-sample/splitter-styling-sample.component';
+import { SplitterTailwindStylingSampleComponent } from './splitter/splitter-tailwind-styling-sample/splitter-tailwind-styling-sample.component';
 import { TabbarSample1Component } from './tabbar/tabbar-sample-1/tabbar-sample-1.component';
 import { TabbarSample2Component } from './tabbar/tabbar-sample-2/tabbar-sample-2.component';
 import { TabbarSample3Component } from './tabbar/tabbar-sample-3/components/tabbar-sample-3.component';
 import { TabbarStyleComponent } from './tabbar/tabbar-style/tabbar-style.component';
+import { TabbarTailwindStyleComponent } from './tabbar/tabbar-tailwind-style/tabbar-tailwind-style.component';
 import { TabbarView1Component } from './tabbar/views/view1/view1.component';
 import { TabbarView2Component } from './tabbar/views/view2/view2.component';
 import { TabbarView3Component } from './tabbar/views/view3/view3.component';
@@ -60,6 +71,7 @@ import { TabsSample2Component } from './tabs/tabs-sample-2/tabs-sample-2.compone
 import { TabsSample3Component } from './tabs/tabs-sample-3/tabs-sample-3.component';
 import { TabsSample4Component } from './tabs/tabs-sample-4/components/tabs-sample-4.component';
 import { TabsStyleComponent } from './tabs/tabs-style/tabs-style.component';
+import { TabsTailwindStyleComponent } from './tabs/tabs-tailwind-style/tabs-tailwind-style.component';
 import { TabsAlignmentComponent } from './tabs/tabs-alignment/tabs-alignment.component';
 import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffix/tabs-header-prefix-suffix';
 import { View1Component } from './tabs/views/view1/view1.component';
@@ -74,6 +86,7 @@ import {StepperLabelPositionAndOrientationSampleComponent
 import { StepperLinearSampleComponent } from './stepper/stepper-linear-sample/stepper-linear-sample.component';
 import { StepperStepTypesSampleComponent } from './stepper/stepper-steptypes-sample/stepper-steptypes-sample.component';
 import { StepperStylingSampleComponent } from './stepper/stepper-styling-sample/stepper-styling-sample.component';
+import { StepperTailwindStylingSampleComponent } from './stepper/stepper-tailwind-styling-sample/stepper-tailwind-styling-sample.component';
 import { StepperOverviewSampleComponent } from './stepper/stepper-overview-sample/stepper-overview-sample.component';
 import { StepperSampleReactiveFormsComponent } from './stepper/stepper-sample-reactive-forms/stepper-sample-reactive-forms.component';
 import { TileManagerComponent } from './tile-manager/tile-manager-sample/tile-manager.component';
@@ -125,6 +138,11 @@ export const LayoutsRoutes: Routes = [
         path: 'avatar-styling'
     },
     {
+        component: AvatarTailwindStylingSampleComponent,
+        data: layoutsRoutesData['avatar-tailwind-styling'],
+        path: 'avatar-tailwind-styling'
+    },
+    {
         component: AvatarCSSVariablesComponent,
         data: layoutsRoutesData['avatar-css-variables'],
         path: 'avatar-css-variables'
@@ -143,6 +161,16 @@ export const LayoutsRoutes: Routes = [
         component: CarouselWithComponentsSampleComponent,
         data: layoutsRoutesData['carousel-with-components-sample'],
         path: 'carousel-with-components-sample'
+    },
+    {
+        component: CarouselTailwindSampleComponent,
+        data: layoutsRoutesData['carousel-tailwind-sample'],
+        path: 'carousel-tailwind-sample'
+    },
+    {
+        component: CarouselStylingSampleComponent,
+        data: layoutsRoutesData['carousel-styling-sample'],
+        path: 'carousel-styling-sample'
     },
     {
         component: CarouselComponent,
@@ -205,6 +233,11 @@ export const LayoutsRoutes: Routes = [
         path: 'expansion-styling'
     },
     {
+        component: ExpansionPanelTailwindStylingComponent,
+        data: layoutsRoutesData['expansion-tailwind-styling'],
+        path: 'expansion-tailwind-styling'
+    },
+    {
         component: LayoutDirectionRowComponent,
         data: layoutsRoutesData['layout-direction-row'],
         path: 'layout-direction-row'
@@ -265,6 +298,11 @@ export const LayoutsRoutes: Routes = [
         path: 'splitter-styling-sample'
     },
     {
+        component: SplitterTailwindStylingSampleComponent,
+        data: layoutsRoutesData['splitter-tailwind-styling-sample'],
+        path: 'splitter-tailwind-styling-sample'
+    },
+    {
         component: StepperLabelPositionAndOrientationSampleComponent,
         data: layoutsRoutesData['stepper-label-position-and-orientation-sample'],
         path: 'stepper-label-position-and-orientation-sample'
@@ -295,6 +333,11 @@ export const LayoutsRoutes: Routes = [
         path: 'stepper-styling-sample'
     },
     {
+        component: StepperTailwindStylingSampleComponent,
+        data: layoutsRoutesData['stepper-tailwind-styling-sample'],
+        path: 'stepper-tailwind-styling-sample'
+    },
+    {
         component: TabbarSample1Component,
         data: layoutsRoutesData['tabbar-sample-1'],
         path: 'tabbar-sample-1'
@@ -318,6 +361,11 @@ export const LayoutsRoutes: Routes = [
         component: TabbarStyleComponent,
         data: layoutsRoutesData['tabbar-style'],
         path: 'tabbar-style'
+    },
+    {
+        component: TabbarTailwindStyleComponent,
+        data: layoutsRoutesData['tabbar-tailwind-style'],
+        path: 'tabbar-tailwind-style'
     },
     {
         component: TabsSample1Component,
@@ -346,6 +394,10 @@ export const LayoutsRoutes: Routes = [
     {
         component: TabsStyleComponent,
         path: 'tabs-style'
+    },
+    {
+        component: TabsTailwindStyleComponent,
+        path: 'tabs-tailwind-style'
     },
     {
         component: TabsAlignmentComponent,
@@ -384,6 +436,11 @@ export const LayoutsRoutes: Routes = [
         component: CardStylingSampleComponent,
         data: layoutsRoutesData['card-styling-sample'],
         path: 'card-styling-sample'
+    },
+    {
+        component: CardTailwindStylingSampleComponent,
+        data: layoutsRoutesData['card-tailwind-styling-sample'],
+        path: 'card-tailwind-styling-sample'
     },
     {
         component: TileManagerComponent,

@@ -1,5 +1,6 @@
 @use 'igniteui-angular/theming' as *;
 @use 'igniteui-theming/tailwind/themes/base.css';
+@use 'igniteui-theming/tailwind/utilities/material.css';
 @use 'variables' as *;
 @use 'app-layout';
 @import "tailwindcss";

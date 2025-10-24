@@ -1,4 +1,4 @@
-import { provideHttpClient, withInterceptorsFromDi } from "@angular/common/http";
+import { provideHttpClient, withFetch, withInterceptorsFromDi } from "@angular/common/http";
 import { ApplicationConfig, importProvidersFrom } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { BrowserModule, HammerModule, provideClientHydration, withEventReplay } from "@angular/platform-browser";
@@ -16,7 +16,7 @@ export const AppConfig: ApplicationConfig = {
             HammerModule,
             NgbModule
         ),
-        provideHttpClient(withInterceptorsFromDi()),
+        provideHttpClient(withInterceptorsFromDi(), withFetch()),
         provideAnimations(),
         provideRouter(AppRoutes),
         OverflowService, provideClientHydration(withEventReplay())

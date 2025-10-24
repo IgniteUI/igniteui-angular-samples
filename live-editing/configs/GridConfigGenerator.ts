@@ -452,11 +452,17 @@ export class GridConfigGenerator implements IConfigGenerator {
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/grid/grid-save-state/localData.ts',
                 '/src/app/grid/grid-save-state/about.component.ts',
-                '/src/app/grid/grid-save-state/about.component.html'
+                '/src/app/grid/grid-save-state/about.component.html',
+                '/src/app/grid/grid-save-state/routes.ts'
             ],
-            appConfig: BaseAppConfig
+            appConfig: {
+                ...BaseAppConfig,
+                routesConfig: {
+                    router: true,
+                    routesImportPath: './grid/grid-save-state/routes'
+                }
+            }
         });
-        gridSaveStateSampleConfig.usesRouting = true;
         configs.push(gridSaveStateSampleConfig);
 
         configs.push(new Config({

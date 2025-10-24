@@ -1,0 +1,22 @@
+igx-carousel {
+  --button-shadow: var(--ig-elevation-15);
+}
+
+.carousel-container {
+  margin: 2rem 2rem auto;
+}
+
+:host ::ng-deep {
+  .igx-carousel__inner {
+    min-width: unset;
+  }
+
+  .igx-slide {
+    display: flex;
+    align-items: center;
+
+    img {
+      min-height: 15rem;
+    }
+  }
+}

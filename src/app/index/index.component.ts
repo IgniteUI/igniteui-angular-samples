@@ -35,7 +35,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
     private document = inject<Document>(DOCUMENT);
     private platformId = inject(PLATFORM_ID);
 
-
     @ViewChild('navdrawer', { read: IgxNavigationDrawerComponent, static: true })
     public navdrawer: IgxNavigationDrawerComponent;
 
