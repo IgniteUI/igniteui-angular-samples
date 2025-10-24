@@ -1,9 +1,54 @@
+@use "igniteui-angular/theming" as *;
+@use "igniteui-angular/lib/core/styles/components/radio/radio-component" as radio;
+@use "sass:map";
+
+:host {
+    ::ng-deep{
+        $_radio-schema: map.get($light-fluent-schema, radio);
+        @include radio(radio-theme($schema: $_radio-schema));
+        @include radio.component();
+
+        // Note: This is not the standard approach for styling the component.
+        // We're using it here solely to mirror the UI5 sample.
+        
+        .igx-radio--checked .igx-radio__composite::after {
+            --fill-color: #556b81;
+        }
+
+        .igx-radio__composite::after, 
+        .igx-radio__composite::before, 
+        .igx-radio__composite {
+            width: rem(18px);
+            height: rem(18px);
+        }
+
+        .igx-radio__composite {
+            min-width: rem(18px);
+        }
+
+        .igx-radio__ripple {
+            display: none;
+        }
+    }
+}
+
 igx-radio + igx-radio {
-  margin-top: 16px;
+    margin-top: 1rem;
+}
+
+igx-radio {
+    --ig-subtitle-1-font-size: #{rem(14px)};
+    --ig-font-family: Arial,Helvetica,sans-serif;
 }
 
 .radio-wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 1rem;
+}
+
+.igx-radio--focused::after {
+    inset: rem(1px) rem(-4px) rem(1px) rem(-2px);
+    border-radius: rem(8px);
+    box-shadow: 0 0 0 rem(2px) var(--focus-outline-color);
 }
