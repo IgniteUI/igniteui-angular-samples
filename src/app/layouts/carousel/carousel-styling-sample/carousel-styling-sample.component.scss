@@ -1,7 +1,7 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-// Create expansion panel theme
+// Create carousel panel theme
 $custom-panel-theme: carousel-theme(
   $button-background: rgb(124 50 221 / 60%),
   $button-arrow-color: #c5bcd0,
