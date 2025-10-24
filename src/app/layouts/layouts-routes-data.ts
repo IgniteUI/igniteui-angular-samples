@@ -16,6 +16,8 @@ export const layoutsRoutesData = {
     'carousel-no-navigation-sample': { displayName: 'Carousel No Navigation', parentName: 'Carousel' },
     'carousel-animations-sample': { displayName: 'Carousel Animations', parentName: 'Carousel' },
     'carousel-with-components-sample': { displayName: 'Carousel With Other Components', parentName: 'Carousel' },
+    'carousel-tailwind-sample': { displayName: 'Carousel Tailwind', parentName: 'Carousel' },
+    'carousel-styling-sample': { displayName: 'Carousel Styling', parentName: 'Carousel' },
     'dock-manager-sample': { displayName: 'Dock Manager', parentName: 'Dock Manager' },
     'expansion-sample-1': { displayName: 'Expansion Panel 1', parentName: 'Expansion Panel' },
     'expansion-sample-2': { displayName: 'Expansion Panel 2', parentName: 'Expansion Panel' },
