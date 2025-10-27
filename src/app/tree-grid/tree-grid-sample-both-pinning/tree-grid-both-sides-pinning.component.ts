@@ -43,6 +43,7 @@ export class TreeGridBothSidesPinningSampleComponent implements OnInit {
 
     public pinLeft() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+            col.pinned = false;
             col.pinningPosition = ColumnPinningPosition.Start;
             col.pinned = true;
         });
@@ -50,6 +51,7 @@ export class TreeGridBothSidesPinningSampleComponent implements OnInit {
 
     public pinRight() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+            col.pinned = false;
             col.pinningPosition = ColumnPinningPosition.End;
             col.pinned = true;
         });
