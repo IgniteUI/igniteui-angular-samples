@@ -54,12 +54,14 @@ export class GridBothSideToolbarPinningSampleComponent implements OnInit {
 
     public pinLeft() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+            col.pinned = false;
             col.pinningPosition = ColumnPinningPosition.Start;
             col.pinned = true;
         });
     }
     public pinRight() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+            col.pinned = false;
             col.pinningPosition = ColumnPinningPosition.End;
             col.pinned = true;
         });

@@ -82,6 +82,7 @@ export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
 
     public pinLeft() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+            col.pinned = false;
             col.pinningPosition = ColumnPinningPosition.Start;
             col.pinned = true;
         });
@@ -89,6 +90,7 @@ export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
 
     public pinRight() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+            col.pinned = false;
             col.pinningPosition = ColumnPinningPosition.End;
             col.pinned = true;
         });
