@@ -1,9 +1,61 @@
+@use "igniteui-angular/theming" as *;
+@use "igniteui-angular/lib/core/styles/components/switch/switch-component" as switch;
+@use 'sass:map';
+
+:host {
+    ::ng-deep {
+        $_switch-schema: map.get($light-fluent-schema, switch);
+        @include switch(switch-theme($schema: $_switch-schema));
+        @include switch.component();
+
+        // Note: This is not the standard approach for styling the component.
+        // We're using it here solely to mirror the UI5 sample.
+        
+        igx-switch:hover .igx-switch__thumb {
+            --border-hover-color: #fff;
+        }
+
+        .igx-switch__composite {
+            width: rem(44px);
+            height: rem(20px);
+            padding-left: rem(2px);
+         }
+
+        .igx-switch__composite-thumb {
+            width: rem(25px);
+            height: 1rem;
+            min-width: rem(25px);
+            transform: translateX(-0.5px);
+        }
+
+        .igx-switch__thumb {
+            width: rem(25px);
+            height: 1rem;
+            min-width: rem(25px);
+        }
+
+        .igx-switch--checked .igx-switch__composite .igx-switch__composite-thumb {
+            transform: translateX(0.85rem);
+        }
+
+        .igx-switch--focused .igx-switch__composite::after {
+            border-radius: 1rem;
+            box-shadow: 0 0 0 rem(2px) var(--focus-outline-color);
+        }
+    }
+}
+
 igx-switch {
-  margin-top: 24px;
+    margin-top: rem(24px);
+    width: max-content;
+}
+
+igx-switch:hover {
+    --track-off-color: #637d97;
 }
 
 .switch-wrapper {
-  display: flex;
-  flex-flow: column nowrap;
-  padding: 16px;
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 2rem;
 }
