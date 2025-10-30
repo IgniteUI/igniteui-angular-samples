@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent, IgxColumnComponent, GridCellMergeMode, IgxGridToolbarComponent, IgxSelectComponent, IgxSelectItemComponent, IgxLabelDirective, SortingDirection, DefaultMergeStrategy } from 'igniteui-angular';
+import { IgxTreeGridComponent, IgxColumnComponent, GridCellMergeMode, SortingDirection, DefaultMergeStrategy } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';
 import { generateEmployeeDetailedFlatData2 } from '../data/employees-flat-detailed2';
@@ -12,10 +12,6 @@ import { generateEmployeeDetailedFlatData2 } from '../data/employees-flat-detail
         IgxTreeGridComponent,
         IgxPreventDocumentScrollDirective,
         IgxColumnComponent,
-        IgxSelectComponent,
-        IgxSelectItemComponent,
-        IgxLabelDirective,
-        IgxGridToolbarComponent,
         FormsModule
     ]
 })
