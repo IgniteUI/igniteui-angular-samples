@@ -11,6 +11,8 @@ on:
         description: 'Input a branch name (e.g., vnext)'
         required: true
 
+permissions:
+  contents: read
 jobs:
   trigger:
     runs-on: ubuntu-latest
