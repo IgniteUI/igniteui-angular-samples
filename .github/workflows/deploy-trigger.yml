@@ -76,6 +76,11 @@ jobs:
               repo: 'igniteui-actions',
               event_type: 'igniteui-angular-samples-cd',
               client_payload: {
+                repository: "${{ github.repository }}",
+                run_id: "${{ github.run_id }}",
+                artifact_name: "deployment-trigger-info",
+                ref: "${{ github.ref }}",
+                sha: "${{ github.sha }}",
                 branch: '${{ github.ref_name }}',
                 unit: false,
                 integration: true
