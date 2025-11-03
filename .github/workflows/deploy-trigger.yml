@@ -18,6 +18,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Debug Token Availability
+        run: |
+          if [ -z "${{ secrets.CLASSIC_PATKA }}" ]; then
+            echo "CLASSIC_PATKA secret is not set or is empty"
+            echo "Will fallback to github.token"
+          else
+            echo "CLASSIC_PATKA secret is available"
+          fi
+      
       - name: Setup GitHub CLI
         uses: actions/setup-node@v4
         with:
@@ -26,7 +35,7 @@ jobs:
       - name: Trigger Workflow in Another Repository
         uses: actions/github-script@v8
         with:
-          github-token: ${{ secrets.CLASSIC_PATKA }}
+          github-token: ${{ secrets.CLASSIC_PATKA || github.token }}
           script: |
             await github.rest.repos.createDispatchEvent({
               owner: 'IgniteUI',
