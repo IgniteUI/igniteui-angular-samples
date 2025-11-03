@@ -26,12 +26,46 @@ jobs:
           else
             echo "CLASSIC_PATKA secret is available"
           fi
-      
-      - name: Setup GitHub CLI
+
+      - name: Setup Node for Github CLI
         uses: actions/setup-node@v4
         with:
           node-version: '24.x'
-      
+
+      - name: Create Dummy Artifact
+        run: |
+          # Create a directory for the artifact
+          mkdir -p artifact-output
+
+          # Create some dummy files with deployment information
+          echo "Deployment triggered successfully" > artifact-output/deployment-status.txt
+          echo "Branch: ${{ github.ref_name }}" >> artifact-output/deployment-status.txt
+          echo "Commit: ${{ github.sha }}" >> artifact-output/deployment-status.txt
+          echo "Timestamp: $(date)" >> artifact-output/deployment-status.txt
+          echo "Repository: ${{ github.repository }}" >> artifact-output/deployment-status.txt
+
+          # Create a JSON file with deployment metadata
+          cat > artifact-output/deployment-metadata.json << EOF
+          {
+            "branch": "${{ github.ref_name }}",
+            "commit": "${{ github.sha }}",
+            "repository": "${{ github.repository }}",
+            "trigger_event": "${{ github.event_name }}",
+            "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%SZ)",
+            "deployment_triggered": true
+          }
+          EOF
+
+          # List the created files
+          ls -la artifact-output/
+
+      - name: Upload Deployment Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deployment-trigger-info
+          path: artifact-output/
+          retention-days: 30
+
       - name: Trigger Workflow in Another Repository
         uses: actions/github-script@v8
         with:
