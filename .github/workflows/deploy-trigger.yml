@@ -19,8 +19,6 @@ jobs:
 
     steps:
       - name: Trigger Workflow in Another Repository
-        env:
-          GH_TOKEN: ${{ secrets.CLASSIC_PATKA }}
         run: |
           # Set the required variables
           repo="IgniteUI/igniteui-actions"
@@ -32,3 +30,5 @@ jobs:
             --method POST \
             --field event_type="$event_type" \
             --raw-field client_payload="{\"branch\": \"$branch\", \"unit\": false, \"integration\": true}"
+        env:
+          GH_TOKEN: ${{ secrets.CLASSIC_PATKA }}
