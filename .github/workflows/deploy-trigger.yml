@@ -18,18 +18,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Setup GitHub CLI
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
       - name: Trigger Workflow in Another Repository
-        run: |
-          # Set the required variables
-          repo_owner="IgniteUI"
-          repo_name="igniteui-actions"
-          event_type="igniteui-angular-samples-cd"
-          branch="${{ github.ref_name }}"
-
-          # Trigger repository dispatch using GitHub CLI
-          gh api repos/$repo/dispatches \
-            --method POST \
-            --field event_type="$event_type" \
-            --raw-field client_payload="{\"branch\": \"$branch\", \"unit\": false, \"integration\": true}"
-        env:
-          GH_TOKEN: ${{ secrets.CLASSIC_PATKA }}
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.CLASSIC_PATKA }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: 'IgniteUI',
+              repo: 'igniteui-actions',
+              event_type: 'igniteui-angular-samples-cd',
+              client_payload: {
+                branch: '${{ github.ref_name }}',
+                unit: false,
+                integration: true
+              }
+            });
