@@ -99,7 +99,7 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     public setChartData(args: Stock[]): void {
         this.chartData = [];
         args.forEach(rowKey => {
-            const row: Stock = this.finGrid.grid.getRowByKey(rowKey).data;
+            const row: Stock = this.finGrid.grid.getRowByKey(rowKey.id).data;
             this.chartData.push(row);
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, row);
         });
