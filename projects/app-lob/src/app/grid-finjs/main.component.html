@@ -6,6 +6,7 @@
         (playAction)="onPlayAction($event)">
     </app-finjs-controllers>
     <app-finjs-grid #finGrid
+        [allowChart]="true"
         (selectedDataChanged)="setChartData($event)"
         (keyDown)="dialog.open()"
         (chartColumnKeyDown)="openSingleRowChart($event)">

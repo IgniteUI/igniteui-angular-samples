@@ -45,6 +45,11 @@ export const SamplesRoutes: Routes = [
         loadChildren: () => import('./grid-dynamic-chart-data/grid-dynamic-chart-data.routes')
         .then(m => m.GridDynamicChartRoutes),
         path: 'grid-dynamic-chart-data'
+    },
+    {
+        data: ['PivotGridsModule'],
+        loadChildren: () => import('./pivot-grid/pivot-grids.routes').then(m => m.PivotGridsRoutes),
+        path: 'pivot-grid'
     }
 ];
 
