@@ -86,12 +86,12 @@ jobs:
       - name: Configure npm registry
         run: |
           echo "@infragistics:registry=https://packages.infragistics.com/npm/js-licensed/" >> .npmrc
-          echo "//packages.infragistics.com/npm/js-licensed/:_authToken=${{ secrets.INFRAGISTICS_NPM_TOKEN }}" >> .npmrc
+          echo "//packages.infragistics.com/npm/js-licensed/:username=${{ secrets.INFRAGISTICS_NPM_USER }}" >> .npmrc
+          echo "//packages.infragistics.com/npm/js-licensed/:_auth=${{ secrets.INFRAGISTICS_NPM_TOKEN }}" >> .npmrc
+        #  echo "//packages.infragistics.com/npm/js-licensed/:_authToken=${{ secrets.INFRAGISTICS_NPM_TOKEN }}" >> .npmrc
 
       - name: Install dependencies
         run: npm install
-        env:
-          GITHUB_ACTIONS: true
 
       - name: Clone submodule
         run: git clone --recurse-submodules https://github.com/IgniteUI/igniteui-live-editing-samples igniteui-live-editing-samples
@@ -121,8 +121,6 @@ jobs:
 
       - name: Install dependencies after schematics
         run: npm install
-        env:
-          GITHUB_ACTIONS: true
 
       - name: Build application
         run: npm ${{ matrix.npm_build_command }} --userconfig=./.npmrc
