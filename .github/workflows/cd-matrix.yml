@@ -76,15 +76,17 @@ jobs:
           }
 
       - name: Create .npmrc file
-        run: touch .npmrc
+        run: |
+          if [ -f ".npmrc" ]; then
+            rm .npmrc
+          fi
+          touch .npmrc
+
 
       - name: Configure npm registry
         run: |
           echo "@infragistics:registry=https://packages.infragistics.com/npm/js-licensed/" >> .npmrc
           echo "//packages.infragistics.com/npm/js-licensed/:_authToken=${{ secrets.INFRAGISTICS_NPM_TOKEN }}" >> .npmrc
-
-      - name: Verify .npmrc content
-        run: cat .npmrc
 
       - name: Install dependencies
         run: npm install
