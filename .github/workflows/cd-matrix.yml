@@ -1,4 +1,6 @@
 name: Continuous Deployment Matrix
+permissions:
+  contents: write
 
 on:
   push:
