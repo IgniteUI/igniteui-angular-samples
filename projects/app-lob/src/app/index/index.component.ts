@@ -2,7 +2,7 @@ import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, DOCUMEN
 import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { IgxNavigationDrawerComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
 import { filter } from 'rxjs/operators';
-import { pivotGridsRoutesData } from '../../../../../src/app/pivot-grid/pivot-grid-routes-data';
+import { pivotGridsRoutesData } from '../pivot-grid/pivot-grid-routes-data';
 import { gridDynamicChartRoutesData } from '../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data';
 import { finJsDockManagerGridRoutes } from '../grid-finjs-dock-manager/grid-finjs-dock-manager-routes-data';
 import { gridfinjsRoutesData} from '../grid-finjs/grid-finjs-routes-data';
