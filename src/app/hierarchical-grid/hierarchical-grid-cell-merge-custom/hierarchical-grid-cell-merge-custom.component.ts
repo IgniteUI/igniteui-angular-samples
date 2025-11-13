@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent, SortingDirection, GridCellMergeMode, IgxGridToolbarComponent, IgxSelectComponent, IgxSelectItemComponent, IgxLabelDirective, DefaultMergeStrategy } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent, SortingDirection, GridCellMergeMode, DefaultMergeStrategy } from 'igniteui-angular';
 import { HIERARCHICAL_DATA } from '../../data/hierarchical-data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';
@@ -13,10 +13,6 @@ import { FormsModule } from '@angular/forms';
         IgxPreventDocumentScrollDirective,
         IgxColumnComponent,
         IgxRowIslandComponent,
-        IgxGridToolbarComponent,
-        IgxSelectComponent,
-        IgxSelectItemComponent,
-        IgxLabelDirective,
         FormsModule
     ]
 })
