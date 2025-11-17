@@ -782,5 +782,12 @@ export const GridsRoutes: Routes = [
         component: GridCascadingCombosComponent,
         data: gridsRoutesData['grid-cascading-combos'],
         path: 'grid-cascading-combos'
+    },
+    {
+        path: 'grid-lite',
+        loadChildren: () => import('./grid-lite/grid-lite.routes').then(m => m.gridLiteRoutes),
+        data: {
+            displayName: 'Grid Lite'
+        }
     }
 ];

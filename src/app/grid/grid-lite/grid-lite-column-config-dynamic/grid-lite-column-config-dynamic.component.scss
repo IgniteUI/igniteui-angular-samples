@@ -1,0 +1,21 @@
+:host {
+  contain: content;
+  --ig-size: 2;
+}
+
+.grid-lite-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.panel {
+  margin: 1rem 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+igc-grid-lite {
+  min-height: 65vh;
+}

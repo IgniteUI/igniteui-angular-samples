@@ -1,0 +1,20 @@
+<div class="grid-lite-wrapper">
+  <section class="config-panel">
+    <igc-switch
+      [checked]="sortConfiguration.multiple"
+      (igcChange)="updateConfig('multiple', $event.detail)">
+      Enable multi-sort
+    </igc-switch>
+    <igc-switch
+      [checked]="sortConfiguration.triState"
+      (igcChange)="updateConfig('triState', $event.detail)">
+      Enable tri-state sorting
+    </igc-switch>
+  </section>
+  
+  <igc-grid-lite 
+    [columns]="columns" 
+    [data]="data"
+    [sortConfiguration]="sortConfiguration">
+  </igc-grid-lite>
+</div>

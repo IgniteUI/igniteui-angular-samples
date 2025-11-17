@@ -1,0 +1,33 @@
+:host {
+  contain: content;
+}
+
+.grid-lite-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.theme-switcher {
+  margin-bottom: 2rem;
+}
+
+igc-grid-lite {
+  min-height: 400px;
+  --ig-size: 2;
+}
+
+// Custom light theme
+igc-grid-lite.custom-light {
+  --ig-primary-500: #c1292e;
+  --ig-secondary-500: #f1d302;
+  --ig-surface-500: #fdfffc;
+  --ig-gray-500: #235789;
+}
+
+// Custom dark theme
+igc-grid-lite.custom-dark {
+  --ig-primary-500: #ddd020;
+  --ig-secondary-500: #d5896f;
+  --ig-surface-500: #031d44;
+  --ig-gray-500: #04395e;
+}

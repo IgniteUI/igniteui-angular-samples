@@ -1,0 +1,17 @@
+<div class="grid-lite-wrapper">
+  <section class="panel">
+    <igc-button variant="outlined">Column properties</igc-button>
+    <igc-switch 
+      label-position="before"
+      [checked]="hasFormatters"
+      (igcChange)="toggleFormatters($event.detail)">
+      Value formatters:
+    </igc-switch>
+  </section>
+  
+  <igc-grid-lite 
+    #gridLite
+    [columns]="columns" 
+    [data]="data">
+  </igc-grid-lite>
+</div>
