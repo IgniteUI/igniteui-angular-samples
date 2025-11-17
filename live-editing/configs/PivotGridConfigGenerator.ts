@@ -42,14 +42,21 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            additionalFiles: 
+            additionalFiles:
             [
                 '/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/data/dataToAnalyze.ts',
                 '/src/app/pivot-grid/pivot-state-persistence/about.component.ts',
                 '/src/app/pivot-grid/pivot-state-persistence/about.component.html',
+                '/src/app/pivot-grid/pivot-state-persistence/routes.ts'
             ],
-            appConfig: BaseAppConfig,
+             appConfig: {
+                ...BaseAppConfig,
+                routesConfig: {
+                    router: true,
+                    routesImportPath: './pivot-grid/pivot-state-persistence/routes'
+                }
+            },
             component: 'PivotGridStatePersistenceSampleComponent'
         }));
 
