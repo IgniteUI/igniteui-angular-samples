@@ -44,11 +44,30 @@ export class GridLiteDataService {
   private priorities: ('Low' | 'Standard' | 'High')[] = ['Low', 'Standard', 'High'];
 
   private randomInt(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+    // Use crypto.getRandomValues for cryptographically secure randomness
+    const range = max - min + 1;
+    if (range <= 0) {
+      throw new Error('Invalid range');
+    }
+    // Find the number of bits needed to express the range
+    const maxUint32 = 0xFFFFFFFF;
+    const array = new Uint32Array(1);
+    let randomNum: number;
+    let limit = maxUint32 - (maxUint32 % range);
+    do {
+      window.crypto.getRandomValues(array);
+      randomNum = array[0];
+    } while (randomNum >= limit);
+    return min + (randomNum % range);
   }
 
   private randomFloat(min: number, max: number, precision = 2): number {
-    return parseFloat((Math.random() * (max - min) + min).toFixed(precision));
+    // Get a random float in [0,1) using crypto.getRandomValues
+    const array = new Uint32Array(1);
+    window.crypto.getRandomValues(array);
+    // Divide by 2^32 to get a float in [0,1)
+    const random01 = array[0] / 2 ** 32;
+    return parseFloat((random01 * (max - min) + min).toFixed(precision));
   }
 
   private randomElement<T>(array: T[]): T {
@@ -56,7 +75,9 @@ export class GridLiteDataService {
   }
 
   private randomBoolean(): boolean {
-    return Math.random() < 0.5;
+    const array = new Uint8Array(1);
+    window.crypto.getRandomValues(array);
+    return (array[0] & 1) === 0;
   }
 
   private generateId(): string {
