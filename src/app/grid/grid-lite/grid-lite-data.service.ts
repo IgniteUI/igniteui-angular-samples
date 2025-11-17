@@ -41,7 +41,7 @@ export class GridLiteDataService {
     'Rodriguez', 'Martinez', 'Wilson', 'Anderson', 'Taylor', 'Thomas', 'Moore', 'Jackson', 'White', 'Harris'];
   private productNames = ['Widget', 'Gadget', 'Doohickey', 'Thingamajig', 'Gizmo', 'Contraption', 
     'Device', 'Tool', 'Apparatus', 'Instrument', 'Machine', 'Equipment'];
-  private priorities: Array<'Low' | 'Standard' | 'High'> = ['Low', 'Standard', 'High'];
+  private priorities: ('Low' | 'Standard' | 'High')[] = ['Low', 'Standard', 'High'];
 
   private randomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;

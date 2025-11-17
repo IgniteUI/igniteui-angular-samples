@@ -22,7 +22,7 @@ export class GridLiteColumnConfigSimpleComponent implements OnInit {
 
   private formatter = new Intl.NumberFormat('en-EN', {
     style: 'currency',
-    currency: 'EUR',
+    currency: 'EUR'
   });
 
   ngOnInit() {

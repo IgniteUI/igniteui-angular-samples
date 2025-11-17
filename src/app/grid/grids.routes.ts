@@ -47,6 +47,20 @@ import { GridPasteSampleComponent } from './grid-paste/grid-paste-sample.compone
 import { RemoteFilteringSampleComponent } from './grid-remote-filtering-sample/remote-filtering-sample.component';
 import { RemotePagingGridSampleComponent } from './grid-remote-paging-sample/remote-paging-sample.component';
 import { ResizingSampleComponent } from './grid-resizing-sample/grid-resizing-sample.component';
+import { GridLiteOverviewComponent } from './grid-lite/grid-lite-overview/grid-lite-overview.component';
+import { GridLiteColumnConfigSimpleComponent } from './grid-lite/grid-lite-column-config-simple/grid-lite-column-config-simple.component';
+import { GridLiteColumnConfigDynamicComponent } from './grid-lite/grid-lite-column-config-dynamic/grid-lite-column-config-dynamic.component';
+import { GridLiteColumnConfigHeadersComponent } from './grid-lite/grid-lite-column-config-headers/grid-lite-column-config-headers.component';
+import { GridLiteDataBindingDynamicComponent } from './grid-lite/grid-lite-data-binding-dynamic/grid-lite-data-binding-dynamic.component';
+import { GridLiteFilteringSimpleComponent } from './grid-lite/grid-lite-filtering-simple/grid-lite-filtering-simple.component';
+import { GridLiteFilteringEventsComponent } from './grid-lite/grid-lite-filtering-events/grid-lite-filtering-events.component';
+import { GridLiteFilteringPipelineComponent } from './grid-lite/grid-lite-filtering-pipeline/grid-lite-filtering-pipeline.component';
+import { GridLiteSortingSimpleComponent } from './grid-lite/grid-lite-sorting-simple/grid-lite-sorting-simple.component';
+import { GridLiteSortingEventsComponent } from './grid-lite/grid-lite-sorting-events/grid-lite-sorting-events.component';
+import { GridLiteSortingGridConfigComponent } from './grid-lite/grid-lite-sorting-grid-config/grid-lite-sorting-grid-config.component';
+import { GridLiteSortingPipelineComponent } from './grid-lite/grid-lite-sorting-pipeline/grid-lite-sorting-pipeline.component';
+import { GridLiteStylingCustomComponent } from './grid-lite/grid-lite-styling-custom/grid-lite-styling-custom.component';
+import { GridLiteStylingThemesComponent } from './grid-lite/grid-lite-styling-themes/grid-lite-styling-themes.component';
 import { gridsRoutesData } from './grid-routes-data';
 import { GridDragBaseSampleComponent } from './grid-row-drag-base/grid-row-drag-base.component';
 import { GridDragToGridSampleComponent } from './grid-row-drag-to-grid/grid-row-drag-to-grid.component';
@@ -784,10 +798,73 @@ export const GridsRoutes: Routes = [
         path: 'grid-cascading-combos'
     },
     {
-        path: 'grid-lite',
-        loadChildren: () => import('./grid-lite/grid-lite.routes').then(m => m.gridLiteRoutes),
-        data: {
-            displayName: 'Grid Lite'
-        }
+        component: GridLiteOverviewComponent,
+        data: { displayName: 'Grid Lite - Overview' },
+        path: 'grid-lite-overview'
+    },
+    {
+        component: GridLiteColumnConfigSimpleComponent,
+        data: { displayName: 'Grid Lite - Column Config Simple' },
+        path: 'grid-lite-column-config-simple'
+    },
+    {
+        component: GridLiteColumnConfigDynamicComponent,
+        data: { displayName: 'Grid Lite - Column Config Dynamic' },
+        path: 'grid-lite-column-config-dynamic'
+    },
+    {
+        component: GridLiteColumnConfigHeadersComponent,
+        data: { displayName: 'Grid Lite - Column Config Headers' },
+        path: 'grid-lite-column-config-headers'
+    },
+    {
+        component: GridLiteDataBindingDynamicComponent,
+        data: { displayName: 'Grid Lite - Data Binding Dynamic' },
+        path: 'grid-lite-data-binding-dynamic'
+    },
+    {
+        component: GridLiteFilteringSimpleComponent,
+        data: { displayName: 'Grid Lite - Filtering Simple' },
+        path: 'grid-lite-filtering-simple'
+    },
+    {
+        component: GridLiteFilteringEventsComponent,
+        data: { displayName: 'Grid Lite - Filtering Events' },
+        path: 'grid-lite-filtering-events'
+    },
+    {
+        component: GridLiteFilteringPipelineComponent,
+        data: { displayName: 'Grid Lite - Filtering Pipeline' },
+        path: 'grid-lite-filtering-pipeline'
+    },
+    {
+        component: GridLiteSortingSimpleComponent,
+        data: { displayName: 'Grid Lite - Sorting Simple' },
+        path: 'grid-lite-sorting-simple'
+    },
+    {
+        component: GridLiteSortingEventsComponent,
+        data: { displayName: 'Grid Lite - Sorting Events' },
+        path: 'grid-lite-sorting-events'
+    },
+    {
+        component: GridLiteSortingGridConfigComponent,
+        data: { displayName: 'Grid Lite - Sorting Grid Config' },
+        path: 'grid-lite-sorting-grid-config'
+    },
+    {
+        component: GridLiteSortingPipelineComponent,
+        data: { displayName: 'Grid Lite - Sorting Pipeline' },
+        path: 'grid-lite-sorting-pipeline'
+    },
+    {
+        component: GridLiteStylingCustomComponent,
+        data: { displayName: 'Grid Lite - Styling Custom' },
+        path: 'grid-lite-styling-custom'
+    },
+    {
+        component: GridLiteStylingThemesComponent,
+        data: { displayName: 'Grid Lite - Styling Themes' },
+        path: 'grid-lite-styling-themes'
     }
 ];

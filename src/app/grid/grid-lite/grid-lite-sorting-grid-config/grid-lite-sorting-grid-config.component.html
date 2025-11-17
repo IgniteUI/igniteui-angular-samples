@@ -2,12 +2,12 @@
   <section class="config-panel">
     <igc-switch
       [checked]="sortConfiguration.multiple"
-      (igcChange)="updateConfig('multiple', $event.detail)">
+      (igcChange)="updateConfig('multiple', $event.detail.checked)">
       Enable multi-sort
     </igc-switch>
     <igc-switch
       [checked]="sortConfiguration.triState"
-      (igcChange)="updateConfig('triState', $event.detail)">
+      (igcChange)="updateConfig('triState', $event.detail.checked)">
       Enable tri-state sorting
     </igc-switch>
   </section>

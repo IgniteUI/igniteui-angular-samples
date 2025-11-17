@@ -4,7 +4,7 @@
     <igc-switch 
       label-position="before"
       [checked]="hasFormatters"
-      (igcChange)="toggleFormatters($event.detail)">
+      (igcChange)="toggleFormatters($event.detail.checked)">
       Value formatters:
     </igc-switch>
   </section>

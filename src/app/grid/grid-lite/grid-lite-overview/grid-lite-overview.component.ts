@@ -5,7 +5,7 @@ import {
   IgcRatingComponent,
   IgcCheckboxComponent,
   IgcSelectComponent,
-  IgcAvatarComponent,
+  IgcAvatarComponent
 } from 'igniteui-webcomponents';
 import { IgcGridLite } from 'igc-grid-lite';
 import { GridLiteDataService, User } from '../grid-lite-data.service';
