@@ -1,28 +1,24 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { defineComponents, IgcRatingComponent, IgcSwitchComponent } from 'igniteui-webcomponents';
-import { IgcGridLite } from 'igc-grid-lite';
+import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
+import { IgcGridLite } from 'igniteui-grid-lite';
 import { GridLiteDataService, ProductInfo } from '../grid-lite-data.service';
 
 IgcGridLite.register();
-defineComponents(IgcRatingComponent, IgcSwitchComponent);
+defineComponents(IgcRatingComponent);
 
 @Component({
-  selector: 'app-grid-lite-sorting-grid-config',
-  templateUrl: './grid-lite-sorting-grid-config.component.html',
-  styleUrls: ['./grid-lite-sorting-grid-config.component.scss'],
+  selector: 'app-grid-lite-sorting-simple',
+  templateUrl: './grid-lite-sorting-simple.component.html',
+  styleUrls: ['./grid-lite-sorting-simple.component.scss'],
   imports: [CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class GridLiteSortingGridConfigComponent implements OnInit {
+export class GridLiteSortingSimpleComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
   
   public data: ProductInfo[] = [];
   public columns: any[] = [];
-  public sortConfiguration: any = {
-    multiple: true,
-    triState: true
-  };
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(100);
@@ -31,7 +27,9 @@ export class GridLiteSortingGridConfigComponent implements OnInit {
       { 
         key: 'name', 
         headerText: 'Name', 
-        sort: true 
+        sort: { 
+          comparer: (a: string, b: string) => a.length - b.length 
+        }
       },
       { 
         key: 'price', 
@@ -65,9 +63,5 @@ export class GridLiteSortingGridConfigComponent implements OnInit {
         sort: true 
       }
     ];
-  }
-
-  updateConfig(prop: string, value: boolean) {
-    this.sortConfiguration = { ...this.sortConfiguration, [prop]: value };
   }
 }

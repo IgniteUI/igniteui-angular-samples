@@ -15,7 +15,7 @@ import { GridLiteSortingPipelineComponent } from './grid-lite-sorting-pipeline/g
 import { GridLiteStylingCustomComponent } from './grid-lite-styling-custom/grid-lite-styling-custom.component';
 import { GridLiteStylingThemesComponent } from './grid-lite-styling-themes/grid-lite-styling-themes.component';
 
-export const gridLiteRoutes: Routes = [
+export const GridLiteRoutes: Routes = [
     {
         path: '',
         pathMatch: 'full',

@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewChild, ElementRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcRatingComponent, IgcCircularProgressComponent } from 'igniteui-webcomponents';
-import { IgcGridLite } from 'igc-grid-lite';
+import { IgcGridLite } from 'igniteui-grid-lite';
 import { GridLiteDataService, ProductInfo } from '../grid-lite-data.service';
 
 IgcGridLite.register();
