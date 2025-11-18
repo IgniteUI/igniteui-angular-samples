@@ -44,21 +44,7 @@ export class GridLiteDataService {
   private priorities: ('Low' | 'Standard' | 'High')[] = ['Low', 'Standard', 'High'];
 
   private randomInt(min: number, max: number): number {
-    // Use crypto.getRandomValues for cryptographically secure randomness
-    const range = max - min + 1;
-    if (range <= 0) {
-      throw new Error('Invalid range');
-    }
-    // Find the number of bits needed to express the range
-    const maxUint32 = 0xFFFFFFFF;
-    const array = new Uint32Array(1);
-    let randomNum: number;
-    let limit = maxUint32 - (maxUint32 % range);
-    do {
-      window.crypto.getRandomValues(array);
-      randomNum = array[0];
-    } while (randomNum >= limit);
-    return min + (randomNum % range);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   private randomFloat(min: number, max: number, precision = 2): number {

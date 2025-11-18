@@ -14,109 +14,77 @@ import { GridLiteSortingGridConfigComponent } from './grid-lite-sorting-grid-con
 import { GridLiteSortingPipelineComponent } from './grid-lite-sorting-pipeline/grid-lite-sorting-pipeline.component';
 import { GridLiteStylingCustomComponent } from './grid-lite-styling-custom/grid-lite-styling-custom.component';
 import { GridLiteStylingThemesComponent } from './grid-lite-styling-themes/grid-lite-styling-themes.component';
+import { gridLiteRoutesData } from './grid-lite-routes-data';
 
 export const GridLiteRoutes: Routes = [
     {
-        path: '',
-        pathMatch: 'full',
-        redirectTo: 'overview'
-    },
-    {
         path: 'overview',
         component: GridLiteOverviewComponent,
-        data: {
-            displayName: 'Grid Lite Overview'
-        }
+        data: gridLiteRoutesData['overview']
     },
     {
         path: 'column-config-simple',
         component: GridLiteColumnConfigSimpleComponent,
-        data: {
-            displayName: 'Column Configuration - Simple'
-        }
+        data: gridLiteRoutesData['column-config-simple']
     },
     {
         path: 'column-config-dynamic',
         component: GridLiteColumnConfigDynamicComponent,
-        data: {
-            displayName: 'Column Configuration - Dynamic'
-        }
+        data: gridLiteRoutesData['column-config-dynamic']
     },
     {
         path: 'column-config-headers',
         component: GridLiteColumnConfigHeadersComponent,
-        data: {
-            displayName: 'Column Configuration - Headers'
-        }
+        data: gridLiteRoutesData['column-config-headers']
     },
     {
         path: 'data-binding-dynamic',
         component: GridLiteDataBindingDynamicComponent,
-        data: {
-            displayName: 'Data Binding - Dynamic'
-        }
+        data: gridLiteRoutesData['data-binding-dynamic']
     },
     {
         path: 'filtering-simple',
         component: GridLiteFilteringSimpleComponent,
-        data: {
-            displayName: 'Filtering - Simple'
-        }
+        data: gridLiteRoutesData['filtering-simple']
     },
     {
         path: 'filtering-events',
         component: GridLiteFilteringEventsComponent,
-        data: {
-            displayName: 'Filtering - Events'
-        }
+        data: gridLiteRoutesData['filtering-events']
     },
     {
         path: 'filtering-pipeline',
         component: GridLiteFilteringPipelineComponent,
-        data: {
-            displayName: 'Filtering - Pipeline'
-        }
+        data: gridLiteRoutesData['filtering-pipeline']
     },
     {
         path: 'sorting-simple',
         component: GridLiteSortingSimpleComponent,
-        data: {
-            displayName: 'Sorting - Simple'
-        }
+        data: gridLiteRoutesData['sorting-simple']
     },
     {
         path: 'sorting-events',
         component: GridLiteSortingEventsComponent,
-        data: {
-            displayName: 'Sorting - Events'
-        }
+        data: gridLiteRoutesData['sorting-events']
     },
     {
         path: 'sorting-grid-config',
         component: GridLiteSortingGridConfigComponent,
-        data: {
-            displayName: 'Sorting - Grid Configuration'
-        }
+        data: gridLiteRoutesData['sorting-grid-config']
     },
     {
         path: 'sorting-pipeline',
         component: GridLiteSortingPipelineComponent,
-        data: {
-            displayName: 'Sorting - Pipeline'
-        }
+        data: gridLiteRoutesData['sorting-pipeline']
     },
     {
         path: 'styling-custom',
         component: GridLiteStylingCustomComponent,
-        data: {
-            displayName: 'Styling - Custom'
-        }
+        data: gridLiteRoutesData['styling-custom']
     },
     {
         path: 'styling-themes',
         component: GridLiteStylingThemesComponent,
-        data: {
-            displayName: 'Styling - Themes'
-        }
+        data: gridLiteRoutesData['styling-themes']
     }
 ];
