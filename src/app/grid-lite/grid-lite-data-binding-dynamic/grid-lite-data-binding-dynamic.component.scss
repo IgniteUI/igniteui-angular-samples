@@ -1,0 +1,14 @@
+:host {
+  contain: content;
+  --ig-size: 1;
+}
+
+.grid-lite-wrapper {
+  width: 100%;
+  height: calc(100% - 50px);
+}
+
+igc-grid-lite {
+  margin-top: 1rem;
+  min-height: 65vh;
+}

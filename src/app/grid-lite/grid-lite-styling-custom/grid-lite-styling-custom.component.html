@@ -1,0 +1,17 @@
+<div class="grid-lite-wrapper">
+  <section class="theme-switcher">
+    <igc-switch
+      [checked]="theme === 'light'"
+      (igcChange)="switchTheme()"
+      label-position="before">
+      Switch to {{ theme === 'dark' ? 'light' : 'dark' }} theme
+    </igc-switch>
+  </section>
+  
+  <igc-grid-lite 
+    [class.custom-light]="theme === 'light'"
+    [class.custom-dark]="theme === 'dark'"
+    [columns]="columns" 
+    [data]="data">
+  </igc-grid-lite>
+</div>
