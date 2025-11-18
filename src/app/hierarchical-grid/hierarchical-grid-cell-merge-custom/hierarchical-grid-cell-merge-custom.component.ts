@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent, SortingDirection, GridCellMergeMode, IgxGridToolbarComponent, IgxSelectComponent, IgxSelectItemComponent, IgxLabelDirective, DefaultMergeStrategy } from 'igniteui-angular';
-import { HIERARCHICAL_DATA } from '../../data/hierarchical-data';
+import { HIERARCHICAL_DATA_EXTENDED } from '../../data/hierarchical-data-extended';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';
 
@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms';
 
 export class HGridCellMergeCustomComponent {
 
-    public localData = HIERARCHICAL_DATA;
+    public localData = HIERARCHICAL_DATA_EXTENDED;
     public cellMergeMode: GridCellMergeMode = 'always';
     public perCountryMergeStrategy = new PerCountryMergeStrategy();
     public sortExpr = [
