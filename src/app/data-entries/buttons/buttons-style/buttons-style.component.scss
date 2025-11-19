@@ -199,18 +199,43 @@ $list: (
 
 // Sass theme approach
 
-// $custom-button-theme: button-theme(
+// $custom-contained-theme: contained-button-theme(
 //     $background: #f9f0ff,
 //     $foreground: #722ed1,
-//     $border-color: #722ed1,
 //     $hover-background: #efdbff,
 //     $hover-foreground: #9254de,
-//     $hover-border-color: #9254de,
-//     $active-border-color: #531dab,
 //     $active-foreground: #531dab,
-//     $focus-visible-background: #f9f0ff,
+//     $active-background: #dfc2fa,
+//     $focus-visible-background: #d3adf7
+// );	
+
+// $custom-outlined-theme: outlined-button-theme(
+//     $background: #fff2f0,
+//     $foreground: #ff4d4f,
+//     $border-color: #ff4d4f,
+//     $hover-background: #ffdfdc,
+//     $hover-foreground: #ff7875,
+//     $hover-border-color: #ff7875,
+//     $focus-visible-background: #ffccc7,
+//     $focus-visible-foreground: #d9363e,
+//     $focus-border-color: #d9363e
+// );	
+
+// $custom-flat-theme: flat-button-theme(
+//     $background: #e6fffb,
+//     $foreground: #13c2c2,
+//     $hover-background: #b5f5ec,
+//     $hover-foreground: #36cfc9,
+//     $active-foreground: #08979c,
+//     $focus-visible-background: #b5f5ec,
+//     $focus-visible-foreground: #08979c
 // );
 
 // .button-sample {
-//     @include css-vars($custom-button-theme) 
+//     @include css-vars($custom-contained-theme);
+//     @include css-vars($custom-outlined-theme);
+// }
+
+// .button-sample.filled {
+//     @include css-vars($custom-flat-theme);
 // }
