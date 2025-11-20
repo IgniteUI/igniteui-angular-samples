@@ -11,7 +11,7 @@ export class BaseInputGroupSampleComponent {
     public type = null;
 
     @HostListener('window:message', ['$event'])
-    private onMessage(e: MessageEvent) {
+    protected onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin && e.data.themeName) {
             this.applyInputTypeForTheme(e.data.themeName);
         }
