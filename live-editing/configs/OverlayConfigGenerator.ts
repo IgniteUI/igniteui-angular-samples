@@ -1,13 +1,10 @@
-import {IgxButtonDirective,
-IgxButtonModule,
-IgxButtonGroupModule,
-IgxCardModule,
-IgxComboModule,
-IgxDividerModule,
-IgxIconModule,
-IgxOverlayService,
-IgxSwitchModule,
-IgxToggleModule} from 'igniteui-angular';
+import { IgxButtonDirective, IgxButtonModule, IgxDividerModule, IgxToggleModule } from 'igniteui-angular/directives';
+import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
+import { IgxCardModule } from 'igniteui-angular/card';
+import { IgxComboModule } from 'igniteui-angular/combo';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxOverlayService } from 'igniteui-angular/core';
+import { IgxSwitchModule } from 'igniteui-angular/switch';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class OverlayConfigGenerator implements IConfigGenerator {

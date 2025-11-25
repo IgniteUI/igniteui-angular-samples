@@ -1,14 +1,11 @@
-import {
-    IgxButtonModule,
-    IgxCardModule,
-    IgxCarouselModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxListModule,
-    IgxPrefixDirective,
-    IgxSelectModule,
-    IgxSliderModule
-} from 'igniteui-angular';
+import { IgxButtonModule } from 'igniteui-angular/directives';
+import { IgxCardModule } from 'igniteui-angular/card';
+import { IgxCarouselModule } from 'igniteui-angular/carousel';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxInputGroupModule, IgxPrefixDirective } from 'igniteui-angular/input-group';
+import { IgxListModule } from 'igniteui-angular/list';
+import { IgxSelectModule } from 'igniteui-angular/select';
+import { IgxSliderModule } from 'igniteui-angular/slider';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class CarouselConfigGenerator implements IConfigGenerator {

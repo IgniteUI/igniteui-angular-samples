@@ -4,7 +4,12 @@
 /* eslint-disable no-shadow */
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
-import { IgxColumnComponent, IgxColumnGroupComponent, CellType, IgxGridComponent, IgxListComponent, SortingDirection, IActiveNodeChangeEventArgs, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridDetailTemplateDirective, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
+import { CellType, IActiveNodeChangeEventArgs, IgxColumnComponent, IgxColumnGroupComponent, IgxGridDetailTemplateDirective, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxEmptyListTemplateDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';
+import { SortingDirection } from 'igniteui-angular/core';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { DATA } from '../../data/customers';

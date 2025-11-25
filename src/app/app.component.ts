@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
 
     // eslint-disable-next-line @typescript-eslint/member-ordering
     @HostListener('window:message', ['$event'])
-    private onMessage(e: MessageEvent) {
+    protected onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin && typeof e.data.themeStyle === 'string') {
             this.styleElem.textContent = e.data.themeStyle;
             const typeface = window.getComputedStyle(this.document.body).fontFamily.replace(/[\'\"]/g, '');

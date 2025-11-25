@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxCalendarComponent } from 'igniteui-angular';
+import { IgxCalendarComponent } from 'igniteui-angular/calendar';
 
 @Component({
     selector: 'app-calendar-tailwind-styling',

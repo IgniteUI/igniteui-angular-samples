@@ -1,11 +1,8 @@
 /* eslint-disable max-len */
-import {
-    IgxActionStripModule,
-    IgxRippleModule,
-    IgxButtonModule,
-    IgxIconModule,
-    IgxButtonGroupModule
-} from 'igniteui-angular';
+import { IgxActionStripModule } from 'igniteui-angular/action-strip';
+import { IgxButtonModule, IgxRippleModule } from 'igniteui-angular/directives';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class ActionStripConfigGenerator implements IConfigGenerator {

@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

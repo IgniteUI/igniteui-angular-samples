@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxAvatarComponent, IgxBadgeComponent } from 'igniteui-angular';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 
 @Component({
     selector: 'app-badge-sample-2',

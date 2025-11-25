@@ -1,7 +1,6 @@
-import {IgxButtonModule,
-IgxRippleModule,
-IgxToastModule,
-IgxIconModule} from 'igniteui-angular';
+import { IgxButtonModule, IgxRippleModule } from 'igniteui-angular/directives';
+import { IgxToastModule } from 'igniteui-angular/toast';
+import { IgxIconModule } from 'igniteui-angular/icon';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class ToastConfigGenerator implements IConfigGenerator {

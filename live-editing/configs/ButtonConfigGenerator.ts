@@ -1,9 +1,6 @@
-import {
-    IgxButtonGroupModule,
-    IgxButtonModule,
-    IgxIconModule,
-    IgxRippleModule
-} from 'igniteui-angular';
+import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
+import { IgxButtonModule, IgxRippleModule } from 'igniteui-angular/directives';
+import { IgxIconModule } from 'igniteui-angular/icon';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 import { ButtonsRoundnessComponent } from '../../src/app/data-entries/buttons/buttons-roundness-sample/buttons-roundness-sample';

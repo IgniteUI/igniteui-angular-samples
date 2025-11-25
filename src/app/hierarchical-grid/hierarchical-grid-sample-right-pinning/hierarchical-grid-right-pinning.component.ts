@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { ColumnPinningPosition, IgxColumnComponent, IgxHierarchicalGridComponent, IPinningConfig, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxAvatarComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { ColumnPinningPosition } from 'igniteui-angular/core';
+import { IPinningConfig, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { employeesData } from '../../data/employeesData';
 import { athletesData } from '../../data/athletesData';
 import { DatePipe } from '@angular/common';

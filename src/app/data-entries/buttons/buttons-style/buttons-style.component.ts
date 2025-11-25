@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, THEME_TOKEN, ThemeToken } from 'igniteui-angular';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
 
 @Component({
     selector: 'app-buttons-style',

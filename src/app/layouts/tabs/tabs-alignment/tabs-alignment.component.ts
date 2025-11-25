@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxButtonGroupComponent, IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxTabHeaderLabelDirective, IgxTabContentComponent } from 'igniteui-angular';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxTabContentComponent, IgxTabHeaderComponent, IgxTabHeaderLabelDirective, IgxTabItemComponent, IgxTabsComponent } from 'igniteui-angular/tabs';
 
 @Component({
     selector: 'app-tabs-alignment',

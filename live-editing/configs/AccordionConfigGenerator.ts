@@ -1,12 +1,10 @@
-import {
-    IgxAccordionModule,
-    IgxRadioModule,
-    IgxTimePickerModule,
-    IgxSliderModule,
-    IgxCheckboxModule,
-    IgxSwitchModule,
-    IgxIconModule
-} from 'igniteui-angular';
+import { IgxAccordionModule } from 'igniteui-angular/accordion';
+import { IgxRadioModule } from 'igniteui-angular/radio';
+import { IgxTimePickerModule } from 'igniteui-angular/time-picker';
+import { IgxSliderModule } from 'igniteui-angular/slider';
+import { IgxCheckboxModule } from 'igniteui-angular/checkbox';
+import { IgxSwitchModule } from 'igniteui-angular/switch';
+import { IgxIconModule } from 'igniteui-angular/icon';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 

@@ -1,6 +1,11 @@
 import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 
-import { IGridStateOptions, IgxGridStateDirective, IgxGridComponent, NoopSortingStrategy, IgxColumnComponent, IgxButtonDirective, IgxIconComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
+import { IGridStateOptions, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridStateDirective } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { NoopSortingStrategy } from 'igniteui-angular/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
 import { FinancialDataService } from '../../services/financial.service';

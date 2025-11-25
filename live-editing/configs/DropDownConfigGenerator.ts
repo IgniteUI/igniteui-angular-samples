@@ -1,23 +1,16 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { HttpClientModule } from '@angular/common/http';
-import {
-    IgxButtonModule,
-    IgxChipsModule,
-    IgxDropDownModule,
-    IgxDividerModule,
-    IgxForOfModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxNavbarModule,
-    IgxRippleModule,
-    IgxSwitchModule,
-    IgxPrefixModule,
-    IgxSuffixModule,
-    IgxToastModule,
-    IgxToggleModule,
-    IgxTreeModule,
-    IgxTreeGridModule
-} from 'igniteui-angular';
+import { IgxButtonModule, IgxDividerModule, IgxForOfModule, IgxRippleModule, IgxToggleModule } from 'igniteui-angular/directives';
+import { IgxChipsModule } from 'igniteui-angular/chips';
+import { IgxDropDownModule } from 'igniteui-angular/drop-down';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxInputGroupModule } from 'igniteui-angular/input-group';
+import { IgxNavbarModule } from 'igniteui-angular/navbar';
+import { IgxSwitchModule } from 'igniteui-angular/switch';
+import { IgxPrefixModule, IgxSuffixModule } from 'igniteui-angular/core';
+import { IgxToastModule } from 'igniteui-angular/toast';
+import { IgxTreeModule } from 'igniteui-angular/tree';
+import { IgxTreeGridModule } from 'igniteui-angular/grids/tree-grid';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 export class DropDownConfigGenerator implements IConfigGenerator {

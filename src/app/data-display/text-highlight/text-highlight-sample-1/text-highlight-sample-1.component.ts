@@ -1,6 +1,8 @@
 /* eslint-disable max-len */
 import { Component, OnDestroy, ViewChild, inject } from '@angular/core';
-import { IgxTextHighlightDirective, IgxTextHighlightService, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular';
+import { IgxIconButtonDirective, IgxRippleDirective, IgxTextHighlightDirective, IgxTextHighlightService } from 'igniteui-angular/directives';
+import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 import { FormsModule } from '@angular/forms';
 

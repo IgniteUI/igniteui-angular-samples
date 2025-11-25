@@ -1,6 +1,12 @@
 /* eslint-disable max-len */
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, SortingDirection, IgxGridToolbarComponent, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent } from 'igniteui-angular';
+import { DefaultSortingStrategy, SortingDirection } from 'igniteui-angular/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarComponent, IgxGroupByRowTemplateDirective } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
+import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { INVOICE_DATA } from '../../data/invoiceData';
 import { DatePipe, CurrencyPipe } from '@angular/common';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

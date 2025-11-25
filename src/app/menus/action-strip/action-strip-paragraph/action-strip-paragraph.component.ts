@@ -1,5 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxActionStripComponent, IgxButtonGroupComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxActionStripComponent } from 'igniteui-angular/action-strip';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-action-strip-paragraph',
