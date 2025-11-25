@@ -70,7 +70,7 @@ steps:
   - task: Npm@1
     displayName: npm install
     inputs:
-      command: install --legacy-peer-deps
+      command: install
       workingDir: $(Build.SourcesDirectory)
       verbose: false
       customEndpoint: 'public proget'
