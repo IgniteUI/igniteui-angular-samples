@@ -28,6 +28,12 @@ steps:
     inputs:
       versionSpec: 22.x
 
+  - task: Npm@1
+    inputs:
+      command: custom
+      customCommand: 'install -g npm@latest'
+    displayName: 'Upgrade npm to latest version'
+
   - task: PowerShell@2
     displayName: 'Replace with licensed angular-extras'
     inputs:
