@@ -1,5 +1,5 @@
 import { Directive, HostListener, QueryList, ViewChildren } from '@angular/core';
-import { IgxInputGroupComponent } from 'igniteui-angular';
+import { IgxInputGroupComponent } from 'igniteui-angular/input-group';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector

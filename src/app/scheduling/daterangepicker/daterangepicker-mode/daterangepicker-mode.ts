@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { DateRange, IgxDateRangePickerComponent } from 'igniteui-angular';
+import { DateRange } from 'igniteui-angular/core';
+import { IgxDateRangePickerComponent } from 'igniteui-angular/date-picker';
 
 @Component({
     selector: 'app-mode-rangedatepicker',

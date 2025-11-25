@@ -1,5 +1,6 @@
 import {RouterModule} from '@angular/router';
-import {IgxBottomNavModule, IgxIconModule} from 'igniteui-angular';
+import { IgxBottomNavModule } from 'igniteui-angular/bottom-nav';
+import { IgxIconModule } from 'igniteui-angular/icon';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class TabBarConfigGenerator implements IConfigGenerator {

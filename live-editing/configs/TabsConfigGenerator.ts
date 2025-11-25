@@ -1,12 +1,11 @@
 import {RouterModule} from '@angular/router';
-import {IgxAvatarModule,
-IgxButtonModule,
-IgxCardModule,
-IgxIconModule,
-IgxNavbarModule,
-IgxRippleModule,
-IgxTabsModule,
-IgxButtonGroupModule } from 'igniteui-angular';
+import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxButtonModule, IgxRippleModule } from 'igniteui-angular/directives';
+import { IgxCardModule } from 'igniteui-angular/card';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxNavbarModule } from 'igniteui-angular/navbar';
+import { IgxTabsModule } from 'igniteui-angular/tabs';
+import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 export class TabsConfigGenerator implements IConfigGenerator {

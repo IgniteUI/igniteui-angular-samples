@@ -1,11 +1,7 @@
 import { Component, ViewChild, OnInit, inject } from "@angular/core";
-import {
-    IgxColumnComponent,
-    IgxGridComponent,
-    IgxCellHeaderTemplateDirective,
-    IgxIconComponent,
-    IgxIconService
-} from "igniteui-angular";
+import { IgxCellHeaderTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { DATA } from "../../data/customers";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
 

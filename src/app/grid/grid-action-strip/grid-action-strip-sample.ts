@@ -1,5 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, RowType, Transaction, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxColumnComponent, IgxGridPinningActionsComponent, RowType } from 'igniteui-angular/grids/core';
+import { Transaction } from 'igniteui-angular/core';
+import { IgxActionStripComponent } from 'igniteui-angular/action-strip';
+import { IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

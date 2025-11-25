@@ -1,8 +1,6 @@
-import {
-    IgxIconModule,
-    IgxTreeModule,
-    IgxTooltipModule
-} from 'igniteui-angular';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxTreeModule } from 'igniteui-angular/tree';
+import { IgxTooltipModule } from 'igniteui-angular/directives';
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 export class TreeConfigGenerator implements IConfigGenerator {

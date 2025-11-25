@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
-import { IgxSimpleComboComponent } from 'igniteui-angular';
+import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
 import { FormsModule } from '@angular/forms';
 
 

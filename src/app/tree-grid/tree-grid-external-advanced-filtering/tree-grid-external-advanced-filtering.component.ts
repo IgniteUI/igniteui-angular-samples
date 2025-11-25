@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ORDERS_DATA } from '../data/orders';
-import { IgxAdvancedFilteringDialogComponent, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxAdvancedFilteringDialogComponent, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 

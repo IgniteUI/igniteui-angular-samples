@@ -1,6 +1,9 @@
 import { Component, ViewChild, inject } from "@angular/core";
 
-import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, IgxExcelExporterService, IgxExcelExporterOptions, IgxPivotGridComponent, IgxButtonDirective } from "igniteui-angular"
+import { IPivotConfiguration, IgxPivotDateDimension, IgxPivotNumericAggregate, PivotAggregation } from 'igniteui-angular/grids/core';
+import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular/core';
+import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { SALES_DATA } from "../../data/dataToAnalyze";
 
 export class IgxTotalSaleAggregate {

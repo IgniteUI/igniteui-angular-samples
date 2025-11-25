@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IGridEditEventArgs, IgxToastComponent, VerticalAlignment, IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
+import { IGridEditEventArgs, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxToastComponent } from 'igniteui-angular/toast';
+import { VerticalAlignment } from 'igniteui-angular/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

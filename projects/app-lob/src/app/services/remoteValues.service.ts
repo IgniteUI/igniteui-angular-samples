@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import { FilteringStrategy, IFilteringExpressionsTree, IgxColumnComponent } from 'igniteui-angular';
+import { FilteringStrategy, IFilteringExpressionsTree } from 'igniteui-angular/core';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { SINGERS } from '../../../../../src/app/data/singersData';
 
 @Injectable()

@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxEmptyListTemplateDirective, IgxButtonDirective, IgxDataLoadingTemplateDirective } from 'igniteui-angular';
+import { IgxDataLoadingTemplateDirective, IgxEmptyListTemplateDirective, IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
+import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 
 @Component({
