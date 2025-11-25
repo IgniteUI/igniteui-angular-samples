@@ -1,0 +1,13 @@
+<div class="grid-lite-wrapper">
+  <igc-grid-lite 
+    [columns]="columns" 
+    [data]="data"
+    (filtering)="handleFiltering($event)"
+    (filtered)="handleFiltered($event)">
+  </igc-grid-lite>
+  <div class="log">
+    @for (entry of log; track entry) {
+      <p><code>{{ entry }}</code></p>
+    }
+  </div>
+</div>

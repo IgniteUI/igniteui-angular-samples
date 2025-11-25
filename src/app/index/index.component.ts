@@ -11,6 +11,7 @@ import { filter, map, debounceTime } from 'rxjs/operators';
 import { dataDisplayRoutesData } from '../data-display/data-display-routes-data';
 import { dataEntriesRoutesData } from '../data-entries/data-entries-routes-data';
 import { gridsRoutesData } from '../grid/grid-routes-data';
+import { gridLiteRoutesData } from '../grid-lite/grid-lite-routes-data';
 import { hierarchicalGridRoutesData } from '../hierarchical-grid/hierarchical-grid-routes-data';
 import { interactionsRoutesData } from '../interactions/interactions-routes-data';
 import { layoutsRoutesData } from '../layouts/layouts-routes-data';
@@ -110,6 +111,10 @@ export class IndexComponent implements OnInit, AfterViewInit {
         {
             path: 'grid',
             routesData: gridsRoutesData
+        },
+        {
+            path: 'grid-lite',
+            routesData: gridLiteRoutesData
         },
         {
             path: 'hierarchical-grid',

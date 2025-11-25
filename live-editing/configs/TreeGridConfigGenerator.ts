@@ -664,12 +664,19 @@ export class TreeGridConfigGenerator implements IConfigGenerator {
                 '/src/app/directives/prevent-scroll.directive.ts',
                 '/src/app/tree-grid/tree-grid-save-state/data.ts',
                 '/src/app/tree-grid/tree-grid-save-state/about.component.ts',
-                '/src/app/tree-grid/tree-grid-save-state/about.component.html'],
-            appConfig: BaseAppConfig,
+                '/src/app/tree-grid/tree-grid-save-state/about.component.html',
+                '/src/app/tree-grid/tree-grid-save-state/routes.ts'
+            ],
+            appConfig: {
+                ...BaseAppConfig,
+                routesConfig: {
+                    router: true,
+                    routesImportPath: './tree-grid-save-state/routes'
+                }
+            },
             component: 'TGridSaveStateComponent',
             shortenComponentPathBy: '/tree-grid/'
         });
-        treeGridSaveStateSampleConfig.usesRouting = true;
         configs.push(treeGridSaveStateSampleConfig);
 
         configs.push(new Config({

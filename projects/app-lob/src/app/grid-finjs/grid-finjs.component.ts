@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild, DOCUMENT, inject } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild, DOCUMENT, inject, Input } from '@angular/core';
 import { CellType, GridSelectionMode, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxExcelTextDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { DefaultSortingStrategy, IgxOverlayOutletDirective, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -29,6 +29,8 @@ export class GridFinJSComponent implements OnInit {
     @Output() public selectedDataChanged = new EventEmitter<Stock[]>();
     @Output() public keyDown = new EventEmitter();
     @Output() public chartColumnKeyDown = new EventEmitter<Stock>();
+
+    @Input() public allowChart = false;
 
     public contracts = Contract;
     public regions = REGIONS;

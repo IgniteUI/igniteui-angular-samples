@@ -9,6 +9,7 @@ import * as TreeGridDvRoutingModule from '../projects/app-lob/src/app/tree-grid/
 import * as DataDisplayRouting from '../src/app/data-display/data-display.routes';
 import * as DataEntriesRouting from '../src/app/data-entries/data-entries.routes';
 import * as GridRouting from '../src/app/grid/grids.routes';
+import * as GridLiteRouting from '../src/app/grid-lite/grid-lite.routes';
 import * as PivotGridRouting from '../src/app/pivot-grid/pivot-grids.routes';
 import * as HierarchicalGridRouting from '../src/app/hierarchical-grid/hierarchical-grid.routes';
 import * as InteractionsRouting from '../src/app/interactions/interactions.routes';
@@ -67,6 +68,10 @@ export const MODULE_ROUTES = [
     {
         path: 'grid',
         routes: GridRouting.GridsRoutes
+    },
+    {
+        path: 'grid-lite',
+        routes: GridLiteRouting.GridLiteRoutes
     },
     {
         path: 'pivot-grid',

@@ -38,8 +38,8 @@ export class TabBarConfigGenerator implements IConfigGenerator {
                 "/src/app/layouts/tabbar/views/view3/view3.component.ts",
                 "/src/app/layouts/tabbar/views/view3/view3.component.html"
             ],
-            /* TODO: Adding the correct router config needs to be done separately */
-            appConfig: { ...BaseAppConfig, ...{ router: true }},
+            /* Note: the Tabbar samples are not used anymore */
+            appConfig: { ...BaseAppConfig, ...{ routesConfig: { router: true } }},
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
 
