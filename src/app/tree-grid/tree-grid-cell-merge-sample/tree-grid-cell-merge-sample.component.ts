@@ -1,5 +1,9 @@
 import { ChangeDetectorRef, Component, inject, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent, IgxColumnComponent, GridCellMergeMode, IgxGridToolbarComponent, IgxSelectComponent, IgxSelectItemComponent, IgxLabelDirective, SortingDirection, DefaultTreeGridMergeStrategy, ByLevelTreeGridMergeStrategy } from 'igniteui-angular';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { GridCellMergeMode, IgxColumnComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
+import { ByLevelTreeGridMergeStrategy, DefaultTreeGridMergeStrategy, SortingDirection } from 'igniteui-angular/core';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { FormsModule } from '@angular/forms';

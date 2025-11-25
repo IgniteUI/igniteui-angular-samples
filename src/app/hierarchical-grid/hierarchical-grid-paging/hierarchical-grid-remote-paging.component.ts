@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, inject } from '@angular/core';
-import { GridPagingMode, IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnComponent, IgxPaginatorDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent } from 'igniteui-angular';
+import { GridPagingMode, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxPageNavigationComponent, IgxPageSizeSelectorComponent, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPaginatorDirective } from 'igniteui-angular/paginator';
 import { RemotePagingService } from './remotePagingService';
 import { BehaviorSubject } from 'rxjs';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, GridSummaryCalculationMode, GridSummaryPosition, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent, ISortingExpression, SortingDirection, IgxButtonGroupComponent, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { DefaultSortingStrategy, GridSummaryCalculationMode, ISortingExpression, IgxSummaryResult, SortingDirection } from 'igniteui-angular/core';
+import { GridSummaryPosition, IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

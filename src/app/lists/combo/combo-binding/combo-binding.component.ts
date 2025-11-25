@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxComboComponent, IgxButtonDirective, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective } from 'igniteui-angular';
+import { IgxComboComponent } from 'igniteui-angular/combo';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective } from 'igniteui-angular/card';
 import { CITIES, ICity } from './cities';
 import { FormsModule } from '@angular/forms';
 

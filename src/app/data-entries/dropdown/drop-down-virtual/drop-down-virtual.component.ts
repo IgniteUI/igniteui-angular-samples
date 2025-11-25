@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxForOfDirective, IgxDropDownItemComponent } from 'igniteui-angular';
+import { IgxButtonDirective, IgxForOfDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
+import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
 
 // tslint:disable:object-literal-sort-keys
 // tslint:disable-next-line:interface-name

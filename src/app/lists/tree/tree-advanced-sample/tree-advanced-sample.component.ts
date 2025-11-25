@@ -1,5 +1,7 @@
 import { Component, AfterViewInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
-import { IgxIconService, IgxTreeNodeComponent, IgxTreeComponent, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective } from 'igniteui-angular';
+import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
+import { IgxTreeComponent, IgxTreeNodeComponent } from 'igniteui-angular/tree';
+import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
 import { icons } from './services/svgIcons';
 import { DATA, NodeData, REMOTE_ROOT, SelectableNodeData } from '../../../data/tree-file-data';
 import { DataService } from './services/data.service';

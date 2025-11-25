@@ -1,5 +1,9 @@
 import { Component, AfterViewInit, inject } from '@angular/core';
-import { ColumnPinningPosition, IgxIconService, RowType, IPinningConfig, RowPinningPosition, IgxSwitchComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { ColumnPinningPosition } from 'igniteui-angular/core';
+import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
+import { IPinningConfig, IgxCellTemplateDirective, IgxColumnComponent, RowPinningPosition, RowType } from 'igniteui-angular/grids/core';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { icons } from '../../services/svgIcons';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

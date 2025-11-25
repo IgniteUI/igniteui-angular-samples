@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxCheckboxComponent, THEME_TOKEN, ThemeToken } from 'igniteui-angular';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
 
 @Component({
   selector: 'app-checkbox-styling',

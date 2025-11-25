@@ -1,5 +1,8 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, Transaction, IgxColumnComponent } from 'igniteui-angular';
+import { IgxDialogComponent } from 'igniteui-angular/dialog';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { Transaction } from 'igniteui-angular/core';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { DATA } from './../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

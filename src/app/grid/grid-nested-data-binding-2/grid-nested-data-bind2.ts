@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { GridColumnDataType, IgxGridComponent, IgxColumnComponent, IgxGridFooterComponent } from 'igniteui-angular';
+import { GridColumnDataType } from 'igniteui-angular/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxColumnComponent, IgxGridFooterComponent } from 'igniteui-angular/grids/core';
 import { AMINO_DATA } from '../../data/amino-data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

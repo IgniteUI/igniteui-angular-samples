@@ -1,5 +1,7 @@
 import { Component, ViewChild, inject } from '@angular/core';
-import { IgxTreeGridComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

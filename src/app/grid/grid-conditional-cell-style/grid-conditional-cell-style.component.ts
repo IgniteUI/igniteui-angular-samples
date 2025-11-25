@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { athletesData } from '../../data/athletesData';
-import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { DecimalPipe, PercentPipe } from '@angular/common';
 

@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxTabHeaderLabelDirective } from 'igniteui-angular';
+import { IgxTabHeaderComponent, IgxTabHeaderLabelDirective, IgxTabItemComponent, IgxTabsComponent } from 'igniteui-angular/tabs';
 
 @Component({
     selector: 'app-tabs-sample-4',

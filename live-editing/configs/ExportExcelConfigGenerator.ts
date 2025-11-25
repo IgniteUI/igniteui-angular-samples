@@ -1,13 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import {
-    IgxButtonModule,
-    IgxDropDownComponent,
-    IgxDropDownModule,
-    IgxExcelExporterService,
-    IgxGridModule,
-    IgxTreeGridModule,
-    IgxToggleModule 
-} from 'igniteui-angular';
+import { IgxButtonModule, IgxToggleModule } from 'igniteui-angular/directives';
+import { IgxDropDownComponent, IgxDropDownModule } from 'igniteui-angular/drop-down';
+import { IgxExcelExporterService } from 'igniteui-angular/core';
+import { IgxGridModule } from 'igniteui-angular/grids/grid';
+import { IgxTreeGridModule } from 'igniteui-angular/grids/tree-grid';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 export class ExportExcelConfigGenerator implements IConfigGenerator {

@@ -1,6 +1,9 @@
 import { AfterViewInit, Component, HostBinding, OnDestroy, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxOverlayOutletDirective, OverlaySettings, IgxDialogTitleDirective, IgxDialogActionsDirective, IgxButtonDirective, IgxFocusDirective } from 'igniteui-angular';
-import { IgxCategoryChartComponent, IgxCategoryChartModule } from 'igniteui-angular-charts';
+import { Router } from '@angular/router';
+import { IgxDialogActionsDirective, IgxDialogComponent, IgxDialogTitleDirective } from 'igniteui-angular/dialog';
+import { IgxOverlayOutletDirective, OverlaySettings } from 'igniteui-angular/core';
+import { IgxButtonDirective, IgxFocusDirective } from 'igniteui-angular/directives';
+import { IgxCategoryChartComponent, IgxCategoryChartCoreModule } from 'igniteui-angular-charts';
 import { Stock } from '../data/financialData';
 import { ControllerComponent } from './controllers.component';
 import { GridFinJSComponent } from './grid-finjs.component';

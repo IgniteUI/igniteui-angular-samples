@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelBodyComponent } from 'igniteui-angular';
+import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
 @Component({
     // tslint:disable-next-line:component-selector
     selector: 'app-expansion-sample-1',

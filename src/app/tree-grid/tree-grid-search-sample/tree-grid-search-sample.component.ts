@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxChipsAreaComponent, IgxChipComponent, IgxIconButtonDirective, IgxRippleDirective, IgxColumnComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxChipComponent, IgxChipsAreaComponent } from 'igniteui-angular/chips';
+import { IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 import { FormsModule } from '@angular/forms';

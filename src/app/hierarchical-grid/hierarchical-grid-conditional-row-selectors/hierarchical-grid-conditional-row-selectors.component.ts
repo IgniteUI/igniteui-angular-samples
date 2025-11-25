@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { IRowSelectionEventArgs, IgxHierarchicalGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxRowIslandComponent, IgxRowSelectorDirective, IgxCheckboxComponent } from 'igniteui-angular';
+import { IRowSelectionEventArgs, IgxColumnComponent, IgxRowSelectorDirective } from 'igniteui-angular/grids/core';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

@@ -1,8 +1,8 @@
-import {IgxButtonModule,
-IgxCalendarModule,
-IgxCardModule,
-IgxInputGroupModule,
-IgxSelectModule} from 'igniteui-angular';
+import { IgxButtonModule } from 'igniteui-angular/directives';
+import { IgxCalendarModule } from 'igniteui-angular/calendar';
+import { IgxCardModule } from 'igniteui-angular/card';
+import { IgxInputGroupModule } from 'igniteui-angular/input-group';
+import { IgxSelectModule } from 'igniteui-angular/select';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class MonthPickerConfigGenerator implements IConfigGenerator {

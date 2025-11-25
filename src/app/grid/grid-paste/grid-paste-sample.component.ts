@@ -1,5 +1,9 @@
 import { Component, ViewChild, inject } from '@angular/core';
-import { IgxExcelExporterOptions, IgxExcelExporterService, IgxGridComponent, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxColumnComponent } from 'igniteui-angular';
+import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
+import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 
 import { EXCEL_DATA, LOCAL_DATA } from './data';
 

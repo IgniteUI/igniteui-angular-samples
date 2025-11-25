@@ -1,5 +1,6 @@
 import { Component, Pipe, PipeTransform, forwardRef } from '@angular/core';
-import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownItemComponent } from 'igniteui-angular';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownItemComponent } from 'igniteui-angular/drop-down';
 import { FormsModule } from '@angular/forms';
 
 

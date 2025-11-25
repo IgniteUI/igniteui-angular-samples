@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, inject } from '@angular/core';
 
-import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
+import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular/core';
 
 @Component({
     selector: 'app-excel-export',

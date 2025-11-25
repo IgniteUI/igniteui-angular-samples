@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective } from 'igniteui-angular';
+import { IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';
+import { IgxRippleDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-contact-list',
