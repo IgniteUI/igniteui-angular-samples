@@ -49,7 +49,7 @@ jobs:
         run: npm config set ${{secrets.IG_SCOPE}}:_auth=${{secrets.IG_TOKEN}}
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
 
       - name: Run lint
         run: npm run lint
