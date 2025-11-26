@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxButtonDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent, IgxAvatarComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-ripple-styling-sample',

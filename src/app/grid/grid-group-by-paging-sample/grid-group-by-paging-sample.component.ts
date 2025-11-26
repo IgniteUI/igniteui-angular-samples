@@ -1,10 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, ISortingExpression, SortingDirection } from 'igniteui-angular/core';
-import { GridSelectionMode, IgxColumnComponent, IgxGroupByRowTemplateDirective } from 'igniteui-angular/grids/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxBadgeComponent } from 'igniteui-angular/badge';
+import { DefaultSortingStrategy, GridSelectionMode, IgxGridComponent, ISortingExpression, SortingDirection, IgxPaginatorComponent, IgxColumnComponent, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent } from 'igniteui-angular';
 import { INVOICE_DATA } from '../../data/invoiceData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

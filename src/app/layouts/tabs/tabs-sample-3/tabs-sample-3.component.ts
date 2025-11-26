@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxTabContentComponent, IgxTabHeaderComponent, IgxTabHeaderIconDirective, IgxTabHeaderLabelDirective, IgxTabItemComponent, IgxTabsComponent } from 'igniteui-angular/tabs';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxIconComponent, IgxTabHeaderIconDirective, IgxTabHeaderLabelDirective, IgxTabContentComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-tabs-sample-3',

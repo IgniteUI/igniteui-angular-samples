@@ -1,8 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { VerticalAlignment } from 'igniteui-angular/core';
+import { IgxColumnComponent, IgxGridComponent, IgxToastComponent, VerticalAlignment } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

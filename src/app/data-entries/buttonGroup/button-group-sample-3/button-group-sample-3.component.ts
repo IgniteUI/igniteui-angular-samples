@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonGroupComponent } from 'igniteui-angular';
 
 interface IButton {
     ripple?: string;

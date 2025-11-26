@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IgxStepComponent, IgxStepContentDirective, IgxStepTitleDirective, IgxStepperComponent, IgxStepperOrientation, IgxStepperTitlePosition } from 'igniteui-angular/stepper';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IButtonGroupEventArgs, IgxStepperOrientation, IgxStepperTitlePosition, IgxButtonGroupComponent, IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-label-position-and-orientation-sample',

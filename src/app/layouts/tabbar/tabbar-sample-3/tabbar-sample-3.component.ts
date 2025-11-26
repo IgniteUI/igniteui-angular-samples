@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { ISelectionEventArgs } from 'igniteui-angular/drop-down';
+import { ISelectionEventArgs } from 'igniteui-angular';
 
 @Component({
     selector: 'app-tabbar-sample-3',

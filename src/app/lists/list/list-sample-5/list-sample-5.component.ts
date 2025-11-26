@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxEmptyListTemplateDirective, IgxListComponent } from 'igniteui-angular/list';
+import { IgxListComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-list-sample-5',

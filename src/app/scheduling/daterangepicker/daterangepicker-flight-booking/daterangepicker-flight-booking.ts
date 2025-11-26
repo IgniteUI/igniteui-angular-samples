@@ -1,9 +1,5 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
-import { DateRange } from 'igniteui-angular/core';
-import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
-import { IgxHintDirective, IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxDateRangePickerComponent } from 'igniteui-angular/date-picker';
+import { DateRange, IgxSelectComponent, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxDateRangePickerComponent, IgxLabelDirective, IgxHintDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 import { PipeWithoutTownFrom as PipeWithoutTownFrom_1 } from '../../datepicker/datepicker-sample-9/datepicker-sample-9.component';

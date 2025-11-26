@@ -1,8 +1,9 @@
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxInputGroupModule } from 'igniteui-angular/input-group';
-import { IgxMaskModule, IgxTextSelectionModule } from 'igniteui-angular/directives';
-import { IgxSnackbarModule } from 'igniteui-angular/snackbar';
-import { IgxSwitchModule } from 'igniteui-angular/switch';
+import {IgxIconModule,
+IgxInputGroupModule,
+IgxMaskModule,
+IgxSnackbarModule,
+IgxSwitchModule,
+IgxTextSelectionModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class MaskConfigGenerator implements IConfigGenerator {

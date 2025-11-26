@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-icon-sample-3',

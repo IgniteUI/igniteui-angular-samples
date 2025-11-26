@@ -1,8 +1,12 @@
 import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { facebook, linkedin } from '@igniteui/material-icons-extended';
-import { IgxChipComponent, IgxChipsAreaComponent } from 'igniteui-angular/chips';
-import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
-import { IgxPrefixDirective } from 'igniteui-angular/input-group';
+import { 
+  IgxChipsAreaComponent, 
+  IgxChipComponent, 
+  IgxIconComponent, 
+  IgxPrefixDirective, 
+  IgxIconService
+} from 'igniteui-angular';
 import { NgClass } from '@angular/common';
 
 @Component({

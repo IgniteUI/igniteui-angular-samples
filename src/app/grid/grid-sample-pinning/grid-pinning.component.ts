@@ -1,7 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit, AfterViewInit, inject } from '@angular/core';
-import { IgxCellHeaderTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
+import { IgxColumnComponent, IgxGridComponent, IgxIconService, IgxCellHeaderTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { icons } from '../../services/svgIcons';
 
 import { DATA } from '../../data/customers';

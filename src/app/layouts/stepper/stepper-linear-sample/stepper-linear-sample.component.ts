@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IgxStepActiveIndicatorDirective, IgxStepComponent, IgxStepContentDirective, IgxStepSubtitleDirective, IgxStepTitleDirective, IgxStepperComponent } from 'igniteui-angular/stepper';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxRadioComponent, IgxRadioGroupDirective } from 'igniteui-angular/radio';
+import { IButtonGroupEventArgs, IgxButtonGroupComponent, IgxStepperComponent, IgxStepActiveIndicatorDirective, IgxIconComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxButtonDirective, IgxStepSubtitleDirective, IgxRadioGroupDirective, IgxRadioComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 

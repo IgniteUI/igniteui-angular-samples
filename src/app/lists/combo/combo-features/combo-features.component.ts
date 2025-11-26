@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxComboComponent } from 'igniteui-angular/combo';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxComboComponent, IgxSwitchComponent } from 'igniteui-angular';
 import { localData } from './local-data';
 import { FormsModule } from '@angular/forms';
 

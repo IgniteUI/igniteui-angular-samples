@@ -1,9 +1,9 @@
-import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
-import { IgxButtonModule } from 'igniteui-angular/directives';
-import { IgxDropDownModule } from 'igniteui-angular/drop-down';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxInputGroupModule } from 'igniteui-angular/input-group';
-import { IgxSelectModule } from 'igniteui-angular/select';
+import {IgxButtonGroupModule,
+IgxButtonModule,
+IgxDropDownModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxSelectModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class SelectConfigGenerator implements IConfigGenerator {

@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxButtonDirective, IgxToastComponent, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-toast-sample-3',

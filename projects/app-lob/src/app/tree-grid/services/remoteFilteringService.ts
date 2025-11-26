@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilteringStrategy, IFilteringExpressionsTree } from 'igniteui-angular/core';
+import { FilteringStrategy, IFilteringExpressionsTree } from 'igniteui-angular';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 

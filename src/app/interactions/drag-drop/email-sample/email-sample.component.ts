@@ -1,8 +1,5 @@
 import { ChangeDetectorRef, Component, Input, Renderer2, inject } from '@angular/core';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
-import { IgxDragDirective, IgxDropDirective } from 'igniteui-angular/directives';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxIconComponent, IgxListComponent, IgxListItemComponent, IgxDropDirective, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxDragDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent } from 'igniteui-angular';
 
 import { FormsModule } from '@angular/forms';
 

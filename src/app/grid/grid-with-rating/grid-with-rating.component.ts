@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { CellType, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgcFormControlDirective } from 'igniteui-angular/directives';
+import { IgxToastComponent, CellType, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgcFormControlDirective } from 'igniteui-angular';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

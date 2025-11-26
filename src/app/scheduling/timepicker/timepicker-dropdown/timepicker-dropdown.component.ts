@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { PickerInteractionMode } from 'igniteui-angular/core';
-import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
-import { IgxLabelDirective } from 'igniteui-angular/input-group';
+import { PickerInteractionMode, IgxTimePickerComponent, IgxLabelDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

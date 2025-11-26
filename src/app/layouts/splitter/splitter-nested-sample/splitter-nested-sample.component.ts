@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSplitterComponent, IgxSplitterPaneComponent, SplitterType } from 'igniteui-angular/splitter';
+import { SplitterType, IgxSplitterComponent, IgxSplitterPaneComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-splitter-nested-sample',

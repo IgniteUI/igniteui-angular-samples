@@ -1,10 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
-import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
-import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxPrefixDirective } from 'igniteui-angular/input-group';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxCarouselComponent, IgxSelectComponent, IgxSelectItemComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective, IgxSwitchComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 import { TitleCasePipe } from '@angular/common';
 

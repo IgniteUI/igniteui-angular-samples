@@ -1,14 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent } from 'igniteui-angular/dialog';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
-import { IgxSummaryResult } from 'igniteui-angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxButtonDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxDialogComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxCheckboxComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { Employee } from './employee';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

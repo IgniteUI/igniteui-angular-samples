@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxBottomNavComponent, IgxBottomNavContentComponent, IgxBottomNavHeaderComponent, IgxBottomNavItemComponent } from 'igniteui-angular/bottom-nav';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavContentComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-tabbar-sample-1',

@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { CellType, GridSelectionMode, IGridKeydownEventArgs, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IGridKeydownEventArgs, CellType, IgxTreeGridComponent, GridSelectionMode, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { EMPLOYEE_DATA } from './data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

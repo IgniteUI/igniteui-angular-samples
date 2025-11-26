@@ -1,10 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxGridDetailTemplateDirective } from 'igniteui-angular/grids/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxTabContentComponent, IgxTabHeaderComponent, IgxTabHeaderLabelDirective, IgxTabItemComponent, IgxTabsComponent } from 'igniteui-angular/tabs';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxDividerDirective } from 'igniteui-angular/directives';
+import { IgxColumnComponent, IgxGridComponent, IgxGridDetailTemplateDirective, IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxTabHeaderLabelDirective, IgxTabContentComponent, IgxAvatarComponent, IgxDividerDirective } from 'igniteui-angular';
 import { IgxLegendComponent, IgxPieChartCoreModule, IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts';
 import { employeesData } from '../../data/employeesData';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';

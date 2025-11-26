@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EMPLOYEE_FLAT_AVATARS_DATA } from '../data/employees-flat-avatars';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

@@ -1,5 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonGroupComponent } from 'igniteui-angular';
 
 type Button = {
     label: string,

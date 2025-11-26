@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
-import { IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxSwitchComponent, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 

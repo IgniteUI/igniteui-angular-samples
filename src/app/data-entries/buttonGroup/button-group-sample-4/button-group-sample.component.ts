@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxRadioComponent } from 'igniteui-angular/radio';
-import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxRadioComponent, IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

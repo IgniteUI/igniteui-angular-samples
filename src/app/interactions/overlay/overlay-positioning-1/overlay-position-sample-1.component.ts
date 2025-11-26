@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnDestroy, ViewChild, ViewContainerRef, inject } from '@angular/core';
-import { ConnectedPositioningStrategy, IgxOverlayService, OverlaySettings } from 'igniteui-angular/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { ConnectedPositioningStrategy, IgxOverlayService, OverlaySettings, IgxButtonDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({

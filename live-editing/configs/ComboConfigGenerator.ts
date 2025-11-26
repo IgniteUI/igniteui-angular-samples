@@ -1,15 +1,17 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { HttpClientModule } from '@angular/common/http';
-import { IgxButtonModule } from 'igniteui-angular/directives';
-import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
-import { IgxCardModule } from 'igniteui-angular/card';
-import { IgxComboModule } from 'igniteui-angular/combo';
-import { IgxSelectModule } from 'igniteui-angular/select';
-import { IgxSwitchModule } from 'igniteui-angular/switch';
-import { IgxToastModule } from 'igniteui-angular/toast';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxSimpleComboModule } from 'igniteui-angular/simple-combo';
-import { IgxProgressBarModule } from 'igniteui-angular/progressbar';
+import {
+    IgxButtonModule,
+    IgxButtonGroupModule,
+    IgxCardModule,
+    IgxComboModule,
+    IgxSelectModule,
+    IgxSwitchModule,
+    IgxToastModule,
+    IgxIconModule,
+    IgxSimpleComboModule,
+    IgxProgressBarModule
+} from 'igniteui-angular';
 import { IgxFinancialChartModule } from 'igniteui-angular-charts';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing';
 import { BaseAppConfig } from './BaseConfig';

@@ -1,8 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { IgxTransactionService, State, Transaction, TransactionType } from 'igniteui-angular/core';
-import { IgxCardComponent } from 'igniteui-angular/card';
-import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxTransactionService, State, Transaction, TransactionType, IgxCardComponent, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxListActionDirective } from 'igniteui-angular';
 import { WISHLIST, WishlistItem } from '../data';
 import { NgClass } from '@angular/common';
 import { TransactionBasePipe } from '../pipes/transaction-base.pipe';

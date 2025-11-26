@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ColumnPinningPosition } from 'igniteui-angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IPinningConfig, IgxColumnComponent, IgxGridPinningActionsComponent, RowPinningPosition } from 'igniteui-angular/grids/core';
-import { IgxActionStripComponent } from 'igniteui-angular/action-strip';
+import { ColumnPinningPosition, IgxTreeGridComponent, IPinningConfig, RowPinningPosition, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

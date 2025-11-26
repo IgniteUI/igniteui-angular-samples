@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
-import { IgxHintDirective, IgxLabelDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
-import { IgxPickerToggleComponent } from 'igniteui-angular/core';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxTimePickerComponent, IgxLabelDirective, IgxPickerToggleComponent, IgxSuffixDirective, IgxIconComponent, IgxHintDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

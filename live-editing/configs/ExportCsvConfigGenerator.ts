@@ -1,6 +1,6 @@
-import { IgxCsvExporterService } from 'igniteui-angular/core';
-import { IgxGridModule } from 'igniteui-angular/grids/grid';
-import { IgxTreeGridModule } from 'igniteui-angular/grids/tree-grid';
+import {IgxCsvExporterService,
+IgxGridModule,
+IgxTreeGridModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class ExportCsvConfigGenerator implements IConfigGenerator {

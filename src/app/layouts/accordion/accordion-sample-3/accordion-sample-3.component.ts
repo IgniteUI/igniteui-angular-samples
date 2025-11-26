@@ -1,12 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSliderComponent, IgxSliderType } from 'igniteui-angular/slider';
-import { IgxAccordionComponent } from 'igniteui-angular/accordion';
-import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
-import { IgxRadioComponent } from 'igniteui-angular/radio';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
-import { IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxSliderType, IgxAccordionComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent, IgxCheckboxComponent, IgxSliderComponent, IgxRadioComponent, IgxIconComponent, IgxTimePickerComponent, IgxLabelDirective } from 'igniteui-angular';
 
 import { FormsModule } from '@angular/forms';
 

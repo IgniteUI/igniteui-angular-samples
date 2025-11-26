@@ -1,4 +1,4 @@
-import { IgxSwitchModule } from 'igniteui-angular/switch';
+import {IgxSwitchModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class SwitchConfigGenerator implements IConfigGenerator {

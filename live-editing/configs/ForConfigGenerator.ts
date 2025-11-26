@@ -1,8 +1,10 @@
-import { IgxAvatarModule } from 'igniteui-angular/avatar';
-import { IgxFilterModule, IgxForOfModule, IgxRippleModule } from 'igniteui-angular/directives';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxInputGroupModule } from 'igniteui-angular/input-group';
-import { IgxListModule } from 'igniteui-angular/list';
+import {IgxAvatarModule,
+IgxFilterModule,
+IgxForOfModule,
+IgxIconModule,
+IgxInputGroupModule,
+IgxListModule,
+IgxRippleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class ForConfigGenerator implements IConfigGenerator {

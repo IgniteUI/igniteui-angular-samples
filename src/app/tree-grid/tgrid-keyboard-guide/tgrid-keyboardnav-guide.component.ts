@@ -3,12 +3,7 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { CellType, IActiveNodeChangeEventArgs, IgxCellTemplateDirective, IgxColumnComponent, IgxColumnGroupComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
-import { IgxEmptyListTemplateDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';
-import { IgxOverlayService } from 'igniteui-angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxColumnComponent, IgxColumnGroupComponent, CellType, IgxListComponent, IgxOverlayService, IgxTreeGridComponent, IActiveNodeChangeEventArgs, IgxPaginatorComponent, IgxGridToolbarComponent, IgxCellTemplateDirective, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';

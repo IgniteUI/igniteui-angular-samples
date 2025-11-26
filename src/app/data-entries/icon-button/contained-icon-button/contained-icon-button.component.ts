@@ -1,7 +1,6 @@
 
 import { Component } from '@angular/core';
-import { IgxIconButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-contained-icon-button',

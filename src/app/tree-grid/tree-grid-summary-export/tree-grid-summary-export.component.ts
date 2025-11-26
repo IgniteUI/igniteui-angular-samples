@@ -1,9 +1,5 @@
 import { Component, ViewChild, inject } from '@angular/core';
-import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService, IgxTreeGridComponent, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxIconComponent } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { DatePipe } from '@angular/common';

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSliderComponent, TicksOrientation } from 'igniteui-angular/slider';
+import { TicksOrientation, IgxSliderComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-slider-primary-ticks-top',

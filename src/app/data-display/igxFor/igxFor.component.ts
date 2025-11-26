@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxFilterOptions, IgxFilterPipe, IgxForOfDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxFilterOptions, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxForOfDirective, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListActionDirective, IgxFilterPipe } from 'igniteui-angular';
 import { femaleFNames, lastName, maleFNames, middleNames } from './names';
 import { FormsModule } from '@angular/forms';
 

@@ -1,7 +1,5 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxButtonGroupComponent, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

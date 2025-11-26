@@ -1,8 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewContainerRef, inject } from '@angular/core';
-import { AbsolutePosition, IgxOverlayService, OverlaySettings, RelativePosition, RelativePositionStrategy } from 'igniteui-angular/core';
-import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { AbsolutePosition, IgxOverlayService, OverlaySettings, RelativePosition, RelativePositionStrategy, IButtonGroupEventArgs, IgxIconComponent, IgxButtonGroupComponent, IgxButtonDirective } from 'igniteui-angular';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 import { NgTemplateOutlet } from '@angular/common';
 

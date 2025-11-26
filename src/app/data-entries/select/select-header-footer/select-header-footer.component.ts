@@ -1,9 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, OnInit, inject } from '@angular/core';
-import { IgxSelectComponent, IgxSelectFooterDirective, IgxSelectHeaderDirective, IgxSelectItemComponent } from 'igniteui-angular/select';
-import { IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxIconComponent, IgxSelectHeaderDirective, IgxButtonGroupComponent, IgxButtonDirective, IgxSelectFooterDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-select-header-footer',

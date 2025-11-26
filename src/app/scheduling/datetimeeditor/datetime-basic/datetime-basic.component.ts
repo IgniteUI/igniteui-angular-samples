@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxDateTimeEditorDirective, IgxTextSelectionDirective } from 'igniteui-angular/directives';
+import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDateTimeEditorDirective, IgxTextSelectionDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-datetime-basic',

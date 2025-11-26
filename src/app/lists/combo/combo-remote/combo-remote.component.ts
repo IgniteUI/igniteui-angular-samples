@@ -1,8 +1,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
-import { IComboSearchInputEventArgs, IComboSelectionChangingEventArgs, IgxComboComponent } from 'igniteui-angular/combo';
-import { IForOfState } from 'igniteui-angular/directives';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { VerticalAlignment } from 'igniteui-angular/core';
+import {
+    IComboSearchInputEventArgs, IComboSelectionChangingEventArgs, IForOfState,
+    IgxComboComponent, IgxToastComponent, VerticalAlignment
+} from 'igniteui-angular';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';
 import { AsyncPipe } from '@angular/common';
 

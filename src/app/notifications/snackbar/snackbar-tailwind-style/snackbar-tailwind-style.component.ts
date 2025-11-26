@@ -1,6 +1,5 @@
 import { Component, ElementRef, inject } from '@angular/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
+import { IgxButtonDirective, IgxSnackbarComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-snackbar-tailwind-style',

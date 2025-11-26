@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ISlideEventArgs, IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
-import { IListItemClickEventArgs, IgxListComponent, IgxListItemComponent, IgxListThumbnailDirective } from 'igniteui-angular/list';
+import { IgxCarouselComponent, IgxListComponent, IListItemClickEventArgs, ISlideEventArgs, IgxSlideComponent, IgxListItemComponent, IgxListThumbnailDirective } from 'igniteui-angular';
 import { NgStyle, NgClass, CurrencyPipe } from '@angular/common';
 
 @Component({

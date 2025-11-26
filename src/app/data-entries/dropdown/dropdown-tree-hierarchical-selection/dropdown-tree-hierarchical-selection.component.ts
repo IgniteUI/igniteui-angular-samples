@@ -1,10 +1,5 @@
 import { AfterViewInit, Component, DoCheck, OnInit, ViewChild, ElementRef, PLATFORM_ID, inject } from '@angular/core';
-import { IBaseChipEventArgs, IgxChipComponent, IgxChipsAreaComponent } from 'igniteui-angular/chips';
-import { IgxDropDownComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
-import { ITreeNodeSelectionEvent, IgxTreeComponent, IgxTreeNodeComponent } from 'igniteui-angular/tree';
-import { ConnectedPositioningStrategy, OverlaySettings } from 'igniteui-angular/core';
-import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IBaseChipEventArgs, IgxDropDownComponent, IgxTreeComponent, ITreeNodeSelectionEvent, ConnectedPositioningStrategy, OverlaySettings, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxTreeNodeComponent } from 'igniteui-angular';
 import { COUNTRIES } from './countries';
 import { isPlatformBrowser } from '@angular/common';
 

@@ -1,10 +1,6 @@
 import { Component, ViewChild } from "@angular/core";
 
-import { IPivotConfiguration, IPivotUISettings, IgxPivotDateDimension, IgxPivotNumericAggregate, PivotAggregation, PivotRowLayoutType, PivotSummaryPosition } from 'igniteui-angular/grids/core';
-import { FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand } from 'igniteui-angular/core';
-import { IChangeCheckboxEventArgs } from 'igniteui-angular/checkbox';
-import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand, PivotRowLayoutType, IPivotUISettings, IChangeCheckboxEventArgs, IgxPivotGridComponent, PivotSummaryPosition, IgxSwitchComponent } from "igniteui-angular"
 import { SALES_DATA } from "../../data/dataToAnalyze";
 
 export class IgxTotalSaleAggregate {

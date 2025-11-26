@@ -1,12 +1,5 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogActionsDirective, IgxDialogComponent } from 'igniteui-angular/dialog';
-import { IgxOverlayOutletDirective } from 'igniteui-angular/core';
-import { IgxButtonDirective, IgxFlexDirective, IgxIconButtonDirective, IgxLayoutDirective } from 'igniteui-angular/directives';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective } from 'igniteui-angular/card';
-import { IgxSuffixDirective } from 'igniteui-angular/input-group';
-import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective } from 'igniteui-angular/list';
+import { IgxDialogComponent, IgxOverlayOutletDirective, IgxButtonDirective, IgxAvatarComponent, IgxIconButtonDirective, IgxIconComponent, IgxLayoutDirective, IgxCardComponent, IgxFlexDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxCardActionsComponent, IgxDialogActionsDirective, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListActionDirective } from 'igniteui-angular';
 import { NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, NgbRating, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionButton, NgbCollapse, NgbAccordionCollapse, NgbAccordionBody } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({

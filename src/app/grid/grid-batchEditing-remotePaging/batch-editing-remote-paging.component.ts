@@ -1,11 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
-import { IgxDialogComponent } from 'igniteui-angular/dialog';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { Transaction } from 'igniteui-angular/core';
-import { IgxPaginatorComponent, IgxPaginatorContentDirective } from 'igniteui-angular/paginator';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxDialogComponent, IgxGridComponent, Transaction, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { Observable } from 'rxjs';
 import { RemotePagingWithBatchEditingService } from '../../services/remotePagingWithBatchEditing.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

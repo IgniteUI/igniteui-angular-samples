@@ -1,7 +1,6 @@
 import { AfterViewInit, Component, ViewChild, inject } from "@angular/core";
 
-import { IPivotConfiguration, IgxPivotNumericAggregate, NoopPivotDimensionsStrategy } from 'igniteui-angular/grids/core';
-import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
+import { IPivotConfiguration, IgxPivotNumericAggregate, NoopPivotDimensionsStrategy, IgxPivotGridComponent } from "igniteui-angular"
 import { PivotDataService } from "../../services/pivotRemoteData.service";
 
 @Component({

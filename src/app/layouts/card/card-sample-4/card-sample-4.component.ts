@@ -1,13 +1,5 @@
 import { Component, OnInit, ViewChild, inject } from '@angular/core';
-import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent } from 'igniteui-angular/expansion-panel';
-import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
-import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
-import { IgxSliderComponent } from 'igniteui-angular/slider';
-import { IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
-import { IgxButtonDirective, IgxDividerDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxPrefixDirective } from 'igniteui-angular/input-group';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxChipComponent } from 'igniteui-angular/chips';
+import { IgxExpansionPanelComponent, IgxIconService, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxIconComponent, IgxSliderComponent, IgxExpansionPanelBodyComponent, IgxListComponent, IgxListItemComponent, IgxDividerDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective, IgxAvatarComponent, IgxChipComponent } from 'igniteui-angular';
 
 import {
     Card,

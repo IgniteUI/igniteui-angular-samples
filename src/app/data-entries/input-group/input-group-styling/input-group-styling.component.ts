@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
-import { THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
+import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxHintDirective, THEME_TOKEN, ThemeToken } from 'igniteui-angular';
 
 @Component({
     selector: 'app-input-group-style',

@@ -1,10 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, OnDestroy, inject } from '@angular/core';
-import { GridPagingMode, IGridEditDoneEventArgs, IRowDataEventArgs, IgxColumnComponent, IgxGridEditingActionsComponent, IgxGridRow } from 'igniteui-angular/grids/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
-import { NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular/core';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
-import { IgxActionStripComponent } from 'igniteui-angular/action-strip';
+import { GridPagingMode, IGridEditDoneEventArgs, IgxGridComponent, IgxGridRow, IgxSnackbarComponent, IRowDataEventArgs, NoopFilteringStrategy, NoopSortingStrategy, IgxPaginatorComponent, IgxColumnComponent, IgxActionStripComponent, IgxGridEditingActionsComponent } from 'igniteui-angular';
 import { Observable, Subject } from 'rxjs';
 import { Invoice } from '../../data/invoiceData';
 import { CRUDService } from '../../services/crud.service';

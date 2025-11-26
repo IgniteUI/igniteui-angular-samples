@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxActionStripComponent } from 'igniteui-angular/action-strip';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxActionStripComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-action-strip-paragraph-styling',

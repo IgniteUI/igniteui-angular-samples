@@ -1,9 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild, inject } from '@angular/core';
 
-import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService } from 'igniteui-angular/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular/grids/core';
+import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-scroll.directive';
 
 @Component({

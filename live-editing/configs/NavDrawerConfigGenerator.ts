@@ -1,8 +1,11 @@
 import {RouterModule} from '@angular/router';
-import { IgxButtonModule, IgxLayoutModule, IgxRippleModule, IgxToggleModule } from 'igniteui-angular/directives';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxNavigationDrawerModule } from 'igniteui-angular/navigation-drawer';
-import { IgxTreeModule } from 'igniteui-angular/tree';
+import {IgxButtonModule,
+IgxIconModule,
+IgxLayoutModule,
+IgxNavigationDrawerModule,
+IgxRippleModule,
+IgxToggleModule,
+IgxTreeModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class NavdrawerConfigGenerator implements IConfigGenerator {

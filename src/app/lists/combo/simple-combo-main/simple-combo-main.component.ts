@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IgRect } from 'igniteui-angular-core';
 import { StockData, updatedStockData } from '../../../data/stocks-data';
-import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
-import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxSimpleComboComponent, IgxButtonGroupComponent, IgxButtonDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 import { IgxFinancialChartCoreModule } from 'igniteui-angular-charts';

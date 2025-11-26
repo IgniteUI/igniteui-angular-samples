@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { TreeGridLoadOnDemandService } from './remoteService';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

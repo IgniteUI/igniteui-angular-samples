@@ -1,7 +1,5 @@
 import { Component, ElementRef, inject } from '@angular/core';
-import { IgxOverlayService } from 'igniteui-angular/core';
-import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
-import { IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxOverlayService, IgxDatePickerComponent, IgxLabelDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-datepicker-sample-1',

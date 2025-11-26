@@ -1,7 +1,8 @@
-import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
-import { IgxButtonModule, IgxRippleModule } from 'igniteui-angular/directives';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxRadioModule } from 'igniteui-angular/radio';
+import {IgxButtonGroupModule,
+IgxButtonModule,
+IgxIconModule,
+IgxRippleModule,
+IgxRadioModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class ButtonGroupConfigGenerator implements IConfigGenerator {

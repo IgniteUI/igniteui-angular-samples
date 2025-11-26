@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxSwitchComponent } from 'igniteui-angular';
 
 @Component({
   selector: 'app-switch-styling',

@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChildren } from '@angular/core';
-import { IgxColumnComponent, RowType } from 'igniteui-angular/grids/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxDropDirective } from 'igniteui-angular/directives';
+import { RowType, IgxGridComponent, IgxColumnComponent, IgxDropDirective } from 'igniteui-angular';
 import { moonData, planetData } from './data';
 import { PlanetComponent as PlanetComponent } from './planet/planet.component';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

@@ -18,7 +18,7 @@ export class DocsLayoutComponent implements OnInit {
     private typefaceUrl = 'https://fonts.googleapis.com/css?family=';
 
     @HostListener('window:message', ['$event'])
-    protected onMessage(e: MessageEvent) {
+    private onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin && typeof e.data.themeStyle === 'string') {
             this.styleElem.textContent = e.data.themeStyle;
 

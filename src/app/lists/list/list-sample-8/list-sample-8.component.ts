@@ -1,10 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxListComponent, IgxToastComponent, IgxListItemComponent, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxListActionDirective, IgxRippleDirective } from 'igniteui-angular';
 
 
 @Component({

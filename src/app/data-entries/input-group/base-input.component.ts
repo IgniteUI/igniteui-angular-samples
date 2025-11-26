@@ -1,5 +1,5 @@
 import { Directive, HostListener, QueryList, ViewChildren } from '@angular/core';
-import { IgxInputGroupComponent } from 'igniteui-angular/input-group';
+import { IgxInputGroupComponent } from 'igniteui-angular';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
@@ -11,7 +11,7 @@ export class BaseInputGroupSampleComponent {
     public type = null;
 
     @HostListener('window:message', ['$event'])
-    protected onMessage(e: MessageEvent) {
+    private onMessage(e: MessageEvent) {
         if (e.origin === e.data.origin && e.data.themeName) {
             this.applyInputTypeForTheme(e.data.themeName);
         }

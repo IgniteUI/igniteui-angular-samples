@@ -1,6 +1,5 @@
 import { Component, ElementRef, OnDestroy, ViewChild, ViewContainerRef, inject } from '@angular/core';
-import { AutoPositionStrategy, IgxOverlayService } from 'igniteui-angular/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { AutoPositionStrategy, IgxOverlayService, IgxButtonDirective } from 'igniteui-angular';
 import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 @Component({
     selector: 'app-overlay-sample',

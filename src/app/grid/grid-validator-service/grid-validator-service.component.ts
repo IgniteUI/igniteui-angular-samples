@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { employeesData } from '../../data/employeesData';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxColumnEmailValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective } from 'igniteui-angular/grids/core';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxSwitchComponent, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, IgxColumnMinValidatorDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 

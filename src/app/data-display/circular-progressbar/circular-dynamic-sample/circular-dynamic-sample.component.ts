@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxCircularProgressBarComponent, IgxProgressBarGradientDirective } from 'igniteui-angular/progressbar';
-import { IgxIconButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxCircularProgressBarComponent, IgxProgressBarGradientDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-circular-dynamic-sample',

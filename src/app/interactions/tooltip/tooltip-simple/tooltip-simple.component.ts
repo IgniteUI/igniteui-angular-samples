@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
+import { IgxAvatarComponent, IgxTooltipTargetDirective, IgxTooltipDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-tooltip-simple',

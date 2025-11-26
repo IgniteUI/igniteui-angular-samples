@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { DATA } from '../../data/nwindData';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, RowType } from 'igniteui-angular/grids/core';
+import { IgxGridComponent, RowType, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxCellValidationErrorDirective } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { NgTemplateOutlet } from '@angular/common';
 

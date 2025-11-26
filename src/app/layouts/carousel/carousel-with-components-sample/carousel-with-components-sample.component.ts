@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxCarouselComponent, IgxSlideComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxLabelDirective, IgxInputDirective, IgxButtonDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

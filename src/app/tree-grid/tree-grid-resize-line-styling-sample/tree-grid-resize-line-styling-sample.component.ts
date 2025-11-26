@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

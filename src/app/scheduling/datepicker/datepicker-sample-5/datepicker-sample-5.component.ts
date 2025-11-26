@@ -1,8 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { DateParser } from '../../../date-parser';
-import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
-import { IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxCalendarHeaderTemplateDirective, IgxCalendarSubheaderTemplateDirective } from 'igniteui-angular/calendar';
+import { IgxDatePickerComponent, IgxLabelDirective, IgxCalendarHeaderTemplateDirective, IgxCalendarSubheaderTemplateDirective } from 'igniteui-angular';
 import { TitleCasePipe } from '@angular/common';
 
 @Component({

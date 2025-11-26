@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxCheckboxComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 

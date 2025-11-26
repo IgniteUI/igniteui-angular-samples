@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IgxDragDirective, IgxDropDirective } from 'igniteui-angular/directives';
+import { IgxDragDirective, IgxDropDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-icons-sample',

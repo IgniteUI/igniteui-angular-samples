@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxCheckboxComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-checkbox-sample-2',

@@ -1,8 +1,5 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardThumbnailDirective } from 'igniteui-angular/card';
-import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
-import { IgxListComponent, IgxListItemComponent, IgxListLineDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
+import { IgxAvatarComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardThumbnailDirective, IgxIconComponent, IgxIconService, IgxListComponent, IgxListItemComponent, IgxListLineDirective, IgxListThumbnailDirective} from 'igniteui-angular';
 import { defineComponents, IgcTileManagerComponent } from 'igniteui-webcomponents';
 
 defineComponents(IgcTileManagerComponent);

@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IgxFlexDirective, IgxLayoutDirective } from 'igniteui-angular/directives';
+import { IgxLayoutDirective, IgxFlexDirective } from 'igniteui-angular';
 
 @Component({
     encapsulation: ViewEncapsulation.None,

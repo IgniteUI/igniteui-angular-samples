@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxLinearProgressBarComponent, IgxTextAlign } from 'igniteui-angular/progressbar';
+import { IgxTextAlign, IgxLinearProgressBarComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-linear-progressbar-sample-2',

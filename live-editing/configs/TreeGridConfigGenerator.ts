@@ -1,26 +1,34 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable max-len */
-import { IgxActionStripModule } from 'igniteui-angular/action-strip';
-import { IgxAvatarModule } from 'igniteui-angular/avatar';
-import { IgxBadgeModule } from 'igniteui-angular/badge';
-import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
-import { IgxButtonModule, IgxDragDropModule, IgxRippleModule, IgxToggleModule, IgxTooltipModule } from 'igniteui-angular/directives';
-import { IgxCheckboxModule } from 'igniteui-angular/checkbox';
-import { IgxChipsModule } from 'igniteui-angular/chips';
-import { IgxCsvExporterService, IgxExcelExporterService, IgxOverlayService } from 'igniteui-angular/core';
-import { IgxDatePickerModule } from 'igniteui-angular/date-picker';
-import { IgxDialogModule } from 'igniteui-angular/dialog';
-import { IgxGridModule } from 'igniteui-angular/grids/grid';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxInputGroupModule } from 'igniteui-angular/input-group';
-import { IgxListModule } from 'igniteui-angular/list';
-import { IgxRadioModule } from 'igniteui-angular/radio';
-import { IgxSelectModule } from 'igniteui-angular/select';
-import { IgxSimpleComboModule } from 'igniteui-angular/simple-combo';
-import { IgxSnackbarModule } from 'igniteui-angular/snackbar';
-import { IgxSwitchModule } from 'igniteui-angular/switch';
-import { IgxToastModule } from 'igniteui-angular/toast';
-import { IgxTreeGridModule } from 'igniteui-angular/grids/tree-grid';
+import {
+    IgxActionStripModule,
+    IgxAvatarModule,
+    IgxBadgeModule,
+    IgxButtonGroupModule,
+    IgxButtonModule,
+    IgxCheckboxModule,
+    IgxChipsModule,
+    IgxCsvExporterService,
+    IgxDatePickerModule,
+    IgxDialogModule,
+    IgxDragDropModule,
+    IgxExcelExporterService,
+    IgxGridModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxListModule,
+    IgxOverlayService,
+    IgxRadioModule,
+    IgxRippleModule,
+    IgxSelectModule,
+    IgxSimpleComboModule,
+    IgxSnackbarModule,
+    IgxSwitchModule,
+    IgxToastModule,
+    IgxTooltipModule,
+    IgxTreeGridModule,
+    IgxToggleModule
+} from 'igniteui-angular';
 import {
     IgxSparklineCoreModule,
     IgxSparklineModule

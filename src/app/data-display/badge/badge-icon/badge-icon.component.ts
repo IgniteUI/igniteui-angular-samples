@@ -1,8 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { heartMonitor } from '@igniteui/material-icons-extended';
-import { IgxIconService } from 'igniteui-angular/icon';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxBadgeComponent } from 'igniteui-angular/badge';
+import { IgxIconService, IgxAvatarComponent, IgxBadgeComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-badge-icon',

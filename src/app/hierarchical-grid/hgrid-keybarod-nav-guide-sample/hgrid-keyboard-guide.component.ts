@@ -4,11 +4,7 @@
 /* eslint-disable no-shadow */
 import { animate, state, style, transition, trigger } from '@angular/animations';
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
-import { CellType, IgxColumnComponent, IgxColumnGroupComponent, IgxGridToolbarComponent, IgxGridToolbarDirective } from 'igniteui-angular/grids/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxEmptyListTemplateDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { CellType, IgxColumnComponent, IgxColumnGroupComponent, IgxHierarchicalGridComponent, IgxListComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxListItemComponent, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective } from 'igniteui-angular';
 import { fromEvent, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { CUSTOMERS } from '../../data/hierarchical-data';

@@ -1,12 +1,7 @@
 import { AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren, inject } from "@angular/core";
 import { NavigationStart, Router, RouterLink } from "@angular/router";
 
-import { GridFeatures, IGridState, IGridStateOptions, IPivotAggregator, IPivotConfiguration, IPivotDimension, IPivotValue, IgxGridStateDirective, IgxPivotDateDimension, IgxPivotNumericAggregate, PivotAggregation } from 'igniteui-angular/grids/core';
-import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
-import { GridColumnDataType } from 'igniteui-angular/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, IgxGridStateDirective, IgxPivotGridComponent, IgxCheckboxComponent, GridFeatures, IGridStateOptions, IGridState, IPivotValue, IPivotDimension, IPivotAggregator, GridColumnDataType, IgxButtonDirective, IgxIconComponent } from "igniteui-angular"
 import { take } from "rxjs/operators";
 import { SALES_DATA } from "../../data/dataToAnalyze";
 

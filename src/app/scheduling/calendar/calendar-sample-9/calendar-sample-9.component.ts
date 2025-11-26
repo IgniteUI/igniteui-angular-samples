@@ -1,7 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IgxCalendarComponent } from 'igniteui-angular/calendar';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxButtonGroupComponent, IgxCalendarComponent, IgxButtonDirective }
+from 'igniteui-angular';
 
 
 const orientations = ["horizontal", "vertical"] as const;

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
-import { IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent } from 'igniteui-angular';
 
 
 @Component({
