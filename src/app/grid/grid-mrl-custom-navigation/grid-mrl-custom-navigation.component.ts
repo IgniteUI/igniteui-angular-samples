@@ -1,6 +1,5 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxColumnComponent, IgxColumnLayoutComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent, IgxColumnLayoutComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/company-data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

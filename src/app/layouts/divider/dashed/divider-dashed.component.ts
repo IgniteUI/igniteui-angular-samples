@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxDividerDirective } from 'igniteui-angular/directives';
+import { IgxDividerDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-divider-dashed',

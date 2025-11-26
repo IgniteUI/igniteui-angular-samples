@@ -1,9 +1,6 @@
 import { Component, Directive, Input, ViewChild } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IGridFormGroupCreatedEventArgs, IgxCellTemplateDirective, IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnEmailValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective } from 'igniteui-angular/grids/core';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, IgxCellValidationErrorDirective, IgxColumnMinValidatorDirective, IgxButtonDirective, IGridFormGroupCreatedEventArgs } from 'igniteui-angular';
 import { employeesData } from '../../data/employeesData';
 import { NgTemplateOutlet, DatePipe } from '@angular/common';
 

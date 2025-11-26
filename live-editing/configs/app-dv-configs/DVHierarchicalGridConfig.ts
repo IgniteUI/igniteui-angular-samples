@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { IgxHierarchicalGridModule } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxHierarchicalGridModule } from 'igniteui-angular';
 import {
     IgxSparklineCoreModule,
     IgxSparklineModule

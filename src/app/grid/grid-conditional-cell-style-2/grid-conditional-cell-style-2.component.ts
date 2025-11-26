@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent, IgxInputGroupComponent, IgxInputDirective, IgxHintDirective, IgxButtonDirective, IgxColumnComponent } from 'igniteui-angular';
 import { athletesData } from '../../data/athletesData';
 import { JsonPipe } from '@angular/common';
 

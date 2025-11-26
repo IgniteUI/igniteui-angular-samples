@@ -2,8 +2,14 @@ import { AfterViewInit, Directive, HostListener, Input, OnDestroy, inject } from
 import { Subject, fromEvent } from 'rxjs';
 import { map, take, takeUntil } from 'rxjs/operators';
 import { MultiLevelService } from './multi-level.service';
-import { IgxDropDownComponent, IgxDropDownItemComponent } from 'igniteui-angular/drop-down';
-import { ConnectedPositioningStrategy, HorizontalAlignment, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
+import {
+  IgxDropDownComponent,
+  OverlaySettings,
+  ConnectedPositioningStrategy,
+  IgxDropDownItemComponent,
+  HorizontalAlignment,
+  VerticalAlignment
+} from 'igniteui-angular';
 
 @Directive({
     selector: '[multiLevel]'

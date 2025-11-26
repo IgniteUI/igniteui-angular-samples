@@ -1,8 +1,6 @@
 import { Component, AfterViewInit, ViewChild, ChangeDetectorRef, inject } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarComponent, IgxGridToolbarDirective } from 'igniteui-angular/grids/core';
-import { FilteringExpressionsTree, FilteringLogic, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular/core';
+import { IgxHierarchicalGridComponent, IgxGridToolbarComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxGridToolbarDirective, FilteringExpressionsTree, IgxDateFilteringOperand, IgxStringFilteringOperand, IgxNumberFilteringOperand, FilteringLogic } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

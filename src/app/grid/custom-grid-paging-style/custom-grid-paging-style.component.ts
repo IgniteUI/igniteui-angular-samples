@@ -1,9 +1,5 @@
 import { Component, ViewChild, OnInit} from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
-import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxIconButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { athletesData } from '../../data/athletesData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { DecimalPipe } from '@angular/common';

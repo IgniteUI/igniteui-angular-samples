@@ -1,11 +1,14 @@
-import { IgxAvatarModule } from 'igniteui-angular/avatar';
-import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
-import { IgxButtonModule, IgxFilterModule, IgxFilterOptions, IgxRippleModule } from 'igniteui-angular/directives';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxInputGroupModule } from 'igniteui-angular/input-group';
-import { IgxListModule } from 'igniteui-angular/list';
-import { IgxSliderModule } from 'igniteui-angular/slider';
-import { IgxToastModule } from 'igniteui-angular/toast';
+import {IgxAvatarModule,
+IgxButtonGroupModule,
+IgxButtonModule,
+IgxFilterModule,
+IgxFilterOptions,
+IgxIconModule,
+IgxInputGroupModule,
+IgxListModule,
+IgxSliderModule,
+IgxToastModule,
+IgxRippleModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class ListConfigGenerator implements IConfigGenerator {

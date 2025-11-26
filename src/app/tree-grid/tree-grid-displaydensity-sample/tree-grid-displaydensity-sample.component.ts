@@ -1,8 +1,5 @@
 import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
-import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxColumnGroupComponent, IgxNumberSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
-import { IgxSummaryResult } from 'igniteui-angular/core';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxButtonGroupComponent, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, IgxTreeGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { DatePipe } from '@angular/common';

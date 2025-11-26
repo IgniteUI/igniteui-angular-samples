@@ -5,10 +5,7 @@ import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPan
 import { FinancialData } from '../../data/financialData';
 import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IColumnSelectionEventArgs, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxDividerDirective } from 'igniteui-angular/directives';
-import { IgxBadgeComponent } from 'igniteui-angular/badge';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxDividerDirective, IgxBadgeComponent, IColumnSelectionEventArgs } from 'igniteui-angular';
 import { NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
 import { debounceTime } from 'rxjs/operators';
 

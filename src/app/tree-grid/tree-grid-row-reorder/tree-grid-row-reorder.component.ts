@@ -1,9 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { GridSelectionMode, IgxColumnComponent, RowType } from 'igniteui-angular/grids/core';
-import { Point } from 'igniteui-angular/core';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IDropDroppedEventArgs, IgxTreeGridComponent, RowType, Point, GridSelectionMode, IgxDropDirective, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

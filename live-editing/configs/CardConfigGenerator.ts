@@ -1,11 +1,16 @@
-import { IgxAvatarModule } from 'igniteui-angular/avatar';
-import { IgxButtonModule, IgxDividerModule, IgxLayoutModule, IgxRippleModule } from 'igniteui-angular/directives';
-import { IgxCardModule } from 'igniteui-angular/card';
-import { IgxChipsModule } from 'igniteui-angular/chips';
-import { IgxExpansionPanelModule } from 'igniteui-angular/expansion-panel';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxListModule } from 'igniteui-angular/list';
-import { IgxSliderModule } from 'igniteui-angular/slider';
+import {
+    IgxAvatarModule,
+    IgxButtonModule,
+    IgxCardModule,
+    IgxChipsModule,
+    IgxDividerModule,
+    IgxExpansionPanelModule,
+    IgxIconModule,
+    IgxLayoutModule,
+    IgxListModule,
+    IgxRippleModule,
+    IgxSliderModule
+} from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class CardConfigGenerator implements IConfigGenerator {

@@ -1,7 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IGroupingExpression } from 'igniteui-angular/core';
-import { IgxTreeGridComponent, IgxTreeGridGroupByAreaComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { DefaultSortingStrategy, IGroupingExpression, IgxTreeGridComponent, IgxTreeGridGroupByAreaComponent, IgxColumnComponent } from 'igniteui-angular';
 import { TreeGridGroupingLoadOnDemandService, TreeGridGroupingParameters } from './remoteService';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

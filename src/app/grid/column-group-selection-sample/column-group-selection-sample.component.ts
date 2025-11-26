@@ -1,6 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxColumnComponent, IgxColumnGroupComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent, IgxColumnGroupComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../data/customers';
 
 @Component({

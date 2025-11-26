@@ -1,13 +1,18 @@
 /* eslint-disable max-len */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { HttpClientModule } from '@angular/common/http';
-import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
-import { IgxButtonModule, IgxRippleModule, IgxToggleModule } from 'igniteui-angular/directives';
-import { IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular/core';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxSliderModule } from 'igniteui-angular/slider';
-import { IgxSwitchModule } from 'igniteui-angular/switch';
-import { IgxTreeGridModule } from 'igniteui-angular/grids/tree-grid';
+import {
+    IgxButtonGroupModule,
+    IgxButtonModule,
+    IgxCsvExporterService,
+    IgxExcelExporterService,
+    IgxIconModule,
+    IgxRippleModule,
+    IgxSliderModule,
+    IgxSwitchModule,
+    IgxToggleModule,
+    IgxTreeGridModule
+} from 'igniteui-angular';
 import {
     IgxSparklineCoreModule,
     IgxSparklineModule

@@ -1,9 +1,6 @@
 import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
-import { IgxExcelExporterOptions, IgxExcelExporterService, IgxSummaryResult } from 'igniteui-angular/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxExcelExporterOptions, IgxExcelExporterService, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class MySummary  {

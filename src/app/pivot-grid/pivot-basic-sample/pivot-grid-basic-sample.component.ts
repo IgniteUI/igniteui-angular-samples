@@ -1,8 +1,7 @@
 import { Component } from "@angular/core";
 import { DATA } from '../../data/pivot-data';
 
-import { IPivotConfiguration, IgxPivotNumericAggregate } from 'igniteui-angular/grids/core';
-import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
+import { IPivotConfiguration, IgxPivotNumericAggregate, IgxPivotGridComponent } from "igniteui-angular"
 
 @Component({
     selector: 'app-pivot-grid-basic-sample',

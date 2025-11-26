@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseInputGroupSampleComponent } from '../base-input.component';
 import { FormsModule } from '@angular/forms';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-input-group-sample-1',

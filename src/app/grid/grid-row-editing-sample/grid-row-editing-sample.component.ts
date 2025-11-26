@@ -1,9 +1,6 @@
 import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellEditorTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
-import { IgxFocusDirective } from 'igniteui-angular/directives';
+import { IgxGridComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxInputGroupComponent, IgxInputDirective, IgxFocusDirective } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';
 

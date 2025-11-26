@@ -1,10 +1,6 @@
 import { Component, ElementRef, Renderer2, ViewChild, inject } from '@angular/core';
 import { generateEmployeeFlatData } from '../data/employees-flat';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxSwitchComponent, IgxTreeGridComponent, IgxColumnComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

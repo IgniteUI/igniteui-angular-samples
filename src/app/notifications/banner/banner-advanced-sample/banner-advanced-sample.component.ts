@@ -1,11 +1,5 @@
 import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerActionsDirective, IgxBannerComponent } from 'igniteui-angular/banner';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { VerticalAlignment } from 'igniteui-angular/core';
-import { IgxNavbarComponent } from 'igniteui-angular/navbar';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxCardComponent } from 'igniteui-angular/card';
+import { IgxBannerComponent, IgxToastComponent, VerticalAlignment, IgxNavbarComponent, IgxIconComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 
 @Component({

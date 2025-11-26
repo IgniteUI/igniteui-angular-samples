@@ -1,8 +1,5 @@
 import { Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
-import { AbsoluteScrollStrategy, AutoPositionStrategy, ConnectedPositioningStrategy, ElasticPositionStrategy, GlobalPositionStrategy, HorizontalAlignment, IgxOverlayService, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent } from 'igniteui-angular/card';
+import { AbsoluteScrollStrategy, AutoPositionStrategy, ConnectedPositioningStrategy, ElasticPositionStrategy, GlobalPositionStrategy, HorizontalAlignment, IgxOverlayService, OverlaySettings, PositionSettings, VerticalAlignment, IgxSwitchComponent, IgxIconComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardContentDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 // tslint:disable:object-literal-sort-keys
 @Component({

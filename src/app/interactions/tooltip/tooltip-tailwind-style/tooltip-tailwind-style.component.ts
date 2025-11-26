@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
-import { IgxOverlayOutletDirective } from 'igniteui-angular/core';
+import { IgxAvatarComponent, IgxTooltipTargetDirective, IgxOverlayOutletDirective, IgxTooltipDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-tooltip-tailwind-style',

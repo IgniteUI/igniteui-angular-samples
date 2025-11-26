@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GridSelectionMode, IgxCSVTextDirective, IgxColumnComponent, IgxExcelTextDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { GridSelectionMode, IgxTreeGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxCSVTextDirective, IgxColumnComponent } from 'igniteui-angular';
 import { FULL_EMPLOYEE_DATA } from '../data/employees';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

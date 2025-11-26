@@ -1,10 +1,5 @@
 import { Component, ViewChild, ChangeDetectorRef, AfterViewInit, ViewChildren, QueryList, inject } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridPinningActionsComponent, RowType } from 'igniteui-angular/grids/core';
-import { Transaction } from 'igniteui-angular/core';
-import { IgxActionStripComponent } from 'igniteui-angular/action-strip';
-import { IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxHierarchicalGridComponent, RowType, Transaction, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxActionStripComponent, IgxGridPinningActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

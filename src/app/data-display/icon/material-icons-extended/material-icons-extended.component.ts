@@ -2,11 +2,7 @@
 import { Component, OnInit, Pipe, PipeTransform, Renderer2, forwardRef, DOCUMENT, inject } from '@angular/core';
 import * as fileSaver from 'file-saver';
 
-import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
-import { ISelectionEventArgs } from 'igniteui-angular/drop-down';
-import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconService, ISelectionEventArgs, IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective } from 'igniteui-angular';
 
 import {
     all as imxIcons,

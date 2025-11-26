@@ -1,9 +1,5 @@
 import { AfterViewInit, Component, ViewChild, inject } from "@angular/core";
-import { IGridState, IGridStateOptions, IPivotConfiguration, IgxGridStateDirective, IgxPivotNumericAggregate, NoopPivotDimensionsStrategy } from 'igniteui-angular/grids/core';
-import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
-import { NoopSortingStrategy } from 'igniteui-angular/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IPivotConfiguration, IgxPivotNumericAggregate, NoopPivotDimensionsStrategy, IgxPivotGridComponent, NoopSortingStrategy, IGridState, IGridStateOptions, IgxGridStateDirective, IgxButtonDirective, IgxIconComponent } from "igniteui-angular"
 import { PivotDataService } from "../../services/pivotRemoteData.service";
 import { take } from 'rxjs/operators';
 

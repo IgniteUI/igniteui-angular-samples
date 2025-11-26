@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
-import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent } from 'igniteui-angular';
 
 @Component({
     // tslint:disable-next-line:component-selector

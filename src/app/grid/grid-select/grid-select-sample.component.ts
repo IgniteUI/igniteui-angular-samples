@@ -1,9 +1,6 @@
 import { Character } from './characters';
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellEditorTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
-import { IgxFocusDirective } from 'igniteui-angular/directives';
+import { IgxGridComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent } from 'igniteui-angular';
 import { DATA, ALIGNMENTS, RACES, CLASSES } from './data';
 import { FormsModule } from '@angular/forms';
 

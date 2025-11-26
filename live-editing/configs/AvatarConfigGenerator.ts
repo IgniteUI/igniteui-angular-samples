@@ -1,4 +1,4 @@
-import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxAvatarModule } from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class AvatarConfigGenerator implements IConfigGenerator {

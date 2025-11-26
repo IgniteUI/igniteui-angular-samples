@@ -25,10 +25,7 @@ import localeHI from '@angular/common/locales/hi';
 import localeHans from '@angular/common/locales/zh-Hans';
 import localeHant from '@angular/common/locales/zh-Hant';
 import { DATA } from '../../../data/nwindData';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { GridResourceStringsEN, IGridResourceStrings } from 'igniteui-angular/core';
-import { IgxColumnComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
-import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxGridComponent, GridResourceStringsEN, IGridResourceStrings, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxSelectComponent, IgxSelectItemComponent, IgxColumnComponent } from 'igniteui-angular';
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
     IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,

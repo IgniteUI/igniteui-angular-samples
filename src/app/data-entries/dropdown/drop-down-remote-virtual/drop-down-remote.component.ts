@@ -1,9 +1,6 @@
 import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, AfterViewInit, inject } from '@angular/core';
 // tslint:disable-next-line:max-line-length
-import { IForOfState, IgxButtonDirective, IgxForOfDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
-import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { VerticalAlignment } from 'igniteui-angular/core';
+import { IForOfState, IgxDropDownComponent, IgxForOfDirective, IgxToastComponent, VerticalAlignment, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownItemComponent } from 'igniteui-angular';
 import { Subject, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { RemoteNWindService } from '../../../services/remoteNwind.service';

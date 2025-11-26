@@ -3,8 +3,7 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxChartIntegrationDirective, IgxContextMenuDirective, IgxConditionalFormattingDirective,  OPTIONS_TYPE, CHART_TYPE } from 'igniteui-angular-extras';
 
 import { FinancialData } from '../data/financialData';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DecimalPipe, CurrencyPipe } from '@angular/common';
 
 @Component({

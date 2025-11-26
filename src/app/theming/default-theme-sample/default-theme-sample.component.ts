@@ -1,15 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxOverlayOutletDirective, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
-import { IgxDialogComponent } from 'igniteui-angular/dialog';
-import { IgxDropDownComponent } from 'igniteui-angular/drop-down';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
-import { IgxButtonDirective, IgxIconButtonDirective, IgxLayoutDirective } from 'igniteui-angular/directives';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
-import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxDialogComponent, IgxDropDownComponent, IgxGridComponent, IgxOverlayOutletDirective, IgxSnackbarComponent, VerticalAlignment, OverlaySettings, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxLayoutDirective, IgxButtonDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 import { DATA } from '../data/data';
 import { Record } from '../data/record';
 import { FormsModule } from '@angular/forms';

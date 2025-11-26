@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxCircularProgressBarComponent } from 'igniteui-angular/progressbar';
+import { IgxCircularProgressBarComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-circular-styling-sample',

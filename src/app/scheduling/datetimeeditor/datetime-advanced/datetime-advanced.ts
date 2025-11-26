@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { DatePart } from 'igniteui-angular/core';
-import { IgxInputDirective, IgxInputGroupComponent, IgxSuffixDirective } from 'igniteui-angular/input-group';
-import { IgxDateTimeEditorDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { DatePart, IgxInputGroupComponent, IgxInputDirective, IgxDateTimeEditorDirective, IgxSuffixDirective, IgxIconComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

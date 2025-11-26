@@ -7,11 +7,19 @@ import {
     QueryList,
     ViewChildren
 } from "@angular/core";
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
-import { ConnectedPositioningStrategy, HorizontalAlignment, IgxSummaryResult, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
-import { IgxButtonDirective, IgxToggleDirective } from 'igniteui-angular/directives';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import {
+    IgxGridComponent,
+    IgxNumberSummaryOperand,
+    IgxSummaryResult,
+    IgxColumnComponent,
+    IgxButtonDirective,
+    IgxCheckboxComponent,
+    IgxToggleDirective,
+    HorizontalAlignment,
+    VerticalAlignment,
+    OverlaySettings,
+    ConnectedPositioningStrategy
+} from "igniteui-angular";
 import { DATA } from "../../data/nwindData";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
 

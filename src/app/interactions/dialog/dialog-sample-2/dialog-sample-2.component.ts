@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxDialogComponent } from 'igniteui-angular/dialog';
+import { IgxButtonDirective, IgxRippleDirective, IgxDialogComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-dialog-sample-2',

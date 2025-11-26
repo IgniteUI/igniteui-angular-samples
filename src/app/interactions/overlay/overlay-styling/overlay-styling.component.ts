@@ -1,6 +1,5 @@
 import { Component, ElementRef, inject } from '@angular/core';
-import { IgxOverlayService } from 'igniteui-angular/core';
-import { IgxComboComponent } from 'igniteui-angular/combo';
+import { IgxOverlayService, IgxComboComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

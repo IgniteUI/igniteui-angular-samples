@@ -1,9 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerActionsDirective, IgxBannerComponent } from 'igniteui-angular/banner';
-import { IgxNavbarComponent } from 'igniteui-angular/navbar';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxCardComponent } from 'igniteui-angular/card';
+import { IgxBannerComponent, IgxNavbarComponent, IgxIconComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-banner-sample-2',

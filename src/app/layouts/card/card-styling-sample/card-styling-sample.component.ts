@@ -1,10 +1,20 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Card } from '../card.blueprint';
-import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
-import { IgxDividerModule, IgxIconButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxChipComponent } from 'igniteui-angular/chips';
+import {
+  IgxCardComponent,
+  IgxCardMediaDirective,
+  IgxCardHeaderComponent,
+  IgxCardHeaderTitleDirective,
+  IgxCardHeaderSubtitleDirective,
+  IgxCardContentDirective,
+  IgxCardActionsComponent,
+  IgxIconButtonDirective,
+  IgxIconComponent,
+  IgxAvatarComponent,
+  IgxDividerModule,
+  IgxIconService,
+  IgxChipComponent
+} from 'igniteui-angular';
 
 @Component({
   selector: 'app-card-styling-sample',

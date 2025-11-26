@@ -1,8 +1,5 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, inject } from '@angular/core';
-import { ColumnType } from 'igniteui-angular/core';
-import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxCellHeaderTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { ColumnType, IgxIconService, IgxTreeGridComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxColumnComponent } from 'igniteui-angular';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { icons } from "../../services/svgIcons";
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

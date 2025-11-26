@@ -1,6 +1,6 @@
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxNavbarModule } from 'igniteui-angular/navbar';
-import { IgxButtonModule } from 'igniteui-angular/directives';
+import {IgxIconModule,
+IgxNavbarModule,
+IgxButtonModule} from 'igniteui-angular';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class NavbarConfigGenerator implements IConfigGenerator {

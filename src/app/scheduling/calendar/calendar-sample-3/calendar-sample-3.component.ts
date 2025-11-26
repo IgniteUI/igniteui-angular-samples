@@ -1,7 +1,6 @@
 
 import { Component, ViewChild, DOCUMENT, inject } from '@angular/core';
-import { IViewDateChangeEventArgs, IgxCalendarComponent, IgxCalendarView } from 'igniteui-angular/calendar';
-import { IgxDialogComponent } from 'igniteui-angular/dialog';
+import { IgxCalendarComponent, IgxDialogComponent, IgxCalendarView, IViewDateChangeEventArgs } from 'igniteui-angular';
 
 @Component({
     selector: 'app-calendar',

@@ -1,16 +1,5 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent } from 'igniteui-angular/dialog';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxSummaryResult, VerticalAlignment } from 'igniteui-angular/core';
-import { IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
-import { IgxButtonDirective, IgxFocusDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxComboComponent } from 'igniteui-angular/combo';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxDialogComponent, IgxGridComponent, IgxSummaryResult, IgxNumberSummaryOperand, IgxToastComponent, VerticalAlignment, IgxPaginatorComponent, IgxGridToolbarComponent, IgxButtonDirective, IgxIconComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxCellEditorTemplateDirective, IgxComboComponent, IgxFocusDirective, IgxIconButtonDirective, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxCheckboxComponent } from 'igniteui-angular';
 import { DATA, LOCATIONS } from './data';
 import { Product } from './product';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

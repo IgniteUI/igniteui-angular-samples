@@ -1,6 +1,8 @@
-import { IgxAvatarModule } from 'igniteui-angular/avatar';
-import { IgxChipsModule } from 'igniteui-angular/chips';
-import { IgxIconModule } from 'igniteui-angular/icon';
+import {
+    IgxAvatarModule,
+    IgxChipsModule,
+    IgxIconModule
+} from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class ChipConfigGenerator implements IConfigGenerator {

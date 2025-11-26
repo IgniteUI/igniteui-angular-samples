@@ -1,7 +1,5 @@
 import { Component, ElementRef, inject } from '@angular/core';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { VerticalAlignment } from 'igniteui-angular/core';
-import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxToastComponent, VerticalAlignment, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-toast-tailwind-style',

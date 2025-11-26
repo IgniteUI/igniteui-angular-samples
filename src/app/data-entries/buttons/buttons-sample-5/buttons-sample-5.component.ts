@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-buttons-sample-5',

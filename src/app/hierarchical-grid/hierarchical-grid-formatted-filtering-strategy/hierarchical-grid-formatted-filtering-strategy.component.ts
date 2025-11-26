@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { FormattedValuesFilteringStrategy } from 'igniteui-angular/core';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxHierarchicalGridComponent, FormattedValuesFilteringStrategy, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

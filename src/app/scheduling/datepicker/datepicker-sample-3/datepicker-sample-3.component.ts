@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
+import { IgxDatePickerComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

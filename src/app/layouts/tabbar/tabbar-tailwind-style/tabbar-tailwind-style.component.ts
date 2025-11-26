@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/quotes */
 import { Component } from "@angular/core";
-import { IgxBottomNavComponent, IgxBottomNavContentComponent, IgxBottomNavHeaderComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavItemComponent } from 'igniteui-angular/bottom-nav';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavContentComponent } from "igniteui-angular";
 
 
 @Component({

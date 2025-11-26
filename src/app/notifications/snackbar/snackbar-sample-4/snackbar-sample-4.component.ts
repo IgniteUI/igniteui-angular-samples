@@ -1,9 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
-import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
-import { IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxSnackbarComponent, IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListActionDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
 
 
 @Component({

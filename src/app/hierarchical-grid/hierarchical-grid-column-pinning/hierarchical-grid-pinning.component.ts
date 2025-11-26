@@ -1,9 +1,6 @@
 
 import { AfterViewInit, ChangeDetectorRef, Component, inject } from '@angular/core';
-import { ColumnType } from 'igniteui-angular/core';
-import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
-import { IgxCellHeaderTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { ColumnType, IgxIconService, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { icons } from "../../services/svgIcons";
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

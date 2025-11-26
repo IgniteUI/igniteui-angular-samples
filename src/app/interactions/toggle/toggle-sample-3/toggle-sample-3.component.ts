@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxToggleActionDirective, IgxToggleDirective } from 'igniteui-angular/directives';
+import { IgxToggleActionDirective, IgxButtonDirective, IgxToggleDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-toggle-sample-3',

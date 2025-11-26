@@ -1,8 +1,5 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, AfterViewInit, OnDestroy, inject } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular/core';
-import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxBadgeComponent } from 'igniteui-angular/badge';
+import { IgxGridComponent, NoopFilteringStrategy, NoopSortingStrategy, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 import { RemoteFilteringService } from '../../services/remoteFiltering.service';

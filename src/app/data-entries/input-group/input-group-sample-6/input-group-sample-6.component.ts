@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseInputGroupSampleComponent } from '../base-input.component';
 import { FormsModule } from '@angular/forms';
-import { IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxSelectToggleIconDirective } from 'igniteui-angular/select';
-import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxComboComponent } from 'igniteui-angular/combo';
-import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
-import { IgxPickerToggleComponent } from 'igniteui-angular/core';
-import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
-import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxLabelDirective, IgxSelectToggleIconDirective, IgxIconComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxPrefixDirective, IgxHintDirective, IgxComboComponent, IgxDatePickerComponent, IgxPickerToggleComponent, IgxTimePickerComponent, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-input-group-sample-6',

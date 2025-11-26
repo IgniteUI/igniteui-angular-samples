@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent, IgxColumnComponent } from 'igniteui-angular';
 import { DATA } from '../../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-scroll.directive';
 

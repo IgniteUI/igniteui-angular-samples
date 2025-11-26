@@ -1,11 +1,7 @@
 import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-import { IChangeCheckboxEventArgs } from 'igniteui-angular/checkbox';
-import { ISliderValueChangeEventArgs, IgxSliderComponent } from 'igniteui-angular/slider';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { VerticalAlignment } from 'igniteui-angular/core';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IButtonGroupEventArgs, IChangeCheckboxEventArgs, IgxButtonGroupComponent, IgxSliderComponent, IgxToastComponent, ISliderValueChangeEventArgs, VerticalAlignment, IgxSwitchComponent }
+from 'igniteui-angular';
 import { Observable, Subscription, timer } from 'rxjs';
 import { debounce } from 'rxjs/operators';
 

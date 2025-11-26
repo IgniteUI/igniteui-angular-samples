@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import { AbsoluteScrollStrategy, AutoPositionStrategy, GlobalPositionStrategy } from 'igniteui-angular/core';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxSwitchComponent } from 'igniteui-angular/switch';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { GlobalPositionStrategy, AbsoluteScrollStrategy, AutoPositionStrategy, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxSwitchComponent, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarAdvancedFilteringComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent } from 'igniteui-angular';
 import { scaleInCenter, scaleOutCenter } from 'igniteui-angular/animations';
 import { athletesData } from '../../data/athletesData';
 import { FormsModule } from '@angular/forms';

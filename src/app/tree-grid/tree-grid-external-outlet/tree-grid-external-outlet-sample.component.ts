@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ORDERS_DATA } from '../data/orders';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent } from 'igniteui-angular/grids/core';
-import { IgxOverlayOutletDirective } from 'igniteui-angular/core';
+import { IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxOverlayOutletDirective } from 'igniteui-angular';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 

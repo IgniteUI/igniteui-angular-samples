@@ -1,6 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular/grids/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxRowIslandComponent } from 'igniteui-angular';
 import { Singer, SINGERS } from '../../data/artistData';
 
 @Component({

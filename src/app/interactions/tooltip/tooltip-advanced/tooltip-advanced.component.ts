@@ -1,11 +1,22 @@
 import { Component, inject } from "@angular/core";
-import { IgxButtonDirective, IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
-import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
-import { IgxBadgeComponent } from 'igniteui-angular/badge';
-import { IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective } from 'igniteui-angular/card';
-import { IgxOverlayOutletDirective } from 'igniteui-angular/core';
+import {
+    IgxTooltipTargetDirective,
+    IgxTooltipDirective,
+    IgxButtonDirective,
+    IgxListComponent,
+    IgxListItemComponent,
+    IgxAvatarComponent,
+    IgxIconComponent,
+    IgxBadgeComponent,
+    IgxCardComponent,
+    IgxCardHeaderComponent,
+    IgxCardHeaderTitleDirective,
+    IgxListThumbnailDirective,
+    IgxListActionDirective,
+    IgxListLineTitleDirective,
+    IgxIconService,
+    IgxOverlayOutletDirective
+} from "igniteui-angular";
 import { IgxCategoryChartModule } from "igniteui-angular-charts";
 import { IncomeTaxes } from "./IncomeTaxes";
 

@@ -1,8 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { DateRangeType } from 'igniteui-angular/core';
-import { IgxCalendarComponent } from 'igniteui-angular/calendar';
-import { IgxDialogComponent } from 'igniteui-angular/dialog';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { DateRangeType, IgxCalendarComponent, IgxDialogComponent, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-calendar',

@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxFocusDirective, IgxTextSelectionDirective } from 'igniteui-angular/directives';
+import { IgxInputGroupComponent, IgxInputDirective, IgxTextSelectionDirective, IgxLabelDirective, IgxFocusDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-input-text-selection',

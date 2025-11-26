@@ -1,12 +1,6 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit, inject } from '@angular/core';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
-import { GridFeatures, IGridState, IGridStateOptions, IgxCellTemplateDirective, IgxColumnComponent, IgxGridStateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxSummaryResult } from 'igniteui-angular/core';
-import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { GridFeatures, IGridState, IGridStateOptions, IgxGridStateDirective, IgxHierarchicalGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxCheckboxComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
 import { take } from 'rxjs/operators';
 import { SINGERS } from '../../data/singersData';
 

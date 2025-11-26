@@ -1,8 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxColumnComponent, IgxRowDragGhostDirective, RowType } from 'igniteui-angular/grids/core';
-import { IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { GridSelectionMode, IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType, IgxDropDirective, IgxColumnComponent, IgxRowIslandComponent, IgxRowDragGhostDirective, IgxIconComponent } from 'igniteui-angular';
 import { createData, IDrive } from '../../data/files.data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

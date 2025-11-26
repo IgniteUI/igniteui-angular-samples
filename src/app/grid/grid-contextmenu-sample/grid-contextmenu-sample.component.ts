@@ -1,7 +1,5 @@
 import { Component, OnInit, ViewChild} from '@angular/core';
-import { DefaultSortingStrategy, SortingDirection } from 'igniteui-angular/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { DefaultSortingStrategy, IgxGridComponent, SortingDirection, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

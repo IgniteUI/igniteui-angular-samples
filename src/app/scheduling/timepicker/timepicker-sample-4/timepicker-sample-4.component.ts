@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
-import { IgxLabelDirective } from 'igniteui-angular/input-group';
-import { IgxToastComponent } from 'igniteui-angular/toast';
+import { IgxTimePickerComponent, IgxLabelDirective, IgxToastComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

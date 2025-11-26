@@ -5,12 +5,7 @@ import localeBG from '@angular/common/locales/bg';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
 import localeJA from '@angular/common/locales/ja';
-import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
-import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxSelectComponent, IgxPrefixDirective, IgxSelectItemComponent, IgxHintDirective, IgxSuffixDirective, IgxIconComponent, IgxInputGroupComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxInputDirective, IgxGridComponent, IgxColumnComponent } from "igniteui-angular";
 import { FormsModule } from "@angular/forms";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
 

@@ -1,8 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
-import { CustomDateRange, DateRange, IgxPickerActionsDirective, OverlaySettings } from 'igniteui-angular/core';
-import { IgxDateRangePickerComponent } from 'igniteui-angular/date-picker';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IChangeCheckboxEventArgs } from 'igniteui-angular/checkbox';
+import { DateRange, IgxDateRangePickerComponent, OverlaySettings, IgxPickerActionsDirective, IgxButtonDirective, IChangeCheckboxEventArgs, CustomDateRange } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
-import { IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
-import { IgxPickerToggleComponent } from 'igniteui-angular/core';
-import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxDatePickerComponent, IgxLabelDirective, IgxPickerToggleComponent, IgxPrefixDirective, IgxIconComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-datepicker-sample-6',

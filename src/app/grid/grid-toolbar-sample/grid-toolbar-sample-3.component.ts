@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
-import { CsvFileTypes, IColumnExportingEventArgs, IgxCsvExporterOptions, IgxExcelExporterOptions, IgxExporterOptionsBase } from 'igniteui-angular/core';
-import { IGridToolbarExportEventArgs, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { CsvFileTypes, IColumnExportingEventArgs, IGridToolbarExportEventArgs, IgxCsvExporterOptions, IgxExcelExporterOptions, IgxExporterOptionsBase, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent } from 'igniteui-angular';
 import { athletesData } from '../../data/athletesData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

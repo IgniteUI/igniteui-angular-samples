@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DateRangeType } from 'igniteui-angular/core';
-import { IgxCalendarComponent } from 'igniteui-angular/calendar';
+import { DateRangeType, IgxCalendarComponent } from 'igniteui-angular';
 import { DatePipe } from '@angular/common';
 
 @Component({

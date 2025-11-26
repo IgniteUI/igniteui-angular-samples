@@ -84,7 +84,7 @@ jobs:
           echo "//packages.infragistics.com/npm/js-licensed/:_authToken=${{ secrets.INFRAGISTICS_NPM_TOKEN }}" >> .npmrc
 
       - name: Install dependencies
-        run: npm install --legacy-peer-deps
+        run: npm install
         env:
           GITHUB_ACTIONS: true
 
@@ -115,7 +115,7 @@ jobs:
           npx --userconfig=./.npmrc ng g @igniteui/angular-schematics:upgrade-packages --skip-install
 
       - name: Install dependencies after schematics
-        run: npm install --legacy-peer-deps
+        run: npm install
         env:
           GITHUB_ACTIONS: true
 

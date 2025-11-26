@@ -1,4 +1,4 @@
-import { enableProdMode, provideZoneChangeDetection } from '@angular/core';
+import { enableProdMode } from '@angular/core';
 import { environment } from './environments/environment';
 import { defineCustomElements } from 'igniteui-dockmanager/loader';
 import { bootstrapApplication } from '@angular/platform-browser';
@@ -9,6 +9,6 @@ if (environment.production) {
     enableProdMode();
 }
 
-bootstrapApplication(AppComponent, {...AppConfig, providers: [provideZoneChangeDetection(), ...AppConfig.providers]}).catch(err => console.log(err));
+bootstrapApplication(AppComponent, AppConfig).catch(err => console.log(err));
 
 defineCustomElements(window);

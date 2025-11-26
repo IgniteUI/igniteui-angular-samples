@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { IgxNavbarComponent } from 'igniteui-angular/navbar';
+import { IgxNavbarComponent } from 'igniteui-angular';
 
 @Component({
     encapsulation: ViewEncapsulation.None,

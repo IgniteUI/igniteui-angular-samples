@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IStepChangingEventArgs, IgxStepActiveIndicatorDirective, IgxStepCompletedIndicatorDirective, IgxStepComponent, IgxStepContentDirective, IgxStepSubtitleDirective, IgxStepTitleDirective, IgxStepperComponent } from 'igniteui-angular/stepper';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxStepperComponent, IStepChangingEventArgs, IgxStepActiveIndicatorDirective, IgxIconComponent, IgxStepCompletedIndicatorDirective, IgxStepComponent, IgxStepTitleDirective, IgxStepSubtitleDirective, IgxStepContentDirective, IgxButtonDirective } from 'igniteui-angular';
 
 @Component({
     selector: 'app-stepper-tailwind-styling-sample',

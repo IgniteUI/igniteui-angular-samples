@@ -1,8 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
-import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
-import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxColumnComponent, IgxTreeGridComponent, IgxInputGroupComponent, IgxInputDirective, IgxHintDirective, IgxButtonDirective } from 'igniteui-angular';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { JsonPipe } from '@angular/common';

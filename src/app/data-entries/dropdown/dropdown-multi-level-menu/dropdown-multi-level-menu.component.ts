@@ -1,10 +1,5 @@
 import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren, inject } from '@angular/core';
-import { IgxDropDownComponent, IgxDropDownItemComponent } from 'igniteui-angular/drop-down';
-import { ConnectedPositioningStrategy, HorizontalAlignment, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
-import { IgxNavbarComponent, IgxNavbarTitleDirective } from 'igniteui-angular/navbar';
-import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxDropDownComponent, OverlaySettings, ConnectedPositioningStrategy, HorizontalAlignment, VerticalAlignment, IgxNavbarComponent, IgxNavbarTitleDirective, IgxButtonDirective, IgxToggleActionDirective, IgxIconComponent, IgxDropDownItemComponent, IgxSuffixDirective } from 'igniteui-angular';
 import {
   CROSS_PLATFORM_DATA,
   DESIGN_TO_CODE_DATA,

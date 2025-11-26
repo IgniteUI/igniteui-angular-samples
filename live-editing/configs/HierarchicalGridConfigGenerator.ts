@@ -2,23 +2,29 @@
 /* eslint-disable max-len */
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { IgxActionStripModule } from 'igniteui-angular/action-strip';
-import { IgxAvatarModule } from 'igniteui-angular/avatar';
-import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
-import { IgxButtonModule, IgxDragDropModule, IgxToggleModule, IgxTooltipModule } from 'igniteui-angular/directives';
-import { IgxCheckboxModule } from 'igniteui-angular/checkbox';
-import { IgxDatePickerModule } from 'igniteui-angular/date-picker';
-import { IgxDialogModule } from 'igniteui-angular/dialog';
-import { IgxGridModule } from 'igniteui-angular/grids/grid';
-import { IgxHierarchicalGridModule } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxInputGroupModule } from 'igniteui-angular/input-group';
-import { IgxListModule } from 'igniteui-angular/list';
-import { IgxExcelExporterService, IgxOverlayService } from 'igniteui-angular/core';
-import { IgxSelectModule } from 'igniteui-angular/select';
-import { IgxSnackbarModule } from 'igniteui-angular/snackbar';
-import { IgxSwitchModule } from 'igniteui-angular/switch';
-import { IgxToastModule } from 'igniteui-angular/toast';
+import {
+    IgxActionStripModule,
+    IgxAvatarModule,
+    IgxButtonGroupModule,
+    IgxButtonModule,
+    IgxCheckboxModule,
+    IgxDatePickerModule,
+    IgxDialogModule,
+    IgxDragDropModule,
+    IgxGridModule,
+    IgxHierarchicalGridModule,
+    IgxIconModule,
+    IgxInputGroupModule,
+    IgxListModule,
+    IgxOverlayService,
+    IgxSelectModule,
+    IgxSnackbarModule,
+    IgxSwitchModule,
+    IgxToastModule,
+    IgxTooltipModule,
+    IgxToggleModule,
+    IgxExcelExporterService
+} from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 import { Router, RouterModule } from '@angular/router';

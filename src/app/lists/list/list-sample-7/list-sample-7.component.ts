@@ -1,11 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 
-import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListItemLeftPanningTemplateDirective, IgxListItemRightPanningTemplateDirective, IgxListLineSubTitleDirective, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { IgxSliderComponent } from 'igniteui-angular/slider';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
-import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxListComponent, IgxToastComponent, IgxSliderComponent, IgxListItemLeftPanningTemplateDirective, IgxIconComponent, IgxListItemRightPanningTemplateDirective, IgxListItemComponent, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxButtonDirective } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 

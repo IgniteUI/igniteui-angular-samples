@@ -1,6 +1,6 @@
 import { Component, ElementRef, OnInit, inject } from '@angular/core';
 import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
-import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
+import { IgxSimpleComboComponent } from 'igniteui-angular';
 
 @Component({
     selector: 'app-simple-combo-styling',

@@ -4,13 +4,15 @@ import {
     Router,
     RouterModule
 } from '@angular/router';
-import { IgxPivotGridModule } from 'igniteui-angular/grids/pivot-grid';
-import { IgxTooltipModule } from 'igniteui-angular/directives';
-import { IgxToastModule } from 'igniteui-angular/toast';
-import { IgxSwitchModule } from 'igniteui-angular/switch';
-import { IgxExcelExporterService } from 'igniteui-angular/core';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxCheckboxModule } from 'igniteui-angular/checkbox';
+import {
+    IgxPivotGridModule,
+    IgxTooltipModule,
+    IgxToastModule,
+    IgxSwitchModule,
+    IgxExcelExporterService,
+    IgxIconModule,
+    IgxCheckboxModule
+} from 'igniteui-angular';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 export class PivotGridConfigGenerator implements IConfigGenerator {

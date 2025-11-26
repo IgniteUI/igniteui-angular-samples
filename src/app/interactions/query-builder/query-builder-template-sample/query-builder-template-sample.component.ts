@@ -1,11 +1,7 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular/core';
-import { IgxComboModule } from 'igniteui-angular/combo';
-import { IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxQueryBuilderSearchValueTemplateDirective } from 'igniteui-angular/query-builder';
-import { IgxRadioModule } from 'igniteui-angular/radio';
-import { IgxSelectModule } from 'igniteui-angular/select';
+import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxComboModule, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxQueryBuilderHeaderComponent, IgxQueryBuilderSearchValueTemplateDirective, IgxRadioModule, IgxSelectModule, IgxStringFilteringOperand } from 'igniteui-angular';
 
 @Component({
     selector: 'app-query-builder-template-sample',

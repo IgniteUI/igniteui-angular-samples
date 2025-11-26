@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
-import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellEditorTemplateDirective, IgxColumnComponent, IgxGridEditingActionsComponent } from 'igniteui-angular/grids/core';
-import { IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
-import { IgxFocusDirective } from 'igniteui-angular/directives';
-import { IgxActionStripComponent } from 'igniteui-angular/action-strip';
+import { IgxGridComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxInputGroupComponent, IgxInputDirective, IgxFocusDirective, IgxActionStripComponent, IgxGridEditingActionsComponent } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 
 @Component({

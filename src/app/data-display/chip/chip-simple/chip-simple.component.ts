@@ -1,7 +1,5 @@
 import { ChangeDetectorRef, Component, inject } from '@angular/core';
-import { IBaseChipEventArgs, IgxChipComponent } from 'igniteui-angular/chips';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxPrefixDirective } from 'igniteui-angular/input-group';
+import { IBaseChipEventArgs, IgxChipComponent, IgxIconComponent, IgxPrefixDirective } from 'igniteui-angular';
 
 
 @Component({

@@ -1,10 +1,5 @@
 import { Component } from '@angular/core';
-import { ConnectedPositioningStrategy, HorizontalAlignment, IgxOverlayOutletDirective, NoOpScrollStrategy, VerticalAlignment } from 'igniteui-angular/core';
-import { ISelectionEventArgs, IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
-import { IgxNavbarComponent } from 'igniteui-angular/navbar';
-import { IgxIconButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxLabelDirective } from 'igniteui-angular/input-group';
+import { ConnectedPositioningStrategy, HorizontalAlignment, ISelectionEventArgs, NoOpScrollStrategy, VerticalAlignment, IgxNavbarComponent, IgxIconButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxDropDownComponent, IgxDropDownItemComponent, IgxLabelDirective, IgxOverlayOutletDirective } from 'igniteui-angular';
 
 
 @Component({

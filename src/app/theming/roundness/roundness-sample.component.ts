@@ -1,8 +1,12 @@
 import { Component } from "@angular/core";
-import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent } from 'igniteui-angular/card';
-import { IgxChipComponent } from 'igniteui-angular/chips';
-import { IgxIconComponent } from 'igniteui-angular/icon';
-import { IgxPrefixDirective } from 'igniteui-angular/input-group';
+import {
+    IgxCardComponent,
+    IgxCardContentDirective,
+    IgxCardHeaderComponent,
+    IgxChipComponent,
+    IgxIconComponent,
+    IgxPrefixDirective
+} from "igniteui-angular";
 
 @Component({
     selector: "app-chip-simple",
