@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
 import { IgxColumnComponent, IgxGridComponent, IgxGridDetailTemplateDirective, IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxTabHeaderLabelDirective, IgxTabContentComponent, IgxAvatarComponent, IgxDividerDirective } from 'igniteui-angular';
-import { IgxLegendComponent, IgxPieChartCoreModule, IgxLegendModule, IgxCategoryChartCoreModule } from 'igniteui-angular-charts';
+import { IgxLegendComponent, IgxPieChartCoreModule, IgxLegendModule, IgxCategoryChartModule } from 'igniteui-angular-charts';
 import { employeesData } from '../../data/employeesData';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';
 
@@ -9,7 +9,7 @@ import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/dir
     selector: 'app-grid-master-detail',
     styleUrls: ['./grid-master-detail.component.scss'],
     templateUrl: 'grid-master-detail.component.html',
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxGridDetailTemplateDirective, IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxTabHeaderLabelDirective, IgxTabContentComponent, IgxAvatarComponent, IgxDividerDirective, IgxPieChartCoreModule, IgxLegendModule, IgxCategoryChartCoreModule]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxGridDetailTemplateDirective, IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxTabHeaderLabelDirective, IgxTabContentComponent, IgxAvatarComponent, IgxDividerDirective, IgxPieChartCoreModule, IgxLegendModule, IgxCategoryChartModule]
 })
 
 export class GridMasterDetailSampleComponent {
