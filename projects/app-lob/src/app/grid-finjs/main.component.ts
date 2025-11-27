@@ -12,7 +12,7 @@ import { GridFinJSComponent } from './grid-finjs.component';
     selector: 'app-finjs-main',
     styleUrls: ['./main.component.scss'],
     templateUrl: './main.component.html',
-    imports: [ControllerComponent, GridFinJSComponent, IgxOverlayOutletDirective, IgxDialogComponent, IgxDialogTitleDirective, IgxCategoryChartModule, IgxDialogActionsDirective, IgxButtonDirective, IgxFocusDirective]
+    imports: [ControllerComponent, GridFinJSComponent, IgxOverlayOutletDirective, IgxDialogComponent, IgxDialogTitleDirective, IgxCategoryChartCoreModule, IgxDialogActionsDirective, IgxButtonDirective, IgxFocusDirective]
 })
 export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     @ViewChild('finGrid', { static: true }) public finGrid: GridFinJSComponent;

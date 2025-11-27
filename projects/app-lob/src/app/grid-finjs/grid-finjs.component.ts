@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
-import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild, DOCUMENT, inject } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, DOCUMENT, inject } from '@angular/core';
 import { CellType, GridSelectionMode, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxExcelTextDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { DefaultSortingStrategy, IgxOverlayOutletDirective, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
