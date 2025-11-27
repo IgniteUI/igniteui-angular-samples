@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxCalendarComponent, IgxDialogComponent, IgxButtonDirective } from 'igniteui-angular';
+import { IgxCalendarComponent } from 'igniteui-angular/calendar';
+import { IgxDialogComponent } from 'igniteui-angular/dialog';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 
 
 @Component({

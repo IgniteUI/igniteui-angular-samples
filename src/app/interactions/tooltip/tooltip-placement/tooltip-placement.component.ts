@@ -1,14 +1,7 @@
 import { Component, QueryList, ViewChild, ViewChildren } from "@angular/core";
-import {
-    IgxTooltipDirective,
-    IgxButtonDirective,
-    HorizontalAlignment,
-    VerticalAlignment,
-    PositionSettings,
-    OverlaySettings,
-    TooltipPositionStrategy,
-    IgxIconComponent
-} from "igniteui-angular";
+import { IgxButtonDirective, IgxTooltipDirective, TooltipPositionStrategy } from 'igniteui-angular/directives';
+import { HorizontalAlignment, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     selector: "app-tooltip-placement",

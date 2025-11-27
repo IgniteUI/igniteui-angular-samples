@@ -1,12 +1,10 @@
-import {
-    IgxButtonModule,
-    IgxButtonGroupModule,
-    IgxCalendarModule,
-    IgxCardModule,
-    IgxDialogModule,
-    IgxSelectModule,
-    IgxSnackbarModule
-} from 'igniteui-angular';
+import { IgxButtonModule } from 'igniteui-angular/directives';
+import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
+import { IgxCalendarModule } from 'igniteui-angular/calendar';
+import { IgxCardModule } from 'igniteui-angular/card';
+import { IgxDialogModule } from 'igniteui-angular/dialog';
+import { IgxSelectModule } from 'igniteui-angular/select';
+import { IgxSnackbarModule } from 'igniteui-angular/snackbar';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class CalendarConfigGenerator implements IConfigGenerator {

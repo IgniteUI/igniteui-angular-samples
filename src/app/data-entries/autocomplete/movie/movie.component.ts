@@ -1,5 +1,7 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
-import { ConnectedPositioningStrategy, VerticalAlignment, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent } from 'igniteui-angular';
+import { ConnectedPositioningStrategy, VerticalAlignment } from 'igniteui-angular/core';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent } from 'igniteui-angular/drop-down';
 import { FormsModule } from '@angular/forms';
 
 import { AutocompletePipeStartsWith } from '../autocomplete/autocomplete.component';

@@ -6,43 +6,32 @@ import {
     Router,
     RouterModule
 } from '@angular/router';
-import {
-    IgxActionStripModule,
-    IgxAvatarModule,
-    IgxBadgeModule,
-    IgxButtonGroupModule,
-    IgxButtonModule,
-    IgxCheckboxModule,
-    IgxChipsModule,
-    IgxComboModule,
-    IgxSimpleComboModule,
-    IgxCsvExporterService,
-    IgxDatePickerModule,
-    IgxDialogModule,
-    IgxDividerModule,
-    IgxDragDropModule,
-    IgxExcelExporterService,
-    IgxExpansionPanelModule,
-    IgxFocusModule,
-    IgxGridModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxListModule,
-    IgxOverlayService,
-    IgxProgressBarModule,
-    IgxRadioModule,
-    IgxRippleModule,
-    IgxSelectModule,
-    IgxSnackbarModule,
-    IgxSwitchModule,
-    IgxTabsModule,
-    IgxToastModule,
-    IgxTooltipModule,
-    IgxToggleModule,
-    IgxDropDownModule,
-    IgxCardModule,
-    IgcFormsModule
-} from 'igniteui-angular';
+import { IgxActionStripModule } from 'igniteui-angular/action-strip';
+import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxBadgeModule } from 'igniteui-angular/badge';
+import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
+import { IgxButtonModule, IgxDividerModule, IgxDragDropModule, IgxFocusModule, IgxRippleModule, IgxToggleModule, IgxTooltipModule } from 'igniteui-angular/directives';
+import { IgxCheckboxModule } from 'igniteui-angular/checkbox';
+import { IgxChipsModule } from 'igniteui-angular/chips';
+import { IgxComboModule } from 'igniteui-angular/combo';
+import { IgxSimpleComboModule } from 'igniteui-angular/simple-combo';
+import { IgcFormsModule, IgxCsvExporterService, IgxExcelExporterService, IgxOverlayService } from 'igniteui-angular/core';
+import { IgxDatePickerModule } from 'igniteui-angular/date-picker';
+import { IgxDialogModule } from 'igniteui-angular/dialog';
+import { IgxExpansionPanelModule } from 'igniteui-angular/expansion-panel';
+import { IgxGridModule } from 'igniteui-angular/grids/grid';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxInputGroupModule } from 'igniteui-angular/input-group';
+import { IgxListModule } from 'igniteui-angular/list';
+import { IgxProgressBarModule } from 'igniteui-angular/progressbar';
+import { IgxRadioModule } from 'igniteui-angular/radio';
+import { IgxSelectModule } from 'igniteui-angular/select';
+import { IgxSnackbarModule } from 'igniteui-angular/snackbar';
+import { IgxSwitchModule } from 'igniteui-angular/switch';
+import { IgxTabsModule } from 'igniteui-angular/tabs';
+import { IgxToastModule } from 'igniteui-angular/toast';
+import { IgxDropDownModule } from 'igniteui-angular/drop-down';
+import { IgxCardModule } from 'igniteui-angular/card';
 import { Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class GridConfigGenerator implements IConfigGenerator {

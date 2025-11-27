@@ -1,5 +1,6 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit, inject } from '@angular/core';
-import { IgxColumnComponent, IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular';
+import { IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { DATA } from '../../data/customers';
 import { ActivatedRoute } from '@angular/router';
 import { NgClass } from '@angular/common';

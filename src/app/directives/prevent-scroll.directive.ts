@@ -1,5 +1,5 @@
 import { AfterViewInit, Directive, Input, OnDestroy, inject } from '@angular/core';
-import { GridType, IGX_GRID_BASE } from 'igniteui-angular';
+import { GridType, IGX_GRID_BASE } from 'igniteui-angular/grids/core';
 
 @Directive({
     selector: '[igxPreventDocumentScroll]'

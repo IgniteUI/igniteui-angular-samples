@@ -1,10 +1,10 @@
 import { HttpClientModule } from '@angular/common/http';
-import {IgxIconModule,
-IgxAvatarModule,
-IgxInputGroupModule,
-IgxButtonModule,
-IgxCardModule,
-IgxSelectModule} from 'igniteui-angular';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxInputGroupModule } from 'igniteui-angular/input-group';
+import { IgxButtonModule } from 'igniteui-angular/directives';
+import { IgxCardModule } from 'igniteui-angular/card';
+import { IgxSelectModule } from 'igniteui-angular/select';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class IconConfigGenerator implements IConfigGenerator {

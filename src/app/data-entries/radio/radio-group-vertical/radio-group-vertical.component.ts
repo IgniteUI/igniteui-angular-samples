@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RadioGroupAlignment, IgxRadioGroupDirective, IgxRadioComponent } from 'igniteui-angular';
+import { IgxRadioComponent, IgxRadioGroupDirective, RadioGroupAlignment } from 'igniteui-angular/radio';
 import { FormsModule } from '@angular/forms';
 
 @Component({

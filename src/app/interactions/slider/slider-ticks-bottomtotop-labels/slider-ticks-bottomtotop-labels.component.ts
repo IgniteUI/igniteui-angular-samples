@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSliderType, TickLabelsOrientation, IgxSliderComponent } from 'igniteui-angular';
+import { IgxSliderComponent, IgxSliderType, TickLabelsOrientation } from 'igniteui-angular/slider';
 
 @Component({
     selector: 'app-slider-ticks-bottomtotop-labels',
