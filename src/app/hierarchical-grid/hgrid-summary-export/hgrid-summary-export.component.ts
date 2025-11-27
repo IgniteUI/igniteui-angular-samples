@@ -1,9 +1,8 @@
 import { Component, ViewChild, inject } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
 import { IgxSummaryResult } from 'igniteui-angular/core';
-import { IgxExcelExporterOptions, IgxExcelExporterService, } from 'igniteui-angular/grids/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand, IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular/grids/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
