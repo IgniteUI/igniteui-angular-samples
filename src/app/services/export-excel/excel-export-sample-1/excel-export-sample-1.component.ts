@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, inject } from '@angular/core';
-import { GridColumnDataType, ISortingExpression, IgxExcelExporterService, SortingDirection } from 'igniteui-angular/core';
+import { GridColumnDataType, ISortingExpression, SortingDirection } from 'igniteui-angular/core';
+import { IgxExcelExporterService } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular/grids/core';
 import { INVOICE_DATA } from '../data/invoiceData';

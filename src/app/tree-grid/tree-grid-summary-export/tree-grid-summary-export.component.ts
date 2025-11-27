@@ -1,5 +1,6 @@
 import { Component, ViewChild, inject } from '@angular/core';
-import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular/core';
+import { ColumnType } from 'igniteui-angular/core';
+import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
