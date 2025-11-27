@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService, IgxSummaryResult, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
-import { CellType, GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent, IgxDateSummaryOperand, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
+import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxSummaryResult, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
+import { CellType, GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent, IgxDateSummaryOperand, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxNumberSummaryOperand, IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxIconButtonDirective, IgxRippleDirective, IgxToggleDirective } from 'igniteui-angular/directives';
 import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';

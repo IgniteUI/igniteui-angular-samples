@@ -1,6 +1,18 @@
 import { Component } from '@angular/core';
-import { CsvFileTypes, IColumnExportingEventArgs, IgxCsvExporterOptions, IgxExcelExporterOptions, IgxExporterOptionsBase } from 'igniteui-angular/core';
-import { IGridToolbarExportEventArgs, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
+import {
+    CsvFileTypes,
+    IColumnExportingEventArgs,
+    IgxCsvExporterOptions,
+    IgxExcelExporterOptions,
+    IgxExporterOptionsBase,
+    IGridToolbarExportEventArgs,
+    IgxCellTemplateDirective,
+    IgxColumnComponent,
+    IgxGridToolbarActionsComponent,
+    IgxGridToolbarComponent,
+    IgxGridToolbarExporterComponent,
+    IgxGridToolbarTitleComponent
+} from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { EMPLOYEE_FLAT_AVATARS_DATA } from '../data/employees-flat-avatars';
