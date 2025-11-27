@@ -1,6 +1,6 @@
 <article class="sample-column location-wrapper">
-  <igx-select #select [(ngModel)]="locale">
-    <igx-prefix>Location: </igx-prefix>
+  <igx-select #select [(ngModel)]="locale" (selectionChanging)="localeChanged($event)" >
+    <igx-prefix>Locale: </igx-prefix>
     @for (locale of locales; track locale) {
       <igx-select-item [value]="locale">
         {{ locale }}

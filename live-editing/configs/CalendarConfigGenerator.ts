@@ -24,6 +24,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'CalendarSample2Component',
             appConfig: BaseAppConfig,
+            additionalDependencies: ['igniteui-angular-i18n'],
             shortenComponentPathBy: "/scheduling/calendar/"
         }));
 
