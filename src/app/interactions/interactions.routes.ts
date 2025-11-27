@@ -63,8 +63,26 @@ import { TooltipRichComponent } from './tooltip/tooltip-rich/tooltip-rich.compon
 import { TooltipSimpleComponent } from './tooltip/tooltip-simple/tooltip-simple.component';
 import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.component';
 import { TooltipTailwindStyleComponent } from './tooltip/tooltip-tailwind-style/tooltip-tailwind-style.component';
+import { ChatOverviewSampleComponent } from './chat/overview-sample/overview-sample.component';
+import { ChatFeaturesSampleComponent } from './chat/features-sample/features-sample.component';
+import { ChatStylingSampleComponent } from './chat/styling-sample/styling-sample.component';
 
 export const InteractionsRoutes: Routes = [
+    {
+        component: ChatOverviewSampleComponent,
+        data: interactionsRoutesData['chat-overview-sample'],
+        path: 'chat-overview-sample'
+    },
+    {
+        component: ChatFeaturesSampleComponent,
+        data: interactionsRoutesData['chat-features-sample'],
+        path: 'chat-features-sample'
+    },
+    {
+        component: ChatStylingSampleComponent,
+        data: interactionsRoutesData['chat-styling-sample'],
+        path: 'chat-styling-sample'
+    },
     {
         component: DialogSample1Component,
         data: interactionsRoutesData['dialog-sample-1'],
