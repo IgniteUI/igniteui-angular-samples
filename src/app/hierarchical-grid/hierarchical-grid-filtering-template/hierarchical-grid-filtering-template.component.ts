@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { GridColumnDataType, ColumnType, IgxDateFilteringOperand, IgxHierarchicalGridComponent, IgxNumberFilteringOperand, IgxStringFilteringOperand, OverlaySettings, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxFilterCellTemplateDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxDatePickerComponent, IgxPickerToggleComponent, IgxPickerClearComponent } from 'igniteui-angular';
+import { ColumnType, GridColumnDataType, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxPickerClearComponent, IgxPickerToggleComponent, IgxStringFilteringOperand, OverlaySettings } from 'igniteui-angular/core';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxFilterCellTemplateDirective } from 'igniteui-angular/grids/core';
+import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxRippleDirective, IgxIconComponent, IgxIconButtonDirective } from 'igniteui-angular';
+import { IgxButtonDirective, IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-buttons-roundness-sample',

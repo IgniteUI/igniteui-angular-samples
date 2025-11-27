@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
-import { GridColumnDataType, IgxPivotDateDimension, IgxPivotNumericAggregate, IPivotConfiguration, IgxPivotGridComponent, IgxPivotDataSelectorComponent } from "igniteui-angular";
+import { GridColumnDataType } from 'igniteui-angular/core';
+import { IPivotConfiguration, IgxPivotDateDimension, IgxPivotNumericAggregate } from 'igniteui-angular/grids/core';
+import { IgxPivotDataSelectorComponent, IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
 import { SALES_DATA_NEW } from '../../data/salesDataNew';
 @Component({
     selector: 'app-pivot-data-selector-sample',

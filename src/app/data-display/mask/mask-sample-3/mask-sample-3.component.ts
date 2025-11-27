@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IgxSwitchComponent, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxMaskDirective } from 'igniteui-angular';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxMaskDirective } from 'igniteui-angular/directives';
 import { FormsModule } from '@angular/forms';
 
 

@@ -1,6 +1,8 @@
 import { Component } from "@angular/core";
 
-import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand, IgxPivotGridComponent, IgxPivotDataSelectorComponent } from "igniteui-angular"
+import { IPivotConfiguration, IgxPivotDateDimension, IgxPivotNumericAggregate, PivotAggregation } from 'igniteui-angular/grids/core';
+import { FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand } from 'igniteui-angular/core';
+import { IgxPivotDataSelectorComponent, IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
 import { SALES_DATA } from "../../data/dataToAnalyze";
 
 export class IgxTotalSaleAggregate {

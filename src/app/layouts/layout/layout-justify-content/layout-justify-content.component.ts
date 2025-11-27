@@ -1,5 +1,6 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { ButtonGroupAlignment, IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxLayoutDirective } from 'igniteui-angular';
+import { ButtonGroupAlignment, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonDirective, IgxLayoutDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 
 @Component({

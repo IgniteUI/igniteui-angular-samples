@@ -1,7 +1,12 @@
 /* eslint-disable max-len */
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, DOCUMENT, inject } from '@angular/core';
-import { CellType, DefaultSortingStrategy, GridSelectionMode, IGridKeydownEventArgs, IgxGridComponent, IgxOverlayOutletDirective, IRowSelectionEventArgs, OverlaySettings, SortingDirection, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconButtonDirective } from 'igniteui-angular';
+import { CellType, GridSelectionMode, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxExcelTextDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
+import { DefaultSortingStrategy, IgxOverlayOutletDirective, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxFocusDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { BehaviorSubject } from 'rxjs';
 import { Contract, REGIONS, Stock } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Member } from '../model/member.model';
-import { IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxBadgeComponent } from 'igniteui-angular';
+import { IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 
 
 @Component({

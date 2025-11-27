@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { DATA } from '../../data/customers';
-import { IgxColumnActionsComponent, IgxColumnHidingDirective, IgxRadioComponent, IgxGridComponent, IgxColumnComponent } from 'igniteui-angular';
+import { IgxColumnActionsComponent, IgxColumnComponent, IgxColumnHidingDirective } from 'igniteui-angular/grids/core';
+import { IgxRadioComponent } from 'igniteui-angular/radio';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

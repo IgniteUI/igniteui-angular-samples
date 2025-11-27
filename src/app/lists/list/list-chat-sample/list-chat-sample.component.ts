@@ -2,7 +2,11 @@ import { AfterViewInit, Component, ElementRef, TemplateRef, ViewChild, ViewEncap
 import { ContactsService } from './services/contacts.service';
 import { IMessage, MessagesService } from './services/messages.service';
 import { FormsModule } from '@angular/forms';
-import { IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxInputDirective, IgxInputGroupComponent, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { NgClass, NgTemplateOutlet, DatePipe } from '@angular/common';
 
 @Component({

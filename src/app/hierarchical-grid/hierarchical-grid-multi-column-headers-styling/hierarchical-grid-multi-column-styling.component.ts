@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CUSTOMERS } from '../../data/hierarchical-data';
-import { IgxHierarchicalGridComponent, IgxColumnComponent, IgxColumnGroupComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxColumnComponent, IgxColumnGroupComponent } from 'igniteui-angular/grids/core';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

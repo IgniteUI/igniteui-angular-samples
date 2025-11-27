@@ -1,6 +1,19 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DateRange, IRangeSliderValue, IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxLabelDirective, IgxSelectToggleIconDirective, IgxIconComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxHintDirective, IgxPrefixDirective, IgxComboComponent, IgxDatePickerComponent, IgxPickerToggleComponent, IgxTimePickerComponent, IgcFormControlDirective, IgxCheckboxComponent, IgxRadioGroupDirective, IgxRadioComponent, IgxSwitchComponent, IgxDateRangePickerComponent, IgxSliderComponent, IgxCalendarComponent, IgxCardComponent, IgxMonthPickerComponent, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
+import { DateRange, IgxPickerToggleComponent } from 'igniteui-angular/core';
+import { IRangeSliderValue, IgxSliderComponent } from 'igniteui-angular/slider';
+import { IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxSelectToggleIconDirective } from 'igniteui-angular/select';
+import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxComboComponent } from 'igniteui-angular/combo';
+import { IgxDatePickerComponent, IgxDateRangePickerComponent } from 'igniteui-angular/date-picker';
+import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
+import { IgcFormControlDirective, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxRadioComponent, IgxRadioGroupDirective } from 'igniteui-angular/radio';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxCalendarComponent, IgxMonthPickerComponent } from 'igniteui-angular/calendar';
+import { IgxCardComponent } from 'igniteui-angular/card';
 
 
 

@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxCalendarComponent, IgxSelectComponent, IgxPrefixDirective, IgxSelectItemComponent } from 'igniteui-angular';
+import { IgxCalendarComponent } from 'igniteui-angular/calendar';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxPrefixDirective } from 'igniteui-angular/input-group';
 import { registerLocaleData } from '@angular/common';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';

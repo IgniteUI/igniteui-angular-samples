@@ -1,9 +1,8 @@
-import {IgxAvatarModule,
-IgxButtonModule,
-IgxIconModule,
-IgxListModule,
-IgxRippleModule,
-IgxSnackbarModule} from 'igniteui-angular';
+import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxButtonModule, IgxRippleModule } from 'igniteui-angular/directives';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxListModule } from 'igniteui-angular/list';
+import { IgxSnackbarModule } from 'igniteui-angular/snackbar';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class SnackbarConfigGenerator implements IConfigGenerator {

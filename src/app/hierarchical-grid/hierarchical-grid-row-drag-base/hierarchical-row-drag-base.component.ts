@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxHierarchicalGridComponent, RowType, IgxDropDirective, IgxIconComponent, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxColumnComponent, RowType } from 'igniteui-angular/grids/core';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { createData, IDrive } from '../../data/files.data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

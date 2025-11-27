@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxPaginatorComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxCellHeaderTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

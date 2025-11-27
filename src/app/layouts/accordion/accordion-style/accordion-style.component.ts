@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxAccordionComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent } from 'igniteui-angular';
+import { IgxAccordionComponent } from 'igniteui-angular/accordion';
+import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
 import { FormsModule } from '@angular/forms';
 
 @Component({

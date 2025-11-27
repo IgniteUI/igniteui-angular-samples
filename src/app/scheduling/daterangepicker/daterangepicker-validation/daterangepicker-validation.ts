@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { DateRange, IgxDateRangePickerComponent, IgxLabelDirective, IgxDateRangeStartComponent, IgxPickerToggleComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxDateTimeEditorDirective, IgxDateRangeEndComponent, IgxSuffixDirective, IgxPickerClearComponent } from 'igniteui-angular';
+import { DateRange, IgxPickerClearComponent, IgxPickerToggleComponent } from 'igniteui-angular/core';
+import { IgxDateRangeEndComponent, IgxDateRangePickerComponent, IgxDateRangeStartComponent } from 'igniteui-angular/date-picker';
+import { IgxInputDirective, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxDateTimeEditorDirective } from 'igniteui-angular/directives';
 import { FormsModule } from '@angular/forms';
 
 @Component({

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DATA } from '../../data/nwindData';
-import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxOverlayOutletDirective } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxOverlayOutletDirective } from 'igniteui-angular/core';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { CurrencyPipe } from '@angular/common';
 

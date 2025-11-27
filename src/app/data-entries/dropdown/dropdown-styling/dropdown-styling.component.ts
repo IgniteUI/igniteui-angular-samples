@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
-import { ISelectionEventArgs, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent } from 'igniteui-angular';
+import { ISelectionEventArgs, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
 import { getHeroClassData, IHeroClass } from '../../../data/heroData';
 
 

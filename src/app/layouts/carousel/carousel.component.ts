@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular';
+import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
 
 
 @Component({
