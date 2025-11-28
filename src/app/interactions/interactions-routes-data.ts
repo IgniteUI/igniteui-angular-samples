@@ -1,6 +1,9 @@
 // tslint:disable:object-literal-sort-keys
 
 export const interactionsRoutesData = {
+    'chat-overview-sample': { displayName: 'Chat Overview', parentName: 'Chat' },
+    'chat-features-sample': { displayName: 'Chat Features', parentName: 'Chat' },
+    'chat-styling-sample': { displayName: 'Chat Styling', parentName: 'Chat' },
     'dialog-sample-1': { displayName: 'Completed Action Dialog', parentName: 'Dialog' },
     'dialog-sample-2': { displayName: 'Confirmation Dialog', parentName: 'Dialog' },
     'dialog-sample-3': { displayName: 'Sign-in form Dialog', parentName: 'Dialog' },

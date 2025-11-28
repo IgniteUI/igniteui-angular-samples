@@ -1,0 +1,24 @@
+<div class="sample-column">
+    <igx-chat
+        [options]="options()"
+        [messages]="messages()"
+        [draftMessage]="draftMessage"
+        [templates]="{ messageHeader: messageHeader }"
+        (messageCreated)="onMessageCreated($event)">
+
+        <ng-template #messageHeader let-message>
+            @if (message.sender !== 'user') {
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <igx-avatar
+                        shape="circle"
+                        src="https://www.infragistics.com/angular-demos/assets/images/men/1.jpg"
+                        size="small"
+                    >
+                    </igx-avatar>
+                    <span style="font-weight: bold; color: #c00000;"
+                    >Customer Support</span>
+                </div>
+            }
+        </ng-template>
+    </igx-chat>
+</div>
