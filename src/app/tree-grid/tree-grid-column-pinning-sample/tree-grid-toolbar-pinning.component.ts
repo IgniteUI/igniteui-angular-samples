@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit, inject } from '@angular/core';
-import { IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { ActivatedRoute } from '@angular/router';
 import { NgClass } from '@angular/common';

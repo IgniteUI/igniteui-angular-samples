@@ -1,6 +1,8 @@
 
 import { Component, ElementRef, ViewChild, inject } from '@angular/core';
-import { IgxSelectComponent, IgxLabelDirective, IgxSelectGroupComponent, IgxSelectItemComponent, IgxIconComponent } from 'igniteui-angular';
+import { IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 
 @Component({

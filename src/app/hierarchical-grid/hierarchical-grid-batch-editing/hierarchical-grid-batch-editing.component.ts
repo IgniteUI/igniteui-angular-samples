@@ -1,6 +1,13 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent, Transaction, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxCheckboxComponent, IgxGridComponent } from 'igniteui-angular';
+import { IgxDialogComponent } from 'igniteui-angular/dialog';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { Transaction } from 'igniteui-angular/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarComponent, IgxGridToolbarDirective } from 'igniteui-angular/grids/core';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

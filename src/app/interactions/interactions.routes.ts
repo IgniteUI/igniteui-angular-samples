@@ -1,5 +1,8 @@
 // tslint:disable:no-string-literal
 import { Routes } from '@angular/router';
+import { ChatOverviewSampleComponent } from './chat/overview-sample/overview-sample.component';
+import { ChatFeaturesSampleComponent } from './chat/features-sample/features-sample.component';
+import { ChatStylingSampleComponent } from './chat/styling-sample/styling-sample.component';
 import { DialogSample1Component } from './dialog/dialog-sample-1/dialog-sample-1.component';
 import { DialogSample2Component } from './dialog/dialog-sample-2/dialog-sample-2.component';
 import { DialogSample3Component } from './dialog/dialog-sample-3/dialog-sample-3.component';
@@ -63,9 +66,8 @@ import { TooltipRichComponent } from './tooltip/tooltip-rich/tooltip-rich.compon
 import { TooltipSimpleComponent } from './tooltip/tooltip-simple/tooltip-simple.component';
 import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.component';
 import { TooltipTailwindStyleComponent } from './tooltip/tooltip-tailwind-style/tooltip-tailwind-style.component';
-import { ChatOverviewSampleComponent } from './chat/overview-sample/overview-sample.component';
-import { ChatFeaturesSampleComponent } from './chat/features-sample/features-sample.component';
-import { ChatStylingSampleComponent } from './chat/styling-sample/styling-sample.component';
+import { TooltipPlacementComponent } from './tooltip/tooltip-placement/tooltip-placement.component';
+import { TooltipAdvancedComponent } from './tooltip/tooltip-advanced/tooltip-advanced.component';
 
 export const InteractionsRoutes: Routes = [
     {
@@ -232,6 +234,16 @@ export const InteractionsRoutes: Routes = [
         component: TooltipRichComponent,
         data: interactionsRoutesData['tooltip-rich'],
         path: 'tooltip-rich'
+    },
+    {
+        component: TooltipPlacementComponent,
+        data: interactionsRoutesData['tooltip-placement'],
+        path: 'tooltip-placement'
+    },
+    {
+        component: TooltipAdvancedComponent,
+        data: interactionsRoutesData['tooltip-advanced'],
+        path: 'tooltip-advanced'
     },
     {
         component: TooltipStyleComponent,

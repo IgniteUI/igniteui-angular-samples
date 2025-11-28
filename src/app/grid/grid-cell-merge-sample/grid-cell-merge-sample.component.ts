@@ -1,15 +1,8 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-    GridSelectionMode,
-    IgxGridComponent,
-    IgxColumnComponent,
-    IgxCellTemplateDirective,
-    GridCellMergeMode,
-    IgxSelectComponent,
-    IgxSelectItemComponent,
-    IgxGridToolbarComponent,
-    IgxLabelDirective
-} from 'igniteui-angular';
+import { GridCellMergeMode, GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { INVOICE_DATA } from '../../data/invoiceData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';

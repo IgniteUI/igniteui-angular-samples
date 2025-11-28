@@ -1,7 +1,6 @@
-import {IgxAvatarModule,
-IgxIconModule,
-IgxToggleModule,
-IgxTooltipModule} from 'igniteui-angular';
+import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxToggleModule, IgxTooltipModule } from 'igniteui-angular/directives';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class TooltipConfigGenerator implements IConfigGenerator {
@@ -20,6 +19,20 @@ export class TooltipConfigGenerator implements IConfigGenerator {
         // Rich Tooltip Sample
         configs.push(new Config({
             component: 'TooltipRichComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/tooltip/"
+        }));
+
+        // Placement Tooltip Sample
+        configs.push(new Config({
+            component: 'TooltipPlacementComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/tooltip/"
+        }));
+
+        // Advanced Tooltip Sample
+        configs.push(new Config({
+            component: 'TooltipAdvancedComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/tooltip/"
         }));

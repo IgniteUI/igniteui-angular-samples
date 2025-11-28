@@ -1,12 +1,11 @@
-import {IgxAvatarModule,
-IgxButtonModule,
-IgxCardModule,
-IgxExpansionPanelModule,
-IgxGridModule,
-IgxIconModule,
-IgxInputGroupModule,
-IgxRippleModule,
-IgxToastModule} from 'igniteui-angular';
+import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxButtonModule, IgxRippleModule } from 'igniteui-angular/directives';
+import { IgxCardModule } from 'igniteui-angular/card';
+import { IgxExpansionPanelModule } from 'igniteui-angular/expansion-panel';
+import { IgxGridModule } from 'igniteui-angular/grids/grid';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxInputGroupModule } from 'igniteui-angular/input-group';
+import { IgxToastModule } from 'igniteui-angular/toast';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class ExpansionPanelConfigGenerator implements IConfigGenerator {

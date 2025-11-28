@@ -1,5 +1,8 @@
 import { Component, OnInit, QueryList, ViewChildren } from '@angular/core';
-import { IgxSimpleComboComponent, ISimpleComboSelectionChangingEventArgs, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxLinearProgressBarComponent } from 'igniteui-angular';
+import { ISimpleComboSelectionChangingEventArgs, IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxLinearProgressBarComponent } from 'igniteui-angular/progressbar';
 import { Country, getCitiesByCountry, getCountries } from '../../data/cities15000-regions-countries';
 import { DATA } from '../../data/data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ButtonGroupAlignment, IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
+import { ButtonGroupAlignment, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-button-group-sample-2',

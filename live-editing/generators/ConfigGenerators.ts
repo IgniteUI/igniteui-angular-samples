@@ -1,5 +1,3 @@
-import { Config, IConfigGenerator } from 'igniteui-live-editing'
-import { BaseAppConfig } from './BaseConfig';;
 import { ActionStripConfigGenerator } from '../configs/ActionStripConfigGenerator';
 import { AutocompleteConfigGenerator } from '../configs/AutocompleteConfigGenerator';
 import { AvatarConfigGenerator } from '../configs/AvatarConfigGenerator';
@@ -65,6 +63,7 @@ import { PaginationConfigGenerator } from '../configs/PaginationConfigGenerator'
 import { PivotGridConfigGenerator } from '../configs/PivotGridConfigGenerator';
 import { QueryBuilderConfigGenerator } from '../configs/QueryBuilderConfigGenerator';
 import { TileManagerConfigGenerator } from '../configs/TileManagerConfigGenerator';
+import { GridLiteConfigGenerator } from '../configs/GridLiteConfigGenerator';
 
 export const CONFIG_GENERATORS =
     [
@@ -119,6 +118,7 @@ export const CONFIG_GENERATORS =
         HierarchicalGridConfigGenerator,
         TreeGridConfigGenerator,
         PivotGridConfigGenerator,
+        GridLiteConfigGenerator,
 
         // other:
         ActionStripConfigGenerator,

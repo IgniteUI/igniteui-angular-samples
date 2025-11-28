@@ -26,8 +26,7 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
                 ],
                 providers: [
                     { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' }
-                ],
-                router: true
+                ]
             }
             /*appConfig: BaseAppConfig*/
 

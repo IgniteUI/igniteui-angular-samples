@@ -1,7 +1,14 @@
 /* eslint-disable no-underscore-dangle */
 import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IColumnExportingEventArgs, IgxColumnComponent, IgxCsvExporterService, IgxDateSummaryOperand, IgxExcelExporterService, IgxGridComponent, IgxNumberSummaryOperand, IgxSummaryResult, IgxToggleDirective, OverlaySettings, PositionSettings, VerticalAlignment, CellType, GridSelectionMode, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxGridToolbarTitleComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxCellTemplateDirective, IgxAvatarComponent, IgxLinearProgressBarComponent } from 'igniteui-angular';
+import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxSummaryResult, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
+import { CellType, GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent, IgxDateSummaryOperand, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxNumberSummaryOperand, IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxIconButtonDirective, IgxRippleDirective, IgxToggleDirective } from 'igniteui-angular/directives';
+import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxLinearProgressBarComponent } from 'igniteui-angular/progressbar';
 import { data, Employee } from './data';
 import { NgClass } from '@angular/common';
 import { IgxPreventDocumentScrollDirective } from '../../../../../src/app/directives/prevent-scroll.directive';

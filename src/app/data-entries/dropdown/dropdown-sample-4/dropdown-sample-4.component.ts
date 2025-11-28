@@ -1,5 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { ConnectedPositioningStrategy, IgxDropDownComponent, IgxInputGroupComponent, IgxToggleActionDirective, IgxInputDirective, IgxDropDownItemNavigationDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent, IgxDropDownItemComponent } from 'igniteui-angular';
+import { ConnectedPositioningStrategy } from 'igniteui-angular/core';
+import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { IgxInputDirective, IgxInputGroupComponent, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconButtonDirective, IgxRippleDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     // tslint:disable-next-line:component-selector

@@ -1,16 +1,12 @@
 import { ReactiveFormsModule } from '@angular/forms';
-import {
-    IgxAutocompleteModule,
-    IgxButtonModule,
-    IgxCalendarModule,
-    IgxDatePickerModule,
-    IgxTimePickerModule,
-    IgxDropDownModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxSnackbarModule,
-    IgxToggleModule
-} from 'igniteui-angular';
+import { IgxAutocompleteModule, IgxDropDownModule } from 'igniteui-angular/drop-down';
+import { IgxButtonModule, IgxToggleModule } from 'igniteui-angular/directives';
+import { IgxCalendarModule } from 'igniteui-angular/calendar';
+import { IgxDatePickerModule } from 'igniteui-angular/date-picker';
+import { IgxTimePickerModule } from 'igniteui-angular/time-picker';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxInputGroupModule } from 'igniteui-angular/input-group';
+import { IgxSnackbarModule } from 'igniteui-angular/snackbar';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class DatePickerConfigGenerator implements IConfigGenerator {
