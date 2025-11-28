@@ -40,9 +40,9 @@ export class ChatOverviewSampleComponent {
                 name: 'Delivery location',
                 url: 'https://media.istockphoto.com/id/1207972183/photo/merchandise-delivery-from-online-ordering.jpg?s=612x612&w=0&k=20&c=cGcMqd_8FALv4Tueh7sllYZuDXurkfkqoJf6IAIWhJk=',
                 type: 'image'
-                },
-            ],
-        },
+                }
+            ]
+        }
     ]);
 
     public options = signal<IgxChatOptions>({
@@ -50,7 +50,7 @@ export class ChatOverviewSampleComponent {
         disableInputAttachments: false,
         suggestions: [`It's there. Thanks.`, `It's not there.`],
         inputPlaceholder: 'Type your message here...',
-        headerText: 'Customer Support',
+        headerText: 'Customer Support'
     });
 
     constructor() {

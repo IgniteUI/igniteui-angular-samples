@@ -1,6 +1,7 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectorRef, Component, effect, OnInit, signal, viewChild } from '@angular/core';
-import { IgxChatComponent, IgxChatMessageContextDirective, IgxChatOptions, MarkdownPipe } from 'igniteui-angular';
+import { ChangeDetectorRef, Component, effect, signal, viewChild } from '@angular/core';
+import { IgxChatComponent, IgxChatMessageContextDirective, IgxChatOptions } from 'igniteui-angular';
+import { MarkdownPipe } from 'igniteui-angular/chat-extras';
 
 @Component({
     selector: 'app-chat-features-sample',
@@ -32,8 +33,8 @@ export class ChatFeaturesSampleComponent {
                 name: 'AvatarStyles.css',
                 url: './styles/AvatarStyles.css',
                 type: 'text/css'
-                },
-            ],
+                }
+            ]
         },
         {
             id: '3',
@@ -56,7 +57,7 @@ export class ChatFeaturesSampleComponent {
             `,
             sender: 'support',
             timestamp: (Date.now() - 3200000).toString()
-        },
+        }
     ]);
 
     public options = signal<IgxChatOptions>({

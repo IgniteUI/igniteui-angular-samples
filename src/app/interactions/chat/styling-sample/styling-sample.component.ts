@@ -1,12 +1,13 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { IgxAvatarComponent, IgxChatComponent, IgxChatOptions, MarkdownPipe } from 'igniteui-angular';
+import { IgxAvatarComponent, IgxChatComponent, IgxChatOptions } from 'igniteui-angular';
+
 
 @Component({
     selector: 'app-chat-styling-sample',
     styleUrls: ['./styling-sample.component.scss'],
     templateUrl: './styling-sample.component.html',
-    imports: [IgxAvatarComponent, IgxChatComponent, AsyncPipe, MarkdownPipe],
+    imports: [IgxAvatarComponent, IgxChatComponent, AsyncPipe],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ChatStylingSampleComponent {
@@ -42,9 +43,9 @@ export class ChatStylingSampleComponent {
                 name: 'Delivery location',
                 url: 'https://media.istockphoto.com/id/1207972183/photo/merchandise-delivery-from-online-ordering.jpg?s=612x612&w=0&k=20&c=cGcMqd_8FALv4Tueh7sllYZuDXurkfkqoJf6IAIWhJk=',
                 type: 'image'
-                },
-            ],
-        },
+                }
+            ]
+        }
     ]);
 
     public options = signal<IgxChatOptions>({

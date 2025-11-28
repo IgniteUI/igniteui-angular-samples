@@ -1,5 +1,7 @@
 // @use "igniteui-angular/theming" as *;
 igx-chat {
+    height: 870px;
+
     ::ng-deep {
         igc-chat::part(header) {
             display: flex;
