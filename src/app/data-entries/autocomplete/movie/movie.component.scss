@@ -1,3 +1,9 @@
 .autocomplete {
     width: 50%;
 }
+
+:host {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}

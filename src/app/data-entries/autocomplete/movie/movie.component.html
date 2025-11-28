@@ -6,7 +6,7 @@
     [(ngModel)]="cinemaSelected"
     />
   </igx-input-group>
-  <igx-drop-down #townsPanel maxHeight="300px">
+  <igx-drop-down #townsPanel maxHeight="200px">
     @for (town of towns; track town) {
       <igx-drop-down-item-group [label]="town.name">
         @for (cinema of town.cinemas | startsWith:cinemaSelected; track cinema) {
