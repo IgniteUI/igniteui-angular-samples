@@ -76,7 +76,7 @@ export class ChatStylingSampleComponent {
             id: Date.now().toString(),
             text: responseText,
             sender: 'support',
-            timestamp: Date.now().toString(),
+            timestamp: Date.now().toString()
         };
 
         this.draftMessage = { text: '', attachments: [] };
