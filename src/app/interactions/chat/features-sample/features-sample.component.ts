@@ -1,6 +1,6 @@
 import { AsyncPipe } from '@angular/common';
 import { Component, effect, signal, viewChild } from '@angular/core';
-import { IgxChatComponent, IgxChatMessageContextDirective, IgxChatOptions } from 'igniteui-angular';
+import { IgxChatComponent, IgxChatMessageContextDirective, type IgxChatOptions } from 'igniteui-angular';
 import { MarkdownPipe } from 'igniteui-angular/chat-extras';
 
 @Component({
@@ -45,16 +45,16 @@ export class ChatFeaturesSampleComponent {
         {
             id: '4',
             text:
-            `Thank you for your patience. It seems that the issue is the name of the CSS part. Here is the fixed code:
-    \`\`\`css
-    igc-avatar::part(base) {
+        `Thank you for your patience. It seems that the issue is the name of the CSS part. Here is the fixed code:
+\`\`\`css
+igc-avatar::part(base) {
     --size: 60px;
     color: var(--ig-success-500-contrast);
     background: var(--ig-success-500);
     border-radius: 20px;
-    }
-    \`\`\`
-            `,
+}
+\`\`\`
+        `,
             sender: 'support',
             timestamp: (Date.now() - 3200000).toString()
         }
@@ -73,9 +73,18 @@ export class ChatFeaturesSampleComponent {
 
     constructor() {
         effect(() => {
-            this.templates.set({ messageContent: this._messageContent(), messageHeader: this._messageHeader(), suggestionPrefix: this._suggestionPrefix() });
-        });
+            const messageHeader = this._messageHeader();
+            const suggestionPrefix = this._suggestionPrefix();
+            const messageContent = this._messageContent();
 
+            if (messageHeader && suggestionPrefix && messageContent) {
+                this.templates.set({
+                    messageHeader: messageHeader,
+                    suggestionPrefix: suggestionPrefix,
+                    messageContent: messageContent
+                });
+            }
+        });
     }
 
     public onMessageCreated(e: any): void {
