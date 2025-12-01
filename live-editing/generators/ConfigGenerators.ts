@@ -8,6 +8,7 @@ import { ButtonGroupConfigGenerator } from '../configs/ButtonGroupConfigGenerato
 import { CalendarConfigGenerator } from '../configs/CalendarConfigGenerator';
 import { CardConfigGenerator } from '../configs/CardConfigGenerator';
 import { CarouselConfigGenerator } from '../configs/CarouselConfigGenerator';
+import { ChatConfigGenerator } from '../configs/ChatConfigGenerator';
 import { CheckboxConfigGenerator } from '../configs/CheckboxConfigGenerator';
 import { ChipConfigGenerator } from '../configs/ChipConfigGenerator';
 import { CircularProgressbarConfigGenerator } from '../configs/CircularProgressbarConfigGenerator';
@@ -121,6 +122,7 @@ export const CONFIG_GENERATORS =
 
         // other:
         ActionStripConfigGenerator,
+        ChatConfigGenerator,
         CircularProgressbarConfigGenerator,
         DividerConfigGenerator,
         ForConfigGenerator,
