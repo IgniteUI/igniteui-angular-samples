@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectorRef, Component, effect, signal, viewChild } from '@angular/core';
+import { Component, effect, signal, viewChild } from '@angular/core';
 import { IgxChatComponent, IgxChatMessageContextDirective, IgxChatOptions } from 'igniteui-angular';
 import { MarkdownPipe } from 'igniteui-angular/chat-extras';
 
@@ -71,9 +71,9 @@ export class ChatFeaturesSampleComponent {
 
     public templates = signal({});
 
-    constructor(private cdr: ChangeDetectorRef) {
+    constructor() {
         effect(() => {
-            this.templates.set({ messageContent: this._messageContent(), messageHeader: this._messageHeader(), suggestionPrefix: this._suggestionPrefix() } );
+            this.templates.set({ messageContent: this._messageContent(), messageHeader: this._messageHeader(), suggestionPrefix: this._suggestionPrefix() });
         });
 
     }
