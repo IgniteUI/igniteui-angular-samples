@@ -1,5 +1,5 @@
 import { Component, inject, signal } from '@angular/core';
-import { IgxPdfExporterOptions, IgxPdfExporterService } from 'igniteui-angular';
+import { IgxPdfExporterOptions, IgxPdfExporterService } from 'igniteui-angular/grids/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 
 @Component({
