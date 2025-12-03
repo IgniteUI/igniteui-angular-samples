@@ -8,11 +8,11 @@ import {
     forwardRef,
     inject
 } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 import fileSaver from 'file-saver';
 import Fuse from 'fuse.js';
-import { Subject } from 'rxjs';
-import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
-import { toSignal } from '@angular/core/rxjs-interop';
+import { Subject, combineLatest, BehaviorSubject, Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, map, startWith } from 'rxjs/operators';
 
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { ISelectionEventArgs } from 'igniteui-angular/drop-down';
@@ -42,6 +42,7 @@ interface ICategoryOption {
     templateUrl: './material-icons-extended.component.html',
     styleUrls: ['./material-icons-extended.component.scss'],
     imports: [
+        AsyncPipe,
         IgxSelectComponent,
         IgxLabelDirective,
         IgxSelectItemComponent,
@@ -58,14 +59,28 @@ export class MaterialIconsExtendedComponent implements OnInit {
     private iconService = inject(IgxIconService);
     private renderer = inject(Renderer2);
 
-    // Search with debounce using signals
+    // Search with debounce
     private searchInput$ = new Subject<string>();
-    public searchTerm = toSignal(
-        this.searchInput$.pipe(
-            debounceTime(300),
-            distinctUntilChanged()
-        ),
-        { initialValue: '' }
+    private categorySubject$ = new BehaviorSubject<IconCategory | 'all'>('all');
+
+    private searchTerm$ = this.searchInput$.pipe(
+        debounceTime(300),
+        distinctUntilChanged(),
+        startWith('')
+    );
+
+    // Combine search and category filters
+    public filteredResults$: Observable<IIconsGroup[]> = combineLatest([
+        this.searchTerm$,
+        this.categorySubject$
+    ]).pipe(
+        map(([searchTerm, category]) => {
+            const filterByNamePipe = new FilterByName();
+            const categoriesPipe = new CategoriesFilterPipe();
+
+            const filtered = filterByNamePipe.transform(this.allIcons, searchTerm);
+            return categoriesPipe.transform(filtered, category);
+        })
     );
 
     public categories: ICategoryOption[] = [
@@ -99,15 +114,16 @@ export class MaterialIconsExtendedComponent implements OnInit {
     }
 
     public allIcons = imxIcons;
-
     public selectedCategory: IconCategory | 'all' = 'all';
 
     handleSelection(event: ISelectionEventArgs) {
         this.selectedCategory = event.newSelection.value;
+        this.categorySubject$.next(event.newSelection.value);
     }
 
     resetFilter() {
         this.selectedCategory = 'all';
+        this.categorySubject$.next('all');
     }
 
     trackByIcon(_index: number, icon: IMXIcon): string {
@@ -172,7 +188,8 @@ interface IIconsGroup {
 }
 
 @Pipe({
-    name: 'categoriesFilter'
+    name: 'categoriesFilter',
+    pure: true
 })
 export class CategoriesFilterPipe implements PipeTransform {
     sortIcons(acc: IIconsGroup[], icon: IMXIcon): IIconsGroup[] {
@@ -215,7 +232,8 @@ export class CategoriesFilterPipe implements PipeTransform {
 }
 
 @Pipe({
-    name: 'filterByName'
+    name: 'filterByName',
+    pure: true
 })
 export class FilterByName implements PipeTransform {
     private fuse: Fuse<IMXIcon> | null = null;

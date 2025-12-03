@@ -31,7 +31,7 @@
     </igx-input-group>
   </div>
   <div class="sample__body">
-    @if ((allIcons | filterByName: searchTerm() | categoriesFilter: selectedCategory); as fResults) {
+    @if (filteredResults$ | async; as fResults) {
       @for (group of fResults; track trackByCategory($index, group)) {
         <article class="sample__body-inner">
           <header class="sample__body-title">
