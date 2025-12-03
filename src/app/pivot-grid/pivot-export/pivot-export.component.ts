@@ -1,6 +1,6 @@
 import { Component, ViewChild, inject } from "@angular/core";
 
-import { IPivotConfiguration, IgxPivotDateDimension, IgxPivotNumericAggregate, PivotAggregation, IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular/grids/core';
+import { IPivotConfiguration, IgxPivotDateDimension, IgxPivotNumericAggregate, PivotAggregation, IgxExcelExporterOptions, IgxExcelExporterService, IgxPdfExporterService, IgxPdfExporterOptions } from 'igniteui-angular/grids/core';
 import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { SALES_DATA } from "../../data/dataToAnalyze";
@@ -40,9 +40,10 @@ export class IgxTotalSaleAggregate {
 })
 export class PivotExportComponent {
     private excelExportService = inject(IgxExcelExporterService);
+    private pdfExportService = inject(IgxPdfExporterService);
 
     @ViewChild(IgxPivotGridComponent, { static: true }) public grid: IgxPivotGridComponent;
-    
+
     public data = SALES_DATA;
 
     public pivotConfig: IPivotConfiguration = {
@@ -91,7 +92,7 @@ export class PivotExportComponent {
                     aggregator: IgxPivotNumericAggregate.sum,
                     label: 'Sum'
                 }],
-                enabled: true,
+                enabled: false,
                 formatter: (value) => value ? '$' + parseFloat(value).toFixed(3) : undefined
             },
             {
@@ -123,5 +124,9 @@ export class PivotExportComponent {
 
     public exportButtonHandler() {
         this.excelExportService.export(this.grid, new IgxExcelExporterOptions('ExportedDataFile'));
+    }
+
+    public exportPdfButtonHandler() {
+        this.pdfExportService.export(this.grid, new IgxPdfExporterOptions('ExportedDataFile'));
     }
 }
