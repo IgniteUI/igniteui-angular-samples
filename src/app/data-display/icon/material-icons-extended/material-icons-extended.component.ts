@@ -115,6 +115,17 @@ export class MaterialIconsExtendedComponent implements OnInit {
 
     public allIcons = imxIcons;
     public selectedCategory: IconCategory | 'all' = 'all';
+    
+    // Floating download button
+    public hoveredIcon: IMXIcon | null = null;
+
+    onIconMouseEnter(icon: IMXIcon) {
+        this.hoveredIcon = icon;
+    }
+
+    onIconMouseLeave() {
+        this.hoveredIcon = null;
+    }
 
     handleSelection(event: ISelectionEventArgs) {
         this.selectedCategory = event.newSelection.value;

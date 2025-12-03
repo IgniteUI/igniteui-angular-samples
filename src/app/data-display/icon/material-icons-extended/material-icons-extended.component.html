@@ -42,14 +42,12 @@
               @for (icon of group.icons; track trackByIcon($index, icon)) {
                 <div
                   class="sample__grid-item"
+                  (mouseenter)="onIconMouseEnter(icon)"
+                  (mouseleave)="onIconMouseLeave()"
                   >
                   <button
                     [value]="icon.name"
-                                [title]="
-                                    'Copy &quot;' +
-                                    icon.name +
-                                    '&quot; to clipboard'
-                                "
+                    [title]="'Copy &quot;' + icon.name + '&quot; to clipboard'"
                     (click)="copyValue($event, icon.name)"
                     class="sample__grid-item-clipboard"
                     >
@@ -59,25 +57,26 @@
                     <igx-icon
                       class="sample__grid-icon"
                       family="imx-icons"
-                      name="{{ icon.name }}"
-                    ></igx-icon>
+                      [name]="icon.name">
+                    </igx-icon>
                     <span
                       class="sample__grid-icon-name"
-                      title="{{ icon.name }}"
-                      >{{ icon.name }}</span
-                      >
-                    </div>
+                      [title]="icon.name">
+                      {{ icon.name }}
+                    </span>
+                  </div>
+                  @if (hoveredIcon === icon) {
                     <button
                       (click)="downloadFile(icon)"
-                      igxripple
                       class="sample__grid-item-download"
                       igxButton="contained"
-                      >
+                      igxRipple>
                       <igx-icon>arrow_downward</igx-icon>
                       <span>SVG</span>
                     </button>
-                  </div>
-                }
+                  }
+                </div>
+              }
               </div>
             </section>
           </article>
