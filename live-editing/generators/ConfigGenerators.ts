@@ -24,6 +24,7 @@ import { DropDownConfigGenerator } from '../configs/DropDownConfigGenerator';
 import { ExpansionPanelConfigGenerator } from '../configs/ExpansionPanelConfigGenerator';
 import { ExportCsvConfigGenerator } from '../configs/ExportCsvConfigGenerator';
 import { ExportExcelConfigGenerator } from '../configs/ExportExcelConfigGenerator';
+import { ExportPdfConfigGenerator } from '../configs/ExportPdfConfigGenerator';
 import { ForConfigGenerator } from '../configs/ForConfigGenerator';
 import { GridConfigGenerator } from '../configs/GridConfigGenerator';
 import { HierarchicalGridConfigGenerator } from '../configs/HierarchicalGridConfigGenerator';
@@ -71,6 +72,7 @@ export const CONFIG_GENERATORS =
         DragAndDropConfigGenerator,
         ExportCsvConfigGenerator,
         ExportExcelConfigGenerator,
+        ExportPdfConfigGenerator,
 
         // containers:
         AccordionConfigGenerator,
