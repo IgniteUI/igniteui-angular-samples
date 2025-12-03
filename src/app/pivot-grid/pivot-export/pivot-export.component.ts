@@ -1,6 +1,16 @@
 import { Component, ViewChild, inject } from "@angular/core";
 
-import { IPivotConfiguration, IgxPivotDateDimension, IgxPivotNumericAggregate, PivotAggregation, IgxExcelExporterOptions, IgxExcelExporterService, IgxPdfExporterService, IgxPdfExporterOptions } from 'igniteui-angular/grids/core';
+import {
+    IPivotConfiguration,
+    IgxPivotDateDimension,
+    IgxPivotNumericAggregate,
+    PivotAggregation,
+    IgxExcelExporterOptions,
+    IgxExcelExporterService,
+    IgxPdfExporterService,
+    IgxPdfExporterOptions,
+    IColumnExportingEventArgs
+} from 'igniteui-angular/grids/core';
 import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { SALES_DATA } from "../../data/dataToAnalyze";
@@ -127,6 +137,18 @@ export class PivotExportComponent {
     }
 
     public exportPdfButtonHandler() {
-        this.pdfExportService.export(this.grid, new IgxPdfExporterOptions('ExportedDataFile'));
+        const pdfOptions = new IgxPdfExporterOptions('ExportedDataFile');
+
+        this.pdfExportService.columnExporting.subscribe((args: IColumnExportingEventArgs) => {
+            const header = args.header || '';
+
+            // Cancel if it's a quarter (Q1-Q4)
+            // This makes the PDF more readable by excluding less important columns
+            if (/Q[1-4]/i.test(header)) {
+                args.cancel = true;
+            }
+        });
+
+        this.pdfExportService.export(this.grid, pdfOptions);
     }
 }
