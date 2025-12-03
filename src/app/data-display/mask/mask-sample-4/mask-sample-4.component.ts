@@ -1,5 +1,6 @@
 import { Component, Pipe, PipeTransform } from '@angular/core';
-import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxMaskDirective, IgxTextSelectionDirective } from 'igniteui-angular';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxMaskDirective, IgxTextSelectionDirective } from 'igniteui-angular/directives';
 import { FormsModule } from '@angular/forms';
 
 @Component({

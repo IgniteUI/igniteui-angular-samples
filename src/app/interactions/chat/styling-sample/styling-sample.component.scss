@@ -1,0 +1,57 @@
+// @use "igniteui-angular/theming" as *;
+igx-chat {
+    height: 870px;
+
+    ::ng-deep {
+        igc-chat::part(header) {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid var(--ig-gray-300);
+            background-color: var(--ig-gray-200);
+            font-family: 'Franklin Gothic Medium';
+            color: var(--ig-gray-700);
+        }
+
+        igc-chat::part(message-container) {
+            background: var(--igc-chat-bubble-bg, #eee);
+            color: var(--igc-chat-text-color, #222);
+            padding: 12px;
+            border-radius: 8px;
+            transition: background .15s;
+        }
+
+        igc-chat::part(message-sent) {
+            background: var(--igc-chat-sent-bubble-bg, #e6f4ff);
+            color: var(--igc-chat-sent-text-color, #03396b);
+        }
+
+        igc-chat::part(message-header) {
+            color: #c00000;
+            font-weight: bold;
+            margin: 8px;
+        }
+
+        igc-chat::part(message-actions-container) {
+            border-top: 1px solid var(--ig-gray-300);
+        }
+
+        igc-chat::part(suggestion) {
+            background-color: var(--ig-primary-100);
+            color: var(--ig-primary-800);
+            margin: .125rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        igc-chat::part(message-attachment) {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background: var(--igc-chat-sent-bubble-bg);
+        }
+
+        igc-chat::part(input-attachments-container) {
+            border: 5px solid var(--ig-gray-300);
+        }
+    }
+}

@@ -1,6 +1,13 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild, inject } from '@angular/core';
 
-import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IRowSelectionEventArgs, IgxSwitchComponent, IgxButtonGroupComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { GridSelectionMode, IRowSelectionEventArgs, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { Observable } from 'rxjs';
 import { FinancialDataService } from '../../services/financial.service';
 import { FormsModule } from '@angular/forms';

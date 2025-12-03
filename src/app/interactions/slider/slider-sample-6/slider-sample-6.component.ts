@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSliderType, IgxSliderComponent, IgxThumbFromTemplateDirective, IgxThumbToTemplateDirective } from 'igniteui-angular';
+import { IgxSliderComponent, IgxSliderType, IgxThumbFromTemplateDirective, IgxThumbToTemplateDirective } from 'igniteui-angular/slider';
 
 @Component({
     selector: 'app-slider-sample-6',

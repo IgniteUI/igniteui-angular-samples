@@ -1,11 +1,7 @@
-import {
-    IgxCardComponent,
-    IgxCardContentDirective,
-    IgxCardHeaderComponent,
-    IgxChipComponent,
-    IgxIconComponent,
-    IgxPrefixDirective,
-} from "igniteui-angular";
+import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent } from 'igniteui-angular/card';
+import { IgxChipComponent } from 'igniteui-angular/chips';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxPrefixDirective } from 'igniteui-angular/input-group';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 export class ThemingConfigGenerator implements IConfigGenerator {

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IgxCalendarComponent, IgxCalendarView, IgxDatePickerComponent, IgxLabelDirective, IgxButtonDirective } from 'igniteui-angular';
+import { IgxCalendarComponent, IgxCalendarView } from 'igniteui-angular/calendar';
+import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { FormsModule } from '@angular/forms';
 
 @Component({

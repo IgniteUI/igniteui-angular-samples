@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { SortingDirection, IgxIconComponent } from 'igniteui-angular';
+import { SortingDirection } from 'igniteui-angular/core';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { NgStyle } from '@angular/common';
 
 @Component({

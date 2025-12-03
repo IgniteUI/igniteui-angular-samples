@@ -1,7 +1,9 @@
 /* eslint-disable @typescript-eslint/member-delimiter-style */
 import { AnimationReferenceMetadata } from '@angular/animations';
 import { Component, ViewChild } from '@angular/core';
-import { AbsolutePosition, IgxListModule, IgxDialogModule, IgxDialogComponent, IgxOverlayService, IListItemClickEventArgs, IgxListComponent, IgxListItemComponent } from 'igniteui-angular';
+import { AbsolutePosition, IgxOverlayService } from 'igniteui-angular/core';
+import { IListItemClickEventArgs, IgxListComponent, IgxListItemComponent, IgxListModule } from 'igniteui-angular/list';
+import { IgxDialogComponent, IgxDialogModule } from 'igniteui-angular/dialog';
 import { blink, fadeIn, fadeOut, flipBottom, flipHorBck, flipHorFwd, flipLeft, flipRight,
     flipTop, flipVerBck, flipVerFwd, growVerIn, growVerOut, heartbeat,
     pulsateBck, pulsateFwd, rotateInBl, rotateInBottom, rotateInBr,

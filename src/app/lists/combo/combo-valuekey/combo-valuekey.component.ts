@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxComboComponent, IgxButtonDirective } from 'igniteui-angular';
+import { IgxComboComponent } from 'igniteui-angular/combo';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { CITIES, ICity } from './cities';
 import { FormsModule } from '@angular/forms';
 

@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, HostBinding, HostListener, Input, ViewChild, inject } from '@angular/core';
-import { IgxDialogComponent } from 'igniteui-angular';
+import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IPlanet } from '../data';
 
 

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { IgxDropDownComponent, IgxDropDownItemComponent } from 'igniteui-angular';
+import { IgxDropDownComponent, IgxDropDownItemComponent } from 'igniteui-angular/drop-down';
 
 @Injectable()
 export class MultiLevelService {

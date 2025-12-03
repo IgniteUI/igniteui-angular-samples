@@ -1,7 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
-import { IForOfState, SortingDirection } from 'igniteui-angular';
+import { IForOfState } from 'igniteui-angular/directives';
+import { SortingDirection } from 'igniteui-angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 const DATA_URL = 'https://services.odata.org/V4/Northwind/Northwind.svc/Products';

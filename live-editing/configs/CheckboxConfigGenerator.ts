@@ -1,4 +1,4 @@
-import { IgxCheckboxModule } from 'igniteui-angular';
+import { IgxCheckboxModule } from 'igniteui-angular/checkbox';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class CheckboxConfigGenerator implements IConfigGenerator {

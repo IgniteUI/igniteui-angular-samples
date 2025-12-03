@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxListComponent, IgxListItemComponent } from 'igniteui-angular';
+import { IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
 
 @Component({
     selector: 'app-igx-list-simple',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxCheckboxComponent } from 'igniteui-angular';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 
 @Component({
     selector: 'app-checkbox-tailwind-styling',

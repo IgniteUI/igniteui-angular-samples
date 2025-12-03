@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxPickerToggleComponent, IgxSuffixDirective, IgxIconComponent, IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
+import { IgxPickerToggleComponent } from 'igniteui-angular/core';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 export interface registrationFormGroup
 {
