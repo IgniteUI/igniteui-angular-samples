@@ -7,7 +7,7 @@
         [value]="selectedCategory"
         >
         <label igxLabel>Select category</label>
-        @for (option of categories; track option) {
+        @for (option of categories; track option.category) {
           <igx-select-item
             [value]="option.category"
             >
@@ -17,13 +17,13 @@
       </igx-select>
     </div>
     <igx-input-group class="sample__header-search" type="search">
-      <input #input igxInput placeholder="Search by icon name or keyword" />
+      <input #input igxInput placeholder="Search by icon name or keyword" (input)="onSearchInput(input.value)" />
       <igx-prefix>
         <igx-icon>search</igx-icon>
       </igx-prefix>
       @if (input.value.length > 0) {
         <igx-suffix
-          (click)="input.value = ''"
+          (click)="input.value = ''; clearSearch()"
           >
           <igx-icon>clear</igx-icon>
         </igx-suffix>
@@ -31,15 +31,15 @@
     </igx-input-group>
   </div>
   <div class="sample__body">
-    @if ((allIcons | filterByName: input.value | categoriesFilter: selectedCategory); as fResults) {
-      @for (group of fResults; track group) {
+    @if ((allIcons | filterByName: searchTerm() | categoriesFilter: selectedCategory); as fResults) {
+      @for (group of fResults; track trackByCategory($index, group)) {
         <article class="sample__body-inner">
           <header class="sample__body-title">
             {{ group.category }}
           </header>
           <section class="sample__body-section">
             <div class="sample__grid">
-              @for (icon of group.icons; track icon) {
+              @for (icon of group.icons; track trackByIcon($index, icon)) {
                 <div
                   class="sample__grid-item"
                   >

@@ -1,11 +1,29 @@
 /* eslint-disable @typescript-eslint/member-ordering */
-import { Component, OnInit, Pipe, PipeTransform, Renderer2, forwardRef, DOCUMENT, inject } from '@angular/core';
-import * as fileSaver from 'file-saver';
+import {
+    Component,
+    OnInit,
+    Pipe,
+    PipeTransform,
+    Renderer2,
+    forwardRef,
+    inject
+} from '@angular/core';
+import fileSaver from 'file-saver';
+import Fuse from 'fuse.js';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { ISelectionEventArgs } from 'igniteui-angular/drop-down';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
-import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import {
+    IgxInputDirective,
+    IgxInputGroupComponent,
+    IgxLabelDirective,
+    IgxPrefixDirective,
+    IgxSuffixDirective
+} from 'igniteui-angular/input-group';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 
 import {
@@ -23,13 +41,32 @@ interface ICategoryOption {
     selector: 'app-material-icons-extended',
     templateUrl: './material-icons-extended.component.html',
     styleUrls: ['./material-icons-extended.component.scss'],
-    imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxInputGroupComponent, IgxInputDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxButtonDirective, forwardRef(() => CategoriesFilterPipe), forwardRef(() => FilterByName)]
+    imports: [
+        IgxSelectComponent,
+        IgxLabelDirective,
+        IgxSelectItemComponent,
+        IgxInputGroupComponent,
+        IgxInputDirective,
+        IgxPrefixDirective,
+        IgxIconComponent,
+        IgxSuffixDirective,
+        IgxButtonDirective,
+        forwardRef(() => CategoriesFilterPipe), forwardRef(() => FilterByName)
+    ]
 })
 export class MaterialIconsExtendedComponent implements OnInit {
     private iconService = inject(IgxIconService);
-    private document = inject<Document>(DOCUMENT);
     private renderer = inject(Renderer2);
 
+    // Search with debounce using signals
+    private searchInput$ = new Subject<string>();
+    public searchTerm = toSignal(
+        this.searchInput$.pipe(
+            debounceTime(300),
+            distinctUntilChanged()
+        ),
+        { initialValue: '' }
+    );
 
     public categories: ICategoryOption[] = [
         {
@@ -37,6 +74,14 @@ export class MaterialIconsExtendedComponent implements OnInit {
             category: 'all'
         }
     ];
+
+    onSearchInput(value: string) {
+        this.searchInput$.next(value);
+    }
+
+    clearSearch() {
+        this.searchInput$.next('');
+    }
 
     public setCategories() {
         const categories = IconCategory.values().map(
@@ -65,6 +110,14 @@ export class MaterialIconsExtendedComponent implements OnInit {
         this.selectedCategory = 'all';
     }
 
+    trackByIcon(_index: number, icon: IMXIcon): string {
+        return icon.name;
+    }
+
+    trackByCategory(_index: number, group: IIconsGroup): string {
+        return group.category;
+    }
+
     addIcons() {
         for (const icon of imxIcons) {
             this.iconService.addSvgIconFromText(
@@ -80,36 +133,30 @@ export class MaterialIconsExtendedComponent implements OnInit {
         fileSaver.saveAs(blob, icon.name);
     }
 
-    copyValue(event: Event, val: string) {
+    async copyValue(event: Event, val: string) {
         const target = event.currentTarget as HTMLButtonElement;
         const element = target.childNodes[0] as HTMLElement;
-        const tempField = this.renderer.createElement('textarea');
 
-        this.renderer.setStyle(tempField, 'position', 'fixed');
-        this.renderer.setStyle(tempField, 'opacity', '0');
-        this.renderer.setProperty(tempField, 'value', val);
-        this.renderer.appendChild(this.document.body, tempField);
+        try {
+            await navigator.clipboard.writeText(val);
 
-        tempField.focus();
-        tempField.select();
-
-        this.document.execCommand('copy');
-        this.renderer.removeChild(this.document.body, tempField);
-
-        if (element.innerText !== 'done') {
-            this.renderer.setProperty(element, 'innerText', 'done');
-            this.renderer.addClass(
-                target,
-                'sample__grid-item-clipboard--success'
-            );
-
-            setTimeout(() => {
-                this.renderer.setProperty(element, 'innerText', 'content_copy');
-                this.renderer.removeClass(
+            if (element.innerText !== 'done') {
+                this.renderer.setProperty(element, 'innerText', 'done');
+                this.renderer.addClass(
                     target,
                     'sample__grid-item-clipboard--success'
                 );
-            }, 1500);
+
+                setTimeout(() => {
+                    this.renderer.setProperty(element, 'innerText', 'content_copy');
+                    this.renderer.removeClass(
+                        target,
+                        'sample__grid-item-clipboard--success'
+                    );
+                }, 1500);
+            }
+        } catch (err) {
+            console.error('Failed to copy text: ', err);
         }
     }
 
@@ -133,7 +180,11 @@ export class CategoriesFilterPipe implements PipeTransform {
             const index = acc.findIndex((group) => group.category === category);
 
             if (index !== -1) {
-                acc[index].icons.push(icon);
+                const exists = acc[index].icons.some(existingIcon => existingIcon.name === icon.name);
+
+                if (!exists) {
+                    acc[index].icons.push(icon);
+                }
             } else {
                 acc.push({
                     category,
@@ -167,17 +218,30 @@ export class CategoriesFilterPipe implements PipeTransform {
     name: 'filterByName'
 })
 export class FilterByName implements PipeTransform {
+    private fuse: Fuse<IMXIcon> | null = null;
+    private lastCollection: IMXIcon[] = [];
+
     transform(icons: IMXIcon[], keyword: string): IMXIcon[] {
-        return icons.filter((icon) => {
-            const keywords = [...(icon.keywords || []), icon.name];
-            const index = keywords.indexOf(keyword.toLowerCase());
-            if (keyword !== '') {
-                if (index !== -1) {
-                    return keywords;
-                }
-            } else {
-                return icons;
-            }
-        });
+        if (!keyword || keyword.trim() === '') {
+            return icons;
+        }
+
+        // Initialize Fuse only if collection changed
+        if (this.lastCollection !== icons) {
+            this.fuse = new Fuse(icons, {
+                keys: [
+                    { name: 'name', weight: 0.7 },
+                    { name: 'keywords', weight: 0.3 }
+                ],
+                threshold: 0.3,
+                distance: 100,
+                ignoreLocation: true,
+                minMatchCharLength: 1
+            });
+            this.lastCollection = icons;
+        }
+
+        const results = this.fuse!.search(keyword.toLowerCase());
+        return results.map(result => result.item);
     }
 }
