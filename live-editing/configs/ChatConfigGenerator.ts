@@ -10,7 +10,7 @@ export class ChatConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'ChatOverviewSampleComponent',
             appConfig: BaseAppConfig,
-            additionalDependencies: ['igniteui-webcomponents', 'shiki', 'marked', 'marked-shiki', 'dompurify'],
+            additionalDependencies: ['igniteui-webcomponents'],
             shortenComponentPathBy: "/interactions/chat/"
         }));
 
@@ -25,7 +25,7 @@ export class ChatConfigGenerator implements IConfigGenerator {
         // chat styling sample
         configs.push(new Config({
             component: 'ChatStylingSampleComponent',
-            additionalDependencies: ['igniteui-webcomponents', 'shiki', 'marked', 'marked-shiki', 'dompurify'],
+            additionalDependencies: ['igniteui-webcomponents'],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/chat/"
         }));
