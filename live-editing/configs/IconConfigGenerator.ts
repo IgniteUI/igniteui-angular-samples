@@ -55,7 +55,7 @@ export class IconConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'MaterialIconsExtendedComponent',
             appConfig: BaseAppConfig,
-            additionalDependencies: ['file-saver', '@igniteui/material-icons-extended'],
+            additionalDependencies: ['file-saver', '@igniteui/material-icons-extended', 'fuse.js'],
             shortenComponentPathBy: "/data-display/icon/"
         }));
 
