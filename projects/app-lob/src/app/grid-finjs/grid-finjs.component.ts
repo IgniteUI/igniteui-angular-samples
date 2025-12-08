@@ -1,13 +1,13 @@
 /* eslint-disable max-len */
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
 import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, DOCUMENT, inject } from '@angular/core';
-import { CellType, GridSelectionMode, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxExcelTextDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
+import { CellType, GridSelectionMode, IColumnExportingEventArgs, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxExcelTextDirective, IgxExporterEvent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxPdfExporterOptions, IgxPdfExporterService, IgxPdfTextDirective } from 'igniteui-angular/grids/core';
 import { DefaultSortingStrategy, IgxOverlayOutletDirective, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { IgxFocusDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { Contract, REGIONS, Stock } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
 import { IgxPreventDocumentScrollDirective } from '../../../../../src/app/directives/prevent-scroll.directive';
@@ -17,12 +17,14 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-finjs-grid',
     templateUrl: './grid-finjs.component.html',
     styleUrls: ['./grid-finjs.component.scss'],
-    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, FormsModule, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconButtonDirective, IgxOverlayOutletDirective, AsyncPipe, CurrencyPipe]
+    imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxExcelTextDirective, IgxPdfTextDirective, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, FormsModule, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxIconButtonDirective, IgxOverlayOutletDirective, AsyncPipe, CurrencyPipe]
 })
 export class GridFinJSComponent implements OnInit {
     private el = inject(ElementRef);
     private document = inject<Document>(DOCUMENT);
+    private pdfExportService = inject(IgxPdfExporterService);
     dataService = inject(SignalRService);
+    private pdfColumnExportSubscription?: Subscription;
 
     @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
     @ViewChild(IgxOverlayOutletDirective, { static: true }) public outlet: IgxOverlayOutletDirective;
@@ -114,6 +116,34 @@ export class GridFinJSComponent implements OnInit {
 
     public chartColumnAction(target: CellType): void {
         this.chartColumnKeyDown.emit(target.row.data);
+    }
+
+    public exportStarted(args: IgxExporterEvent) {
+        (args.options as IgxPdfExporterOptions).pageSize = "A3";
+
+        const includedFields = new Set([
+            'id',
+            'category',
+            'type',
+            'contract',
+            'settlement',
+            'country',
+            'region',
+            'lastupdated',
+            'openprice',
+            'price',
+            'change',
+            'buy',
+            'sell'
+        ]);
+
+        this.pdfExportService.columnExporting.subscribe((exportArgs: IColumnExportingEventArgs) => {
+            const field = exportArgs.field.toLowerCase();
+            if (!includedFields.has(field)) {
+                exportArgs.cancel = true;
+            }
+        });
+
     }
 
     get gridWrapper(): HTMLElement {
