@@ -40,6 +40,13 @@ export class BadgeConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/data-display/badge/"
         }));
 
+        configs.push(new Config({
+            component: 'BadgeDotSampleComponent',
+            additionalFiles: ["src/app/data-display/badge/model/member.model.ts", "src/app/data-display/badge/badge-dot-sample/badge-dot-sample.component.scss"],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
         return configs;
     }
 }
