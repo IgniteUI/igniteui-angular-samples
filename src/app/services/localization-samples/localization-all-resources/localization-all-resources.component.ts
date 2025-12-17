@@ -10,18 +10,18 @@ import {
     IgxSelectComponent,
     IgxSelectItemComponent,
     IgxColumnComponent,
+    IGridResourceStrings,
     registerI18n,
     setCurrentI18n
 } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
 import {
-    IGridResourceStrings,
-    ResourceStringsEN, ResourceStringsBG, ResourceStringsCS, ResourceStringsDA, ResourceStringsDE,
-    ResourceStringsES, ResourceStringsFR, ResourceStringsHU, ResourceStringsIT,
-    ResourceStringsJA, ResourceStringsKO, ResourceStringsNB, ResourceStringsNL,
-    ResourceStringsPL, ResourceStringsPT, ResourceStringsRO, ResourceStringsSV,
-    ResourceStringsTR, ResourceStringsZHHANS, ResourceStringsZHHANT
- } from 'igniteui-i18n-resources';
+    IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
+    IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,
+    IgxResourceStringsJA, IgxResourceStringsKO, IgxResourceStringsNB, IgxResourceStringsNL,
+    IgxResourceStringsPL, IgxResourceStringsPT, IgxResourceStringsRO, IgxResourceStringsSV,
+    IgxResourceStringsTR, IgxResourceStringsZHHANS, IgxResourceStringsZHHANT
+ } from 'igniteui-angular-i18n';
 
 @Component({
     selector: 'app-localization-all-resources',
@@ -43,26 +43,25 @@ export class LocalizationAllResourcesComponent implements OnInit {
 
     constructor() { }
     public ngOnInit(): void {
-        registerI18n(ResourceStringsEN, 'en');
-        registerI18n(ResourceStringsBG, 'bg');
-        registerI18n(ResourceStringsCS, 'cs');
-        registerI18n(ResourceStringsDA, 'da');
-        registerI18n(ResourceStringsDE, 'de');
-        registerI18n(ResourceStringsES, 'es');
-        registerI18n(ResourceStringsFR, 'fr');
-        registerI18n(ResourceStringsHU, 'hu');
-        registerI18n(ResourceStringsIT, 'it');
-        registerI18n(ResourceStringsJA, 'ja');
-        registerI18n(ResourceStringsKO, 'ko');
-        registerI18n(ResourceStringsNB, 'nb');
-        registerI18n(ResourceStringsNL, 'nl');
-        registerI18n(ResourceStringsPL, 'pl');
-        registerI18n(ResourceStringsPT, 'pt');
-        registerI18n(ResourceStringsRO, 'ro');
-        registerI18n(ResourceStringsSV, 'sv');
-        registerI18n(ResourceStringsTR, 'tr');
-        registerI18n(ResourceStringsZHHANS, 'zh-Hans');
-        registerI18n(ResourceStringsZHHANT, 'zh-Hant');
+        registerI18n(IgxResourceStringsBG, 'bg');
+        registerI18n(IgxResourceStringsCS, 'cs');
+        registerI18n(IgxResourceStringsDA, 'da');
+        registerI18n(IgxResourceStringsDE, 'de');
+        registerI18n(IgxResourceStringsES, 'es');
+        registerI18n(IgxResourceStringsFR, 'fr');
+        registerI18n(IgxResourceStringsHU, 'hu');
+        registerI18n(IgxResourceStringsIT, 'it');
+        registerI18n(IgxResourceStringsJA, 'ja');
+        registerI18n(IgxResourceStringsKO, 'ko');
+        registerI18n(IgxResourceStringsNB, 'nb');
+        registerI18n(IgxResourceStringsNL, 'nl');
+        registerI18n(IgxResourceStringsPL, 'pl');
+        registerI18n(IgxResourceStringsPT, 'pt');
+        registerI18n(IgxResourceStringsRO, 'ro');
+        registerI18n(IgxResourceStringsSV, 'sv');
+        registerI18n(IgxResourceStringsTR, 'tr');
+        registerI18n(IgxResourceStringsZHHANS, 'zh-Hans');
+        registerI18n(IgxResourceStringsZHHANT, 'zh-Hant');
         registerI18n(this.partialCustomHindi, 'hi');
 
         this.data = DATA;
@@ -70,11 +69,11 @@ export class LocalizationAllResourcesComponent implements OnInit {
         // Creating a custom locale (HI) for specific grid strings.
         // Similarly can localize all needed strings in a separate IgxResourceStringsHI file (feel free to contribute)
         this.partialCustomHindi = {
-            grid_summary_count: 'गणना',
-            grid_summary_min: 'न्यून',
-            grid_summary_max: 'अधिक',
-            grid_summary_sum: 'योग',
-            grid_summary_average: 'औसत'
+            igx_grid_summary_count: 'गणना',
+            igx_grid_summary_min: 'न्यून',
+            igx_grid_summary_max: 'अधिक',
+            igx_grid_summary_sum: 'योग',
+            igx_grid_summary_average: 'औसत'
         };
     }
 

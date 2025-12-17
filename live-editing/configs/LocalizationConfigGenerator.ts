@@ -1,12 +1,6 @@
-import {
-    IgxGridModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxTimePickerModule,
-    IgxSelectModule
-} from 'igniteui-angular';
-import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
-import { BaseAppConfig } from './BaseConfig';;
+import { Config, IConfigGenerator} from 'igniteui-live-editing'
+import { BaseAppConfig } from './BaseConfig';import { BaseAppAngularLocaleConfig } from './BaseConfig-AngularLocale';
+;
 export class LocalizationConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
@@ -16,7 +10,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             component: 'LocalizationSample1Component',
             additionalFiles: ['/src/app/data/nwindData.ts'],
             additionalDependencies: ['igniteui-angular-i18n'],
-            appConfig: BaseAppConfig
+            appConfig: BaseAppAngularLocaleConfig
         }));
 
         // localization sample 2
@@ -24,7 +18,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             component: 'LocalizationSample2Component',
             additionalFiles: ['/src/app/data/nwindData.ts'],
             additionalDependencies: ['igniteui-angular-i18n'],
-            appConfig: BaseAppConfig
+            appConfig: BaseAppAngularLocaleConfig
         }));
 
         // localization sample 3
@@ -32,7 +26,7 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             component: 'LocalizationSample3Component',
             additionalFiles: ['/src/app/data/nwindData.ts'],
             additionalDependencies: ['igniteui-angular-i18n'],
-            appConfig: BaseAppConfig
+            appConfig: BaseAppAngularLocaleConfig
         }));
 
         // localization all resources

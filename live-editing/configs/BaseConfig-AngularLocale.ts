@@ -1,4 +1,4 @@
-export const BaseAppConfig = {
+export const BaseAppAngularLocaleConfig = {
     modules: [
         { 'module': 'BrowserModule', 'import': '@angular/platform-browser' },
         { 'module': 'FormsModule', 'import': '@angular/forms' },
@@ -6,8 +6,7 @@ export const BaseAppConfig = {
         { 'module': 'HammerModule', 'import': '@angular/platform-browser' },
     ],
     providers: [
-        { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' },
-        { 'provider': 'provideIgniteIntl()', 'import': 'igniteui-angular' }
+        { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' }
     ],
     router: false
 }
