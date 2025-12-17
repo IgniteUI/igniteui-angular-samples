@@ -1,5 +1,10 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { DefaultSortingStrategy, IgxTreeGridComponent, ISortingOptions, SortingDirection, IgxGridToolbarComponent, IgxButtonDirective, IgxGridToolbarActionsComponent, IgxSimpleComboComponent, IgxComboClearIconDirective, IgxComboItemDirective, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { DefaultSortingStrategy, ISortingOptions, SortingDirection } from 'igniteui-angular/core';
+import { IgxTreeGridComponent, IgxTreeGridGroupByAreaComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
+import { IgxComboClearIconDirective, IgxComboItemDirective } from 'igniteui-angular/combo';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';

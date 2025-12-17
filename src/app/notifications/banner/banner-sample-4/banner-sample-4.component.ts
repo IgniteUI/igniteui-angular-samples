@@ -1,5 +1,11 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxBannerComponent, IgxNavbarComponent, IgxIconComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxAvatarComponent, IgxSwitchComponent, IgxInputGroupComponent, IgxInputDirective } from 'igniteui-angular';
+import { IgxBannerActionsDirective, IgxBannerComponent } from 'igniteui-angular/banner';
+import { IgxNavbarComponent } from 'igniteui-angular/navbar';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
 import { FormsModule } from '@angular/forms';
 // tslint:disable:object-literal-sort-keys
 @Component({

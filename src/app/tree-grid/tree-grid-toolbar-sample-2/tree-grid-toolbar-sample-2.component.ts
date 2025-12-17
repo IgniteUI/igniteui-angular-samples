@@ -1,5 +1,20 @@
 import { Component } from '@angular/core';
-import { CsvFileTypes, IColumnExportingEventArgs, IGridToolbarExportEventArgs, IgxCsvExporterOptions, IgxExcelExporterOptions, IgxExporterOptionsBase, IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent } from 'igniteui-angular';
+import {
+    CsvFileTypes,
+    IColumnExportingEventArgs,
+    IgxCsvExporterOptions,
+    IgxExcelExporterOptions,
+    IgxExporterOptionsBase,
+    IGridToolbarExportEventArgs,
+    IgxCellTemplateDirective,
+    IgxColumnComponent,
+    IgxGridToolbarActionsComponent,
+    IgxGridToolbarComponent,
+    IgxGridToolbarExporterComponent,
+    IgxGridToolbarTitleComponent
+} from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { EMPLOYEE_FLAT_AVATARS_DATA } from '../data/employees-flat-avatars';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

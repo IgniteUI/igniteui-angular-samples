@@ -1,6 +1,7 @@
 import { Config, IConfigGenerator} from 'igniteui-live-editing'
-import { BaseAppConfig } from './BaseConfig';import { BaseAppAngularLocaleConfig } from './BaseConfig-AngularLocale';
-;
+import { BaseAppConfig } from './BaseConfig';
+import { BaseAppAngularLocaleConfig } from './BaseConfig-AngularLocale';
+
 export class LocalizationConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();

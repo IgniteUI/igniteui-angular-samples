@@ -58,6 +58,10 @@ export const SamplesRoutes: Routes = [
         path: 'grid'
     },
     {
+        loadChildren: () => import('./grid-lite/grid-lite.routes').then(m => m.GridLiteRoutes),
+        path: 'grid-lite'
+    },
+    {
         loadChildren: () => import('./pivot-grid/pivot-grids.routes').then(m => m.PivotGridsRoutes),
         path: 'pivot-grid'
     },

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
-import { IgxHierarchicalGridComponent, IgxColumnComponent, IgxActionStripComponent, IgxGridEditingActionsComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxColumnComponent, IgxGridEditingActionsComponent } from 'igniteui-angular/grids/core';
+import { IgxActionStripComponent } from 'igniteui-angular/action-strip';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

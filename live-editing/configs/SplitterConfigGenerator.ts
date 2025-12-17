@@ -1,4 +1,4 @@
-import {IgxSplitterModule} from 'igniteui-angular';
+import { IgxSplitterModule } from 'igniteui-angular/splitter';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class SplitterConfigGenerator implements IConfigGenerator {

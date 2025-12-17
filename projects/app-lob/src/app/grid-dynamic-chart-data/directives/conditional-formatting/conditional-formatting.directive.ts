@@ -1,5 +1,5 @@
 import { AfterViewInit, Directive, EventEmitter, Input, OnDestroy, Output, inject } from '@angular/core';
-import { IgxGridComponent } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { Subject } from 'rxjs';
 import { debounceTime, takeUntil } from 'rxjs/operators';
 

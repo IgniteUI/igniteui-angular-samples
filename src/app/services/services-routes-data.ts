@@ -5,6 +5,7 @@ export const servicesRoutesData = {
     'export-excel': { displayName: 'Excel Export Raw Data', parentName: 'Excel Export' },
     'export-excel-sample-1': { displayName: 'Excel Export Grid', parentName: 'Excel Export' },
     'export-excel-tree-grid-sample': { displayName: 'Excel Export TreeGrid', parentName: 'Excel Export' },
+    'export-pdf': { displayName: 'PDF Export Raw Data', parentName: 'PDF Export' },
     'localization-sample-1': { displayName: 'Localize one component', parentName: 'Localization' },
     'localization-sample-2': { displayName: 'Localize All', parentName: 'Localization' },
     'localization-sample-3': { displayName: 'Localize partially', parentName: 'Localization' },

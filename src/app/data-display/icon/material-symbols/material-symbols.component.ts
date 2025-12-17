@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { IgxIconService, IgxIconComponent } from 'igniteui-angular';
+import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-material-symbols',

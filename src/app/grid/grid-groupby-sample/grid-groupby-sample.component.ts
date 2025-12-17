@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DefaultSortingStrategy, GridSelectionMode, IgxGridComponent, ISortingExpression, SortingDirection, IgxColumnComponent, IgxCellTemplateDirective, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent } from 'igniteui-angular';
+import { DefaultSortingStrategy, ISortingExpression, SortingDirection } from 'igniteui-angular/core';
+import { GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent, IgxGroupByRowTemplateDirective } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { INVOICE_DATA } from '../../data/invoiceData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

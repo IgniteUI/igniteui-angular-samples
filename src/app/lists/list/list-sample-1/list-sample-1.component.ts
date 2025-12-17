@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { IgxListComponent, IgxEmptyListTemplateDirective, IgxListItemComponent } from 'igniteui-angular';
+import { IgxEmptyListTemplateDirective, IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
 
 
 @Component({

@@ -1,0 +1,27 @@
+.carousel-container {
+  margin: 2rem 2rem auto;
+}
+
+:host ::ng-deep {
+  [role='button'],
+  [role='tablist'] {
+    backdrop-filter: blur(2px);
+
+    &:hover {
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  .igx-carousel__inner {
+    min-width: unset;
+  }
+
+  .igx-slide {
+    display: flex;
+    align-items: center;
+
+    img {
+      min-height: 15rem;
+    }
+  }
+}

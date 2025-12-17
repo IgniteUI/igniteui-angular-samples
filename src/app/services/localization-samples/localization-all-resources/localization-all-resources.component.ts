@@ -3,17 +3,10 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DATA } from '../../../data/nwindData';
-import {
-    IgxGridComponent,
-    IgxGridToolbarComponent,
-    IgxGridToolbarTitleComponent,
-    IgxSelectComponent,
-    IgxSelectItemComponent,
-    IgxColumnComponent,
-    IGridResourceStrings,
-    registerI18n,
-    setCurrentI18n
-} from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { GridResourceStringsEN, IGridResourceStrings, registerI18n, setCurrentI18n } from 'igniteui-angular/core';
+import { IgxColumnComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { FormsModule } from '@angular/forms';
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxCardComponent, IgxCardHeaderComponent, IgxCardContentDirective, IgxMonthsViewComponent } from 'igniteui-angular';
+import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent } from 'igniteui-angular/card';
+import { IgxMonthsViewComponent } from 'igniteui-angular/calendar';
 
 @Component({
     selector: 'app-calendar-views',

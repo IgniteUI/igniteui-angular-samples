@@ -5,7 +5,9 @@ import {
     ViewChild,
     ViewChildren
 } from '@angular/core';
-import { IDragBaseEventArgs, IDragMoveEventArgs, IgxDragDirective, IgxDragLocation, IgxListComponent, IgxListItemComponent, IgxDropDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxDragHandleDirective, IgxListActionDirective } from 'igniteui-angular';
+import { IDragBaseEventArgs, IDragMoveEventArgs, IgxDragDirective, IgxDragHandleDirective, IgxDragLocation, IgxDropDirective } from 'igniteui-angular/directives';
+import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 
 @Component({

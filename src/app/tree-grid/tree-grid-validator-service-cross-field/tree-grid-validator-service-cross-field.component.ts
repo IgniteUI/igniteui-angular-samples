@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormGroup, ValidationErrors, ValidatorFn, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ColumnPinningPosition, CellType, IGridEditEventArgs, IgxTreeGridComponent, IGridFormGroupCreatedEventArgs,  IPinningConfig, IgxSwitchComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective } from 'igniteui-angular';
+import { ColumnPinningPosition } from 'igniteui-angular/core';
+import { CellType, IGridEditEventArgs, IGridFormGroupCreatedEventArgs, IPinningConfig, IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxColumnMaxValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxButtonDirective, IgxFocusDirective, IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

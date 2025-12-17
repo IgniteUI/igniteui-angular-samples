@@ -1,5 +1,6 @@
 import {RouterModule} from '@angular/router';
-import {IgxBottomNavModule, IgxIconModule} from 'igniteui-angular';
+import { IgxBottomNavModule } from 'igniteui-angular/bottom-nav';
+import { IgxIconModule } from 'igniteui-angular/icon';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class TabBarConfigGenerator implements IConfigGenerator {
@@ -37,8 +38,8 @@ export class TabBarConfigGenerator implements IConfigGenerator {
                 "/src/app/layouts/tabbar/views/view3/view3.component.ts",
                 "/src/app/layouts/tabbar/views/view3/view3.component.html"
             ],
-            /* TODO: Adding the correct router config needs to be done separately */
-            appConfig: { ...BaseAppConfig, ...{ router: true }},
+            /* Note: the Tabbar samples are not used anymore */
+            appConfig: { ...BaseAppConfig, ...{ routesConfig: { router: true } }},
             shortenComponentPathBy: "/layouts/tabbar/"
         }));
 

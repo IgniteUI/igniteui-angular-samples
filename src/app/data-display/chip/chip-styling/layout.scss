@@ -1,4 +1,23 @@
+@use "igniteui-angular/theming" as *;
+
+:host {
+    ::ng-deep {
+        .igx-chip__item {
+            height: rem(20px);
+            font-size: rem(12px);
+        }
+    }
+}
+
 igx-chip {
-  margin-right: 5px;
-  margin-top: 20px;
+    margin-right: rem(8px);
+    margin-top: rem(20px);
+}
+
+igx-chips-area {
+    margin-left: rem(20px);
+}
+
+igx-icon {
+    --size: #{rem(12px)};
 }

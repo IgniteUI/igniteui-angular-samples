@@ -1,7 +1,11 @@
 import { Component, ElementRef, Renderer2, ViewChild, inject } from '@angular/core';
 import { contains } from '@igniteui/material-icons-extended';
 import { DATA } from '../../data/nwindData';
-import { IgxSwitchComponent, IgxGridComponent, IgxColumnComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

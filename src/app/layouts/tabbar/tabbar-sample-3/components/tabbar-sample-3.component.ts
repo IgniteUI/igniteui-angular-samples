@@ -1,7 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet, RouterLinkActive, RouterLink } from '@angular/router';
 import { filter } from 'rxjs/operators';
-import { IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective } from 'igniteui-angular';
+import { IgxBottomNavComponent, IgxBottomNavHeaderComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavItemComponent } from 'igniteui-angular/bottom-nav';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-tabbar-sample-3',
