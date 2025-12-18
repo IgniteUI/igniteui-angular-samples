@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CUSTOMERS } from '../../data/hierarchical-data';
-import { IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 @Component({
     selector: 'hierarchical-grid-column-autosizing',

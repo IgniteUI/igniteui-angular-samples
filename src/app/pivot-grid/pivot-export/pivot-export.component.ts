@@ -1,6 +1,18 @@
 import { Component, ViewChild, inject } from "@angular/core";
 
-import { IPivotConfiguration, PivotAggregation, IgxPivotNumericAggregate, IgxPivotDateDimension, IgxExcelExporterService, IgxExcelExporterOptions, IgxPivotGridComponent, IgxButtonDirective } from "igniteui-angular"
+import {
+    IPivotConfiguration,
+    IgxPivotDateDimension,
+    IgxPivotNumericAggregate,
+    PivotAggregation,
+    IgxExcelExporterOptions,
+    IgxExcelExporterService,
+    IgxPdfExporterService,
+    IgxPdfExporterOptions,
+    IColumnExportingEventArgs
+} from 'igniteui-angular/grids/core';
+import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { SALES_DATA } from "../../data/dataToAnalyze";
 
 export class IgxTotalSaleAggregate {
@@ -38,9 +50,10 @@ export class IgxTotalSaleAggregate {
 })
 export class PivotExportComponent {
     private excelExportService = inject(IgxExcelExporterService);
+    private pdfExportService = inject(IgxPdfExporterService);
 
     @ViewChild(IgxPivotGridComponent, { static: true }) public grid: IgxPivotGridComponent;
-    
+
     public data = SALES_DATA;
 
     public pivotConfig: IPivotConfiguration = {
@@ -89,7 +102,7 @@ export class PivotExportComponent {
                     aggregator: IgxPivotNumericAggregate.sum,
                     label: 'Sum'
                 }],
-                enabled: true,
+                enabled: false,
                 formatter: (value) => value ? '$' + parseFloat(value).toFixed(3) : undefined
             },
             {
@@ -121,5 +134,21 @@ export class PivotExportComponent {
 
     public exportButtonHandler() {
         this.excelExportService.export(this.grid, new IgxExcelExporterOptions('ExportedDataFile'));
+    }
+
+    public exportPdfButtonHandler() {
+        const pdfOptions = new IgxPdfExporterOptions('ExportedDataFile');
+
+        this.pdfExportService.columnExporting.subscribe((args: IColumnExportingEventArgs) => {
+            const header = args.header || '';
+
+            // Cancel if it's a quarter (Q1-Q4)
+            // This makes the PDF more readable by excluding less important columns
+            if (/Q[1-4]/i.test(header)) {
+                args.cancel = true;
+            }
+        });
+
+        this.pdfExportService.export(this.grid, pdfOptions);
     }
 }

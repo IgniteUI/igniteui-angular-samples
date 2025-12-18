@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ORDERS_DATA } from '../data/orders';
-import { IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { CurrencyPipe } from '@angular/common';
 
@@ -15,9 +17,19 @@ export class TreeGridExportVisualizationComponent {
     private data = ORDERS_DATA;
 
     constructor() {
-        for (let i = 0; i < 15000; i += 3) {
+        const offsetStep = Math.max(...this.data.map(item => item.ID)) + 1;
+
+        for (let i = 0; i < 9000; i += 3) {
+            const offset = (i / 3) * offsetStep;
+
             for (let c = 0; c < this.data.length; c++) {
-                this.localData.push(this.data[c]);
+                const item = this.data[c];
+                this.localData.push({
+                    ...item,
+                    ID: item.ID + offset,
+                    ParentID: item.ParentID === -1 ? -1 : item.ParentID + offset,
+                    OrderDate: new Date(item.OrderDate)
+                });
             }
         }
     }

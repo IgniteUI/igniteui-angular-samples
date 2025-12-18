@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxMaskDirective, IgxTextSelectionDirective, IgxSnackbarComponent } from 'igniteui-angular';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxMaskDirective, IgxTextSelectionDirective } from 'igniteui-angular/directives';
+import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
 
 @Component({
     selector: 'app-mask-sample-1',

@@ -1,7 +1,5 @@
-import {IgxButtonGroupModule,
-IgxButtonModule,
-IgxLayoutModule,
-IgxRippleModule} from 'igniteui-angular';
+import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
+import { IgxButtonModule, IgxLayoutModule, IgxRippleModule } from 'igniteui-angular/directives';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class LayoutConfigGenerator implements IConfigGenerator {

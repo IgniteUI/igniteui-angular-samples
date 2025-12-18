@@ -1,5 +1,8 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
-import { GridSelectionMode, IgxGridComponent, IgxGridToolbarComponent, IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxColumnComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxColumnComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { DATA } from '../../data/customers';
 import { FormsModule } from '@angular/forms';
 

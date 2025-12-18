@@ -1,0 +1,19 @@
+<div class="grid-lite-wrapper">
+  <section class="theme-selector">
+    <igc-select
+      flip
+      [value]="selectedTheme"
+      label="Select a theme:"
+      (igcChange)="updateTheme($event)">
+      @for (theme of themes; track theme) {
+        <igc-select-item [value]="theme">{{ theme }}</igc-select-item>
+      }
+    </igc-select>
+  </section>
+  
+  <igc-grid-lite 
+    [attr.data-theme]="selectedTheme"
+    [columns]="columns" 
+    [data]="data">
+  </igc-grid-lite>
+</div>

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BaseInputGroupSampleComponent } from '../base-input.component';
-import { IGX_INPUT_GROUP_TYPE, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective, IgxPrefixDirective } from 'igniteui-angular';
+import { IGX_INPUT_GROUP_TYPE, IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { FormsModule } from '@angular/forms';
 
 

@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
-import { IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective, IgxGridComponent, IgxGridToolbarComponent, IgxSwitchComponent, IgxButtonDirective } from 'igniteui-angular';
+import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

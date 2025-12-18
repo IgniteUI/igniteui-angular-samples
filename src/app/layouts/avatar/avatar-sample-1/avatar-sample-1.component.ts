@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxAvatarComponent } from 'igniteui-angular';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 
 @Component({
     selector: 'app-avatar-sample-1',

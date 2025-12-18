@@ -1,16 +1,13 @@
 import {FormsModule,
 ReactiveFormsModule} from '@angular/forms';
-import {IgxButtonModule,
-IgxComboModule,
-IgxDatePickerModule,
-IgxDropDownModule,
-IgxFocusModule,
-IgxIconModule,
-IgxInputGroupModule,
-IgxRippleModule,
-IgxSelectModule,
-IgxTextSelectionModule,
-IgxTimePickerModule} from 'igniteui-angular';
+import { IgxButtonModule, IgxFocusModule, IgxRippleModule, IgxTextSelectionModule } from 'igniteui-angular/directives';
+import { IgxComboModule } from 'igniteui-angular/combo';
+import { IgxDatePickerModule } from 'igniteui-angular/date-picker';
+import { IgxDropDownModule } from 'igniteui-angular/drop-down';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxInputGroupModule } from 'igniteui-angular/input-group';
+import { IgxSelectModule } from 'igniteui-angular/select';
+import { IgxTimePickerModule } from 'igniteui-angular/time-picker';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class InputGroupConfigGenerator implements IConfigGenerator {

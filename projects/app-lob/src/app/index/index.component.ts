@@ -1,8 +1,12 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, DOCUMENT, inject } from '@angular/core';
 import { NavigationStart, Route, Router, RouterLinkActive, RouterLink, RouterOutlet } from '@angular/router';
-import { IgxNavigationDrawerComponent, IgxLayoutDirective, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxInputDirective, IgxSuffixDirective, IgxFlexDirective, IgxNavbarComponent } from 'igniteui-angular';
+import { IgxNavDrawerItemDirective, IgxNavDrawerTemplateDirective, IgxNavigationDrawerComponent } from 'igniteui-angular/navigation-drawer';
+import { IgxFlexDirective, IgxIconButtonDirective, IgxLayoutDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxNavbarComponent } from 'igniteui-angular/navbar';
 import { filter } from 'rxjs/operators';
-import { pivotGridsRoutesData } from '../../../../../src/app/pivot-grid/pivot-grid-routes-data';
+import { pivotGridsRoutesData } from '../pivot-grid/pivot-grid-routes-data';
 import { gridDynamicChartRoutesData } from '../grid-dynamic-chart-data/grid-dynamic-chart-data-routes-data';
 import { finJsDockManagerGridRoutes } from '../grid-finjs-dock-manager/grid-finjs-dock-manager-routes-data';
 import { gridfinjsRoutesData} from '../grid-finjs/grid-finjs-routes-data';

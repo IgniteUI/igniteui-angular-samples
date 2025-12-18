@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
-import { IgxGridComponent, DefaultSortingStrategy, IgxColumnComponent } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { DefaultSortingStrategy } from 'igniteui-angular/core';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { FinancialData } from '../../data/financialData';
 import  {generateRandomInteger, generateRandomFloat} from '../../data/utils';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

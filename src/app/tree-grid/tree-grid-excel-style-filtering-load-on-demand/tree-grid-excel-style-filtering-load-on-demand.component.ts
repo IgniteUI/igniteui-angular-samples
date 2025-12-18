@@ -1,5 +1,8 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { IFilteringExpressionsTree, IgxColumnComponent, IgxTreeGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxCellTemplateDirective, IgxIconComponent } from 'igniteui-angular';
+import { IFilteringExpressionsTree } from 'igniteui-angular/core';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { RemoteValuesService } from './remoteValues.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
