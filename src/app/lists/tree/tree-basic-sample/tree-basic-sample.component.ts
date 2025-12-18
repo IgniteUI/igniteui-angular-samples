@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { DATA } from '../../../data/animations-data';
-import { IgxTreeComponent, IgxTreeNodeComponent } from 'igniteui-angular';
+import { IgxTreeComponent, IgxTreeNodeComponent } from 'igniteui-angular/tree';
 
 
 @Component({

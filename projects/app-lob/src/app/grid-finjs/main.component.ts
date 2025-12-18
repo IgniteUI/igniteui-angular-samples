@@ -1,6 +1,8 @@
 import { AfterViewInit, Component, HostBinding, OnDestroy, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import { IgxDialogComponent, IgxOverlayOutletDirective, OverlaySettings, IgxDialogTitleDirective, IgxDialogActionsDirective, IgxButtonDirective, IgxFocusDirective } from 'igniteui-angular';
+import { IgxDialogActionsDirective, IgxDialogComponent, IgxDialogTitleDirective } from 'igniteui-angular/dialog';
+import { IgxOverlayOutletDirective, OverlaySettings } from 'igniteui-angular/core';
+import { IgxButtonDirective, IgxFocusDirective } from 'igniteui-angular/directives';
 import { IgxCategoryChartComponent, IgxCategoryChartCoreModule } from 'igniteui-angular-charts';
 import { Stock } from '../data/financialData';
 import { ControllerComponent } from './controllers.component';
@@ -99,7 +101,7 @@ export class FinJSDemoComponent implements OnDestroy, AfterViewInit {
     public setChartData(args: Stock[]): void {
         this.chartData = [];
         args.forEach(rowKey => {
-            const row: Stock = this.finGrid.grid.getRowByKey(rowKey).data;
+            const row: Stock = this.finGrid.grid.getRowByKey(rowKey.id).data;
             this.chartData.push(row);
             this.chart.notifyInsertItem(this.chartData, this.chartData.length - 1, row);
         });

@@ -1,16 +1,17 @@
 /* eslint-disable max-len */
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxChartIntegrationDirective, IgxContextMenuDirective, IgxConditionalFormattingDirective,  OPTIONS_TYPE, CHART_TYPE, PageHeaderComponent } from 'igniteui-angular-extras';
+import { IgxChartIntegrationDirective, IgxContextMenuDirective, IgxConditionalFormattingDirective,  OPTIONS_TYPE, CHART_TYPE } from 'igniteui-angular-extras';
 
 import { FinancialData } from '../data/financialData';
-import { IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { DecimalPipe, CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-grid-dynamic-chart-data',
     templateUrl: './grid-dynamic-chart-data.component.html',
     styleUrls: ['./grid-dynamic-chart-data.component.scss'],
-    imports: [IgxGridComponent, PageHeaderComponent, IgxChartIntegrationDirective, IgxConditionalFormattingDirective, IgxContextMenuDirective, IgxColumnComponent, IgxCellTemplateDirective, DecimalPipe, CurrencyPipe]
+    imports: [IgxGridComponent, IgxChartIntegrationDirective, IgxConditionalFormattingDirective, IgxContextMenuDirective, IgxColumnComponent, IgxCellTemplateDirective, DecimalPipe, CurrencyPipe]
 })
 export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
 

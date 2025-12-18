@@ -1,5 +1,10 @@
 import { Component, ViewChild } from '@angular/core';
-import { ColumnType, IgxGridComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
+import { ColumnType } from 'igniteui-angular/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { DATA } from '../../data/financialData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

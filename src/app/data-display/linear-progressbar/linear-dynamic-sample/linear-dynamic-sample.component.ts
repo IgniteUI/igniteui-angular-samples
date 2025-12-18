@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxLinearProgressBarComponent, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxLinearProgressBarComponent } from 'igniteui-angular/progressbar';
+import { IgxIconButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-linear-dynamic-sample',

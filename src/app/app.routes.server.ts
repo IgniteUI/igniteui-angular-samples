@@ -83,7 +83,7 @@ export const serverRoutes: ServerRoute[] = [
     },
     {
         path: 'services/**',
-        renderMode: RenderMode.Prerender
+        renderMode: RenderMode.Client
     },
     {
         path: 'samples/services/**',

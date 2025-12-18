@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxSnackbarComponent } from 'igniteui-angular';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
 
 @Component({
     selector: 'app-snackbar-sample-5',

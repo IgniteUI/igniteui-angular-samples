@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxStringFilteringOperand, IgxTreeGridComponent, IgxInputGroupComponent, IgxInputDirective, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxStringFilteringOperand } from 'igniteui-angular/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

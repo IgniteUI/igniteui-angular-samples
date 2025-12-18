@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective, IgxSelectItemComponent } from 'igniteui-angular';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxHintDirective, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { FormsModule } from '@angular/forms';
 
 

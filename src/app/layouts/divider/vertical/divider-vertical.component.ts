@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxDividerDirective } from 'igniteui-angular';
+import { IgxDividerDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-divider-vertical',

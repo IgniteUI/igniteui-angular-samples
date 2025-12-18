@@ -1,9 +1,6 @@
-import {
-    IgxButtonModule,
-    IgxIconModule,
-    IgxProgressBarModule,
-    IgxRippleModule
-} from 'igniteui-angular';
+import { IgxButtonModule, IgxRippleModule } from 'igniteui-angular/directives';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxProgressBarModule } from 'igniteui-angular/progressbar';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class CircularProgressbarConfigGenerator implements IConfigGenerator {
