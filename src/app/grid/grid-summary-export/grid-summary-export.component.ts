@@ -1,7 +1,14 @@
 import { Component, ViewChild, inject } from '@angular/core';
-import { ColumnType, IgxExcelExporterOptions, IgxExcelExporterService, IgxSummaryResult } from 'igniteui-angular/core';
+import { ColumnType, IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
+import {
+    IgxCellHeaderTemplateDirective,
+    IgxCellTemplateDirective,
+    IgxColumnComponent,
+    IgxNumberSummaryOperand,
+    IgxExcelExporterOptions,
+    IgxExcelExporterService
+} from 'igniteui-angular/grids/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { DATA } from '../../data/nwindData';

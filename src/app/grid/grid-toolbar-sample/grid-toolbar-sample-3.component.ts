@@ -1,6 +1,18 @@
 import { Component } from '@angular/core';
-import { CsvFileTypes, IColumnExportingEventArgs, IgxCsvExporterOptions, IgxExcelExporterOptions, IgxExporterOptionsBase } from 'igniteui-angular/core';
-import { IGridToolbarExportEventArgs, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
+import {
+    CsvFileTypes,
+    IColumnExportingEventArgs,
+    IgxCsvExporterOptions,
+    IgxExcelExporterOptions,
+    IgxExporterOptionsBase,
+    IGridToolbarExportEventArgs,
+    IgxCellTemplateDirective,
+    IgxColumnComponent,
+    IgxGridToolbarActionsComponent,
+    IgxGridToolbarComponent,
+    IgxGridToolbarExporterComponent,
+    IgxGridToolbarTitleComponent
+} from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { athletesData } from '../../data/athletesData';
@@ -22,8 +34,8 @@ export class GridToolbarSample3Component {
 
     public configureExport(args: IGridToolbarExportEventArgs) {
         // You can customize the exporting from this event
-        const options: IgxExporterOptionsBase = args.options ;
-        
+        const options: IgxExporterOptionsBase = args.options;
+
         options.fileName = `Report_${new Date().toDateString()}`;
 
         if (options instanceof IgxExcelExporterOptions) {
@@ -38,7 +50,7 @@ export class GridToolbarSample3Component {
         args.exporter.columnExporting.subscribe((columnArgs: IColumnExportingEventArgs) => {
             // Don't export image fields
             columnArgs.cancel = columnArgs.header === 'Athlete' ||
-                                columnArgs.header === 'Country';
+                columnArgs.header === 'Country';
         });
     }
 }

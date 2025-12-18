@@ -152,6 +152,7 @@ $clipboardSuccessColor: color($color: 'success');
     padding: $grid-item-padding;
     position: relative;
     border: $grid-item-border-width solid transparent;
+    contain: layout;
 
     &:hover,
     &:focus {

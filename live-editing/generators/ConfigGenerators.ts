@@ -8,6 +8,7 @@ import { ButtonGroupConfigGenerator } from '../configs/ButtonGroupConfigGenerato
 import { CalendarConfigGenerator } from '../configs/CalendarConfigGenerator';
 import { CardConfigGenerator } from '../configs/CardConfigGenerator';
 import { CarouselConfigGenerator } from '../configs/CarouselConfigGenerator';
+import { ChatConfigGenerator } from '../configs/ChatConfigGenerator';
 import { CheckboxConfigGenerator } from '../configs/CheckboxConfigGenerator';
 import { ChipConfigGenerator } from '../configs/ChipConfigGenerator';
 import { CircularProgressbarConfigGenerator } from '../configs/CircularProgressbarConfigGenerator';
@@ -23,6 +24,7 @@ import { DropDownConfigGenerator } from '../configs/DropDownConfigGenerator';
 import { ExpansionPanelConfigGenerator } from '../configs/ExpansionPanelConfigGenerator';
 import { ExportCsvConfigGenerator } from '../configs/ExportCsvConfigGenerator';
 import { ExportExcelConfigGenerator } from '../configs/ExportExcelConfigGenerator';
+import { ExportPdfConfigGenerator } from '../configs/ExportPdfConfigGenerator';
 import { ForConfigGenerator } from '../configs/ForConfigGenerator';
 import { GridConfigGenerator } from '../configs/GridConfigGenerator';
 import { HierarchicalGridConfigGenerator } from '../configs/HierarchicalGridConfigGenerator';
@@ -70,6 +72,7 @@ export const CONFIG_GENERATORS =
         DragAndDropConfigGenerator,
         ExportCsvConfigGenerator,
         ExportExcelConfigGenerator,
+        ExportPdfConfigGenerator,
 
         // containers:
         AccordionConfigGenerator,
@@ -121,6 +124,7 @@ export const CONFIG_GENERATORS =
 
         // other:
         ActionStripConfigGenerator,
+        ChatConfigGenerator,
         CircularProgressbarConfigGenerator,
         DividerConfigGenerator,
         ForConfigGenerator,

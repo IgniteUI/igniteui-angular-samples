@@ -21,8 +21,9 @@
         <igx-grid-toolbar-actions>
           <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
           <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-          <igx-grid-toolbar-exporter [exportCSV]="false">
+          <igx-grid-toolbar-exporter [exportCSV]="false" (exportStarted)="exportStarted($event)">
             <span excelText>Export to Excel</span>
+            <span pdfText>Export to PDF</span>
           </igx-grid-toolbar-exporter>
         </igx-grid-toolbar-actions>
       </igx-grid-toolbar>
