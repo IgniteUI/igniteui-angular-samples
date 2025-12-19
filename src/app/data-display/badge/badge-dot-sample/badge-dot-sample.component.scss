@@ -1,0 +1,17 @@
+.wrapper {
+    display: flex;
+    position: relative;
+    margin-top: 15px;
+
+    igx-avatar {
+        anchor-name: --avatar;
+    }
+
+    igx-badge {
+        position: absolute;
+        position-anchor: --avatar;
+        bottom: anchor(--avatar top);
+        left: anchor(right);
+        transform: translate(-75%, 75%);
+    }
+}
