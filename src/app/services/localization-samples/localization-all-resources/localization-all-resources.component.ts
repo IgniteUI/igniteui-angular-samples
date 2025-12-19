@@ -36,6 +36,18 @@ export class LocalizationAllResourcesComponent implements OnInit {
 
     constructor() { }
     public ngOnInit(): void {
+        this.data = DATA;
+
+        // Creating a custom locale (HI) for specific grid strings.
+        // Similarly can localize all needed strings in a separate IgxResourceStringsHI file (feel free to contribute)
+        this.partialCustomHindi = {
+            igx_grid_summary_count: 'गणना',
+            igx_grid_summary_min: 'न्यून',
+            igx_grid_summary_max: 'अधिक',
+            igx_grid_summary_sum: 'योग',
+            igx_grid_summary_average: 'औसत'
+        };
+
         registerI18n(IgxResourceStringsBG, 'bg');
         registerI18n(IgxResourceStringsCS, 'cs');
         registerI18n(IgxResourceStringsDA, 'da');
@@ -56,18 +68,6 @@ export class LocalizationAllResourcesComponent implements OnInit {
         registerI18n(IgxResourceStringsZHHANS, 'zh-Hans');
         registerI18n(IgxResourceStringsZHHANT, 'zh-Hant');
         registerI18n(this.partialCustomHindi, 'hi');
-
-        this.data = DATA;
-
-        // Creating a custom locale (HI) for specific grid strings.
-        // Similarly can localize all needed strings in a separate IgxResourceStringsHI file (feel free to contribute)
-        this.partialCustomHindi = {
-            igx_grid_summary_count: 'गणना',
-            igx_grid_summary_min: 'न्यून',
-            igx_grid_summary_max: 'अधिक',
-            igx_grid_summary_sum: 'योग',
-            igx_grid_summary_average: 'औसत'
-        };
     }
 
     public updateLocale() {
