@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxTimePickerComponent, IgxLabelDirective } from 'igniteui-angular';
+import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
 
 @Component({
     selector: 'app-timepicker',

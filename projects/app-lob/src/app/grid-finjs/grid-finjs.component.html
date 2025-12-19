@@ -21,8 +21,9 @@
         <igx-grid-toolbar-actions>
           <igx-grid-toolbar-hiding title="Indicators"></igx-grid-toolbar-hiding>
           <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
-          <igx-grid-toolbar-exporter [exportCSV]="false">
+          <igx-grid-toolbar-exporter [exportCSV]="false" (exportStarted)="exportStarted($event)">
             <span excelText>Export to Excel</span>
+            <span pdfText>Export to PDF</span>
           </igx-grid-toolbar-exporter>
         </igx-grid-toolbar-actions>
       </igx-grid-toolbar>
@@ -74,13 +75,15 @@
         </div>
       </ng-template>
     </igx-column>
-    <igx-column [field]="'Chart'" [width]="'60px'" [hidden]="false" [filterable]="false">
-      <ng-template igxCell let-cell="cell" class="center-text">
-        <button class="button-icon" igxIconButton="flat" tabindex="-1">
-          <igx-icon family="material" (click)="chartColumnAction(cell)">insert_chart_outlined</igx-icon>
-        </button>
-      </ng-template>
-    </igx-column>
+    @if (allowChart) {
+      <igx-column [field]="'Chart'" [width]="'60px'" [filterable]="false">
+        <ng-template igxCell let-cell="cell" class="center-text">
+          <button class="button-icon" igxIconButton="flat" tabindex="-1">
+            <igx-icon family="material" (click)="chartColumnAction(cell)">insert_chart_outlined</igx-icon>
+          </button>
+        </ng-template>
+      </igx-column>
+    }
 
     <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
       [sortable]="true" [cellClasses]="trendsChange" >

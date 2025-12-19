@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

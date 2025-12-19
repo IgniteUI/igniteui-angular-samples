@@ -1,0 +1,215 @@
+name: Continuous Deployment Matrix
+permissions:
+  contents: write
+
+on:
+  push:
+    branches:
+      - master
+      - vnext
+  workflow_dispatch:
+    workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Input a branch name (e.g., vnext)'
+        required: true
+
+env:
+  REPLACEMENT_TEXT: '@infragistics/igniteui-angular-extras'
+  BRANCH_REF: ${{ github.event.inputs.branch && format('refs/heads/{0}', github.event.inputs.branch) || github.ref }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - name: app
+            custom_command: run generate-live-editing
+            submodule_dir: angular-demos
+            base_href: /angular-demos/
+            target_folder: dist/app
+            npm_build_command: run build-ci
+            repositoryfy: true
+            repositoryfy_command: repositoryfyAngularDemos
+          - name: app-crm
+            custom_command: run generate-live-editing:app-crm
+            submodule_dir: angular-demos-crm
+            base_href: /angular-demos-grid-crm/
+            target_folder: dist/app-crm
+            npm_build_command: run build-ci:app-crm --loglevel verbose
+            repositoryfy: false
+            repositoryfy_command: ''
+          - name: app-lob
+            custom_command: run generate-live-editing:app-lob
+            submodule_dir: angular-demos-lob
+            base_href: /angular-demos-lob/
+            target_folder: dist/app-lob
+            npm_build_command: run build-ci:app-lob
+            repositoryfy: true
+            repositoryfy_command: repositoryfyAngularDemosLob
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+
+      - name: Replace with licensed angular-extras
+        shell: pwsh
+        run: |
+          # List of files to update
+          $files = @(
+              "projects/app-lob/src/app/grid-dynamic-chart-data/grid-dynamic-chart-data.component.ts",
+              "projects/app-lob/src/app/grid-dynamic-chart-data/data-analysis-dock-manager/data-analysis-dock-manager.component.ts",
+              "package.json")
+          foreach ($file in $files) {
+            if (Test-Path $file) {
+              (Get-Content -Path $file) -replace 'igniteui-angular-extras', '${{ env.REPLACEMENT_TEXT }}' | Set-Content -Path $file
+            }
+          }
+
+      - name: Create .npmrc file
+        run: touch .npmrc
+
+      - name: Configure npm registry
+        run: |
+          echo "@infragistics:registry=https://packages.infragistics.com/npm/js-licensed/" >> .npmrc
+          echo "//packages.infragistics.com/npm/js-licensed/:_authToken=${{ secrets.INFRAGISTICS_NPM_TOKEN }}" >> .npmrc
+
+      - name: Install dependencies
+        run: npm install --legacy-peer-deps
+        env:
+          GITHUB_ACTIONS: true
+
+      - name: Clone submodule
+        run: git clone --recurse-submodules https://github.com/IgniteUI/igniteui-live-editing-samples igniteui-live-editing-samples
+
+      - name: Checkout branch in submodule (vNext)
+        if: env.BRANCH_REF == 'refs/heads/vnext'
+        run: |
+          cd igniteui-live-editing-samples
+          git checkout vNext
+
+      - name: Checkout branch in submodule (master)
+        if: env.BRANCH_REF == 'refs/heads/master'
+        run: |
+          cd igniteui-live-editing-samples
+          git checkout master
+
+      - name: Update package.json with base href
+        run: |
+          sed -i 's/--configuration production/--base-href=${{ matrix.base_href }} --configuration production/g' package.json
+
+      - name: Generate live-editing
+        run: npm ${{ matrix.custom_command }}
+
+      - name: Update packages trial->licensed using angular schematics
+        run: |
+          npx --userconfig=./.npmrc ng g @igniteui/angular-schematics:upgrade-packages --skip-install
+
+      - name: Install dependencies after schematics
+        run: npm install --legacy-peer-deps
+        env:
+          GITHUB_ACTIONS: true
+
+      - name: Build application
+        run: npm ${{ matrix.npm_build_command }} --userconfig=./.npmrc
+
+      - name: Copy web.config
+        run: |
+          if [ -f "projects/app-crm/web.config" ]; then
+            cp projects/app-crm/web.config ${{ matrix.target_folder }}/browser/
+          fi
+
+      - name: Update web.config file
+        run: |
+          if [ -f "${{ matrix.target_folder }}/browser/web.config" ]; then
+            sed -i 's/angular-demos/${{ matrix.submodule_dir }}/g' ${{ matrix.target_folder }}/browser/web.config
+          fi
+
+      - name: Rename index.csr.html to index.html
+        run: |
+          if [ -f "${{ matrix.target_folder }}/browser/index.csr.html" ]; then
+            mv "${{ matrix.target_folder }}/browser/index.csr.html" "${{ matrix.target_folder }}/browser/index.html"
+            echo "File renamed successfully."
+          fi
+
+      - name: Create zip artifact
+        run: |
+          cd ${{ matrix.target_folder }}/browser
+          zip -r ../../${{ matrix.submodule_dir }}-artifact.zip ./
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.submodule_dir }}-artifact
+          path: ${{ matrix.submodule_dir }}-artifact.zip
+
+      - name: Repositorify (vNext)
+        if: env.BRANCH_REF == 'refs/heads/vnext' && matrix.repositoryfy == true
+        run: npm run ${{ matrix.repositoryfy_command }}
+
+      - name: Repositorify (Production)
+        if: env.BRANCH_REF == 'refs/heads/master' && matrix.repositoryfy == true
+        run: npm run ${{ matrix.repositoryfy_command }}:prod
+
+      - name: Stage changes
+        if: matrix.repositoryfy == true
+        run: |
+          cd igniteui-live-editing-samples/${{ matrix.submodule_dir }}
+          git add .
+
+      - name: Check for changes
+        if: matrix.repositoryfy == true
+        id: check_changes
+        run: |
+          cd igniteui-live-editing-samples/${{ matrix.submodule_dir }}
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changes_detected=true" >> $GITHUB_OUTPUT
+          else
+            echo "changes_detected=false" >> $GITHUB_OUTPUT
+            echo "No changes to commit."
+          fi
+
+      - name: Configure git and commit changes
+        if: matrix.repositoryfy == true && steps.check_changes.outputs.changes_detected == 'true'
+        run: |
+          cd igniteui-live-editing-samples/${{ matrix.submodule_dir }}
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "Automated repository update"
+
+      - name: Push changes
+        if: matrix.repositoryfy == true && steps.check_changes.outputs.changes_detected == 'true'
+        run: |
+          cd igniteui-live-editing-samples/${{ matrix.submodule_dir }}
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/IgniteUI/igniteui-live-editing-samples.git
+        continue-on-error: true
+
+      - name: Trigger Deploy Workflow in IgniteUI Actions
+        uses: actions/github-script@v8
+        with:
+          github-token: ${{ secrets.CLASSIC_PATKA }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: 'IgniteUI',
+              repo: 'igniteui-actions',
+              event_type: 'igniteui-angular-samples-cd',
+              client_payload: {
+                repository: "${{ github.repository }}",
+                run_id: "${{ github.run_id }}",
+                artifact_name: "${{ matrix.submodule_dir }}-artifact",
+                ref: "${{ github.ref }}",
+                sha: "${{ github.sha }}",
+                branch: '${{ github.ref_name }}',
+                unit: false,
+                integration: true
+              }
+            });

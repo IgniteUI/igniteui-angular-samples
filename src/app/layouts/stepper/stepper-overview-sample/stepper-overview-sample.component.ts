@@ -1,6 +1,14 @@
 import { ChangeDetectorRef, Component, ViewChild, inject } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
-import { IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxCardComponent, IgxCardMediaDirective, IgxCardContentDirective, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, IgxBadgeComponent } from 'igniteui-angular';
+import { IgxStepComponent, IgxStepContentDirective, IgxStepTitleDirective, IgxStepperComponent } from 'igniteui-angular/stepper';
+import { IgxCardComponent, IgxCardContentDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
+import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxButtonDirective, IgxMaskDirective } from 'igniteui-angular/directives';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxRadioComponent, IgxRadioGroupDirective } from 'igniteui-angular/radio';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { NgClass, DatePipe } from '@angular/common';
 
 @Component({

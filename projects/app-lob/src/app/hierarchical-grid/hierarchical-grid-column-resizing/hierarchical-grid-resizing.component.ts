@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { IgxColumnComponent, IgxHierarchicalGridComponent, IgxCellTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { RemoteValuesService } from '../../services/remoteValues.service';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';
 import { IgxSparklineCoreModule } from 'igniteui-angular-charts';

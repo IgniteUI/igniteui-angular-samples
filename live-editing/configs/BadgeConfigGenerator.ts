@@ -1,8 +1,6 @@
-import {
-    IgxAvatarModule,
-    IgxBadgeModule,
-    IgxListModule
-} from 'igniteui-angular';
+import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxBadgeModule } from 'igniteui-angular/badge';
+import { IgxListModule } from 'igniteui-angular/list';
 import { Config, IConfigGenerator, AppModuleConfig } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class BadgeConfigGenerator implements IConfigGenerator {
@@ -38,6 +36,13 @@ export class BadgeConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'BadgeStylingSampleComponent',
             additionalFiles: ["src/app/data-display/badge/model/member.model.ts", "src/app/data-display/badge/badge-styling-sample/layout.scss"],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
+        configs.push(new Config({
+            component: 'BadgeDotSampleComponent',
+            additionalFiles: ["src/app/data-display/badge/model/member.model.ts", "src/app/data-display/badge/badge-dot-sample/badge-dot-sample.component.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/badge/"
         }));

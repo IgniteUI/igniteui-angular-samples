@@ -1,5 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnActionsComponent, IgxColumnHidingDirective, IgxRadioComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxCellTemplateDirective, IgxColumnActionsComponent, IgxColumnComponent, IgxColumnHidingDirective } from 'igniteui-angular/grids/core';
+import { IgxRadioComponent } from 'igniteui-angular/radio';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

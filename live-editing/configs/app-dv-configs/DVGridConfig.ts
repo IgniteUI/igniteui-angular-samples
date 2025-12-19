@@ -5,29 +5,21 @@ import {
     Router,
     RouterModule
 } from '@angular/router';
-import {
-    IgxAvatarModule,
-    IgxBadgeModule,
-    IgxButtonGroupModule,
-    IgxButtonModule,
-    IgxCheckboxModule,
-    IgxCsvExporterService,
-    IgxDialogModule,
-    IgxDividerModule,
-    IgxExcelExporterService,
-    IgxGridModule,
-    IgxIconModule,
-    IgxInputGroupModule,
-    IgxProgressBarModule,
-    IgxRippleModule,
-    IgxSliderModule,
-    IgxSwitchModule,
-    IgxTabsModule,
-    IgxToggleModule,
-    IgxToastModule,
-    IgxFocusModule,
-    IgxGridComponent
-} from 'igniteui-angular';
+import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxBadgeModule } from 'igniteui-angular/badge';
+import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
+import { IgxButtonModule, IgxDividerModule, IgxFocusModule, IgxRippleModule, IgxToggleModule } from 'igniteui-angular/directives';
+import { IgxCheckboxModule } from 'igniteui-angular/checkbox';
+import { IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular/core';
+import { IgxDialogModule } from 'igniteui-angular/dialog';
+import { IgxGridComponent, IgxGridModule } from 'igniteui-angular/grids/grid';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxInputGroupModule } from 'igniteui-angular/input-group';
+import { IgxProgressBarModule } from 'igniteui-angular/progressbar';
+import { IgxSliderModule } from 'igniteui-angular/slider';
+import { IgxSwitchModule } from 'igniteui-angular/switch';
+import { IgxTabsModule } from 'igniteui-angular/tabs';
+import { IgxToastModule } from 'igniteui-angular/toast';
 import {
     IgxCategoryChartModule,
     IgxLegendModule,
