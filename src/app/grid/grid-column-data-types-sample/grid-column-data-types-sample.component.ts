@@ -64,21 +64,21 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
     // DateTime options
     public dateTimeOptions = {
         format: 'long',
-        timezone: 'UTC+0'
+        timezone: ''
     };
     public formatDateTimeOptions = this.dateTimeOptions;
 
     // Date options
     public dateOptions = {
         format: 'mediumDate',
-        timezone: 'UTC+0'
+        timezone: ''
     };
     public formatDateOptions = this.dateOptions;
 
     // Time options
     public timeOptions = {
         format: 'shortTime',
-        timezone: 'UTC+0'
+        timezone: ''
     };
     public formatTimeOptions = this.timeOptions;
 
