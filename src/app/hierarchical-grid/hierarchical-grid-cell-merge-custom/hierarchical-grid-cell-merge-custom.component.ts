@@ -17,10 +17,6 @@ import { FormsModule } from '@angular/forms';
         IgxPreventDocumentScrollDirective,
         IgxColumnComponent,
         IgxRowIslandComponent,
-        IgxGridToolbarComponent,
-        IgxSelectComponent,
-        IgxSelectItemComponent,
-        IgxLabelDirective,
         FormsModule
     ]
 })
