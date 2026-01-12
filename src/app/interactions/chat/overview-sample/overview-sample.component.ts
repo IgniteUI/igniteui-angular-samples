@@ -1,5 +1,5 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { IgxChatComponent, IgxChatOptions } from 'igniteui-angular';
+import { Component, signal } from '@angular/core';
+import { IgxChatComponent, IgxChatOptions } from 'igniteui-angular/chat';
 
 @Component({
     selector: 'app-chat-overview-sample',
