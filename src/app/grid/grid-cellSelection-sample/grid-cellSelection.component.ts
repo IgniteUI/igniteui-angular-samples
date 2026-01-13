@@ -1,5 +1,10 @@
 import { Component, ElementRef, OnInit, Renderer2, ViewChild, inject } from '@angular/core';
-import { GridSelectionMode, IgxGridComponent, IgxSnackbarComponent, IgxButtonGroupComponent, IgxColumnComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

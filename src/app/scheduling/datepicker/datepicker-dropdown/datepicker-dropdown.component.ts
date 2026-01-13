@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxDatePickerComponent, IgxLabelDirective } from 'igniteui-angular';
+import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { FormsModule } from '@angular/forms';
 import { DatePipe } from '@angular/common';
 

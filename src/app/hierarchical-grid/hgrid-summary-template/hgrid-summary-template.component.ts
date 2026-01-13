@@ -1,5 +1,10 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { IgxNumberSummaryOperand, IgxSummaryResult, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSummaryTemplateDirective, IgxRowIslandComponent } from 'igniteui-angular';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand, IgxSummaryTemplateDirective } from 'igniteui-angular/grids/core';
+import { IgxSummaryResult } from 'igniteui-angular/core';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { SINGERS } from '../../data/singersData';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

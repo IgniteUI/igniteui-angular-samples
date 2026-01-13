@@ -12,6 +12,7 @@ import { LocalizationSample2Component } from './localization-samples/localizatio
 import { LocalizationSample3Component } from './localization-samples/localization-sample-3/localization-sample-3.component';
 import { servicesRoutesData } from './services-routes-data';
 import { TransactionBaseComponent } from './transaction/transaction-base/transaction-base.component';
+import { PdfExportComponent } from './export-pdf/pdf-export.component';
 // tslint:enable:max-line-length
 
 export const ServicesRoutes: Routes = [
@@ -39,6 +40,11 @@ export const ServicesRoutes: Routes = [
         component: ExcelExportSample1Component,
         data: servicesRoutesData['export-excel-sample-1'],
         path: 'export-excel-sample-1'
+    },
+    {
+        component: PdfExportComponent,
+        data: servicesRoutesData['export-pdf'],
+        path: 'export-pdf'
     },
     {
         component: TreeGridExcelExportSample1Component,

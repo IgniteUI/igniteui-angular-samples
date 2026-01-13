@@ -1,8 +1,8 @@
-import {IgxButtonModule,
-IgxIconModule,
-IgxInputGroupModule,
-IgxTimePickerModule,
-IgxToastModule} from 'igniteui-angular';
+import { IgxButtonModule } from 'igniteui-angular/directives';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxInputGroupModule } from 'igniteui-angular/input-group';
+import { IgxTimePickerModule } from 'igniteui-angular/time-picker';
+import { IgxToastModule } from 'igniteui-angular/toast';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class TimePickerConfigGenerator implements IConfigGenerator {

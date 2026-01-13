@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxQueryBuilderComponent } from 'igniteui-angular';
+import { IgxQueryBuilderComponent } from 'igniteui-angular/query-builder';
 
 @Component({
     selector: 'app-query-builder-tailwind-style-sample',

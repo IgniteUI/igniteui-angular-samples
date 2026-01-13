@@ -1,5 +1,8 @@
 import { Component, ViewChild, AfterViewInit, OnDestroy, Renderer2, inject } from '@angular/core';
-import { IDragMoveEventArgs, IDropDroppedEventArgs, IgxGridComponent, IRowDragStartEventArgs, Point, IgxDropDirective, IgxColumnComponent, IgxRowDirective } from 'igniteui-angular';
+import { IDragMoveEventArgs, IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IRowDragStartEventArgs, IgxColumnComponent, IgxRowDirective } from 'igniteui-angular/grids/core';
+import { Point } from 'igniteui-angular/core';
 import { DATA } from '../../data/customers';
 import { Subject, interval, Observable, Subscription } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';

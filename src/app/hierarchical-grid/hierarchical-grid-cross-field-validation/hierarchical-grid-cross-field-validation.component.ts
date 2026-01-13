@@ -1,6 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { AbstractControl, ValidationErrors, ValidatorFn, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { CellType, IgxHierarchicalGridComponent, IGridEditEventArgs, IGridFormGroupCreatedEventArgs, IgxSwitchComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxColumnRequiredValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxButtonDirective } from 'igniteui-angular';
+import { CellType, IGridEditEventArgs, IGridFormGroupCreatedEventArgs, IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxGridToolbarComponent, IgxGridToolbarDirective } from 'igniteui-angular/grids/core';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxButtonDirective, IgxFocusDirective, IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

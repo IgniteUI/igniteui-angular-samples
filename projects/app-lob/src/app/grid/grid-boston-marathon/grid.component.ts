@@ -1,5 +1,13 @@
 import { Component, HostListener, OnDestroy, OnInit, ViewChild, ElementRef, AfterViewInit, DOCUMENT, inject } from '@angular/core';
-import { IgxGridComponent, IgxNumberSummaryOperand, IgxStringFilteringOperand, IgxSummaryResult, CellType, OverlaySettings, IgxOverlayService, AbsolutePosition, OverlayClosingEventArgs, IgxSwitchComponent, IgxInputGroupComponent, IgxInputDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxBadgeComponent, IgxCircularProgressBarComponent } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { CellType, IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
+import { AbsolutePosition, IgxOverlayService, IgxStringFilteringOperand, IgxSummaryResult, OverlayClosingEventArgs, OverlaySettings } from 'igniteui-angular/core';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
+import { IgxCircularProgressBarComponent } from 'igniteui-angular/progressbar';
 import { Athlete, АthletesData, SpeedDescriptor } from '../../data/athletesData';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';

@@ -1,6 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, ISortingOptions, SortingDirection, IgxGridToolbarComponent, IgxButtonDirective, IgxGridToolbarActionsComponent, IgxSimpleComboComponent, IgxComboClearIconDirective, IgxComboItemDirective, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { DefaultSortingStrategy, ISortingOptions, SortingDirection } from 'igniteui-angular/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
+import { IgxComboClearIconDirective, IgxComboItemDirective } from 'igniteui-angular/combo';
 import { DATA } from '../../data/localData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { FormsModule } from '@angular/forms';

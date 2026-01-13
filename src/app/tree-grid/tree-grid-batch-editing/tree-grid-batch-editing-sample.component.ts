@@ -1,6 +1,11 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxDialogComponent, IgxGridComponent, IgxTreeGridComponent, Transaction, IgxColumnComponent, IgxCellTemplateDirective, IgxButtonDirective } from 'igniteui-angular';
+import { IgxDialogComponent } from 'igniteui-angular/dialog';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { Transaction } from 'igniteui-angular/core';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { generateRandomInteger } from '../../data/utils';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

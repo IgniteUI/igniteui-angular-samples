@@ -1,5 +1,10 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { IgxSummaryOperand, IgxSummaryResult, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxTreeGridComponent, IgxColumnComponent, IgxSummaryTemplateDirective } from 'igniteui-angular';
+import { IgxColumnComponent, IgxSummaryOperand, IgxSummaryTemplateDirective } from 'igniteui-angular/grids/core';
+import { IgxSummaryResult } from 'igniteui-angular/core';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

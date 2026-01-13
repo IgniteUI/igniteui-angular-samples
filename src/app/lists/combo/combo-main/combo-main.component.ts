@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { localData } from './local-data';
-import { IgxComboComponent } from 'igniteui-angular';
+import { IgxComboComponent } from 'igniteui-angular/combo';
 
 @Component({
     selector: 'app-combo-main',

@@ -1,5 +1,5 @@
 import { Component, ElementRef, inject } from '@angular/core';
-import { IgxCardModule, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective } from 'igniteui-angular';
+import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective, IgxCardModule } from 'igniteui-angular/card';
 @Component({
     selector: `app-overlay-dynamic-card-component`,
     templateUrl: `overlay-dynamic-card.component.html`,

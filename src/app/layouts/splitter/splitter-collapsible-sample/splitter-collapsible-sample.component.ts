@@ -1,5 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxSplitterComponent, IgxSplitterPaneComponent, IgxButtonDirective } from 'igniteui-angular';
+import { IgxSplitterComponent, IgxSplitterPaneComponent } from 'igniteui-angular/splitter';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-splitter-collapsible-sample',

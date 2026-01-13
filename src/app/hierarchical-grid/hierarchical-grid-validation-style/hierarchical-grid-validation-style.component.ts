@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxGridComponent, IgxHierarchicalGridComponent, IgxRowIslandComponent, RowType, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxCellValidationErrorDirective } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, RowType } from 'igniteui-angular/grids/core';
 import { SINGERS } from '../../data/singersData';
 import { Singer } from '../models';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

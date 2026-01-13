@@ -1,6 +1,9 @@
 import { formatNumber, AsyncPipe } from '@angular/common';
 import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
-import { GridPagingMode, IgxTreeGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent } from 'igniteui-angular';
+import { GridPagingMode, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from './remotePagingService';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

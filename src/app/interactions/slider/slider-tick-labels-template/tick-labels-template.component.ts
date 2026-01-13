@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxSliderComponent, IgxTickLabelTemplateDirective } from 'igniteui-angular';
+import { IgxSliderComponent, IgxTickLabelTemplateDirective } from 'igniteui-angular/slider';
 
 @Component({
     selector: 'app-tick-labels-template',

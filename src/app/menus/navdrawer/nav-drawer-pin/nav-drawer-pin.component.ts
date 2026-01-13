@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxNavDrawerItemDirective, IgxRippleDirective, IgxIconComponent, IgxFlexDirective, IgxIconButtonDirective, IgxToggleActionDirective } from 'igniteui-angular';
+import { IgxFlexDirective, IgxIconButtonDirective, IgxLayoutDirective, IgxRippleDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
+import { IgxNavDrawerItemDirective, IgxNavDrawerTemplateDirective, IgxNavigationDrawerComponent } from 'igniteui-angular/navigation-drawer';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 
 @Component({

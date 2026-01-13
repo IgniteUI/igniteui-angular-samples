@@ -1,5 +1,8 @@
 import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation, inject } from '@angular/core';
-import { IgxGridComponent, IgxColumnComponent, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxButtonDirective } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxPaginatorComponent, IgxPaginatorContentDirective } from 'igniteui-angular/paginator';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { Observable } from 'rxjs';
 import { RemotePagingService } from '../../services/remotePaging.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

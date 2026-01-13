@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxActionStripComponent, IgxActionStripMenuItemDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxActionStripComponent, IgxActionStripMenuItemDirective } from 'igniteui-angular/action-strip';
+import { IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-action-strip-paragraph-menu',

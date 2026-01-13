@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxBooleanFilteringOperand, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxQueryBuilderComponent, IgxStringFilteringOperand } from 'igniteui-angular';
+import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxBooleanFilteringOperand, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular/core';
+import { IgxQueryBuilderComponent } from 'igniteui-angular/query-builder';
 
 @Component({
     selector: 'app-query-builder-sample-1',
