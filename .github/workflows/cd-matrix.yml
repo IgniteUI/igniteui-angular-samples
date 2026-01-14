@@ -61,7 +61,6 @@ jobs:
               event_type: 'igniteui-angular-samples-cd',
               client_payload: {
                 repository: "${{ github.repository }}",
-                run_id: "${{ github.run_id }}",
                 calling_branch: "${{ env.BRANCH_REF }}",
                 custom_command: "${{ matrix.custom_command }}",
                 submodule_dir: "${{ matrix.submodule_dir }}",
@@ -70,10 +69,6 @@ jobs:
                 npm_build_command: "${{ matrix.npm_build_command }}",
                 repositoryfy: ${{ matrix.repositoryfy }},
                 repositoryfy_command: "${{ matrix.repositoryfy_command }}",
-                ref: "${{ github.ref }}",
-                sha: "${{ github.sha }}",
-                branch: '${{ github.ref_name }}',
-                unit: false,
-                integration: true
+                ref: "${{ github.ref }}"
               }
             });
