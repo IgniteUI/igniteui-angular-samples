@@ -8,7 +8,6 @@ on:
       - master
       - vnext
   workflow_dispatch:
-    workflow_dispatch:
     inputs:
       branch:
         description: 'Input a branch name (e.g., vnext)'
@@ -54,6 +53,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: ${{ env.BRANCH_REF }}
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Setup Node.js
@@ -97,13 +97,13 @@ jobs:
         run: git clone --recurse-submodules https://github.com/IgniteUI/igniteui-live-editing-samples igniteui-live-editing-samples
 
       - name: Checkout branch in submodule (vNext)
-        if: env.BRANCH_REF == 'refs/heads/vnext'
+        if: ${{ env.BRANCH_REF == 'refs/heads/vnext' }}
         run: |
           cd igniteui-live-editing-samples
           git checkout vNext
 
       - name: Checkout branch in submodule (master)
-        if: env.BRANCH_REF == 'refs/heads/master'
+        if: ${{ env.BRANCH_REF == 'refs/heads/master' }}
         run: |
           cd igniteui-live-editing-samples
           git checkout master
@@ -157,11 +157,11 @@ jobs:
           retention-days: 1
 
       - name: Repositorify (vNext)
-        if: env.BRANCH_REF == 'refs/heads/vnext' && matrix.repositoryfy == true
+        if: ${{ env.BRANCH_REF == 'refs/heads/vnext' && matrix.repositoryfy == true }}
         run: npm run ${{ matrix.repositoryfy_command }}
 
       - name: Repositorify (Production)
-        if: env.BRANCH_REF == 'refs/heads/master' && matrix.repositoryfy == true
+        if: ${{ env.BRANCH_REF == 'refs/heads/master' && matrix.repositoryfy == true }}
         run: npm run ${{ matrix.repositoryfy_command }}:prod
 
       - name: Stage changes
@@ -212,10 +212,9 @@ jobs:
                 run_id: "${{ github.run_id }}",
                 artifact_name: "${{ matrix.submodule_dir }}-artifact",
                 base_href: "${{ matrix.base_href }}",
+                submodule_dir: "${{ matrix.submodule_dir }}",
                 ref: "${{ github.ref }}",
                 sha: "${{ github.sha }}",
                 branch: '${{ github.ref_name }}',
-                unit: false,
-                integration: true
               }
             });
