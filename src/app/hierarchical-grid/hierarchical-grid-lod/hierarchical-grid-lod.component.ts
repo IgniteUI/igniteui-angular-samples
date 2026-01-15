@@ -63,7 +63,7 @@ export class HierarchicalGridLoDSampleComponent implements OnInit, AfterViewInit
             ignoreCase: false,
             condition: IgxNumberFilteringOperand.instance().condition('greaterThanOrEqualTo'),
             conditionName: IgxNumberFilteringOperand.instance().condition('greaterThanOrEqualTo').name,
-            searchVal: '500'
+            searchVal: 500
         });
 
         const customersTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Customers', ['customerId', 'companyName', 'contactName', 'contactTitle']);
