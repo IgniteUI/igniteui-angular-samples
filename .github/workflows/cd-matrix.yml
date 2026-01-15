@@ -27,7 +27,7 @@ jobs:
           - name: app
             custom_command: run generate-live-editing
             submodule_dir: angular-demos
-            base_href: /angular-demos/
+            base_href: angular-demos
             target_folder: dist/app
             npm_build_command: run build-ci
             repositoryfy: true
@@ -35,7 +35,7 @@ jobs:
           - name: app-crm
             custom_command: run generate-live-editing:app-crm
             submodule_dir: angular-demos-crm
-            base_href: /angular-demos-grid-crm/
+            base_href: angular-demos-grid-crm
             target_folder: dist/app-crm
             npm_build_command: run build-ci:app-crm --loglevel verbose
             repositoryfy: false
@@ -43,7 +43,7 @@ jobs:
           - name: app-lob
             custom_command: run generate-live-editing:app-lob
             submodule_dir: angular-demos-lob
-            base_href: /angular-demos-lob/
+            base_href: angular-demos-lob
             target_folder: dist/app-lob
             npm_build_command: run build-ci:app-lob
             repositoryfy: true
@@ -154,6 +154,7 @@ jobs:
         with:
           name: ${{ matrix.submodule_dir }}-artifact
           path: ${{ matrix.submodule_dir }}-artifact.zip
+          retention-days: 1
 
       - name: Repositorify (vNext)
         if: env.BRANCH_REF == 'refs/heads/vnext' && matrix.repositoryfy == true
@@ -199,16 +200,18 @@ jobs:
       - name: Trigger Deploy Workflow in IgniteUI Actions
         uses: actions/github-script@v8
         with:
-          github-token: ${{ secrets.CLASSIC_PATKA }}
+          github-token: ${{ secrets.CLASSIC_PAT_GITHUB }}
           script: |
             await github.rest.repos.createDispatchEvent({
               owner: 'IgniteUI',
               repo: 'igniteui-actions',
               event_type: 'igniteui-angular-samples-cd',
               client_payload: {
+                calling_branch: "${{ env.BRANCH_REF }}",
                 repository: "${{ github.repository }}",
                 run_id: "${{ github.run_id }}",
                 artifact_name: "${{ matrix.submodule_dir }}-artifact",
+                base_href: "${{ matrix.base_href }}",
                 ref: "${{ github.ref }}",
                 sha: "${{ github.sha }}",
                 branch: '${{ github.ref_name }}',
