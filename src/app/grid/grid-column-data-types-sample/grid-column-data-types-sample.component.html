@@ -43,15 +43,7 @@
       <igx-hint>Applied to 'time' type column only</igx-hint>
     </igx-select>
 
-    <igx-select #select [(ngModel)]="dateTimeOptions.timezone" (selectionChanging)="timezoneSelectionChanging($event)">
-      <igx-prefix class="ellipsis">Timezone: </igx-prefix>
-      @for (timezone of timezoneFormats; track timezone) {
-        <igx-select-item [value]="timezone" [text]="timezone">
-          {{ timezone }}
-        </igx-select-item>
-      }
-      <igx-hint>Applicable to dateTime type columns only</igx-hint>
-    </igx-select>
+    <!-- Timezone selection removed as time-only columns are not timezone-aware -->
 
     <igx-select #select [(ngModel)]="options.currencyCode" (selectionChanging)="currencySelectionChanging($event)">
       <igx-prefix class="ellipsis">Currency Code: </igx-prefix>
@@ -109,7 +101,7 @@
           [pipeArgs]="formatDateOptions" [dataType]="'date'" [resizable]="true">
         </igx-column>
         <igx-column field="OrderDateDelay" [width]="'120px'" header="Order Time" [sortable]="true" [hasSummary]="true" [editable]="true"
-          [pipeArgs]="formatTimeOptions" [dataType]="'time'" [resizable]="true">
+          [pipeArgs]="formatTimeOptions" [dataType]="'time'" [resizable]="true" [summaries]="IgxTimeSummaryOperand">
         </igx-column>
         <igx-column field="UnitsInStock" [width]="'120px'" header="Stock Value" [sortable]="true" [hasSummary]="true"
           [editable]="true" [pipeArgs]="formatOptions" [dataType]="'currency'" [resizable]="true">
