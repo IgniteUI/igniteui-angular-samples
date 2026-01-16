@@ -3,8 +3,13 @@
     padding-bottom: 0;
 }
 
-.valid-image {
-    margin-left: -5px;
+.valid-image,
+.invalid-image {
+    margin-left: -10px;
+
+    img {
+        max-width: none;
+    }
 }
 
 .buttons-wrapper {
