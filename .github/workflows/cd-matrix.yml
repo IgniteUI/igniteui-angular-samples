@@ -177,6 +177,8 @@ jobs:
           cd igniteui-live-editing-samples/${{ matrix.submodule_dir }}
           if [ -n "$(git status --porcelain)" ]; then
             echo "changes_detected=true" >> $GITHUB_OUTPUT
+            echo "Changed files:"
+            git status --porcelain
           else
             echo "changes_detected=false" >> $GITHUB_OUTPUT
             echo "No changes to commit."
