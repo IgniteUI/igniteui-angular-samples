@@ -164,12 +164,6 @@ jobs:
         if: ${{ env.BRANCH_REF == 'refs/heads/master' && matrix.repositoryfy == true }}
         run: npm run ${{ matrix.repositoryfy_command }}:prod
 
-      - name: Stage changes
-        if: matrix.repositoryfy == true
-        run: |
-          cd igniteui-live-editing-samples/${{ matrix.submodule_dir }}
-          git add .
-
       - name: Check for changes
         if: matrix.repositoryfy == true
         id: check_changes
@@ -190,6 +184,7 @@ jobs:
           cd igniteui-live-editing-samples/${{ matrix.submodule_dir }}
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
           git commit -m "Automated repository update"
 
       - name: Push changes
