@@ -33,14 +33,14 @@
       </igx-expansion-panel-header>
       <igx-expansion-panel-body>
         @for (item of [].constructor(4); track item; let i = $index) {
-          <div style="display:flex; align-items: center;">
+          <div style="display:flex; gap: 4px; align-items: center;">
             @if (i===0) {
               <igx-radio [(ngModel)]="rating" [value]="i+1 + ' star or more'"> {{ i + 1 }} star or more</igx-radio>
             }
             @if (i>0) {
               <igx-radio [(ngModel)]="rating" [value]="i+1 + ' stars or more'"> {{ i + 1 }} stars or more</igx-radio>
             }
-            <div style="display:inline-flex; margin-top: 8px; margin-left: 4px">
+            <div style="display:inline-flex; padding-top: 4px">
               @for (fillStar of [].constructor(i + 1); track fillStar) {
                 <div>
                   <igx-icon>star</igx-icon>
