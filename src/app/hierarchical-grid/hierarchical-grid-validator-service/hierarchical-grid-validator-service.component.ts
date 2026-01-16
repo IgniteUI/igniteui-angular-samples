@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxHierarchicalGridComponent, IgxSwitchComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxRowIslandComponent, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective } from 'igniteui-angular';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxColumnComponent, IgxColumnMaxValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective } from 'igniteui-angular/grids/core';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { FormsModule } from '@angular/forms';
 

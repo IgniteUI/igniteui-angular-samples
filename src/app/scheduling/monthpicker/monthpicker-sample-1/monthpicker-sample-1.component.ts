@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxCardComponent, IgxMonthPickerComponent } from 'igniteui-angular';
+import { IgxCardComponent } from 'igniteui-angular/card';
+import { IgxMonthPickerComponent } from 'igniteui-angular/calendar';
 
 @Component({
     selector: 'app-monthpicker-sample-1',

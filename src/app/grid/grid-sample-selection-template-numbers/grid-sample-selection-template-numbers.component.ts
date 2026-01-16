@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { DATA } from '../../data/customers';
-import { IgxGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxHeadSelectorDirective, IgxRowSelectorDirective, IgxCheckboxComponent } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IgxColumnComponent, IgxHeadSelectorDirective, IgxRowSelectorDirective } from 'igniteui-angular/grids/core';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

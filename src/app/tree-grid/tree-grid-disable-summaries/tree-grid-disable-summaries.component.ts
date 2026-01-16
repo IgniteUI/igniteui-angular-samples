@@ -7,18 +7,11 @@ import {
     QueryList,
     ViewChildren
 } from "@angular/core";
-import {
-    IgxTreeGridComponent,
-    IgxSummaryResult,
-    IgxColumnComponent,
-    IgxButtonDirective,
-    IgxCheckboxComponent,
-    IgxToggleDirective,
-    HorizontalAlignment,
-    VerticalAlignment,
-    OverlaySettings,
-    ConnectedPositioningStrategy
-} from "igniteui-angular";
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { ConnectedPositioningStrategy, HorizontalAlignment, IgxSummaryResult, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective, IgxToggleDirective } from 'igniteui-angular/directives';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { ORDERS_DATA } from "../data/orders";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
 

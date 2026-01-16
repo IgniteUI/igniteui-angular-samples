@@ -1,5 +1,9 @@
 import { Component, ViewChild } from '@angular/core';
-import { IgxDatePickerComponent, IgxSnackbarComponent, IgxLabelDirective, IgxPickerToggleComponent, IgxSuffixDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
+import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
+import { IgxLabelDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxPickerToggleComponent } from 'igniteui-angular/core';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { DatePipe } from '@angular/common';
 
 @Component({

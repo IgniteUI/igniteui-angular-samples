@@ -1,6 +1,9 @@
 import { registerLocaleData } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { IFormattingOptions, IgxSelectComponent, IgxPrefixDirective, IgxSelectItemComponent, IgxCardComponent, IgxMonthPickerComponent } from 'igniteui-angular';
+import { IFormattingOptions, IgxMonthPickerComponent } from 'igniteui-angular/calendar';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxPrefixDirective } from 'igniteui-angular/input-group';
+import { IgxCardComponent } from 'igniteui-angular/card';
 import localeDE from '@angular/common/locales/de';
 import localeFR from '@angular/common/locales/fr';
 import localeAR from '@angular/common/locales/ar';

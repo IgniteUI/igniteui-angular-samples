@@ -1,5 +1,7 @@
 import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, OnInit, inject } from '@angular/core';
-import { IgxGridComponent, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { RemoteService } from '../../services/remote.service';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

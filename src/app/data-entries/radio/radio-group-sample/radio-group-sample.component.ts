@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IgxInputGroupComponent, IgxInputDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxRippleDirective, IgxLabelDirective } from 'igniteui-angular';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxRadioComponent, IgxRadioGroupDirective } from 'igniteui-angular/radio';
+import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 
 @Component({

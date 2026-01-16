@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, ViewChild } from '@angular/core';
-import { IDropDroppedEventArgs, IgxGridComponent, IgxColumnComponent, IgxDropDirective } from 'igniteui-angular';
+import { IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { DATA } from '../../data/customers';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

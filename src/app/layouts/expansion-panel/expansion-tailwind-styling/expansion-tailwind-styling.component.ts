@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
-import { IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelBodyComponent, IgxButtonDirective } from 'igniteui-angular';
+import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 
 @Component({
     // tslint:disable-next-line:component-selector

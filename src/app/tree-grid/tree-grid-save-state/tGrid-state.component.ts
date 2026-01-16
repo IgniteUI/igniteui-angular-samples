@@ -1,6 +1,12 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit, inject } from '@angular/core';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
-import { FilteringExpressionsTree, FilteringLogic, GridFeatures, IGridState, IGridStateOptions, IgxGridStateDirective, IgxTreeGridComponent, IgxCheckboxComponent, IgxButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxColumnComponent } from 'igniteui-angular';
+import { FilteringExpressionsTree, FilteringLogic } from 'igniteui-angular/core';
+import { GridFeatures, IGridState, IGridStateOptions, IgxColumnComponent, IgxGridStateDirective } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
 import { take } from 'rxjs/operators';
 import { EMPLOYEE_DATA } from './data';
 

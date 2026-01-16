@@ -1,6 +1,10 @@
 import { Component, ElementRef, Renderer2, ViewChild, inject } from '@angular/core';
 import { SINGERS } from '../../data/singersData';
-import { IgxSwitchComponent, IgxHierarchicalGridComponent, IgxColumnComponent, IgxRowIslandComponent, IgxButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

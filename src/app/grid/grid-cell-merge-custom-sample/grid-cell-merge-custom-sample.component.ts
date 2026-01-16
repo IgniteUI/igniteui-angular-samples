@@ -1,5 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { IgxGridComponent, IgxColumnComponent, GridCellMergeMode,DefaultMergeStrategy } from 'igniteui-angular';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { GridCellMergeMode, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { DefaultMergeStrategy } from 'igniteui-angular/core';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

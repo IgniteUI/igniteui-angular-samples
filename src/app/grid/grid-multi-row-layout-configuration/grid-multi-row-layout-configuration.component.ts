@@ -1,7 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable @typescript-eslint/quotes */
 import { ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren, ViewEncapsulation, DOCUMENT, inject } from "@angular/core";
-import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxDialogComponent, IgxGridComponent, IgxChipsAreaComponent, IgxChipComponent, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, IgxPrefixDirective, IgxInputGroupComponent, IgxInputDirective, IgxDropDirective, IgxButtonDirective } from "igniteui-angular";
+import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxButtonDirective, IgxDropDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
+import { IgxDialogComponent } from 'igniteui-angular/dialog';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxChipComponent, IgxChipsAreaComponent } from 'igniteui-angular/chips';
+import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { NgStyle, NgClass } from "@angular/common";
 
 interface IColumnConfig {

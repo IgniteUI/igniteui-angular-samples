@@ -1,5 +1,11 @@
 import { AfterViewInit, Component, ElementRef, OnInit, PLATFORM_ID, ViewChild, inject } from '@angular/core';
-import { IBaseChipEventArgs, IgxDropDownComponent, OverlaySettings, IgxTreeGridComponent, IRowSelectionEventArgs, ConnectedPositioningStrategy, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxChipsAreaComponent, IgxChipComponent, IgxColumnComponent } from 'igniteui-angular';
+import { IBaseChipEventArgs, IgxChipComponent, IgxChipsAreaComponent } from 'igniteui-angular/chips';
+import { IgxDropDownComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { ConnectedPositioningStrategy, OverlaySettings } from 'igniteui-angular/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IRowSelectionEventArgs, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { EMPLOYEE_DATA } from './nested-employee-data';
 import { isPlatformBrowser } from '@angular/common';
 

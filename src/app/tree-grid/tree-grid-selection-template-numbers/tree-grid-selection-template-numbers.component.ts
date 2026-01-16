@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { generateEmployeeFlatData } from '../data/employees-flat';
-import { IgxTreeGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxHeadSelectorDirective, IgxRowSelectorDirective, IgxCheckboxComponent } from 'igniteui-angular';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
+import { IgxColumnComponent, IgxHeadSelectorDirective, IgxRowSelectorDirective } from 'igniteui-angular/grids/core';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({

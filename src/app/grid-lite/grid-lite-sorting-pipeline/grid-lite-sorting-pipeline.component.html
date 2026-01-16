@@ -1,0 +1,17 @@
+<div class="grid-lite-wrapper">
+  <div>
+    <h5>Generated request</h5>
+    <p><code>{{ queryString }}</code></p>
+  </div>
+  <section class="grid-section">
+    <igc-circular-progress
+      [class.in-operation]="inOperation"
+      indeterminate>
+    </igc-circular-progress>
+    <igc-grid-lite 
+      [columns]="columns" 
+      [data]="data"
+      [dataPipelineConfiguration]="dataPipelineConfiguration">
+    </igc-grid-lite>
+  </section>
+</div>
