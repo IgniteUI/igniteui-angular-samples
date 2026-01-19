@@ -191,7 +191,7 @@ jobs:
         if: matrix.repositoryfy == true && steps.check_changes.outputs.changes_detected == 'true'
         run: |
           cd igniteui-live-editing-samples/${{ matrix.submodule_dir }}
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/IgniteUI/igniteui-live-editing-samples.git
+          git push https://x-access-token:${{ secrets.CLASSIC_PAT_GITHUB }}@github.com/IgniteUI/igniteui-live-editing-samples.git
         continue-on-error: true
 
       - name: Trigger Deploy Workflow in IgniteUI Actions
