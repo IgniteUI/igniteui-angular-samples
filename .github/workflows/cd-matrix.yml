@@ -146,14 +146,13 @@ jobs:
 
       - name: Create zip artifact
         run: |
-          cd ${{ matrix.target_folder }}/browser
-          zip -r ../../${{ matrix.submodule_dir }}-artifact.zip ./
+          zip -r ${{ matrix.submodule_dir }}-artifact.zip -C ${{ matrix.target_folder }}/browser .
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ${{ matrix.submodule_dir }}-artifact
-          path: ${{ matrix.target_folder }}/${{ matrix.submodule_dir }}-artifact.zip
+          path: ${{ matrix.submodule_dir }}-artifact.zip
           retention-days: 1
 
       - name: Repositorify (vNext)
