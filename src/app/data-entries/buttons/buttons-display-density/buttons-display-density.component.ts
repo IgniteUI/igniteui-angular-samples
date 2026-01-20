@@ -1,5 +1,7 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-buttons-display-density',

@@ -1,5 +1,12 @@
 import { Component, ElementRef, OnInit, OnDestroy, ViewChild, HostBinding, inject } from '@angular/core';
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment, IGroupingExpression, IgxButtonGroupComponent, IgxGroupedTreeGridSorting, IgxOverlayOutletDirective, IgxSliderComponent, IgxTreeGridComponent, ITreeGridAggregation, OverlaySettings, PositionSettings, TreeGridFilteringStrategy, VerticalAlignment, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxGridToolbarHidingComponent, IgxGridToolbarExporterComponent, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxIconComponent, IgxTreeGridGroupingPipe } from 'igniteui-angular';
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, HorizontalAlignment, IGroupingExpression, IgxOverlayOutletDirective, OverlaySettings, PositionSettings, TreeGridFilteringStrategy, VerticalAlignment } from 'igniteui-angular/core';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { ITreeGridAggregation, IgxGroupedTreeGridSorting, IgxTreeGridComponent, IgxTreeGridGroupByAreaComponent, IgxTreeGridGroupingPipe } from 'igniteui-angular/grids/tree-grid';
+import { IgxSliderComponent } from 'igniteui-angular/slider';
+import { IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxFocusDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { Contract, REGIONS } from '../data/financialData';
 import { SignalRService } from '../services/signal-r.service';
 import { FormsModule } from '@angular/forms';

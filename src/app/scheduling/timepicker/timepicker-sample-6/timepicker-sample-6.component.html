@@ -1,9 +1,9 @@
 <igx-time-picker #picker [(ngModel)]="today" [inputFormat]="'hh:mm'">
     <igx-picker-toggle igxPrefix>
-        <igx-icon (click)="picker.toggle()">access_alarm</igx-icon>
+        <igx-icon>access_alarm</igx-icon>
     </igx-picker-toggle>
     <igx-hint>{{today.toLocaleString()}}</igx-hint>
-    <ng-template igxTimePickerActions>
+    <ng-template igxPickerActions>
         <div class="action-buttons">
             <button igxButton="flat" (click)="picker.cancelButtonClick()">cancel</button>
             <button igxButton="flat" (click)="picker.okButtonClick()">done</button>

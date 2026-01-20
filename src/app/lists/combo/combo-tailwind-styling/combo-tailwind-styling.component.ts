@@ -1,5 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
-import { IComboSelectionChangingEventArgs, IgxToastComponent, VerticalAlignment, IgxComboComponent } from 'igniteui-angular';
+import { IComboSelectionChangingEventArgs, IgxComboComponent } from 'igniteui-angular/combo';
+import { IgxToastComponent } from 'igniteui-angular/toast';
+import { VerticalAlignment } from 'igniteui-angular/core';
 import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
 
 @Component({

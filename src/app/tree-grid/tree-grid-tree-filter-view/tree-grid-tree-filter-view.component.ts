@@ -1,5 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit, ViewChild } from '@angular/core';
-import { IgxTreeGridComponent, TreeGridFilteringStrategy, IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxGridExcelStyleFilteringComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { TreeGridFilteringStrategy } from 'igniteui-angular/core';
+import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridExcelStyleFilteringComponent } from 'igniteui-angular/grids/core';
 import { ORDERS_DATA } from '../data/orders';
 
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';

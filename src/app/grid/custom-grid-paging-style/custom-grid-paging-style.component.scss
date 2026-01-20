@@ -5,7 +5,7 @@ $my-primary: #231c2c;
 $my-secondary: #d0ab23;
 $dark-gray: #333;
 $light-gray: #999;
-$inactive-color: #9b7829;
+$inactive-color: #826217;
 
 $dark-paginator: paginator-theme(
   $text-color: $my-secondary,
@@ -13,7 +13,7 @@ $dark-paginator: paginator-theme(
   $border-color: $my-secondary
 );
 
-$dark-button: icon-button-theme(
+$dark-button: flat-icon-button-theme(
   $foreground: $my-secondary,
   $hover-foreground: $dark-gray,
   $hover-background: $my-secondary,
@@ -59,8 +59,8 @@ $dark-drop-down-theme: drop-down-theme(
 
 :host {
   ::ng-deep {
-    @include css-vars($dark-drop-down-theme);  
-	
+    @include css-vars($dark-drop-down-theme);
+
     igx-paginator {
       @include css-vars($dark-button);
       @include css-vars($dark-input-group);
@@ -68,4 +68,3 @@ $dark-drop-down-theme: drop-down-theme(
     }
   }
 }
- 

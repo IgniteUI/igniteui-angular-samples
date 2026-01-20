@@ -1,17 +1,11 @@
-import {ConnectedPositioningStrategy,
-GlobalPositionStrategy,
-IgxButtonModule,
-IgxCardModule,
-IgxCheckboxModule,
-IgxChipsModule,
-IgxDialogModule,
-IgxDragDirective,
-IgxDragDropModule,
-IgxDropDirective,
-IgxIconModule,
-IgxListModule,
-IgxToggleModule,
-NoOpScrollStrategy} from 'igniteui-angular';
+import { ConnectedPositioningStrategy, GlobalPositionStrategy, NoOpScrollStrategy } from 'igniteui-angular/core';
+import { IgxButtonModule, IgxDragDirective, IgxDragDropModule, IgxDropDirective, IgxToggleModule } from 'igniteui-angular/directives';
+import { IgxCardModule } from 'igniteui-angular/card';
+import { IgxCheckboxModule } from 'igniteui-angular/checkbox';
+import { IgxChipsModule } from 'igniteui-angular/chips';
+import { IgxDialogModule } from 'igniteui-angular/dialog';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxListModule } from 'igniteui-angular/list';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class DragAndDropConfigGenerator implements IConfigGenerator {

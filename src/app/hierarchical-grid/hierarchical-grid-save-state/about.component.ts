@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective } from 'igniteui-angular';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { RouterLink } from '@angular/router';
 
 @Component({

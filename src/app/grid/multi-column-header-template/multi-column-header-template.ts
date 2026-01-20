@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { GridSelectionMode, IgxColumnGroupComponent, IgxGridComponent, IgxIconComponent, IgxColumnComponent } from 'igniteui-angular';
+import { GridSelectionMode, IgxColumnComponent, IgxColumnGroupComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { DATA } from '../../data/customers';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

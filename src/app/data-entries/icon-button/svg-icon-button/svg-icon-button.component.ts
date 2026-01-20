@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { IgxIconService, IgxIconButtonDirective, IgxIconComponent } from 'igniteui-angular';
+import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
+import { IgxIconButtonDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-svg-icon-button',

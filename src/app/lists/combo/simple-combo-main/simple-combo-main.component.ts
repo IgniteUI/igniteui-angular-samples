@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { IgRect } from 'igniteui-angular-core';
 import { StockData, updatedStockData } from '../../../data/stocks-data';
-import { IgxSimpleComboComponent, IgxButtonGroupComponent, IgxButtonDirective } from 'igniteui-angular';
+import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { FormsModule } from '@angular/forms';
 
-import { IgxFinancialChartCoreModule } from 'igniteui-angular-charts';
+import { IgxFinancialChartCoreModule, IgxFinancialChartModule } from 'igniteui-angular-charts';
 
 @Component({
     selector: 'app-simple-combo-main',
     templateUrl: 'simple-combo-main.component.html',
     styleUrls: ['simple-combo-main.component.scss'],
-    imports: [IgxSimpleComboComponent, FormsModule, IgxButtonGroupComponent, IgxButtonDirective, IgxFinancialChartCoreModule]
+    imports: [IgxSimpleComboComponent, FormsModule, IgxButtonGroupComponent, IgxButtonDirective, IgxFinancialChartModule, IgxFinancialChartCoreModule]
 })
 export class SimpleComboMainComponent implements OnInit {
     public data: StockData[] = updatedStockData;

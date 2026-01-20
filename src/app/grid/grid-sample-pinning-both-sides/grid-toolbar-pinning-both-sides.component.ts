@@ -1,14 +1,9 @@
 import { Component, ViewChild, ViewEncapsulation, OnInit, inject } from '@angular/core';
 import { NgClass } from '@angular/common';
-import {
-    IgxColumnComponent,
-    IgxGridComponent,
-    IgxGridToolbarComponent,
-    IgxGridToolbarActionsComponent,
-    IgxButtonDirective,
-    ColumnPinningPosition,
-    IPinningConfig
-} from 'igniteui-angular';
+import { IPinningConfig, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { ColumnPinningPosition } from 'igniteui-angular/core';
 import { DATA } from '../../data/customers';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

@@ -1,0 +1,27 @@
+<div class="sample-column">
+    <igx-chat
+        [options]="options()"
+        [messages]="messages()"
+        [draftMessage]="draftMessage"
+        [templates]="templates()"
+        (messageCreated)="onMessageCreated($event)">
+    </igx-chat>
+
+    <ng-template #messageHeader let-message>
+        @if (message.sender !== 'user') {
+            <div>
+                <span style="font-weight: bold; color: #c00000;"
+                >Developer Support</span
+                >
+            </div>
+        }
+    </ng-template>
+
+    <ng-template #suggestionPrefix>
+        <span style="font-weight: bold">💡</span>
+    </ng-template>
+
+    <ng-template #messageContent let-message igxChatMessageContext>
+        <div [innerHTML]="message.text | fromMarkdown | async"></div>
+    </ng-template>
+</div>
