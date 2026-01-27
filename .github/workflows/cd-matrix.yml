@@ -147,13 +147,13 @@ jobs:
       - name: Create zip artifact
         run: |
           cd ${{ matrix.target_folder }}/browser
-          zip -r ${{ github.workspace }}/${{ matrix.submodule_dir }}-artifact.zip ./
+          zip -r ${{ github.workspace }}/${{ matrix.base_href }}-artifact.zip ./
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ${{ matrix.submodule_dir }}-artifact
-          path: ${{ matrix.submodule_dir }}-artifact.zip
+          name: ${{ matrix.base_href }}-artifact
+          path: ${{ matrix.base_href }}-artifact.zip
           retention-days: 1
 
       - name: Repositorify (vNext)
