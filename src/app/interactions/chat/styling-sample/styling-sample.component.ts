@@ -1,13 +1,12 @@
-import { AsyncPipe } from '@angular/common';
 import { Component, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
-import { IgxAvatarComponent, IgxChatComponent, IgxChatOptions } from 'igniteui-angular';
-
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxChatComponent, IgxChatOptions } from 'igniteui-angular/chat';
 
 @Component({
     selector: 'app-chat-styling-sample',
     styleUrls: ['./styling-sample.component.scss'],
     templateUrl: './styling-sample.component.html',
-    imports: [IgxAvatarComponent, IgxChatComponent, AsyncPipe],
+    imports: [IgxAvatarComponent, IgxChatComponent],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class ChatStylingSampleComponent {
