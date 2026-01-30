@@ -68,6 +68,7 @@ import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.com
 import { TooltipTailwindStyleComponent } from './tooltip/tooltip-tailwind-style/tooltip-tailwind-style.component';
 import { TooltipPlacementComponent } from './tooltip/tooltip-placement/tooltip-placement.component';
 import { TooltipAdvancedComponent } from './tooltip/tooltip-advanced/tooltip-advanced.component';
+import { TooltipTriggersComponent } from './tooltip/tooltip-triggers/tooltip-triggers.component';
 
 export const InteractionsRoutes: Routes = [
     {
@@ -244,6 +245,11 @@ export const InteractionsRoutes: Routes = [
         component: TooltipAdvancedComponent,
         data: interactionsRoutesData['tooltip-advanced'],
         path: 'tooltip-advanced'
+    },
+    {
+        component: TooltipTriggersComponent,
+        data: interactionsRoutesData['tooltip-triggers'],
+        path: 'tooltip-triggers'
     },
     {
         component: TooltipStyleComponent,
