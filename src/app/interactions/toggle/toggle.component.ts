@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 
-import { ConnectedPositioningStrategy, HorizontalAlignment, IgxToggleDirective, VerticalAlignment, OverlaySettings, IgxButtonDirective } from 'igniteui-angular';
+import { ConnectedPositioningStrategy, HorizontalAlignment, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
+import { IgxButtonDirective, IgxToggleDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-toggle',

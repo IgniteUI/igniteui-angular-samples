@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GridSelectionMode, IgxTreeGridComponent, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { Data } from './data';
 import { IgxPreventDocumentScrollDirective } from '../../../../../../src/app/directives/prevent-scroll.directive';
 import { IgxSparklineCoreModule } from 'igniteui-angular-charts';

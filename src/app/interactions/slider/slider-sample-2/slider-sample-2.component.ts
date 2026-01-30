@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxSliderComponent } from 'igniteui-angular';
+import { IgxSliderComponent } from 'igniteui-angular/slider';
 import { FormsModule } from '@angular/forms';
 
 @Component({

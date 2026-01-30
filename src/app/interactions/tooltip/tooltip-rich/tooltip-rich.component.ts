@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxAvatarComponent } from 'igniteui-angular';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 
 @Component({
     selector: 'app-tooltip-rich',

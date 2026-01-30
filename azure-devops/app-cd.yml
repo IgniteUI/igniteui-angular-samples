@@ -1,8 +1,4 @@
-trigger:
-  branches:
-    include:
-    - master
-    - vnext
+trigger: none
 
 # This pipeline is meant to build specific branches for deployment. It's not meant to be a part of PR validation. Ensure that this pipeline is reserved for deployment purposes.
 pr: none
@@ -27,6 +23,12 @@ steps:
     displayName: Use Node 22.x
     inputs:
       versionSpec: 22.x
+
+#  - task: Npm@1
+#    inputs:
+#      command: custom
+#      customCommand: 'install -g npm@latest'
+#    displayName: 'Upgrade npm to latest version'
 
   - task: PowerShell@2
     displayName: 'Replace with licensed angular-extras'

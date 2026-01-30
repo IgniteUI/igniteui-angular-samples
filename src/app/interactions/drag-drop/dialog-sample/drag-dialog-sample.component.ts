@@ -1,5 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { GlobalPositionStrategy, IgxDragDirective, IgxDragLocation, IgxToggleDirective, NoOpScrollStrategy, OverlaySettings, IgxButtonDirective, IgxIconComponent, IgxDragHandleDirective } from 'igniteui-angular';
+import { GlobalPositionStrategy, NoOpScrollStrategy, OverlaySettings } from 'igniteui-angular/core';
+import { IgxButtonDirective, IgxDragDirective, IgxDragHandleDirective, IgxDragLocation, IgxToggleDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-drag-dialog-sample',

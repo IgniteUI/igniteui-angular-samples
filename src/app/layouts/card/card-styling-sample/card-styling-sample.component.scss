@@ -1,9 +1,77 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-$colorful-card: card-theme(
-  $background: #011627,
-  $subtitle-text-color: #ecaa53,
-);
+// CSS variables approach
 
-@include css-vars($colorful-card);
+igx-card {
+    --border-radius: #{rem(8px)};
+    --outline-color: #f0f0f0;
+    --resting-shadow: none;
+    --hover-shadow: none;
+    --header-text-color: rgba(0, 0, 0, 0.88);
+}
+
+igx-avatar {
+    --background: transparent;
+    --size: #{rem(30px)};
+}
+
+igx-chip {
+    --border-radius: #{rem(4px)};
+    --background: #fafafa;
+    --border-color: #d9d9d9;
+    --hover-background: #d9d9d9;
+    --focus-background: #d9d9d9;
+}
+
+.igx-icon-button--flat {
+    --foreground: #00000073;
+    --hover-foreground: #1677ff;
+    --hover-background: none;
+}
+
+igx-divider {
+    --color: #f0f0f0
+}
+
+// Sass theme approach
+
+// $custom-card-theme: card-theme(
+//     $border-radius: rem(8px),
+//     $outline-color: #f0f0f0,
+//     $resting-shadow: none,
+//     $hover-shadow: none,
+//     $header-text-color: #000000e0,
+// );
+
+// $custom-avatar-theme: avatar-theme(
+//     $background: transparent,
+//     $size: rem(30px)
+// );
+
+// $custom-chip-theme: chip-theme(
+//     $border-radius: rem(4px),
+//     $background: #fafafa,
+//     $border-color: #d9d9d9,
+//     $hover-background: #d9d9d9,
+//     $focus-background: #d9d9d9,
+// );
+
+// $custom-icon-button-theme: icon-button-theme(
+//     $foreground: #00000073,
+//     $hover-foreground: #1677ff,
+//     $hover-background: none,
+//     $border-color: transparent
+// );
+
+// $custom-divider-theme: divider-theme(
+//     $color: #f0f0f0
+// );
+
+// @include css-vars($custom-card-theme);
+// @include css-vars($custom-avatar-theme);
+// @include css-vars($custom-chip-theme);
+// @include css-vars($custom-divider-theme);
+// .igx-icon-button--flat {
+//     @include css-vars($custom-icon-button-theme);
+// };

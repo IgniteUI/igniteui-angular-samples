@@ -1,5 +1,10 @@
 import { Component, OnInit, Pipe, PipeTransform, ViewChild, forwardRef } from '@angular/core';
-import { IgxCalendarComponent, IgxDropDownComponent, IgxInputGroupComponent, IgxToggleActionDirective, IgxInputDirective, IgxAutocompleteDirective, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxSuffixDirective, IgxIconButtonDirective, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective, IgxButtonDirective, DateRangeType } from 'igniteui-angular';
+import { IgxCalendarComponent } from 'igniteui-angular/calendar';
+import { IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxButtonDirective, IgxIconButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { DateRangeType } from 'igniteui-angular/core';
 import { FormsModule } from '@angular/forms';
 
 

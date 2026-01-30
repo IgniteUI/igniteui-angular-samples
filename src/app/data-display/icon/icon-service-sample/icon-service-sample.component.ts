@@ -1,5 +1,9 @@
 import { Component, inject } from '@angular/core';
-import { IgxIconService, IgxCardComponent, IgxCardHeaderComponent, IgxAvatarComponent, IgxIconComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxButtonDirective, IgxSuffixDirective } from 'igniteui-angular';
+import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
+import { IgxCardActionsComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective } from 'igniteui-angular/card';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { IgxSuffixDirective } from 'igniteui-angular/input-group';
 
 @Component({
     selector: 'app-icon-service-sample',

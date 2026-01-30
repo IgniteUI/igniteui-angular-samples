@@ -1,5 +1,3 @@
-import { Config, IConfigGenerator } from 'igniteui-live-editing'
-import { BaseAppConfig } from './BaseConfig';;
 import { ActionStripConfigGenerator } from '../configs/ActionStripConfigGenerator';
 import { AutocompleteConfigGenerator } from '../configs/AutocompleteConfigGenerator';
 import { AvatarConfigGenerator } from '../configs/AvatarConfigGenerator';
@@ -10,6 +8,7 @@ import { ButtonGroupConfigGenerator } from '../configs/ButtonGroupConfigGenerato
 import { CalendarConfigGenerator } from '../configs/CalendarConfigGenerator';
 import { CardConfigGenerator } from '../configs/CardConfigGenerator';
 import { CarouselConfigGenerator } from '../configs/CarouselConfigGenerator';
+import { ChatConfigGenerator } from '../configs/ChatConfigGenerator';
 import { CheckboxConfigGenerator } from '../configs/CheckboxConfigGenerator';
 import { ChipConfigGenerator } from '../configs/ChipConfigGenerator';
 import { CircularProgressbarConfigGenerator } from '../configs/CircularProgressbarConfigGenerator';
@@ -25,6 +24,7 @@ import { DropDownConfigGenerator } from '../configs/DropDownConfigGenerator';
 import { ExpansionPanelConfigGenerator } from '../configs/ExpansionPanelConfigGenerator';
 import { ExportCsvConfigGenerator } from '../configs/ExportCsvConfigGenerator';
 import { ExportExcelConfigGenerator } from '../configs/ExportExcelConfigGenerator';
+import { ExportPdfConfigGenerator } from '../configs/ExportPdfConfigGenerator';
 import { ForConfigGenerator } from '../configs/ForConfigGenerator';
 import { GridConfigGenerator } from '../configs/GridConfigGenerator';
 import { HierarchicalGridConfigGenerator } from '../configs/HierarchicalGridConfigGenerator';
@@ -64,6 +64,7 @@ import { PaginationConfigGenerator } from '../configs/PaginationConfigGenerator'
 import { PivotGridConfigGenerator } from '../configs/PivotGridConfigGenerator';
 import { QueryBuilderConfigGenerator } from '../configs/QueryBuilderConfigGenerator';
 import { TileManagerConfigGenerator } from '../configs/TileManagerConfigGenerator';
+import { GridLiteConfigGenerator } from '../configs/GridLiteConfigGenerator';
 
 export const CONFIG_GENERATORS =
     [
@@ -71,6 +72,7 @@ export const CONFIG_GENERATORS =
         DragAndDropConfigGenerator,
         ExportCsvConfigGenerator,
         ExportExcelConfigGenerator,
+        ExportPdfConfigGenerator,
 
         // containers:
         AccordionConfigGenerator,
@@ -118,9 +120,11 @@ export const CONFIG_GENERATORS =
         HierarchicalGridConfigGenerator,
         TreeGridConfigGenerator,
         PivotGridConfigGenerator,
+        GridLiteConfigGenerator,
 
         // other:
         ActionStripConfigGenerator,
+        ChatConfigGenerator,
         CircularProgressbarConfigGenerator,
         DividerConfigGenerator,
         ForConfigGenerator,

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxRippleDirective, IgxDialogComponent, IgxDialogTitleDirective, IgxIconComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxLabelDirective, IgxInputDirective, IgxDialogActionsDirective } from 'igniteui-angular';
+import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxDialogActionsDirective, IgxDialogComponent, IgxDialogTitleDirective } from 'igniteui-angular/dialog';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
 import { FormsModule } from '@angular/forms';
 
 @Component({

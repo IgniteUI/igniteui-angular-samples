@@ -5,8 +5,14 @@
     height: 80%;
 
     .button-container {
-        align-items: flex-start;
         margin: 25px auto;
+
+        &__actions {
+            display: flex;
+            flex-direction: row;
+            gap: 16px;
+            align-items: center;
+        }
     }
 
     igx-pivot-grid {

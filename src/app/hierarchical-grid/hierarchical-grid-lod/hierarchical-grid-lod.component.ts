@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild, inject } from '@angular/core';
-import { IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent, IgxColumnComponent, FilteringExpressionsTree, IgxNumberFilteringOperand, IgxStringFilteringOperand, EntityType, IGX_HIERARCHICAL_GRID_DIRECTIVES, FilteringLogic } from 'igniteui-angular';
+import { IGX_HIERARCHICAL_GRID_DIRECTIVES, IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { EntityType, FilteringExpressionsTree, FilteringLogic, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular/core';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { HttpClient } from '@angular/common/http';
 
@@ -61,7 +63,7 @@ export class HierarchicalGridLoDSampleComponent implements OnInit, AfterViewInit
             ignoreCase: false,
             condition: IgxNumberFilteringOperand.instance().condition('greaterThanOrEqualTo'),
             conditionName: IgxNumberFilteringOperand.instance().condition('greaterThanOrEqualTo').name,
-            searchVal: '500'
+            searchVal: 500
         });
 
         const customersTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Customers', ['customerId', 'companyName', 'contactName', 'contactTitle']);

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective } from 'igniteui-angular';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-buttons-tailwind-style',

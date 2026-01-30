@@ -1,5 +1,7 @@
 import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DefaultSortingStrategy, IgxGridComponent, ISortingExpression, SortingDirection, IgxColumnComponent, IgxCellTemplateDirective } from 'igniteui-angular';
+import { DefaultSortingStrategy, ISortingExpression, SortingDirection } from 'igniteui-angular/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { INVOICE_DATA } from '../../data/invoiceData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

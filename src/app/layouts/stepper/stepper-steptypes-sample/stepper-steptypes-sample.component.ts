@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IButtonGroupEventArgs, IgxStepType, IgxButtonGroupComponent, IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective } from 'igniteui-angular';
+import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxStepComponent, IgxStepTitleDirective, IgxStepType, IgxStepperComponent } from 'igniteui-angular/stepper';
 
 @Component({
     selector: 'app-stepper-steptypes-sample',

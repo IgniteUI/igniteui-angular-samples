@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { IgxSnackbarComponent, IgxHierarchicalGridComponent, GridSelectionMode, IgxButtonGroupComponent, IgxColumnComponent, IgxRowIslandComponent, IgxIconComponent } from 'igniteui-angular';
+import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { GridSelectionMode, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

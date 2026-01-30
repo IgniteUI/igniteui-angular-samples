@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IgxSliderType, IgxSliderComponent, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxInputDirective } from 'igniteui-angular';
+import { IgxSliderComponent, IgxSliderType } from 'igniteui-angular/slider';
+import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
 import { FormsModule } from '@angular/forms';
 
 @Component({

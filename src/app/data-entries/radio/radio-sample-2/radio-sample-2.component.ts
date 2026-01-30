@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IgxRadioComponent } from 'igniteui-angular';
+import { IgxRadioComponent } from 'igniteui-angular/radio';
 import { FormsModule } from '@angular/forms';
 
 @Component({

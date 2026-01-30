@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ISimpleComboSelectionChangingEventArgs, IgxSimpleComboComponent, IgxLinearProgressBarComponent } from 'igniteui-angular';
+import { ISimpleComboSelectionChangingEventArgs, IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
+import { IgxLinearProgressBarComponent } from 'igniteui-angular/progressbar';
 import { City, Country, getCitiesByCountry, getCountries, Region } from '../../../data/cities15000-regions-countries';
 import { FormsModule } from '@angular/forms';
 

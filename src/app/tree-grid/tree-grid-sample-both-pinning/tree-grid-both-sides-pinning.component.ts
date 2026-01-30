@@ -1,13 +1,8 @@
 import { Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
-import {
-    ColumnPinningPosition,
-    IgxColumnComponent,
-    IgxTreeGridComponent,
-    IPinningConfig,
-    IgxGridToolbarComponent,
-    IgxGridToolbarActionsComponent,
-    IgxButtonDirective
-} from 'igniteui-angular';
+import { ColumnPinningPosition } from 'igniteui-angular/core';
+import { IPinningConfig, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
+import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 
 @Component({
@@ -43,21 +38,25 @@ export class TreeGridBothSidesPinningSampleComponent implements OnInit {
 
     public pinLeft() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
-            col.pinningPosition = ColumnPinningPosition.Start;
-            col.pinned = true;
+            if (col.pinned) {
+                col.unpin();
+            }
+            col.pin(undefined, ColumnPinningPosition.Start);
         });
     }
 
     public pinRight() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
-            col.pinningPosition = ColumnPinningPosition.End;
-            col.pinned = true;
+            if (col.pinned) {
+                col.unpin();
+            }
+            col.pin(undefined, ColumnPinningPosition.End);
         });
     }
 
     public unpinColumn() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
-            col.pinned = false;
+            col.unpin();
         });
     }
 }

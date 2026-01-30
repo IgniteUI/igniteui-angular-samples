@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { GridResourceStringsEN, TimePickerResourceStringsEN, changei18n, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxTimePickerComponent, IgxLabelDirective } from 'igniteui-angular';
+import { GridResourceStringsEN, TimePickerResourceStringsEN, changei18n } from 'igniteui-angular/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { DATA } from '../../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-scroll.directive';
 import { CurrencyPipe } from '@angular/common';

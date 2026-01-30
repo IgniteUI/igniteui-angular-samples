@@ -1,21 +1,10 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
-import {
-    ColumnPinningPosition,
-    IgxColumnComponent,
-    IgxHierarchicalGridComponent,
-    IPinningConfig,
-    IgxGridToolbarComponent,
-    IgxGridToolbarActionsComponent,
-    IgxCellTemplateDirective,
-    IgxTooltipTargetDirective,
-    IgxTooltipDirective,
-    IgxAvatarComponent,
-    IgxCellHeaderTemplateDirective,
-    IgxIconComponent,
-    IgxRowIslandComponent,
-    IgxButtonDirective,
-    IgxGridToolbarTitleComponent
-} from "igniteui-angular";
+import { ColumnPinningPosition } from 'igniteui-angular/core';
+import { IPinningConfig, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
+import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
+import { IgxButtonDirective, IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { employeesData } from "../../data/employeesData";
 import { athletesData } from "../../data/athletesData";
 import { DatePipe } from "@angular/common";
@@ -82,21 +71,25 @@ export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
 
     public pinLeft() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
-            col.pinningPosition = ColumnPinningPosition.Start;
-            col.pinned = true;
+            if (col.pinned) {
+                col.unpin();
+            }
+            col.pin(undefined, ColumnPinningPosition.Start);
         });
     }
 
     public pinRight() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
-            col.pinningPosition = ColumnPinningPosition.End;
-            col.pinned = true;
+            if (col.pinned) {
+                col.unpin();
+            }
+            col.pin(undefined, ColumnPinningPosition.End);
         });
     }
 
     public unpinColumn() {
         this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
-            col.pinned = false;
+                col.unpin();
         });
     }
 }

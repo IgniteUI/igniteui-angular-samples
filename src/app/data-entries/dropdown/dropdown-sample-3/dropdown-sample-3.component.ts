@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxIconComponent, IgxPrefixDirective, IgxSuffixDirective, IgxDividerDirective } from 'igniteui-angular';
+import { IgxButtonDirective, IgxDividerDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
+import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 
 
 @Component({

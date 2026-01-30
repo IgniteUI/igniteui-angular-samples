@@ -1,7 +1,6 @@
-import {IgxAvatarModule,
-IgxIconModule,
-IgxToggleModule,
-IgxTooltipModule} from 'igniteui-angular';
+import { IgxAvatarModule } from 'igniteui-angular/avatar';
+import { IgxIconModule } from 'igniteui-angular/icon';
+import { IgxToggleModule, IgxTooltipModule } from 'igniteui-angular/directives';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class TooltipConfigGenerator implements IConfigGenerator {

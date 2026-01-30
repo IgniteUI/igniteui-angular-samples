@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { IgxNavbarComponent, IgxNavbarActionDirective, IgxIconButtonDirective, IgxIconComponent, IgxNavbarTitleDirective } from 'igniteui-angular';
+import { IgxNavbarActionDirective, IgxNavbarComponent, IgxNavbarTitleDirective } from 'igniteui-angular/navbar';
+import { IgxIconButtonDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-navbar-custom-title',

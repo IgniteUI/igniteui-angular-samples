@@ -1,6 +1,6 @@
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { IgxNavbarComponent } from 'igniteui-angular';
+import { IgxNavbarComponent } from 'igniteui-angular/navbar';
 
 @Component({
     providers: [Location, { provide: LocationStrategy, useClass: PathLocationStrategy }],

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular';
+import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-ripple-sample-3',

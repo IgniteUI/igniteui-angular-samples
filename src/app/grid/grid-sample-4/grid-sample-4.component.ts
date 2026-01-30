@@ -1,5 +1,7 @@
 import { ChangeDetectorRef, Component, TemplateRef, ViewChild, OnInit, AfterViewInit, OnDestroy, inject } from '@angular/core';
-import { IgxColumnComponent, IgxGridComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxBadgeComponent } from 'igniteui-angular';
+import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { debounceTime } from 'rxjs/operators';
 import { RemoteServiceVirt } from '../../services/remoteVirtualization.service';
 import { AsyncPipe } from '@angular/common';

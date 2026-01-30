@@ -1,5 +1,12 @@
 import { Component, HostBinding, OnInit, ViewChild, inject } from '@angular/core';
-import { IgxDialogComponent, IgxOverlayOutletDirective, IgxButtonDirective, IgxIconComponent, IgxLayoutDirective, IgxAvatarComponent, IgxIconButtonDirective, IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardActionsComponent, IgxDialogActionsDirective, IgxSuffixDirective, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelBodyComponent, IgxDividerDirective } from 'igniteui-angular';
+import { IgxDialogActionsDirective, IgxDialogComponent } from 'igniteui-angular/dialog';
+import { IgxOverlayOutletDirective } from 'igniteui-angular/core';
+import { IgxButtonDirective, IgxDividerDirective, IgxIconButtonDirective, IgxLayoutDirective } from 'igniteui-angular/directives';
+import { IgxIconComponent } from 'igniteui-angular/icon';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxCardActionsComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
+import { IgxSuffixDirective } from 'igniteui-angular/input-group';
+import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { OverlayContainer } from '@angular/cdk/overlay';
 import { MatToolbar } from '@angular/material/toolbar';

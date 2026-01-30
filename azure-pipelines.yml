@@ -1,3 +1,6 @@
+trigger: none
+pr: none
+
 pool:
   vmImage: 'ubuntu-latest'
 

@@ -1,5 +1,8 @@
 // tslint:disable:no-string-literal
 import { Routes } from '@angular/router';
+import { ChatOverviewSampleComponent } from './chat/overview-sample/overview-sample.component';
+import { ChatFeaturesSampleComponent } from './chat/features-sample/features-sample.component';
+import { ChatStylingSampleComponent } from './chat/styling-sample/styling-sample.component';
 import { DialogSample1Component } from './dialog/dialog-sample-1/dialog-sample-1.component';
 import { DialogSample2Component } from './dialog/dialog-sample-2/dialog-sample-2.component';
 import { DialogSample3Component } from './dialog/dialog-sample-3/dialog-sample-3.component';
@@ -68,6 +71,21 @@ import { TooltipAdvancedComponent } from './tooltip/tooltip-advanced/tooltip-adv
 import { TooltipTriggersComponent } from './tooltip/tooltip-triggers/tooltip-triggers.component';
 
 export const InteractionsRoutes: Routes = [
+    {
+        component: ChatOverviewSampleComponent,
+        data: interactionsRoutesData['chat-overview-sample'],
+        path: 'chat-overview-sample'
+    },
+    {
+        component: ChatFeaturesSampleComponent,
+        data: interactionsRoutesData['chat-features-sample'],
+        path: 'chat-features-sample'
+    },
+    {
+        component: ChatStylingSampleComponent,
+        data: interactionsRoutesData['chat-styling-sample'],
+        path: 'chat-styling-sample'
+    },
     {
         component: DialogSample1Component,
         data: interactionsRoutesData['dialog-sample-1'],
