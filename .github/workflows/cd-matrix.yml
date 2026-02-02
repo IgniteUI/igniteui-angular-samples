@@ -110,7 +110,7 @@ jobs:
 
       - name: Update package.json with base href
         run: |
-          sed -i 's|--configuration production|--base-href=${{ matrix.base_href }} --configuration production|g' package.json
+          sed -i 's|--configuration production|--base-href=/${{ matrix.base_href }}/ --configuration production|g' package.json
 
       - name: Generate live-editing
         run: npm ${{ matrix.custom_command }}
