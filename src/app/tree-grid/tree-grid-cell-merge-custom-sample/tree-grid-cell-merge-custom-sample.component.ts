@@ -16,10 +16,6 @@ import { generateEmployeeDetailedFlatData2 } from '../data/employees-flat-detail
         IgxTreeGridComponent,
         IgxPreventDocumentScrollDirective,
         IgxColumnComponent,
-        IgxSelectComponent,
-        IgxSelectItemComponent,
-        IgxLabelDirective,
-        IgxGridToolbarComponent,
         FormsModule
     ]
 })
