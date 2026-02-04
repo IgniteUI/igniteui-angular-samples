@@ -80,6 +80,7 @@
     "igniteui-angular-i18n": "^21.1.0-rc.0",
     "igniteui-dockmanager": "^1.17.0",
     "igniteui-grid-lite": "^0.0.1",
+    "igniteui-live-editing": "^3.3.0",
     "igniteui-webcomponents": "^6.5.0",
     "marked": "^17.0.1",
     "marked-shiki": "^1.2.1",
