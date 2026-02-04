@@ -34,6 +34,8 @@ export class TooltipConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TooltipAdvancedComponent',
             appConfig: BaseAppConfig,
+            additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
+            additionalFiles: ['/src/app/interactions/tooltip/tooltip-advanced/IncomeTaxes.ts'],
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
