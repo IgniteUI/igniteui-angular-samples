@@ -2,7 +2,7 @@
     <igc-button (click)="switchData()">Switch data</igc-button>
     <igc-grid-lite 
       #gridLite
-      auto-generate
+      [autoGenerateColumns]="true"
       [data]="data">
     </igc-grid-lite>
 </div>

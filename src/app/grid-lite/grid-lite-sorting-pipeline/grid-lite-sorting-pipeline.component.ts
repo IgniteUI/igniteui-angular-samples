@@ -18,58 +18,18 @@ export class GridLiteSortingPipelineComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
   
   public data: ProductInfo[] = [];
-  public columns: any[] = [];
   public dataPipelineConfiguration: any;
   public inOperation = false;
   public queryString = '';
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(100);
-    
-    this.columns = [
-      { 
-        key: 'name', 
-        headerText: 'Name', 
-        sort: true 
-      },
-      { 
-        key: 'price', 
-        type: 'number', 
-        headerText: 'Price', 
-        sort: true 
-      },
-      {
-        key: 'rating',
-        type: 'number',
-        headerText: 'Rating',
-        sort: true,
-        cellTemplate: (params: any) => {
-          const rating = document.createElement('igc-rating');
-          rating.setAttribute('readonly', '');
-          rating.setAttribute('step', '0.01');
-          rating.setAttribute('value', params.value.toString());
-          return rating;
-        }
-      },
-      { 
-        key: 'sold', 
-        type: 'number', 
-        headerText: 'Sold', 
-        sort: true 
-      },
-      { 
-        key: 'total', 
-        type: 'number', 
-        headerText: 'Total', 
-        sort: true 
-      }
-    ];
 
     this.dataPipelineConfiguration = {
       sort: async ({ data, grid }: any) => {
         this.inOperation = true;
-        this.queryString = grid.sortExpressions.length
-          ? this.buildUri(grid.sortExpressions)
+        this.queryString = grid.sortingExpressions.length
+          ? this.buildUri(grid.sortingExpressions)
           : '';
         await new Promise(resolve => setTimeout(resolve, 250));
         this.inOperation = false;
@@ -77,6 +37,14 @@ export class GridLiteSortingPipelineComponent implements OnInit {
       }
     };
   }
+
+  formatRating = (params: any) => {
+    const rating = document.createElement('igc-rating');
+    rating.setAttribute('readonly', '');
+    rating.setAttribute('step', '0.01');
+    rating.setAttribute('value', params.value.toString());
+    return rating;
+  };
 
   private buildUri(state: any[]): string {
     const uri: string[] = [];

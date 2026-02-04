@@ -20,71 +20,30 @@ export class GridLiteColumnConfigDynamicComponent implements OnInit {
   @ViewChild('gridLite', { static: false }) gridLite!: ElementRef;
   
   public data: ProductInfo[] = [];
-  public columns: any[] = [];
   public hasFormatters = true;
 
-  private formatter = new Intl.NumberFormat('en-EN', {
+  public formatter = new Intl.NumberFormat('en-US', {
     style: 'currency',
     currency: 'EUR'
   });
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(50);
-    
-    this.columns = [
-      { 
-        key: 'id', 
-        hidden: true, 
-        headerText: 'ID',
-        width: '15rem'
-      },
-      { 
-        key: 'name', 
-        headerText: 'Product Name',
-        width: '15rem'
-      },
-      {
-        key: 'price',
-        headerText: 'Price',
-        type: 'number',
-        width: '15rem',
-        cellTemplate: (params: any) => {
-          const span = document.createElement('span');
-          span.textContent = this.formatter.format(params.value);
-          return span;
-        }
-      },
-      { 
-        key: 'sold', 
-        type: 'number', 
-        headerText: 'Units sold',
-        width: '15rem'
-      },
-      { 
-        key: 'total', 
-        headerText: 'Total sold',
-        width: '15rem',
-        cellTemplate: (params: any) => {
-          const span = document.createElement('span');
-          span.textContent = this.formatter.format(params.value);
-          return span;
-        }
-      },
-      {
-        key: 'rating',
-        type: 'number',
-        headerText: 'Customer rating',
-        width: '15rem',
-        cellTemplate: (params: any) => {
-          const rating = document.createElement('igc-rating');
-          rating.setAttribute('readonly', '');
-          rating.setAttribute('step', '0.01');
-          rating.setAttribute('value', params.value.toString());
-          return rating;
-        }
-      }
-    ];
   }
+
+  formatCurrency = (params: any) => {
+    const span = document.createElement('span');
+    span.textContent = this.formatter.format(params.value);
+    return span;
+  };
+
+  formatRating = (params: any) => {
+    const rating = document.createElement('igc-rating');
+    rating.setAttribute('readonly', '');
+    rating.setAttribute('step', '0.01');
+    rating.setAttribute('value', params.value.toString());
+    return rating;
+  };
 
   updateColumnProperty(key: string, prop: string, value: any) {
     const grid = this.gridLite?.nativeElement as any;

@@ -21,7 +21,6 @@ export class GridLiteDataBindingDynamicComponent implements OnInit {
   
   public data: (ProductInfo | UserSimple)[] = [];
   public dataType: 'products' | 'users' = 'products';
-  public autoGenerate = true;
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(50);
@@ -29,16 +28,10 @@ export class GridLiteDataBindingDynamicComponent implements OnInit {
 
   switchData() {
     this.dataType = this.dataType === 'products' ? 'users' : 'products';
-    const grid = this.gridLite?.nativeElement as any;
-    
-    if (grid) {
-      grid.columns = [];
-      if (this.dataType === 'products') {
-        this.data = this.dataService.generateProducts(50);
-      } else {
-        this.data = this.dataService.generateSimpleUsers(50);
-      }
-      grid.data = this.data;
+    if (this.dataType === 'products') {
+      this.data = this.dataService.generateProducts(50);
+    } else {
+      this.data = this.dataService.generateSimpleUsers(50);
     }
   }
 }

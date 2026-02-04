@@ -11,7 +11,12 @@
   
   <igc-grid-lite 
     #gridLite
-    [columns]="columns" 
     [data]="data">
+    <igc-grid-lite-column field="id" header="ID" width="15rem" hidden></igc-grid-lite-column>
+    <igc-grid-lite-column field="name" header="Product Name" width="15rem"></igc-grid-lite-column>
+    <igc-grid-lite-column field="price" header="Price" data-type="number" width="15rem" [cellTemplate]="hasFormatters ? formatCurrency : undefined"></igc-grid-lite-column>
+    <igc-grid-lite-column field="sold" header="Units sold" data-type="number" width="15rem"></igc-grid-lite-column>
+    <igc-grid-lite-column field="total" header="Total sold" width="15rem" [cellTemplate]="hasFormatters ? formatCurrency : undefined"></igc-grid-lite-column>
+    <igc-grid-lite-column field="rating" header="Customer rating" data-type="number" width="15rem" [cellTemplate]="formatRating"></igc-grid-lite-column>
   </igc-grid-lite>
 </div>
