@@ -83,7 +83,7 @@
     "igniteui-live-editing": "^3.3.0",
     "igniteui-webcomponents": "^6.5.0",
     "marked": "^17.0.1",
-    "marked-shiki": "^1.2.0",
+    "marked-shiki": "^1.2.1",
     "minireset.css": "0.0.6",
     "postcss": "^8.5.5",
     "rxjs": "^7.8.2",
