@@ -2,41 +2,19 @@
 /* eslint-disable @typescript-eslint/member-delimiter-style */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { registerLocaleData } from '@angular/common';
-import localeBG from '@angular/common/locales/bg';
-import localeCS from '@angular/common/locales/cs';
-import localeDA from '@angular/common/locales/da';
-import localeDE from '@angular/common/locales/de';
-import localeEN from '@angular/common/locales/en';
-import localeES from '@angular/common/locales/es';
-import localeFR from '@angular/common/locales/fr';
-import localeHU from '@angular/common/locales/hu';
-import localeIT from '@angular/common/locales/it';
-import localeJA from '@angular/common/locales/ja';
-import localeKO from '@angular/common/locales/ko';
-import localeNB from '@angular/common/locales/nb';
-import localeNL from '@angular/common/locales/nl';
-import localePL from '@angular/common/locales/pl';
-import localePT from '@angular/common/locales/pt';
-import localeRO from '@angular/common/locales/ro';
-import localeSV from '@angular/common/locales/sv';
-import localeTR from '@angular/common/locales/tr';
-import localeHI from '@angular/common/locales/hi';
-import localeHans from '@angular/common/locales/zh-Hans';
-import localeHant from '@angular/common/locales/zh-Hant';
 import { DATA } from '../../../data/nwindData';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { GridResourceStringsEN, IGridResourceStrings } from 'igniteui-angular/core';
+import { GridResourceStringsEN, IGridResourceStrings, registerI18n, setCurrentI18n } from 'igniteui-angular/core';
 import { IgxColumnComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
+import { FormsModule } from '@angular/forms';
 import {
     IgxResourceStringsBG, IgxResourceStringsCS, IgxResourceStringsDA, IgxResourceStringsDE,
     IgxResourceStringsES, IgxResourceStringsFR, IgxResourceStringsHU, IgxResourceStringsIT,
-    IgxResourceStringsJA, IgxResourceStringsKO, IgxResourceStringsNB, IgxResourceStringsNL, IgxResourceStringsPL,
-    IgxResourceStringsPT, IgxResourceStringsRO, IgxResourceStringsSV, IgxResourceStringsTR,
-    IgxResourceStringsZHHANS, IgxResourceStringsZHHANT
-} from 'igniteui-angular-i18n';
-import { FormsModule } from '@angular/forms';
+    IgxResourceStringsJA, IgxResourceStringsKO, IgxResourceStringsNB, IgxResourceStringsNL,
+    IgxResourceStringsPL, IgxResourceStringsPT, IgxResourceStringsRO, IgxResourceStringsSV,
+    IgxResourceStringsTR, IgxResourceStringsZHHANS, IgxResourceStringsZHHANT
+ } from 'igniteui-angular-i18n';
 
 @Component({
     selector: 'app-localization-all-resources',
@@ -58,28 +36,6 @@ export class LocalizationAllResourcesComponent implements OnInit {
 
     constructor() { }
     public ngOnInit(): void {
-        registerLocaleData(localeBG);
-        registerLocaleData(localeCS);
-        registerLocaleData(localeDA);
-        registerLocaleData(localeDE);
-        registerLocaleData(localeEN);
-        registerLocaleData(localeES);
-        registerLocaleData(localeFR);
-        registerLocaleData(localeHU);
-        registerLocaleData(localeIT);
-        registerLocaleData(localeJA);
-        registerLocaleData(localeKO);
-        registerLocaleData(localeNB);
-        registerLocaleData(localeNL);
-        registerLocaleData(localePL);
-        registerLocaleData(localePT);
-        registerLocaleData(localeRO);
-        registerLocaleData(localeSV);
-        registerLocaleData(localeTR);
-        registerLocaleData(localeHI);
-        registerLocaleData(localeHans);
-        registerLocaleData(localeHant);
-
         this.data = DATA;
 
         // Creating a custom locale (HI) for specific grid strings.
@@ -92,34 +48,29 @@ export class LocalizationAllResourcesComponent implements OnInit {
             igx_grid_summary_average: 'औसत'
         };
 
-        this.locales = [
-            { type: 'BG', resource: IgxResourceStringsBG },
-            { type: 'CS', resource: IgxResourceStringsCS },
-            { type: 'DA', resource: IgxResourceStringsDA },
-            { type: 'DE', resource: IgxResourceStringsDE },
-            { type: 'ES', resource: IgxResourceStringsES },
-            { type: 'FR', resource: IgxResourceStringsFR },
-            { type: 'HU', resource: IgxResourceStringsHU },
-            { type: 'IT', resource: IgxResourceStringsIT },
-            { type: 'JA', resource: IgxResourceStringsJA },
-            { type: 'KO', resource: IgxResourceStringsKO },
-            { type: 'EN', resource: GridResourceStringsEN },
-            { type: 'HI', resource: this.partialCustomHindi },
-            { type: 'NB', resource: IgxResourceStringsNB },
-            { type: 'NL', resource: IgxResourceStringsNL },
-            { type: 'PL', resource: IgxResourceStringsPL },
-            { type: 'PT', resource: IgxResourceStringsPT },
-            { type: 'RO', resource: IgxResourceStringsRO },
-            { type: 'SV', resource: IgxResourceStringsSV },
-            { type: 'TR', resource: IgxResourceStringsTR },
-            { type: 'zh-Hans', resource: IgxResourceStringsZHHANS },
-            { type: 'zh-Hant', resource: IgxResourceStringsZHHANT }
-        ];
-        this.locale = 'EN';
+        registerI18n(IgxResourceStringsBG, 'bg');
+        registerI18n(IgxResourceStringsCS, 'cs');
+        registerI18n(IgxResourceStringsDA, 'da');
+        registerI18n(IgxResourceStringsDE, 'de');
+        registerI18n(IgxResourceStringsES, 'es');
+        registerI18n(IgxResourceStringsFR, 'fr');
+        registerI18n(IgxResourceStringsHU, 'hu');
+        registerI18n(IgxResourceStringsIT, 'it');
+        registerI18n(IgxResourceStringsJA, 'ja');
+        registerI18n(IgxResourceStringsKO, 'ko');
+        registerI18n(IgxResourceStringsNB, 'nb');
+        registerI18n(IgxResourceStringsNL, 'nl');
+        registerI18n(IgxResourceStringsPL, 'pl');
+        registerI18n(IgxResourceStringsPT, 'pt');
+        registerI18n(IgxResourceStringsRO, 'ro');
+        registerI18n(IgxResourceStringsSV, 'sv');
+        registerI18n(IgxResourceStringsTR, 'tr');
+        registerI18n(IgxResourceStringsZHHANS, 'zh-Hans');
+        registerI18n(IgxResourceStringsZHHANT, 'zh-Hant');
+        registerI18n(this.partialCustomHindi, 'hi');
     }
 
     public updateLocale() {
-        const newLocale = this.locales.find(x => x.type === this.locale).resource;
-        this.grid.resourceStrings = newLocale;
+        setCurrentI18n(this.locale);
     }
 }
