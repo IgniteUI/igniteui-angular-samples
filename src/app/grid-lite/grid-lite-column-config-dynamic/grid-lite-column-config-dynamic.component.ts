@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewChild, ElementRef, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcButtonComponent, IgcCheckboxComponent, IgcDropdownComponent, IgcSwitchComponent } from 'igniteui-webcomponents';
 import { IgcGridLite } from 'igniteui-grid-lite';
@@ -16,13 +16,11 @@ defineComponents(IgcCheckboxComponent, IgcDropdownComponent, IgcSwitchComponent,
 })
 export class GridLiteColumnConfigDynamicComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
-  @ViewChild('gridLite', { static: false }) gridLite!: ElementRef;
-  
+
   public data: ProductInfo[] = [];
   public hasFormatters = true;
 
-  public formatter = new Intl.NumberFormat('en-US', {
+  public formatter = new Intl.NumberFormat('en-150', {
     style: 'currency',
     currency: 'EUR'
   });
@@ -31,40 +29,15 @@ export class GridLiteColumnConfigDynamicComponent implements OnInit {
     this.data = this.dataService.generateProducts(50);
   }
 
-  formatCurrency = (params: any) => {
-    const span = document.createElement('span');
-    span.textContent = this.formatter.format(params.value);
-    return span;
+  protected formatCurrency = (params: any) => {
+    return this.formatter.format(params.value);
   };
 
-  formatRating = (params: any) => {
+  protected ratingTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
     rating.setAttribute('step', '0.01');
     rating.setAttribute('value', params.value.toString());
     return rating;
   };
-
-  updateColumnProperty(key: string, prop: string, value: any) {
-    const grid = this.gridLite?.nativeElement as any;
-    if (grid && grid.updateColumns) {
-      grid.updateColumns({ key, [prop]: value });
-    }
-  }
-
-  toggleFormatters(enabled: boolean) {
-    this.hasFormatters = enabled;
-    const grid = this.gridLite?.nativeElement as any;
-    if (grid && grid.updateColumns) {
-      const updates = ['price', 'total'].map(key => ({
-        key,
-        cellTemplate: enabled ? (params: any) => {
-          const span = document.createElement('span');
-          span.textContent = this.formatter.format(params.value);
-          return span;
-        } : undefined
-      }));
-      grid.updateColumns(updates);
-    }
-  }
 }

@@ -10,14 +10,14 @@
       }
     </igc-select>
   </section>
-  
-  <igc-grid-lite 
+
+  <igc-grid-lite
     [attr.data-theme]="selectedTheme"
     [data]="data">
     <igc-grid-lite-column field="name" header="Product" sortable filterable></igc-grid-lite-column>
     <igc-grid-lite-column field="price" header="Price per item" data-type="number" sortable filterable></igc-grid-lite-column>
     <igc-grid-lite-column field="sold" header="Items sold" data-type="number" sortable filterable></igc-grid-lite-column>
     <igc-grid-lite-column field="total" header="Total" data-type="number" sortable filterable></igc-grid-lite-column>
-    <igc-grid-lite-column field="rating" header="User rating" data-type="number" sortable filterable [cellTemplate]="formatRating"></igc-grid-lite-column>
+    <igc-grid-lite-column field="rating" header="User rating" data-type="number" sortable filterable [cellTemplate]="ratingTemplate"></igc-grid-lite-column>
   </igc-grid-lite>
 </div>

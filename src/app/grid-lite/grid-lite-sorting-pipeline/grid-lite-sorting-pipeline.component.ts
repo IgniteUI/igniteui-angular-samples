@@ -16,7 +16,7 @@ defineComponents(IgcRatingComponent, IgcCircularProgressComponent);
 })
 export class GridLiteSortingPipelineComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: ProductInfo[] = [];
   public dataPipelineConfiguration: any;
   public inOperation = false;
@@ -38,7 +38,7 @@ export class GridLiteSortingPipelineComponent implements OnInit {
     };
   }
 
-  formatRating = (params: any) => {
+  protected ratingTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
     rating.setAttribute('step', '0.01');

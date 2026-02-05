@@ -16,7 +16,7 @@ defineComponents(IgcCheckboxComponent);
 })
 export class GridLiteFilteringEventsComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: User[] = [];
   public log: string[] = [];
 
@@ -24,7 +24,7 @@ export class GridLiteFilteringEventsComponent implements OnInit {
     this.data = this.dataService.generateUsers(50);
   }
 
-  formatCheckbox = (params: any) => {
+  protected checkboxTemplate = (params: any) => {
     const checkbox = document.createElement('igc-checkbox');
     if (params.value) {
       checkbox.setAttribute('checked', '');

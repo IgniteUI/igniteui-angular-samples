@@ -9,11 +9,9 @@
 }
 
 .panel {
-  margin: 1rem 0;
+  padding: 1rem;
   display: flex;
-  flex-flow: row nowrap;
   justify-content: space-between;
-  align-items: center;
 }
 
 igc-grid-lite {

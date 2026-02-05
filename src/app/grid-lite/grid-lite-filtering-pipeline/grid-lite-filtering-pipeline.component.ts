@@ -16,7 +16,7 @@ defineComponents(IgcCheckboxComponent, IgcCircularProgressComponent);
 })
 export class GridLiteFilteringPipelineComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: User[] = [];
   public dataPipelineConfiguration: any;
   public inOperation = false;
@@ -36,7 +36,7 @@ export class GridLiteFilteringPipelineComponent implements OnInit {
     };
   }
 
-  formatCheckbox = (params: any) => {
+  protected checkboxTemplate = (params: any) => {
     const checkbox = document.createElement('igc-checkbox');
     if (params.value) {
       checkbox.setAttribute('checked', '');
@@ -47,11 +47,11 @@ export class GridLiteFilteringPipelineComponent implements OnInit {
   private buildUri(state: any[]) {
     const grouped = this.groupBy(state, 'key');
     const out: string[] = [];
-    
+
     for (const [key, exprs] of Object.entries(grouped)) {
       out.push(`${key}(${this.mapExpressions(exprs as any[])})`);
     }
-    
+
     this.queryString = `GET: /data?filter=${out.join('&')}`;
   }
 

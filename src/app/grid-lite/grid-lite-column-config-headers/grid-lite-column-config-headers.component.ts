@@ -16,14 +16,14 @@ defineComponents(IgcRatingComponent);
 })
 export class GridLiteColumnConfigHeadersComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: ProductInfo[] = [];
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(50);
   }
 
-  formatRating = (params: any) => {
+  protected ratingTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
     rating.setAttribute('step', '0.01');

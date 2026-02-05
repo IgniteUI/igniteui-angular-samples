@@ -16,16 +16,16 @@ defineComponents(IgcRatingComponent);
 })
 export class GridLiteSortingSimpleComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: ProductInfo[] = [];
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(100);
   }
 
-  nameComparer = (a: string, b: string) => a.length - b.length;
+  protected nameComparer = (a: string, b: string) => a.length - b.length;
 
-  formatRating = (params: any) => {
+  protected ratingTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
     rating.setAttribute('step', '0.01');

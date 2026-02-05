@@ -16,10 +16,10 @@ defineComponents(IgcRatingComponent);
 })
 export class GridLiteColumnConfigSimpleComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: ProductInfo[] = [];
 
-  public formatter = new Intl.NumberFormat('en-US', {
+  public formatter = new Intl.NumberFormat('en-150', {
     style: 'currency',
     currency: 'EUR'
   });
@@ -28,13 +28,11 @@ export class GridLiteColumnConfigSimpleComponent implements OnInit {
     this.data = this.dataService.generateProducts(50);
   }
 
-  formatCurrency = (params: any) => {
-    const span = document.createElement('span');
-    span.textContent = this.formatter.format(params.value);
-    return span;
+  protected formatCurrency = (params: any) => {
+    return this.formatter.format(params.value);
   };
 
-  formatRating = (params: any) => {
+  protected ratingTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
     rating.setAttribute('step', '0.01');

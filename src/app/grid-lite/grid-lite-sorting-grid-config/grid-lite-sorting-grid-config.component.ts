@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcRatingComponent, IgcSwitchComponent } from 'igniteui-webcomponents';
 import { IgcGridLite } from 'igniteui-grid-lite';
@@ -16,7 +16,9 @@ defineComponents(IgcRatingComponent, IgcSwitchComponent);
 })
 export class GridLiteSortingGridConfigComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
+  @ViewChild('gridLite', { static: true }) gridLite!: ElementRef;
+
   public data: ProductInfo[] = [];
   public sortingOptions: any = {
     mode: 'multiple'
@@ -26,7 +28,7 @@ export class GridLiteSortingGridConfigComponent implements OnInit {
     this.data = this.dataService.generateProducts(100);
   }
 
-  formatRating = (params: any) => {
+  protected ratingTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
     rating.setAttribute('step', '0.01');
@@ -34,11 +36,8 @@ export class GridLiteSortingGridConfigComponent implements OnInit {
     return rating;
   };
 
-  updateConfig(prop: string, value: boolean) {
-    if (prop === 'multiple') {
-      this.sortingOptions = { ...this.sortingOptions, mode: value ? 'multiple' : 'single' };
-    } else {
-      this.sortingOptions = { ...this.sortingOptions, [prop]: value };
-    }
+  protected updateConfig(value: boolean) {
+    this.sortingOptions = { ...this.sortingOptions, mode: value ? 'multiple' : 'single' };
+    this.gridLite.nativeElement.clearSort();
   }
 }

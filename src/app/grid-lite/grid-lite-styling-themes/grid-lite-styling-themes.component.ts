@@ -16,7 +16,7 @@ defineComponents(IgcRatingComponent, IgcSelectComponent, IgcSelectItemComponent)
 })
 export class GridLiteStylingThemesComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: ProductInfo[] = [];
   public selectedTheme = 'Bootstrap';
   public themes = [
@@ -34,7 +34,7 @@ export class GridLiteStylingThemesComponent implements OnInit {
     this.data = this.dataService.generateProducts(50);
   }
 
-  formatRating = (params: any) => {
+  protected ratingTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
     rating.setAttribute('value', params.value.toString());

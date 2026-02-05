@@ -1,6 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { 
+import {
   defineComponents,
   IgcRatingComponent,
   IgcCheckboxComponent,
@@ -28,7 +28,7 @@ defineComponents(
 })
 export class GridLiteOverviewComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: User[] = [];
   private choices = ['Low', 'Standard', 'High'];
 
@@ -36,7 +36,7 @@ export class GridLiteOverviewComponent implements OnInit {
     this.data = this.dataService.generateUsers(1000);
   }
 
-  formatAvatar = (params: any) => {
+  protected avatarTemplate = (params: any) => {
     const cell = document.createElement('igc-avatar');
     cell.setAttribute('shape', 'circle');
     cell.setAttribute('alt', 'User avatar');
@@ -44,38 +44,38 @@ export class GridLiteOverviewComponent implements OnInit {
     return cell;
   };
 
-  formatPriority = (params: any) => {
+  protected priorityTemplate = (params: any) => {
     const select = document.createElement('igc-select');
     select.setAttribute('outlined', '');
     select.setAttribute('flip', '');
     select.setAttribute('value', params.value);
-    
+
     this.choices.forEach(choice => {
       const item = document.createElement('igc-select-item');
       item.setAttribute('value', choice);
       item.textContent = choice;
       select.appendChild(item);
     });
-    
+
     return select;
   };
 
   priorityComparer = (a: string, b: string) => this.choices.indexOf(a) - this.choices.indexOf(b);
 
-  formatSatisfaction = (params: any) => {
+  protected satisfactionTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
     rating.setAttribute('value', params.value.toString());
     return rating;
   };
 
-  formatRegisteredAt = (params: any) => {
+  protected registeredAtTemplate = (params: any) => {
     const span = document.createElement('span');
     span.textContent = params.value.toLocaleString();
     return span;
   };
 
-  formatActive = (params: any) => {
+  protected activeTemplate = (params: any) => {
     const checkbox = document.createElement('igc-checkbox');
     if (params.value) {
       checkbox.setAttribute('checked', '');

@@ -16,14 +16,14 @@ defineComponents(IgcCheckboxComponent);
 })
 export class GridLiteFilteringSimpleComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: User[] = [];
 
   ngOnInit() {
     this.data = this.dataService.generateUsers(50);
   }
 
-  formatCheckbox = (params: any) => {
+  protected checkboxTemplate = (params: any) => {
     const checkbox = document.createElement('igc-checkbox');
     if (params.value) {
       checkbox.setAttribute('checked', '');

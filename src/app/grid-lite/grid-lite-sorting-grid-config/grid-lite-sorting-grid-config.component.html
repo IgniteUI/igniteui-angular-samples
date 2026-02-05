@@ -2,17 +2,18 @@
   <section class="config-panel">
     <igc-switch
       [checked]="sortingOptions.mode === 'multiple'"
-      (igcChange)="updateConfig('multiple', $event.detail.checked)">
+      (igcChange)="updateConfig($event.detail.checked)">
       Enable multi-sort
     </igc-switch>
   </section>
-  
-  <igc-grid-lite 
+
+  <igc-grid-lite
+    #gridLite
     [data]="data"
     [sortingOptions]="sortingOptions">
     <igc-grid-lite-column field="name" header="Name" sortable></igc-grid-lite-column>
     <igc-grid-lite-column field="price" header="Price" data-type="number" sortable></igc-grid-lite-column>
-    <igc-grid-lite-column field="rating" header="Rating" data-type="number" sortable [cellTemplate]="formatRating"></igc-grid-lite-column>
+    <igc-grid-lite-column field="rating" header="Rating" data-type="number" sortable [cellTemplate]="ratingTemplate"></igc-grid-lite-column>
     <igc-grid-lite-column field="sold" header="Sold" data-type="number" sortable></igc-grid-lite-column>
     <igc-grid-lite-column field="total" header="Total" data-type="number" sortable></igc-grid-lite-column>
   </igc-grid-lite>

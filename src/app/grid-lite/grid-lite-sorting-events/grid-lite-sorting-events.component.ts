@@ -16,7 +16,7 @@ defineComponents(IgcRatingComponent);
 })
 export class GridLiteSortingEventsComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: ProductInfo[] = [];
   public log: string[] = [];
 
@@ -24,7 +24,7 @@ export class GridLiteSortingEventsComponent implements OnInit {
     this.data = this.dataService.generateProducts(100);
   }
 
-  formatRating = (params: any) => {
+  protected ratingTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
     rating.setAttribute('step', '0.01');
@@ -46,7 +46,7 @@ export class GridLiteSortingEventsComponent implements OnInit {
   handleSorting(event: any) {
     const { detail, type } = event;
     const allowedColumns = ['price', 'total', 'sold'];
-    
+
     if (!allowedColumns.includes(detail.key)) {
       event.preventDefault();
       this.updateLog(
