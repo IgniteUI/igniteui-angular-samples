@@ -11,7 +11,11 @@
   <igc-grid-lite 
     [class.custom-light]="theme === 'light'"
     [class.custom-dark]="theme === 'dark'"
-    [columns]="columns" 
     [data]="data">
+    <igc-grid-lite-column field="name" header="Product" sortable filterable></igc-grid-lite-column>
+    <igc-grid-lite-column field="price" header="Price" data-type="number" sortable filterable></igc-grid-lite-column>
+    <igc-grid-lite-column field="sold" header="Sold" data-type="number" sortable filterable></igc-grid-lite-column>
+    <igc-grid-lite-column field="total" header="Total" data-type="number" sortable filterable></igc-grid-lite-column>
+    <igc-grid-lite-column field="rating" header="Rating" data-type="number" sortable filterable></igc-grid-lite-column>
   </igc-grid-lite>
 </div>

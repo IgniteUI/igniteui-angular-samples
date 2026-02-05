@@ -16,47 +16,14 @@ defineComponents(IgcCheckboxComponent, IgcCircularProgressComponent);
 })
 export class GridLiteFilteringPipelineComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: User[] = [];
-  public columns: any[] = [];
   public dataPipelineConfiguration: any;
   public inOperation = false;
   public queryString = '';
 
   ngOnInit() {
     this.data = this.dataService.generateUsers(50);
-    
-    this.columns = [
-      { 
-        key: 'firstName', 
-        headerText: 'First name', 
-        filter: true 
-      },
-      { 
-        key: 'lastName', 
-        headerText: 'Last name', 
-        filter: true 
-      },
-      { 
-        key: 'age', 
-        headerText: 'Age', 
-        filter: true, 
-        type: 'number' 
-      },
-      {
-        key: 'active',
-        headerText: 'Active',
-        type: 'boolean',
-        filter: true,
-        cellTemplate: (params: any) => {
-          const checkbox = document.createElement('igc-checkbox');
-          if (params.value) {
-            checkbox.setAttribute('checked', '');
-          }
-          return checkbox;
-        }
-      }
-    ];
 
     this.dataPipelineConfiguration = {
       filter: async ({ data, grid }: any) => {
@@ -69,14 +36,22 @@ export class GridLiteFilteringPipelineComponent implements OnInit {
     };
   }
 
+  protected checkboxTemplate = (params: any) => {
+    const checkbox = document.createElement('igc-checkbox');
+    if (params.value) {
+      checkbox.setAttribute('checked', '');
+    }
+    return checkbox;
+  };
+
   private buildUri(state: any[]) {
     const grouped = this.groupBy(state, 'key');
     const out: string[] = [];
-    
+
     for (const [key, exprs] of Object.entries(grouped)) {
       out.push(`${key}(${this.mapExpressions(exprs as any[])})`);
     }
-    
+
     this.queryString = `GET: /data?filter=${out.join('&')}`;
   }
 

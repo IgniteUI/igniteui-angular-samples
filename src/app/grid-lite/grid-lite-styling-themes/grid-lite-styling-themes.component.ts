@@ -16,9 +16,8 @@ defineComponents(IgcRatingComponent, IgcSelectComponent, IgcSelectItemComponent)
 })
 export class GridLiteStylingThemesComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: ProductInfo[] = [];
-  public columns: any[] = [];
   public selectedTheme = 'Bootstrap';
   public themes = [
     'Bootstrap',
@@ -33,50 +32,14 @@ export class GridLiteStylingThemesComponent implements OnInit {
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(50);
-    
-    this.columns = [
-      { 
-        key: 'name', 
-        headerText: 'Product', 
-        sort: true, 
-        filter: true 
-      },
-      {
-        key: 'price',
-        headerText: 'Price per item',
-        sort: true,
-        filter: true,
-        type: 'number'
-      },
-      {
-        key: 'sold',
-        headerText: 'Items sold',
-        sort: true,
-        filter: true,
-        type: 'number'
-      },
-      {
-        key: 'total',
-        headerText: 'Total',
-        sort: true,
-        filter: true,
-        type: 'number'
-      },
-      {
-        key: 'rating',
-        headerText: 'User rating',
-        type: 'number',
-        sort: true,
-        filter: true,
-        cellTemplate: (params: any) => {
-          const rating = document.createElement('igc-rating');
-          rating.setAttribute('readonly', '');
-          rating.setAttribute('value', params.value.toString());
-          return rating;
-        }
-      }
-    ];
   }
+
+  protected ratingTemplate = (params: any) => {
+    const rating = document.createElement('igc-rating');
+    rating.setAttribute('readonly', '');
+    rating.setAttribute('value', params.value.toString());
+    return rating;
+  };
 
   updateTheme(event: any) {
     this.selectedTheme = event.detail.value;

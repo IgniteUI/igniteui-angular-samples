@@ -19,48 +19,10 @@ export class GridLiteStylingCustomComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
 
   public data: ProductInfo[] = [];
-  public columns: any[] = [];
   public theme: 'dark' | 'light' = 'dark';
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(50);
-
-    this.columns = [
-      {
-        key: 'name',
-        headerText: 'Product',
-        filter: true,
-        sort: true
-      },
-      {
-        key: 'price',
-        headerText: 'Price',
-        type: 'number',
-        filter: true,
-        sort: true
-      },
-      {
-        key: 'sold',
-        type: 'number',
-        headerText: 'Sold',
-        filter: true,
-        sort: true
-      },
-      {
-        key: 'total',
-        headerText: 'Total',
-        type: 'number',
-        filter: true,
-        sort: true
-      },
-      {
-        key: 'rating',
-        type: 'number',
-        headerText: 'Rating',
-        filter: true,
-        sort: true
-      }
-    ];
   }
 
   switchTheme() {
