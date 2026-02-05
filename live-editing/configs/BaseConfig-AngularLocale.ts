@@ -3,7 +3,6 @@ export const BaseAppAngularLocaleConfig = {
         { 'module': 'BrowserModule', 'import': '@angular/platform-browser' },
         { 'module': 'FormsModule', 'import': '@angular/forms' },
         { 'module': 'HammerModule', 'import': '@angular/platform-browser' },
-        { 'module': 'HammerModule', 'import': '@angular/platform-browser' },
     ],
     providers: [
         { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' }
