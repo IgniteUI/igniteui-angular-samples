@@ -4,6 +4,7 @@ export const dataDisplayRoutesData = {
     "badge-icon": { displayName: "Badge Icon Sample", parentName: "Badge" },
     "badge-sample-2": { displayName: "Simple Badge", parentName: "Badge" },
     "badge-sample-3": { displayName: "Badge for List Items", parentName: "Badge" },
+    "badge-dot-sample": { displayName: "Badge Dot Sample", parentName: "Badge" },
     "badge-styling-sample": { displayName: "Badge Styling Sample", parentName: "Badge" },
     "badge-tailwind-styling-sample": { displayName: "Badge Tailwind Styling Sample", parentName: "Badge" },
     "chip-simple": { displayName: "Chip Simple", parentName: "Chip" },
