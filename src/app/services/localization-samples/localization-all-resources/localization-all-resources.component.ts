@@ -26,7 +26,7 @@ export class LocalizationAllResourcesComponent implements OnInit {
     @ViewChild('grid', { read: IgxGridComponent, static: true })
     public grid: IgxGridComponent;
     public data: any[];
-    public locale: string;
+    public locale: string = 'EN';
     public locales: { type: string, resource: object }[];
     public selectLocales = [
         'HI', 'BG', 'CS', 'DA', 'DE', 'EN', 'ES', 'FR', 'HU', 'IT', 'JA', 'KO', 'NB', 'NL',
