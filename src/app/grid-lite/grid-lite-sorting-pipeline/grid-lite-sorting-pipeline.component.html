@@ -8,10 +8,14 @@
       [class.in-operation]="inOperation"
       indeterminate>
     </igc-circular-progress>
-    <igc-grid-lite 
-      [columns]="columns" 
+    <igc-grid-lite
       [data]="data"
       [dataPipelineConfiguration]="dataPipelineConfiguration">
+      <igc-grid-lite-column field="name" header="Name" sortable></igc-grid-lite-column>
+      <igc-grid-lite-column field="price" header="Price" data-type="number" sortable></igc-grid-lite-column>
+      <igc-grid-lite-column field="rating" header="Rating" data-type="number" sortable [cellTemplate]="ratingTemplate"></igc-grid-lite-column>
+      <igc-grid-lite-column field="sold" header="Sold" data-type="number" sortable></igc-grid-lite-column>
+      <igc-grid-lite-column field="total" header="Total" data-type="number" sortable></igc-grid-lite-column>
     </igc-grid-lite>
   </section>
 </div>

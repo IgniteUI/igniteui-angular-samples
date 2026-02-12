@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewChild, ElementRef, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcButtonComponent } from 'igniteui-webcomponents';
 import { IgcGridLite } from 'igniteui-grid-lite';
@@ -16,12 +16,9 @@ defineComponents(IgcButtonComponent);
 })
 export class GridLiteDataBindingDynamicComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
-  @ViewChild('gridLite', { static: false }) gridLite!: ElementRef;
-  
+
   public data: (ProductInfo | UserSimple)[] = [];
   public dataType: 'products' | 'users' = 'products';
-  public autoGenerate = true;
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(50);
@@ -29,16 +26,10 @@ export class GridLiteDataBindingDynamicComponent implements OnInit {
 
   switchData() {
     this.dataType = this.dataType === 'products' ? 'users' : 'products';
-    const grid = this.gridLite?.nativeElement as any;
-    
-    if (grid) {
-      grid.columns = [];
-      if (this.dataType === 'products') {
-        this.data = this.dataService.generateProducts(50);
-      } else {
-        this.data = this.dataService.generateSimpleUsers(50);
-      }
-      grid.data = this.data;
+    if (this.dataType === 'products') {
+      this.data = this.dataService.generateProducts(50);
+    } else {
+      this.data = this.dataService.generateSimpleUsers(50);
     }
   }
 }

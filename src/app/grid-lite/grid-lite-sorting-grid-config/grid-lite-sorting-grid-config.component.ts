@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcRatingComponent, IgcSwitchComponent } from 'igniteui-webcomponents';
 import { IgcGridLite } from 'igniteui-grid-lite';
@@ -16,58 +16,28 @@ defineComponents(IgcRatingComponent, IgcSwitchComponent);
 })
 export class GridLiteSortingGridConfigComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
+  @ViewChild('gridLite', { static: true }) gridLite!: ElementRef;
+
   public data: ProductInfo[] = [];
-  public columns: any[] = [];
-  public sortConfiguration: any = {
-    multiple: true,
-    triState: true
+  public sortingOptions: any = {
+    mode: 'multiple'
   };
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(100);
-    
-    this.columns = [
-      { 
-        key: 'name', 
-        headerText: 'Name', 
-        sort: true 
-      },
-      { 
-        key: 'price', 
-        type: 'number', 
-        headerText: 'Price', 
-        sort: true 
-      },
-      {
-        key: 'rating',
-        type: 'number',
-        headerText: 'Rating',
-        sort: true,
-        cellTemplate: (params: any) => {
-          const rating = document.createElement('igc-rating');
-          rating.setAttribute('readonly', '');
-          rating.setAttribute('step', '0.01');
-          rating.setAttribute('value', params.value.toString());
-          return rating;
-        }
-      },
-      { 
-        key: 'sold', 
-        type: 'number', 
-        headerText: 'Sold', 
-        sort: true 
-      },
-      { 
-        key: 'total', 
-        type: 'number', 
-        headerText: 'Total', 
-        sort: true 
-      }
-    ];
   }
 
-  updateConfig(prop: string, value: boolean) {
-    this.sortConfiguration = { ...this.sortConfiguration, [prop]: value };
+  protected ratingTemplate = (params: any) => {
+    const rating = document.createElement('igc-rating');
+    rating.setAttribute('readonly', '');
+    rating.setAttribute('step', '0.01');
+    rating.setAttribute('value', params.value.toString());
+    return rating;
+  };
+
+  protected updateConfig(value: boolean) {
+    this.sortingOptions = { ...this.sortingOptions, mode: value ? 'multiple' : 'single' };
+    this.gridLite.nativeElement.clearSort();
   }
 }
