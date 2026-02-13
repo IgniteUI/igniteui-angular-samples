@@ -108,7 +108,7 @@ export class ExportPdfCustomFontComponent implements OnInit {
         };
 
         if (this.builtInBoldFontData) {
-            options.customFont = {
+            options.customFont.bold = {
                 name: 'NotoSans-Bold',
                 data: this.builtInBoldFontData
             };

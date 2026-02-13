@@ -24,13 +24,46 @@
     align-items: center;
     gap: 8px;
 
+    input[type="file"] {
+        // Hide the default input
+        position: absolute;
+        opacity: 0;
+        width: 0.1px;
+        height: 0.1px;
+    }
+
     label {
         font-weight: 500;
+        padding: 10px 20px;
+        background-color: #fff;
+        border: 2px dashed #0078d4;
+        border-radius: 6px;
+        cursor: pointer;
+        color: #0078d4;
+        transition: all 0.3s ease;
+        display: inline-block;
+
+        &:hover {
+            background-color: #0078d4;
+            color: white;
+            border-style: solid;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(0, 120, 212, 0.3);
+        }
+
+        &:active {
+            transform: translateY(0);
+        }
     }
 
     .file-name {
         color: #28a745;
         font-size: 0.9em;
+        font-weight: 500;
+        padding: 6px 12px;
+        background-color: #e8f5e9;
+        border-radius: 4px;
+        border: 1px solid #28a745;
     }
 }
 
