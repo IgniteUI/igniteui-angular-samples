@@ -1,0 +1,57 @@
+<section class="container">
+    <p class="description">
+        This sample ships with <a href="https://fonts.google.com/noto/specimen/Noto+Sans" target="_blank">Noto Sans</a>,
+        which covers Latin, Cyrillic, and Greek characters. For <strong>Japanese, Chinese, or Korean</strong> support,
+        download <a href="https://fonts.google.com/noto/specimen/Noto+Sans+JP" target="_blank">Noto Sans JP</a>
+        (or another CJK font) and upload the <code>.ttf</code> file below.
+    </p>
+
+    @if (builtInFontLoading()) {
+        <p class="status loading">Loading built-in Noto Sans font…</p>
+    }
+
+    <div class="font-upload">
+        <label for="fontFile">Upload a custom font (.ttf):</label>
+        <input
+            id="fontFile"
+            type="file"
+            accept=".ttf,.otf,.woff"
+            (change)="onFontFileSelected($event)"
+        />
+        @if (uploadedFontName()) {
+            <span class="file-name">{{ uploadedFontName() }}</span>
+        }
+    </div>
+
+    <div class="export-buttons">
+        <button
+            (click)="exportWithBuiltInFont()"
+            [disabled]="!canExportBuiltIn()"
+        >
+            Export with Noto Sans
+        </button>
+        <button
+            (click)="exportWithUploadedFont()"
+            [disabled]="!canExportUploaded()"
+        >
+            Export with Uploaded Font
+        </button>
+        <button
+            (click)="exportWithDefaultFont()"
+            [disabled]="isExporting()"
+        >
+            Export with Default Font
+        </button>
+    </div>
+
+    @if (exportStatus()) {
+        <p class="status">{{ exportStatus() }}</p>
+    }
+
+    <igx-grid #grid [data]="data()" [autoGenerate]="false" height="320px">
+        <igx-column field="Name" header="Name / Име / 名前"></igx-column>
+        <igx-column field="City" header="City / Град / 都市"></igx-column>
+        <igx-column field="Product" header="Product / Продукт / 製品"></igx-column>
+        <igx-column field="Amount" header="Amount" dataType="number"></igx-column>
+    </igx-grid>
+</section>

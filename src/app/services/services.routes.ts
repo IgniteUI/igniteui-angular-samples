@@ -14,6 +14,7 @@ import { servicesRoutesData } from './services-routes-data';
 import { TransactionBaseComponent } from './transaction/transaction-base/transaction-base.component';
 import { PdfExportComponent } from './export-pdf/pdf-export.component';
 import { LocalizationAllResourcesComponent } from './localization-samples/localization-all-resources/localization-all-resources.component';
+import { ExportPdfCustomFontComponent } from './export-pdf-custom-font/export-pdf-custom-font.component';
 // tslint:enable:max-line-length
 
 export const ServicesRoutes: Routes = [
@@ -46,6 +47,11 @@ export const ServicesRoutes: Routes = [
         component: PdfExportComponent,
         data: servicesRoutesData['export-pdf'],
         path: 'export-pdf'
+    },
+    {
+        component: ExportPdfCustomFontComponent,
+        data: servicesRoutesData['export-pdf-custom-font'],
+        path: 'export-pdf-custom-font'
     },
     {
         component: TreeGridExcelExportSample1Component,
