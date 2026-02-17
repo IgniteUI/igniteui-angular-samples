@@ -12,7 +12,7 @@ $custom-theme: grid-summary-theme(
 
 :host {
   ::ng-deep {
-    @include css-vars($custom-theme);
+    @include tokens($custom-theme, $mode: 'scoped');
   }
 }
  

@@ -41,7 +41,7 @@ igx-divider {
 //     $outline-color: #f0f0f0,
 //     $resting-shadow: none,
 //     $hover-shadow: none,
-//     $header-text-color: #000000e0,
+//     $header-text-color: red,
 // );
 
 // $custom-avatar-theme: avatar-theme(
@@ -57,21 +57,20 @@ igx-divider {
 //     $focus-background: #d9d9d9,
 // );
 
-// $custom-icon-button-theme: icon-button-theme(
+// $custom-icon-button-theme: flat-icon-button-theme(
 //     $foreground: #00000073,
 //     $hover-foreground: #1677ff,
 //     $hover-background: none,
-//     $border-color: transparent
 // );
 
 // $custom-divider-theme: divider-theme(
 //     $color: #f0f0f0
 // );
 
-// @include css-vars($custom-card-theme);
-// @include css-vars($custom-avatar-theme);
-// @include css-vars($custom-chip-theme);
-// @include css-vars($custom-divider-theme);
+// @include tokens($custom-card-theme, $mode: 'scoped');
+// @include tokens($custom-avatar-theme, $mode: 'scoped');
+// @include tokens($custom-chip-theme, $mode: 'scoped');
+// @include tokens($custom-divider-theme, $mode: 'scoped');
 // .igx-icon-button--flat {
-//     @include css-vars($custom-icon-button-theme);
+//     @include tokens($custom-icon-button-theme, $mode: 'scoped');
 // };

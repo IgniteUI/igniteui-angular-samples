@@ -6,5 +6,4 @@ $custom-theme: grid-theme(
   $sortable-header-icon-hover-color: black
 );
 
-@include css-vars($custom-theme);
- 
+@include tokens($custom-theme, $mode: 'scoped');

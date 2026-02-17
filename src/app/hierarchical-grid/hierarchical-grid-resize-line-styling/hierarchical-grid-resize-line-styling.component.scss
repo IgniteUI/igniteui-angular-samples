@@ -5,7 +5,4 @@ $custom-grid-theme: grid-theme(
   $resize-line-color: #0288d1
 );
 
-:host ::ng-deep {
-  @include css-vars($custom-grid-theme);
-}
- 
+@include tokens($custom-grid-theme, $mode: 'scoped');

@@ -12,5 +12,4 @@ $custom-theme: grid-theme(
   $sortable-header-icon-hover-color: #e9bd0d
 );
 
-@include css-vars($custom-theme);
- 
+@include tokens($custom-theme, $mode: 'scoped');

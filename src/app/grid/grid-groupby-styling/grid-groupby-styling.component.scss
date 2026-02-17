@@ -28,11 +28,10 @@ $custom-chips-theme: chip-theme(
   $hover-text-color: #e7e7e7
 );
 
-@include css-vars($custom-theme);
+@include tokens($custom-theme, $mode: 'scoped');
 
 :host {
   ::ng-deep {
-    @include chip($custom-chips-theme);
+    @include tokens($custom-chips-theme, $mode: 'scoped');
   }
 }
- 

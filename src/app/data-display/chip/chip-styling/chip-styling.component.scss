@@ -44,5 +44,4 @@ igx-chip {
 //     $border-radius: rem(5px)
 // );
 
-// @include css-vars($custom-chip-theme)
- 
+// @include tokens($custom-chip-theme, $mode: 'scoped');

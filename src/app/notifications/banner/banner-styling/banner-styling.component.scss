@@ -4,4 +4,4 @@ $custom-banner-theme: banner-theme(
   $banner-background: #011627,
 );
 
-@include css-vars($custom-banner-theme);
+@include tokens($custom-banner-theme, $mode: 'scoped');
