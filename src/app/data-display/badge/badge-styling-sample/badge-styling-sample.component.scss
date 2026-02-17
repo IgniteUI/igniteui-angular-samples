@@ -6,5 +6,4 @@ $custom-badge-theme: badge-theme(
   $border-radius: 4px
 );
 
-@include css-vars($custom-badge-theme);
-
+@include tokens($custom-badge-theme, $mode: 'scoped');

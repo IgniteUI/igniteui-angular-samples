@@ -8,5 +8,4 @@ $custom-theme: grid-theme(
   $cell-active-border-color: #ffcd0f
 );
 
-@include css-vars($custom-theme);
- 
+@include tokens($custom-theme, $mode: 'scoped');

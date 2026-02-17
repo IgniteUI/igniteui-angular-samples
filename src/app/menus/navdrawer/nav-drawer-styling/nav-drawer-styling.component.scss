@@ -6,10 +6,9 @@ $custom-theme: navdrawer-theme(
   $item-active-background: #ecc256,
   $item-header-text-color: #f3c03e
 );
-    
+
 :host {
   ::ng-deep {
-    @include css-vars($custom-theme);
+        @include tokens($custom-theme, $mode: 'scoped');
   }
 }
-

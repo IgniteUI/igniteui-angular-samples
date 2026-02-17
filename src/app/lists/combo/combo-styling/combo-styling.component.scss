@@ -17,7 +17,7 @@ $custom-checkbox-theme: checkbox-theme(
 );
 
 :host ::ng-deep {
-  @include css-vars($custom-drop-down-theme);
-  @include css-vars($custom-combo-theme);
-  @include css-vars($custom-checkbox-theme);
+  @include tokens($custom-drop-down-theme, $mode: 'scoped');
+  @include tokens($custom-combo-theme, $mode: 'scoped');
+  @include tokens($custom-checkbox-theme, $mode: 'scoped');
 }

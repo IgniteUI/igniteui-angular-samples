@@ -10,4 +10,4 @@ $custom-panel-theme: expansion-panel-theme(
 );
 
 // Apply the custom themes to the components mixins.
-@include css-vars($custom-panel-theme);
+@include tokens($custom-panel-theme, $mode: 'scoped');

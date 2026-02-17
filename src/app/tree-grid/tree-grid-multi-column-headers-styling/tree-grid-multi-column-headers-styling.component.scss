@@ -9,5 +9,4 @@ $custom-theme: grid-theme(
   $header-border-color: rgba(0, 0, 0, 0.08)
 );
 
-@include css-vars($custom-theme);
- 
+@include tokens($custom-theme, $mode: 'scoped');
