@@ -1,19 +1,68 @@
 <div class="grid-lite-wrapper">
-  <section class="panel">
-    <igc-switch
-      label-position="before"
-      [checked]="hasFormatters"
-      (igcChange)="hasFormatters = $event.detail.checked">
-      Value formatters:
-    </igc-switch>
-  </section>
+    <section class="panel">
+      <button igxButton="outlined" [igxToggleAction]="dropdown" [igxDropDownItemNavigation]="dropdown">
+        Column Properties
+      </button>
+      <igx-drop-down #dropdown [isOverlay]="true" [autoClose]="false" [closed]="false">
+        @for (column of columns; track column) {
+            <igx-drop-down-item>
+            <div class="config">
+                <span class="config-key">{{ column.header }}</span>
+                <igx-checkbox
+                #hiddenChk
+                [checked]="column.hidden"
+                (click)="$event.stopPropagation()"
+                (change)="toggleColumnProperty(column, 'hidden', hiddenChk.checked)">
+                Hidden
+                </igx-checkbox>
+                <igx-checkbox
+                #resizableChk
+                [checked]="column.resizable"
+                (click)="$event.stopPropagation()"
+                (change)="toggleColumnProperty(column, 'resizable', resizableChk.checked)">
+                Resizable
+                </igx-checkbox>
+                <igx-checkbox
+                #filterChk
+                [checked]="column.filterable"
+                (click)="$event.stopPropagation()"
+                (change)="toggleColumnProperty(column, 'filterable', filterChk.checked)">
+                Filter
+                </igx-checkbox>
+                <igx-checkbox
+                #sortableChk
+                [checked]="column.sortable"
+                (click)="$event.stopPropagation()"
+                (change)="toggleColumnProperty(column, 'sortable', sortableChk.checked)">
+                Sort
+                </igx-checkbox>
+            </div>
+            </igx-drop-down-item>
+        }
+      </igx-drop-down>
 
-  <igc-grid-lite [data]="data">
-    <igc-grid-lite-column field="id" header="ID" width="15rem" hidden></igc-grid-lite-column>
-    <igc-grid-lite-column field="name" header="Product Name" width="15rem"></igc-grid-lite-column>
-    <igc-grid-lite-column field="price" header="Price" data-type="number" width="15rem" [cellTemplate]="hasFormatters ? formatCurrency : undefined"></igc-grid-lite-column>
-    <igc-grid-lite-column field="sold" header="Units sold" data-type="number" width="15rem"></igc-grid-lite-column>
-    <igc-grid-lite-column field="total" header="Total sold" width="15rem" [cellTemplate]="hasFormatters ? formatCurrency : undefined"></igc-grid-lite-column>
-    <igc-grid-lite-column field="rating" header="Customer rating" data-type="number" width="15rem" [cellTemplate]="ratingTemplate"></igc-grid-lite-column>
-  </igc-grid-lite>
-</div>
+      <igx-switch
+        labelPosition="before"
+        [checked]="hasFormatters"
+        (igxChange)="toggleFormatters($event)">
+        Value formatters:
+      </igx-switch>
+    </section>
+
+    <igc-grid-lite [data]="data">
+        @for (col of columns; track col) {
+            <igc-grid-lite-column
+                [field]="col.field"
+                [header]="col.header"
+                [dataType]="col.dataType"
+                [hidden]="col.hidden"
+                [resizable]="col.resizable"
+                [sortable]="col.sortable"
+                [filterable]="col.filterable"
+                [cellTemplate]="col.field === 'price' || col.field === 'total'
+                ? (hasFormatters ? formatCurrency : undefined)
+                : (col.field === 'rating' ? ratingTemplate : undefined)">
+            </igc-grid-lite-column>
+        }
+    </igc-grid-lite>
+  </div>
