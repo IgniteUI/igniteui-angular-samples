@@ -13,7 +13,7 @@ $custom-theme: grid-summary-theme(
 );
 
 :host {
-    --igx-grid-summaries-patch-background: #{$summaries-background};
+    --ig-grid-summaries-patch-background: #{$summaries-background};
 
     ::ng-deep {
         @include css-vars($custom-theme);
