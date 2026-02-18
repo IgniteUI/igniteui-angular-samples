@@ -8,5 +8,7 @@ $custom-icon-button-theme: flat-icon-button-theme(
   $foreground: #ecaa53,
 );
 
-@include css-vars($custom-navbar-theme);
-@include css-vars($custom-icon-button-theme);
+:host {
+  @include tokens($custom-navbar-theme);
+  @include tokens($custom-icon-button-theme);
+}

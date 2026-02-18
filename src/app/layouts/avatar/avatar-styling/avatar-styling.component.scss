@@ -11,9 +11,9 @@ $icon-avatar-theme: avatar-theme(
 );
 
 .initials{
-  @include tokens($initials-avatar-theme, $mode: 'scoped');
+  @include tokens($initials-avatar-theme);
 }
 
 .icon{
-  @include tokens($icon-avatar-theme, $mode: 'scoped');
+  @include tokens($icon-avatar-theme);
 }

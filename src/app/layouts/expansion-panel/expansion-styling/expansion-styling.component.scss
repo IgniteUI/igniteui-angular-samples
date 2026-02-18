@@ -9,5 +9,6 @@ $custom-panel-theme: expansion-panel-theme(
   $header-icon-color: #ffd351,
 );
 
-// Apply the custom themes to the components mixins.
-@include tokens($custom-panel-theme, $mode: 'scoped');
+:host {
+    @include tokens($custom-panel-theme);
+}

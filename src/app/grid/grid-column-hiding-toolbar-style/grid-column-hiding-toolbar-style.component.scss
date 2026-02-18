@@ -11,7 +11,7 @@ $dark-column-actions-theme: column-actions-theme(
   $title-color: $yellow
 );
 
-$dark-button-theme: button-theme(
+$dark-button-theme: flat-button-theme(
   $background: $yellow,
   $foreground: $bg,
   $hover-background: $gray,
@@ -47,16 +47,11 @@ $dark-ripple-theme: ripple-theme(
   $color: $gray
 );
 
-@include css-vars($dark-column-actions-theme);
-@include css-vars($dark-radio-theme);
-
 :host {
-  ::ng-deep {
-    igx-column-actions, igx-grid-toolbar {
-      @include css-vars($dark-button-theme);
-      @include css-vars($dark-checkbox-theme);
-      @include css-vars($dark-input-group);
-      @include css-vars($dark-ripple-theme);
-    }
-  }
+    @include tokens($dark-column-actions-theme);
+    @include tokens($dark-radio-theme);
+    @include tokens($dark-button-theme);
+    @include tokens($dark-checkbox-theme);
+    @include tokens($dark-input-group);
+    @include tokens($dark-ripple-theme);
 }

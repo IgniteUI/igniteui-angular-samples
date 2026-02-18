@@ -67,10 +67,10 @@ igx-divider {
 //     $color: #f0f0f0
 // );
 
-// @include tokens($custom-card-theme, $mode: 'scoped');
-// @include tokens($custom-avatar-theme, $mode: 'scoped');
-// @include tokens($custom-chip-theme, $mode: 'scoped');
-// @include tokens($custom-divider-theme, $mode: 'scoped');
-// .igx-icon-button--flat {
-//     @include tokens($custom-icon-button-theme, $mode: 'scoped');
-// };
+// :host {
+//     @include tokens($custom-card-theme);
+//     @include tokens($custom-avatar-theme);
+//     @include tokens($custom-chip-theme);
+//     @include tokens($custom-divider-theme);
+//     @include tokens($custom-icon-button-theme);
+// }

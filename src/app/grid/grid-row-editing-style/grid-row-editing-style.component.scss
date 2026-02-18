@@ -10,16 +10,14 @@ $banner-theme: banner-theme(
     $banner-message-color: #ffcd0f,
 );
 
-$icon-button-theme: icon-button-theme(
+$icon-button-theme: flat-icon-button-theme(
     $foreground: #ffcd0f,
     $hover-foreground: #ffffff
 );
 
 :host {
-    ::ng-deep {
-        @include css-vars($banner-theme);
-        @include css-vars($icon-button-theme);
-    }
+    @include tokens($banner-theme);
+    @include tokens($icon-button-theme);
 }
 
 igx-grid {

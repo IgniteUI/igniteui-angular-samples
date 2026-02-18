@@ -13,7 +13,7 @@ $dark-button: flat-button-theme(
   $foreground: #ecaa53,
 );
 
-:host ::ng-deep {
-  @include css-vars($my-time-picker-theme);
-  @include css-vars($dark-button);
+:host {
+  @include tokens($my-time-picker-theme);
+  @include tokens($dark-button);
 }
