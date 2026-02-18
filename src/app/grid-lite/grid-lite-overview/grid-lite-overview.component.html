@@ -4,9 +4,7 @@
     <igc-grid-lite-column field="firstName" header="First name" sortable filterable resizable></igc-grid-lite-column>
     <igc-grid-lite-column field="lastName" header="Last name" sortable filterable resizable></igc-grid-lite-column>
     <igc-grid-lite-column field="email" header="Email Address"></igc-grid-lite-column>
-    <igc-grid-lite-column field="priority" header="Priority" width="12rem" sortable sorting-case-sensitive [sortConfiguration]="{ comparer: priorityComparer }" [cellTemplate]="priorityTemplate"></igc-grid-lite-column>
     <igc-grid-lite-column field="satisfaction" header="Satisfaction rating" data-type="number" sortable filterable [cellTemplate]="satisfactionTemplate"></igc-grid-lite-column>
     <igc-grid-lite-column field="registeredAt" header="Registered @" sortable [cellTemplate]="registeredAtTemplate"></igc-grid-lite-column>
-    <igc-grid-lite-column field="active" header="Active" data-type="boolean" [cellTemplate]="activeTemplate"></igc-grid-lite-column>
   </igc-grid-lite>
 </div>

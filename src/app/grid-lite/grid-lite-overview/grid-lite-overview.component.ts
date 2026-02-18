@@ -30,7 +30,6 @@ export class GridLiteOverviewComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
 
   public data: User[] = [];
-  private choices = ['Low', 'Standard', 'High'];
 
   ngOnInit() {
     this.data = this.dataService.generateUsers(1000);
@@ -44,24 +43,6 @@ export class GridLiteOverviewComponent implements OnInit {
     return cell;
   };
 
-  protected priorityTemplate = (params: any) => {
-    const select = document.createElement('igc-select');
-    select.setAttribute('outlined', '');
-    select.setAttribute('flip', '');
-    select.setAttribute('value', params.value);
-
-    this.choices.forEach(choice => {
-      const item = document.createElement('igc-select-item');
-      item.setAttribute('value', choice);
-      item.textContent = choice;
-      select.appendChild(item);
-    });
-
-    return select;
-  };
-
-  priorityComparer = (a: string, b: string) => this.choices.indexOf(a) - this.choices.indexOf(b);
-
   protected satisfactionTemplate = (params: any) => {
     const rating = document.createElement('igc-rating');
     rating.setAttribute('readonly', '');
@@ -73,13 +54,5 @@ export class GridLiteOverviewComponent implements OnInit {
     const span = document.createElement('span');
     span.textContent = params.value.toLocaleString();
     return span;
-  };
-
-  protected activeTemplate = (params: any) => {
-    const checkbox = document.createElement('igc-checkbox');
-    if (params.value) {
-      checkbox.setAttribute('checked', '');
-    }
-    return checkbox;
   };
 }
