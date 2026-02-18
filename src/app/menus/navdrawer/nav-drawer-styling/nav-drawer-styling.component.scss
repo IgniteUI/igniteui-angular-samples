@@ -8,7 +8,5 @@ $custom-theme: navdrawer-theme(
 );
 
 :host {
-  ::ng-deep {
-        @include tokens($custom-theme, $mode: 'scoped');
-  }
+    @include tokens($custom-theme);
 }

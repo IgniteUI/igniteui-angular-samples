@@ -9,4 +9,6 @@ $custom-theme: grid-theme(
   $header-border-color: rgba(0, 0, 0, 0.08)
 );
 
-@include tokens($custom-theme, $mode: 'scoped');
+:host {
+  @include tokens($custom-theme);
+}

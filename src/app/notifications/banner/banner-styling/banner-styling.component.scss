@@ -4,4 +4,6 @@ $custom-banner-theme: banner-theme(
   $banner-background: #011627,
 );
 
-@include tokens($custom-banner-theme, $mode: 'scoped');
+igx-banner {
+    @include tokens($custom-banner-theme);
+}

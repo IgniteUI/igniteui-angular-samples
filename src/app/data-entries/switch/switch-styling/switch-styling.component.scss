@@ -35,4 +35,6 @@ igx-switch {
 //     $border-hover-color: transparent,
 // );
 
-// @include css-vars($custom-switch-theme)
+// :host {
+//     @include tokens($custom-switch-theme);
+// }

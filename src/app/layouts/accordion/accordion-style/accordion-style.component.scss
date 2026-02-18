@@ -7,4 +7,6 @@ $custom-panel-theme: expansion-panel-theme(
   $expanded-margin: 10px
 );
 
-@include css-vars($custom-panel-theme);
+:host {
+    @include tokens($custom-panel-theme);
+}

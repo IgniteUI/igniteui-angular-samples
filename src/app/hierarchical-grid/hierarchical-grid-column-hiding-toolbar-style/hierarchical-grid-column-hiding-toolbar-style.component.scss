@@ -6,8 +6,8 @@ $custom-column-actions-theme: column-actions-theme(
   $title-color: #ffcd0f
 );
 
-$custom-button: button-theme(
-  $foreground: #ffcd0f, 
+$custom-button: flat-button-theme(
+  $foreground: #ffcd0f,
   $disabled-foreground: #292826
 );
 
@@ -19,11 +19,10 @@ $dark-checkbox-theme: checkbox-theme(
 );
 
 :host ::ng-deep {
-  @include css-vars($custom-column-actions-theme);
-    
+  @include tokens($custom-column-actions-theme);
+
   .igx-column-actions {
-    @include css-vars($custom-button);
-    @include css-vars($dark-checkbox-theme);
+    @include tokens($custom-button);
+    @include tokens($dark-checkbox-theme);
   }
 }
- 

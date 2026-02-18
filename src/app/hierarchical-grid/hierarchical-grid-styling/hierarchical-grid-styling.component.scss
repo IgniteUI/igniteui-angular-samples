@@ -14,4 +14,7 @@ $custom-theme: grid-theme(
   $row-highlight: #ffcd0f
 );
 
-@include tokens($custom-theme, $mode: 'scoped');
+
+:host {
+  @include tokens($custom-theme);
+}

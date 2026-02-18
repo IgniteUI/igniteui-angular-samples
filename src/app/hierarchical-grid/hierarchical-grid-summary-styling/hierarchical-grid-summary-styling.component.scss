@@ -14,8 +14,5 @@ $custom-theme: grid-summary-theme(
 
 :host {
     --ig-grid-summaries-patch-background: #{$summaries-background};
-
-    ::ng-deep {
-        @include tokens($custom-theme, $mode: 'scoped');
-    }
+    @include tokens($custom-theme);
 }

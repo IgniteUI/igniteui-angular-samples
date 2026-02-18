@@ -6,8 +6,8 @@ $blue: #4567bb;
 $gray: #efefef;
 
 $color-palette: palette(
-  $primary: $white, 
-  $secondary: $blue, 
+  $primary: $white,
+  $secondary: $blue,
   $surface: $gray
 );
 
@@ -40,15 +40,12 @@ $datepicker-theme: calendar-theme(
 );
 
 :host {
-  ::ng-deep {
-    @include css-vars($grid-theme);
-    @include css-vars($checkbox-theme);
-    @include css-vars($input-theme);
-    @include css-vars($datepicker-theme);
-  }
+    @include tokens($grid-theme);
+    @include tokens($checkbox-theme);
+    @include tokens($input-theme);
+    @include tokens($datepicker-theme);
 }
 
 igx-hierarchical-grid {
   @include palette($color-palette);
 }
- 

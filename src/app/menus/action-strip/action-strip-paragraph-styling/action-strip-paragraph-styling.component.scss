@@ -7,4 +7,6 @@ $custom-strip: action-strip-theme(
   $actions-border-radius: 0,
 );
 
-@include tokens($custom-strip, $mode: 'scoped');
+:host {
+  @include tokens($custom-strip);
+}

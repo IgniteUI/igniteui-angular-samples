@@ -28,10 +28,7 @@ $custom-chips-theme: chip-theme(
   $hover-text-color: #e7e7e7
 );
 
-@include tokens($custom-theme, $mode: 'scoped');
-
 :host {
-  ::ng-deep {
-    @include tokens($custom-chips-theme, $mode: 'scoped');
-  }
+    @include tokens($custom-theme);
+    @include tokens($custom-chips-theme);
 }

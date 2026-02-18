@@ -10,9 +10,7 @@ $my-dark-palette: palette(
 
 $my-dark-color: color($my-dark-palette, 'surface');
 
-$dark-button-theme: button-theme(
-  $background: color($my-dark-palette, 'secondary'),
-  $hover-background: color($my-dark-palette, 'gray', 100),
+$dark-button-theme: flat-button-theme(
   $hover-foreground: color($my-dark-palette, 'secondary')
 );
 
@@ -33,16 +31,14 @@ $dark-checkbox-theme: checkbox-theme(
 
 igx-grid {
   @include palette($my-dark-palette);
+  @include tokens($dark-grid-toolbar-theme);
+  @include tokens($dark-column-actions-theme);
+  @include tokens($dark-checkbox-theme);
+  @include tokens($dark-button-theme);
 }
 
-@include css-vars($dark-grid-toolbar-theme);
-
-:host { 
+:host {
   ::ng-deep {
-    @include css-vars($dark-column-actions-theme);
-    @include css-vars($dark-checkbox-theme);
-    @include css-vars($dark-button-theme);
-    
     .igx-grid-toolbar__actions {
       .igx-button--outlined {
         margin-left: 0.5rem;
