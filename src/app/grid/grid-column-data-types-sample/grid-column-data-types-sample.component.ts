@@ -10,7 +10,7 @@ import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxPrefixD
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxColumnComponent, IgxTimeSummaryOperand } from 'igniteui-angular/grids/core';
 import { FormsModule } from "@angular/forms";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
 
@@ -21,6 +21,7 @@ import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scro
     imports: [IgxSelectComponent, FormsModule, IgxPrefixDirective, IgxSelectItemComponent, IgxHintDirective, IgxSuffixDirective, IgxIconComponent, IgxInputGroupComponent, IgxTooltipTargetDirective, IgxTooltipDirective, IgxInputDirective, NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridColumnDataTypesSampleComponent implements OnInit {
+    public IgxTimeSummaryOperand = IgxTimeSummaryOperand;
 
     public digitsInfoMessage: string = 'Applicable to number, currency and percent type columns';
 
@@ -58,27 +59,21 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
         { format: "fullTime", eq: "'h:mm:ss a zzzz'"},
     ];
 
-    // Different timezones
-    public timezoneFormats = ["GMT", "UTC+9:30/ +10:30", "UTC+0", "UTC-6", "UTC+1", "UTC+3" ];
-
     // DateTime options
     public dateTimeOptions = {
-        format: 'long',
-        timezone: 'UTC+0'
+        format: 'long'
     };
     public formatDateTimeOptions = this.dateTimeOptions;
 
     // Date options
     public dateOptions = {
-        format: 'mediumDate',
-        timezone: 'UTC+0'
+        format: 'mediumDate'
     };
     public formatDateOptions = this.dateOptions;
 
     // Time options
     public timeOptions = {
-        format: 'shortTime',
-        timezone: 'UTC+0'
+        format: 'shortTime'
     };
     public formatTimeOptions = this.timeOptions;
 
@@ -267,11 +262,6 @@ export class GridColumnDataTypesSampleComponent implements OnInit {
     public selectionTimeChanging(event) {
         this.timeOptions.format = event.newSelection.value;
         this.formatTimeOptions = Object.assign({}, this.formatTimeOptions, this.timeOptions);
-    }
-
-    public timezoneSelectionChanging(event) {
-        this.dateTimeOptions.timezone = event.newSelection.value;
-        this.formatDateTimeOptions = Object.assign({}, this.formatDateTimeOptions, this.dateTimeOptions);
     }
 
     public currencySelectionChanging(event) {
