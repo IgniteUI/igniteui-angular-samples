@@ -7,5 +7,6 @@ $dark-snackbar: snackbar-theme(
   $border-radius: 12px
 );
 
-@include css-vars($dark-snackbar);
- 
+:host {
+  @include tokens($dark-snackbar);
+}

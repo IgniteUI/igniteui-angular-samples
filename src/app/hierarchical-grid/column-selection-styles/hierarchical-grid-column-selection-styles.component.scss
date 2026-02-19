@@ -9,7 +9,6 @@ $custom-grid-theme: grid-theme(
   $header-selected-background: #011627
 );
 
-:host ::ng-deep{
-  @include css-vars($custom-grid-theme);
+:host {
+  @include tokens($custom-grid-theme);
 }
- 

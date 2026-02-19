@@ -20,7 +20,7 @@ $custom-navbar-theme: navbar-theme(
     $background: #f8f9fa,
 );
 
-$custom-button-theme: button-theme(
+$custom-button-theme: flat-button-theme(
     $foreground: #666,
     $hover-foreground: #0099ff,
     $focus-foreground: #0099ff,
@@ -31,9 +31,9 @@ $custom-button-theme: button-theme(
     $active-background: transparent,
 );
 
-:host::ng-deep {
+:host {
     --ig-button-font-size: 0.75rem;
 
-    @include css-vars($custom-navbar-theme);
-    @include css-vars($custom-button-theme);
+    @include tokens($custom-navbar-theme);
+    @include tokens($custom-button-theme);
 }

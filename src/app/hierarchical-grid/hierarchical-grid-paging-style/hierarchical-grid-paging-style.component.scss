@@ -55,16 +55,14 @@ $dark-drop-down-theme: drop-down-theme(
   $selected-hover-item-text-color: $dark-gray
 );
 
-@include css-vars($dark-paginator);
 
 :host {
-  ::ng-deep {
-    @include css-vars($dark-drop-down-theme);
+    @include tokens($dark-drop-down-theme);
+    @include tokens($dark-paginator);
 
     igx-paginator {
-      @include css-vars($dark-button);
-      @include css-vars($dark-input-group);
-      @include css-vars($dark-select);
+        @include tokens($dark-button);
+        @include tokens($dark-input-group);
+        @include tokens($dark-select);
     }
-  }
 }

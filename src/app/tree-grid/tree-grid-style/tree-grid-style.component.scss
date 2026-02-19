@@ -14,5 +14,6 @@ $custom-theme: grid-theme(
   $row-highlight: #ffcd0f
 );
 
-@include css-vars($custom-theme);
- 
+:host {
+  @include tokens($custom-theme);
+}

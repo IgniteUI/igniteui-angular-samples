@@ -16,8 +16,8 @@ $progressBar-sample-theme: progress-linear-theme(
 
 ::ng-deep .default-theme {
     .grid__wrapper {
-        @include css-vars($grid-sample-theme);
-        @include css-vars($progressBar-sample-theme);
+        @include tokens($grid-sample-theme);
+        @include tokens($progressBar-sample-theme);
     }
 }
 

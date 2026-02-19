@@ -5,4 +5,6 @@ $my-list-theme: list-theme(
     $background: #57a5cd
 );
 
-@include css-vars($my-list-theme);
+:host {
+    @include tokens($my-list-theme);
+}

@@ -6,4 +6,6 @@ $my-calendar-theme: calendar-theme(
   $content-background: #57a5cd,
 );
 
-@include css-vars($my-calendar-theme);
+:host {
+  @include tokens($my-calendar-theme);
+}
