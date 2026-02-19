@@ -6,4 +6,6 @@ $custom-theme: progress-linear-theme(
   $text-color: #ecaa53,
 );
 
-@include css-vars($custom-theme);
+:host {
+    @include tokens($custom-theme);
+}

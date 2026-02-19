@@ -129,7 +129,7 @@ $black-input-group-theme: input-group-theme(
 );
 
 // Define light theme for the button
-$light-button-theme: button-theme(
+$light-button-theme: flat-button-theme(
   $foreground: color($light-theme-palette, "secondary", 700),
   $hover-foreground: color($light-theme-palette, "primary", 500),
   $hover-background: color($light-theme-palette, "secondary", 100),
@@ -138,7 +138,7 @@ $light-button-theme: button-theme(
 );
 
 // Define dark theme for the button
-$dark-button-theme: button-theme(
+$dark-button-theme: flat-button-theme(
   $foreground: color($dark-theme-palette, "secondary", 700),
   $hover-foreground: color($dark-theme-palette, "primary", 500),
   $hover-background: color($dark-theme-palette, "secondary", 500),
@@ -149,7 +149,7 @@ $dark-button-theme: button-theme(
 );
 
 // Define black theme for the button
-$black-button-theme: button-theme(
+$black-button-theme: flat-button-theme(
   $schema: $my-black-schema
 );
 

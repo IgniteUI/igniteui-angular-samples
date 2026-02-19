@@ -232,10 +232,10 @@ $list: (
 // );
 
 // .button-sample {
-//     @include css-vars($custom-contained-theme);
-//     @include css-vars($custom-outlined-theme);
+//     @include tokens($custom-contained-theme);
+//     @include tokens($custom-outlined-theme);
 // }
 
 // .button-sample.filled {
-//     @include css-vars($custom-flat-theme);
+//     @include tokens($custom-flat-theme);
 // }

@@ -7,18 +7,18 @@
     &.dark-theme {
         background: $dark-color;
         ::ng-deep {
-          @include css-vars($dark-grid-theme);
-          @include css-vars($dark-paginator-theme);
-          @include css-vars($dark-dialog-theme);
-          @include css-vars($dark-input-group-theme);
-          @include css-vars($dark-snackbar-theme);
-          @include css-vars($dark-button-theme);
-          @include css-vars($dark-button-group-theme);
-          @include css-vars($dark-calendar-theme);
-          @include css-vars($dark-chip-theme);
-          @include css-vars($dark-icon-theme);
-          @include css-vars($dark-drop-down-theme);
-          @include css-vars($dark-badge-theme);
+          @include tokens($dark-grid-theme);
+          @include tokens($dark-paginator-theme);
+          @include tokens($dark-dialog-theme);
+          @include tokens($dark-input-group-theme);
+          @include tokens($dark-snackbar-theme);
+          @include tokens($dark-button-theme);
+          @include tokens($dark-button-group-theme);
+          @include tokens($dark-calendar-theme);
+          @include tokens($dark-chip-theme);
+          @include tokens($dark-icon-theme);
+          @include tokens($dark-drop-down-theme);
+          @include tokens($dark-badge-theme);
         }
       }
 }

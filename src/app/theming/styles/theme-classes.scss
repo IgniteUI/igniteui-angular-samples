@@ -13,18 +13,18 @@
         .sort-icon.material-icons.igx-icon {
             color: white;
         }
-        @include css-vars($light-grid-theme);
-        @include css-vars($light-snackbar-theme);
-        @include css-vars($light-input-group-theme);
-        @include css-vars($light-paginator-theme);
-        @include css-vars($light-button-theme);
-        @include css-vars($light-dialog-theme);
-        @include css-vars($light-button-group-theme);
-        @include css-vars($light-calendar-theme);
-        @include css-vars($light-icon-theme);
-        @include css-vars($light-chip-theme);
-        @include css-vars($light-drop-down-theme);
-        @include css-vars($light-badge-theme);
+        @include tokens($light-grid-theme);
+        @include tokens($light-snackbar-theme);
+        @include tokens($light-input-group-theme);
+        @include tokens($light-paginator-theme);
+        @include tokens($light-button-theme);
+        @include tokens($light-dialog-theme);
+        @include tokens($light-button-group-theme);
+        @include tokens($light-calendar-theme);
+        @include tokens($light-icon-theme);
+        @include tokens($light-chip-theme);
+        @include tokens($light-drop-down-theme);
+        @include tokens($light-badge-theme);
       }
     }
 
@@ -32,18 +32,18 @@
     &.dark-theme {
       background: $dark-color;
       ::ng-deep {
-        @include css-vars($dark-grid-theme);
-        @include css-vars($dark-snackbar-theme);
-        @include css-vars($dark-input-group-theme);
-        @include css-vars($dark-paginator-theme);
-        @include css-vars($dark-button-theme);
-        @include css-vars($dark-dialog-theme);
-        @include css-vars($dark-button-group-theme);
-        @include css-vars($dark-calendar-theme);
-        @include css-vars($dark-icon-theme);
-        @include css-vars($dark-chip-theme);
-        @include css-vars($dark-drop-down-theme);
-        @include css-vars($dark-badge-theme);
+        @include tokens($dark-grid-theme);
+        @include tokens($dark-snackbar-theme);
+        @include tokens($dark-input-group-theme);
+        @include tokens($dark-paginator-theme);
+        @include tokens($dark-button-theme);
+        @include tokens($dark-dialog-theme);
+        @include tokens($dark-button-group-theme);
+        @include tokens($dark-calendar-theme);
+        @include tokens($dark-icon-theme);
+        @include tokens($dark-chip-theme);
+        @include tokens($dark-drop-down-theme);
+        @include tokens($dark-badge-theme);
       }
     }
 
@@ -51,18 +51,18 @@
     &.black-theme {
       background: $black-color;
       ::ng-deep {
-        @include css-vars($black-grid-theme);
-        @include css-vars($black-snackbar-theme);
-        @include css-vars($black-input-group-theme);
-        @include css-vars($black-paginator-theme);
-        @include css-vars($black-button-theme);
-        @include css-vars($black-dialog-theme);
-        @include css-vars($black-button-group-theme);
-        @include css-vars($black-calendar-theme);
-        @include css-vars($black-icon-theme);
-        @include css-vars($black-chip-theme);
-        @include css-vars($black-drop-down-theme);
-        @include css-vars($black-badge-theme);
+        @include tokens($black-grid-theme);
+        @include tokens($black-snackbar-theme);
+        @include tokens($black-input-group-theme);
+        @include tokens($black-paginator-theme);
+        @include tokens($black-button-theme);
+        @include tokens($black-dialog-theme);
+        @include tokens($black-button-group-theme);
+        @include tokens($black-calendar-theme);
+        @include tokens($black-icon-theme);
+        @include tokens($black-chip-theme);
+        @include tokens($black-drop-down-theme);
+        @include tokens($black-badge-theme);
 
         .igx-drop-down__list{
             background: $black-color;

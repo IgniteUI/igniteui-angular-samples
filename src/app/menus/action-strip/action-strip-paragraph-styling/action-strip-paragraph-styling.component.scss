@@ -7,4 +7,6 @@ $custom-strip: action-strip-theme(
   $actions-border-radius: 0,
 );
 
-@include css-vars($custom-strip);
+:host {
+  @include tokens($custom-strip);
+}

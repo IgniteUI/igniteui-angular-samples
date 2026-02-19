@@ -7,4 +7,6 @@ $custom-toast-theme: toast-theme(
   $border-radius: 12px
 );
 
-@include css-vars($custom-toast-theme);
+:host {
+  @include tokens($custom-toast-theme);
+}
