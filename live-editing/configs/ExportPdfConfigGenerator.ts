@@ -14,6 +14,7 @@ export class ExportPdfConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'ExportPdfCustomFontComponent',
+            additionalFiles: ['/src/assets/fonts/noto-sans.json', '/src/assets/fonts/OFL.txt'],
             appConfig: BaseAppConfig
         }));
 
