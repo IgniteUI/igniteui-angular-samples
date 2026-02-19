@@ -12,6 +12,11 @@ export class ExportPdfConfigGenerator implements IConfigGenerator {
             appConfig: BaseAppConfig
         }));
 
+        configs.push(new Config({
+            component: 'ExportPdfCustomFontComponent',
+            appConfig: BaseAppConfig
+        }));
+
         return configs;
     }
 }
