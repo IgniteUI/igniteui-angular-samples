@@ -6,7 +6,5 @@ $custom-datepicker-theme: calendar-theme(
 );
 
 :host {
-  ::ng-deep {
-    @include css-vars($custom-datepicker-theme);
-  }
+    @include tokens($custom-datepicker-theme);
 }

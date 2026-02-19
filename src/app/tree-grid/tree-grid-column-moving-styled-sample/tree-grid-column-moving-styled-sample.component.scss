@@ -7,5 +7,6 @@ $dark-grid-column-moving-theme: grid-theme(
   $ghost-header-icon-color: #f4bb5c
 );
 
-@include css-vars($dark-grid-column-moving-theme);
- 
+:host {
+  @include tokens($dark-grid-column-moving-theme);
+}

@@ -20,7 +20,7 @@ $dark-input-group: input-group-theme(
   $filled-text-color: $bg
 );
 
-$dark-button: button-theme(
+$dark-button: flat-button-theme(
   $background: $yellow,
   $foreground: $bg,
   $hover-background: $bg,
@@ -40,15 +40,9 @@ $dark-drop-down-theme: drop-down-theme(
   $selected-hover-item-text-color: $bg
 );
 
-@include css-vars($custom-grid);
-
 :host {
-  ::ng-deep {
-    @include css-vars($dark-drop-down-theme);
-    igx-grid-filtering-row {
-      @include css-vars($dark-button);
-      @include css-vars($dark-input-group);
-    }
-  }
+    @include tokens($custom-grid);
+    @include tokens($dark-drop-down-theme);
+    @include tokens($dark-input-group);
+    @include tokens($dark-button);
 }
- 

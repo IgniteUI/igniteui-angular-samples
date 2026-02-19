@@ -7,4 +7,6 @@ $custom-slider-theme: slider-theme(
   $tick-color: #b246c2
 );
 
-@include css-vars($custom-slider-theme);
+:host {
+    @include tokens($custom-slider-theme);
+}

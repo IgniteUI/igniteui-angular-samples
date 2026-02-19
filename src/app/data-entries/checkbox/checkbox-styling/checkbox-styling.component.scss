@@ -31,6 +31,7 @@ igx-checkbox:hover {
 //     $empty-color: #131e29,
 //     $border-radius: rem(4px),
 // );
-//
-// @include css-vars($custom-checkbox-theme);
-//
+
+// :host {
+//     @include tokens($custom-checkbox-theme);
+// }

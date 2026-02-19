@@ -1,35 +1,35 @@
 @use '../../../../variables' as *;
 
-$flatBtn: button-theme(
+$flatBtn: flat-button-theme(
     $border-radius: .5
 );
 
-$containedBtn: button-theme(
+$containedBtn: contained-button-theme(
     $border-radius: 30px
 );
 
-$fabBtn: button-theme(
+$fabBtn: fab-button-theme(
     $border-radius: 10%
 );
 
-$iconBtn: icon-button-theme(
+$iconBtn: flat-icon-button-theme(
     $border-radius: 12px
 );
 
 .flat {
-    @include css-vars($flatBtn);
+    @include tokens($flatBtn);
 }
 
 .contained {
-    @include css-vars($containedBtn);
+    @include tokens($containedBtn);
 }
 
 .fab {
-    @include css-vars($fabBtn);
+    @include tokens($fabBtn);
 }
 
 .icon {
-    @include css-vars($iconBtn);
+    @include tokens($iconBtn);
 }
 
 .buttons-sample {

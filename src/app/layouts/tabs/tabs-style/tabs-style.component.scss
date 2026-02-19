@@ -6,5 +6,6 @@ $dark-tabs: tabs-theme(
   $item-active-color: #F4D45C,
 );
 
-@include css-vars($dark-tabs);
-
+:host {
+  @include tokens($dark-tabs);
+}

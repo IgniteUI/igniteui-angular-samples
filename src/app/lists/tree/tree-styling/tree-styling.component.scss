@@ -5,4 +5,6 @@ $custom-tree-theme: tree-theme(
   $background: #ecaa53,
 );
 
-@include css-vars($custom-tree-theme);
+:host {
+    @include tokens($custom-tree-theme);
+}

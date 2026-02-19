@@ -6,5 +6,6 @@ $dark-tooltip: tooltip-theme(
   $border-radius: 6px,
 );
 
-@include css-vars($dark-tooltip);
- 
+:host {
+    @include tokens($dark-tooltip);
+}
