@@ -95,7 +95,7 @@ $item-selected-text-color: color($dark-theme-palette, "secondary", 500)
 );
 
 // Define dark theme for the button
-$dark-button-theme: button-theme(
+$dark-button-theme: flat-button-theme(
 $foreground: color($dark-theme-palette, "secondary", 700),
 $hover-foreground: color($dark-theme-palette, "primary", 500),
 $hover-background: color($dark-theme-palette, "secondary", 500),

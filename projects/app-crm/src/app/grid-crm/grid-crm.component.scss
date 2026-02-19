@@ -315,7 +315,7 @@
         $cell-active-border-color: color($color: 'gray', $variant: 900),
     );
 
-    $crm-grid-dark-button: button-theme(
+    $crm-grid-dark-button: flat-button-theme(
         $foreground: color($color: 'primary', $variant: 500),
         $hover-foreground: color($color: 'primary', $variant: 500),
         $focus-foreground: color($color: 'primary', $variant: 500),
