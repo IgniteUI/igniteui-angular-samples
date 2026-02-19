@@ -50,8 +50,11 @@ $dark-ripple-theme: ripple-theme(
 :host {
     @include tokens($dark-column-actions-theme);
     @include tokens($dark-radio-theme);
-    @include tokens($dark-button-theme);
-    @include tokens($dark-checkbox-theme);
-    @include tokens($dark-input-group);
-    @include tokens($dark-ripple-theme);
+
+    igx-column-actions, igx-grid-toolbar {
+        @include tokens($dark-button-theme);
+        @include tokens($dark-checkbox-theme);
+        @include tokens($dark-input-group);
+        @include tokens($dark-ripple-theme);
+    }
 }
