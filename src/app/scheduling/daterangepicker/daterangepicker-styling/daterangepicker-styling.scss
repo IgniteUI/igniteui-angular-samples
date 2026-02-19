@@ -39,9 +39,7 @@ $custom-calendar-theme: calendar-theme(
   display: block;
   padding: 1rem;
 
-  ::ng-deep {
-    @include css-vars($custom-date-range-theme);
-    @include css-vars($custom-input-group-theme);
-    @include css-vars($custom-calendar-theme);
-  }
+  @include tokens($custom-date-range-theme);
+  @include tokens($custom-input-group-theme);
+  @include tokens($custom-calendar-theme);
 }

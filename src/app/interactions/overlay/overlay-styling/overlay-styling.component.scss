@@ -10,8 +10,6 @@ $my-overlay-theme: overlay-theme(
 );
 
 :host {
-  ::ng-deep {
-    @include css-vars($my-overlay-theme);
-    @include css-vars($my-drop-down-theme);
-  }
+    @include tokens($my-overlay-theme);
+    @include tokens($my-drop-down-theme);
 }

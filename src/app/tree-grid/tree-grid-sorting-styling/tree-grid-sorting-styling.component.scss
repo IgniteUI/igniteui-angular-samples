@@ -6,5 +6,6 @@ $custom-theme: grid-theme(
   $sortable-header-icon-hover-color: black
 );
 
-@include css-vars($custom-theme);
- 
+:host {
+  @include tokens($custom-theme);
+}

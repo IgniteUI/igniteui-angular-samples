@@ -5,4 +5,6 @@ $custom-select-theme: select-theme(
   $toggle-button-background: #57a5cd,
 );
 
-@include css-vars($custom-select-theme);
+:host {
+  @include tokens($custom-select-theme);
+}

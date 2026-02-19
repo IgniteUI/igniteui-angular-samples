@@ -19,19 +19,14 @@ $dark-input-group: input-group-theme(
   $filled-text-color: $bg
 );
 
-$dark-button: button-theme(
-  $background: $yellow,
+$dark-button: flat-button-theme(
   $foreground: $bg,
-  $hover-background: $bg,
-  $hover-foreground: $yellow
 );
 
-:host {
-  ::ng-deep {
-    @include css-vars($custom-grid);
+:host ::ng-deep {
+    @include tokens($custom-grid);
     .igx-grid__filtering-row {
-      @include css-vars($dark-button);
-      @include css-vars($dark-input-group);  
+      @include tokens($dark-button);
+      @include tokens($dark-input-group);
     }
-  }
 }

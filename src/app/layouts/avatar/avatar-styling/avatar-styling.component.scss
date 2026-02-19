@@ -11,9 +11,9 @@ $icon-avatar-theme: avatar-theme(
 );
 
 .initials{
-  @include css-vars($initials-avatar-theme);
+  @include tokens($initials-avatar-theme);
 }
 
 .icon{
-  @include css-vars($icon-avatar-theme);
+  @include tokens($icon-avatar-theme);
 }

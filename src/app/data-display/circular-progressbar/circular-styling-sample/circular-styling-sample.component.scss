@@ -5,8 +5,7 @@ $custom-theme: progress-circular-theme(
   $diameter: 50px,
 );
 
-@include css-vars($custom-theme);
-
 igx-circular-bar {
+    @include tokens($custom-theme);
     margin: 20px;
 }

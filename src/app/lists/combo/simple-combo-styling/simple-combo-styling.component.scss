@@ -23,8 +23,7 @@ $custom-drop-down-theme: drop-down-theme(
   $selected-focus-item-text-color: #1a5214,
 );
 
-:host ::ng-deep {
-  @include css-vars($custom-simple-combo-theme);
-  @include css-vars($custom-drop-down-theme);
+:host {
+  @include tokens($custom-simple-combo-theme);
+  @include tokens($custom-drop-down-theme);
 }
- 

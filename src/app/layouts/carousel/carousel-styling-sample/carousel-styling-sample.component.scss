@@ -12,4 +12,6 @@ $custom-carousel-theme: carousel-theme(
 );
 
 // Apply the custom theme.
-@include css-vars($custom-carousel-theme); 
+:host {
+  @include tokens($custom-carousel-theme);
+}
