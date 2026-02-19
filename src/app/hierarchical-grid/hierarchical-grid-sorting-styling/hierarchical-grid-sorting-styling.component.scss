@@ -6,7 +6,6 @@ $custom-theme: grid-theme(
   $sortable-header-icon-hover-color: black
 );
 
-:host ::ng-deep {
-  @include css-vars($custom-theme);
+:host {
+  @include tokens($custom-theme);
 }
- 

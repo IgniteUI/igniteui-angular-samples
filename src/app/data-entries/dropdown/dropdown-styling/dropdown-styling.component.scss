@@ -8,6 +8,6 @@ $custom-drop-down-theme: drop-down-theme(
   $selected-item-background: #345779,
 );
 
-.drop-down__scroll-container {
-  @include css-vars($custom-drop-down-theme);
+:host {
+  @include tokens($custom-drop-down-theme);
 }
