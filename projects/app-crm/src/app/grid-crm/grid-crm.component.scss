@@ -32,14 +32,14 @@
         $title-text-color: contrast-color($color: 'primary', $variant: 500)
     );
 
-	$crm-grid-toolbar-button: button-theme(
+	$crm-grid-toolbar-button: outlined-button-theme(
         $background: color($light-palette, 'primary', 800),
         $hover-background: color($light-palette, 'primary', 900),
         $active-foreground: contrast-color($light-palette, 'primary', 900),
         $focus-foreground: contrast-color($light-palette, 'primary', 900)
     );
 
-	$crm-grid-search-button: button-theme(
+	$crm-grid-search-button: flat-icon-button-theme(
         $background: transparent,
         $focus-background: color($light-palette, 'gray', 200),
         $hover-background: color($light-palette, 'gray', 200)
@@ -110,7 +110,7 @@
 		width: 70%
 	}
 
-	@include css-vars($crm-grid-toolbar);
+	@include tokens($crm-grid-toolbar, $mode: 'scoped');
 
 	.igx-grid-toolbar__actions {
 		.igx-button--outlined {
@@ -139,7 +139,7 @@
 	}
 
 	.igx-grid-toolbar__actions {
-		@include css-vars($crm-grid-toolbar-button);
+		@include tokens($crm-grid-toolbar-button);
 	}
 
 	.crm-sample-toolbar__title {
@@ -205,7 +205,7 @@
 		box-shadow: none;
 	}
 
-    @include css-vars($crm-input-drop-down);
+	@include tokens($crm-input-drop-down, $mode: 'scoped');
 
 	.sample-flex-container {
 		.igx-input-group,
@@ -281,13 +281,13 @@
 	.igx-input-group--search .igx-input-group__bundle {
 		background-color: color($color: 'primary', $variant: 800);
 
-		@include css-vars($crm-grid-search-button);
+		@include tokens($crm-grid-search-button);
 	}
 
 	.grid__wrapper:not(.dark_grid) {
-		@include css-vars($crm-grid-theme);
-		@include css-vars($summary-theme);
-		@include css-vars($checkbox-theme);
+		@include tokens($crm-grid-theme);
+		@include tokens($summary-theme);
+		@include tokens($checkbox-theme);
 	}
 
 
@@ -327,13 +327,13 @@
 
 	.dark_grid {
         @include palette($dark-palette);
-		@include css-vars($checkbox-dark-theme);
-		@include css-vars($crm-dark-grid-theme);
-		@include css-vars($crm-grid-dark-button);
-		@include css-vars($crm-grid-dark-progress);
+		@include tokens($checkbox-dark-theme);
+		@include tokens($crm-dark-grid-theme);
+		@include tokens($crm-grid-dark-button);
+		@include tokens($crm-grid-dark-progress);
 
 		.igx-grid-toolbar__actions {
-			@include css-vars($crm-grid-toolbar-button);
+			@include tokens($crm-grid-toolbar-button);
 		}
 
         .sample-flex-container {
