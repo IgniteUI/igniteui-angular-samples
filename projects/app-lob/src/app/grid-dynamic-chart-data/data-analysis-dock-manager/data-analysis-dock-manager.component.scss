@@ -59,7 +59,7 @@ $custom-badge-theme: badge-theme(
     .selected {
         igx-badge {
             & {
-                @include css-vars($custom-badge-theme);
+                @include tokens($custom-badge-theme);
             }
 
             position: absolute;
@@ -96,8 +96,8 @@ $custom-badge-theme: badge-theme(
     }
 
     .analytics-btn {
-        @include css-vars(
-            button-theme(
+        @include tokens(
+            contained-button-theme(
                 $foreground: contrast-color($color: 'gray', $variant: 900),
                 $background: color($color: 'success', $variant: 500, $opacity: .8),
                 $hover-background: color($color: 'success'),

@@ -7,8 +7,8 @@ $custom-checkbox-theme: checkbox-theme(
     $border-radius: 10px
 );
 
-.list-sample ::ng-deep {
-    @include css-vars($custom-checkbox-theme);
+.list-sample {
+    @include tokens($custom-checkbox-theme);
 }
 
 .sample {
