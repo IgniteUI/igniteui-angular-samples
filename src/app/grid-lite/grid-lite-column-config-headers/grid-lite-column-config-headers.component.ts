@@ -16,45 +16,18 @@ defineComponents(IgcRatingComponent);
 })
 export class GridLiteColumnConfigHeadersComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: ProductInfo[] = [];
-  public columns: any[] = [];
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(50);
-    
-    this.columns = [
-      { 
-        key: 'name', 
-        headerText: 'Product Name' 
-      },
-      {
-        key: 'price',
-        headerText: 'Price (€)',
-        type: 'number'
-      },
-      { 
-        key: 'sold', 
-        type: 'number', 
-        headerText: 'Units Sold' 
-      },
-      { 
-        key: 'total', 
-        headerText: 'Total Revenue',
-        type: 'number'
-      },
-      {
-        key: 'rating',
-        type: 'number',
-        headerText: 'Customer Rating ⭐',
-        cellTemplate: (params: any) => {
-          const rating = document.createElement('igc-rating');
-          rating.setAttribute('readonly', '');
-          rating.setAttribute('step', '0.01');
-          rating.setAttribute('value', params.value.toString());
-          return rating;
-        }
-      }
-    ];
   }
+
+  protected ratingTemplate = (params: any) => {
+    const rating = document.createElement('igc-rating');
+    rating.setAttribute('readonly', '');
+    rating.setAttribute('step', '0.01');
+    rating.setAttribute('value', params.value.toString());
+    return rating;
+  };
 }

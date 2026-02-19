@@ -16,46 +16,21 @@ defineComponents(IgcCheckboxComponent);
 })
 export class GridLiteFilteringEventsComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: User[] = [];
-  public columns: any[] = [];
   public log: string[] = [];
 
   ngOnInit() {
     this.data = this.dataService.generateUsers(50);
-    
-    this.columns = [
-      { 
-        key: 'firstName', 
-        headerText: 'First name', 
-        filter: true 
-      },
-      { 
-        key: 'lastName', 
-        headerText: 'Last name', 
-        filter: true 
-      },
-      { 
-        key: 'age', 
-        headerText: 'Age', 
-        filter: true, 
-        type: 'number' 
-      },
-      {
-        key: 'active',
-        headerText: 'Active',
-        type: 'boolean',
-        filter: true,
-        cellTemplate: (params: any) => {
-          const checkbox = document.createElement('igc-checkbox');
-          if (params.value) {
-            checkbox.setAttribute('checked', '');
-          }
-          return checkbox;
-        }
-      }
-    ];
   }
+
+  protected checkboxTemplate = (params: any) => {
+    const checkbox = document.createElement('igc-checkbox');
+    if (params.value) {
+      checkbox.setAttribute('checked', '');
+    }
+    return checkbox;
+  };
 
   private get timeStamp(): string {
     return `[${new Date().toLocaleTimeString()}]`;
