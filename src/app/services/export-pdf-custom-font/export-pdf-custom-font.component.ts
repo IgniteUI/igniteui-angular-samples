@@ -1,16 +1,17 @@
-import { ChangeDetectionStrategy, Component, signal, computed, inject, viewChild, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, signal, computed, inject, viewChild } from '@angular/core';
 import { IgxColumnComponent, IgxPdfExporterService, IgxPdfExporterOptions } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
+import notoSansFontData from './fonts/noto-sans.json';
 
 /**
  * Demonstrates PDF export with a custom Unicode font.
  *
  * The sample ships with Noto Sans (Latin/Cyrillic/Greek) loaded from
- * assets/fonts/noto-sans.json. Users can also upload their own .ttf font —
+ * fonts/noto-sans.json. Users can also upload their own .ttf font —
  * for example Noto Sans CJK for Japanese/Chinese/Korean support.
  *
  * All Noto fonts are licensed under the SIL Open Font License 1.1
- * (see assets/fonts/OFL.txt).
+ * (see fonts/OFL.txt).
  */
 @Component({
     selector: 'app-export-pdf-custom-font',
@@ -19,7 +20,7 @@ import { IgxGridComponent } from 'igniteui-angular/grids/grid';
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [IgxGridComponent, IgxColumnComponent]
 })
-export class ExportPdfCustomFontComponent implements OnInit {
+export class ExportPdfCustomFontComponent {
     private pdfExporter = inject(IgxPdfExporterService);
 
     protected readonly grid = viewChild.required<IgxGridComponent>('grid');
@@ -48,32 +49,12 @@ export class ExportPdfCustomFontComponent implements OnInit {
         { Name: 'Ирина Петрова', City: 'Санкт-Петербург', Product: '製品 F', Amount: 2890 }
     ]);
 
-    public ngOnInit(): void {
-        this.loadBuiltInFont();
-    }
-
-    /** Loads the built-in Noto Sans font from application assets. */
-    private async loadBuiltInFont(): Promise<void> {
-        this.builtInFontLoading.set(true);
-        this.exportStatus.set('Loading built-in Noto Sans font…');
-
-        try {
-            const response = await fetch('assets/fonts/noto-sans.json');
-            if (!response.ok) {
-                throw new Error(`HTTP ${response.status}`);
-            }
-            const fontJson: { normal: string; bold: string } = await response.json();
-
-            this.builtInFontData = fontJson.normal;
-            this.builtInBoldFontData = fontJson.bold;
-            this.builtInFontLoaded.set(true);
-            this.exportStatus.set('Noto Sans loaded — ready to export. Upload a CJK font for Japanese/Chinese/Korean support.');
-        } catch (error) {
-            console.error('Failed to load built-in font:', error);
-            this.exportStatus.set('Failed to load built-in Noto Sans font.');
-        } finally {
-            this.builtInFontLoading.set(false);
-        }
+    constructor() {
+        const fontJson = notoSansFontData as unknown as { normal: string; bold: string };
+        this.builtInFontData = fontJson.normal;
+        this.builtInBoldFontData = fontJson.bold;
+        this.builtInFontLoaded.set(true);
+        this.exportStatus.set('Noto Sans loaded — ready to export. Upload a CJK font for Japanese/Chinese/Korean support.');
     }
 
     /** Handles the user uploading a custom .ttf font file. */
