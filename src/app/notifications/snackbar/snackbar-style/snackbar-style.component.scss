@@ -9,4 +9,6 @@ $dark-snackbar: snackbar-theme(
 
 :host {
   @include tokens($dark-snackbar);
+  display: block;
+  height: 100vh;
 }
