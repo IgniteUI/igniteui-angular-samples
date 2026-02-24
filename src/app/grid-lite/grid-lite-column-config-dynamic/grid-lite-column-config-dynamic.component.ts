@@ -61,6 +61,6 @@ export class GridLiteColumnConfigDynamicComponent implements OnInit {
     }
 
     toggleFormatters(event: any) {
-        this.hasFormatters = event.detail.checked;
+        this.hasFormatters = event.checked;
     }
 }
