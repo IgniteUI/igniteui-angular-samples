@@ -1,17 +1,20 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcButtonComponent } from 'igniteui-webcomponents';
-import { IgcGridLite } from 'igniteui-grid-lite';
 import { GridLiteDataService, ProductInfo, UserSimple } from '../grid-lite-data.service';
+import { IgxGridLiteComponent, IgxGridLiteColumnComponent } from 'igniteui-angular/grids/lite';
 
-IgcGridLite.register();
 defineComponents(IgcButtonComponent);
 
 @Component({
   selector: 'app-grid-lite-data-binding-dynamic',
   templateUrl: './grid-lite-data-binding-dynamic.component.html',
   styleUrls: ['./grid-lite-data-binding-dynamic.component.scss'],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    IgxGridLiteComponent,
+    IgxGridLiteColumnComponent
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridLiteDataBindingDynamicComponent implements OnInit {
