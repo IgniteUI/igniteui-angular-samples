@@ -1,17 +1,16 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
-import { IgcGridLite } from 'igniteui-grid-lite';
 import { GridLiteDataService, ProductInfo } from '../grid-lite-data.service';
+import { IgxGridLiteComponent, IgxGridLiteColumnComponent, IgxGridLiteCellTemplateDirective } from 'igniteui-angular/grids/lite';
 
-IgcGridLite.register();
 defineComponents(IgcRatingComponent);
 
 @Component({
   selector: 'app-grid-lite-column-config-simple',
   templateUrl: './grid-lite-column-config-simple.component.html',
   styleUrls: ['./grid-lite-column-config-simple.component.scss'],
-  imports: [CommonModule],
+  imports: [CommonModule, IgxGridLiteComponent, IgxGridLiteColumnComponent, IgxGridLiteCellTemplateDirective],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridLiteColumnConfigSimpleComponent implements OnInit {
@@ -30,13 +29,5 @@ export class GridLiteColumnConfigSimpleComponent implements OnInit {
 
   protected formatCurrency = (params: any) => {
     return this.formatter.format(params.value);
-  };
-
-  protected ratingTemplate = (params: any) => {
-    const rating = document.createElement('igc-rating');
-    rating.setAttribute('readonly', '');
-    rating.setAttribute('step', '0.01');
-    rating.setAttribute('value', params.value.toString());
-    return rating;
   };
 }
