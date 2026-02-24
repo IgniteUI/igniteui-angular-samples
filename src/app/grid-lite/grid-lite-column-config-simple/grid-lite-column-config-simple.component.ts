@@ -27,7 +27,7 @@ export class GridLiteColumnConfigSimpleComponent implements OnInit {
     this.data = this.dataService.generateProducts(50);
   }
 
-  protected formatCurrency = (params: any) => {
-    return this.formatter.format(params.value);
+  protected formatCurrency = (value: number) => {
+    return this.formatter.format(value);
   };
 }
