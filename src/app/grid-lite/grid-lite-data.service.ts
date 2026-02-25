@@ -137,7 +137,7 @@ export class GridLiteDataService {
       role: this.randomElement(this.roles),
       location: this.randomElement(this.locations),
       manager: `${this.randomElement(this.maleFirstNames)} ${this.randomElement(this.lastNames)}`,
-      employmentType: this.randomElement(this.employmentTypes),
+      employmentType: this.randomElement(this.employmentTypes)
     };
   }
 
