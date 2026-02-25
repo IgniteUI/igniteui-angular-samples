@@ -7,7 +7,7 @@ export const GridfinjsRoutes: Routes = [
     {
         component: FinJSDemoComponent,
         data: gridfinjsRoutesData['grid-finjs-sample'],
-        path: ''
+        path: 'grid-finjs-sample'
     },
     {
         component: GridFinJSComponent,
