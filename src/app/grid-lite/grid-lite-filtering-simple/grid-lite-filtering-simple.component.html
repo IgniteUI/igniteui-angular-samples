@@ -5,8 +5,7 @@
     <igx-grid-lite-column field="age" header="Age" dataType="number" filterable></igx-grid-lite-column>
     <igx-grid-lite-column field="active" header="Active" dataType="boolean" filterable>
       <ng-template igxGridLiteCell let-value>
-        <igx-checkbox [checked]="value" [readonly]="true">
-        </igx-checkbox>
+        <igx-checkbox [checked]="value" [readonly]="true"></igx-checkbox>
       </ng-template>
     </igx-grid-lite-column>
   </igx-grid-lite>

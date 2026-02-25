@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { defineComponents, IgcCheckboxComponent } from 'igniteui-webcomponents';
 import { GridLiteDataService, User } from '../grid-lite-data.service';
 import { IgxGridLiteComponent, IgxGridLiteColumnComponent, IgxGridLiteCellTemplateDirective } from 'igniteui-angular/grids/lite';
-import { IgxCheckboxComponent } from 'igniteui-angular';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 
 defineComponents(IgcCheckboxComponent);
 
