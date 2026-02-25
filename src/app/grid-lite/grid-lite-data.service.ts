@@ -27,11 +27,7 @@ export type User = {
   priority: 'Low' | 'Standard' | 'High';
   satisfaction: number;
   registeredAt: Date;
-  // HR-style fields
   department: string;
-  role: string;
-  location: string;
-  manager: string;
   employmentType: 'Full-Time' | 'Part-Time' | 'Contract';
 };
 
@@ -51,8 +47,6 @@ export class GridLiteDataService {
 
   // HR-style data arrays
   private departments = ['Engineering', 'Marketing', 'Sales', 'Finance'];
-  private roles = ['Developer', 'Designer', 'Manager', 'Analyst', 'Recruiter', 'Accountant', 'Sales Rep', 'Support Specialist'];
-  private locations = ['New York', 'London', 'Tokyo', 'Berlin', 'Paris', 'Sydney', 'Toronto', 'San Francisco'];
   private employmentTypes: ('Full-Time' | 'Part-Time' | 'Contract')[] = ['Full-Time', 'Part-Time', 'Contract'];
 
   private randomFirstName(): { name: string; gender: 'men' | 'women' } {
@@ -131,12 +125,7 @@ export class GridLiteDataService {
       priority: this.randomElement(this.priorities),
       satisfaction: this.randomInt(0, 5),
       registeredAt: new Date(Date.now() - this.randomInt(0, 365 * 24 * 60 * 60 * 1000)),
-
-      // HR-style columns
       department: this.randomElement(this.departments),
-      role: this.randomElement(this.roles),
-      location: this.randomElement(this.locations),
-      manager: `${this.randomElement(this.maleFirstNames)} ${this.randomElement(this.lastNames)}`,
       employmentType: this.randomElement(this.employmentTypes)
     };
   }
