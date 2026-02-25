@@ -12,6 +12,12 @@ export class ExportPdfConfigGenerator implements IConfigGenerator {
             appConfig: BaseAppConfig
         }));
 
+        configs.push(new Config({
+            component: 'ExportPdfCustomFontComponent',
+            additionalFiles: ['/src/app/services/export-pdf-custom-font/fonts/noto-sans.json', '/src/app/services/export-pdf-custom-font/fonts/OFL.txt'],
+            appConfig: BaseAppConfig
+        }));
+
         return configs;
     }
 }

@@ -2,11 +2,13 @@
 import { Component, inject } from '@angular/core';
 
 import { CsvFileTypes, IgxCsvExporterOptions, IgxCsvExporterService } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-csv-export',
     styleUrls: ['./csv-export.component.scss'],
-    templateUrl: './csv-export.component.html'
+    templateUrl: './csv-export.component.html',
+    imports: [IgxButtonDirective]
 })
 export class CsvExportComponent {
   private csvExportService = inject(IgxCsvExporterService);
