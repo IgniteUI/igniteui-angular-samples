@@ -1,21 +1,16 @@
 <div class="grid-lite-wrapper">
-  <section class="theme-switcher">
-    <igc-switch
-      [checked]="theme === 'light'"
-      (igcChange)="switchTheme()"
-      label-position="before">
-      Switch to {{ theme === 'dark' ? 'light' : 'dark' }} theme
-    </igc-switch>
-  </section>
-  
-  <igc-grid-lite 
-    [class.custom-light]="theme === 'light'"
-    [class.custom-dark]="theme === 'dark'"
-    [data]="data">
-    <igc-grid-lite-column field="name" header="Product" sortable filterable></igc-grid-lite-column>
-    <igc-grid-lite-column field="price" header="Price" data-type="number" sortable filterable></igc-grid-lite-column>
-    <igc-grid-lite-column field="sold" header="Sold" data-type="number" sortable filterable></igc-grid-lite-column>
-    <igc-grid-lite-column field="total" header="Total" data-type="number" sortable filterable></igc-grid-lite-column>
-    <igc-grid-lite-column field="rating" header="Rating" data-type="number" sortable filterable></igc-grid-lite-column>
-  </igc-grid-lite>
+    <section class="theme-switcher">
+        <igx-switch labelPosition="before" [checked]="theme === 'light'" (change)="switchTheme()">
+             Switch to {{ theme === 'dark' ? 'light' : 'dark' }} theme
+        </igx-switch>
+    </section>
+
+    <igx-grid-lite [class.custom-light]="theme === 'light'" [class.custom-dark]="theme === 'dark'" [data]="data">
+        <igx-grid-lite-column field="name" header="Product" sortable filterable></igx-grid-lite-column>
+        <igx-grid-lite-column field="price" header="Price" dataType="number" sortable filterable></igx-grid-lite-column>
+        <igx-grid-lite-column field="sold" header="Sold" dataType="number" sortable filterable></igx-grid-lite-column>
+        <igx-grid-lite-column field="total" header="Total" dataType="number" sortable filterable></igx-grid-lite-column>
+        <igx-grid-lite-column field="rating" header="Rating" dataType="number" sortable
+            filterable></igx-grid-lite-column>
+    </igx-grid-lite>
 </div>
