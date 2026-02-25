@@ -2,11 +2,13 @@
 import { Component, inject } from '@angular/core';
 
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular/grids/core';
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-excel-export',
     styleUrls: ['./excel-export.component.scss'],
-    templateUrl: './excel-export.component.html'
+    templateUrl: './excel-export.component.html',
+    imports: [IgxButtonDirective]
 })
 export class ExcelExportComponent {
   private excelExportService = inject(IgxExcelExporterService);

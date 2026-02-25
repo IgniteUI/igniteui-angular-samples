@@ -16,59 +16,27 @@ defineComponents(IgcRatingComponent);
 })
 export class GridLiteColumnConfigSimpleComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
-  public data: ProductInfo[] = [];
-  public columns: any[] = [];
 
-  private formatter = new Intl.NumberFormat('en-EN', {
+  public data: ProductInfo[] = [];
+
+  public formatter = new Intl.NumberFormat('en-150', {
     style: 'currency',
     currency: 'EUR'
   });
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(50);
-    
-    this.columns = [
-      { 
-        key: 'name', 
-        headerText: 'Product Name' 
-      },
-      {
-        key: 'price',
-        headerText: 'Price',
-        type: 'number',
-        cellTemplate: (params: any) => {
-          const span = document.createElement('span');
-          span.textContent = this.formatter.format(params.value);
-          return span;
-        }
-      },
-      { 
-        key: 'sold', 
-        type: 'number', 
-        headerText: 'Units sold' 
-      },
-      { 
-        key: 'total', 
-        headerText: 'Total sold',
-        cellTemplate: (params: any) => {
-          const span = document.createElement('span');
-          span.textContent = this.formatter.format(params.value);
-          return span;
-        }
-      },
-      {
-        key: 'rating',
-        type: 'number',
-        headerText: 'Customer rating',
-        cellTemplate: (params: any) => {
-          const rating = document.createElement('igc-rating');
-          rating.setAttribute('readonly', '');
-          rating.setAttribute('step', '0.01');
-          rating.setAttribute('value', params.value.toString());
-          return rating;
-        }
-      }
-    ];
   }
+
+  protected formatCurrency = (params: any) => {
+    return this.formatter.format(params.value);
+  };
+
+  protected ratingTemplate = (params: any) => {
+    const rating = document.createElement('igc-rating');
+    rating.setAttribute('readonly', '');
+    rating.setAttribute('step', '0.01');
+    rating.setAttribute('value', params.value.toString());
+    return rating;
+  };
 }

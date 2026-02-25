@@ -11,5 +11,6 @@ $custom-grid-theme: grid-theme(
   $cell-selected-background: $background-color,
 );
 
-@include css-vars($custom-grid-theme);
- 
+:host {
+  @include tokens($custom-grid-theme);
+}

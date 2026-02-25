@@ -8,4 +8,6 @@ $splitter-theme: splitter-theme(
   $size: 4px
 );
 
-@include css-vars($splitter-theme);
+:host {
+  @include tokens($splitter-theme);
+}

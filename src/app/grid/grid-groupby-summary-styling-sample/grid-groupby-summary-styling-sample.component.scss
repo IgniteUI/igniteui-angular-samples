@@ -18,6 +18,6 @@ $custom-theme: grid-summary-theme(
             --summaries-patch-background: #{$summaries-background};
         }
 
-        @include css-vars($custom-theme);
+        @include tokens($custom-theme);
     }
 }

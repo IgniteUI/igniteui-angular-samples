@@ -1,6 +1,10 @@
 <div class="grid-lite-wrapper">
-  <igc-grid-lite 
-    [columns]="columns" 
-    [data]="data">
+  <igc-grid-lite [data]="data">
+    <igc-grid-lite-column field="avatar" header="Avatar" [cellTemplate]="avatarTemplate"></igc-grid-lite-column>
+    <igc-grid-lite-column field="firstName" header="First name" sortable filterable resizable></igc-grid-lite-column>
+    <igc-grid-lite-column field="lastName" header="Last name" sortable filterable resizable></igc-grid-lite-column>
+    <igc-grid-lite-column field="email" header="Email Address"></igc-grid-lite-column>
+    <igc-grid-lite-column field="satisfaction" header="Satisfaction rating" data-type="number" sortable filterable [cellTemplate]="satisfactionTemplate"></igc-grid-lite-column>
+    <igc-grid-lite-column field="registeredAt" header="Registered @" sortable [cellTemplate]="registeredAtTemplate"></igc-grid-lite-column>
   </igc-grid-lite>
 </div>

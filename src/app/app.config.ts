@@ -7,6 +7,7 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { provideRouter } from "@angular/router";
 import { AppRoutes } from "./app.routes";
 import { OverflowService } from "./services/overflow.service";
+import { provideIgniteIntl } from "igniteui-angular";
 
 export const AppConfig: ApplicationConfig = {
     providers: [
@@ -19,6 +20,7 @@ export const AppConfig: ApplicationConfig = {
         provideHttpClient(withInterceptorsFromDi(), withFetch()),
         provideAnimations(),
         provideRouter(AppRoutes),
-        OverflowService, provideClientHydration(withEventReplay())
+        OverflowService, provideClientHydration(withEventReplay()),
+        provideIgniteIntl()
     ]
 };

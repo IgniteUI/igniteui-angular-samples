@@ -38,6 +38,7 @@ export const interactionsRoutesData = {
     'tooltip-rich': { displayName: 'Rich Tooltip', parentName: 'Tooltip' },
     'tooltip-placement': { displayName: 'Tooltip Placement', parentName: 'Tooltip' },
     'tooltip-advanced': { displayName: 'Advanced Tooltip', parentName: 'Tooltip' },
+    'tooltip-triggers': { displayName: 'Tooltip Triggers', parentName: 'Tooltip' },
     'tooltip-style': { displayName: 'Tooltip Style', parentName: 'Tooltip' },
     'tooltip-tailwind-style': { displayName: 'Tooltip Tailwind Style', parentName: 'Tooltip' },
     'overlay-sample-main-1': { displayName: 'Overlay Main Sample 1', parentName: 'Overlay' },

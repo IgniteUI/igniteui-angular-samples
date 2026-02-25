@@ -1,0 +1,31 @@
+.triggers-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    gap: 0.6rem;
+    padding: 0.5rem 0rem 0rem 0.5rem;
+
+    & igx-card {
+        max-width: 320px;
+    }
+
+    & igx-card-header {
+        min-height: 3rem;
+    }
+
+    & igx-card-content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+        justify-content: space-between;
+    }
+
+    & igc-input {
+        --size: 36px;
+    }
+}
+
+.igx-tooltip {
+    max-width: 200px;
+}

@@ -16,53 +16,21 @@ defineComponents(IgcRatingComponent);
 })
 export class GridLiteSortingEventsComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
-  
+
   public data: ProductInfo[] = [];
-  public columns: any[] = [];
   public log: string[] = [];
 
   ngOnInit() {
     this.data = this.dataService.generateProducts(100);
-    
-    this.columns = [
-      { 
-        key: 'name', 
-        headerText: 'Name', 
-        sort: true 
-      },
-      { 
-        key: 'price', 
-        type: 'number', 
-        headerText: 'Price', 
-        sort: true 
-      },
-      {
-        key: 'rating',
-        type: 'number',
-        headerText: 'Rating',
-        sort: true,
-        cellTemplate: (params: any) => {
-          const rating = document.createElement('igc-rating');
-          rating.setAttribute('readonly', '');
-          rating.setAttribute('step', '0.01');
-          rating.setAttribute('value', params.value.toString());
-          return rating;
-        }
-      },
-      { 
-        key: 'sold', 
-        type: 'number', 
-        headerText: 'Sold', 
-        sort: true 
-      },
-      { 
-        key: 'total', 
-        type: 'number', 
-        headerText: 'Total', 
-        sort: true 
-      }
-    ];
   }
+
+  protected ratingTemplate = (params: any) => {
+    const rating = document.createElement('igc-rating');
+    rating.setAttribute('readonly', '');
+    rating.setAttribute('step', '0.01');
+    rating.setAttribute('value', params.value.toString());
+    return rating;
+  };
 
   private get timeStamp(): string {
     return `[${new Date().toLocaleTimeString()}]`;
@@ -78,7 +46,7 @@ export class GridLiteSortingEventsComponent implements OnInit {
   handleSorting(event: any) {
     const { detail, type } = event;
     const allowedColumns = ['price', 'total', 'sold'];
-    
+
     if (!allowedColumns.includes(detail.key)) {
       event.preventDefault();
       this.updateLog(

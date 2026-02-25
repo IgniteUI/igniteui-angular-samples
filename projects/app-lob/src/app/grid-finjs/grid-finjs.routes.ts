@@ -6,8 +6,8 @@ import { GridFinJSComponent } from './grid-finjs.component';
 export const GridfinjsRoutes: Routes = [
     {
         component: FinJSDemoComponent,
-        data: gridfinjsRoutesData['empty-path'],
-        path: ''
+        data: gridfinjsRoutesData['grid-finjs-sample'],
+        path: 'grid-finjs-sample'
     },
     {
         component: GridFinJSComponent,
