@@ -1,20 +1,23 @@
 <div class="grid-lite-wrapper">
-  <div>
-    <h5>Generated request</h5>
-    <p><code>{{ queryString }}</code></p>
-  </div>
-  <section class="grid-section">
-    <igc-circular-progress
-      [class.in-operation]="inOperation"
-      indeterminate>
-    </igc-circular-progress>
-    <igc-grid-lite
-      [data]="data"
-      [dataPipelineConfiguration]="dataPipelineConfiguration">
-      <igc-grid-lite-column field="firstName" header="First name" filterable></igc-grid-lite-column>
-      <igc-grid-lite-column field="lastName" header="Last name" filterable></igc-grid-lite-column>
-      <igc-grid-lite-column field="age" header="Age" data-type="number" filterable></igc-grid-lite-column>
-      <igc-grid-lite-column field="active" header="Active" data-type="boolean" filterable [cellTemplate]="checkboxTemplate"></igc-grid-lite-column>
-    </igc-grid-lite>
-  </section>
+    <div>
+        <h5>Generated request</h5>
+        <p><code>{{ queryString }}</code></p>
+    </div>
+    <section class="grid-section">
+        @if (inOperation) {
+        <igx-circular-bar [animate]="false" [indeterminate]="true" [textVisibility]="false">
+        </igx-circular-bar>
+        }
+        <igx-grid-lite [data]="data" [dataPipelineConfiguration]="dataPipelineConfiguration">
+            <igx-grid-lite-column field="firstName" header="First name" filterable></igx-grid-lite-column>
+            <igx-grid-lite-column field="lastName" header="Last name" filterable></igx-grid-lite-column>
+            <igx-grid-lite-column field="age" header="Age" dataType="number" filterable></igx-grid-lite-column>
+            <igx-grid-lite-column field="active" header="Active" dataType="boolean" filterable>
+                <ng-template igxGridLiteCell let-value>
+                    <igx-checkbox [checked]="value" [readonly]="true">
+                    </igx-checkbox>
+                </ng-template>
+            </igx-grid-lite-column>
+        </igx-grid-lite>
+    </section>
 </div>
