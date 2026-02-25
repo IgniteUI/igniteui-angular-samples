@@ -39,6 +39,14 @@ export class TooltipConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
+        // Tooltip Triggers Sample
+        configs.push(new Config({
+            component: 'TooltipTriggersComponent',
+            appConfig: BaseAppConfig,
+            additionalDependencies: ['igniteui-webcomponents'],
+            shortenComponentPathBy: "/interactions/tooltip/"
+        }));
+
         // Style Tooltip Sample
         configs.push(new Config({
             component: 'TooltipStyleComponent',
