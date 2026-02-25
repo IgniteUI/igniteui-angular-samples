@@ -1,6 +1,9 @@
 <div class="grid-lite-wrapper">
-  <igc-grid-lite 
-    [columns]="columns" 
-    [data]="data">
+  <igc-grid-lite [data]="data">
+    <igc-grid-lite-column field="name" header="Product Name"></igc-grid-lite-column>
+    <igc-grid-lite-column field="price" header="Price (€)" data-type="number"></igc-grid-lite-column>
+    <igc-grid-lite-column field="sold" header="Units Sold" data-type="number"></igc-grid-lite-column>
+    <igc-grid-lite-column field="total" header="Total Revenue" data-type="number"></igc-grid-lite-column>
+    <igc-grid-lite-column field="rating" header="Customer Rating ⭐" data-type="number" [cellTemplate]="ratingTemplate"></igc-grid-lite-column>
   </igc-grid-lite>
 </div>

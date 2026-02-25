@@ -7,12 +7,9 @@ $banner-theme: banner-theme(
 );
 
 :host {
-  ::ng-deep {
-    @include css-vars($banner-theme);
-  }
+    @include tokens($banner-theme);
 }
 
 igx-hierarchical-grid {
   @include palette($purple-palette);
 }
- 

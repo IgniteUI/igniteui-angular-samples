@@ -14,7 +14,7 @@ $custom-theme: grid-theme(
   $row-highlight: #ffcd0f
 );
 
-:host ::ng-deep {
-  @include css-vars($custom-theme);
+
+:host {
+  @include tokens($custom-theme);
 }
- 

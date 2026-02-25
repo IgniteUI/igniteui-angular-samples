@@ -13,11 +13,15 @@ $custom-grid: grid-theme(
   $excel-filtering-actions-disabled-foreground: var(--ig-gray-500)
 );
 
-$custom-button: button-theme(
+$custom-button: contained-button-theme(
   $background: $black,
   $foreground: $yellow,
   $hover-background: $black,
   $hover-foreground: $yellow
+);
+
+$flat-custom-button: flat-button-theme(
+  $foreground: $black,
 );
 
 $custom-input-group: input-group-theme(
@@ -46,16 +50,11 @@ $custom-drop-down: drop-down-theme(
 );
 
 :host {
-  ::ng-deep {
-    @include css-vars($custom-grid);
-    @include css-vars($custom-drop-down);
-    @include css-vars($custom-input-group);
-    @include css-vars($custom-checkbox);
-    @include css-vars($custom-list);
-    
-    .igx-excel-filter__menu-footer {
-      @include css-vars($custom-button);
-    }
-  }
+    @include tokens($custom-grid);
+    @include tokens($custom-drop-down);
+    @include tokens($custom-input-group);
+    @include tokens($custom-checkbox);
+    @include tokens($custom-list);
+    @include tokens($custom-button);
+    @include tokens($flat-custom-button);
 }
- 

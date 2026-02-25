@@ -16,8 +16,8 @@ $custom-checkbox-theme: checkbox-theme(
   $empty-color: #1d3743,
 );
 
-:host ::ng-deep {
-  @include css-vars($custom-drop-down-theme);
-  @include css-vars($custom-combo-theme);
-  @include css-vars($custom-checkbox-theme);
+:host {
+    @include tokens($custom-drop-down-theme);
+    @include tokens($custom-combo-theme);
+    @include tokens($custom-checkbox-theme);
 }
