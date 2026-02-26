@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcCheckboxComponent, IgcCircularProgressComponent } from 'igniteui-webcomponents';
 import { GridLiteDataService, User } from '../grid-lite-data.service';
@@ -19,8 +19,7 @@ defineComponents(IgcCheckboxComponent, IgcCircularProgressComponent);
     IgxGridLiteCellTemplateDirective,
     IgxCheckboxComponent,
     IgxCircularProgressBarComponent
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  ]
 })
 export class GridLiteFilteringPipelineComponent implements OnInit {
   private dataService = inject(GridLiteDataService);

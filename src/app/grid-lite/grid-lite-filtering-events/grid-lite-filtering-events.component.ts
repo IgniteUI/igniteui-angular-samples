@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcCheckboxComponent } from 'igniteui-webcomponents';
 import { GridLiteDataService, User } from '../grid-lite-data.service';
@@ -21,8 +21,7 @@ defineComponents(IgcCheckboxComponent);
     IgxGridLiteColumnComponent,
     IgxGridLiteCellTemplateDirective,
     IgxCheckboxComponent
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  ]
 })
 export class GridLiteFilteringEventsComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
