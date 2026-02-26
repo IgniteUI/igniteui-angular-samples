@@ -1,10 +1,54 @@
 <div class="grid-lite-wrapper">
-  <igc-grid-lite [data]="data">
-    <igc-grid-lite-column field="avatar" header="Avatar" [cellTemplate]="avatarTemplate"></igc-grid-lite-column>
-    <igc-grid-lite-column field="firstName" header="First name" sortable filterable resizable></igc-grid-lite-column>
-    <igc-grid-lite-column field="lastName" header="Last name" sortable filterable resizable></igc-grid-lite-column>
-    <igc-grid-lite-column field="email" header="Email Address"></igc-grid-lite-column>
-    <igc-grid-lite-column field="satisfaction" header="Satisfaction rating" data-type="number" sortable filterable [cellTemplate]="satisfactionTemplate"></igc-grid-lite-column>
-    <igc-grid-lite-column field="registeredAt" header="Registered @" sortable [cellTemplate]="registeredAtTemplate"></igc-grid-lite-column>
-  </igc-grid-lite>
+    <igx-grid-lite [data]="data">
+
+        <!-- Avatar -->
+        <igx-grid-lite-column field="avatar" header="Avatar">
+            <ng-template igxGridLiteCell let-value>
+                <igx-avatar shape="circle" alt="User avatar" [src]="value">
+                </igx-avatar>
+            </ng-template>
+        </igx-grid-lite-column>
+
+        <!-- First & Last Name -->
+        <igx-grid-lite-column field="firstName" header="First Name" sortable filterable
+            resizable></igx-grid-lite-column>
+        <igx-grid-lite-column field="lastName" header="Last Name" sortable filterable resizable></igx-grid-lite-column>
+
+        <!-- Satisfaction Rating -->
+        <igx-grid-lite-column field="satisfaction" header="Satisfaction Rating" dataType="number" sortable filterable
+            resizable>
+            <ng-template igxGridLiteCell let-value>
+                <igc-rating [value]="value" [readonly]="true" [min]="0" [max]="5" [step]="0.01"></igc-rating>
+            </ng-template>
+        </igx-grid-lite-column>
+
+        <!-- Employment Type -->
+        <igx-grid-lite-column field="employmentType" header="Employment Type" sortable filterable resizable>
+            <ng-template igxGridLiteCell let-value>
+                <igx-chip [ngClass]="getEmploymentTypeOutline(value)">
+                    {{ value }}
+                </igx-chip>
+            </ng-template>
+        </igx-grid-lite-column>
+
+        <!-- Email -->
+        <igx-grid-lite-column field="email" header="Email Address" resizable></igx-grid-lite-column>
+
+        <!-- Department -->
+        <igx-grid-lite-column field="department" header="Department" sortable filterable resizable>
+            <ng-template igxGridLiteCell let-value>
+                <igx-chip [ngClass]="getDepartmentBadgeVariant(value)">
+                    {{ value }}
+                </igx-chip>
+            </ng-template>
+        </igx-grid-lite-column>
+
+        <!-- Registered On -->
+        <igx-grid-lite-column field="registeredAt" header="Registered On" sortable resizable>
+            <ng-template igxGridLiteCell let-value>
+                <span>{{ value | date:'medium' }}</span>
+            </ng-template>
+        </igx-grid-lite-column>
+
+    </igx-grid-lite>
 </div>

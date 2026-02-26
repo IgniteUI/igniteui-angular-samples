@@ -1,29 +1,36 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcCheckboxComponent, IgcCircularProgressComponent } from 'igniteui-webcomponents';
-import { IgcGridLite } from 'igniteui-grid-lite';
 import { GridLiteDataService, User } from '../grid-lite-data.service';
+import { IgxGridLiteComponent, IgxGridLiteColumnComponent, IgxGridLiteCellTemplateDirective, IgxGridLiteDataPipelineConfiguration } from 'igniteui-angular/grids/lite';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxCircularProgressBarComponent } from 'igniteui-angular/progressbar';
 
-IgcGridLite.register();
 defineComponents(IgcCheckboxComponent, IgcCircularProgressComponent);
 
 @Component({
   selector: 'app-grid-lite-filtering-pipeline',
   templateUrl: './grid-lite-filtering-pipeline.component.html',
   styleUrls: ['./grid-lite-filtering-pipeline.component.scss'],
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [
+    CommonModule,
+    IgxGridLiteComponent,
+    IgxGridLiteColumnComponent,
+    IgxGridLiteCellTemplateDirective,
+    IgxCheckboxComponent,
+    IgxCircularProgressBarComponent
+  ]
 })
 export class GridLiteFilteringPipelineComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
 
   public data: User[] = [];
-  public dataPipelineConfiguration: any;
+  public dataPipelineConfiguration: IgxGridLiteDataPipelineConfiguration;
   public inOperation = false;
   public queryString = '';
 
   ngOnInit() {
-    this.data = this.dataService.generateUsers(50);
+    this.data = this.dataService.generateUsers(500);
 
     this.dataPipelineConfiguration = {
       filter: async ({ data, grid }: any) => {
@@ -35,14 +42,6 @@ export class GridLiteFilteringPipelineComponent implements OnInit {
       }
     };
   }
-
-  protected checkboxTemplate = (params: any) => {
-    const checkbox = document.createElement('igc-checkbox');
-    if (params.value) {
-      checkbox.setAttribute('checked', '');
-    }
-    return checkbox;
-  };
 
   private buildUri(state: any[]) {
     const grouped = this.groupBy(state, 'key');
@@ -68,11 +67,13 @@ export class GridLiteFilteringPipelineComponent implements OnInit {
   }
 
   private mapExpressions(arr: any[]): string {
-    return arr.map(({ searchTerm, criteria, condition }, idx) => {
-      const c = condition;
-      return idx < 1
-        ? `${c.name}("${searchTerm}")`
-        : `${criteria?.toUpperCase()} ${c.name}("${searchTerm}")`;
+    const arrTemp = arr.map(({ searchTerm, criteria, condition }, idx) => {
+    const normalizedSearchTerm = !searchTerm ? condition.name : searchTerm;
+
+    return idx < 1
+        ? `${condition.name}("${normalizedSearchTerm}")`
+        : `${criteria?.toUpperCase()} ${condition.name}("${normalizedSearchTerm}")`;
     }).join(' ');
+    return arrTemp;
   }
 }

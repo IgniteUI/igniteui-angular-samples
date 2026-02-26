@@ -1,63 +1,71 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, ViewChild, ElementRef, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { defineComponents, IgcRatingComponent, IgcCircularProgressComponent } from 'igniteui-webcomponents';
-import { IgcGridLite } from 'igniteui-grid-lite';
+import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { GridLiteDataService, ProductInfo } from '../grid-lite-data.service';
+import { IgxGridLiteComponent, IgxGridLiteColumnComponent, IgxGridLiteCellTemplateDirective, IgxGridLiteDataPipelineConfiguration } from 'igniteui-angular/grids/lite';
+import { IgxCircularProgressBarComponent } from 'igniteui-angular/progressbar';
 
-IgcGridLite.register();
-defineComponents(IgcRatingComponent, IgcCircularProgressComponent);
+defineComponents(IgcRatingComponent);
 
 @Component({
-  selector: 'app-grid-lite-sorting-pipeline',
-  templateUrl: './grid-lite-sorting-pipeline.component.html',
-  styleUrls: ['./grid-lite-sorting-pipeline.component.scss'],
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    selector: 'app-grid-lite-sorting-pipeline',
+    templateUrl: './grid-lite-sorting-pipeline.component.html',
+    styleUrls: ['./grid-lite-sorting-pipeline.component.scss'],
+    imports: [
+        CommonModule,
+        IgxGridLiteComponent,
+        IgxGridLiteColumnComponent,
+        IgxGridLiteCellTemplateDirective,
+        IgxCircularProgressBarComponent
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridLiteSortingPipelineComponent implements OnInit {
-  private dataService = inject(GridLiteDataService);
+    private dataService = inject(GridLiteDataService);
 
-  public data: ProductInfo[] = [];
-  public dataPipelineConfiguration: any;
-  public inOperation = false;
-  public queryString = '';
+    public data: ProductInfo[] = [];
+    public dataPipelineConfiguration: IgxGridLiteDataPipelineConfiguration;
+    public inOperation = false;
+    public queryString = '';
 
-  ngOnInit() {
-    this.data = this.dataService.generateProducts(100);
+    ngOnInit() {
+        this.data = this.dataService.generateProducts(100);
 
-    this.dataPipelineConfiguration = {
-      sort: async ({ data, grid }: any) => {
-        this.inOperation = true;
-        this.queryString = grid.sortingExpressions.length
-          ? this.buildUri(grid.sortingExpressions)
-          : '';
-        await new Promise(resolve => setTimeout(resolve, 250));
-        this.inOperation = false;
-        return data;
-      }
-    };
-  }
+        // Setup the data pipeline for sorting
+        this.dataPipelineConfiguration = {
+            sort: async ({ data, grid }: any) => {
+                // Show the spinner
+                this.inOperation = true;
 
-  protected ratingTemplate = (params: any) => {
-    const rating = document.createElement('igc-rating');
-    rating.setAttribute('readonly', '');
-    rating.setAttribute('step', '0.01');
-    rating.setAttribute('value', params.value.toString());
-    return rating;
-  };
+                // Build the query string for demonstration
+                this.queryString = grid.sortingExpressions.length
+                    ? this.buildUri(grid.sortingExpressions)
+                    : '';
 
-  private buildUri(state: any[]): string {
-    const uri: string[] = [];
-    for (const expr of state) {
-      if (expr.direction === 'none') {
-        continue;
-      }
-      uri.push(
-        expr.direction === 'ascending'
-          ? `asc(${expr.key})`
-          : `desc(${expr.key})`
-      );
+                // Simulate async operation
+                await new Promise(resolve => setTimeout(resolve, 250));
+
+                // Hide the spinner
+                this.inOperation = false;
+
+                // Return data after a tiny defer so templates like <igc-rating> initialize properly
+                return new Promise(resolve => setTimeout(() => resolve(data), 0));
+            }
+        };
     }
-    return `GET: /data?sort_by=${uri.join(',')}`;
-  }
+
+    private buildUri(state: any[]): string {
+        const uri: string[] = [];
+        for (const expr of state) {
+            if (expr.direction === 'none') {
+                continue;
+            }
+            uri.push(
+                expr.direction === 'ascending'
+                    ? `asc(${expr.key})`
+                    : `desc(${expr.key})`
+            );
+        }
+        return `GET: /data?sort_by=${uri.join(',')}`;
+    }
 }
