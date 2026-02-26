@@ -4,7 +4,11 @@
     <igx-grid-lite-column field="price" header="Price (€)" dataType="number"></igx-grid-lite-column>
     <igx-grid-lite-column field="sold" header="Units Sold" dataType="number"></igx-grid-lite-column>
     <igx-grid-lite-column field="total" header="Total Revenue" dataType="number"></igx-grid-lite-column>
-    <igx-grid-lite-column field="rating" header="Customer Rating ⭐" dataType="number">
+    <igx-grid-lite-column field="rating" dataType="number">
+        <ng-template igxGridLiteHeader let-value>
+            <h3>⭐ Rating ⭐</h3>
+        </ng-template>
+
         <ng-template igxGridLiteCell let-value>
             <igc-rating [value]="value" readonly step="0.01" min="0" max="5">
             </igc-rating>

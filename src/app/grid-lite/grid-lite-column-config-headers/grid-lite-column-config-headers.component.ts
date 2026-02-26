@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { GridLiteDataService, ProductInfo } from '../grid-lite-data.service';
-import { IgxGridLiteComponent, IgxGridLiteColumnComponent, IgxGridLiteCellTemplateDirective, IgxGridLiteColumnConfiguration } from 'igniteui-angular/grids/lite';
+import { IgxGridLiteComponent, IgxGridLiteColumnComponent, IgxGridLiteCellTemplateDirective, IgxGridLiteHeaderTemplateDirective } from 'igniteui-angular/grids/lite';
 
 defineComponents(IgcRatingComponent);
 
@@ -14,7 +14,8 @@ defineComponents(IgcRatingComponent);
         CommonModule,
         IgxGridLiteComponent,
         IgxGridLiteColumnComponent,
-        IgxGridLiteCellTemplateDirective
+        IgxGridLiteCellTemplateDirective,
+        IgxGridLiteHeaderTemplateDirective
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

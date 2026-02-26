@@ -1,10 +1,8 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { defineComponents, IgcButtonComponent } from 'igniteui-webcomponents';
 import { GridLiteDataService, ProductInfo, UserSimple } from '../grid-lite-data.service';
 import { IgxGridLiteComponent, IgxGridLiteColumnComponent } from 'igniteui-angular/grids/lite';
-
-defineComponents(IgcButtonComponent);
+import { IgxButtonDirective } from 'igniteui-angular/directives';
 
 @Component({
   selector: 'app-grid-lite-data-binding-dynamic',
@@ -13,7 +11,8 @@ defineComponents(IgcButtonComponent);
   imports: [
     CommonModule,
     IgxGridLiteComponent,
-    IgxGridLiteColumnComponent
+    IgxGridLiteColumnComponent,
+    IgxButtonDirective
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
