@@ -1,10 +1,10 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, inject, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcSwitchComponent } from 'igniteui-webcomponents';
-import { IgcGridLite } from 'igniteui-grid-lite';
 import { GridLiteDataService, ProductInfo } from '../grid-lite-data.service';
+import { IgxGridLiteComponent, IgxGridLiteColumnComponent } from 'igniteui-angular/grids/lite';
+import { IgxSwitchComponent } from 'igniteui-angular/switch';
 
-IgcGridLite.register();
 defineComponents(IgcSwitchComponent);
 
 @Component({
@@ -12,8 +12,12 @@ defineComponents(IgcSwitchComponent);
   templateUrl: './grid-lite-styling-custom.component.html',
   styleUrls: ['./grid-lite-styling-custom.component.scss'],
   encapsulation: ViewEncapsulation.None,
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  imports: [
+    CommonModule,
+    IgxGridLiteComponent,
+    IgxGridLiteColumnComponent,
+    IgxSwitchComponent
+  ]
 })
 export class GridLiteStylingCustomComponent implements OnInit {
   private dataService = inject(GridLiteDataService);
