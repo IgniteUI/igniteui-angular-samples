@@ -226,7 +226,7 @@ export class GridDisableSummariesComponent implements OnInit, AfterViewInit {
         this.buttonsArray = this.buttons.toArray();
 
         this.columns.forEach((column, index) => {
-            column.summaries = this.getSummaries(column.field)
+            column.summaries = this.getSummaries(column.field);
         });
     }
 
@@ -241,7 +241,7 @@ export class GridDisableSummariesComponent implements OnInit, AfterViewInit {
 
     public toggleCheckbox(event: any, index: number, column: any): void {
         column.summaries[index].checked = event.checked;
-        if (event.checked) {
+        if (!event.checked) {
             this.grid1.getColumnByName(column.field).disabledSummaries = [
                 ...this.grid1.getColumnByName(column.field).disabledSummaries,
                 column.summaries[index].summaryKey
@@ -255,12 +255,12 @@ export class GridDisableSummariesComponent implements OnInit, AfterViewInit {
 
     public uncheckAllColumns(column: any): void {
         column.summaries.forEach(summary => (summary.checked = false));
-        this.grid1.getColumnByName(column.field).disabledSummaries = [];
+        this.grid1.getColumnByName(column.field).disabledSummaries = column.summaries.map(summary => summary.summaryKey);
     }
 
     public checkAllColumns(column: any): void {
         column.summaries.forEach(summary => (summary.checked = true));
-        this.grid1.getColumnByName(column.field).disabledSummaries = column.summaries.map(summary => summary.summaryKey);
+        this.grid1.getColumnByName(column.field).disabledSummaries = [];
     }
 
     private getSummaries(columnName: string): any[] {
@@ -272,7 +272,7 @@ export class GridDisableSummariesComponent implements OnInit, AfterViewInit {
             .map((summary) => ({
                 summaryKey: summary.key,
                 summaryLabel: summary.label,
-                checked: false
+                checked: true
             }));
     }
 }

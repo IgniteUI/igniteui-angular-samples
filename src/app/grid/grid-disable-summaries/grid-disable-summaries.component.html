@@ -1,6 +1,6 @@
 <div class="grid-wrapper">
   <div class="summaries">
-    <h5 class="summaries-title">Disable Summaries for Column:</h5>
+    <h5 class="summaries-title">Toggle Summaries for Column:</h5>
     @for (column of columns; track column; let i = $index) {
       <div class="summary-column-button">
         <button
@@ -30,14 +30,14 @@
             </div>
             <div class="summaries-dropdown-buttons">
               <button igxButton="flat"
-                [disabled]="getCheckedSummariesCount(column.summaries) === column.summaries.length"
-                (click)="checkAllColumns(column)"
+                [disabled]="getCheckedSummariesCount(column.summaries) === 0"
+                (click)="uncheckAllColumns(column)"
                 >
                 Disable All
               </button>
               <button igxButton="flat"
-                [disabled]="getCheckedSummariesCount(column.summaries) === 0"
-                (click)="uncheckAllColumns(column)"
+                [disabled]="getCheckedSummariesCount(column.summaries) === column.summaries.length"
+                (click)="checkAllColumns(column)"
                 >
                 Enable All
               </button>
