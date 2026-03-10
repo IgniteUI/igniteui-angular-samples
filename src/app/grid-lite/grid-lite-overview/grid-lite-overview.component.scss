@@ -9,6 +9,77 @@
   height: 100%;
 }
 
-igc-grid-lite {
+igx-grid-lite {
   min-height: 75vh;
 }
+
+.avatar-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar-name span {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+igx-badge {
+  --size: 28px;
+  font-size: calc(var(--size) / 2.2);
+  line-height: normal;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.badge-cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px 6px;
+}
+
+igc-rating {
+  display: block;
+  margin: 0 auto;
+}
+
+.success {
+  --background: #4caf50;
+  --hover-background: #45a049;
+  --focus-background: #388e3c;
+}
+
+.warning {
+  --background: #ffb74d;
+  --hover-background: #ffa726;
+  --focus-background: #fb8c00;
+}
+
+.primary {
+  --background: #64b5f6;
+  --hover-background: #42a5f5;
+  --focus-background: #1e88e5;
+}
+
+.error {
+  --background: #e57373;
+  --hover-background: #ef5350;
+  --focus-background: #f44336;
+}
+
+.outline-success {
+  --background: transparent;
+  --border-color: #4caf50;
+}
+
+.outline-warning {
+  --background: transparent;
+  --border-color: #ffb74d;
+}
+
+.outline-primary {
+  --background: transparent;
+  --border-color: #64b5f6;
+}
+

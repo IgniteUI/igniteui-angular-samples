@@ -1,58 +1,70 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
-  defineComponents,
-  IgcRatingComponent,
-  IgcCheckboxComponent,
-  IgcSelectComponent,
-  IgcAvatarComponent
+    defineComponents,
+    IgcRatingComponent
 } from 'igniteui-webcomponents';
-import { IgcGridLite } from 'igniteui-grid-lite';
 import { GridLiteDataService, User } from '../grid-lite-data.service';
+import { IgxGridLiteComponent, IgxGridLiteColumnComponent, IgxGridLiteCellTemplateDirective } from 'igniteui-angular/grids/lite';
+import { IgxAvatarComponent } from 'igniteui-angular/avatar';
+import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
+import { IgxSelectComponent } from 'igniteui-angular/select';
+import { IgxBadgeComponent, IgxBadgeModule } from 'igniteui-angular/badge';
+import { IgxChipComponent } from 'igniteui-angular';
 
-IgcGridLite.register();
 
 defineComponents(
-  IgcAvatarComponent,
-  IgcRatingComponent,
-  IgcCheckboxComponent,
-  IgcSelectComponent
+    IgcRatingComponent
 );
 
 @Component({
-  selector: 'app-grid-lite-overview',
-  templateUrl: './grid-lite-overview.component.html',
-  styleUrls: ['./grid-lite-overview.component.scss'],
-  imports: [CommonModule],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    selector: 'app-grid-lite-overview',
+    templateUrl: './grid-lite-overview.component.html',
+    styleUrls: ['./grid-lite-overview.component.scss'],
+    imports: [
+        CommonModule,
+        IgxGridLiteComponent,
+        IgxGridLiteColumnComponent,
+        IgxAvatarComponent,
+        IgxGridLiteCellTemplateDirective,
+        IgxCheckboxComponent,
+        IgxSelectComponent,
+        IgxBadgeModule,
+        IgxBadgeComponent,
+        IgxChipComponent
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridLiteOverviewComponent implements OnInit {
-  private dataService = inject(GridLiteDataService);
+    private dataService = inject(GridLiteDataService);
 
-  public data: User[] = [];
+    public data: User[] = [];
 
-  ngOnInit() {
-    this.data = this.dataService.generateUsers(1000);
-  }
+    ngOnInit() {
+        this.data = this.dataService.generateUsers(1000);
+    }
 
-  protected avatarTemplate = (params: any) => {
-    const cell = document.createElement('igc-avatar');
-    cell.setAttribute('shape', 'circle');
-    cell.setAttribute('alt', 'User avatar');
-    cell.setAttribute('src', params.value);
-    return cell;
-  };
+    public getDepartmentBadgeVariant = (status: string): string => {
+        switch (status) {
+            case "Engineering":
+                return "primary";
+            case "Marketing":
+                return "warning";
+            case "Sales":
+                return "error";
+            case "Finance":
+                return "success";
+            default:
+                return "primary";
+        }
+    };
 
-  protected satisfactionTemplate = (params: any) => {
-    const rating = document.createElement('igc-rating');
-    rating.setAttribute('readonly', '');
-    rating.setAttribute('value', params.value.toString());
-    return rating;
-  };
-
-  protected registeredAtTemplate = (params: any) => {
-    const span = document.createElement('span');
-    span.textContent = params.value.toLocaleString();
-    return span;
-  };
+    public getEmploymentTypeOutline = (type: string): string => {
+        switch (type) {
+            case 'Full-Time': return 'outline-success';
+            case 'Part-Time': return 'outline-warning';
+            case 'Contract': return 'outline-primary';
+            default: return 'outline-primary';
+        }
+    };
 }

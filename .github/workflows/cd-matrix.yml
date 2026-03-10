@@ -203,7 +203,7 @@ jobs:
             await github.rest.repos.createDispatchEvent({
               owner: 'IgniteUI',
               repo: 'igniteui-actions',
-              event_type: 'igniteui-angular-samples-cd',
+              event_type: 'igniteui-samples-cd',
               client_payload: {
                 calling_branch: "${{ env.BRANCH_REF }}",
                 repository: "${{ github.repository }}",

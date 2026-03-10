@@ -27,6 +27,8 @@ export type User = {
   priority: 'Low' | 'Standard' | 'High';
   satisfaction: number;
   registeredAt: Date;
+  department: string;
+  employmentType: 'Full-Time' | 'Part-Time' | 'Contract';
 };
 
 @Injectable({
@@ -37,16 +39,20 @@ export class GridLiteDataService {
 
   private maleFirstNames = ['John', 'Bob', 'Charlie', 'Frank', 'Henry', 'Jack', 'Liam', 'Noah', 'Peter'];
   private femaleFirstNames = ['Jane', 'Alice', 'Diana', 'Eve', 'Grace', 'Ivy', 'Kate', 'Mia', 'Olivia', 'Quinn', 'Rachel'];
-  private lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis', 
+  private lastNames = ['Smith', 'Johnson', 'Williams', 'Brown', 'Jones', 'Garcia', 'Miller', 'Davis',
     'Rodriguez', 'Martinez', 'Wilson', 'Anderson', 'Taylor', 'Thomas', 'Moore', 'Jackson', 'White', 'Harris'];
-  private productNames = ['Widget', 'Gadget', 'Doohickey', 'Thingamajig', 'Gizmo', 'Contraption', 
+  private productNames = ['Widget', 'Gadget', 'Doohickey', 'Thingamajig', 'Gizmo', 'Contraption',
     'Device', 'Tool', 'Apparatus', 'Instrument', 'Machine', 'Equipment'];
   private priorities: ('Low' | 'Standard' | 'High')[] = ['Low', 'Standard', 'High'];
 
+  // HR-style data arrays
+  private departments = ['Engineering', 'Marketing', 'Sales', 'Finance'];
+  private employmentTypes: ('Full-Time' | 'Part-Time' | 'Contract')[] = ['Full-Time', 'Part-Time', 'Contract'];
+
   private randomFirstName(): { name: string; gender: 'men' | 'women' } {
     const isMale = this.randomBoolean();
-    return isMale 
-      ? { name: this.randomElement(this.maleFirstNames), gender: 'men' } 
+    return isMale
+      ? { name: this.randomElement(this.maleFirstNames), gender: 'men' }
       : { name: this.randomElement(this.femaleFirstNames), gender: 'women' };
   }
 
@@ -112,13 +118,15 @@ export class GridLiteDataService {
       id: this.generateId(),
       firstName,
       lastName,
-      age: this.randomInt(18, 90),
+      age: this.randomInt(18, 65),
       email,
       avatar: `assets/images/${gender}/${this.randomInt(1, 70)}.jpg`,
       active: this.randomBoolean(),
       priority: this.randomElement(this.priorities),
       satisfaction: this.randomInt(0, 5),
-      registeredAt: new Date(Date.now() - this.randomInt(0, 365 * 24 * 60 * 60 * 1000))
+      registeredAt: new Date(Date.now() - this.randomInt(0, 365 * 24 * 60 * 60 * 1000)),
+      department: this.randomElement(this.departments),
+      employmentType: this.randomElement(this.employmentTypes)
     };
   }
 

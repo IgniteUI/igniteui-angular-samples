@@ -11,9 +11,7 @@ import { SALES_DATA_NEW } from '../../data/salesDataNew';
 })
 export class PivotDataSelectorSampleComponent {
     public data = SALES_DATA_NEW;
-
     public pivotConfigHierarchy: IPivotConfiguration;
-
     public dateDimension: IgxPivotDateDimension;
 
     constructor() {
@@ -73,6 +71,4 @@ export class PivotDataSelectorSampleComponent {
             ]
         };
     }
-
-
 }

@@ -12,7 +12,7 @@
   position: relative;
 }
 
-igc-circular-progress {
+igx-circular-progress {
   visibility: hidden;
   --diameter: 4rem;
   background-color: rgba(255, 255, 255, 0.5);
@@ -24,12 +24,6 @@ igc-circular-progress {
   height: 100%;
 }
 
-.in-operation {
-  visibility: visible;
-  pointer-events: all;
-  user-select: contain;
-}
-
 p {
   border: 1px solid #ccc;
   padding: 1rem;
@@ -37,6 +31,6 @@ p {
   font-size: 0.75rem;
 }
 
-igc-grid-lite {
+igx-grid-lite {
   min-height: 65vh;
 }
