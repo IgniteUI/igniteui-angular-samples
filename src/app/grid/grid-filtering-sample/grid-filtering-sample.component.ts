@@ -26,8 +26,8 @@ export class FilteringSampleComponent implements OnInit {
         this.data = DATA;
     }
 
-    public filter(target: EventTarget) {
-        const value = (target as HTMLInputElement).value;
+    public filter(event: Event) {
+        const value = (event.target as HTMLInputElement).value;
         if (value) {
             this.grid1.filter('ProductName', value, IgxStringFilteringOperand.instance().condition('contains'));
         } else {
@@ -39,7 +39,4 @@ export class FilteringSampleComponent implements OnInit {
         return new Intl.DateTimeFormat('en-US').format(val);
     }
 
-    public formatCurrency(val: string) {
-        return parseInt(val, 10).toFixed(2);
-    }
 }

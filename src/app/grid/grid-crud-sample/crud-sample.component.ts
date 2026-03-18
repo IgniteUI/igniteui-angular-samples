@@ -64,12 +64,11 @@ export class CRUDSampleComponent implements OnInit, OnDestroy {
             next: (data: any) => {
                 this.snackbar.open(`Row with ID of ${data.ID} was deleted.`);
             },
-            error: err => {
-                console.log(err);
+            error: () => {
+                this.grid.isLoading = false;
             },
             complete: () => {
                 this.grid.isLoading = false;
-                console.log('Complete notification');
             }
         });
     }
