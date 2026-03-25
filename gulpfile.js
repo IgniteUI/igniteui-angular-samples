@@ -19,6 +19,7 @@ const { generateLiveEditing } = require('igniteui-live-editing');
 const argv = yargs(hideBin(process.argv)).parse();
 
 const submodule = "igniteui-live-editing-samples";
+const mainPkgDevDeps = JSON.parse(fs.readFileSync(path.join(__dirname, 'package.json'), 'utf8')).devDependencies;
 
 gulp.task("generate-live-editing", async () => {
     var appDv = argv.appDv !== undefined && argv.appDv.toLowerCase().trim() === "true";
@@ -54,6 +55,38 @@ gulp.task("generate-live-editing", async () => {
                 additionalSharedStyles: ["_variables.scss", "_app-layout.scss"]
             })
     await generateLiveEditing(liveEditingOptions);
+
+    const sharedJsonPath = path.resolve(liveEditingOptions.samplesDir, 'shared.json');
+    if (fs.existsSync(sharedJsonPath)) {
+        const sharedJson = JSON.parse(fs.readFileSync(sharedJsonPath, 'utf8'));
+        const stylesFile = sharedJson.files && sharedJson.files.find(f => f.path === 'src/styles.scss');
+        if (stylesFile) {
+            const stylesWithTailwind = stylesFile.content.includes('@import "tailwindcss"')
+                ? stylesFile.content
+                : stylesFile.content.replace(/((?:@use [^\n]+\n)+)/, '$1@import "tailwindcss";\n');
+            stylesFile.content = stylesFile.content.replace(/@import ["']tailwindcss["'];?\r?\n?/g, '');
+            fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedJson));
+
+            const samplesDir = liveEditingOptions.samplesDir;
+            fs.readdirSync(samplesDir)
+                .filter(f => f.endsWith('.json') && f !== 'shared.json' && f !== 'meta.json')
+                .forEach(f => {
+                    const samplePath = path.join(samplesDir, f);
+                    const sample = JSON.parse(fs.readFileSync(samplePath, 'utf8'));
+                    const deps = JSON.parse(sample.sampleDependencies || '{}');
+                    if (deps['tailwindcss']) {
+                        const existing = sample.sampleFiles.findIndex(sf => sf.path === 'src/styles.scss');
+                        const styleEntry = { path: 'src/styles.scss', hasRelativeAssetsUrls: false, content: stylesWithTailwind };
+                        if (existing !== -1) {
+                            sample.sampleFiles[existing] = styleEntry;
+                        } else {
+                            sample.sampleFiles.push(styleEntry);
+                        }
+                        fs.writeFileSync(samplePath, JSON.stringify(sample));
+                    }
+                });
+        }
+    }
 });
 
 gulp.task("overwrite-package-json", (done) => {
@@ -116,8 +149,15 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     "path": "package.json",
                     "hasRelativeAssetsUrls": false,
                     "content": JSON.stringify({
-                        "dependencies": JSON.parse(jsonObj.sampleDependencies),
-                        "devDependencies": sharedJson.devDependencies
+                        "name": "example-app",
+                        "version": "0.0.0",
+                        "scripts": {
+                            "ng": "ng",
+                            "start": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng serve",
+                            "build": "node --max_old_space_size=12192 node_modules/@angular/cli/bin/ng build"
+                        },
+                        "dependencies": Object.fromEntries(Object.entries(JSON.parse(jsonObj.sampleDependencies)).map(([pkg, ver]) => [pkg, /^[\^~><=*]/.test(ver) ? ver : '^' + ver])),
+                        "devDependencies": Object.fromEntries(Object.keys(sharedJson.devDependencies).map(pkg => [pkg, mainPkgDevDeps[pkg] || sharedJson.devDependencies[pkg]]))
                     }, null, 2)
                 }
                 additionals.push(packageJson);
@@ -152,6 +192,14 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                         sampleContent = sampleFile.content.replace(assetsRegex, assetsUrl);
                     } else {
                         sampleContent = sampleFile.content;
+                    }
+                    if (sampleFile.path === 'src/styles.scss') {
+                        const deps = JSON.parse(jsonObj.sampleDependencies);
+                        if (deps['tailwindcss'] && !sampleContent.includes('@import "tailwindcss"')) {
+                            sampleContent = sampleContent.replace(/((?:@use [^\n]+\n)+)/, '$1@import "tailwindcss";\n');
+                        } else if (!deps['tailwindcss']) {
+                            sampleContent = sampleContent.replace(/@import ["']tailwindcss["'];?\r?\n?/g, '');
+                        }
                     }
                     const paths = sampleFile.path.replace("./", "").split("/");
                     let tempPath = "";
