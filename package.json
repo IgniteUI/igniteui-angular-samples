@@ -113,8 +113,8 @@
       "@angular/compiler": "^21.0.0"
     },
     "igniteui-angular-extras": {
-      "igniteui-angular": "^21.1.0",
-      "@infragistics/igniteui-angular": "^21.1.0",
+      "igniteui-angular": "^21.1.1",
+      "@infragistics/igniteui-angular": "^21.1.1",
       "@angular/core": "^21.0.0",
       "@angular/common": "^21.0.0",
       "@angular/animations": "^21.0.0"
