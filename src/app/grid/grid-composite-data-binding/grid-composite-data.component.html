@@ -16,20 +16,20 @@
                         <div style="display:flex; margin-top:3px">
                             <div>
                                 <strong>Contact Name:</strong> {{cell.row.data.ContactName}}
-                                <igx-input-group width="100%">
+                                <igx-input-group type="border" width="100%">
                                     <input igxInput [(ngModel)]="cell.row.data.ContactName" />
                                 </igx-input-group>
                             </div>
                             <div style="margin-left: 10px">
                                 <strong>Job Title:</strong> {{cell.row.data.ContactTitle}}
-                                <igx-input-group width="100%">
+                                <igx-input-group type="border" width="100%">
                                     <input igxInput [(ngModel)]="cell.row.data.ContactTitle" />
                                 </igx-input-group>
                             </div>
                         </div>
                         <div style="margin-top: 10px">
                             <strong>Company Name:</strong> {{cell.row.data.CompanyName}}
-                            <igx-input-group width="100%">
+                            <igx-input-group type="border" width="100%">
                                 <input igxInput [(ngModel)]="cell.row.data.CompanyName" />
                             </igx-input-group>
                         </div>
@@ -56,23 +56,23 @@
                     <div class="address-container--edit">
                         <div>
                             <span><strong>Country:</strong> {{cell.row.data.Country}}</span>
-                            <igx-input-group width="100%">
+                            <igx-input-group type="border" width="100%">
                                 <input #country igxInput [(ngModel)]="cell.row.data.Country" />
                             </igx-input-group>
                             <br>
                             <span><strong>City:</strong> {{cell.row.data.City}}</span>
-                            <igx-input-group width="100%">
+                            <igx-input-group type="border" width="100%">
                                 <input #city igxInput [(ngModel)]="cell.row.data.City" />
                             </igx-input-group>
                         </div>
                         <div>
                             <span><strong>Postal Code:</strong> {{cell.row.data.PostalCode}}</span>
-                            <igx-input-group width="100%">
+                            <igx-input-group type="border" width="100%">
                                 <input #postalCode igxInput [(ngModel)]="cell.row.data.PostalCode" />
                             </igx-input-group>
                             <br>
                             <span><strong>Selected:</strong> {{cell.row.selected}}</span>
-                            <igx-input-group width="100%">
+                            <igx-input-group type="border" width="100%">
                                 <input #postalCode igxInput [(ngModel)]="cell.row.data.Phone" />
                             </igx-input-group>
                         </div>
