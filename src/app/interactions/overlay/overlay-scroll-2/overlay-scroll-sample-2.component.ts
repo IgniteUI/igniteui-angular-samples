@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewContainerRef, inject } from '@angular/core';
-import { AbsoluteScrollStrategy, BlockScrollStrategy, CloseScrollStrategy, ConnectedPositioningStrategy, IgxOverlayService, NoOpScrollStrategy } from 'igniteui-angular/core';
+import { AbsoluteScrollStrategy, BlockScrollStrategy, CloseScrollStrategy, ConnectedPositioningStrategy, GlobalPositionStrategy, IgxOverlayService, NoOpScrollStrategy } from 'igniteui-angular/core';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
@@ -52,22 +52,26 @@ export class OverlayScrollSample2Component implements OnInit, OnDestroy {
 
     public onClickScrollStrategy(strategy: string) {
         let scrollStrategy;
-        const positionStrategy = new ConnectedPositioningStrategy();
+        let positionStrategy;
         switch (strategy) {
             case ('absolute'):
                 scrollStrategy = new AbsoluteScrollStrategy();
+                positionStrategy = new ConnectedPositioningStrategy();
                 this._target = this.scrollDemo.nativeElement.children[0];
                 break;
             case ('block'):
                 scrollStrategy = new BlockScrollStrategy();
+                positionStrategy = new ConnectedPositioningStrategy();
                 this._target = this.scrollDemo.nativeElement.children[1];
                 break;
             case ('close'):
                 scrollStrategy = new CloseScrollStrategy();
+                positionStrategy = new GlobalPositionStrategy();
                 this._target = this.scrollDemo.nativeElement.children[2];
                 break;
             default:
                 scrollStrategy = new NoOpScrollStrategy();
+                positionStrategy = new ConnectedPositioningStrategy();
                 this._target = this.scrollDemo.nativeElement.children[3];
         }
         if (this._overlayId) {
