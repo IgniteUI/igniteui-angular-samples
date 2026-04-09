@@ -42,7 +42,7 @@ export class DocsLayoutComponent implements OnInit {
     private createThemeStyle() {
         this.styleElem = this.document.createElement('style');
         this.styleElem.id = 'igniteui-theme';
-        this.document.head.insertBefore(this.styleElem, this.document.head.lastElementChild);
+        this.document.head.appendChild(this.styleElem);
         this.document.body.classList.add('custom-body');
     }
 
@@ -51,6 +51,6 @@ export class DocsLayoutComponent implements OnInit {
         typefaceElem.rel = 'stylesheet';
         typefaceElem.id = 'ignteui-theme-typeface';
         typefaceElem.href = this.typefaceUrl + typeface.split(' ').join('+');
-        this.document.head.insertBefore(typefaceElem, this.document.head.lastElementChild);
+        this.document.head.appendChild(typefaceElem);
     }
 }
