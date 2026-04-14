@@ -40,17 +40,20 @@ export class AppComponent implements OnInit {
     }
 
     private createTypefaceLink(typeface: string) {
-        const typefaceElem = this.document.createElement('link');
-        typefaceElem.rel = 'stylesheet';
-        typefaceElem.id = 'ignteui-theme-typeface';
+        let typefaceElem = this.document.getElementById('igniteui-theme-typeface') as HTMLLinkElement;
+        if (!typefaceElem) {
+            typefaceElem = this.document.createElement('link');
+            typefaceElem.rel = 'stylesheet';
+            typefaceElem.id = 'igniteui-theme-typeface';
+            this.document.head.appendChild(typefaceElem);
+        }
         typefaceElem.href = this.typefaceUrl + typeface.split(' ').join('+');
-        this.document.head.insertBefore(typefaceElem, this.document.head.lastElementChild);
     }
 
     private createThemeStyle() {
         this.styleElem = this.document.createElement('style');
         this.styleElem.id = 'igniteui-theme';
-        this.document.head.insertBefore(this.styleElem, this.document.head.lastElementChild);
+        this.document.head.appendChild(this.styleElem);
         this.document.body.classList.add('custom-body');
     }
 }
