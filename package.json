@@ -121,11 +121,11 @@
     }
   },
   "devDependencies": {
-    "@angular-eslint/builder": "^21.0.1",
-    "@angular-eslint/eslint-plugin": "^21.0.1",
-    "@angular-eslint/eslint-plugin-template": "^21.0.1",
-    "@angular-eslint/schematics": "^21.0.1",
-    "@angular-eslint/template-parser": "^21.0.1",
+    "@angular-eslint/builder": "^21.3.1",
+    "@angular-eslint/eslint-plugin": "^21.3.1",
+    "@angular-eslint/eslint-plugin-template": "^21.3.1",
+    "@angular-eslint/schematics": "^21.3.1",
+    "@angular-eslint/template-parser": "^21.3.1",
     "@angular/build": "^21.2.7",
     "@angular/cli": "^21.2.7",
     "@angular/compiler-cli": "^21.2.8",
