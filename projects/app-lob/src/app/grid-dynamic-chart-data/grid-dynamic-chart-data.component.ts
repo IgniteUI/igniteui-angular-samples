@@ -32,12 +32,12 @@ export class GridDynamicChartDataComponent implements OnInit, AfterViewInit {
         formatLabel: (context) => `${context.percentValue.toFixed(2)}%`
       };
 
-      this.chartDirective.setChartComponentOptions(CHART_TYPE.PIE, OPTIONS_TYPE.CHART, pieChartOptions);
+      this.chartDirective.setChartComponentOptions(CHART_TYPE.Pie, OPTIONS_TYPE.Chart, pieChartOptions);
       this.chartDirective.getAvailableCharts()
                          .filter(chart => chart.indexOf('Scatter') === -1 ||
                                           chart.indexOf('Bar') === -1 ||
-                                          chart !== CHART_TYPE.PIE)
-                         .forEach(chart => this.chartDirective.setChartComponentOptions(chart, OPTIONS_TYPE.X_AXIS, {labelAngle: 30}));
+                                          chart !== CHART_TYPE.Pie)
+                         .forEach(chart => this.chartDirective.setChartComponentOptions(chart, OPTIONS_TYPE.XAxis, {labelAngle: 30}));
     }
 
     public formatCurrency(value: number) {
