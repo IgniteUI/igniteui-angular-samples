@@ -58,34 +58,32 @@ gulp.task("generate-live-editing", async () => {
     await generateLiveEditing(liveEditingOptions);
 
     const sharedJsonPath = path.join(samplesDir, 'shared.json');
-    if (fs.existsSync(sharedJsonPath)) {
-        const sharedJson = JSON.parse(fs.readFileSync(sharedJsonPath, 'utf8'));
-        const stylesFile = sharedJson.files && sharedJson.files.find(f => f.path === 'src/styles.scss');
-        if (stylesFile) {
-            const stylesWithTailwind = stylesFile.content.includes('@import "tailwindcss"')
-                ? stylesFile.content
-                : stylesFile.content.replace(/((?:@use [^\n]+\n)+)/, '$1@import "tailwindcss";\n');
-            stylesFile.content = stylesFile.content.replace(/@import ["']tailwindcss["'];?\r?\n?/g, '');
-            fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedJson));
+    const sharedJson = JSON.parse(fs.readFileSync(sharedJsonPath, 'utf8'));
+    const stylesFile = sharedJson.files && sharedJson.files.find(f => f.path === 'src/styles.scss');
+    if (stylesFile) {
+        const stylesWithTailwind = stylesFile.content.includes('@import "tailwindcss"')
+            ? stylesFile.content
+            : stylesFile.content.replace(/((?:@use [^\n]+\n)+)/, '$1@import "tailwindcss";\n');
+        stylesFile.content = stylesFile.content.replace(/@import ["']tailwindcss["'];?\r?\n?/g, '');
+        fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedJson));
 
-            fs.readdirSync(samplesDir)
-                .filter(f => f.endsWith('.json') && f !== 'shared.json' && f !== 'meta.json')
-                .forEach(f => {
-                    const samplePath = path.join(samplesDir, f);
-                    const sample = JSON.parse(fs.readFileSync(samplePath, 'utf8'));
-                    const deps = JSON.parse(sample.sampleDependencies || '{}');
-                    if (deps['tailwindcss']) {
-                        const existing = sample.sampleFiles.findIndex(sf => sf.path === 'src/styles.scss');
-                        const styleEntry = { path: 'src/styles.scss', hasRelativeAssetsUrls: false, content: stylesWithTailwind };
-                        if (existing !== -1) {
-                            sample.sampleFiles[existing] = styleEntry;
-                        } else {
-                            sample.sampleFiles.push(styleEntry);
-                        }
-                        fs.writeFileSync(samplePath, JSON.stringify(sample));
+        fs.readdirSync(samplesDir)
+            .filter(f => f.endsWith('.json') && f !== 'shared.json' && f !== 'meta.json')
+            .forEach(f => {
+                const samplePath = path.join(samplesDir, f);
+                const sample = JSON.parse(fs.readFileSync(samplePath, 'utf8'));
+                const deps = JSON.parse(sample.sampleDependencies || '{}');
+                if (deps['tailwindcss']) {
+                    const existing = sample.sampleFiles.findIndex(sf => sf.path === 'src/styles.scss');
+                    const styleEntry = { path: 'src/styles.scss', hasRelativeAssetsUrls: false, content: stylesWithTailwind };
+                    if (existing !== -1) {
+                        sample.sampleFiles[existing] = styleEntry;
+                    } else {
+                        sample.sampleFiles.push(styleEntry);
                     }
-                });
-        }
+                    fs.writeFileSync(samplePath, JSON.stringify(sample));
+                }
+            });
     }
 });
 

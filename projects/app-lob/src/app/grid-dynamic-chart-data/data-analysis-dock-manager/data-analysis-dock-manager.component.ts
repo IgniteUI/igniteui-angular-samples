@@ -101,14 +101,14 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
             formatLabel: (context) => `${context.percentValue.toFixed(2)}%`
         };
 
-        this.chartIntegration.setChartComponentOptions(CHART_TYPE.PIE, OPTIONS_TYPE.CHART, pieChartOptions);
+        this.chartIntegration.setChartComponentOptions(CHART_TYPE.Pie, OPTIONS_TYPE.Chart, pieChartOptions);
         this.chartIntegration.getAvailableCharts()
             .filter(chart => chart.indexOf('Scatter') === -1 ||
                 chart.indexOf('Bar') === -1 ||
-                chart !== CHART_TYPE.PIE)
-            .forEach(chart => this.chartIntegration.setChartComponentOptions(chart, OPTIONS_TYPE.X_AXIS, { labelAngle: 30 }));
+                chart !== CHART_TYPE.Pie)
+            .forEach(chart => this.chartIntegration.setChartComponentOptions(chart, OPTIONS_TYPE.XAxis, { labelAngle: 30 }));
 
-        this.chartIntegration.onChartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
+        this.chartIntegration.chartTypesDetermined.subscribe((args: IDeterminedChartTypesArgs) => {
             if (args.chartsAvailability.size === 0 || args.chartsForCreation.length === 0) {
                 this.chartIntegration.disableCharts(this.allCharts);
             } else {
@@ -212,7 +212,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
                 Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
                     const chartHost = this.getChartHostFromSlot(c);
                     if (this.availableCharts.indexOf(c) !== -1) {
-                        if (c !== CHART_TYPE.PIE && typeof this.selectedCharts[c] === 'object') {
+                        if (c !== CHART_TYPE.Pie && typeof this.selectedCharts[c] === 'object') {
                             this.selectedCharts[c] = this.chartIntegration.chartFactory(c, null, this.selectedCharts[c]);
                         } else {
                             chartHost.viewContainerRef.clear();
