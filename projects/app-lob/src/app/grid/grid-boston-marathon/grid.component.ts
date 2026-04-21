@@ -93,7 +93,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     public ngAfterViewInit(): void {
         this.overlaySettings = IgxOverlayService.createAbsoluteOverlaySettings(
             AbsolutePosition.Center,
-            this.grid1
+            true
         );
         this.overlaySettings.modal = true;
     }
