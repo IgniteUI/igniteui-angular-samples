@@ -54,9 +54,10 @@ gulp.task("generate-live-editing", async () => {
                 },
                 additionalSharedStyles: ["_variables.scss", "_app-layout.scss"]
             })
+    const samplesDir = path.resolve(liveEditingOptions.samplesDir, 'samples');
     await generateLiveEditing(liveEditingOptions);
 
-    const sharedJsonPath = path.resolve(liveEditingOptions.samplesDir, 'shared.json');
+    const sharedJsonPath = path.join(samplesDir, 'shared.json');
     if (fs.existsSync(sharedJsonPath)) {
         const sharedJson = JSON.parse(fs.readFileSync(sharedJsonPath, 'utf8'));
         const stylesFile = sharedJson.files && sharedJson.files.find(f => f.path === 'src/styles.scss');
@@ -67,7 +68,6 @@ gulp.task("generate-live-editing", async () => {
             stylesFile.content = stylesFile.content.replace(/@import ["']tailwindcss["'];?\r?\n?/g, '');
             fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedJson));
 
-            const samplesDir = liveEditingOptions.samplesDir;
             fs.readdirSync(samplesDir)
                 .filter(f => f.endsWith('.json') && f !== 'shared.json' && f !== 'meta.json')
                 .forEach(f => {
