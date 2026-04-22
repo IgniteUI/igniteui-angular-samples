@@ -13,6 +13,11 @@ $custom-theme: grid-summary-theme(
 );
 
 :host {
-    --ig-grid-summaries-patch-background: #{$summaries-background};
-    @include tokens($custom-theme);
+    ::ng-deep {
+        igx-grid-summary-row {
+            --summaries-patch-background: #{$summaries-background};
+
+            @include tokens($custom-theme);
+        }
+    }
 }
