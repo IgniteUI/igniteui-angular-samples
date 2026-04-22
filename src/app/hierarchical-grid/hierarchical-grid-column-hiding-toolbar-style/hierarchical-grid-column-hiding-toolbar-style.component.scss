@@ -1,28 +1,44 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
+$background: #292826;
+$foreground: #ffcd0f;
+
 $custom-column-actions-theme: column-actions-theme(
-  $background-color: #292826,
-  $title-color: #ffcd0f
+    $background-color: $background,
+    $title-color: $foreground,
 );
 
-$custom-button: flat-button-theme(
-  $foreground: #ffcd0f,
-  $disabled-foreground: #292826
+$custom-flat-button: flat-button-theme(
+    $foreground: $foreground,
 );
 
-$dark-checkbox-theme: checkbox-theme(
-  $label-color: #ffcd0f,
-  $empty-color: #ffcd0f,
-  $fill-color: #ffcd0f,
-  $tick-color: #292826
+$custom-checkbox-theme: checkbox-theme(
+    $label-color: $foreground,
+    $empty-color: $foreground,
+    $fill-color: $foreground,
+    $tick-color: $background,
+);
+
+$input-group-theme: input-group-theme(
+    $box-background: $background,
+    $idle-bottom-line-color: $foreground,
 );
 
 :host ::ng-deep {
-  @include tokens($custom-column-actions-theme);
+    .igx-column-actions {
+        @include tokens($custom-column-actions-theme);
 
-  .igx-column-actions {
-    @include tokens($custom-button);
-    @include tokens($dark-checkbox-theme);
-  }
+        igx-input-group {
+            @include tokens($input-group-theme);
+        }
+
+        igx-checkbox {
+            @include tokens($custom-checkbox-theme);
+        }
+
+        .igx-button--flat {
+            @include tokens($custom-flat-button);
+        }
+    }
 }
