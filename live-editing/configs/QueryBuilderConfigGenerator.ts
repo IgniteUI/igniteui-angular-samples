@@ -40,6 +40,13 @@ export class QueryBuilderConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/interactions/query-builder/"
         }));
 
+        configs.push(new Config({
+            component: 'QueryBuilderTailwindStyleComponent',
+            additionalDependencies: ["tailwindcss", "@tailwindcss/postcss"],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/query-builder/"
+        }));
+
         return configs;
     }
 }

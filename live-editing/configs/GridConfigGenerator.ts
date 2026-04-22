@@ -838,6 +838,12 @@ export class GridConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'GridDisableSummariesComponent',
+            additionalFiles: ['/src/app/data/nwindData.ts'],
+            appConfig: BaseAppConfig
+        }));
+
+        configs.push(new Config({
             component: 'GridStatePersistenceSampleComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/financialData.ts', '/src/app/services/financial.service.ts'],
             appConfig: BaseAppConfig
