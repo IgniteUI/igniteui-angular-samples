@@ -76,6 +76,12 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
             component: 'PivotDataSelectorSampleComponent'
         }));
 
+        configs.push(new Config({
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/dataToAnalyze.ts'],
+            appConfig: BaseAppConfig,
+            component: 'PivotGridLayoutComponent'
+        }));
+
         return configs;
     }
 }

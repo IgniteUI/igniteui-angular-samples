@@ -10,6 +10,36 @@ export class RippleConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
+            component: 'RippleSample2Component',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/ripple/"
+        }));
+
+        configs.push(new Config({
+            component: 'RippleSample3Component',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/ripple/"
+        }));
+
+        configs.push(new Config({
+            component: 'RippleSample4Component',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/ripple/"
+        }));
+
+        configs.push(new Config({
+            component: 'RippleSample5Component',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/ripple/"
+        }));
+
+        configs.push(new Config({
+            component: 'RippleSample6Component',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/ripple/"
+        }));
+
+        configs.push(new Config({
             component: 'RippleStylingSampleComponent',
             additionalFiles: ["/src/app/interactions/ripple/ripple-stying/layout.scss"],
             appConfig: BaseAppConfig,
