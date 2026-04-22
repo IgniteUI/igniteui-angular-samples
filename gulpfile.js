@@ -61,10 +61,11 @@ gulp.task("generate-live-editing", async () => {
     const sharedJson = JSON.parse(fs.readFileSync(sharedJsonPath, 'utf8'));
     const stylesFile = sharedJson.files && sharedJson.files.find(f => f.path === 'src/styles.scss');
     if (stylesFile) {
-        const stylesWithTailwind = stylesFile.content.includes('@import "tailwindcss"')
+        const tailwindImportRegex = /@import\s+["']tailwindcss["']\s*;?\r?\n?/g;
+        const stylesWithTailwind = tailwindImportRegex.test(stylesFile.content)
             ? stylesFile.content
             : stylesFile.content.replace(/((?:@use [^\n]+\n)+)/, '$1@import "tailwindcss";\n');
-        stylesFile.content = stylesFile.content.replace(/@import ["']tailwindcss["'];?\r?\n?/g, '');
+        stylesFile.content = stylesFile.content.replace(tailwindImportRegex, '');
         fs.writeFileSync(sharedJsonPath, JSON.stringify(sharedJson));
 
         fs.readdirSync(samplesDir)
@@ -193,10 +194,12 @@ const processApp = (projectPath, dest, directoriesToExclude) => {
                     }
                     if (sampleFile.path === 'src/styles.scss') {
                         const deps = JSON.parse(jsonObj.sampleDependencies);
-                        if (deps['tailwindcss'] && !sampleContent.includes('@import "tailwindcss"')) {
+                        const tailwindImportRegex = /@import\s+["']tailwindcss["'];?/;
+                        const tailwindImportStripRegex = /@import\s+["']tailwindcss["'];?\r?\n?/g;
+                        if (deps['tailwindcss'] && !tailwindImportRegex.test(sampleContent)) {
                             sampleContent = sampleContent.replace(/((?:@use [^\n]+\n)+)/, '$1@import "tailwindcss";\n');
                         } else if (!deps['tailwindcss']) {
-                            sampleContent = sampleContent.replace(/@import ["']tailwindcss["'];?\r?\n?/g, '');
+                            sampleContent = sampleContent.replace(tailwindImportStripRegex, '');
                         }
                     }
                     const paths = sampleFile.path.replace("./", "").split("/");
