@@ -1,71 +1,16 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-$yellow: #ffcd0f;
-$black: #292826;
+$background: #292826;
+$foreground: #eeece1;
+$accent: #ffcd0f;
 
 $custom-grid: grid-theme(
-  $filtering-row-background: $yellow
-);
-
-$custom-flat-button: flat-button-theme(
-  $background: $yellow,
-  $foreground: $black,
-  $hover-background: $black,
-  $hover-foreground: $yellow
-);
-
-$custom-contained-button: contained-button-theme(
-  $background: $black,
-  $foreground: $yellow,
-  $hover-background: $black,
-  $hover-foreground: $yellow
-);
-
-$custom-button-group: button-group-theme(
-  $item-background: $yellow,
-  $item-text-color: $black,
-  $item-hover-background: $black,
-  $item-hover-text-color: $yellow
-);
-
-$custom-input-group: input-group-theme(
-  $box-background: $yellow,
-  $idle-text-color: $black,
-  $focused-text-color: $black,
-  $filled-text-color: $black
-);
-
-$custom-list: list-theme(
-  $background: $yellow
-);
-
-$custom-checkbox: checkbox-theme(
-  $empty-color: $black,
-  $fill-color: $black,
-  $tick-color: $yellow,
-  $label-color: $black
-);
-
-$custom-drop-down: drop-down-theme(
-  $background-color: $yellow,
-  $selected-item-background: lighten($black, 10%),
-  $selected-focus-item-background: lighten($black, 15%),
-  $item-text-color: $black,
-  $hover-item-background: $black,
-  $hover-item-text-color: $yellow
+    $background: $background,
+    $foreground: $foreground,
+    $accent-color: $accent,
 );
 
 :host ::ng-deep {
     @include tokens($custom-grid);
-    @include tokens($custom-drop-down);
-    @include tokens($custom-input-group);
-    @include tokens($custom-checkbox);
-    @include tokens($custom-list);
-    @include tokens($custom-flat-button);
-    @include tokens($custom-button-group);
-
-    .igx-excel-filter__apply {
-      @include tokens($custom-contained-button);
-    }
 }

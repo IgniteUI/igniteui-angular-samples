@@ -1,15 +1,23 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
+$summaries-background: #e0f3ff;
+
 $custom-theme: grid-summary-theme(
-  $background-color: #e0f3ff,
-  $label-color: #e41c77,
-  $result-color: black,
-  $pinned-border-width: 2px,
-  $pinned-border-style: dotted,
-  $pinned-border-color: #e41c77
+    $background-color: $summaries-background,
+    $label-color: #e41c77,
+    $result-color: black,
+    $pinned-border-width: 2px,
+    $pinned-border-style: dotted,
+    $pinned-border-color: #e41c77,
 );
 
 :host {
-    @include tokens($custom-theme);
+    ::ng-deep {
+        igx-grid-summary-row {
+            --summaries-patch-background: #{$summaries-background};
+
+            @include tokens($custom-theme);
+        }
+    }
 }

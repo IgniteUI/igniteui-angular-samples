@@ -1,27 +1,25 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
+$background: #292826;
+$accent: #ffcd0f;
+
 $dark-button-theme: outlined-button-theme(
-  $background: #ffcd0f,
-  $foreground: #292826,
-  $hover-background: #404040,
-  $hover-foreground: #ffcd0f
+    $foreground: $accent,
+    $hover-background: $accent,
 );
 
 $dark-grid-toolbar-theme: grid-toolbar-theme(
-  $background-color: #292826,
-  $title-text-color: #ffcd0f
+    $background-color: $background,
+    $title-text-color: $accent,
 );
 
-:host {
-    @include tokens($dark-grid-toolbar-theme);
+:host ::ng-deep {
+    igx-grid-toolbar {
+        @include tokens($dark-grid-toolbar-theme);
 
-    .igx-grid-toolbar__actions {
-        @include tokens($dark-button-theme);
-
-        .igx-button--outlined {
-            margin-left: 0.5rem;
-            border: none;
+        [igxButton="outlined"] {
+            @include tokens($dark-button-theme);
         }
     }
 }
