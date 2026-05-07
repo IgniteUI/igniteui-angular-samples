@@ -1,7 +1,6 @@
 @use "igniteui-angular/theming" as *;
 
 $background: #292826;
-$foreground: #eeece1;
 $accent: #ffcd0f;
 $muted-yellow: #ffe482;
 
@@ -88,20 +87,20 @@ $apply-contained: contained-button-theme(
 :host {
   ::ng-deep {
     igx-advanced-filtering-dialog {
-      @include theme($palette: $dark-material-palette);
-      @include css-vars($custom-button);
-      @include css-vars($custom-button-group);
-      @include css-vars($custom-input-group);
-      @include css-vars($custom-chip);
-      @include css-vars($custom-drop-down);
-      @include css-vars($flat-yellow);
-      @include css-vars($cancel-outlined);
-      @include css-vars($apply-contained);
-    }
+        @include theme($palette: $dark-material-palette);
+        @include css-vars($custom-button);
+        @include css-vars($custom-button-group);
+        @include css-vars($custom-input-group);
+        @include css-vars($custom-chip);
+        @include css-vars($custom-drop-down);
+        @include css-vars($flat-yellow);
+        @include css-vars($cancel-outlined);
+        @include css-vars($apply-contained);
 
-    .igx-button--contained,
-    .igx-excel-filter__clear > button.igx-button.igx-button--flat {
-      border: 1px solid $accent;
+        .igx-button--contained,
+        .igx-excel-filter__clear > button.igx-button.igx-button--flat {
+            border: 1px solid $accent;
+        }
     }
   }
 }
