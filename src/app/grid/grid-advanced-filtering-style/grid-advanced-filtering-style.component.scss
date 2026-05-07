@@ -1,14 +1,107 @@
 @use "igniteui-angular/theming" as *;
 
-$custom-query-builder: query-builder-theme(
-  $header-foreground: #512da8,
-  $color-expression-group-and:  #eb0000,
-  $color-expression-group-or: #0000f3,
-  $subquery-header-background: var(--ig-gray-300),
-  $subquery-border-color: var(--ig-warn-500),
-  $subquery-border-radius: rem(4px)
+$background: #292826;
+$foreground: #eeece1;
+$accent: #ffcd0f;
+$muted-yellow: #ffe482;
+
+$custom-button: button-theme(
+  $schema: $dark-material-schema,
+  $background: $background,
+  $foreground: $accent,
+  $hover-foreground: $background,
+  $hover-background: $accent,
+  $focus-foreground: $accent,
+  $focus-background: $background,
+  $active-background: $accent,
+  $active-foreground: $background,
+  $border-color: $accent,
+  $hover-border-color: $accent,
+  $focus-border-color: $accent,
+  $active-border-color: $accent,
+);
+
+$custom-button-group: button-group-theme(
+  $schema: $dark-material-schema,
+  $item-background: $background,
+  $item-text-color: $accent,
+  $item-border-color: $accent,
+  $item-selected-background: $accent,
+  $item-hover-background: $accent,
+  $item-selected-hover-background: $accent,
+  $item-disabled-border: $accent,
+  $item-selected-border-color: $accent,
+);
+
+$custom-input-group: input-group-theme(
+  $schema: $dark-material-schema,
+  $idle-text-color: $accent,
+  $focused-text-color: $accent,
+  $filled-text-color: $accent,
+  $idle-bottom-line-color: $muted-yellow,
+  $focused-secondary-color: $accent,
+);
+
+$custom-chip: chip-theme(
+  $schema: $dark-material-schema,
+  $background: $accent,
+  $text-color: $background,
+);
+
+$custom-drop-down: drop-down-theme(
+  $schema: $dark-material-schema,
+  $background-color: $background,
+  $item-text-color: $accent,
+  $hover-item-background: $accent,
+  $hover-item-text-color: $background,
+  $focused-item-background: $accent,
+  $focused-item-text-color: $background,
+  $selected-item-background: $accent,
+  $selected-item-text-color: $background,
+  $selected-focus-item-background: $accent,
+  $selected-focus-item-text-color: $background,
+  $selected-hover-item-background: $accent,
+  $selected-hover-item-text-color: $background,
+);
+
+$flat-yellow: flat-button-theme(
+  $foreground: $accent,
+  $hover-foreground: $background,
+  $hover-background: $accent,
+  $focus-foreground: $background,
+  $focus-background: $accent,
+);
+
+$cancel-outlined: outlined-button-theme(
+  $foreground: $accent,
+  $hover-foreground: $background,
+  $hover-background: $accent,
+);
+
+$apply-contained: contained-button-theme(
+  $background: $background,
+  $foreground: $accent,
+  $hover-foreground: $background,
+  $hover-background: $accent,
 );
 
 :host {
-    @include tokens($custom-query-builder);
+  ::ng-deep {
+    igx-advanced-filtering-dialog {
+      @include theme($palette: $dark-material-palette);
+      @include css-vars($custom-button);
+      @include css-vars($custom-button-group);
+      @include css-vars($custom-input-group);
+      @include css-vars($custom-chip);
+      @include css-vars($custom-drop-down);
+      @include css-vars($flat-yellow);
+      @include css-vars($cancel-outlined);
+      @include css-vars($apply-contained);
+    }
+
+    .igx-button--contained,
+    .igx-excel-filter__clear > button.igx-button.igx-button--flat {
+      border: 1px solid $accent;
+    }
+  }
 }
