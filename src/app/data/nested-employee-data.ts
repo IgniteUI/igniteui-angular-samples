@@ -67,7 +67,22 @@ export const EMPLOYEE_DATA = [
     },
     {
         Age: 49,
-        Employees: [],
+        Employees: [
+            {
+                Age: 33,
+                HireDate: new Date(2016, 2, 14),
+                ID: 20,
+                Name: "Patricia Hill",
+                Title: "Accountant"
+            },
+            {
+                Age: 27,
+                HireDate: new Date(2019, 5, 1),
+                ID: 21,
+                Name: "Samuel Green",
+                Title: "Junior Accountant"
+            }
+        ],
         HireDate: new Date(2014, 1, 22),
         ID: 18,
         Name: "Victoria Lincoln",
@@ -75,7 +90,22 @@ export const EMPLOYEE_DATA = [
     },
     {
         Age: 61,
-        Employees: [],
+        Employees: [
+            {
+                Age: 38,
+                HireDate: new Date(2013, 7, 22),
+                ID: 22,
+                Name: "Kevin Zhang",
+                Title: "Localization Specialist"
+            },
+            {
+                Age: 30,
+                HireDate: new Date(2018, 3, 10),
+                ID: 23,
+                Name: "Linda Park",
+                Title: "Translator"
+            }
+        ],
         HireDate: new Date(2010, 1, 1),
         ID: 10,
         Name: "Yang Wang",
@@ -83,7 +113,22 @@ export const EMPLOYEE_DATA = [
     },
     {
         Age: 35,
-        Employees: [],
+        Employees: [
+            {
+                Age: 26,
+                HireDate: new Date(2020, 8, 5),
+                ID: 24,
+                Name: "Rachel Adams",
+                Title: "HR Specialist"
+            },
+            {
+                Age: 31,
+                HireDate: new Date(2017, 0, 17),
+                ID: 25,
+                Name: "Carlos Rivera",
+                Title: "Recruiter"
+            }
+        ],
         HireDate: new Date(2014, 1, 22),
         ID: 35,
         Name: "Janine Munoz",
@@ -91,7 +136,22 @@ export const EMPLOYEE_DATA = [
     },
     {
         Age: 49,
-        Employees: [],
+        Employees: [
+            {
+                Age: 34,
+                HireDate: new Date(2015, 10, 11),
+                ID: 26,
+                Name: "Diana Foster",
+                Title: "Sales Representative"
+            },
+            {
+                Age: 29,
+                HireDate: new Date(2018, 6, 23),
+                ID: 27,
+                Name: "Brian Scott",
+                Title: "Account Executive"
+            }
+        ],
         HireDate: new Date(2010, 1, 1),
         ID: 10,
         Name: "Yang Wang",
