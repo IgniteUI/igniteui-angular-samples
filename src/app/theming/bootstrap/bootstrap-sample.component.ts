@@ -7,13 +7,13 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective } from 'igniteui-angular/card';
 import { IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective } from 'igniteui-angular/list';
-import { NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, NgbRating, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionButton, NgbCollapse, NgbAccordionCollapse, NgbAccordionBody } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, NgbRating } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-bootstrap-sample',
     styleUrls: ['./bootstrap-sample.component.scss'],
     templateUrl: './bootstrap-sample.component.html',
-    imports: [IgxButtonDirective, NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, IgxAvatarComponent, IgxIconButtonDirective, IgxIconComponent, IgxLayoutDirective, IgxCardComponent, IgxFlexDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, NgbRating, IgxCardActionsComponent, IgxDialogComponent, IgxDialogActionsDirective, IgxSuffixDirective, IgxOverlayOutletDirective, NgbAccordionDirective, NgbAccordionItem, NgbAccordionHeader, NgbAccordionToggle, NgbAccordionButton, NgbCollapse, NgbAccordionCollapse, NgbAccordionBody, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListActionDirective]
+    imports: [IgxButtonDirective, NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownItem, IgxAvatarComponent, IgxIconButtonDirective, IgxIconComponent, IgxLayoutDirective, IgxCardComponent, IgxFlexDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, NgbRating, IgxCardActionsComponent, IgxDialogComponent, IgxDialogActionsDirective, IgxSuffixDirective, IgxOverlayOutletDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListActionDirective]
 })
 
 export class BootstrapComponent implements OnInit{
@@ -28,6 +28,8 @@ export class BootstrapComponent implements OnInit{
     public themesClass = 'light';
 
     public horizontal = true;
+    public visaOpen = false;
+    public mastercardOpen = false;
 
     public contacts = [
         {
