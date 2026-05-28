@@ -16,6 +16,12 @@ export class ChipConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'ChipVariantsComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/"
+        }));
+
+        configs.push(new Config({
             component: 'ChipAreaSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
