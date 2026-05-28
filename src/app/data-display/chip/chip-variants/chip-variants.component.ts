@@ -10,7 +10,8 @@ import { IBaseChipEventArgs, IgxChipComponent, IgxChipTypeVariant } from 'ignite
 export class ChipVariantsComponent {
     private cdr = inject(ChangeDetectorRef);
 
-    public variants: { variant: IgxChipTypeVariant; label: string }[] = [
+    public variants: { variant: IgxChipTypeVariant | undefined; label: string }[] = [
+        { variant: undefined, label: 'Default' },
         { variant: IgxChipTypeVariant.PRIMARY, label: 'Primary' },
         { variant: IgxChipTypeVariant.INFO, label: 'Info' },
         { variant: IgxChipTypeVariant.SUCCESS, label: 'Success' },
