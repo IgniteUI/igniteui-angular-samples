@@ -1,0 +1,47 @@
+igx-chat {
+  height: 870px;
+
+  ::ng-deep {
+
+    igc-chat {
+      border-radius: 8px;
+    }
+
+    igc-chat::part(message-header) {
+      color: #e07a00;
+    }
+
+    igc-chat::part(suggestion) {
+      background: linear-gradient(135deg, #ffb703, #fb8500);
+      color: #3a2a1a;
+      margin: .125rem;
+      border-radius: 20px;
+    }
+
+    igc-chat::part(suggestions-header) {
+      color: #70bc12;
+    }
+
+    igc-chat::part(input-area) {
+      border-color:  #d8ccba;
+    }
+
+    igc-chat::part(text-input) {
+      --box-background: #e5dccd;
+      --box-background-hover: #efe7dc;
+      --box-background-focus: #efe7dc;
+      --idle-button-line-color: #d8ccba;
+      --hover-bottom-line-color: #d8ccba;
+      --focused-bottom-line-color: #f3b75f;
+    }
+
+    igc-chat::part(send-button) {
+      --background: #f3b75f;
+      --foreground: #3a2a1a;
+      --hover-background: #f3b75f;
+      --hover-foreground: #3a2a1a;
+      --disabled-background: #e5dccd;
+      --disabled-foreground: #846d58;
+    }
+  }
+}
