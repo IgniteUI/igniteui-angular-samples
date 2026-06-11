@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { IgxBottomNavComponent, IgxBottomNavContentComponent, IgxBottomNavHeaderComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavItemComponent } from 'igniteui-angular/bottom-nav';
 import { IgxIconComponent } from 'igniteui-angular/icon';

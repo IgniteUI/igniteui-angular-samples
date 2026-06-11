@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-/* eslint-disable @typescript-eslint/quotes */
 import { ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren, ViewEncapsulation, DOCUMENT, inject, ChangeDetectionStrategy } from "@angular/core";
 import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxButtonDirective, IgxDropDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';

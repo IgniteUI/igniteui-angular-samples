@@ -104,7 +104,6 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
         this.product = new Product(this.id);
     }
 
-    // eslint-disable-next-line @typescript-eslint/member-delimiter-style
     public parseArray(arr: { shop: string, lastInventory: string}[]): string {
         return  (arr || []).map((e) => e.shop).join(', ');
     }

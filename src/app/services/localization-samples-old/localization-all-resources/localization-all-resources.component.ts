@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/ban-types */
-/* eslint-disable @typescript-eslint/member-delimiter-style */
 /* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { registerLocaleData } from '@angular/common';

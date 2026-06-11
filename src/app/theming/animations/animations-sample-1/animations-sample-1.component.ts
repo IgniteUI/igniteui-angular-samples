@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/member-delimiter-style */
 import { AnimationReferenceMetadata } from '@angular/animations';
 import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { AbsolutePosition, IgxOverlayService } from 'igniteui-angular/core';
