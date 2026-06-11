@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewContainerRef, inject } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewContainerRef, inject, ChangeDetectionStrategy } from '@angular/core';
 import { AbsoluteScrollStrategy, BlockScrollStrategy, CloseScrollStrategy, ConnectedPositioningStrategy, IgxOverlayService, NoOpScrollStrategy } from 'igniteui-angular/core';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { Subject } from 'rxjs';
@@ -9,6 +9,7 @@ import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-
     styleUrls: ['./overlay-scroll-sample-2.component.scss'],
     templateUrl: './overlay-scroll-sample-2.component.html',
     providers: [IgxOverlayService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxIconComponent, MyDynamicCardComponent]
 })
 export class OverlayScrollSample2Component implements OnInit, OnDestroy {

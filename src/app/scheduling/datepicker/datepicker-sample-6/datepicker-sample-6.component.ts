@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
 import { IgxPickerToggleComponent } from 'igniteui-angular/core';
@@ -8,6 +8,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-datepicker-sample-6',
     styleUrls: ['./datepicker-sample-6.component.scss'],
     templateUrl: './datepicker-sample-6.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDatePickerComponent, IgxLabelDirective, IgxPickerToggleComponent, IgxPrefixDirective, IgxIconComponent]
 })
 export class DatepickerSample6Component {

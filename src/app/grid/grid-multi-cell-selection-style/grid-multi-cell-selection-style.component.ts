@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { DATA } from '../../data/nwindData';
@@ -8,6 +8,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-multi-cell-selection-style-sample',
     styleUrls: ['./grid-multi-cell-selection-style.component.scss'],
     templateUrl: './grid-multi-cell-selection-style.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective]
 })
 export class GridMultiCellSelectionStyleComponent {

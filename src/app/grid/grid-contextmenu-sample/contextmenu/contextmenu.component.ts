@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output, DOCUMENT, inject } from '@angular/core';
+import { Component, EventEmitter, Input, Output, DOCUMENT, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { NgStyle } from '@angular/common';
 
@@ -9,6 +9,7 @@ interface ICopyData {
     selector: 'app-contextmenu',
     styleUrls: ['./contextmenu.component.scss'],
     templateUrl: './contextmenu.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgStyle, IgxIconComponent]
 })
 export class ContextmenuComponent {

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { IgxQueryBuilderComponent } from 'igniteui-angular/query-builder';
 
 @Component({
     selector: 'app-query-builder-style-sample',
     styleUrls: ['./query-builder-style.component.scss'],
     templateUrl: 'query-builder-style.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxQueryBuilderComponent]
 })
 export class QueryBuilderStyleComponent implements OnInit {

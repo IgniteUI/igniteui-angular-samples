@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { HIERARCHICAL_DATA_EXTENDED } from '../../data/hierarchical-data-extended';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { GridCellMergeMode, IgxColumnComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-hierarchical-grid-cell-merge-custom',
     styleUrls: ['./hierarchical-grid-cell-merge-custom.component.scss'],
     templateUrl: 'hierarchical-grid-cell-merge-custom.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IgxHierarchicalGridComponent,
         IgxPreventDocumentScrollDirective,

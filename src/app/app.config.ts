@@ -1,7 +1,7 @@
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from "@angular/common/http";
 import { ApplicationConfig, importProvidersFrom } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { BrowserModule, HammerModule, provideClientHydration, withEventReplay } from "@angular/platform-browser";
+import { BrowserModule, HammerModule, provideClientHydration, withEventReplay, withNoIncrementalHydration } from "@angular/platform-browser";
 import { provideAnimations } from "@angular/platform-browser/animations";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { provideRouter } from "@angular/router";
@@ -20,7 +20,7 @@ export const AppConfig: ApplicationConfig = {
         provideHttpClient(withInterceptorsFromDi(), withFetch()),
         provideAnimations(),
         provideRouter(AppRoutes),
-        OverflowService, provideClientHydration(withEventReplay()),
+        OverflowService, provideClientHydration(withEventReplay(), withNoIncrementalHydration()),
         provideIgniteIntl()
     ]
 };

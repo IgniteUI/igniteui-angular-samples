@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSplitterComponent, IgxSplitterPaneComponent, SplitterType } from 'igniteui-angular/splitter';
 
 @Component({
     selector: 'app-splitter-tailwind-styling-sample',
     styleUrls: ['splitter-tailwind-styling-sample.component.scss'],
     templateUrl: 'splitter-tailwind-styling-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSplitterComponent, IgxSplitterPaneComponent]
 })
 export class SplitterTailwindStylingSampleComponent {

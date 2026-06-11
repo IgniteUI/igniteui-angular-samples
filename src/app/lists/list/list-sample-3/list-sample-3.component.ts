@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';
 import { IgxRippleDirective } from 'igniteui-angular/directives';
 
@@ -6,6 +6,7 @@ import { IgxRippleDirective } from 'igniteui-angular/directives';
     selector: 'app-contact-list',
     styleUrls: ['./list-sample-3.component.scss'],
     templateUrl: './list-sample-3.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective]
 })
 export class ListSample3Component {

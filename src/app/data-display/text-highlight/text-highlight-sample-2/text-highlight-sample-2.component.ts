@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Component, OnDestroy, ViewChildren, inject } from '@angular/core';
+import { Component, OnDestroy, ViewChildren, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxIconButtonDirective, IgxRippleDirective, IgxTextHighlightDirective, IgxTextHighlightService } from 'igniteui-angular/directives';
 import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-text-highlight-2',
     styleUrls: ['./text-highlight-sample-2.component.scss'],
     templateUrl: './text-highlight-sample-2.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxTextHighlightDirective]
 })
 export class TextHighlightSample2Component implements OnDestroy {

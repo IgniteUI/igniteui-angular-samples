@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild, inject } from "@angular/core";
+import { AfterViewInit, Component, ViewChild, inject, ChangeDetectionStrategy } from "@angular/core";
 
 import { IPivotConfiguration, IgxPivotNumericAggregate, NoopPivotDimensionsStrategy } from 'igniteui-angular/grids/core';
 import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
@@ -9,6 +9,7 @@ import { PivotDataService } from "../../services/pivotRemoteData.service";
     styleUrls: ['./pivot-grid-noop-sample.component.scss'],
     templateUrl: './pivot-grid-noop-sample.component.html',
     providers: [PivotDataService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxPivotGridComponent]
 })
 export class PivotGridNoopSampleComponent implements AfterViewInit {

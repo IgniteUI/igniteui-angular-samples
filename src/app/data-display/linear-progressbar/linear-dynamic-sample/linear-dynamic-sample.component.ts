@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { IgxLinearProgressBarComponent } from 'igniteui-angular/progressbar';
 import { IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -7,6 +7,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-linear-dynamic-sample',
     styleUrls: ['./linear-dynamic-sample.component.scss'],
     templateUrl: './linear-dynamic-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxLinearProgressBarComponent, IgxIconButtonDirective, IgxIconComponent]
 })
 export class LinearDynamicSampleComponent implements OnInit{
