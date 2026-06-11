@@ -27,7 +27,7 @@ export class GridRowReorderComponent {
         if (currRowIndex === -1) { return; }
         // remove the row that was dragged and place it onto its new location
         this.grid.deleteRow(args.dragData.key);
-        this.data.splice(currRowIndex, 0, args.dragData.data);
+        this.data = this.data.slice(0, currRowIndex).concat(args.dragData.data, this.data.slice(currRowIndex));
     }
 
     private getCurrentRowIndex(rowList: IgxRowDirective[], cursorPosition) {
