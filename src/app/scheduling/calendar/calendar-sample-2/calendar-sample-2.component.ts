@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxCalendarComponent } from 'igniteui-angular/calendar';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { IgxPrefixDirective } from 'igniteui-angular/input-group';
@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-2.component.scss'],
     templateUrl: './calendar-sample-2.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSelectComponent, FormsModule, IgxPrefixDirective, IgxSelectItemComponent, IgxCalendarComponent]
 })
 export class CalendarSample2Component implements OnInit{

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild, inject } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IChangeCheckboxEventArgs } from 'igniteui-angular/checkbox';
@@ -15,6 +15,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-finjs-controllers',
     styleUrls: ['./controllers.component.scss'],
     templateUrl: './controllers.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, FormsModule, IgxSliderComponent, IgxButtonGroupComponent, IgxToastComponent]
 })
 export class ControllerComponent implements OnInit, OnDestroy {

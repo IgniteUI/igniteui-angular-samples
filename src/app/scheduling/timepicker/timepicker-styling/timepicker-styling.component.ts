@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, inject } from '@angular/core';
+import { Component, ElementRef, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -8,6 +8,7 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-timepicker',
     styleUrls: ['./timepicker-styling.component.scss'],
     templateUrl: './timepicker-styling.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTimePickerComponent, IgxLabelDirective, IgxButtonDirective]
 })
 export class TimePickerStylingComponent {    element = inject(ElementRef);

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, HostBinding, OnDestroy, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, HostBinding, OnDestroy, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { IgxDialogActionsDirective, IgxDialogComponent, IgxDialogTitleDirective } from 'igniteui-angular/dialog';
 import { IgxOverlayOutletDirective, OverlaySettings } from 'igniteui-angular/core';
@@ -12,6 +12,7 @@ import { GridFinJSComponent } from './grid-finjs.component';
     selector: 'app-finjs-main',
     styleUrls: ['./main.component.scss'],
     templateUrl: './main.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ControllerComponent, GridFinJSComponent, IgxOverlayOutletDirective, IgxDialogComponent, IgxDialogTitleDirective, IgxCategoryChartModule, IgxDialogActionsDirective, IgxButtonDirective, IgxFocusDirective]
 })
 export class FinJSDemoComponent implements OnDestroy, AfterViewInit {

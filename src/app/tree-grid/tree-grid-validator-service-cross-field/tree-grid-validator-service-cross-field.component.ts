@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, ValidationErrors, ValidatorFn, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { AbstractControl, FormGroup, ValidationErrors, ValidatorFn, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ColumnPinningPosition } from 'igniteui-angular/core';
 import { CellType, IGridEditEventArgs, IGridFormGroupCreatedEventArgs, IPinningConfig, IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxColumnMaxValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
@@ -15,6 +15,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-validator-service-cross-field-component',
     styleUrls: ['tree-grid-validator-service-cross-field.component.scss'],
     templateUrl: 'tree-grid-validator-service-cross-field.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, FormsModule, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective, IgxCellEditorTemplateDirective, IgxSelectComponent, ReactiveFormsModule, IgxFocusDirective, IgxSelectItemComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxButtonDirective]
 })
 export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
@@ -25,17 +26,20 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
     public pinningConfig: IPinningConfig = { columns: ColumnPinningPosition.End };
 
     public data: any[];
-    public countryData: Map<string, object>;
+    public countryData: Map<string, Record<string, string>>;
     public countries = [];
     public cities = [];
 
     public ngOnInit(): void {
         this.data = generateEmployeeDetailedFlatData();
-        this.countryData = new Map(this.data.map(i => [i.Country, {}]));
+        this.countryData = new Map(this.data.map(i => [i.Country, {} as Record<string, string>]));
         this.data.forEach(rec => {
             const country = rec.Country;
             const city = rec.City;
-            this.countryData.get(country)[city] = city;
+            const countryCities = this.countryData.get(country);
+            if (countryCities) {
+                countryCities[city] = city;
+            }
         });
         this.countries = [...new Set(this.data.map(x => x.Country))];
         this.cities = [...new Set(this.data.map(x => x.City))];
@@ -52,36 +56,37 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
     }
 
     private rowValidator(): ValidatorFn {
-        return (formGroup: FormGroup): ValidationErrors | null => {
-            let returnObject = {};
+        return (control: AbstractControl): ValidationErrors | null => {
+            const formGroup = control as FormGroup;
+            const returnObject: ValidationErrors = {};
 
             const age = formGroup.get('Age');
             const hireDate = formGroup.get('HireDate');
-            if((new Date().getFullYear() - new Date(hireDate.value).getFullYear()) + 18 >= age.value) {
+            if((new Date().getFullYear() - new Date(hireDate?.value).getFullYear()) + 18 >= age?.value) {
                 returnObject['ageLessHireDate'] = true;
             }
 
             const city = formGroup.get('City');
             const country = formGroup.get('Country');
-            const validCities = this.countryData.get(country.value);
-            if (!validCities || !validCities[city.value]) {
+            const validCities = this.countryData.get(country?.value);
+            if (!validCities || !city?.value || !validCities[city.value]) {
                 returnObject['invalidAddress'] = true;
             }
 
-            return returnObject;
+            return Object.keys(returnObject).length ? returnObject : null;
         };
     }
 
     public isRowValid(cell: CellType) {
-        return !cell.row.validation.errors && !cell.row.cells.some(c => !!c.validation.errors);
+        return !cell.row.validation?.errors && !cell.row.cells?.some(c => !!c.validation?.errors);
     }
 
     public stateMessage(cell: CellType) {
         const messages = [];
 
-        const cellValidationErrors = cell.row.cells.filter(x => !!x.validation.errors);
-        cellValidationErrors.forEach(cell => {
-            const cellErrors = cell.validation.errors;
+        const cellValidationErrors = cell.row.cells?.filter(x => !!x.validation?.errors);
+        cellValidationErrors?.forEach(cell => {
+            const cellErrors = cell.validation?.errors;
             if (cellErrors?.required) {
                 messages.push(`The \`${cell.column.header}\` column is required.`);
             }
@@ -93,7 +98,7 @@ export class TreeGridValidatorServiceCrossFieldComponent implements OnInit {
             }
         });
 
-        const rowErrors = cell.row.validation.errors;
+        const rowErrors = cell.row.validation?.errors;
         if (rowErrors?.ageLessHireDate) {
             messages.push(`\`Age\` cannot be less than 18 when the person was hired.`);
         }

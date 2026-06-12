@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand, IgxSummaryTemplateDirective } from 'igniteui-angular/grids/core';
 import { IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -21,7 +21,7 @@ class CustomNumberSummary {
 
 class GrammySummary {
 
-    public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
+    public operate(data?: any[], allData: any[] = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];
         result.push({
             key: 'nominatedSingers',
@@ -51,6 +51,7 @@ class GrammySummary {
     selector: 'app-hierarchical-grid-all-data-summary',
     styleUrls: ['./hgrid-summary-template.component.scss'],
     templateUrl: 'hgrid-summary-template.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxSummaryTemplateDirective, IgxRowIslandComponent]
 })
 

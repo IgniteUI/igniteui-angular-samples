@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DATA } from '../../../data/animations-data';
 import { IgxTreeComponent, IgxTreeNodeComponent } from 'igniteui-angular/tree';
 
@@ -7,6 +7,7 @@ import { IgxTreeComponent, IgxTreeNodeComponent } from 'igniteui-angular/tree';
     selector: 'app-tree-basic-sample',
     templateUrl: './tree-basic-sample.component.html',
     styleUrls: ['./tree-basic-sample.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeComponent, IgxTreeNodeComponent]
 })
 export class TreeBasicSampleComponent {

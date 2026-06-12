@@ -1,4 +1,4 @@
-import { Component, Directive, Input, ViewChild } from '@angular/core';
+import { Component, Directive, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IGridFormGroupCreatedEventArgs, IgxCellTemplateDirective, IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnEmailValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective } from 'igniteui-angular/grids/core';
@@ -32,6 +32,7 @@ export class PhoneFormatDirective extends Validators {
     selector: 'app-grid-validator-service-extended',
     styleUrls: ['./grid-validator-service-extended.component.scss'],
     templateUrl: './grid-validator-service-extended.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, PhoneFormatDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, IgxColumnMinValidatorDirective, IgxButtonDirective, DatePipe]
 })
 export class GridValidatorServiceExtendedComponent {

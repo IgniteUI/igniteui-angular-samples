@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilteringStrategy, IFilteringExpressionsTree } from 'igniteui-angular/core';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { ColumnType, FilteringStrategy, IFilteringExpressionsTree } from 'igniteui-angular/core';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 
 @Injectable()
@@ -11,7 +10,7 @@ export class RemoteValuesService {
         return generateEmployeeFlatData();
     }
 
-    public getColumnData(column: IgxColumnComponent,
+    public getColumnData(column: ColumnType,
                          columnExprTree: IFilteringExpressionsTree,
                          done: (colVals: any[]) => void) {
         setTimeout(() => {

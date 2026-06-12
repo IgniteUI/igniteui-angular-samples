@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -9,6 +9,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-select-sample-2',
     styleUrls: ['select-sample-2.component.scss'],
     templateUrl: 'select-sample-2.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectGroupComponent, IgxSelectItemComponent, IgxIconComponent]
 })
 export class SelectSample2Component {

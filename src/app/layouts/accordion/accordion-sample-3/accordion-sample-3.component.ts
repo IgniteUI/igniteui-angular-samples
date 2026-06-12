@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSliderComponent, IgxSliderType } from 'igniteui-angular/slider';
 import { IgxAccordionComponent } from 'igniteui-angular/accordion';
 import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-accordion-sample-3',
     styleUrls: ['./accordion-sample-3.component.scss'],
     templateUrl: './accordion-sample-3.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxAccordionComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent, IgxCheckboxComponent, FormsModule, IgxSliderComponent, IgxRadioComponent, IgxIconComponent, IgxTimePickerComponent, IgxLabelDirective]
 })
 export class AccordionSample3Component {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DATA } from '../../data/customers';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
@@ -10,6 +10,7 @@ import { NgClass } from '@angular/common';
     selector: 'app-grid-selection-template-excel',
     styleUrls: ['./grid-sample-selection-template-excel.component.scss'],
     templateUrl: 'grid-sample-selection-template-excel.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxHeadSelectorDirective, NgClass, IgxRowSelectorDirective]
 })
 

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, HostBinding, HostListener, Input, ViewChild, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, HostBinding, HostListener, Input, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IPlanet } from '../data';
 
@@ -7,6 +7,7 @@ import { IPlanet } from '../data';
     selector: 'app-planet',
     styleUrls: ['./planet.component.scss'],
     templateUrl: 'planet.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDialogComponent]
 })
 

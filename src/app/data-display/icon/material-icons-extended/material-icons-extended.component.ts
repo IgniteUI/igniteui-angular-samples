@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 import {
-    Component,
-    OnInit,
-    Pipe,
-    PipeTransform,
-    Renderer2,
-    forwardRef,
-    inject
+  Component,
+  OnInit,
+  Pipe,
+  PipeTransform,
+  Renderer2,
+  forwardRef,
+  inject,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import fileSaver from 'file-saver';
@@ -41,6 +42,7 @@ interface ICategoryOption {
     selector: 'app-material-icons-extended',
     templateUrl: './material-icons-extended.component.html',
     styleUrls: ['./material-icons-extended.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         AsyncPipe,
         IgxSelectComponent,

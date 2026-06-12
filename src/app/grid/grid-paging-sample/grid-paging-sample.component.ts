@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -12,6 +12,7 @@ import { DecimalPipe } from '@angular/common';
     selector: 'app-grid-sample',
     styleUrls: ['./grid-paging-sample.component.scss'],
     templateUrl: 'grid-paging-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxLinearProgressBarComponent, DecimalPipe]
 })
 

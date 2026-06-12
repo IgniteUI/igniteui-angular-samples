@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
 
@@ -6,6 +6,7 @@ import { IgxLabelDirective } from 'igniteui-angular/input-group';
     selector: 'app-datepicker-sample-2',
     styleUrls: ['./datepicker-sample-2.component.scss'],
     templateUrl: './datepicker-sample-2.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDatePickerComponent, IgxLabelDirective]
 })
 export class DatepickerSample2Component {

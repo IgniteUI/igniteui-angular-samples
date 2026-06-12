@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IGridEditEventArgs, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxToastComponent } from 'igniteui-angular/toast';
 import { VerticalAlignment } from 'igniteui-angular/core';
@@ -10,6 +10,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-editing-events',
     templateUrl: 'tree-grid-editing-events.component.html',
     styleUrls: ['tree-grid-editing-events.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxToastComponent]
 })
 export class TreeGridEditingEventsComponent implements OnInit {

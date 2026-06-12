@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ViewChild, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxStepComponent, IgxStepContentDirective, IgxStepTitleDirective, IgxStepperComponent } from 'igniteui-angular/stepper';
 import { IgxCardComponent, IgxCardContentDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
@@ -45,6 +45,7 @@ export interface ShippingDetails{
     selector: 'app-stepper-sample-reactive-forms',
     styleUrls: ['./stepper-sample-reactive-forms.component.scss'],
     templateUrl: './stepper-sample-reactive-forms.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxBadgeComponent, IgxCardComponent, NgClass, IgxCardMediaDirective, IgxCardContentDirective, FormsModule, ReactiveFormsModule, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, DatePipe]
 })
 export class StepperSampleReactiveFormsComponent {

@@ -1,5 +1,5 @@
 /* eslint-disable no-underscore-dangle */
-import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, QueryList, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxSummaryResult, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
 import { CellType, GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent, IgxDateSummaryOperand, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxNumberSummaryOperand, IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular/grids/core';
@@ -75,6 +75,7 @@ class SoonSummary extends IgxDateSummaryOperand {
     selector: 'app-grid',
     styleUrls: ['./grid-crm.component.scss'],
     templateUrl: './grid-crm.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxGridToolbarTitleComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxLinearProgressBarComponent]
 })
 export class GridCRMComponent implements OnInit, AfterViewInit {

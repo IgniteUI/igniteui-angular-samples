@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { EntityType, FilteringExpressionsTree, IExpressionTree, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular/core';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -12,6 +12,7 @@ const API_ENDPOINT = 'https://data-northwind.indigo.design';
     selector: 'app-query-builder-sql-sample',
     styleUrls: ['./query-builder-sql-sample.component.scss'],
     templateUrl: 'query-builder-sql-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxQueryBuilderComponent, IgxGridComponent, IgxColumnComponent]
 })
 export class QueryBuilderSqlSampleComponent implements OnInit, AfterViewInit {

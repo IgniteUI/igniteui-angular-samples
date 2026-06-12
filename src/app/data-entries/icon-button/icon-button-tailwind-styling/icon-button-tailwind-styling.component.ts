@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 
@@ -7,6 +7,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-icon-button-tailwind-styling',
     styleUrls: ['./icon-button-tailwind-styling.component.scss'],
     templateUrl: './icon-button-tailwind-styling.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxIconButtonDirective, IgxIconComponent]
 })
 export class IconButtonTailwindStylingComponent { }

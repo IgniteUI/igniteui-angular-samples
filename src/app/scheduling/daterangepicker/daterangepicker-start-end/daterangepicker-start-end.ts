@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DateRange, IgxPickerClearComponent, IgxPickerToggleComponent } from 'igniteui-angular/core';
 import { IgxDateRangeEndComponent, IgxDateRangePickerComponent, IgxDateRangeStartComponent } from 'igniteui-angular/date-picker';
 import { IgxInputDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-rangedatepicker-start-end',
     styleUrls: ['./daterangepicker-start-end.scss'],
     templateUrl: './daterangepicker-start-end.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDateRangePickerComponent, FormsModule, IgxDateRangeStartComponent, IgxInputDirective, IgxDateTimeEditorDirective,
               IgxPickerToggleComponent, IgxPrefixDirective, IgxIconComponent, IgxDateRangeEndComponent, IgxSuffixDirective,
               IgxPickerClearComponent]

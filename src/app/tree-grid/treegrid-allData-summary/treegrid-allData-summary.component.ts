@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxColumnComponent, IgxSummaryOperand } from 'igniteui-angular/grids/core';
 import { IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
@@ -7,7 +7,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 
 class PTOSummary {
 
-    public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
+    public operate(data?: any[], allData: any[] = [], fieldName = ''): IgxSummaryResult[] {
       const result = [];
       result.push({
         key: 'totalOnPTO', label: 'Employees On PTO',
@@ -45,6 +45,7 @@ class PTOSummary {
     selector: 'app-treegrid-all-data-summary-sample',
     styleUrls: ['./treegrid-allData-summary.component.scss'],
     templateUrl: './treegrid-allData-summary.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridAllDataSummaryComponent implements OnInit {

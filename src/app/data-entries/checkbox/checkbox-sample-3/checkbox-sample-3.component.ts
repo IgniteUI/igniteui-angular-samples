@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { FormsModule } from '@angular/forms';
 
@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-checkbox-sample-3',
     styleUrls: ['./checkbox-sample-3.component.scss'],
     templateUrl: './checkbox-sample-3.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCheckboxComponent, FormsModule]
 })
 export class CheckboxSample3Component {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { DateRange } from 'igniteui-angular/core';
 import { IgxDateRangePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-basic-rangedatepicker',
     styleUrls: ['./daterangepicker-basic.scss'],
     templateUrl: './daterangepicker-basic.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDateRangePickerComponent, FormsModule, IgxLabelDirective]
 })
 export class BasicDateRangePickerComponent {

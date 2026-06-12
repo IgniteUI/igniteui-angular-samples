@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
@@ -21,6 +21,7 @@ export interface registrationFormGroup
     selector: 'app-typed-form',
     templateUrl: './typed-form.component.html',
     styleUrls: ['./typed-form.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule, ReactiveFormsModule, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxPickerToggleComponent, IgxSuffixDirective, IgxIconComponent, IgxButtonDirective, IgxRippleDirective]
 })
 export class TypedFormComponent {

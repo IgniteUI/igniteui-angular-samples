@@ -1,5 +1,5 @@
 
-import { AfterViewInit, ChangeDetectorRef, Component, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ColumnType } from 'igniteui-angular/core';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { IgxCellHeaderTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -13,6 +13,7 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     selector: 'app-hierarchical-grid-pinning',
     styleUrls: ['./hierarchical-grid-pinning.component.scss'],
     templateUrl: 'hierarchical-grid-pinning.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCellHeaderTemplateDirective, IgxIconComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 

@@ -5,7 +5,7 @@ $background: #292826;
 $foreground: #ffcd0f;
 
 $custom-column-actions-theme: column-actions-theme(
-    $background-color: $background,
+    $background: $background,
     $title-color: $foreground,
 );
 

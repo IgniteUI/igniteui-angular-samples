@@ -1,5 +1,5 @@
 // eslint-disable-next-line max-len
-import { AfterViewInit, Component, Directive, EventEmitter, HostBinding, Input, OnInit, OnDestroy, Output, ViewChild, ViewContainerRef, inject } from '@angular/core';
+import { AfterViewInit, Component, Directive, EventEmitter, HostBinding, Input, OnInit, OnDestroy, Output, ViewChild, ViewContainerRef, inject, ChangeDetectionStrategy } from '@angular/core';
 import { Subject } from 'rxjs';
 
 @Directive({
@@ -16,6 +16,7 @@ export class GridHostDirective {    viewContainerRef = inject(ViewContainerRef)
     <div style='width: 100%; height: 100%; overflow-x: hidden;'>
         <ng-template gridHost></ng-template>
     </div>`,
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [GridHostDirective]
 })
 export class DockSlotComponent implements OnInit, AfterViewInit, OnDestroy {

@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { DefaultSortingStrategy, SortingDirection } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarComponent, IgxGroupByRowTemplateDirective } from 'igniteui-angular/grids/core';
@@ -16,6 +16,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-groupby-custom-sample',
     styleUrls: ['./grid-groupby-custom-sample.component.scss'],
     templateUrl: './grid-groupby-custom-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent, CurrencyPipe, DatePipe]
 })
 export class GridGroupByCustomSampleComponent {
