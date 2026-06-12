@@ -1,5 +1,5 @@
 import { Component, OnInit, TemplateRef, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
-import { ColumnPinningPosition } from 'igniteui-angular/core';
+import { ColumnPinningPosition, ColumnType } from 'igniteui-angular/core';
 import { IPinningConfig, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -38,7 +38,7 @@ export class TreeGridBothSidesPinningSampleComponent implements OnInit {
     }
 
     public pinLeft() {
-        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+        this.grid1.selectedColumns().forEach((col: ColumnType) => {
             if (col.pinned) {
                 col.unpin();
             }
@@ -47,7 +47,7 @@ export class TreeGridBothSidesPinningSampleComponent implements OnInit {
     }
 
     public pinRight() {
-        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+        this.grid1.selectedColumns().forEach((col: ColumnType) => {
             if (col.pinned) {
                 col.unpin();
             }
@@ -56,7 +56,7 @@ export class TreeGridBothSidesPinningSampleComponent implements OnInit {
     }
 
     public unpinColumn() {
-        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+        this.grid1.selectedColumns().forEach((col: ColumnType) => {
             col.unpin();
         });
     }

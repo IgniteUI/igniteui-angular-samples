@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from "@angular/core";
-import { ColumnPinningPosition } from 'igniteui-angular/core';
+import { ColumnPinningPosition, ColumnType } from 'igniteui-angular/core';
 import { IPinningConfig, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IgxButtonDirective, IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
@@ -71,7 +71,7 @@ export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
     }
 
     public pinLeft() {
-        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+        this.grid1.selectedColumns().forEach((col: ColumnType) => {
             if (col.pinned) {
                 col.unpin();
             }
@@ -80,7 +80,7 @@ export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
     }
 
     public pinRight() {
-        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+        this.grid1.selectedColumns().forEach((col: ColumnType) => {
             if (col.pinned) {
                 col.unpin();
             }
@@ -89,7 +89,7 @@ export class HierarchicalGridBothSidePinningSampleComponent implements OnInit {
     }
 
     public unpinColumn() {
-        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+        this.grid1.selectedColumns().forEach((col: ColumnType) => {
                 col.unpin();
         });
     }

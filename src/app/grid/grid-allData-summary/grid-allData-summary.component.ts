@@ -8,7 +8,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 
 
 class DiscontinuedSummary {
-    public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
+    public operate(data?: any[], allData: any[] = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];
         result.push({
             key: 'products',

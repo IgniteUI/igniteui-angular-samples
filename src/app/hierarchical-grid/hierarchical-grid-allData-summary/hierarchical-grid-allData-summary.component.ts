@@ -17,7 +17,7 @@ class CustomNumberSummary {
 
 class GrammySummary {
 
-    public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
+    public operate(data?: any[], allData: any[] = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];
         result.push({
             key: 'nominatedSingers',

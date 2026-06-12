@@ -28,7 +28,7 @@
     );
 
 	$crm-grid-toolbar: grid-toolbar-theme(
-        $background-color: color($color: 'primary', $variant: 500),
+        $background: color($color: 'primary', $variant: 500),
         $title-text-color: contrast-color($color: 'primary', $variant: 500)
     );
 

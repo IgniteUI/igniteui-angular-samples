@@ -2,6 +2,9 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "outDir": "../out-tsc/app",
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
+    "strictNullChecks": false,
     "types": [
       "node"
     ]
@@ -12,6 +15,7 @@
     "server.ts"
   ],
   "angularCompilerOptions": {
+    "flatTemplateTypeCheck": false,
     "extendedDiagnostics": {
       "checks": {
         "nullishCoalescingNotNullable": "suppress",

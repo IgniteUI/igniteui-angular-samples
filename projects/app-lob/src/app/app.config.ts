@@ -1,7 +1,7 @@
 import { provideHttpClient, withInterceptorsFromDi, withXhr } from "@angular/common/http";
 import { ApplicationConfig, importProvidersFrom } from "@angular/core";
 import { FormsModule } from "@angular/forms";
-import { BrowserModule, HammerModule, provideClientHydration, withEventReplay, withNoIncrementalHydration } from "@angular/platform-browser";
+import { BrowserModule, provideClientHydration, withEventReplay, withNoIncrementalHydration } from "@angular/platform-browser";
 import { provideAnimations } from "@angular/platform-browser/animations";
 import { AppLobRoutes } from "./app.routes";
 import { SEOService } from "./seo.service";
@@ -12,8 +12,7 @@ export const AppConfig: ApplicationConfig = {
     providers: [
         importProvidersFrom(
             BrowserModule,
-            FormsModule,
-            HammerModule
+            FormsModule
         ),
         SEOService,
         provideHttpClient(withXhr(), withInterceptorsFromDi()),

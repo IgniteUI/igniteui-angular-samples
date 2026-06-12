@@ -3,7 +3,7 @@ import { NgClass } from '@angular/common';
 import { IPinningConfig, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { ColumnPinningPosition } from 'igniteui-angular/core';
+import { ColumnPinningPosition, ColumnType } from 'igniteui-angular/core';
 import { DATA } from '../../data/customers';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
@@ -49,7 +49,7 @@ export class GridBothSideToolbarPinningSampleComponent implements OnInit {
     }
 
     public pinLeft() {
-        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+        this.grid1.selectedColumns().forEach((col: ColumnType) => {
             if (col.pinned) {
                 col.unpin();
             }
@@ -58,7 +58,7 @@ export class GridBothSideToolbarPinningSampleComponent implements OnInit {
     }
 
     public pinRight() {
-        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+        this.grid1.selectedColumns().forEach((col: ColumnType) => {
             if (col.pinned) {
                 col.unpin();
             }
@@ -67,7 +67,7 @@ export class GridBothSideToolbarPinningSampleComponent implements OnInit {
     }
 
     public unpinColumn() {
-        this.grid1.selectedColumns().forEach((col: IgxColumnComponent) => {
+        this.grid1.selectedColumns().forEach((col: ColumnType) => {
             col.unpin();
         });
     }

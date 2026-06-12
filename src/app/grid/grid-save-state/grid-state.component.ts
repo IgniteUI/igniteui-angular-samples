@@ -91,7 +91,7 @@ export class GridSaveStateComponent implements OnInit, AfterViewInit {
     public ngOnInit() {
       this.localData = employeesData;
       this.columns = this.initialColumns;
-      this.router.events.pipe(take(1)).subscribe((event: NavigationStart) => {
+      this.router.events.pipe(take(1)).subscribe(() => {
           this.saveGridState();
       });
     }

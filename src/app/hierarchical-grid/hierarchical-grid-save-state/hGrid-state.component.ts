@@ -79,7 +79,7 @@ export class HGridSaveStateComponent implements OnInit, AfterViewInit {
     }
 
     public ngOnInit() {
-      this.router.events.pipe(take(1)).subscribe((event: NavigationStart) => {
+      this.router.events.pipe(take(1)).subscribe(() => {
           this.saveGridState();
       });
     }

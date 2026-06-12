@@ -70,7 +70,8 @@ export class GridValidatorServiceCrossFieldComponent {
     }
 
     private rowValidator(): ValidatorFn {
-        return (formGroup: FormGroup): ValidationErrors | null => {
+        return (control: AbstractControl): ValidationErrors | null => {
+            const formGroup = control as FormGroup;
             let returnObject = {};
             const createdOnRecord = formGroup.get('created_on');
             const lastActiveRecord = formGroup.get('last_activity');
@@ -103,7 +104,7 @@ export class GridValidatorServiceCrossFieldComponent {
             }
 
             return returnObject;
-        };
+        }
     }
 
     public isRowValid(cell: CellType) {

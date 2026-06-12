@@ -210,7 +210,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     public createChartCommonLogic() {
         if (Object.keys(this.selectedCharts).length !== 0) {
             setTimeout(() => {
-                Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
+                Object.keys(this.selectedCharts).forEach((chart: string) => {
+                    const c = chart as CHART_TYPE;
                     const chartHost = this.getChartHostFromSlot(c);
                     if (this.availableCharts.indexOf(c) !== -1) {
                         if (c !== CHART_TYPE.Pie && typeof this.selectedCharts[c] === 'object') {

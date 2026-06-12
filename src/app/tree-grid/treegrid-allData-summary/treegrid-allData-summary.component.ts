@@ -7,7 +7,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 
 class PTOSummary {
 
-    public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
+    public operate(data?: any[], allData: any[] = [], fieldName = ''): IgxSummaryResult[] {
       const result = [];
       result.push({
         key: 'totalOnPTO', label: 'Employees On PTO',

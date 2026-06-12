@@ -19,7 +19,7 @@ export class AppComponent implements OnInit {
     private metaDesc = 'In this angular grid example, you can see how users can customize their data view by leveraging the various features built into the grid.';
 
     public ngOnInit() {
-        this.seoService.updateHeadProperties(this.title, this.metaDesc, this.document.defaultView.location.href);
+        this.seoService.updateHeadProperties(this.title, this.metaDesc, this.document.defaultView?.location.href ?? '');
     }
 }
 

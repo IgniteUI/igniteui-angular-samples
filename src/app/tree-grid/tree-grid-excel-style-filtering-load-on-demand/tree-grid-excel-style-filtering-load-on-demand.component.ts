@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
-import { IFilteringExpressionsTree } from 'igniteui-angular/core';
+import { ColumnType, IFilteringExpressionsTree } from 'igniteui-angular/core';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -24,7 +24,7 @@ export class TreeGridExcelStyleFilteringLoadOnDemandComponent implements OnInit 
         this.data = this.remoteValuesService.getRecordsData();
     }
 
-    public columnValuesStrategy = (column: IgxColumnComponent,
+    public columnValuesStrategy = (column: ColumnType,
                                    columnExprTree: IFilteringExpressionsTree,
                                    done: (uniqueValues: any[]) => void) => {
         // Get specific column data.

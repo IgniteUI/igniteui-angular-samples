@@ -163,7 +163,7 @@ export class PivotGridStatePersistenceSampleComponent implements OnInit, AfterVi
     };
 
     public ngOnInit(): void {
-        this.router.events.pipe(take(1)).subscribe((event: NavigationStart) => {
+        this.router.events.pipe(take(1)).subscribe(() => {
             this.saveGridState();
         });
     }

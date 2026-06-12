@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit, inject, ChangeDetectionStrategy } from '@angular/core';
-import { NavigationStart, Router, RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { FilteringExpressionsTree, FilteringLogic } from 'igniteui-angular/core';
 import { GridFeatures, IGridState, IGridStateOptions, IgxColumnComponent, IgxGridStateDirective } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
@@ -66,7 +66,7 @@ export class TGridSaveStateComponent implements OnInit, AfterViewInit {
     }
 
     public ngOnInit() {
-      this.router.events.pipe(take(1)).subscribe((event: NavigationStart) => {
+      this.router.events.pipe(take(1)).subscribe(() => {
           this.saveGridState();
       });
     }

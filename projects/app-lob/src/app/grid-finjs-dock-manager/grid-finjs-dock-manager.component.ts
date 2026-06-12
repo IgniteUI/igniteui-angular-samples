@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, CUSTOM_ELEMENTS_SCHEMA, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, CUSTOM_ELEMENTS_SCHEMA, inject, ChangeDetectionStrategy } from '@angular/core';
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, GridColumnDataType, IgxOverlayOutletDirective, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -31,7 +31,6 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
     dataService = inject(SignalRService);
     private paneService = inject(FloatingPanesService);
     private cdr = inject(ChangeDetectorRef);
-    private componentFactoryResolver = inject(ComponentFactoryResolver);
     private elementRef = inject(ElementRef);
     private renderer = inject(Renderer2);
 
@@ -290,8 +289,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         this.cdr.detectChanges();
 
         // Create Dock Slot Component
-        const dockSlotComponentFactory = this.componentFactoryResolver.resolveComponentFactory(DockSlotComponent);
-        const dockSlotComponent = this.host.viewContainerRef.createComponent(dockSlotComponentFactory);
+        const dockSlotComponent = this.host.viewContainerRef.createComponent(DockSlotComponent);
         dockSlotComponent.instance.id = id;
         dockSlotComponent.instance.viewInit.pipe(first()).subscribe(() => {
             const gridViewContainerRef = dockSlotComponent.instance.gridHost.viewContainerRef;
@@ -300,10 +298,9 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
     }
 
     public loadGridComponent(viewContainerRef: ViewContainerRef, destructor: Subject<any>) {
-        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(IgxGridComponent);
         viewContainerRef.clear();
 
-        const componentRef = viewContainerRef.createComponent(componentFactory);
+        const componentRef = viewContainerRef.createComponent(IgxGridComponent);
         const grid = (componentRef.instance as IgxGridComponent);
         grid.autoGenerate = true;
         this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => grid.data = d);

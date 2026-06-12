@@ -1,5 +1,5 @@
 import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
-import { IFilteringExpressionsTree } from 'igniteui-angular/core';
+import { ColumnType, IFilteringExpressionsTree } from 'igniteui-angular/core';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { RemoteValuesService } from '../../services/remoteValues.service';
@@ -19,7 +19,7 @@ export class HierarchicalGridExcelStyleFilteringLoadOnDemandComponent implements
 
     public localdata: any[];
 
-    public singersColumnValuesStrategy = (column: IgxColumnComponent,
+    public singersColumnValuesStrategy = (column: ColumnType,
                                           columnExprTree: IFilteringExpressionsTree,
                                           done: (uniqueValues: any[]) => void) => {
         // Get specific column data for the singers.
@@ -27,7 +27,7 @@ export class HierarchicalGridExcelStyleFilteringLoadOnDemandComponent implements
             null, 'Singers', column, columnExprTree, uniqueValues => done(uniqueValues));
     };
 
-    public albumsColumnValuesStrategy = (column: IgxColumnComponent,
+    public albumsColumnValuesStrategy = (column: ColumnType,
                                          columnExprTree: IFilteringExpressionsTree,
                                          done: (uniqueValues: any[]) => void) => {
     // Get specific column data for the albums of a specific singer.
