@@ -5,7 +5,8 @@ export const BaseAppConfig = {
     ],
     providers: [
         { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' },
-        { 'provider': 'provideIgniteIntl()', 'import': 'igniteui-angular' }
+        { 'provider': 'provideIgniteIntl()', 'import': 'igniteui-angular' },
+        { 'provider': 'provideRouter([])', 'import': '@angular/router' }
     ],
     routesConfig: {
         router: false
