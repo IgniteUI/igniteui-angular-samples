@@ -21,8 +21,7 @@ export class GridCRMConfigGenerator implements IConfigGenerator {
             appConfig: {
                 modules: [
                     { 'module': 'BrowserModule', 'import': '@angular/platform-browser' },
-                    { 'module': 'FormsModule', 'import': '@angular/forms' },
-                    { 'module': 'HammerModule', 'import': '@angular/platform-browser' }
+                    { 'module': 'FormsModule', 'import': '@angular/forms' }
                 ],
                 providers: [
                     { 'provider': 'provideAnimations()', 'import': '@angular/platform-browser/animations' }
