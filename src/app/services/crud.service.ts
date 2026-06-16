@@ -7,10 +7,12 @@ import { Invoice, INVOICE_DATA } from '../data/invoiceData';
 @Injectable()
 export class CRUDService {
     private _http = inject(HttpClient);
+    private readonly _totalCount = new BehaviorSubject<number>(0);
 
     public dataCollection: Invoice[];
     public data$: Observable<Invoice[]>;
     private _data: BehaviorSubject<Invoice[]>;
+    public totalCount$ = this._totalCount.asObservable();
 
     constructor() {
         this._data = new BehaviorSubject<Invoice[]>([]);
@@ -19,6 +21,7 @@ export class CRUDService {
             rec['ID'] = 100 + index;
             return rec;
         }).slice(0);
+        this._totalCount.next(this.dataCollection.length);
     }
     public getAllData(): Observable<Invoice[]> {
         setTimeout(() => {
@@ -49,6 +52,7 @@ export class CRUDService {
     public add(rec: Invoice): Observable<Invoice> {
         const data$: Observable<any> = new Observable((observer) => {
             this.dataCollection.push(rec);
+            this._totalCount.next(this.dataCollection.length);
             observer.next(this.dataCollection);
             observer.complete();
         }).pipe(delay(300));
@@ -73,20 +77,11 @@ export class CRUDService {
         const data$: Observable<any> = new Observable((observer) => {
             const ind = this.dataCollection.indexOf(rec);
             const deletedInstance = this.dataCollection.splice(ind, 1)[0];
+            this._totalCount.next(this.dataCollection.length);
             observer.next(deletedInstance);
             observer.complete();
         }).pipe(delay(300));
 
         return data$;
     }
-
-    public getDataLength(): Observable<number> {
-        const data$: Observable<any> = new Observable((observer) => {
-            observer.next(this.dataCollection.length);
-            observer.complete();
-        });
-
-        return data$;
-    }
-
 }
