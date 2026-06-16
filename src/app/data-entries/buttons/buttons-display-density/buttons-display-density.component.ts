@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -7,6 +7,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-buttons-display-density',
     styleUrls: ['./buttons-display-density.component.scss'],
     templateUrl: './buttons-display-density.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxIconComponent]
 })
 export class ButtonsDisplayDensityComponent implements OnInit {

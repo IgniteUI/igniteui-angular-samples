@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxStepActiveIndicatorDirective, IgxStepComponent, IgxStepContentDirective, IgxStepSubtitleDirective, IgxStepTitleDirective, IgxStepperComponent } from 'igniteui-angular/stepper';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-stepper-linear-sample',
     styleUrls: ['./stepper-linear-sample.component.scss'],
     templateUrl: './stepper-linear-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxStepperComponent, IgxStepActiveIndicatorDirective, IgxIconComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxButtonDirective, IgxStepSubtitleDirective, IgxRadioGroupDirective, IgxRadioComponent]
 })
 export class StepperLinearSampleComponent {

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { GridSelectionMode, IgxColumnComponent, RowType } from 'igniteui-angular/grids/core';
@@ -11,6 +11,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-row-reorder',
     styleUrls: ['tree-grid-row-reorder.component.scss'],
     templateUrl: 'tree-grid-row-reorder.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxDropDirective, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent]
 })
 export class TreeGridRowReorderComponent {

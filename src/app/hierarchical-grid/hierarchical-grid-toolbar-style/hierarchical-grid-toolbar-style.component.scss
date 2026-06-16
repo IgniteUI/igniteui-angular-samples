@@ -10,7 +10,7 @@ $dark-button-theme: outlined-button-theme(
 );
 
 $dark-grid-toolbar-theme: grid-toolbar-theme(
-    $background-color: $background,
+    $background: $background,
     $title-text-color: $accent,
 );
 

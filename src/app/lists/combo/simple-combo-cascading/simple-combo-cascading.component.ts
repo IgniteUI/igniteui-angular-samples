@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ISimpleComboSelectionChangingEventArgs, IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
 import { IgxLinearProgressBarComponent } from 'igniteui-angular/progressbar';
 import { City, Country, getCitiesByCountry, getCountries, Region } from '../../../data/cities15000-regions-countries';
@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-simple-combo-cascading',
     templateUrl: 'simple-combo-cascading.component.html',
     styleUrls: ['simple-combo-cascading.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSimpleComboComponent, FormsModule, IgxLinearProgressBarComponent]
 })
 export class SimpleComboCascadingComponent implements OnInit {

@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/quotes */
 import { Injectable } from "@angular/core";
 export interface IMessage {
     authorId: number;

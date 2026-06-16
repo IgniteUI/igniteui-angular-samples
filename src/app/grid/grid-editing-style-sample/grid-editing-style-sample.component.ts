@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
 import { IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -11,6 +11,7 @@ import { DatePipe } from '@angular/common';
     selector: 'app-grid-editing-style-sample',
     styleUrls: ['./grid-editing-style-sample.component.scss'],
     templateUrl: './grid-editing-style-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxCellEditorTemplateDirective, FormsModule, DatePipe]
 })
 export class GridEditingStyleSampleComponent implements OnInit {

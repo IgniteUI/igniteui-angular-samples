@@ -1,5 +1,5 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { IFilteringExpressionsTree } from 'igniteui-angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { ColumnType, IFilteringExpressionsTree } from 'igniteui-angular/core';
 import { IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { RemoteValuesService } from './remoteValues.service';
@@ -10,6 +10,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     styleUrls: ['./grid-excel-style-filtering-load-on-demand.component.scss'],
     templateUrl: './grid-excel-style-filtering-load-on-demand.component.html',
     providers: [RemoteValuesService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxColumnComponent]
 })
 export class GridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
@@ -18,7 +19,7 @@ export class GridExcelStyleFilteringLoadOnDemandComponent implements OnInit {
 
     public data: any[];
 
-    public columnValuesStrategy = (column: IgxColumnComponent,
+    public columnValuesStrategy = (column: ColumnType,
                                    columnExprTree: IFilteringExpressionsTree,
                                    done: (uniqueValues: any[]) => void) => {
         // Get specific column data.

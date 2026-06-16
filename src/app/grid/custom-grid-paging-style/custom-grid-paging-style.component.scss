@@ -8,8 +8,8 @@ $light-gray: #999;
 $inactive-color: #826217;
 
 $dark-paginator: paginator-theme(
-    $text-color: $my-secondary,
-    $background-color: $my-primary,
+    $foreground: $my-secondary,
+    $background: $my-primary,
     $border-color: $my-secondary,
 );
 

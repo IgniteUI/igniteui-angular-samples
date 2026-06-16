@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular/grids/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { Singer, SINGERS } from '../../data/artistData';
@@ -7,6 +7,7 @@ import { Singer, SINGERS } from '../../data/artistData';
     selector: 'app-hierarchical-grid-excel-export-sample',
     styleUrls: ['hierarchical-grid-excel-export.sample.scss'],
     templateUrl: 'hierarchical-grid-excel-export.sample.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxHierarchicalGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxRowIslandComponent]
 })
 export class HGridExcelExportSampleComponent {

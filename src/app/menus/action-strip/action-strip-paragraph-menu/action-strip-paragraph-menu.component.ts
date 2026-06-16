@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxActionStripComponent, IgxActionStripMenuItemDirective } from 'igniteui-angular/action-strip';
 import { IgxRippleDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -7,6 +7,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-action-strip-paragraph-menu',
     styleUrls: ['./action-strip-paragraph-menu.component.scss'],
     templateUrl: './action-strip-paragraph-menu.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxActionStripComponent, IgxActionStripMenuItemDirective, IgxRippleDirective, IgxIconComponent]
 })
 export class ActionStripParagraphMenuComponent {

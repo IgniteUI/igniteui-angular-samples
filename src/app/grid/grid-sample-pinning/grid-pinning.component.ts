@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit, AfterViewInit, inject } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit, AfterViewInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxCellHeaderTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
@@ -15,6 +15,7 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     selector: 'app-grid-sample',
     styleUrls: ['grid-pinning.component.scss'],
     templateUrl: 'grid-pinning.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxIconComponent]
 })
 

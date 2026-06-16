@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxStepComponent, IgxStepTitleDirective, IgxStepType, IgxStepperComponent } from 'igniteui-angular/stepper';
 
@@ -6,6 +6,7 @@ import { IgxStepComponent, IgxStepTitleDirective, IgxStepType, IgxStepperCompone
     selector: 'app-stepper-steptypes-sample',
     styleUrls: ['./stepper-steptypes-sample.component.scss'],
     templateUrl: './stepper-steptypes-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective]
 })
 export class StepperStepTypesSampleComponent {

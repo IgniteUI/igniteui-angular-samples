@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DATA } from '../../data/customers';
 import { IgxColumnActionsComponent, IgxColumnComponent, IgxColumnHidingDirective } from 'igniteui-angular/grids/core';
 import { IgxRadioComponent } from 'igniteui-angular/radio';
@@ -9,6 +9,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-column-hiding-toolbar-style',
     styleUrls: ['./grid-column-hiding-toolbar-style.component.scss'],
     templateUrl: './grid-column-hiding-toolbar-style.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxColumnActionsComponent, IgxColumnHidingDirective, IgxRadioComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridColumnHidingToolbarStyleComponent implements OnInit {

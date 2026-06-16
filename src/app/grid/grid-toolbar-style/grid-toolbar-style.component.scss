@@ -15,14 +15,14 @@ $dark-button-theme: flat-button-theme(
 );
 
 $dark-grid-toolbar-theme: grid-toolbar-theme(
-  $background-color: $my-dark-color,
+  $background: $my-dark-color,
   $title-text-color: color($my-dark-palette, 'secondary'),
   $dropdown-background: $my-dark-color,
 );
 
 $dark-column-actions-theme: column-actions-theme(
   $title-color: color($my-dark-palette, 'secondary'),
-  $background-color: color($my-dark-palette, 'surface')
+  $background: color($my-dark-palette, 'surface')
 );
 
 $dark-checkbox-theme: checkbox-theme(

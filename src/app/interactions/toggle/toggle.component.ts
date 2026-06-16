@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 
 import { ConnectedPositioningStrategy, HorizontalAlignment, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxButtonDirective, IgxToggleDirective } from 'igniteui-angular/directives';
@@ -7,6 +7,7 @@ import { IgxButtonDirective, IgxToggleDirective } from 'igniteui-angular/directi
     selector: 'app-toggle',
     styleUrls: ['./toggle-samples.scss'],
     templateUrl: './toggle.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxToggleDirective]
 })
 export class ToggleComponent {

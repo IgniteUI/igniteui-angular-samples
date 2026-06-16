@@ -1,11 +1,12 @@
 import {
-    Component,
-    ViewChild,
-    OnInit,
-    AfterViewInit,
-    ElementRef,
-    QueryList,
-    ViewChildren
+  Component,
+  ViewChild,
+  OnInit,
+  AfterViewInit,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+  ChangeDetectionStrategy
 } from "@angular/core";
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
@@ -147,6 +148,7 @@ class DiscontinuedSummary {
     selector: "app-grid-summary-sample",
     styleUrls: ["./grid-disable-summaries.component.scss"],
     templateUrl: "grid-disable-summaries.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     IgxGridComponent,
     IgxPreventDocumentScrollDirective,

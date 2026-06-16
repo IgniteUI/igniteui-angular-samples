@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { IgxNavbarComponent } from 'igniteui-angular/navbar';
 
 @Component({
@@ -6,6 +6,7 @@ import { IgxNavbarComponent } from 'igniteui-angular/navbar';
     selector: 'app-navbar',
     styleUrls: ['./navbar.component.scss'],
     templateUrl: './navbar.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent]
 })
 export class NavbarComponent { }

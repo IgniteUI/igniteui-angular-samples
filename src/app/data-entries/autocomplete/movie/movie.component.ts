@@ -1,4 +1,4 @@
-import { Component, Pipe, PipeTransform } from '@angular/core';
+import { Component, Pipe, PipeTransform, ChangeDetectionStrategy } from '@angular/core';
 import { ConnectedPositioningStrategy, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent } from 'igniteui-angular/drop-down';
@@ -9,6 +9,7 @@ import { AutocompletePipeStartsWith } from '../autocomplete/autocomplete.compone
     selector: 'app-movie-availability',
     styleUrls: ['./movie.component.scss'],
     templateUrl: './movie.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent, AutocompletePipeStartsWith]
 })
 export class MovieComponent {

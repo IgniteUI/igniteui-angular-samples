@@ -15,11 +15,13 @@
       "node_modules/@types"
     ],
     "useDefineForClassFields": false,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strictPropertyInitialization": false,
+    "strictNullChecks": false,
+    "noImplicitAny": false
   },
   "angularCompilerOptions": {
     "strictTemplates": true,
-    "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
   }
 }

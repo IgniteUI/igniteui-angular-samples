@@ -1,4 +1,4 @@
-import { Component, OnInit, DOCUMENT, inject } from '@angular/core';
+import { Component, OnInit, DOCUMENT, inject, ChangeDetectionStrategy } from '@angular/core';
 import { SEOService } from '../../../app-lob/src/app/seo.service';
 import { RouterOutlet } from '@angular/router';
 
@@ -7,6 +7,7 @@ import { RouterOutlet } from '@angular/router';
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {
@@ -18,7 +19,7 @@ export class AppComponent implements OnInit {
     private metaDesc = 'In this angular grid example, you can see how users can customize their data view by leveraging the various features built into the grid.';
 
     public ngOnInit() {
-        this.seoService.updateHeadProperties(this.title, this.metaDesc, this.document.defaultView.location.href);
+        this.seoService.updateHeadProperties(this.title, this.metaDesc, this.document.defaultView?.location.href ?? '');
     }
 }
 
