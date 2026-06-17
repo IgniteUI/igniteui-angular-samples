@@ -6,9 +6,9 @@ $foreground: #eeece1;
 $accent: #ffcd0f;
 
 $grid-theme: grid-theme(
-	$background: $background,
-	$foreground: $foreground,
-	$accent-color: $accent,
+    $background: $background,
+    $foreground: $foreground,
+    $accent-color: $accent,
 );
 
 $paginator-theme: paginator-theme(
@@ -17,8 +17,6 @@ $paginator-theme: paginator-theme(
     $border-color: #ff570f,
     $accent-color: #ff570f,
 );
-
-
 
 igx-tree-grid {
     @include tokens($grid-theme);
