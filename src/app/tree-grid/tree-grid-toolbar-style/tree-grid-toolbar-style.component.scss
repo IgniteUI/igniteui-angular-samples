@@ -11,13 +11,8 @@ $grid-theme: grid-theme(
 	$accent-color: $accent,
 );
 
-$button-theme: outlined-button-theme(
-    $foreground: $accent,
-    $hover-background: $accent,
-);
-
 $grid-toolbar-theme: grid-toolbar-theme(
-    $background: #25025a,
+    $background: #170237,
     $border-color: $accent,
     $title-text-color: #f6d8d8,
     $item-hover-background: rgb(246 216 216 / 0.3),
@@ -30,9 +25,5 @@ $grid-toolbar-theme: grid-toolbar-theme(
 	
     igx-grid-toolbar {
         @include tokens($grid-toolbar-theme);
-
-        [igxButton='outlined'] {
-            @include tokens($button-theme);
-        }
     }
 }
