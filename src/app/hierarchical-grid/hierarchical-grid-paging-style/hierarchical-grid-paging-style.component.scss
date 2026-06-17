@@ -18,7 +18,7 @@ $paginator-theme: paginator-theme(
 	$accent-color: #ff570f,
 );
 
-igx-tree-grid {
+igx-hierarchical-grid {
 	@include tokens($grid-theme);
 }
 
