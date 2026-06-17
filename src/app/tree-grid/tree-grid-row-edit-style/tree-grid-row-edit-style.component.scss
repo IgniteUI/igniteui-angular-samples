@@ -1,15 +1,17 @@
-@use "layout.scss";
-@use "igniteui-angular/theming" as *;
+@use 'layout.scss';
+@use 'igniteui-angular/theming' as *;
 
-$banner-theme: banner-theme(
-  $banner-background: #e3e3e3,
-  $banner-message-color: color($purple-palette, "secondary", 600)
+$grid-theme: grid-theme(
+	$edit-mode-color: #9311ea,
+	$cell-editing-background: #e4d9f4,
 );
 
-:host {
-  @include tokens($banner-theme);
-}
+$banner-theme: banner-theme(
+	$banner-background: #e4d9f4,
+	$banner-message-color: #000,
+);
 
-igx-tree-grid{
-  @include palette($purple-palette);
+igx-tree-grid {
+	@include tokens($banner-theme);
+	@include tokens($grid-theme);
 }
