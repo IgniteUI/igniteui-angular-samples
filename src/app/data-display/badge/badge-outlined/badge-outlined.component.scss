@@ -1,0 +1,24 @@
+.wrapper {
+  position: relative;
+  margin: 15px 0 0 15px;
+  display: flex;
+  padding: 8px;
+  background: var(--ig-surface-600);
+  border: 1px solid var(--ig-gray-600);
+  width: fit-content;
+  align-items: center;
+  border-radius: 4px;
+}
+
+igx-badge {
+  --size: 16px;
+
+  position: relative;
+  right: 10px;
+  bottom: 8px;
+}
+
+span {
+  display: block;
+  font-weight: 600;
+}
