@@ -23,12 +23,12 @@ export class GridGroupByCustomSampleComponent {
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
     public grid1: IgxGridComponent;
     public data;
-    public sortingStrategy;
-    public groupByOptions = [
-        { name: 'Day', ref: DaySortingStrategy.instance() },
-        { name: 'Week', ref: WeekSortingStrategy.instance() },
-        { name: 'Month', ref: BaseSortingStrategy.instance() },
-        { name: 'Year', ref: BaseSortingStrategy.instance() }
+    public sortingStrategy: BaseSortingStrategy;
+    public groupByOptions: { name: string; ref: BaseSortingStrategy }[] = [
+        { name: 'Day', ref: DaySortingStrategy.instance() as DaySortingStrategy },
+        { name: 'Week', ref: WeekSortingStrategy.instance() as WeekSortingStrategy },
+        { name: 'Month', ref: BaseSortingStrategy.instance() as BaseSortingStrategy },
+        { name: 'Year', ref: BaseSortingStrategy.instance() as BaseSortingStrategy }
     ];
 
     public groupByMode = this.groupByOptions[0].name;
@@ -54,7 +54,7 @@ export class GridGroupByCustomSampleComponent {
                     } else if (this.groupByMode === 'Year') {
                         return dateA.year === dateB.year ? 0 : -1;
                     } else if (this.groupByMode === 'Week') {
-                       return this.sortingStrategy.getWeekOfDate(a) === this.sortingStrategy.getWeekOfDate(b) ? 0 : -1;
+                       return (this.sortingStrategy as WeekSortingStrategy).getWeekOfDate(a) === (this.sortingStrategy as WeekSortingStrategy).getWeekOfDate(b) ? 0 : -1;
                     }
                     return dateA.day === dateB.day && dateA.month === dateB.month ? 0 : -1;
                 }
