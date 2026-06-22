@@ -2,8 +2,8 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-theme: grid-theme(
-  $sorted-header-icon-color: #ffb06a,
-  $sortable-header-icon-hover-color: black
+  $sorted-header-icon-color: #dc38e8,
+  $sortable-header-icon-hover-color: #5d1461
 );
 
 :host {

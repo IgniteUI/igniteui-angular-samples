@@ -13,9 +13,21 @@ $color-palette: palette(
 
 $grid-theme: grid-theme(
   $cell-editing-background: $blue,
+  $cell-editing-foreground: $white,
+  $cell-active-border-color: $blue,
   $cell-edited-value-color: $white,
-  $cell-active-border-color: $white,
-  $edit-mode-color: color($color-palette, "secondary", 200)
+  $edit-mode-color: color($color: "secondary", $variant: 200)
+);
+
+$checkbox-theme: checkbox-theme(
+  $empty-color: color($color: "secondary", $variant: 200),
+  $fill-color: $white,
+  $tick-color: $blue
+);
+
+$datepicker-theme: calendar-theme(
+  $date-selected-foreground: $white,
+  $date-selected-background: $blue
 );
 
 $input-theme: input-group-theme(
@@ -28,24 +40,10 @@ $input-theme: input-group-theme(
   $box-background: $blue
 );
 
-$checkbox-theme: checkbox-theme(
-  $empty-color: color($color-palette, "secondary", 200),
-  $fill-color: $white,
-  $tick-color: $blue
-);
-
-$datepicker-theme: calendar-theme(
-  $date-selected-foreground: $white,
-  $date-selected-background: $blue
-);
-
-:host {
+igx-hierarchical-grid {
+    @include palette($color-palette);
     @include tokens($grid-theme);
     @include tokens($checkbox-theme);
-    @include tokens($input-theme);
     @include tokens($datepicker-theme);
-}
-
-igx-hierarchical-grid {
-  @include palette($color-palette);
+    @include tokens($input-theme);
 }

@@ -1,13 +1,17 @@
-@use "layout.scss";
-@use "igniteui-angular/theming" as *;
+@use 'layout.scss';
+@use 'igniteui-angular/theming' as *;
 
-$custom-theme: grid-theme(
-  $pinned-border-width: 5px,
-  $pinned-border-style: double,
-  $pinned-border-color: #ffcd0f,
-  $cell-active-border-color: #ffcd0f
+$background: #292826;
+$foreground: #eeece1;
+$accent: #ffcd0f;
+
+$custom-grid: grid-theme(
+	$background: $background,
+	$foreground: $foreground,
+	$accent-color: $accent,
+	$pinned-border-color: $accent,
 );
 
 :host {
-  @include tokens($custom-theme);
+	@include tokens($custom-grid);
 }

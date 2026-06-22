@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxSummaryResult, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
 import { CellType, GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent, IgxDateSummaryOperand, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarTitleComponent, IgxNumberSummaryOperand, IColumnExportingEventArgs, IgxCsvExporterService, IgxExcelExporterService } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxIconButtonDirective, IgxRippleDirective, IgxToggleDirective } from 'igniteui-angular/directives';
+import { IgxIconButtonDirective, IgxToggleDirective } from 'igniteui-angular/directives';
 import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
@@ -76,7 +76,7 @@ class SoonSummary extends IgxDateSummaryOperand {
     styleUrls: ['./grid-crm.component.scss'],
     templateUrl: './grid-crm.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxGridToolbarTitleComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxLinearProgressBarComponent]
+    imports: [NgClass, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxGridToolbarExporterComponent, IgxGridToolbarTitleComponent, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxLinearProgressBarComponent]
 })
 export class GridCRMComponent implements OnInit, AfterViewInit {
     private csvExporter = inject(IgxCsvExporterService);
