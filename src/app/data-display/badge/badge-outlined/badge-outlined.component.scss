@@ -1,21 +1,30 @@
+:host {
+  display: block;
+  padding-inline: 1rem;
+}
+
 .wrapper {
   position: relative;
-  margin: 15px 0 0 15px;
   display: flex;
-  padding: 8px;
-  background: var(--ig-surface-600);
-  border: 1px solid var(--ig-gray-600);
-  width: fit-content;
   align-items: center;
-  border-radius: 4px;
+  margin-block: 1rem;
+  width: fit-content;
+  padding: 0.5rem;
+  gap: 0.5rem;
+  border: 1px solid var(--ig-gray-300);
+  border-radius: .25rem;
+}
+
+igx-avatar {
+    anchor-name: --avatar;
 }
 
 igx-badge {
-  --size: 16px;
+  --size: 1rem;
 
-  position: relative;
-  right: 10px;
-  bottom: 8px;
+  position: absolute;
+  inset-block-end: anchor(--avatar bottom);
+  inset-inline-end: anchor(--avatar right);
 }
 
 span {
