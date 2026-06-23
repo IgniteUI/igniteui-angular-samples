@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { localData } from './local-data';
 import { IgxComboComponent } from 'igniteui-angular/combo';
 
@@ -6,6 +6,7 @@ import { IgxComboComponent } from 'igniteui-angular/combo';
     selector: 'app-combo-main',
     styleUrls: ['./combo-main.component.scss'],
     templateUrl: './combo-main.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxComboComponent]
 })
 

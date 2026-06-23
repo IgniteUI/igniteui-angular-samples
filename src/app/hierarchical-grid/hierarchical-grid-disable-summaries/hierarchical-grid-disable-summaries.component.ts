@@ -1,11 +1,12 @@
 import {
-    Component,
-    ViewChild,
-    OnInit,
-    AfterViewInit,
-    ElementRef,
-    QueryList,
-    ViewChildren
+  Component,
+  ViewChild,
+  OnInit,
+  AfterViewInit,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+  ChangeDetectionStrategy
 } from "@angular/core";
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
@@ -69,6 +70,7 @@ class GrammySummary {
     selector: "app-hierarchical-grid-summary-sample",
     styleUrls: ["./hierarchical-grid-disable-summaries.component.scss"],
     templateUrl: "hierarchical-grid-disable-summaries.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     IgxHierarchicalGridComponent,
     IgxRowIslandComponent,

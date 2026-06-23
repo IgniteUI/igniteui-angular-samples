@@ -13,4 +13,8 @@ $custom-grid: grid-theme(
 
 :host ::ng-deep {
     @include tokens($custom-grid);
+
+    igx-grid-excel-style-filtering {
+        --ig-excel-filtering-background: #444;
+    }
 }

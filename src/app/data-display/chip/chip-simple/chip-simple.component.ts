@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IBaseChipEventArgs, IgxChipComponent } from 'igniteui-angular/chips';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxPrefixDirective } from 'igniteui-angular/input-group';
@@ -8,6 +8,7 @@ import { IgxPrefixDirective } from 'igniteui-angular/input-group';
     selector: 'app-chip-simple',
     styleUrls: ['./chip-simple.component.scss'],
     templateUrl: './chip-simple.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxChipComponent, IgxIconComponent, IgxPrefixDirective]
 })
 

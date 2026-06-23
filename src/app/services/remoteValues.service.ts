@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
-import { FilteringStrategy, IFilteringExpressionsTree } from 'igniteui-angular/core';
-import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { ColumnType, FilteringStrategy, IFilteringExpressionsTree } from 'igniteui-angular/core';
 import { SINGERS } from '../data/singersData';
 
 @Injectable()
@@ -12,7 +11,7 @@ export class RemoteValuesService {
     }
 
     public getColumnData(parentId: any, key: string,
-                         column: IgxColumnComponent,
+                         column: ColumnType,
                          columnExprTree: IFilteringExpressionsTree,
                          done: (colVals: any[]) => void) {
         setTimeout(() => {

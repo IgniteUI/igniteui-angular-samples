@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, effect, signal, viewChild } from '@angular/core';
+import { Component, effect, signal, viewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxChatComponent, IgxChatMessageContextDirective, type IgxChatOptions } from 'igniteui-angular/chat';
 import { MarkdownPipe } from 'igniteui-angular/chat-extras';
 
@@ -7,6 +7,7 @@ import { MarkdownPipe } from 'igniteui-angular/chat-extras';
     selector: 'app-chat-features-sample',
     styleUrls: ['./features-sample.component.scss'],
     templateUrl: './features-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxChatComponent, IgxChatMessageContextDirective, AsyncPipe, MarkdownPipe]
 })
 export class ChatFeaturesSampleComponent {

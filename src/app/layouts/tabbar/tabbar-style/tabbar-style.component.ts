@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/quotes */
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import { IgxBottomNavComponent, IgxBottomNavContentComponent, IgxBottomNavHeaderComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavItemComponent } from 'igniteui-angular/bottom-nav';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 
@@ -8,6 +7,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: "app-tabbar-style",
     styleUrls: ["./tabbar-style.component.scss"],
     templateUrl: "./tabbar-style.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxBottomNavComponent, IgxBottomNavItemComponent, IgxBottomNavHeaderComponent, IgxIconComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavHeaderLabelDirective, IgxBottomNavContentComponent]
 })
 export class TabbarStyleComponent {

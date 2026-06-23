@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -9,6 +9,7 @@ import { scaleInTop, scaleOutBottom } from 'igniteui-angular/animations';
     selector: 'app-select-sample-4',
     styleUrls: ['select-sample-4.component.scss'],
     templateUrl: 'select-sample-4.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent]
 })
 export class SelectSample4Component implements OnInit {

@@ -1,9 +1,10 @@
 import {
-    Component,
-    ElementRef,
-    QueryList,
-    ViewChild,
-    ViewChildren
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { IDragBaseEventArgs, IDragMoveEventArgs, IgxDragDirective, IgxDragHandleDirective, IgxDragLocation, IgxDropDirective } from 'igniteui-angular/directives';
 import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';
@@ -14,6 +15,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-list-reorder-sample',
     templateUrl: './list-reorder-sample.component.html',
     styleUrls: ['./list-reorder-sample.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxListComponent, IgxListItemComponent, IgxDropDirective, IgxDragDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxDragHandleDirective, IgxListActionDirective]
 })
 export class ListReorderSampleComponent {

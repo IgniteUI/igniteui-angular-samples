@@ -1,10 +1,11 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 
 @Component({
     selector: 'app-svg-icon-sample',
     styleUrls: ['./svg-icon-sample.component.scss'],
     templateUrl: './svg-icon-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxIconComponent]
 })
 export class SvgIconSampleComponent implements OnInit {

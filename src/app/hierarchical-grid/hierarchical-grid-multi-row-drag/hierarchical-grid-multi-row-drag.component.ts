@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { GridSelectionMode, IgxColumnComponent, IgxRowDragGhostDirective, RowType } from 'igniteui-angular/grids/core';
 import { IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
@@ -10,6 +10,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-hierarchical-grid-multi-row-drag',
     styleUrls: ['./hierarchical-grid-multi-row-drag.component.scss'],
     templateUrl: 'hierarchical-grid-multi-row-drag.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDropDirective, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent, IgxRowDragGhostDirective, IgxIconComponent]
 })
 

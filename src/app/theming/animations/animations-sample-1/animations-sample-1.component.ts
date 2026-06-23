@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/member-delimiter-style */
 import { AnimationReferenceMetadata } from '@angular/animations';
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { AbsolutePosition, IgxOverlayService } from 'igniteui-angular/core';
 import { IListItemClickEventArgs, IgxListComponent, IgxListItemComponent, IgxListModule } from 'igniteui-angular/list';
 import { IgxDialogComponent, IgxDialogModule } from 'igniteui-angular/dialog';
@@ -31,6 +30,7 @@ import { blink, fadeIn, fadeOut, flipBottom, flipHorBck, flipHorFwd, flipLeft, f
     selector: 'app-animations-sample-1',
     styleUrls: ['./animations-sample-1.component.scss'],
     templateUrl: './animations-sample-1.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxListComponent, IgxListItemComponent, IgxDialogComponent]
 })
 export class AnimationsSampleComponent {

@@ -13,13 +13,14 @@ $color-palette: palette(
 
 $grid-theme: grid-theme(
   $cell-editing-background: $blue,
+  $cell-editing-foreground: $white,
   $cell-active-border-color: $blue,
   $cell-edited-value-color: $white,
-  $edit-mode-color: color($color-palette, "secondary", 200)
+  $edit-mode-color: color($color: "secondary", $variant: 200)
 );
 
 $checkbox-theme: checkbox-theme(
-  $empty-color: color($color-palette, "secondary", 200),
+  $empty-color: color($color: "secondary", $variant: 200),
   $fill-color: $white,
   $tick-color: $blue
 );
@@ -39,13 +40,10 @@ $input-theme: input-group-theme(
   $box-background: $blue
 );
 
-:host {
+igx-grid {
+    @include palette($color-palette);
     @include tokens($grid-theme);
     @include tokens($checkbox-theme);
     @include tokens($datepicker-theme);
     @include tokens($input-theme);
-}
-
-.igx-grid {
-  @include palette($color-palette);
 }

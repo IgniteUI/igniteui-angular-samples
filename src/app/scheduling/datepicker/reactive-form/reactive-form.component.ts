@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -8,6 +8,7 @@ import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
     selector: 'app-datetimepicker-reactive-form',
     styleUrls: ['./reactive-form.component.scss'],
     templateUrl: './reactive-form.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule, ReactiveFormsModule, IgxDatePickerComponent, IgxLabelDirective, IgxTimePickerComponent]
 })
 export class DateTimePickerRFSampleComponent {

@@ -1,5 +1,5 @@
 import { NgTemplateOutlet } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular/core';
 import { IgxComboModule } from 'igniteui-angular/combo';
@@ -11,6 +11,7 @@ import { IgxSelectModule } from 'igniteui-angular/select';
     selector: 'app-query-builder-template-sample',
     styleUrls: ['./query-builder-template-sample.component.scss'],
     templateUrl: 'query-builder-template-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     IgxQueryBuilderComponent,
     IgxQueryBuilderHeaderComponent,

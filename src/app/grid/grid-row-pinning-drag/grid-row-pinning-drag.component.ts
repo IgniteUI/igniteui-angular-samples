@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IPinningConfig, IRowDragStartEventArgs, IgxColumnComponent, IgxGridPinningActionsComponent, IgxRowDirective, RowPinningPosition, RowType } from 'igniteui-angular/grids/core';
@@ -10,6 +10,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-row-pinning-drag-sample',
     styleUrls: ['./grid-row-pinning-drag.component.scss'],
     templateUrl: 'grid-row-pinning-drag.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxDropDirective, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxActionStripComponent, IgxGridPinningActionsComponent]
 })
 

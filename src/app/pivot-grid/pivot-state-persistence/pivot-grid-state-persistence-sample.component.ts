@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren, inject } from "@angular/core";
+import { AfterViewInit, Component, OnInit, QueryList, ViewChild, ViewChildren, inject, ChangeDetectionStrategy } from "@angular/core";
 import { NavigationStart, Router, RouterLink } from "@angular/router";
 
 import { GridFeatures, IGridState, IGridStateOptions, IPivotAggregator, IPivotConfiguration, IPivotDimension, IPivotValue, IgxGridStateDirective, IgxPivotDateDimension, IgxPivotNumericAggregate, PivotAggregation } from 'igniteui-angular/grids/core';
@@ -42,6 +42,7 @@ export class IgxTotalSaleAggregate {
     selector: 'app-pivot-grid-state-persistence-sample',
     styleUrls: ['./pivot-grid-state-persistence-sample.component.scss'],
     templateUrl: './pivot-grid-state-persistence-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxIconComponent, RouterLink, IgxCheckboxComponent, IgxPivotGridComponent, IgxGridStateDirective]
 })
 export class PivotGridStatePersistenceSampleComponent implements OnInit, AfterViewInit {
@@ -162,7 +163,7 @@ export class PivotGridStatePersistenceSampleComponent implements OnInit, AfterVi
     };
 
     public ngOnInit(): void {
-        this.router.events.pipe(take(1)).subscribe((event: NavigationStart) => {
+        this.router.events.pipe(take(1)).subscribe(() => {
             this.saveGridState();
         });
     }

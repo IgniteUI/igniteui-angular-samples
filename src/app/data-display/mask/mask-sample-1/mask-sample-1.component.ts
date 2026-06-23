@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxMaskDirective, IgxTextSelectionDirective } from 'igniteui-angular/directives';
 import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
@@ -7,6 +7,7 @@ import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
     selector: 'app-mask-sample-1',
     styleUrls: ['./mask-sample-1.component.scss'],
     templateUrl: './mask-sample-1.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxMaskDirective, IgxTextSelectionDirective, IgxSnackbarComponent]
 })
 

@@ -1,5 +1,5 @@
 import { registerLocaleData } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { IFormattingOptions, IgxMonthPickerComponent } from 'igniteui-angular/calendar';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { IgxPrefixDirective } from 'igniteui-angular/input-group';
@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-monthpicker-sample-3',
     styleUrls: ['./monthpicker-sample-3.component.scss'],
     templateUrl: './monthpicker-sample-3.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSelectComponent, FormsModule, IgxPrefixDirective, IgxSelectItemComponent, IgxCardComponent, IgxMonthPickerComponent]
 })
 export class MonthpickerSample3Component implements OnInit {

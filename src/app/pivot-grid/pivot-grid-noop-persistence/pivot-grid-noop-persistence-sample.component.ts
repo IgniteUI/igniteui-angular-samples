@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild, inject } from "@angular/core";
+import { AfterViewInit, Component, ViewChild, inject, ChangeDetectionStrategy } from "@angular/core";
 import { IGridState, IGridStateOptions, IPivotConfiguration, IgxGridStateDirective, IgxPivotNumericAggregate, NoopPivotDimensionsStrategy } from 'igniteui-angular/grids/core';
 import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
 import { NoopSortingStrategy } from 'igniteui-angular/core';
@@ -12,6 +12,7 @@ import { take } from 'rxjs/operators';
     styleUrls: ['./pivot-grid-noop-persistence-sample.component.scss'],
     templateUrl: './pivot-grid-noop-persistence-sample.component.html',
     providers: [PivotDataService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxIconComponent, IgxPivotGridComponent, IgxGridStateDirective]
 })
 export class PivotGridNoopPersistenceSampleComponent implements AfterViewInit {
