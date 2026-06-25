@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
 import { IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-dropdown-sample-5',
     styleUrls: ['./dropdown-sample-5.component.scss'],
     templateUrl: './dropdown-sample-5.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxSwitchComponent, FormsModule, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent]
 })
 export class DropDownSample5Component {

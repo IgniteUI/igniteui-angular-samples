@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { IgxToastComponent } from 'igniteui-angular/toast';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -7,6 +7,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-toast-sample-3',
     styleUrls: ['./toast-sample-3.component.scss'],
     templateUrl: './toast-sample-3.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxToastComponent, IgxIconComponent]
 })
 

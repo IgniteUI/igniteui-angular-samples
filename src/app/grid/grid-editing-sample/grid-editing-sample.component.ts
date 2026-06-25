@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxSummaryResult, VerticalAlignment } from 'igniteui-angular/core';
@@ -42,6 +42,7 @@ class NumberSummary {
     selector: 'app-grid-editing-sample',
     styleUrls: ['./grid-editing-sample.component.scss'],
     templateUrl: './grid-editing-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxGridToolbarComponent, IgxButtonDirective, IgxIconComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxCellEditorTemplateDirective, FormsModule, IgxComboComponent, IgxFocusDirective, IgxIconButtonDirective, IgxToastComponent, IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxDatePickerComponent, IgxCheckboxComponent, DatePipe]
 })
 export class GridEditingSampleComponent implements OnInit, AfterViewInit {
@@ -103,7 +104,6 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
         this.product = new Product(this.id);
     }
 
-    // eslint-disable-next-line @typescript-eslint/member-delimiter-style
     public parseArray(arr: { shop: string, lastInventory: string}[]): string {
         return  (arr || []).map((e) => e.shop).join(', ');
     }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxBannerComponent } from 'igniteui-angular/banner';
 import { IgxNavbarComponent } from 'igniteui-angular/navbar';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -8,6 +8,7 @@ import { IgxCardComponent } from 'igniteui-angular/card';
     selector: 'app-banner-sample-1',
     styleUrls: ['../banner-samples.scss'],
     templateUrl: 'banner-sample-1.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent, IgxIconComponent, IgxBannerComponent, IgxCardComponent]
 })
 

@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardThumbnailDirective } from 'igniteui-angular/card';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
@@ -12,6 +12,7 @@ defineComponents(IgcTileManagerComponent);
     styleUrls: ['./tile-manager.component.scss'],
     templateUrl: './tile-manager.component.html',
     imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardThumbnailDirective, IgxCardContentDirective, IgxListComponent, IgxListItemComponent, IgxListThumbnailDirective, IgxAvatarComponent, IgxIconComponent],
+    changeDetection: ChangeDetectionStrategy.Eager,
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class TileManagerComponent implements OnInit {

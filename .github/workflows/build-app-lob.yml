@@ -5,16 +5,6 @@ name: App LOB CI
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
-  push:
-    branches: [ master, vnext ]
-    paths:
-      - '**'
-      - '!src/**'
-      - '!live-editing/configs/**'
-      - 'live-editing/configs/app-dv-configs/**'
-      - '!live-editing/generators/**'
-      - 'live-editing/generators/AppDVConfigGenerators.ts'
-      - '!projects/app-crm/**'
   pull_request:
     branches: [ master, vnext ]
     paths:
@@ -32,19 +22,15 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    strategy:
-      matrix:
-        node-version: [20.x, 22.x]
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - name: Use Node.js 24
+        uses: actions/setup-node@v6
         with:
-            node-version: ${{ matrix.node-version }}
+            node-version: 24
             cache: 'npm'
 
       - name: Npm add registry

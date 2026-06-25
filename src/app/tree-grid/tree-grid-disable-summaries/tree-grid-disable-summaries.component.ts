@@ -1,11 +1,12 @@
 import {
-    Component,
-    ViewChild,
-    OnInit,
-    AfterViewInit,
-    ElementRef,
-    QueryList,
-    ViewChildren
+  Component,
+  ViewChild,
+  OnInit,
+  AfterViewInit,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+  ChangeDetectionStrategy
 } from "@angular/core";
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { ConnectedPositioningStrategy, HorizontalAlignment, IgxSummaryResult, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
@@ -133,6 +134,7 @@ class DeliveredSummary {
     selector: "app-tree-grid-summary-sample",
     styleUrls: ["./tree-grid-disable-summaries.component.scss"],
     templateUrl: "./tree-grid-disable-summaries.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     IgxTreeGridComponent,
     IgxPreventDocumentScrollDirective,

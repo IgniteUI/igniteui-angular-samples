@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Member } from '../model/member.model';
 import { IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
@@ -9,6 +9,7 @@ import { IgxBadgeComponent } from 'igniteui-angular/badge';
     selector: 'app-badge-styling-sample',
     styleUrls: ['./badge-styling-sample.component.scss'],
     templateUrl: './badge-styling-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxBadgeComponent]
 })
 export class BadgeStylingSampleComponent {

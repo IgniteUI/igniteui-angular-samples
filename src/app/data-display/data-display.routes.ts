@@ -1,11 +1,13 @@
 import { BadgeIconComponent } from './badge/badge-icon/badge-icon.component';
 import { BadgeSample2Component } from './badge/badge-sample-2/badge-sample-2.component';
 import { BadgeSample3Component } from './badge/badge-sample-3/badge-sample-3.component';
+import { BadgeOutlinedComponent } from './badge/badge-outlined/badge-outlined.component';
 import { BadgeDotSampleComponent } from './badge/badge-dot-sample/badge-dot-sample.component';
 import { BadgeStylingSampleComponent } from './badge/badge-styling-sample/badge-styling-sample.component';
 import { BadgeTailwindStylingSampleComponent } from './badge/badge-tailwind-styling-sample/badge-tailwind-styling-sample.component';
 import { ChipAreaSampleComponent } from './chip/chip-area-sample/chip-area-sample.component';
 import { ChipSimpleComponent } from './chip/chip-simple/chip-simple.component';
+import { ChipVariantsComponent } from './chip/chip-variants/chip-variants.component';
 import { ChipStylingSampleComponent } from './chip/chip-styling/chip-styling.component';
 import { ChipTailwindStylingSampleComponent } from './chip/chip-tailwind-styling/chip-tailwind-styling.component';
 import { CircularDynamicSampleComponent } from './circular-progressbar/circular-dynamic-sample/circular-dynamic-sample.component';
@@ -63,6 +65,11 @@ export const DataDisplayRoutes: Routes = [
         path: 'badge-sample-3'
     },
     {
+        component: BadgeOutlinedComponent,
+        data: dataDisplayRoutesData['badge-outlined-sample'],
+        path: 'badge-outlined-sample'
+    },
+    {
         component: BadgeDotSampleComponent,
         data: dataDisplayRoutesData['badge-dot-sample'],
         path: 'badge-dot-sample'
@@ -86,6 +93,11 @@ export const DataDisplayRoutes: Routes = [
         component: ChipSimpleComponent,
         data: dataDisplayRoutesData['chip-simple'],
         path: 'chip-simple'
+    },
+    {
+        component: ChipVariantsComponent,
+        data: dataDisplayRoutesData['chip-variants'],
+        path: 'chip-variants'
     },
     {
         component: CircularDynamicSampleComponent,

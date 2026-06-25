@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { IgxColumnComponent, IgxNumberSummaryOperand, IgxSummaryTemplateDirective } from 'igniteui-angular/grids/core';
 import { IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 class DiscontinuedSummary {
-    public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
+    public operate(data?: any[], allData: any[] = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];
         result.push({
             key: 'products',
@@ -39,6 +39,7 @@ class DiscontinuedSummary {
     selector: 'app-grid-summary-template',
     styleUrls: ['./grid-summary-template.component.scss'],
     templateUrl: './grid-summary-template.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxSummaryTemplateDirective]
 })
 export class GridSummaryTemplateComponent implements OnInit {

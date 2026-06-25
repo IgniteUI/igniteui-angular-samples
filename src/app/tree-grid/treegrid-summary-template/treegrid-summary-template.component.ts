@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, HostBinding, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { IgxColumnComponent, IgxSummaryOperand, IgxSummaryTemplateDirective } from 'igniteui-angular/grids/core';
 import { IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -11,7 +11,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 
 class PTOSummary {
 
-    public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
+    public operate(data?: any[], allData: any[] = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];
         result.push({
             key: 'totalOnPTO', label: 'Employees On PTO',
@@ -49,6 +49,7 @@ class PTOSummary {
     selector: 'app-treegrid-summary-template',
     styleUrls: ['./treegrid-summary-template.component.scss'],
     templateUrl: './treegrid-summary-template.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxSummaryTemplateDirective]
 })
 export class TreeGridSummaryTemplateComponent implements OnInit {

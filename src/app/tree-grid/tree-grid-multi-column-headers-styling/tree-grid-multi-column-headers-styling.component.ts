@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxColumnComponent, IgxColumnGroupComponent } from 'igniteui-angular/grids/core';
@@ -8,6 +8,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-multi-column-headers-styling',
     styleUrls: ['./tree-grid-multi-column-headers-styling.component.scss'],
     templateUrl: './tree-grid-multi-column-headers-styling.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnGroupComponent]
 })
 export class TreeGridMultiColumnHeadersStylingComponent {

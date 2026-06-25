@@ -1,14 +1,25 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-$custom-grid-theme: grid-theme(
-  $row-selected-background: #011627,
-  $row-selected-text-color: #ecaa53,
-  $row-selected-hover-background: #011627,
-  $header-selected-text-color: #ecaa53,
-  $header-selected-background: #011627
+$background: #0b0119;
+$foreground: #eeece1;
+$accent: #f6b560;
+
+$grid-theme: grid-theme(
+	$background: $background,
+	$foreground: $foreground,
+	$accent-color: $accent,
+	
+	$row-selected-background: #012724,
+	$row-selected-text-color: $accent,
+	$header-selected-text-color: $accent,
+	$header-selected-background: #012427,
+	
+	// The intersection between row & column, visible when row is hovered
+	$row-selected-hover-background: hsl(from #012427 h s 10%),
+	$row-selected-hover-text-color: $accent,
 );
 
 :host {
-  @include tokens($custom-grid-theme);
+  @include tokens($grid-theme);
 }

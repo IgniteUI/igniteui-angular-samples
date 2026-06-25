@@ -1,57 +1,23 @@
-// @use "igniteui-angular/theming" as *;
-igx-chat {
-    height: 870px;
+@use "igniteui-angular/theming" as *;
+@use "layout.scss";
 
-    ::ng-deep {
-        igc-chat::part(header) {
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-bottom: 1px solid var(--ig-gray-300);
-            background-color: var(--ig-gray-200);
-            font-family: 'Franklin Gothic Medium';
-            color: var(--ig-gray-700);
-        }
+$custom-chat-theme: chat-theme(
+  $background: #f7f5f1,
+  $header-background: linear-gradient(135deg, #2b2b2b, #4a4a4a),
+  $header-color: #ffc641,
+  $sent-message-background: linear-gradient(135deg, #ffb703, #fb8500),
+  $sent-message-color: #1a1a1a,
+  $received-message-background: #e2d8c9,
+  $received-message-color: #2b2b2b,
+  $message-actions-color: #b26a2a,
+  $message-border-radius: 8px,
+  $image-background: #fff3d6,
+  $image-border: #fb8500,
+  $image-attachment-icon: #fb8500,
+  $chat-input-border: #e2d8c9,
+  $progress-indicator-color: #ffc641,
+);
 
-        igc-chat::part(message-container) {
-            background: var(--igc-chat-bubble-bg, #eee);
-            color: var(--igc-chat-text-color, #222);
-            padding: 12px;
-            border-radius: 8px;
-            transition: background .15s;
-        }
-
-        igc-chat::part(message-sent) {
-            background: var(--igc-chat-sent-bubble-bg, #e6f4ff);
-            color: var(--igc-chat-sent-text-color, #03396b);
-        }
-
-        igc-chat::part(message-header) {
-            color: #c00000;
-            font-weight: bold;
-            margin: 8px;
-        }
-
-        igc-chat::part(message-actions-container) {
-            border-top: 1px solid var(--ig-gray-300);
-        }
-
-        igc-chat::part(suggestion) {
-            background-color: var(--ig-primary-100);
-            color: var(--ig-primary-800);
-            margin: .125rem;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        igc-chat::part(message-attachment) {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-            background: var(--igc-chat-sent-bubble-bg);
-        }
-
-        igc-chat::part(input-attachments-container) {
-            border: 5px solid var(--ig-gray-300);
-        }
-    }
+:host {
+  @include tokens($custom-chat-theme);
 }

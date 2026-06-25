@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { IgxFlexDirective, IgxLayoutDirective } from 'igniteui-angular/directives';
 
 @Component({
@@ -6,6 +6,7 @@ import { IgxFlexDirective, IgxLayoutDirective } from 'igniteui-angular/directive
     selector: 'app-layout-wrap',
     styleUrls: ['./layout-wrap.component.scss'],
     templateUrl: './layout-wrap.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxLayoutDirective, IgxFlexDirective]
 })
 

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { GlobalPositionStrategy, NoOpScrollStrategy, OverlaySettings } from 'igniteui-angular/core';
 import { IgxButtonDirective, IgxDragDirective, IgxDragHandleDirective, IgxDragLocation, IgxToggleDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -7,6 +7,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-drag-dialog-sample',
     templateUrl: './drag-dialog-sample.component.html',
     styleUrls: ['./drag-dialog-sample.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxToggleDirective, IgxDragDirective, IgxIconComponent, IgxDragHandleDirective]
 })
 export class DragDialogSampleComponent {

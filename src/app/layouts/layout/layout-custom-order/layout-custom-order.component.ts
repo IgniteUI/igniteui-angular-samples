@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { ButtonGroupAlignment } from 'igniteui-angular/button-group';
 import { IgxFlexDirective, IgxLayoutDirective } from 'igniteui-angular/directives';
 
@@ -7,6 +7,7 @@ import { IgxFlexDirective, IgxLayoutDirective } from 'igniteui-angular/directive
     selector: 'app-layout-custom-order',
     styleUrls: ['./layout-custom-order.component.scss'],
     templateUrl: './layout-custom-order.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxLayoutDirective, IgxFlexDirective]
 })
 

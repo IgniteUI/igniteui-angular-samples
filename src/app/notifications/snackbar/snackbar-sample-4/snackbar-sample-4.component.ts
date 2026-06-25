@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
 import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
 import { IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
@@ -10,6 +10,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-snackbar-sample-4',
     styleUrls: ['./snackbar-sample-4.component.scss'],
     templateUrl: './snackbar-sample-4.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListActionDirective, IgxIconButtonDirective, IgxIconComponent, IgxSnackbarComponent]
 })
 export class SnackbarSample4Component implements OnInit {
