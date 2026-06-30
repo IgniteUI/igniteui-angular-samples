@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import {
     CsvFileTypes,
     IColumnExportingEventArgs,
@@ -22,7 +22,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-toolbar-sample-2',
     styleUrls: ['./tree-grid-toolbar-sample-2.component.scss'],
     templateUrl: './tree-grid-toolbar-sample-2.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent]
 })
 export class TreeGridToolbarSample2Component {
@@ -36,7 +35,7 @@ export class TreeGridToolbarSample2Component {
     public configureExport(args: IGridToolbarExportEventArgs) {
         // You can customize the exporting from this event
         const options: IgxExporterOptionsBase = args.options;
-        
+
         options.fileName = `Report_${new Date().toDateString()}`;
 
         if (options instanceof IgxExcelExporterOptions) {

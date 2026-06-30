@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, IgxDragIndicatorIconDirective } from 'igniteui-angular/grids/core';
@@ -17,7 +17,6 @@ enum DragIcon {
     selector: 'app-grid-row-drag-to-grid-sample',
     styleUrls: ['./grid-row-drag-to-grid.component.scss'],
     templateUrl: 'grid-row-drag-to-grid.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxDragIndicatorIconDirective, IgxIconComponent, IgxDropDirective]
 })
 

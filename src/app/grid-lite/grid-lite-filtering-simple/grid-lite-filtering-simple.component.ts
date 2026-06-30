@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcCheckboxComponent } from 'igniteui-webcomponents';
 import { GridLiteDataService, User } from '../grid-lite-data.service';
@@ -11,7 +11,6 @@ defineComponents(IgcCheckboxComponent);
   selector: 'app-grid-lite-filtering-simple',
   templateUrl: './grid-lite-filtering-simple.component.html',
   styleUrls: ['./grid-lite-filtering-simple.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     IgxGridLiteComponent,

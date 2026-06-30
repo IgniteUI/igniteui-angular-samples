@@ -1,5 +1,5 @@
 
-import { Component, HostListener, OnInit, DOCUMENT, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostListener, OnInit, DOCUMENT, inject } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { filter, map, mergeMap } from 'rxjs/operators';
 import { SEOService } from './seo.service';
@@ -8,7 +8,6 @@ import { SEOService } from './seo.service';
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
     templateUrl: './app.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {

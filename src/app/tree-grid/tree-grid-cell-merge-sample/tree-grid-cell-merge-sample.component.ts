@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { GridCellMergeMode, IgxColumnComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-tree-grid-cell-merge-sample',
     styleUrls: ['./tree-grid-cell-merge-sample.component.scss'],
     templateUrl: './tree-grid-cell-merge-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IgxTreeGridComponent,
         IgxPreventDocumentScrollDirective,

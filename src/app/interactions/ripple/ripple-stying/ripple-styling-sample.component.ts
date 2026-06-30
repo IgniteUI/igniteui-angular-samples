@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxButtonDirective, IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
@@ -7,7 +7,6 @@ import { IgxAvatarComponent } from 'igniteui-angular/avatar';
     selector: 'app-ripple-styling-sample',
     styleUrls: ['./ripple-styling-sample.component.scss'],
     templateUrl: './ripple-styling-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxRippleDirective, IgxIconButtonDirective, IgxIconComponent, IgxAvatarComponent]
 })
 export class RippleStylingSampleComponent { }

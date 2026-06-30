@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
 import { ConnectedPositioningStrategy, IgxOverlayService } from 'igniteui-angular/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-sample-1.component';
@@ -7,7 +7,6 @@ import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-s
     selector: 'app-overlay-sample',
     templateUrl: `overlay-main-sample-3.component.html`,
     styleUrls: ['overlay-main-sample-3.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, CardSample1Component]
 })
 export class OverlaySampleMain3Component implements OnDestroy {

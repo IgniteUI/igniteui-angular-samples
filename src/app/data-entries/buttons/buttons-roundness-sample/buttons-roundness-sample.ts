@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxButtonDirective, IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 
@@ -6,7 +6,6 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-buttons-roundness-sample',
     styleUrls: ['./buttons-roundness-sample.scss'],
     templateUrl: './buttons-roundness-sample.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxRippleDirective, IgxIconComponent, IgxIconButtonDirective]
 })
 export class ButtonsRoundnessComponent {}

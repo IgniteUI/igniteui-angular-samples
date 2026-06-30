@@ -70,7 +70,6 @@ class GrammySummary {
     selector: "app-hierarchical-grid-summary-sample",
     styleUrls: ["./hierarchical-grid-disable-summaries.component.scss"],
     templateUrl: "hierarchical-grid-disable-summaries.component.html",
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     IgxHierarchicalGridComponent,
     IgxRowIslandComponent,

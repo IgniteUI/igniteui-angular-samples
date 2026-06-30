@@ -1,4 +1,4 @@
-import { Component, Directive, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Directive, Input, ViewChild } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IGridFormGroupCreatedEventArgs, IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxGridToolbarComponent, IgxGridToolbarDirective } from 'igniteui-angular/grids/core';
@@ -35,7 +35,6 @@ export function unique(value, index, self) {
     selector: 'app-hierarchical-grid-validator-service-extended',
     styleUrls: ['./hierarchical-grid-validator-service-extended.component.scss'],
     templateUrl: './hierarchical-grid-validator-service-extended.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxHierarchicalGridComponent, IgxColumnComponent, IgxColumnRequiredValidatorDirective, HGridPhoneFormatDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxButtonDirective]
 })
 export class HierarchicalGridValidatorServiceExtendedComponent {

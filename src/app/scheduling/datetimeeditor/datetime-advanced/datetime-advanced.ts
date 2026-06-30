@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { DatePart } from 'igniteui-angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxDateTimeEditorDirective } from 'igniteui-angular/directives';
@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-datetime-advanced',
     styleUrls: ['./datetime-advanced.scss'],
     templateUrl: './datetime-advanced.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, FormsModule, IgxInputDirective, IgxDateTimeEditorDirective, IgxSuffixDirective, IgxIconComponent]
 })
 

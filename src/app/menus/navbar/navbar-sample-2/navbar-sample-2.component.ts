@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { IgxNavbarActionDirective, IgxNavbarComponent } from 'igniteui-angular/navbar';
 import { IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -8,7 +8,6 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-navbar-sample-2',
     styleUrls: ['./navbar-sample-2.component.scss'],
     templateUrl: './navbar-sample-2.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent, IgxNavbarActionDirective, IgxIconButtonDirective, IgxIconComponent]
 })
 export class NavbarSample2Component { }

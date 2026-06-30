@@ -134,7 +134,6 @@ class DeliveredSummary {
     selector: "app-tree-grid-summary-sample",
     styleUrls: ["./tree-grid-disable-summaries.component.scss"],
     templateUrl: "./tree-grid-disable-summaries.component.html",
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     IgxTreeGridComponent,
     IgxPreventDocumentScrollDirective,

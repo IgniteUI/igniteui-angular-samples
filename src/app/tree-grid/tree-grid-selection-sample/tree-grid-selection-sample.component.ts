@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { GridSelectionMode, IRowSelectionEventArgs, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
@@ -14,7 +14,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-selection-sample',
     styleUrls: ['./tree-grid-selection-sample.component.scss'],
     templateUrl: './tree-grid-selection-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, FormsModule, IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxSnackbarComponent, IgxIconComponent]
 })
 export class TreeGridSelectionSampleComponent implements OnInit {

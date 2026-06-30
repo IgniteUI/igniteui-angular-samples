@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { IgxDragDirective, IgxDropDirective } from 'igniteui-angular/directives';
 
@@ -6,7 +6,6 @@ import { IgxDragDirective, IgxDropDirective } from 'igniteui-angular/directives'
     selector: 'app-icons-sample',
     styleUrls: ['./icons-sample.component.scss'],
     templateUrl: './icons-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDragDirective, IgxDropDirective]
 })
 

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 
@@ -6,7 +6,6 @@ import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
     selector: 'app-checkbox-sample-2',
     styleUrls: ['./checkbox-sample-2.component.scss'],
     templateUrl: './checkbox-sample-2.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCheckboxComponent]
 })
 export class CheckboxSample2Component {

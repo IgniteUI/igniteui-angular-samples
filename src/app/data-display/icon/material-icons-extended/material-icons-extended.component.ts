@@ -42,7 +42,6 @@ interface ICategoryOption {
     selector: 'app-material-icons-extended',
     templateUrl: './material-icons-extended.component.html',
     styleUrls: ['./material-icons-extended.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         AsyncPipe,
         IgxSelectComponent,
@@ -117,7 +116,7 @@ export class MaterialIconsExtendedComponent implements OnInit {
 
     public allIcons = imxIcons;
     public selectedCategory: IconCategory | 'all' = 'all';
-    
+
     // Floating download button
     public hoveredIcon: IMXIcon | null = null;
 

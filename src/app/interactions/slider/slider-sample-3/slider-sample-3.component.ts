@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxSliderComponent } from 'igniteui-angular/slider';
 import { FormsModule } from '@angular/forms';
@@ -7,7 +7,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-slider-sample-3',
     styleUrls: ['./slider-sample-3.component.scss'],
     templateUrl: './slider-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSliderComponent, FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSuffixDirective]
 })
 export class SliderSample3Component {

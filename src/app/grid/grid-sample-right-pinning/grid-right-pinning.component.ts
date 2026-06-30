@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
 import { ColumnPinningPosition } from 'igniteui-angular/core';
 import { IPinningConfig, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -15,7 +15,6 @@ import { DatePipe } from '@angular/common';
     selector: 'app-grid-sample',
     styleUrls: ['grid-right-pinning.component.scss'],
     templateUrl: 'grid-right-pinning.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxTooltipTargetDirective, IgxTooltipDirective, IgxAvatarComponent, IgxCellHeaderTemplateDirective, IgxIconComponent, DatePipe]
 })
 

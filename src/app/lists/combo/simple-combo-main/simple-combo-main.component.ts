@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IgRect } from 'igniteui-angular-core';
 import { StockData, updatedStockData } from '../../../data/stocks-data';
 import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
@@ -12,7 +12,6 @@ import { IgxFinancialChartCoreModule, IgxFinancialChartModule } from 'igniteui-a
     selector: 'app-simple-combo-main',
     templateUrl: 'simple-combo-main.component.html',
     styleUrls: ['simple-combo-main.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSimpleComboComponent, FormsModule, IgxButtonGroupComponent, IgxButtonDirective, IgxFinancialChartModule, IgxFinancialChartCoreModule]
 })
 export class SimpleComboMainComponent implements OnInit {

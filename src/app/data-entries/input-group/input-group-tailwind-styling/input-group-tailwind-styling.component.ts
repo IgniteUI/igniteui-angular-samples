@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 
@@ -6,7 +6,6 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-input-group-tailwind-style',
     templateUrl: 'input-group-tailwind-styling.component.html',
     styleUrls: ['input-group-tailwind-styling.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxLabelDirective, IgxInputDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective]
 })
 export class InputGroupTailwindStyleComponent { }

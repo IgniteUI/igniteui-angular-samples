@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GridColumnDataType } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, IgxGridFooterComponent } from 'igniteui-angular/grids/core';
@@ -10,7 +10,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-nested-data-bind2',
     styleUrls: ['./grid-nested-data-bind2.scss'],
     templateUrl: './grid-nested-data-bind2.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxGridFooterComponent]
 })
 export class GridNestedDataBindAminoacidComponent implements OnInit {

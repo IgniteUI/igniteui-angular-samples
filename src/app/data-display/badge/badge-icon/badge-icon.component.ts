@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { heartMonitor } from '@igniteui/material-icons-extended';
 import { IgxIconService } from 'igniteui-angular/icon';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
@@ -8,7 +8,6 @@ import { IgxBadgeComponent } from 'igniteui-angular/badge';
     selector: 'app-badge-icon',
     styleUrls: ['./badge-icon.component.scss'],
     templateUrl: './badge-icon.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxAvatarComponent, IgxBadgeComponent]
 })
 export class BadgeIconComponent implements OnInit {
