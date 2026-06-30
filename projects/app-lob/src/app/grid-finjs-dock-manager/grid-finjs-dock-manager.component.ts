@@ -174,6 +174,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         this.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             if (data.length !== 0) {
                 this.isLoading = false;
+                this.cdr.markForCheck();
             };
         });
     }
@@ -225,6 +226,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }];
+            this.cdr.markForCheck();
         }, 500);
     }
 
@@ -303,7 +305,10 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         const componentRef = viewContainerRef.createComponent(IgxGridComponent);
         const grid = (componentRef.instance as IgxGridComponent);
         grid.autoGenerate = true;
-        this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => grid.data = d);
+        this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => {
+            grid.data = d;
+            componentRef.changeDetectorRef.markForCheck();
+        });
         grid.columnInit.pipe(takeUntil(destructor)).subscribe((col: IgxColumnComponent) => {
             if (col.field === 'price') {
                 col.cellClasses = this.trends;

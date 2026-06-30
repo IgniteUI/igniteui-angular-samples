@@ -1,4 +1,4 @@
-import { Component, HostListener, OnDestroy, OnInit, ViewChild, ElementRef, AfterViewInit, DOCUMENT, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, ViewChild, ElementRef, AfterViewInit, DOCUMENT, inject, ChangeDetectionStrategy, ChangeDetectorRef } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { CellType, IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
 import { AbsolutePosition, IgxOverlayService, IgxStringFilteringOperand, IgxSummaryResult, OverlayClosingEventArgs, OverlaySettings } from 'igniteui-angular/core';
@@ -24,6 +24,7 @@ import { IgxSparklineCoreModule } from 'igniteui-angular-charts';
 export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     overlayService = inject<IgxOverlayService>(IgxOverlayService);
     private document = inject<Document>(DOCUMENT);
+    private cdr = inject(ChangeDetectorRef);
 
 
     @ViewChild('grid1', { read: IgxGridComponent, static: true })
@@ -60,7 +61,7 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
     set live(val: boolean) {
         this._live = val;
         if (this._live) {
-            this._timer = setInterval(() => this.ticker(), 1500);
+            this.startTicker();
         } else {
             clearInterval(this._timer);
         }
@@ -85,9 +86,10 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         this.localData = АthletesData.slice(0, 30).sort((a, b) => b.TrackProgress - a.TrackProgress);
         this.localData.forEach(rec => this.getSpeed(rec));
         this.windowWidth = this.document.defaultView.innerWidth;
-        this._timer = setInterval(() => this.ticker(), 1500);
+        this.startTicker();
         this.overlayService.closing.subscribe((event: OverlayClosingEventArgs) => {
             this.showOverlay = false;
+            this.cdr.markForCheck();
         });
     }
 
@@ -228,6 +230,13 @@ export class GridComponent implements OnInit, OnDestroy, AfterViewInit {
         }
         this.updateData();
         this.manageRace();
+    }
+
+    private startTicker(): void {
+        this._timer = setInterval(() => {
+            this.ticker();
+            this.cdr.markForCheck();
+        }, 1500);
     }
 
     private getRandomNumber(min: number, max: number): number {

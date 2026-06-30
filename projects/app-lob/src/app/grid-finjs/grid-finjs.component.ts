@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { AsyncPipe, CurrencyPipe } from '@angular/common';
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, DOCUMENT, inject, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, DOCUMENT, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CellType, GridSelectionMode, IColumnExportingEventArgs, IGridKeydownEventArgs, IRowSelectionEventArgs, IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxExcelTextDirective, IgxExporterEvent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxPdfExporterOptions, IgxPdfExporterService, IgxPdfTextDirective } from 'igniteui-angular/grids/core';
 import { DefaultSortingStrategy, IgxOverlayOutletDirective, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -24,6 +24,7 @@ export class GridFinJSComponent implements OnInit {
     private el = inject(ElementRef);
     private document = inject<Document>(DOCUMENT);
     private pdfExportService = inject(IgxPdfExporterService);
+    private cdr = inject(ChangeDetectorRef);
     dataService = inject(SignalRService);
 
     @ViewChild('grid1', { static: true }) public grid: IgxGridComponent;
@@ -56,6 +57,7 @@ export class GridFinJSComponent implements OnInit {
         this.data$.subscribe((data) => {
             if (data.length !== 0) {
                 this.isLoading = false;
+                this.cdr.markForCheck();
             };
         });
 
