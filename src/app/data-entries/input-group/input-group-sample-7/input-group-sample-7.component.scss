@@ -1,0 +1,26 @@
+.sample-column {
+    max-width: 550px;
+}
+
+.accessibility-info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f0f8ff;
+    border-left: 4px solid #0078d4;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.accessibility-info h4 {
+    margin-top: 0;
+    color: #0078d4;
+    font-size: 16px;
+}
+
+.accessibility-info code {
+    background-color: #e6e6e6;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+}

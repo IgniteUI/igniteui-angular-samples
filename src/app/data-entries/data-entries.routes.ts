@@ -45,6 +45,7 @@ import { InputGroupSample3Component } from './input-group/input-group-sample-3/i
 import { InputGroupSample4Component } from './input-group/input-group-sample-4/input-group-sample-4.component';
 import { InputGroupSample5Component } from './input-group/input-group-sample-5/input-group-sample-5.component';
 import { InputGroupSample6Component } from './input-group/input-group-sample-6/input-group-sample-6.component';
+import { InputGroupSample7Component } from './input-group/input-group-sample-7/input-group-sample-7.component';
 import { InputGroupStyleComponent } from './input-group/input-group-styling/input-group-styling.component';
 import { InputGroupTailwindStyleComponent } from './input-group/input-group-tailwind-styling/input-group-tailwind-styling.component';
 import { InputTextSelectionComponent } from './input-group/input-text-selection/input-text-selection.component';
@@ -352,6 +353,11 @@ export const DataEntriesRoutes: Routes = [
         component: InputGroupSample6Component,
         data: dataEntriesRoutesData['input-group-sample-6'],
         path: 'input-group-sample-6'
+    },
+    {
+        component: InputGroupSample7Component,
+        data: dataEntriesRoutesData['input-group-sample-7'],
+        path: 'input-group-sample-7'
     },
     {
         component: InputGroupStyleComponent,
