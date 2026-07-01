@@ -57,8 +57,8 @@ $header-border-color: color($dark-theme-palette, "primary", 600)
 
 // Define dark theme for the paginator
 $dark-paginator-theme: paginator-theme(
-  $text-color: color($dark-theme-palette, "secondary", 700),
-  $background-color: color($dark-theme-palette, "primary", 500),
+  $foreground: color($dark-theme-palette, "secondary", 700),
+  $background: color($dark-theme-palette, "primary", 500),
   $border-color: color($dark-theme-palette, "secondary", 500)
 );
 
