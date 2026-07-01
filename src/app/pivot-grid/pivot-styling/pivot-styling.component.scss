@@ -1,0 +1,16 @@
+@use "layout.scss";
+@use "igniteui-angular/theming" as *;
+
+$background: #292826;
+$foreground: #eeece1;
+$accent: #ffcd0f;
+
+$custom-grid: grid-theme(
+  $background: $background,
+  $foreground: $foreground,
+  $accent-color: $accent,
+);
+
+igx-pivot-grid {
+  @include tokens($custom-grid);
+}
