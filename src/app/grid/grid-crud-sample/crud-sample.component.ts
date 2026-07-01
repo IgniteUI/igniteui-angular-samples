@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnInit, ViewChild, OnDestroy, inject, ChangeDetectionStrategy } from '@angular/core';
 import { GridPagingMode, IGridEditDoneEventArgs, IRowDataEventArgs, IgxColumnComponent, IgxGridEditingActionsComponent, IgxGridRow } from 'igniteui-angular/grids/core';
+import { takeUntil } from 'rxjs/operators';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
 import { NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular/core';
@@ -44,13 +45,17 @@ export class CRUDSampleComponent implements OnInit, OnDestroy {
     public ngOnInit(): void {
         this.remoteData$ = this._crudService.data$;
         this._crudService.getData(this.page * this.perPage, this.perPage);
-        this._crudService.getDataLength().subscribe((length) => {
-            this.totalCount = length;
-        });
-        this.remoteData$.subscribe((data: any) => {
-            this.data = data;
-            this.grid.isLoading = false;
-        });
+        this._crudService.totalCount$
+            .pipe(takeUntil(this.destroy$))
+            .subscribe(count => {
+                this.totalCount = count;
+            });
+        this.remoteData$
+            .pipe(takeUntil(this.destroy$))
+            .subscribe((data: any) => {
+                this.data = data;
+                this.grid.isLoading = false;
+            });
     }
 
     public rowAdded(event: IRowDataEventArgs): void {
