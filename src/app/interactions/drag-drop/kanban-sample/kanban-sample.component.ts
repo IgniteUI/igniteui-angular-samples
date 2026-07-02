@@ -1,6 +1,6 @@
 /* eslint-disable no-shadow */
 /* eslint-disable @typescript-eslint/naming-convention */
-import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, Renderer2, ViewChild, inject } from '@angular/core';
 import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxDragDirective, IgxDropDirective } from 'igniteui-angular/directives';
 import { IgxChipComponent } from 'igniteui-angular/chips';
 import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective } from 'igniteui-angular/card';
@@ -21,7 +21,6 @@ interface IListItem {
     selector: 'app-kanban-sample',
     templateUrl: './kanban-sample.component.html',
     styleUrls: ['./kanban-sample.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDropDirective, IgxChipComponent, IgxCardComponent, IgxDragDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective]
 })
 export class KanbanSampleComponent implements OnInit {

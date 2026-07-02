@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListItemLeftPanningTemplateDirective, IgxListItemRightPanningTemplateDirective, IgxListLineSubTitleDirective, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
 import { IgxToastComponent } from 'igniteui-angular/toast';
@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-contact-list2',
     styleUrls: ['./list-sample-7.component.scss'],
     templateUrl: './list-sample-7.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSliderComponent, FormsModule, IgxListComponent, IgxListItemLeftPanningTemplateDirective, IgxIconComponent, IgxListItemRightPanningTemplateDirective, IgxListItemComponent, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxToastComponent, IgxButtonDirective]
 })
 export class ListSample7Component implements OnInit {

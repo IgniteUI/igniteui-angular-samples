@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxStringFilteringOperand } from 'igniteui-angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
@@ -11,7 +11,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-filtering-sample',
     styleUrls: ['./tree-grid-filtering-sample.component.scss'],
     templateUrl: 'tree-grid-filtering-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxInputDirective, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective]
 })
 

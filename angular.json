@@ -18,7 +18,6 @@
             "index": "src/index.html",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": [
-              "zone.js",
               "hammerjs"
             ],
             "assets": [
@@ -220,7 +219,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "main": "projects/app-lob/src/test.ts",
-            "polyfills": "projects/app-lob/src/polyfills.ts",
+            "polyfills": ["projects/app-lob/src/polyfills.ts"],
             "tsConfig": "projects/app-lob/tsconfig.spec.json",
             "karmaConfig": "projects/app-lob/karma.conf.js",
             "assets": [

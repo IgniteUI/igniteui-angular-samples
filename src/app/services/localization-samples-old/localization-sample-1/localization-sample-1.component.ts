@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { DATA } from '../../../data/nwindData';
@@ -9,7 +9,6 @@ import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-s
     selector: 'app-localization-sample-1',
     styleUrls: ['./localization-sample-1.component.scss'],
     templateUrl: 'localization-sample-1.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 

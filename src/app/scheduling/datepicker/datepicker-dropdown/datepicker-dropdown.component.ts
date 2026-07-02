@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +8,6 @@ import { DatePipe } from '@angular/common';
     selector: 'app-datepicker-dropdown',
     styleUrls: ['./datepicker-dropdown.component.scss'],
     templateUrl: './datepicker-dropdown.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDatePickerComponent, FormsModule, IgxLabelDirective, DatePipe]
 })
 export class DatepickerDropdownComponent {

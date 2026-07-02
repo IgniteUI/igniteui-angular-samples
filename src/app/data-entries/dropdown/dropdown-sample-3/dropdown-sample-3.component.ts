@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxButtonDirective, IgxDividerDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
 import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -10,7 +10,6 @@ import { IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-g
     selector: 'app-dropdown-sample-3',
     styleUrls: ['./dropdown-sample-3.component.scss'],
     templateUrl: './dropdown-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxIconComponent, IgxPrefixDirective, IgxSuffixDirective, IgxDividerDirective]
 })
 export class DropDownSample3Component {

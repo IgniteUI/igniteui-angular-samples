@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Card } from '../card.blueprint';
 import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
 import { IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
@@ -10,7 +10,6 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-card-tailwind-styling-sample',
     templateUrl: './card-tailwind-styling-sample.component.html',
     styleUrls: ['./card-tailwind-styling-sample.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxCardActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxSuffixDirective, IgxIconComponent]
 })
 export class CardTailwindStylingSampleComponent {

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Card } from '../card.blueprint';
 import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
 import { IgxButtonDirective, IgxFlexDirective, IgxLayoutDirective, IgxRippleDirective } from 'igniteui-angular/directives';
@@ -10,7 +10,6 @@ import { IgxPrefixDirective } from 'igniteui-angular/input-group';
     selector: 'app-card-sample-3',
     styleUrls: ['./card-sample-3.component.scss'],
     templateUrl: './card-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCardComponent, IgxLayoutDirective, IgxFlexDirective, IgxCardHeaderComponent, IgxAvatarComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective]
 })
 export class CardSample3Component {

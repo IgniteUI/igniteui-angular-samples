@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 
 type Button = {
@@ -11,7 +11,6 @@ type Button = {
     selector: 'app-button-group-sample-5',
     styleUrls: ['./button-group-sample-5.component.scss'],
     templateUrl: './button-group-sample-5.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent]
 })
 export class ButtonGroupSample5Component implements OnInit {

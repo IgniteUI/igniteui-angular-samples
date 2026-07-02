@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { Card } from '../card.blueprint';
 import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
 import { IgxDividerModule, IgxIconButtonDirective } from 'igniteui-angular/directives';
@@ -10,10 +10,9 @@ import { IgxChipComponent } from 'igniteui-angular/chips';
   selector: 'app-card-styling-sample',
   templateUrl: './card-styling-sample.component.html',
   styleUrls: ['./card-styling-sample.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Eager,
-  imports: [IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent, 
-		IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, 
-		IgxCardContentDirective, IgxCardActionsComponent, IgxIconButtonDirective, 
+  imports: [IgxCardComponent, IgxCardMediaDirective, IgxCardHeaderComponent,
+		IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective,
+		IgxCardContentDirective, IgxCardActionsComponent, IgxIconButtonDirective,
 		IgxIconComponent, IgxAvatarComponent, IgxDividerModule, IgxChipComponent]
 })
 export class CardStylingSampleComponent implements OnInit {

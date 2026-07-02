@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
 import { IgxToastComponent } from 'igniteui-angular/toast';
 
@@ -7,7 +7,6 @@ import { IgxToastComponent } from 'igniteui-angular/toast';
     selector: 'app-expansion-sample-2',
     styleUrls: ['./expansion-sample-2.component.scss'],
     templateUrl: './expansion-sample-2.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelBodyComponent, IgxToastComponent]
 })
 export class ExpansionPanelSample2Component {

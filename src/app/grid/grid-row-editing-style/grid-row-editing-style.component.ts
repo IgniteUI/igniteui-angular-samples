@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellEditorTemplateDirective, IgxColumnComponent, IgxRowEditActionsDirective, IgxRowEditTabStopDirective, IgxRowEditTextDirective } from 'igniteui-angular/grids/core';
@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-grid-row-edit-style',
     styleUrls: [`grid-row-editing-style.component.scss`],
     templateUrl: 'grid-row-editing-style.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxInputGroupComponent, FormsModule, IgxInputDirective, IgxFocusDirective, IgxRowEditTextDirective, IgxRowEditActionsDirective, IgxIconButtonDirective, IgxRowEditTabStopDirective, IgxIconComponent]
 })
 export class GridRowEditStyleComponent {

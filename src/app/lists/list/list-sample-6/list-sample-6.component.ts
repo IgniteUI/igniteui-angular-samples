@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, ViewChild } from '@angular/core';
 import { IgxDataLoadingTemplateDirective, IgxEmptyListTemplateDirective, IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
@@ -7,10 +7,10 @@ import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directi
     selector: 'app-list-sample-6',
     styleUrls: ['./list-sample-6.component.scss'],
     templateUrl: './list-sample-6.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxEmptyListTemplateDirective, IgxButtonDirective, IgxDataLoadingTemplateDirective]
 })
 export class ListSample6Component {
+    private cdr = inject(ChangeDetectorRef);
 
     @ViewChild('fruitList', { static: true })
     public fruitList: IgxListComponent;
@@ -25,6 +25,7 @@ export class ListSample6Component {
             const availableFruits: string[] = ['banana', 'orange', 'apple', 'strawberry', 'pear'];
             availableFruits.forEach((fruit) => { this.fruitsData.push(fruit); });
             this.fruitList.isLoading = false;
+            this.cdr.markForCheck();
         }, 1000);
     }
 

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IgxCellTemplateDirective, IgxColumnActionsComponent, IgxColumnComponent, IgxColumnHidingDirective } from 'igniteui-angular/grids/core';
 import { IgxRadioComponent } from 'igniteui-angular/radio';
@@ -9,7 +9,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-hierarchical-grid-custom-hiding',
     styleUrls: ['./hierarchical-grid-custom-hiding.component.scss'],
     templateUrl: 'hierarchical-grid-custom-hiding.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxColumnActionsComponent, IgxColumnHidingDirective, IgxRadioComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 

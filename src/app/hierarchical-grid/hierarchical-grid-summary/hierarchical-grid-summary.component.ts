@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
 import { IgxSummaryResult } from 'igniteui-angular/core';
@@ -46,7 +46,6 @@ class MyChildSummary {
     selector: 'app-hierarchical-grid-summary',
     styleUrls: ['./hierarchical-grid-summary.component.scss'],
     templateUrl: 'hierarchical-grid-summary.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxCalendarComponent, IgxCalendarView } from 'igniteui-angular/calendar';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-datepicker-sample-8',
     styleUrls: ['./datepicker-sample-8.component.scss'],
     templateUrl: './datepicker-sample-8.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDatePickerComponent, FormsModule, IgxLabelDirective, IgxButtonDirective]
 })
 

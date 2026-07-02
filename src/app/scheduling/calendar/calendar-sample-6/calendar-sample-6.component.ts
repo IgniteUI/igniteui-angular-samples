@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DateRangeType } from 'igniteui-angular/core';
 import { IgxCalendarComponent } from 'igniteui-angular/calendar';
 import { DatePipe } from '@angular/common';
@@ -7,7 +7,6 @@ import { DatePipe } from '@angular/common';
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-6.component.scss'],
     templateUrl: './calendar-sample-6.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCalendarComponent, DatePipe]
 })
 export class CalendarSample6Component implements OnInit{

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren, ViewEncapsulation, DOCUMENT, inject, ChangeDetectionStrategy } from "@angular/core";
+import { ChangeDetectorRef, Component, ElementRef, QueryList, ViewChild, ViewChildren, ViewEncapsulation, DOCUMENT, inject } from "@angular/core";
 import { IDropBaseEventArgs, IDropDroppedEventArgs, IgxButtonDirective, IgxDropDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -38,7 +38,6 @@ enum DialogType {
     selector: "app-grid-multi-row-layout-configuration-sample",
     styleUrls: ["./grid-multi-row-layout-configuration.component.scss"],
     templateUrl: "./grid-multi-row-layout-configuration.component.html",
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxChipsAreaComponent, IgxChipComponent, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, IgxPrefixDirective, IgxInputGroupComponent, IgxInputDirective, NgStyle, IgxDropDirective, NgClass, IgxButtonDirective, IgxDialogComponent]
 })
 export class GridMultiRowLayoutConfigurationComponent {

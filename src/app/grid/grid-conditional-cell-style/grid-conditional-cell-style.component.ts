@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { athletesData } from '../../data/athletesData';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -9,7 +9,6 @@ import { DecimalPipe, PercentPipe } from '@angular/common';
     selector: 'app-grid-conditional-cell-style',
     styleUrls: ['./grid-conditional-cell-style.component.scss'],
     templateUrl: './grid-conditional-cell-style.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, DecimalPipe, PercentPipe]
 })
 export class GridConditionalCellStyleComponent implements OnInit {

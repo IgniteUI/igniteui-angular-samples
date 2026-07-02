@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { DATA } from '../../data/nwindData';
 import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -13,7 +13,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-clipboard-operations-sample',
     styleUrls: ['grid-clipboard-operations-sample.component.scss'],
     templateUrl: './grid-clipboard-operations-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxIconComponent, IgxHintDirective, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxSwitchComponent, IgxButtonDirective]
 })
 export class GridClipboardSampleComponent {

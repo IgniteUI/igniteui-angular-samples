@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IRowSelectionEventArgs, IgxColumnComponent, IgxRowSelectorDirective } from 'igniteui-angular/grids/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
@@ -10,7 +10,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-hierarchical-grid-conditional-row-selectors',
     styleUrls: ['./hierarchical-grid-conditional-row-selectors.component.scss'],
     templateUrl: 'hierarchical-grid-conditional-row-selectors.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxRowIslandComponent, IgxRowSelectorDirective, IgxCheckboxComponent]
 })
 

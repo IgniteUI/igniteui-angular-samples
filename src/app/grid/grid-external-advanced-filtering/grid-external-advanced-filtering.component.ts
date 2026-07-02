@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxAdvancedFilteringDialogComponent, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { DATA } from '../../data/nwindData';
@@ -8,7 +8,6 @@ import { CurrencyPipe } from '@angular/common';
     selector: 'app-grid-external-advanced-filtering',
     templateUrl: './grid-external-advanced-filtering.component.html',
     styleUrls: ['./grid-external-advanced-filtering.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxAdvancedFilteringDialogComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, CurrencyPipe]
 })
 export class GridExternalAdvancedFilteringComponent {

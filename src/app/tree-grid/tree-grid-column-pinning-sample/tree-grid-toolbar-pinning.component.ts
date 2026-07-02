@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, OnInit, inject } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
@@ -11,7 +11,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-sample',
     styleUrls: ['tree-grid-toolbar-pinning.component.scss'],
     templateUrl: 'tree-grid-toolbar-pinning.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgClass, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent]
 })
 

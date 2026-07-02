@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
 import { IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxChipComponent, IgxChipsAreaComponent } from 'igniteui-angular/chips';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxPrefixDirective } from 'igniteui-angular/input-group';
@@ -8,7 +8,6 @@ import { IgxPrefixDirective } from 'igniteui-angular/input-group';
     selector: 'app-chip-tailwind-styling',
     styleUrls: ['./chip-tailwind-styling.component.scss'],
     templateUrl: './chip-tailwind-styling.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxChipsAreaComponent, IgxChipComponent, IgxIconComponent, IgxPrefixDirective]
 })
 

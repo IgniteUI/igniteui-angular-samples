@@ -1,5 +1,5 @@
 import { useAnimation } from '@angular/animations';
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { CloseScrollStrategy, GlobalPositionStrategy, IgxOverlayOutletDirective, PositionSettings } from 'igniteui-angular/core';
 import { IgxDialogActionsDirective, IgxDialogComponent, IgxDialogTitleDirective } from 'igniteui-angular/dialog';
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
@@ -10,7 +10,6 @@ import { slideInBottom, slideOutTop } from 'igniteui-angular/animations';
     selector: 'app-dialog-styling-sample',
     styleUrls: ['./dialog-styling-sample.component.scss'],
     templateUrl: './dialog-styling-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxOverlayOutletDirective, IgxButtonDirective, IgxRippleDirective, IgxDialogComponent, IgxDialogTitleDirective, IgxIconComponent, IgxDialogActionsDirective]
 })
 export class DialogStylingSampleComponent implements OnInit {

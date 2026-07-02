@@ -1,11 +1,10 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxMonthPickerComponent } from 'igniteui-angular/calendar';
 
 @Component({
     selector: 'app-monthpicker-styling',
     styleUrls: ['./monthpicker-styling.component.scss'],
     templateUrl: './monthpicker-styling.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxMonthPickerComponent]
 })
 export class MonthpickerStylingComponent {

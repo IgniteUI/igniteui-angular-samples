@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxNavbarActionDirective, IgxNavbarComponent } from 'igniteui-angular/navbar';
 import { IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -7,7 +7,6 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-navbar-style',
     styleUrls: ['./navbar-style.component.scss'],
     templateUrl: './navbar-style.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent, IgxNavbarActionDirective, IgxIconButtonDirective, IgxIconComponent]
 })
 

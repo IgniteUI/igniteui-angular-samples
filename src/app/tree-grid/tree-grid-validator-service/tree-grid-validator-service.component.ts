@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { IgxColumnComponent, IgxColumnMaxValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective } from 'igniteui-angular/grids/core';
@@ -11,7 +11,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-validator-service-component',
     styleUrls: ['tree-grid-validator-service.component.scss'],
     templateUrl: 'tree-grid-validator-service.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, FormsModule, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnMaxValidatorDirective]
 })
 export class TreeGridValidatorServiceComponent implements OnInit {
