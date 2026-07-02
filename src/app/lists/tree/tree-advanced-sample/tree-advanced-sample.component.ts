@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy, PLATFORM_ID, inject } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, PLATFORM_ID, inject, ChangeDetectorRef } from '@angular/core';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { IgxTreeComponent, IgxTreeNodeComponent } from 'igniteui-angular/tree';
 import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
@@ -19,6 +19,7 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     private iconService = inject(IgxIconService);
     private dataService = inject(DataService);
     private platformId = inject(PLATFORM_ID);
+    private cdr = inject(ChangeDetectorRef);
 
     public family = 'tree-icons';
     public data = DATA;
@@ -31,6 +32,7 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
         this.dataService.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             this.loading = false;
             this.remoteData = data;
+            this.cdr.markForCheck();
         });
     }
 
@@ -70,6 +72,7 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
                         }
                     });
                 }
+                this.cdr.markForCheck();
             });
         }
     }
