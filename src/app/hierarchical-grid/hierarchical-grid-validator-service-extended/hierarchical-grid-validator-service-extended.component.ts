@@ -1,4 +1,4 @@
-import { Component, Directive, Input, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Directive, Input, ViewChild, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 import { AbstractControl, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IGridFormGroupCreatedEventArgs, IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxGridToolbarComponent, IgxGridToolbarDirective } from 'igniteui-angular/grids/core';
@@ -15,7 +15,7 @@ export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
 
 @Directive({
     selector: '[phoneFormat]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: HGridPhoneFormatDirective, multi: true }]
+    providers: [{ provide: NG_VALIDATORS, useExisting: forwardRef(() => HGridPhoneFormatDirective), multi: true }]
 })
 export class HGridPhoneFormatDirective extends Validators {
     @Input('phoneFormat')
