@@ -9,7 +9,5 @@ import { IgxAvatarComponent } from 'igniteui-angular/avatar';
     imports: [IgxAvatarComponent]
 })
 export class AvatarSample3Component {
-
   constructor() { }
-
 }
