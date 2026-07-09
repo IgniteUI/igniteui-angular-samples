@@ -1,34 +1,45 @@
-.calendar-wrapper {
-    max-width: 900px;
-    min-width: 200px;
-    margin: 8px;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.26),
-    0 1px 1px 0 rgba(0, 0, 0, 0.12),
-    0 2px 1px -1px rgba(0, 0, 0, 0.08);
-}
-
-.igx-calendar {
-	--ig-size: 2;
-	
-    border-radius: 0;
-}
-
-.igx-button--contained {
-    border-radius: 0;
-}
-
-.stay__info {
+.multiview-sample {
     display: flex;
-    justify-content: center;
-    background: var(--ig-surface-500);
+    flex-direction: column;
+    gap: 16px;
 }
 
-.stay__info > span {
-    color: var(--ig-secondary-400);
-    font-weight: 600;
-    font-size: 0.875rem;
-    letter-spacing: 0.046875rem;
-    text-transform: uppercase;
+igx-calendar {
+    border: 1px solid var(--ig-gray-300);
+}
+
+.stay-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 8px;
+    border: 1px dashed var(--ig-gray-300);
+}
+
+.stay-info__text {
+    font-size: 1rem;
     line-height: 1rem;
-    margin: 16px;
+    margin-inline-start: .5rem;
+}
+
+// The button is never actually disabled: it stays fully focusable and clickable
+// so that activating it always validates and opens the dialog with feedback.
+// While the range is incomplete we only dim it as a visual hint (cursor stays a
+// pointer, since it is clickable).
+button.is-incomplete {
+    opacity: .6;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }

@@ -1,6 +1,4 @@
-<div class="sample-content">
-  <article class="sample-column calendar-wrapper">
-    <igx-calendar #component>
+<igx-calendar #component>
       @if (formatParts) {
         <ng-template igxCalendarHeader let-parts>
           {{ parts.month.combined | titlecase }} {{ parts.day.combined }} {{ parts.weekday.combined }}
@@ -25,5 +23,3 @@
 
       <!-- Parse template for browsers not supporting Intl -->
     </igx-calendar>
-  </article>
-</div>

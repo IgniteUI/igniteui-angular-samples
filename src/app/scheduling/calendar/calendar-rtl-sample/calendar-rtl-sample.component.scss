@@ -1,31 +1,3 @@
-@use '../../../../variables' as *;
-
-$border-color: color($color: gray, $variant: 300);
-
 igx-calendar {
-	--ig-size: 2;
-	
-    border: 1px solid $border-color;
-    border-radius: 6px;
-}
-
-.button-sample {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-    flex: 1 0 30%;
-    margin: 16px 0;
-}
-
-.calendar-wrapper {
-    max-width: 650px;
-    min-width: 300px;
-    margin: 8px;
-}
-
-.location-wrapper {
-    min-width: 200px;
-    max-width: 640px;
-    margin-bottom: 32px;
+    border: 1px solid var(--ig-gray-100);
 }

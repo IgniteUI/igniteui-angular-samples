@@ -1,15 +1,24 @@
-<div class="calendar-section">
-    <article class="calendar-wrapper">
-        <igx-calendar #calendar selection="multi" (selected)="onSelection($event)" (viewDateChanged)="viewDateChanged($event)" (activeViewChanged)="activeViewChanged($event)"></igx-calendar>
-    </article>
-</div>
-<div class="calendar-section">
-    <div class="selected-data-area">
-        <div class="logContainer">
-            <div class="highlight">
-                <span>{{loggerHeader}}</span>
-            </div>
-            <div class="logger"></div>
+<p>Interact with the calendar to see the events logged here in sequence:</p>
+
+<div class="calendar-sample">
+    <igx-calendar #calendar selection="multi" (selected)="onSelection($event)" (viewDateChanged)="viewDateChanged($event)" (activeViewChanged)="activeViewChanged($event)"></igx-calendar>
+
+    <div class="event-log">
+        <div class="event-log__header">
+            <span class="event-log__title">Event log</span>
+            <button igxButton="flat" (click)="clearLog()" [disabled]="!events.length">Clear</button>
         </div>
+
+        <ul class="event-log__list">
+            @for (event of events; track event.id) {
+                <li class="event-log__item event-log__item--{{ event.type }}">
+                    <span class="event-log__badge">{{ event.type }}</span>
+                    <span class="event-log__message">{{ event.message }}</span>
+                    <time class="event-log__time">{{ event.time | date: 'HH:mm:ss' }}</time>
+                </li>
+            } @empty {
+                <li class="event-log__empty">No events yet — select dates or navigate the calendar.</li>
+            }
+        </ul>
     </div>
 </div>

@@ -1,11 +1,3 @@
-.igx-card {
-    max-width: 500px;
-    min-width: 200px;
-    margin: 8px;
-}
-
-:host {
-	igx-years-view {
-		--ig-size: 2;
-	}
+igx-years-view {
+    border: 1px solid var(--ig-gray-300);
 }
