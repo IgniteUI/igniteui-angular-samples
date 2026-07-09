@@ -55,11 +55,17 @@ export function initSampleSizeReporter(): void {
     };
 
     window.addEventListener('message', (e: MessageEvent) => {
+        if (e.source !== window.parent) {
+            return;
+        }
+        if (!e.origin || !/^https?:\/\//.test(e.origin)) {
+            return;
+        }
         if (!e.data || e.data.type !== FIT_ENABLE) {
             return;
         }
         reportWidth = Boolean(e.data.width);
-        hostOrigin = e.origin || '*';
+        hostOrigin = e.origin;
 
         if (!styled) {
             styled = true;
