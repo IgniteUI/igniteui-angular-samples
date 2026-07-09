@@ -46,11 +46,11 @@ export function initSampleSizeReporter(): void {
         const height = Math.max(
             document.documentElement.offsetHeight,
             document.body.offsetHeight,
-            document.body.scrollHeight,
+            document.body.scrollHeight
         );
         window.parent.postMessage(
             { type: FIT_REPORT, height, width: reportWidth ? measureWidth() : undefined },
-            hostOrigin,
+            hostOrigin
         );
     };
 
