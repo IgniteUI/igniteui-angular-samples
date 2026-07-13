@@ -17,9 +17,8 @@ $custom-dark-palette: palette(
 $dark-primary: color($custom-dark-palette, "primary");
 $dark-secondary: color($custom-dark-palette, "secondary");
 
-.d-flex.align-items-center {
-    width: 100%;
-    padding: 0 16px;
+.d-flex {
+    align-items: center;
 }
 
 .card-wrapper {
@@ -164,4 +163,8 @@ $dark-secondary: color($custom-dark-palette, "secondary");
 ::ng-deep{
     /* Importing Bootstrap .scss file. */
     @import "bootstrap/scss/bootstrap";
+
+    .collapse {
+        visibility: visible;
+    }
 }
