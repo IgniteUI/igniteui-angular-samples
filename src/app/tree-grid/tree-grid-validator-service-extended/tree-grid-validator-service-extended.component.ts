@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, Directive, Input, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Directive, Input, OnInit, ViewChild, ChangeDetectionStrategy, forwardRef } from '@angular/core';
 import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IGridFormGroupCreatedEventArgs, IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnMaxValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective } from 'igniteui-angular/grids/core';
@@ -17,7 +17,7 @@ export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
 
 @Directive({
     selector: '[phoneFormat]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: TGridPhoneFormatDirective, multi: true }]
+    providers: [{ provide: NG_VALIDATORS, useExisting: forwardRef(() => TGridPhoneFormatDirective), multi: true }]
 })
 export class TGridPhoneFormatDirective extends Validators {
     @Input('phoneFormat')
