@@ -1,0 +1,18 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+igx-badge {
+  --size: 18px;
+
+  position: relative;
+  right: 10px;
+  top: -15px;
+}
+
+igx-avatar {
+  --size: 45px;
+  margin-top: 6px;
+}

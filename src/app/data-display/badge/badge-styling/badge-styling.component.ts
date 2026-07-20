@@ -6,13 +6,13 @@ import { IgxBadgeComponent } from 'igniteui-angular/badge';
 
 
 @Component({
-    selector: 'app-badge-styling-sample',
-    styleUrls: ['./badge-styling-sample.component.scss'],
-    templateUrl: './badge-styling-sample.component.html',
+    selector: 'app-badge-styling',
+    styleUrls: ['./badge-styling.component.scss'],
+    templateUrl: './badge-styling.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxBadgeComponent]
 })
-export class BadgeStylingSampleComponent {
+export class BadgeStylingComponent {
   public members: Member[] = [
     new Member('Terrance Orta', 'online'),
     new Member('Donna Price', 'online'),

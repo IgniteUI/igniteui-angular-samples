@@ -3,10 +3,10 @@ import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxBadgeComponent } from 'igniteui-angular/badge';
 
 @Component({
-    selector: 'app-badge-dot-sample',
-    styleUrls: ['./badge-dot-sample.component.scss'],
-    templateUrl: './badge-dot-sample.component.html',
+    selector: 'app-badge-variants',
+    styleUrls: ['./badge-variants.component.scss'],
+    templateUrl: './badge-variants.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxAvatarComponent, IgxBadgeComponent]
 })
-export class BadgeDotSampleComponent { }
+export class BadgeVariantsComponent { }
