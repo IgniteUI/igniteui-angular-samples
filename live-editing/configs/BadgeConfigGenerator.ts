@@ -31,10 +31,9 @@ export class BadgeConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/data-display/badge/"
         }));
 
-        // badge overview
+        // badge variants
         configs.push(new Config({
             component: 'BadgeVariantsComponent',
-            additionalFiles: ["src/app/data-display/badge/model/member.model.ts"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/badge/"
         }));
@@ -58,7 +57,7 @@ export class BadgeConfigGenerator implements IConfigGenerator {
         // badge dot
         configs.push(new Config({
             component: 'BadgeDotComponent',
-            additionalFiles: ["src/app/data-display/badge/model/member.model.ts", "src/app/data-display/badge/badge-dot/badge-dot.component.scss"],
+            additionalFiles: ["src/app/data-display/badge/badge-dot/badge-dot.component.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/badge/"
         }));
