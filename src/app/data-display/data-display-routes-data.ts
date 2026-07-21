@@ -5,7 +5,6 @@ export const dataDisplayRoutesData = {
     "badge-overview": { displayName: "Overview", parentName: "Badge" },
     "badge-shape": { displayName: "Badge Shape", parentName: "Badge" },
     "badge-variants": { displayName: "Badge Variants", parentName: "Badge" },
-    "badge-list": { displayName: "Badge for List Items", parentName: "Badge" },
     "badge-outlined": { displayName: "Badge Outlined", parentName: "Badge" },
     "badge-dot": { displayName: "Badge Dot", parentName: "Badge" },
     "badge-styling": { displayName: "Badge Styling", parentName: "Badge" },
