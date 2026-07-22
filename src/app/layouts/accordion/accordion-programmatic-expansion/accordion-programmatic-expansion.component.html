@@ -1,0 +1,26 @@
+<div class="button-group">
+    <button igxButton="contained" igxRipple type="button" (click)="accordion.expandAll()">Show All</button>
+    <button igxButton="outlined" igxRipple type="button" (click)="accordion.collapseAll()">Hide All</button>
+</div>
+
+<article class="sample-wrapper">
+    <igx-accordion #accordion>
+        <igx-expansion-panel>
+            <igx-expansion-panel-header>
+                <igx-expansion-panel-title>Title Panel 1</igx-expansion-panel-title>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body>
+                Content Panel 1
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
+
+        <igx-expansion-panel>
+            <igx-expansion-panel-header>
+                <igx-expansion-panel-title>Title Panel 2</igx-expansion-panel-title>
+            </igx-expansion-panel-header>
+            <igx-expansion-panel-body>
+                Content Panel 2
+            </igx-expansion-panel-body>
+        </igx-expansion-panel>
+    </igx-accordion>
+</article>
