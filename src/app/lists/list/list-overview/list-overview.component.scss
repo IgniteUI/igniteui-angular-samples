@@ -1,0 +1,32 @@
+@use '../../../../variables' as *;
+
+:host {
+    display: block;
+    padding: 16px;
+}
+
+.size-selector {
+    margin-bottom: 12px;
+}
+
+.size-small {
+    --ig-size: var(--ig-size-small);
+}
+
+.size-medium {
+    --ig-size: var(--ig-size-medium);
+}
+
+.size-large {
+    --ig-size: var(--ig-size-large);
+}
+
+igx-list {
+    width: 100%;
+}
+
+@media (max-width: 600px) {
+    :host {
+        padding: 12px;
+    }
+}

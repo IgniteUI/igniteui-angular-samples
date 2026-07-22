@@ -98,6 +98,7 @@ import {
     GridConditionalRowSelectorsComponent
 } from './grid-conditional-row-selectors/grid-conditional-row-selectors-sample.component';
 import { GridEditingEventsComponent } from './grid-editing-events/grid-editing-events.component';
+import { GridOverviewComponent } from './grid-overview/grid-overview.component';
 import { GridEditingLifecycleComponent } from './grid-editing-lifecycle-sample/grid-editing-lifecycle.component';
 import { GridEditingStyleSampleComponent } from './grid-editing-style-sample/grid-editing-style-sample.component';
 import { GridKeyboardnavGuide } from './grid-keyboardnav-guide-sample/grid-keyboardnav-sample.component';
@@ -138,6 +139,11 @@ import { GridCellMergeCustomSampleComponent } from './grid-cell-merge-custom-sam
 // tslint:enable:max-line-length
 
 export const GridsRoutes: Routes = [
+    {
+        component: GridOverviewComponent,
+        data: gridsRoutesData['grid-overview'],
+        path: 'grid-overview'
+    },
     {
         component: GridSample3Component,
         data: gridsRoutesData['grid-summary'],

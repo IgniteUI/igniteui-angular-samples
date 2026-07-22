@@ -1,6 +1,7 @@
 // tslint:disable:object-literal-sort-keys
 
 export const gridsRoutesData = {
+    'grid-overview': { displayName: 'Grid Overview', parentName: 'Grid' },
     'grid-groupby': { displayName: 'Grid GroupBy', parentName: 'Grid' },
     'grid-cellMerge': { displayName: 'Grid Cell Merge', parentName: 'Grid' },
     'grid-cellMerge-custom': { displayName: 'Grid Cell Merge Custom', parentName: 'Grid' },
