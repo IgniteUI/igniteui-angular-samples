@@ -1,0 +1,12 @@
+.avatar-sample {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+}
+
+igx-avatar {
+    --ig-avatar-background: #e41c77;
+    --ig-avatar-color: #fff;
+}

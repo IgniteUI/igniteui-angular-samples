@@ -26,6 +26,18 @@ export class AvatarConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/layouts/avatar/"
         }));
 
+        configs.push(new Config({
+            component: 'AvatarShapeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/layouts/avatar/"
+        }));
+
+        configs.push(new Config({
+            component: 'AvatarSizeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/layouts/avatar/"
+        }));
+
         return configs;
     }
 }

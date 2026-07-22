@@ -9,6 +9,8 @@ export const layoutsRoutesData = {
     'avatar-sample-2': { displayName: 'Avatar with Image', parentName: 'Avatar' },
     'avatar-sample-4': { displayName: 'Avatar with Icon', parentName: 'Avatar' },
     'avatar-sample-3': { displayName: 'Multiple avatars', parentName: 'Avatar' },
+    'avatar-shape': { displayName: 'Avatar Shape', parentName: 'Avatar' },
+    'avatar-size': { displayName: 'Avatar Size', parentName: 'Avatar' },
     'avatar-styling': { displayName: 'Styling avatars', parentName: 'Avatar' },
     'avatar-tailwind-styling': { displayName: 'Styling Avatar with Tailwind', parentName: 'Avatar' },
     'avatar-css-variables': { displayName: 'Avatar with CSS variables', parentName: 'Avatar' },
