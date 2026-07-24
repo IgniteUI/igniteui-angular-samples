@@ -136,7 +136,7 @@
             },
             "index": "projects/app-lob/src/index.html",
             "polyfills": [
-              "projects/app-lob/src/polyfills.ts"
+              "hammerjs/hammer"
             ],
             "tsConfig": "projects/app-lob/tsconfig.app.json",
             "assets": [
@@ -267,7 +267,7 @@
             },
             "index": "projects/app-crm/src/index.html",
             "polyfills": [
-              "projects/app-crm/src/polyfills.ts"
+              "hammerjs/hammer"
             ],
             "tsConfig": "projects/app-crm/tsconfig.app.json",
             "assets": [
