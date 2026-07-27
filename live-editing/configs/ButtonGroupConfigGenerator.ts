@@ -10,45 +10,45 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // button group 1
+        // button group layout
         configs.push(new Config({
-            component: 'ButtonGroupSample1Component',
+            component: 'ButtonGroupLayoutSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group 2
+        // button group alignment
         configs.push(new Config({
-            component: 'ButtonGroupSample2Component',
+            component: 'ButtonGroupAlignmentSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group 3
+        // button group toggle
         configs.push(new Config({
-            component: 'ButtonGroupSample3Component',
+            component: 'ButtonGroupToggleSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group 4
+        // button group selection
         configs.push(new Config({
-            component: 'ButtonGroupSampleComponent',
+            component: 'ButtonGroupSelectionSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group 5
+        // button group size
         configs.push(new Config({
-            component: 'ButtonGroupSample5Component',
+            component: 'ButtonGroupSizeSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
         // button group style
         configs.push(new Config({
-            component: 'ButtonGroupStyleComponent',
-            additionalFiles: ["/src/app/data-entries/buttonGroup/button-group-style/layout.scss"],
+            component: 'ButtonGroupStyleSampleComponent',
+            additionalFiles: ["/src/app/data-entries/buttonGroup/button-group-style-sample/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));

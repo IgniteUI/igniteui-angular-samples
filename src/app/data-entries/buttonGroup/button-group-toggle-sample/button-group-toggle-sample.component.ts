@@ -32,33 +32,21 @@ class ToggleButton {
 }
 
 @Component({
-    selector: 'app-button-group-sample-3',
-    styleUrls: ['./button-group-sample-3.component.scss'],
-    templateUrl: './button-group-sample-3.component.html',
+    selector: 'app-button-group-toggle-sample',
+    styleUrls: ['./button-group-toggle-sample.component.scss'],
+    templateUrl: './button-group-toggle-sample.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent]
 })
-export class ButtonGroupSample3Component implements OnInit {
+export class ButtonGroupToggleSampleComponent implements OnInit {
     public bordersButtons: ToggleButton[];
 
     public ngOnInit() {
         this.bordersButtons = [
-            new ToggleButton({
-                icon: 'border_top',
-                selected: true
-            }),
-            new ToggleButton({
-                icon: 'border_right',
-                selected: false
-            }),
-            new ToggleButton({
-                icon: 'border_bottom',
-                selected: false
-            }),
-            new ToggleButton({
-                icon: 'border_left',
-                selected: false
-            })
+            new ToggleButton({ icon: 'border_top', selected: true }),
+            new ToggleButton({ icon: 'border_right', selected: false }),
+            new ToggleButton({ icon: 'border_bottom', selected: false }),
+            new ToggleButton({ icon: 'border_left', selected: false })
         ];
     }
 }
