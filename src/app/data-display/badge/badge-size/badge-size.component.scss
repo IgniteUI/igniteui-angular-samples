@@ -1,0 +1,22 @@
+.badge-size {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 16px;
+}
+
+.badge-size-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.badge-size-item span {
+    color: var(--ig-gray-700);
+    font-size: 14px;
+}
+
+.badge-large { --ig-size: var(--ig-size-large); }
+.badge-medium { --ig-size: var(--ig-size-medium); }
+.badge-small { --ig-size: var(--ig-size-small); }

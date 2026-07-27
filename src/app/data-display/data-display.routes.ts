@@ -1,5 +1,7 @@
 import { BadgeIconComponent } from './badge/badge-icon/badge-icon.component';
 import { BadgeOverviewComponent } from './badge/badge-overview/badge-overview.component';
+import { BadgeSizeComponent } from './badge/badge-size/badge-size.component';
+import { BadgeTypeComponent } from './badge/badge-type/badge-type.component';
 import { BadgeShapeComponent } from './badge/badge-shape/badge-shape.component';
 import { BadgeVariantsComponent } from './badge/badge-variants/badge-variants.component';
 import { BadgeOutlinedComponent } from './badge/badge-outlined/badge-outlined.component';
@@ -59,6 +61,16 @@ export const DataDisplayRoutes: Routes = [
         component: BadgeOverviewComponent,
         data: dataDisplayRoutesData['badge-overview'],
         path: 'badge-overview'
+    },
+    {
+        component: BadgeSizeComponent,
+        data: dataDisplayRoutesData['badge-size'],
+        path: 'badge-size'
+    },
+    {
+        component: BadgeTypeComponent,
+        data: dataDisplayRoutesData['badge-type'],
+        path: 'badge-type'
     },
     {
         component: BadgeShapeComponent,

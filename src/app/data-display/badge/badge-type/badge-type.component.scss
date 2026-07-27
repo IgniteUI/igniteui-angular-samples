@@ -1,0 +1,18 @@
+.badge-type {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    padding: 16px;
+}
+
+.badge-type-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.badge-type-item span {
+    color: var(--ig-gray-700);
+    font-size: 14px;
+}

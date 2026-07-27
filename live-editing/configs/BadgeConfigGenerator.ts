@@ -24,6 +24,20 @@ export class BadgeConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/data-display/badge/"
         }));
 
+        // badge size
+        configs.push(new Config({
+            component: 'BadgeSizeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
+        // badge type
+        configs.push(new Config({
+            component: 'BadgeTypeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
         // badge shape
         configs.push(new Config({
             component: 'BadgeShapeComponent',

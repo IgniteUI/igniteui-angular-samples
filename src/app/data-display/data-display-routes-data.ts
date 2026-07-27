@@ -3,6 +3,8 @@
 export const dataDisplayRoutesData = {
     "badge-icon": { displayName: "Badge Icon Sample", parentName: "Badge" },
     "badge-overview": { displayName: "Overview", parentName: "Badge" },
+    "badge-size": { displayName: "Badge Size", parentName: "Badge" },
+    "badge-type": { displayName: "Badge Type", parentName: "Badge" },
     "badge-shape": { displayName: "Badge Shape", parentName: "Badge" },
     "badge-variants": { displayName: "Badge Variants", parentName: "Badge" },
     "badge-outlined": { displayName: "Badge Outlined", parentName: "Badge" },
