@@ -5,7 +5,7 @@
     --teal-dark: #004d40;
 
     ::ng-deep {
-        @include avatar(
+        @include tokens(
             avatar-theme(
                 $background: var(--teal-light),
                 $color: var(--teal-dark)

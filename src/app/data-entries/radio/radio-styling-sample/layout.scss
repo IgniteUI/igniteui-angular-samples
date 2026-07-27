@@ -1,12 +1,10 @@
 @use "igniteui-angular/theming" as *;
-@use "igniteui-angular/lib/core/styles/components/radio/radio-component" as radio;
 @use "sass:map";
 
 :host {
     ::ng-deep{
         $_radio-schema: map.get($light-fluent-schema, radio);
-        @include radio(radio-theme($schema: $_radio-schema));
-        @include radio.component();
+        @include tokens(radio-theme($schema: $_radio-schema));
 
         // Note: This is not the standard approach for styling the component.
         // We're using it here solely to mirror the UI5 sample.
