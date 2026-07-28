@@ -32,13 +32,13 @@ class ToggleButton {
 }
 
 @Component({
-    selector: 'app-button-group-toggle-sample',
-    styleUrls: ['./button-group-toggle-sample.component.scss'],
-    templateUrl: './button-group-toggle-sample.component.html',
+    selector: 'app-button-group-toggle',
+    styleUrls: ['./button-group-toggle.component.scss'],
+    templateUrl: './button-group-toggle.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent]
 })
-export class ButtonGroupToggleSampleComponent implements OnInit {
+export class ButtonGroupToggleComponent implements OnInit {
     public bordersButtons: ToggleButton[];
 
     public ngOnInit() {

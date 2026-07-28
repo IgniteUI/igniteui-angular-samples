@@ -10,45 +10,59 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
+        // button group overview
+        configs.push(new Config({
+            component: 'ButtonGroupOverviewComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
         // button group layout
         configs.push(new Config({
-            component: 'ButtonGroupLayoutSampleComponent',
+            component: 'ButtonGroupLayoutComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
         // button group alignment
         configs.push(new Config({
-            component: 'ButtonGroupAlignmentSampleComponent',
+            component: 'ButtonGroupAlignmentComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
         // button group toggle
         configs.push(new Config({
-            component: 'ButtonGroupToggleSampleComponent',
+            component: 'ButtonGroupToggleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
         // button group selection
         configs.push(new Config({
-            component: 'ButtonGroupSelectionSampleComponent',
+            component: 'ButtonGroupSelectionComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
         // button group size
         configs.push(new Config({
-            component: 'ButtonGroupSizeSampleComponent',
+            component: 'ButtonGroupSizeComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group style
+        // button group styling
         configs.push(new Config({
-            component: 'ButtonGroupStyleSampleComponent',
-            additionalFiles: ["/src/app/data-entries/buttonGroup/button-group-style-sample/layout.scss"],
+            component: 'ButtonGroupStylingComponent',
+            additionalFiles: ["/src/app/data-entries/buttonGroup/button-group-styling/layout.scss"],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
+        // button group tailwind styling
+        configs.push(new Config({
+            component: 'ButtonGroupTailwindStylingComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));

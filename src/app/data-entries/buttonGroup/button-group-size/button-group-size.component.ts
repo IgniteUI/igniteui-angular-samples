@@ -8,13 +8,13 @@ type Button = {
 }
 
 @Component({
-    selector: 'app-button-group-size-sample',
-    styleUrls: ['./button-group-size-sample.component.scss'],
-    templateUrl: './button-group-size-sample.component.html',
+    selector: 'app-button-group-size',
+    styleUrls: ['./button-group-size.component.scss'],
+    templateUrl: './button-group-size.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent]
 })
-export class ButtonGroupSizeSampleComponent implements OnInit {
+export class ButtonGroupSizeComponent implements OnInit {
     public rippleColor = 'grey';
     public size = 'large';
     public sizes: Button[];

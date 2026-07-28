@@ -1,13 +1,14 @@
 import { Routes } from '@angular/router';
 import { AutocompleteBasicComponent } from './autocomplete/autocomplete/autocomplete.component';
 import { MovieComponent } from './autocomplete/movie/movie.component';
-import { ButtonGroupLayoutSampleComponent } from './buttonGroup/button-group-layout-sample/button-group-layout-sample.component';
-import { ButtonGroupAlignmentSampleComponent } from './buttonGroup/button-group-alignment-sample/button-group-alignment-sample.component';
-import { ButtonGroupToggleSampleComponent } from './buttonGroup/button-group-toggle-sample/button-group-toggle-sample.component';
-import { ButtonGroupSelectionSampleComponent } from './buttonGroup/button-group-selection-sample/button-group-selection-sample.component';
-import { ButtonGroupSizeSampleComponent } from './buttonGroup/button-group-size-sample/button-group-size-sample.component';
-import { ButtonGroupStyleSampleComponent } from './buttonGroup/button-group-style-sample/button-group-style-sample.component';
-import { ButtonGroupTailwindStyleSampleComponent } from './buttonGroup/button-group-tailwind-style-sample/button-group-tailwind-style-sample.component';
+import { ButtonGroupOverviewComponent } from './buttonGroup/button-group-overview/button-group-overview.component';
+import { ButtonGroupLayoutComponent } from './buttonGroup/button-group-layout/button-group-layout.component';
+import { ButtonGroupAlignmentComponent } from './buttonGroup/button-group-alignment/button-group-alignment.component';
+import { ButtonGroupToggleComponent } from './buttonGroup/button-group-toggle/button-group-toggle.component';
+import { ButtonGroupSelectionComponent } from './buttonGroup/button-group-selection/button-group-selection.component';
+import { ButtonGroupSizeComponent } from './buttonGroup/button-group-size/button-group-size.component';
+import { ButtonGroupStylingComponent } from './buttonGroup/button-group-styling/button-group-styling.component';
+import { ButtonGroupTailwindStylingComponent } from './buttonGroup/button-group-tailwind-styling/button-group-tailwind-styling.component';
 import { ButtonsDisabledComponent } from './buttons/buttons-disabled-sample/buttons-disabled-sample';
 import { ButtonsDisplayDensityComponent } from './buttons/buttons-display-density/buttons-display-density.component';
 import { ButtonsRoundnessComponent } from './buttons/buttons-roundness-sample/buttons-roundness-sample';
@@ -99,39 +100,44 @@ export const DataEntriesRoutes: Routes = [
         path: 'buttons-display-density'
     },
     {
-        component: ButtonGroupLayoutSampleComponent,
-        data: dataEntriesRoutesData['button-group-layout-sample'],
-        path: 'button-group-layout-sample'
+        component: ButtonGroupOverviewComponent,
+        data: dataEntriesRoutesData['button-group-overview'],
+        path: 'button-group-overview'
     },
     {
-        component: ButtonGroupAlignmentSampleComponent,
-        data: dataEntriesRoutesData['button-group-alignment-sample'],
-        path: 'button-group-alignment-sample'
+        component: ButtonGroupLayoutComponent,
+        data: dataEntriesRoutesData['button-group-layout'],
+        path: 'button-group-layout'
     },
     {
-        component: ButtonGroupToggleSampleComponent,
-        data: dataEntriesRoutesData['button-group-toggle-sample'],
-        path: 'button-group-toggle-sample'
+        component: ButtonGroupAlignmentComponent,
+        data: dataEntriesRoutesData['button-group-alignment'],
+        path: 'button-group-alignment'
     },
     {
-        component: ButtonGroupSelectionSampleComponent,
-        data: dataEntriesRoutesData['button-group-selection-sample'],
-        path: 'button-group-selection-sample'
+        component: ButtonGroupToggleComponent,
+        data: dataEntriesRoutesData['button-group-toggle'],
+        path: 'button-group-toggle'
     },
     {
-        component: ButtonGroupSizeSampleComponent,
-        data: dataEntriesRoutesData['button-group-size-sample'],
-        path: 'button-group-size-sample'
+        component: ButtonGroupSelectionComponent,
+        data: dataEntriesRoutesData['button-group-selection'],
+        path: 'button-group-selection'
     },
     {
-        component: ButtonGroupStyleSampleComponent,
-        data: dataEntriesRoutesData['button-group-style-sample'],
-        path: 'button-group-style-sample'
+        component: ButtonGroupSizeComponent,
+        data: dataEntriesRoutesData['button-group-size'],
+        path: 'button-group-size'
     },
     {
-        component: ButtonGroupTailwindStyleSampleComponent,
-        data: dataEntriesRoutesData['button-group-tailwind-style-sample'],
-        path: 'button-group-tailwind-style-sample'
+        component: ButtonGroupStylingComponent,
+        data: dataEntriesRoutesData['button-group-styling'],
+        path: 'button-group-styling'
+    },
+    {
+        component: ButtonGroupTailwindStylingComponent,
+        data: dataEntriesRoutesData['button-group-tailwind-styling'],
+        path: 'button-group-tailwind-styling'
     },
     {
         component: ButtonsRoundnessComponent,

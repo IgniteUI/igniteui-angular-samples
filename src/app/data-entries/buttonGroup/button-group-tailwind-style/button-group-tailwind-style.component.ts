@@ -3,13 +3,11 @@ import { ButtonGroupAlignment, IgxButtonGroupComponent } from 'igniteui-angular/
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 @Component({
-    selector: 'app-button-group-alignment-sample',
-    styleUrls: ['./button-group-alignment-sample.component.scss'],
-    templateUrl: './button-group-alignment-sample.component.html',
+    selector: 'app-button-group-tailwind-styling',
+    styleUrls: ['./button-group-tailwind-styling.component.scss'],
+    templateUrl: './button-group-tailwind-styling.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective]
 })
-export class ButtonGroupAlignmentSampleComponent {
-    public alignment = ButtonGroupAlignment.vertical;
-    public rippleColor = 'grey';
+export class ButtonGroupTailwindStylingComponent {
 }

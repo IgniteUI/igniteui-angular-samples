@@ -6,13 +6,13 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
 import { FormsModule } from '@angular/forms';
 
 @Component({
-    selector: 'app-button-group-selection-sample',
-    styleUrls: ['./button-group-selection-sample.component.scss'],
-    templateUrl: './button-group-selection-sample.component.html',
+    selector: 'app-button-group-selection',
+    styleUrls: ['./button-group-selection.component.scss'],
+    templateUrl: './button-group-selection.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxRadioComponent, FormsModule, IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxIconComponent]
 })
-export class ButtonGroupSelectionSampleComponent {
+export class ButtonGroupSelectionComponent {
     public rippleColor = 'grey';
     public selectionMode: 'single' | 'singleRequired' | 'multi' = 'single';
 }

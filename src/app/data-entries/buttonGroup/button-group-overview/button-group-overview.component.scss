@@ -1,0 +1,21 @@
+@use "igniteui-angular/theming" as *;
+
+$overview-button-group-theme: button-group-theme(
+	$item-text-color: #000000,
+	$item-background: #2196f3,
+	$item-selected-background: #1976d2,
+	$item-selected-text-color: #000000,
+	$item-border-color: transparent,
+	$item-hover-border-color: transparent,
+	$item-active-border-color: transparent,
+	$item-focused-border-color: transparent
+);
+
+:host {
+	@include tokens($overview-button-group-theme);
+}
+
+igx-buttongroup {
+	display: inline-block;
+	max-width: 400px;
+}
