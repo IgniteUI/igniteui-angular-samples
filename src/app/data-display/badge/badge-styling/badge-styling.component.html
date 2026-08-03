@@ -1,18 +1,18 @@
-<igx-list>
-  <igx-list-item [isHeader]="true">
-    Team Members (4)
-  </igx-list-item>
-  @for (member of members; track member) {
-    <igx-list-item>
-      <div class="wrapper">
-        <div>
-          <igx-avatar icon="person" shape="circle" size="small"></igx-avatar>
-          <igx-badge [icon]="member.icon" shape="square" class="badge-style"></igx-badge>
-        </div>
-        <div class="contact-container">
-          <span class="contact-name">{{ member.name }}</span>
-        </div>
-      </div>
-    </igx-list-item>
-  }
-</igx-list>
+<div class="badge-styling">
+  <div class="styling-item green">
+    <igx-avatar icon="person" shape="circle" size="small"></igx-avatar>
+    <igx-badge icon="photo_camera" outlined class="badge-teal"></igx-badge>
+  </div>
+  <div class="styling-item">
+    <igx-avatar src="assets/images/avatar/18.jpg" shape="circle" size="small"></igx-avatar>
+    <igx-badge icon="star_border" outlined class="badge-amber"></igx-badge>
+  </div>
+  <div class="styling-item pink">
+    <igx-avatar icon="favorite_border" shape="circle" size="small"></igx-avatar>
+    <igx-badge value="2" outlined class="badge-magenta"></igx-badge>
+  </div>
+  <div class="styling-item">
+    <igx-avatar src="assets/images/avatar/10.jpg" shape="rounded" size="small"></igx-avatar>
+    <igx-badge dot outlined class="badge-lime"></igx-badge>
+  </div>
+</div>

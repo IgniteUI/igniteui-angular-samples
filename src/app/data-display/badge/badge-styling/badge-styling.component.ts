@@ -1,6 +1,4 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { Member } from '../model/member.model';
-import { IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxBadgeComponent } from 'igniteui-angular/badge';
 
@@ -10,13 +8,6 @@ import { IgxBadgeComponent } from 'igniteui-angular/badge';
     styleUrls: ['./badge-styling.component.scss'],
     templateUrl: './badge-styling.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxBadgeComponent]
+    imports: [IgxAvatarComponent, IgxBadgeComponent]
 })
-export class BadgeStylingComponent {
-  public members: Member[] = [
-    new Member('Terrance Orta', 'online'),
-    new Member('Donna Price', 'online'),
-    new Member('Lisa Landers', 'away'),
-    new Member('Dorothy H. Spencer', 'offline')
-  ];
-}
+export class BadgeStylingComponent { }
