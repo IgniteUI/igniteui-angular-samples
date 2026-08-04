@@ -1,10 +1,11 @@
-import { Component, HostBinding, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, HostBinding, Input, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ChartHostDirective } from '../../directives/chart-integration/chart-integration.directive';
 
 @Component({
     selector: 'app-dock-slot',
     templateUrl: './dock-slot.component.html',
     styleUrls: ['./dock-slot.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [ChartHostDirective]
 })
 export class DockSlotComponent implements OnInit {

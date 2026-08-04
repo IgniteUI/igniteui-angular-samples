@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { DefaultSortingStrategy, ISortingExpression, SortingDirection } from 'igniteui-angular/core';
 import { GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent, IgxGroupByRowTemplateDirective } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -13,6 +13,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-groupby-sample',
     styleUrls: ['./grid-groupby-sample.component.scss'],
     templateUrl: './grid-groupby-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent]
 })
 export class GridGroupBySampleComponent {

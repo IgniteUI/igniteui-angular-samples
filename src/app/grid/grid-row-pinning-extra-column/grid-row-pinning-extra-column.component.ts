@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ColumnPinningPosition } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
@@ -14,6 +14,7 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     selector: 'app-grid-row-pinning-extra-column',
     templateUrl: 'grid-row-pinning-extra-column.component.html',
     styleUrls: ['./grid-row-pinning-extra-column.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent]
 })
 

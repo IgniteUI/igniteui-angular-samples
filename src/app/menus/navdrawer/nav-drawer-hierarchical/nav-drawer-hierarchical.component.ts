@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxTreeComponent, IgxTreeNodeComponent, IgxTreeNodeLinkDirective } from 'igniteui-angular/tree';
 import { IgxFlexDirective, IgxIconButtonDirective, IgxLayoutDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
 import { IgxNavDrawerTemplateDirective, IgxNavigationDrawerComponent } from 'igniteui-angular/navigation-drawer';
@@ -10,6 +10,7 @@ import { RouterLink } from '@angular/router';
     selector: 'app-nav-drawer-hierarchical',
     templateUrl: './nav-drawer-hierarchical.component.html',
     styleUrls: ['./nav-drawer-hierarchical.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxLayoutDirective, IgxNavigationDrawerComponent, IgxNavDrawerTemplateDirective, IgxTreeComponent, IgxTreeNodeComponent, IgxTreeNodeLinkDirective, RouterLink, IgxFlexDirective, IgxIconButtonDirective, IgxToggleActionDirective, IgxIconComponent]
 })
 export class NavDrawerHierarchicalComponent implements AfterViewInit {

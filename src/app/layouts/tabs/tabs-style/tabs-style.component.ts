@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxTabContentComponent, IgxTabHeaderComponent, IgxTabHeaderIconDirective, IgxTabHeaderLabelDirective, IgxTabItemComponent, IgxTabsComponent } from 'igniteui-angular/tabs';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 
@@ -6,6 +6,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-tabs-style',
     styleUrls: ['./tabs-style.component.scss'],
     templateUrl: './tabs-style.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxIconComponent, IgxTabHeaderIconDirective, IgxTabHeaderLabelDirective, IgxTabContentComponent]
 })
 export class TabsStyleComponent { }

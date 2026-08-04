@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxCalendarComponent } from 'igniteui-angular/calendar';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -8,6 +8,7 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-calendar',
     styleUrls: ['./multiview.component.scss'],
     templateUrl: './multiview.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCalendarComponent, IgxDialogComponent, IgxButtonDirective]
 })
 export class CalendarMultiViewComponent {

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxRadioComponent } from 'igniteui-angular/radio';
 import { FormsModule } from '@angular/forms';
 
@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-radio-tailwind-styling',
     styleUrls: ['./radio-tailwind-styling-sample.component.scss'],
     templateUrl: './radio-tailwind-styling-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxRadioComponent, FormsModule]
 })
 export class RadioTailwindStylingSampleComponent {

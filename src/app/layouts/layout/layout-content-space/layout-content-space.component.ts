@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { ButtonGroupAlignment, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxButtonDirective, IgxLayoutDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
@@ -8,6 +8,7 @@ import { IgxButtonDirective, IgxLayoutDirective, IgxRippleDirective } from 'igni
     selector: 'app-layout-content-space',
     styleUrls: ['./layout-content-space.component.scss'],
     templateUrl: './layout-content-space.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxLayoutDirective]
 })
 

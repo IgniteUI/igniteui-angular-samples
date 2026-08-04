@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSliderComponent, IgxTickLabelTemplateDirective } from 'igniteui-angular/slider';
 
 @Component({
     selector: 'app-tick-labels-template',
     styleUrls: ['./tick-labels-template.component.scss'],
     templateUrl: './tick-labels-template.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSliderComponent, IgxTickLabelTemplateDirective]
 })
 export class TickLabelsTemplateComponent {

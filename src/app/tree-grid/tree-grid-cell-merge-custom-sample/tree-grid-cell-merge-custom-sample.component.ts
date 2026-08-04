@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { GridCellMergeMode, IgxColumnComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
@@ -12,6 +12,7 @@ import { generateEmployeeDetailedFlatData2 } from '../data/employees-flat-detail
     selector: 'app-tree-grid-cell-merge-custom-sample',
     styleUrls: ['./tree-grid-cell-merge-custom-sample.component.scss'],
     templateUrl: './tree-grid-cell-merge-custom-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IgxTreeGridComponent,
         IgxPreventDocumentScrollDirective,

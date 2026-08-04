@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxBannerActionsDirective, IgxBannerComponent } from 'igniteui-angular/banner';
 import { IgxNavbarComponent } from 'igniteui-angular/navbar';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-banner-sample-4',
     templateUrl: './banner-sample-4.component.html',
     styleUrls: ['./banner-sample-4.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent, IgxIconComponent, IgxBannerComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxAvatarComponent, IgxSwitchComponent, FormsModule, IgxInputGroupComponent, IgxInputDirective]
 })
 export class BannerSample4Component implements OnInit {

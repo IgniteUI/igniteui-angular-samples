@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
@@ -11,6 +11,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tgrid-editing-lifecycle',
     templateUrl: 'tgrid-editing-lifecycle.component.html',
     styleUrls: ['tgrid-editing-lifecycle.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class TGridEditingLifecycleComponent {

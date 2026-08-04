@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxColumnGroupComponent, IgxNumberSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
@@ -27,6 +27,7 @@ class CustomNumberSummary {
     selector: 'app-grid-displaydensity-sample',
     styleUrls: ['./grid-displaydensity-sample.component.scss'],
     templateUrl: './grid-displaydensity-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnGroupComponent, IgxColumnComponent, IgxCellTemplateDirective, DatePipe]
 })
 export class GridDisplayDensitySampleComponent implements OnInit {

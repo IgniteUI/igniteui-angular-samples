@@ -18,6 +18,7 @@
             "index": "src/index.html",
             "tsConfig": "src/tsconfig.app.json",
             "polyfills": [
+              "zone.js",
               "hammerjs"
             ],
             "assets": [
@@ -136,7 +137,7 @@
             },
             "index": "projects/app-lob/src/index.html",
             "polyfills": [
-              "hammerjs/hammer"
+              "projects/app-lob/src/polyfills.ts"
             ],
             "tsConfig": "projects/app-lob/tsconfig.app.json",
             "assets": [
@@ -219,7 +220,7 @@
           "builder": "@angular/build:karma",
           "options": {
             "main": "projects/app-lob/src/test.ts",
-            "polyfills": ["projects/app-lob/src/polyfills.ts"],
+            "polyfills": "projects/app-lob/src/polyfills.ts",
             "tsConfig": "projects/app-lob/tsconfig.spec.json",
             "karmaConfig": "projects/app-lob/karma.conf.js",
             "assets": [
@@ -267,7 +268,7 @@
             },
             "index": "projects/app-crm/src/index.html",
             "polyfills": [
-              "hammerjs/hammer"
+              "projects/app-crm/src/polyfills.ts"
             ],
             "tsConfig": "projects/app-crm/tsconfig.app.json",
             "assets": [

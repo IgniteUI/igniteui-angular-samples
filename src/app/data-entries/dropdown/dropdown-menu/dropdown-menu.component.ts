@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { ConnectedPositioningStrategy, HorizontalAlignment, IgxOverlayOutletDirective, NoOpScrollStrategy, VerticalAlignment } from 'igniteui-angular/core';
 import { ISelectionEventArgs, IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
 import { IgxNavbarComponent } from 'igniteui-angular/navbar';
@@ -11,6 +11,7 @@ import { IgxLabelDirective } from 'igniteui-angular/input-group';
     selector: 'app-dropdown-menu',
     styleUrls: ['./dropdown-menu.component.scss'],
     templateUrl: './dropdown-menu.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent, IgxIconButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxIconComponent, IgxDropDownComponent, IgxDropDownItemComponent, IgxLabelDirective, IgxOverlayOutletDirective]
 })
 export class DropdownMenuComponent {

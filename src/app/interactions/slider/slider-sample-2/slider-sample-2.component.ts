@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSliderComponent } from 'igniteui-angular/slider';
 import { FormsModule } from '@angular/forms';
 
@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-slider-sample-2',
     styleUrls: ['./slider-sample-2.component.scss'],
     templateUrl: './slider-sample-2.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSliderComponent, FormsModule]
 })
 export class SliderSample2Component implements OnInit {

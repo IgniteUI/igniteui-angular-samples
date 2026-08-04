@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxTabContentComponent, IgxTabHeaderComponent, IgxTabItemComponent, IgxTabsComponent } from 'igniteui-angular/tabs';
 import { IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxIconButtonDirective } from 'igniteui-angular/directives';
@@ -8,6 +8,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
 @Component({
     selector: 'app-tabs-header-prefix-suffix',
     templateUrl: './tabs-header-prefix-suffix.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTabsComponent, IgxTabItemComponent, IgxTabHeaderComponent, IgxPrefixDirective, IgxIconButtonDirective, IgxSuffixDirective, IgxIconComponent, IgxTabContentComponent]
 })
 export class TabsHeaderPrefixSuffixComponent {

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { IgxIconButtonDirective } from 'igniteui-angular/directives';
 
@@ -6,6 +6,7 @@ import { IgxIconButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-svg-icon-button',
     styleUrls: ['./svg-icon-button.component.scss'],
     templateUrl: './svg-icon-button.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxIconButtonDirective, IgxIconComponent]
 })
 export class SVGIconButtonComponent implements OnInit {

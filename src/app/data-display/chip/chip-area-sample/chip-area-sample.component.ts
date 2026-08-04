@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IBaseChipEventArgs, IChipsAreaReorderEventArgs, IgxChipComponent, IgxChipsAreaComponent } from 'igniteui-angular/chips';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxPrefixDirective } from 'igniteui-angular/input-group';
@@ -9,6 +9,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-chip-area-sample',
     styleUrls: ['./chip-area-sample.component.scss'],
     templateUrl: './chip-area-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxChipsAreaComponent, IgxChipComponent, IgxAvatarComponent, IgxPrefixDirective, IgxIconComponent]
 })
 

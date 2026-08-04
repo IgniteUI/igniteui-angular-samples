@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { DateRangeType } from 'igniteui-angular/core';
 import { IgxCalendarComponent } from 'igniteui-angular/calendar';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
@@ -8,6 +8,7 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-7.component.scss'],
     templateUrl: './calendar-sample-7.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCalendarComponent, IgxDialogComponent, IgxButtonDirective]
 })
 export class CalendarSample7Component {

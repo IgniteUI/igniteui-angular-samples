@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { GridCellMergeMode, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { DefaultMergeStrategy } from 'igniteui-angular/core';
@@ -9,6 +9,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-cell-merge-custom-sample',
     styleUrls: ['./grid-cell-merge-custom-sample.component.scss'],
     templateUrl: './grid-cell-merge-custom-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IgxGridComponent,
         IgxPreventDocumentScrollDirective,

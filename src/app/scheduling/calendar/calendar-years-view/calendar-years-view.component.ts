@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent } from 'igniteui-angular/card';
 import { IgxYearsViewComponent } from 'igniteui-angular/calendar';
 
@@ -6,6 +6,7 @@ import { IgxYearsViewComponent } from 'igniteui-angular/calendar';
     selector: 'app-calendar-views',
     styleUrls: ['./calendar-years-view.component.scss'],
     templateUrl: './calendar-years-view.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardContentDirective, IgxYearsViewComponent]
 })
 export class CalendarYearsViewComponent { }

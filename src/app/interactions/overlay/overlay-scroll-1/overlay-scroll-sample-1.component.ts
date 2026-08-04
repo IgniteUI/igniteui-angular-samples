@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { AbsoluteScrollStrategy, AutoPositionStrategy, ConnectedPositioningStrategy, ElasticPositionStrategy, GlobalPositionStrategy, HorizontalAlignment, IgxOverlayService, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
     styleUrls: ['./overlay-scroll-sample-1.component.scss'],
     templateUrl: './overlay-scroll-sample-1.component.html',
     providers: [IgxOverlayService],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, FormsModule, IgxIconComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardContentDirective]
 })
 export class OverlayScrollSample1Component implements OnDestroy {

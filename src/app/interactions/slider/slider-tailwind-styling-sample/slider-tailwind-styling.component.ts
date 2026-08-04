@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSliderComponent, TicksOrientation } from 'igniteui-angular/slider';
 
 @Component({
     selector: 'slider-tailwind-styling',
     styleUrls: ['./slider-tailwind-styling.component.scss'],
     templateUrl: './slider-tailwind-styling.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSliderComponent]
 })
 export class SliderTailwindStylingComponent {

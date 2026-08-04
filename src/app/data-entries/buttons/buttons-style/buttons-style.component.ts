@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
 
@@ -7,6 +7,7 @@ import { THEME_TOKEN, ThemeToken } from 'igniteui-angular/core';
     styleUrls: ['./buttons-style.component.scss'],
     templateUrl: './buttons-style.component.html',
     imports: [IgxButtonDirective],
+    changeDetection: ChangeDetectionStrategy.Eager,
     providers: [{provide: THEME_TOKEN, useFactory: () => new ThemeToken('bootstrap')}]
 })
 export class ButtonsStyleComponent {

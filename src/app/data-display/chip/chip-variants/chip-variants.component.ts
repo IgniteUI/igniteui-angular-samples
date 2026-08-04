@@ -1,10 +1,11 @@
-import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IBaseChipEventArgs, IgxChipComponent, IgxChipTypeVariant } from 'igniteui-angular/chips';
 
 @Component({
     selector: 'app-chip-variants',
     styleUrls: ['./chip-variants.component.scss'],
     templateUrl: './chip-variants.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxChipComponent]
 })
 export class ChipVariantsComponent {

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ElementRef, OnInit, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSelectComponent, IgxSelectFooterDirective, IgxSelectHeaderDirective, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -9,6 +9,7 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-select-header-footer',
     styleUrls: ['select-header-footer.component.scss'],
     templateUrl: 'select-header-footer.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent, IgxIconComponent, IgxSelectHeaderDirective, IgxButtonGroupComponent, IgxButtonDirective, IgxSelectFooterDirective]
 })
 export class SelectHeaderFooterComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { DefaultSortingStrategy, ISortingExpression, SortingDirection } from 'igniteui-angular/core';
 import { GridSelectionMode, IgxColumnComponent, IgxGroupByRowTemplateDirective } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -12,6 +12,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-group-by-paging-sample',
     templateUrl: './grid-group-by-paging-sample.component.html',
     styleUrls: ['./grid-group-by-paging-sample.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxGroupByRowTemplateDirective, IgxIconComponent, IgxBadgeComponent]
 })
 export class GridGroupByPagingSampleComponent {
