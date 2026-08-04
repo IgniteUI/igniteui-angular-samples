@@ -1,4 +1,4 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { DateParser } from '../../../date-parser';
 import { IgxCalendarComponent, IgxCalendarHeaderTemplateDirective, IgxCalendarSubheaderTemplateDirective } from 'igniteui-angular/calendar';
 import { TitleCasePipe } from '@angular/common';
@@ -8,7 +8,6 @@ import { TitleCasePipe } from '@angular/common';
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-4.component.scss'],
     templateUrl: './calendar-sample-4.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCalendarComponent, IgxCalendarHeaderTemplateDirective, IgxCalendarSubheaderTemplateDirective, TitleCasePipe]
 })
 

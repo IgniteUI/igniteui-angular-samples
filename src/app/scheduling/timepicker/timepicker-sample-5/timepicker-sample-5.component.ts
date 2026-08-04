@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
 import { IgxHintDirective, IgxLabelDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxPickerToggleComponent } from 'igniteui-angular/core';
@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-timepicker-sample-5',
     styleUrls: ['./timepicker-sample-5.component.scss'],
     templateUrl: './timepicker-sample-5.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTimePickerComponent, FormsModule, IgxLabelDirective, IgxPickerToggleComponent, IgxSuffixDirective, IgxIconComponent, IgxHintDirective]
 })
 

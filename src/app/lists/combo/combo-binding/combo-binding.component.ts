@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxComboComponent } from 'igniteui-angular/combo';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective } from 'igniteui-angular/card';
@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-combo-binding',
     templateUrl: 'combo-binding.component.html',
     styleUrls: ['combo-binding.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxComboComponent, FormsModule, IgxButtonDirective, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective]
 })
 export class ComboBindingComponent {
