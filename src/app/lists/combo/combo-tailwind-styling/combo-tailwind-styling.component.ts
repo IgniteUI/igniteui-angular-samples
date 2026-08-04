@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { IComboSelectionChangingEventArgs, IgxComboComponent } from 'igniteui-angular/combo';
 import { IgxToastComponent } from 'igniteui-angular/toast';
 import { VerticalAlignment } from 'igniteui-angular/core';
@@ -8,7 +8,6 @@ import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
     selector: 'app-combo-tailwind-styling',
     styleUrls: ['./combo-tailwind-styling.component.scss'],
     templateUrl: './combo-tailwind-styling.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxComboComponent, IgxToastComponent]
 })
 export class ComboTailwindStylingComponent implements OnInit {

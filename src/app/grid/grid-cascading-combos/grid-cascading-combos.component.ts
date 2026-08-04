@@ -1,4 +1,4 @@
-import { Component, OnInit, QueryList, ViewChildren, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit, QueryList, ViewChildren } from '@angular/core';
 import { ISimpleComboSelectionChangingEventArgs, IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -13,10 +13,11 @@ import { FormsModule } from '@angular/forms';
     selector: 'grid-cascading-combos',
     templateUrl: './grid-cascading-combos.component.html',
     styleUrls: ['./grid-cascading-combos.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxSimpleComboComponent, FormsModule, IgxLinearProgressBarComponent]
 })
 export class GridCascadingCombosComponent implements OnInit {
+    private cdr = inject(ChangeDetectorRef);
+
     @ViewChildren(IgxSimpleComboComponent)
     public combos: QueryList<IgxSimpleComboComponent>;
 
@@ -56,6 +57,7 @@ export class GridCascadingCombosComponent implements OnInit {
                 .map((c) => ({ name: c.region, country: c.country }))
                 .filter((v, i, a) => a.findIndex((r) => r.name === v.name) === i);
             cell.row.data.loadingRegion = false;
+            this.cdr.markForCheck();
         }, this.loadingTime);
         this.selectedRegionName = null;
         this.selectedCityId = null;
@@ -80,6 +82,7 @@ export class GridCascadingCombosComponent implements OnInit {
                 (c) => c.region === this.selectedRegionName
             );
             cell.row.data.loadingCity = false;
+            this.cdr.markForCheck();
         }, this.loadingTime);
         this.selectedCityId = null;
         this.loadingTime = 0;

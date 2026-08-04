@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IStepChangingEventArgs, IgxStepActiveIndicatorDirective, IgxStepCompletedIndicatorDirective, IgxStepComponent, IgxStepContentDirective, IgxStepSubtitleDirective, IgxStepTitleDirective, IgxStepperComponent } from 'igniteui-angular/stepper';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -7,7 +7,6 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-stepper-tailwind-styling-sample',
     styleUrls: ['./stepper-tailwind-styling-sample.component.scss'],
     templateUrl: './stepper-tailwind-styling-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxStepperComponent, IgxStepActiveIndicatorDirective, IgxIconComponent, IgxStepCompletedIndicatorDirective, IgxStepComponent, IgxStepTitleDirective, IgxStepSubtitleDirective, IgxStepContentDirective, IgxButtonDirective]
 })
 export class StepperTailwindStylingSampleComponent {

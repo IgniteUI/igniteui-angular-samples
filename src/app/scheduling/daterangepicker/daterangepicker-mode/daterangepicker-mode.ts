@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { DateRange } from 'igniteui-angular/core';
 import { IgxDateRangePickerComponent } from 'igniteui-angular/date-picker';
 
@@ -6,7 +6,6 @@ import { IgxDateRangePickerComponent } from 'igniteui-angular/date-picker';
     selector: 'app-mode-rangedatepicker',
     styleUrls: ['./daterangepicker-mode.scss'],
     templateUrl: './daterangepicker-mode.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDateRangePickerComponent]
 })
 export class DateRangePickerModeComponent {

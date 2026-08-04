@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxCalendarComponent } from 'igniteui-angular/calendar';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -11,7 +11,6 @@ type Orientation = (typeof orientations)[number];
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-9.component.scss'],
     templateUrl: './calendar-sample-9.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCalendarComponent, IgxButtonGroupComponent, IgxButtonDirective]
 })
 

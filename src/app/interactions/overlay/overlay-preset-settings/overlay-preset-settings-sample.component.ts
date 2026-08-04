@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewContainerRef, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { AbsolutePosition, IgxOverlayService, OverlaySettings, RelativePosition, RelativePositionStrategy } from 'igniteui-angular/core';
 import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -12,7 +12,6 @@ import { NgTemplateOutlet } from '@angular/common';
     styleUrls: ['./overlay-preset-settings-sample.component.scss'],
     templateUrl: './overlay-preset-settings-sample.component.html',
     providers: [IgxOverlayService],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxIconComponent, NgTemplateOutlet, IgxButtonGroupComponent, IgxButtonDirective]
 })
 export class OverlayPresetSettingsSampleComponent implements OnInit, OnDestroy {
