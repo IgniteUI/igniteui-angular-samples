@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelHeaderComponent, IgxExpansionPanelIconDirective, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 
@@ -8,7 +8,6 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-expansion-sample-3',
     styleUrls: ['./expansion-sample-3.component.scss'],
     templateUrl: './expansion-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelIconDirective, IgxExpansionPanelBodyComponent, IgxButtonDirective]
 })
 

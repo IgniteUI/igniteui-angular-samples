@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { ColumnPinningPosition } from 'igniteui-angular/core';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
@@ -15,7 +15,6 @@ const FILTERING_ICONS_FONT_SET = 'filtering-icons';
     selector: 'app-tree-grid-row-pinning-extra-column',
     styleUrls: ['tree-grid-row-pinning-extra-column.component.scss'],
     templateUrl: 'tree-grid-row-pinning-extra-column.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent]
 })
 export class TreeGridRowPinningExtraColumnSampleComponent implements OnInit, AfterViewInit {

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxTimePickerComponent } from 'igniteui-angular/time-picker';
@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-datetimepicker-template-driven-form',
     styleUrls: ['./template-driven-form.component.scss'],
     templateUrl: './template-driven-form.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDatePickerComponent, FormsModule, IgxLabelDirective, IgxTimePickerComponent]
 })
 export class DateTimePickerTDFSampleComponent {

@@ -1,4 +1,4 @@
-import { Component, inject, signal, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { IgxPdfExporterOptions, IgxPdfExporterService } from 'igniteui-angular/grids/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 
@@ -6,7 +6,6 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-pdf-export',
     styleUrls: ['./pdf-export.component.scss'],
     templateUrl: './pdf-export.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective]
 })
 export class PdfExportComponent {

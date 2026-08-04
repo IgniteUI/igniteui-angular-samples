@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IComboSearchInputEventArgs } from 'igniteui-angular/combo';
 import { IForOfState } from 'igniteui-angular/directives';
 import { ISimpleComboSelectionChangingEventArgs, IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
@@ -12,7 +12,6 @@ import { AsyncPipe } from '@angular/common';
     selector: 'app-simple-combo-remote',
     templateUrl: './simple-combo-remote.component.html',
     styleUrls: ['./simple-combo-remote.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSimpleComboComponent, IgxToastComponent, AsyncPipe]
 })
 export class SimpleComboRemoteComponent implements OnInit, AfterViewInit {

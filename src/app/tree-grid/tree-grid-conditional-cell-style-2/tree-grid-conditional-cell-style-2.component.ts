@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
@@ -11,7 +11,6 @@ import { JsonPipe } from '@angular/common';
     selector: 'app-grid-conditional-cell-style-2',
     styleUrls: ['./tree-grid-conditional-cell-style-2.component.scss'],
     templateUrl: './tree-grid-conditional-cell-style-2.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxInputDirective, IgxHintDirective, IgxButtonDirective, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, JsonPipe]
 })
 export class TreeGridConditionalCellStyle2Component implements OnInit {

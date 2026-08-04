@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { IgxEmptyListTemplateDirective, IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
 
 
@@ -6,7 +6,6 @@ import { IgxEmptyListTemplateDirective, IgxListComponent, IgxListItemComponent }
     selector: 'app-igx-list-demo',
     styleUrls: ['./list-sample-1.component.scss'],
     templateUrl: './list-sample-1.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxListComponent, IgxEmptyListTemplateDirective, IgxListItemComponent]
 })
 export class ListSample1Component {

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { GridCellMergeMode, GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
@@ -13,7 +13,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-grid-groupby-sample',
     styleUrls: ['./grid-cell-merge-sample.component.scss'],
     templateUrl: './grid-cell-merge-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IgxGridComponent,
         IgxPreventDocumentScrollDirective,
