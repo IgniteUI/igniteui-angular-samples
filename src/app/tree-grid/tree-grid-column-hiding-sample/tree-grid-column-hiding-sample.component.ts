@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { generateEmployeeDetailedFlatData } from '../data/employees-flat-detailed';
 import { IgxColumnActionsComponent, IgxColumnComponent, IgxColumnHidingDirective } from 'igniteui-angular/grids/core';
 import { IgxRadioComponent } from 'igniteui-angular/radio';
@@ -9,6 +9,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-column-hiding-sample',
     styleUrls: ['./tree-grid-column-hiding-sample.component.scss'],
     templateUrl: './tree-grid-column-hiding-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxColumnActionsComponent, IgxColumnHidingDirective, IgxRadioComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridColumnHidingSampleComponent implements OnInit {

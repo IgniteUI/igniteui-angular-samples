@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { DateParser } from '../../../date-parser';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -10,6 +10,7 @@ import { TitleCasePipe } from '@angular/common';
     selector: 'app-datepicker-sample-5',
     styleUrls: ['./datepicker-sample-5.component.scss'],
     templateUrl: './datepicker-sample-5.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDatePickerComponent, IgxLabelDirective, IgxCalendarHeaderTemplateDirective, IgxCalendarSubheaderTemplateDirective, TitleCasePipe]
 })
 export class DatepickerSample5Component implements OnInit {

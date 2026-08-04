@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ConnectedPositioningStrategy } from 'igniteui-angular/core';
 import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
 import { IgxInputDirective, IgxInputGroupComponent, IgxSuffixDirective } from 'igniteui-angular/input-group';
@@ -10,6 +10,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-dropdown-sample-4',
     styleUrls: ['./dropdown-sample-4.component.scss'],
     templateUrl: './dropdown-sample-4.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxToggleActionDirective, IgxInputDirective, IgxDropDownItemNavigationDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxRippleDirective, IgxIconComponent, IgxDropDownComponent, IgxDropDownItemComponent]
 })
 export class DropDownSample4Component {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -10,6 +10,7 @@ import { JsonPipe } from '@angular/common';
     selector: 'app-grid-conditional-cell-style-2',
     styleUrls: ['./grid-conditional-cell-style-2.component.scss'],
     templateUrl: './grid-conditional-cell-style-2.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxInputDirective, IgxHintDirective, IgxButtonDirective, IgxGridComponent, IgxColumnComponent, JsonPipe]
 })
 export class GridConditionalCellStyle2Component implements OnInit {

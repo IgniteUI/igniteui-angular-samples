@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxFocusDirective, IgxTextSelectionDirective } from 'igniteui-angular/directives';
@@ -7,6 +7,7 @@ import { IgxFocusDirective, IgxTextSelectionDirective } from 'igniteui-angular/d
     selector: 'app-input-text-selection',
     templateUrl: './input-text-selection.component.html',
     styleUrls: ['./input-text-selection.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxTextSelectionDirective, IgxLabelDirective, IgxFocusDirective]
 })
 export class InputTextSelectionComponent {

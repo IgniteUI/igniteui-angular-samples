@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { GlobalPositionStrategy, OverlaySettings } from 'igniteui-angular/core';
 import { IgxComboComponent } from 'igniteui-angular/combo';
 import { scaleInCenter, scaleOutCenter } from 'igniteui-angular/animations';
@@ -7,6 +7,7 @@ import { scaleInCenter, scaleOutCenter } from 'igniteui-angular/animations';
     selector: 'app-combo-overlay',
     templateUrl: 'combo-overlay.component.html',
     styleUrls: ['combo-overlay.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxComboComponent]
 })
 export class ComboOverlayComponent {

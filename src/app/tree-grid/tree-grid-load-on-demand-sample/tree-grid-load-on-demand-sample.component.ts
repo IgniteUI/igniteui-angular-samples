@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { TreeGridLoadOnDemandService } from './remoteService';
@@ -8,6 +8,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-load-on-demand-sample',
     styleUrls: ['./tree-grid-load-on-demand-sample.component.scss'],
     templateUrl: './tree-grid-load-on-demand-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridLoadOnDemandSampleComponent implements OnInit {

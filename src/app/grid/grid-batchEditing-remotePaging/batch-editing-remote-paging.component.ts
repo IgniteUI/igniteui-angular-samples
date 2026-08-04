@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { Transaction } from 'igniteui-angular/core';
@@ -17,6 +17,7 @@ import { AsyncPipe } from '@angular/common';
     selector: 'app-remote-paging-batch-editing',
     styleUrls: ['./batch-editing-remote-paging.component.scss'],
     templateUrl: './batch-editing-remote-paging.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxDialogComponent, AsyncPipe]
 })
 export class RemotePagingBatchEditingComponent implements OnInit, AfterViewInit, OnDestroy {

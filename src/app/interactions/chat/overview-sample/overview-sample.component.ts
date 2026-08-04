@@ -1,10 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, ChangeDetectionStrategy } from '@angular/core';
 import { IgxChatComponent, IgxChatOptions } from 'igniteui-angular/chat';
 
 @Component({
     selector: 'app-chat-overview-sample',
     styleUrls: ['./overview-sample.component.scss'],
     templateUrl: './overview-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxChatComponent]
 })
 export class ChatOverviewSampleComponent {

@@ -1,10 +1,11 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxButtonDirective, IgxToggleActionDirective, IgxToggleDirective } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-toggle-sample-4',
     styleUrls: ['../toggle-samples.scss'],
     templateUrl: './toggle-sample-4.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxToggleActionDirective, IgxToggleDirective]
 })
 export class ToggleSample4Component {

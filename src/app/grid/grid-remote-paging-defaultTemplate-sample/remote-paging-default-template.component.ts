@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation, inject } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation, inject, ChangeDetectionStrategy } from '@angular/core';
 import { GridPagingMode, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
@@ -13,6 +13,7 @@ import { AsyncPipe } from '@angular/common';
     selector: 'app-remote-paging-default-template',
     styleUrls: ['./remote-paging-default-template.component.scss'],
     templateUrl: './remote-paging-default-template.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, AsyncPipe]
 })
 export class RemotePagingDefaultTemplateComponent implements OnInit, AfterViewInit, OnDestroy {

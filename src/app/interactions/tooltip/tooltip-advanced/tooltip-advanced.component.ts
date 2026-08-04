@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { IgxButtonDirective, IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
 import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
@@ -13,6 +13,7 @@ import { IncomeTaxes } from "./IncomeTaxes";
     selector: "app-tooltip-advanced",
     styleUrls: ["./tooltip-advanced.component.scss"],
     templateUrl: "./tooltip-advanced.component.html",
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IgxOverlayOutletDirective,
         IgxTooltipTargetDirective,

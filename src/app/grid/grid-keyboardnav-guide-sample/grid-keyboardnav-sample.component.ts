@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 /* eslint-disable no-shadow */
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CellType, IActiveNodeChangeEventArgs, IgxColumnComponent, IgxColumnGroupComponent, IgxGridDetailTemplateDirective, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxEmptyListTemplateDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';
@@ -169,6 +169,7 @@ const summaryCombinations: Item[] = [
             ])
         ])
     ],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPaginatorComponent, IgxGridToolbarComponent, IgxGridDetailTemplateDirective, IgxColumnGroupComponent, IgxColumnComponent, IgxListComponent, IgxListItemComponent, NgClass, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, IgxEmptyListTemplateDirective]
 })
 export class GridKeyboardnavGuide implements OnInit, OnDestroy {

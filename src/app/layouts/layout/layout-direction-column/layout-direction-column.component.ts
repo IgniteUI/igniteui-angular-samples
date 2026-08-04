@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { ButtonGroupAlignment, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxButtonDirective, IgxFlexDirective, IgxLayoutDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
@@ -8,6 +8,7 @@ import { IgxButtonDirective, IgxFlexDirective, IgxLayoutDirective, IgxRippleDire
     selector: 'app-layout-direction-column',
     styleUrls: ['./layout-direction-column.component.scss'],
     templateUrl: './layout-direction-column.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxLayoutDirective, IgxFlexDirective]
 })
 

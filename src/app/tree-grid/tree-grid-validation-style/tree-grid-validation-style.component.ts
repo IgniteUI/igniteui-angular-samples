@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, RowType } from 'igniteui-angular/grids/core';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
@@ -9,6 +9,7 @@ import { NgTemplateOutlet } from '@angular/common';
     selector: 'app-tree-grid-validation-style',
     styleUrls: ['tree-grid-validation-style.component.scss'],
     templateUrl: 'tree-grid-validation-style.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxCellValidationErrorDirective, NgTemplateOutlet]
 })
 export class TreeGridValidationStyleComponent implements OnInit {

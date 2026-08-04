@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { DefaultSortingStrategy, GridSummaryCalculationMode, ISortingExpression, IgxSummaryResult, SortingDirection } from 'igniteui-angular/core';
 import { GridSelectionMode, GridSummaryPosition, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarPinningComponent, IgxNumberSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -28,6 +28,7 @@ class CustomSummary {
     selector: 'app-grid-groupby-summary-sample',
     styleUrls: ['./grid-groupby-summary-styling-sample.component.scss'],
     templateUrl: './grid-groupby-summary-styling-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent]
 })
 export class GridGroupBySummaryStylingSampleComponent {

@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSliderComponent, IgxSliderType } from 'igniteui-angular/slider';
 
 @Component({
     selector: 'app-slider-sample-5',
     styleUrls: ['./slider-sample-5.component.scss'],
     templateUrl: './slider-sample-5.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSliderComponent]
 })
 export class SliderSample5Component {

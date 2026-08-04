@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
@@ -12,6 +12,7 @@ import { TitleCasePipe } from '@angular/common';
     selector: 'app-carousel',
     styleUrls: ['./carousel-animations-sample.component.scss'],
     templateUrl: './carousel-animations-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSelectComponent, IgxSwitchComponent, FormsModule, IgxSelectItemComponent, IgxCarouselComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective, TitleCasePipe]
 })
 export class CarouselAnimationsSampleComponent {

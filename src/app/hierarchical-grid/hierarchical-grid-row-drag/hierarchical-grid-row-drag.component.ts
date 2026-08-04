@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IDropDroppedEventArgs, IgxDropDirective } from 'igniteui-angular/directives';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IgxColumnComponent, IgxDragIndicatorIconDirective, RowType } from 'igniteui-angular/grids/core';
@@ -17,6 +17,7 @@ enum DragIcon {
     selector: 'app-hierarchical-grid-row-drag',
     styleUrls: ['./hierarchical-grid-row-drag.component.scss'],
     templateUrl: 'hierarchical-grid-row-drag.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDropDirective, IgxIconComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent, IgxDragIndicatorIconDirective]
 })
 

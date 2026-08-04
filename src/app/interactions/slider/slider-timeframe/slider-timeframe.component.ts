@@ -1,10 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSliderComponent, IgxSliderType } from 'igniteui-angular/slider';
 
 @Component({
     selector: 'app-slider-timeframe',
     styleUrls: ['./slider-timeframe.component.scss'],
     templateUrl: './slider-timeframe.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSliderComponent]
 })
 export class SliderTimeframeComponent {

@@ -1,4 +1,4 @@
-import { Component, Injectable, ViewChild, OnInit, inject } from '@angular/core';
+import { Component, Injectable, ViewChild, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -13,6 +13,7 @@ import { AsyncPipe } from '@angular/common';
     selector: 'app-grid-sample',
     styleUrls: ['./grid-sample-2.component.scss'],
     templateUrl: 'grid-sample-2.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 

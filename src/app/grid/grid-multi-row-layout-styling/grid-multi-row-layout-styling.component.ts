@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
 import { DefaultSortingStrategy, SortingDirection } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, IgxColumnLayoutComponent } from 'igniteui-angular/grids/core';
@@ -9,6 +9,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-multi-row-layout-styling-sample',
     styleUrls: ['./grid-multi-row-layout-styling.component.scss'],
     templateUrl: './grid-multi-row-layout-styling.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnLayoutComponent, IgxColumnComponent]
 })
 export class GridMultiRowLayoutStylingComponent {

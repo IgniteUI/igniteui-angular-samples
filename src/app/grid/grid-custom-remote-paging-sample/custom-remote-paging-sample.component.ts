@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation, inject } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, TemplateRef, ViewChild, ViewEncapsulation, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxPaginatorComponent, IgxPaginatorContentDirective } from 'igniteui-angular/paginator';
@@ -14,6 +14,7 @@ import { RouterLink } from '@angular/router';
     selector: 'app-custom-remote-paging-grid-sample',
     styleUrls: ['./custom-remote-paging-sample.component.scss'],
     templateUrl: './custom-remote-paging-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxButtonDirective, RouterLink, AsyncPipe]
 })
 export class CustomRemotePagingGridSampleComponent implements OnInit, AfterViewInit, OnDestroy {

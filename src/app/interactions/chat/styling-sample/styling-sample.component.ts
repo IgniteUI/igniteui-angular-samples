@@ -1,4 +1,4 @@
-import { Component, signal, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { Component, signal, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy } from '@angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxChatComponent, IgxChatOptions } from 'igniteui-angular/chat';
 
@@ -7,6 +7,7 @@ import { IgxChatComponent, IgxChatOptions } from 'igniteui-angular/chat';
   styleUrls: ['./styling-sample.component.scss'],
   templateUrl: './styling-sample.component.html',
   imports: [IgxAvatarComponent, IgxChatComponent],
+  changeDetection: ChangeDetectionStrategy.Eager,
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 

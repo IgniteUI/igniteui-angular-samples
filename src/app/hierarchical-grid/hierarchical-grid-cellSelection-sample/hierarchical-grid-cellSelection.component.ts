@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { GridSelectionMode, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -12,6 +12,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-hierarchical-grid-cell-selection',
     styleUrls: ['./hierarchical-grid-cellSelection.component.scss'],
     templateUrl: 'hierarchical-grid-cellSelection.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent, IgxSnackbarComponent, IgxIconComponent]
 })
 export class HierarchicalGridCellSelectionComponent implements OnInit {

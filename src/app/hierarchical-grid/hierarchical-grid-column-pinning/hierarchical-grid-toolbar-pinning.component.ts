@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
 import { CUSTOMERS } from '../../data/hierarchical-data';
 import { ActivatedRoute } from '@angular/router';
 import { NgClass } from '@angular/common';
@@ -10,6 +10,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-hierarchical-grid-toolbar-pinning',
     styleUrls: ['./hierarchical-grid-toolbar-pinning.component.scss'],
     templateUrl: 'hierarchical-grid-toolbar-pinning.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgClass, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarPinningComponent, IgxColumnComponent, IgxRowIslandComponent]
 })
 export class HGridToolbarPinningComponent implements OnInit {

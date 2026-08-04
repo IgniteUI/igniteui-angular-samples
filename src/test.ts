@@ -5,6 +5,12 @@ import {
   BrowserDynamicTestingModule,
   platformBrowserDynamicTesting
 } from '@angular/platform-browser-dynamic/testing';
+import 'zone.js/dist/async-test';
+import 'zone.js/dist/fake-async-test';
+import 'zone.js/dist/jasmine-patch';
+import 'zone.js/dist/long-stack-trace-zone';
+import 'zone.js/dist/proxy.js';
+import 'zone.js/dist/sync-test';
 
 // Unfortunately there's no typing for the `__karma__` variable. Just declare it as any.
 // eslint-disable-next-line @typescript-eslint/naming-convention

@@ -8,6 +8,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-hierarchical-grid-external-advanced-filtering',
     templateUrl: './hierarchical-grid-external-advanced-filtering.component.html',
     styleUrls: ['./hierarchical-grid-external-advanced-filtering.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxAdvancedFilteringDialogComponent, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent]
 })
 export class HGridExternalAdvancedFilteringComponent {

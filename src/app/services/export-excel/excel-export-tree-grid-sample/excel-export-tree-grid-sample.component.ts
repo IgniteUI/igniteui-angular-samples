@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular/grids/core';
 import { ORDERS_DATA } from '../../../tree-grid/data/orders';
@@ -9,6 +9,7 @@ import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-s
     selector: 'app-excel-export-tree-grid-sample',
     styleUrls: ['./excel-export-tree-grid-sample.component.scss'],
     templateUrl: './excel-export-tree-grid-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective]
 })
 export class TreeGridExcelExportSample1Component implements OnInit {

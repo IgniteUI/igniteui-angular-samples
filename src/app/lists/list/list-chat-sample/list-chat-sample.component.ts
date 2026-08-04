@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, TemplateRef, ViewChild, ViewEncapsulation, inject } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, TemplateRef, ViewChild, ViewEncapsulation, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ContactsService } from './services/contacts.service';
 import { IMessage, MessagesService } from './services/messages.service';
 import { FormsModule } from '@angular/forms';
@@ -14,6 +14,7 @@ import { NgClass, NgTemplateOutlet, DatePipe } from '@angular/common';
     selector: 'app-list-chat-sample',
     styleUrls: ['./list-chat-sample.component.scss'],
     templateUrl: './list-chat-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule, IgxListComponent, IgxListItemComponent, IgxAvatarComponent, NgClass, NgTemplateOutlet, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxIconButtonDirective, IgxIconComponent, DatePipe]
 })
 export class ListChatSampleComponent implements AfterViewInit {

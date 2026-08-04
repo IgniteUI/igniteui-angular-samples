@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject, ViewChild, ElementRef } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject, ViewChild, ElementRef, ChangeDetectionStrategy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcRatingComponent, IgcSwitchComponent } from 'igniteui-webcomponents';
 import { IgcGridLite } from 'igniteui-grid-lite';
@@ -17,6 +17,7 @@ defineComponents(IgcRatingComponent, IgcSwitchComponent);
     IgxGridLiteColumnComponent,
     IgxGridLiteCellTemplateDirective
   ],
+  changeDetection: ChangeDetectionStrategy.Eager,
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridLiteSortingGridConfigComponent implements OnInit {

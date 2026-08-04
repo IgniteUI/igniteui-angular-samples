@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChild } from '@angular/core';
+import { Component, QueryList, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, IgxRowDirective, RowType } from 'igniteui-angular/grids/core';
 import { IgxDropDirective } from 'igniteui-angular/directives';
@@ -9,6 +9,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-row-reorder-sample',
     styleUrls: ['grid-row-reorder.scss'],
     templateUrl: 'grid-row-reorder.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxDropDirective, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridRowReorderComponent {

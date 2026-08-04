@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, inject } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
 import { ColumnType } from 'igniteui-angular/core';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
@@ -12,6 +12,7 @@ const FILTERING_ICONS_FONT_SET = "filtering-icons";
     selector: 'app-tree-grid-column-pinning-sample',
     styleUrls: ['./tree-grid-column-pinning-sample.component.scss'],
     templateUrl: './tree-grid-column-pinning-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCellHeaderTemplateDirective, IgxIconComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridColumnPinningSampleComponent implements AfterViewInit {

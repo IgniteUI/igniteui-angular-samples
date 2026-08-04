@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit, ViewChild, AfterViewInit, OnDestroy, inject } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild, AfterViewInit, OnDestroy, inject, ChangeDetectionStrategy } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { NoopFilteringStrategy, NoopSortingStrategy } from 'igniteui-angular/core';
 import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -16,6 +16,7 @@ const DEBOUNCE_TIME = 300;
     selector: 'app-grid-remote-filtering-sample',
     styleUrls: ['./remote-filtering-sample.component.scss'],
     templateUrl: './remote-filtering-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 export class RemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { CloseScrollStrategy, ConnectedPositioningStrategy, HorizontalAlignment, IgxOverlayOutletDirective, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IgxDropDownComponent } from 'igniteui-angular/drop-down';
@@ -19,6 +19,7 @@ import { DatePipe } from '@angular/common';
     selector: 'app-default-theme-sample',
     styleUrls: ['./default-theme-sample.component.scss'],
     templateUrl: './default-theme-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxDatePickerComponent, IgxOverlayOutletDirective, IgxLayoutDirective, IgxButtonDirective, IgxGridComponent, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent, IgxSnackbarComponent, DatePipe]
 })
 export class DefaultThemeSampleComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectionStrategy } from '@angular/core';
 import { DefaultSortingStrategy, ISortingOptions, SortingDirection } from 'igniteui-angular/core';
 import { IgxTreeGridComponent, IgxTreeGridGroupByAreaComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
@@ -15,6 +15,7 @@ import { TreeGridContextmenuComponent } from './tree-grid-contextmenu/tree-grid-
     selector: 'app-tree-grid-sorting-sample',
     styleUrls: ['./tree-grid-sorting-sample.component.scss'],
     templateUrl: 'tree-grid-sorting-sample.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxButtonDirective, IgxGridToolbarActionsComponent, IgxSimpleComboComponent, FormsModule, IgxComboClearIconDirective, IgxComboItemDirective, IgxTreeGridGroupByAreaComponent, IgxColumnComponent, IgxCellTemplateDirective, TreeGridContextmenuComponent, UpperCasePipe]
 })
 
