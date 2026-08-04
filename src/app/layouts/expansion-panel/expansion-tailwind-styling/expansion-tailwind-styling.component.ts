@@ -1,4 +1,4 @@
-import {Component, ChangeDetectionStrategy} from '@angular/core';
+import {Component} from '@angular/core';
 import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 
@@ -7,7 +7,6 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-expansion-tailwind-styling',
     styleUrls: ['./expansion-tailwind-styling.component.scss'],
     templateUrl: './expansion-tailwind-styling.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelDescriptionDirective, IgxExpansionPanelBodyComponent, IgxButtonDirective]
 })
 

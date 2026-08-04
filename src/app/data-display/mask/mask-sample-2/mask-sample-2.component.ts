@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxMaskDirective } from 'igniteui-angular/directives';
@@ -7,7 +7,6 @@ import { IgxMaskDirective } from 'igniteui-angular/directives';
     selector: 'app-mask-sample-2',
     styleUrls: ['./mask-sample-2.component.scss'],
     templateUrl: './mask-sample-2.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxLabelDirective, IgxInputDirective, IgxMaskDirective]
 })
 export class MaskSample2Component {

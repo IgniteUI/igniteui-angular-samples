@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-carousel',
     styleUrls: ['./carousel-with-components-sample.component.scss'],
     templateUrl: './carousel-with-components-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCarouselComponent, IgxSlideComponent, FormsModule, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxLabelDirective, IgxInputDirective, IgxButtonDirective]
 })
 

@@ -1,12 +1,11 @@
 
-import { Component, HostListener, OnInit, DOCUMENT, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostListener, OnInit, DOCUMENT, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
     selector: 'app-root',
     styleUrls: ['./app.component.scss'],
     templateUrl: './app.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [RouterOutlet]
 })
 export class AppComponent implements OnInit {

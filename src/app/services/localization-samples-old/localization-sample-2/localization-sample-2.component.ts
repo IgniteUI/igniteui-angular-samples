@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GridResourceStringsEN, TimePickerResourceStringsEN, changei18n } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -12,7 +12,6 @@ import { CurrencyPipe } from '@angular/common';
     selector: 'app-localization-sample-2',
     styleUrls: ['./localization-sample-2.component.scss'],
     templateUrl: 'localization-sample-2.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxTimePickerComponent, IgxLabelDirective, CurrencyPipe]
 })
 

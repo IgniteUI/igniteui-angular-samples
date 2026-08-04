@@ -8,7 +8,6 @@ import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
-    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-hierarchical-grid-external-excel-style-filtering',
     templateUrl: './hierarchical-grid-external-excel-style-filtering.component.html',
     styleUrls: ['./hierarchical-grid-external-excel-style-filtering.component.scss'],

@@ -1,4 +1,4 @@
-import { Component, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, RowType } from 'igniteui-angular/grids/core';
 import { IgxBadgeComponent } from 'igniteui-angular/badge';
@@ -12,7 +12,6 @@ import { AsyncPipe } from '@angular/common';
     selector: 'app-grid-row-styles-sample',
     styleUrls: ['./grid-rowStyles.component.scss'],
     templateUrl: 'grid-rowStyles.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 

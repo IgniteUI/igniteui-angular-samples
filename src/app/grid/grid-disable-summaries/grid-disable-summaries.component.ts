@@ -148,7 +148,6 @@ class DiscontinuedSummary {
     selector: "app-grid-summary-sample",
     styleUrls: ["./grid-disable-summaries.component.scss"],
     templateUrl: "grid-disable-summaries.component.html",
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     IgxGridComponent,
     IgxPreventDocumentScrollDirective,

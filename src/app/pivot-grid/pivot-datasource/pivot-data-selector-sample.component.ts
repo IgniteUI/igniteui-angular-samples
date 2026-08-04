@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component } from "@angular/core";
 import { GridColumnDataType } from 'igniteui-angular/core';
 import { IPivotConfiguration, IgxPivotDateDimension, IgxPivotNumericAggregate } from 'igniteui-angular/grids/core';
 import { IgxPivotDataSelectorComponent, IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
@@ -7,7 +7,6 @@ import { SALES_DATA_NEW } from '../../data/salesDataNew';
     selector: 'app-pivot-data-selector-sample',
     styleUrls: ['./pivot-data-selector-sample.component.scss'],
     templateUrl: './pivot-data-selector-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxPivotGridComponent, IgxPivotDataSelectorComponent]
 })
 export class PivotDataSelectorSampleComponent {

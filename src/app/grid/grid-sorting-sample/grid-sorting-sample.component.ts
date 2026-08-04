@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit, AfterViewInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, AfterViewInit, ViewChild } from '@angular/core';
 import { DefaultSortingStrategy, ISortingOptions, SortingDirection } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
@@ -15,7 +15,6 @@ import { UpperCasePipe } from '@angular/common';
     selector: 'app-grid-sample',
     styleUrls: ['./grid-sorting-sample.component.scss'],
     templateUrl: 'grid-sorting-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxButtonDirective, IgxGridToolbarActionsComponent, IgxSimpleComboComponent, FormsModule, IgxComboClearIconDirective, IgxComboItemDirective, IgxColumnComponent, IgxCellTemplateDirective, UpperCasePipe]
 })
 
@@ -37,7 +36,7 @@ export class SortingSampleComponent implements OnInit, AfterViewInit {
     public ngOnInit(): void {
         this.data = DATA;
     }
-    
+
     public ngAfterViewInit(): void {
         this.grid1.sortingExpressions = [
             {

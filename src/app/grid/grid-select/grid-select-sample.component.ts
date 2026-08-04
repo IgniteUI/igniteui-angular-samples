@@ -1,5 +1,5 @@
 import { Character } from './characters';
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellEditorTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-grid-select-sample',
     styleUrls: ['./grid-select-sample.component.scss'],
     templateUrl: './grid-select-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxColumnComponent, IgxCellEditorTemplateDirective, IgxSelectComponent, FormsModule, IgxFocusDirective, IgxSelectItemComponent]
 })
 export class GridSelectComponent implements OnInit {
