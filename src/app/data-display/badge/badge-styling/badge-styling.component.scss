@@ -1,9 +1,5 @@
 @use "layout.scss";
 
-::ng-deep body.custom-body:has(app-badge-styling) {
-    background: transparent;
-}
-
 igx-badge {
     --ig-size: var(--ig-size-small);
 }
