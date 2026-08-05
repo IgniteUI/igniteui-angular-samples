@@ -1,25 +1,29 @@
 .badge-close {
-  --background-color: var(--ig-error-500);
-  --border-radius: 50%;
+    --background-color: var(--ig-error-500);
+    --border-radius: 50%;
 }
 
 .badge-volume {
-  --background-color: #7c3aed;
-  --border-radius: 50%;
+    --background-color: #8B5BB1;
+    --border-radius: 50%;
 }
 
 .badge-remove {
-  --background-color: var(--ig-gray-900);
-  --border-radius: 50%;
+    --background-color: var(--ig-gray-900);
+    --border-radius: 50%;
 }
 
 .badge-check {
-  --background-color: var(--ig-success-600);
-  --border-radius: 50%;
+    --background-color: var(--ig-success-600);
+    --border-radius: 50%;
 }
 
 .badge-style {
-  position: absolute;
-  inset-block-end: -4px;
-  inset-inline-end: -4px;
+    position: absolute;
+    inset-block-end: -4px;
+    inset-inline-end: -4px;
+}
+
+.badge-parent {
+    min-height: 7rem;
 }

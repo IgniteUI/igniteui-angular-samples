@@ -1,3 +1,7 @@
+::ng-deep body.custom-body:has(app-badge-type) {
+    background: transparent;
+}
+
 igx-avatar {
     --size: 40px;
 }
@@ -13,9 +17,8 @@ igx-badge {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 40px;
-    min-height: 7rem;
-    padding: 16px;
+    gap: 60px;
+    min-height: 8.5rem;
 }
 
 .badge-type-item {

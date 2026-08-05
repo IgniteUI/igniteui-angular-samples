@@ -1,26 +1,30 @@
+::ng-deep body.custom-body:has(app-badge-shape) {
+    background: transparent;
+}
+
 .badge-shape {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-height: 8.5rem;
 }
 
 .badge-shape-row {
-  display: grid;
-  grid-template-columns: 80px 40px 40px 40px;
-  align-items: center;
-  justify-items: center;
-  gap: 8px;
+    display: grid;
+    grid-template-columns: 80px 40px 40px 40px;
+    align-items: center;
+    justify-items: center;
+    gap: 8px;
 }
 
 .row-label {
-  justify-self: end;
-  color: var(--ig-gray-700);
-  font-size: 14px;
+    justify-self: end;
+    color: var(--ig-gray-700);
+    font-size: 14px;
 }
 
 .badge-small {
-  --ig-size: var(--ig-size-small);
+    --ig-size: var(--ig-size-small);
 }
