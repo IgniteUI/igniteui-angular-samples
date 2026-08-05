@@ -7,6 +7,8 @@ export const layoutsRoutesData = {
     'accordion-style': { displayName: 'Accordion Styling', parentName: 'Accordion' },
     'avatar-overview': { displayName: 'Avatar Overview', parentName: 'Avatar' },
     'avatar-variants': { displayName: 'Avatar Variants', parentName: 'Avatar' },
+    'avatar-shape': { displayName: 'Avatar Shape', parentName: 'Avatar' },
+    'avatar-size': { displayName: 'Avatar Size', parentName: 'Avatar' },
     'avatar-sample-1': { displayName: 'Avatar with Initials', parentName: 'Avatar' },
     'avatar-sample-2': { displayName: 'Avatar with Image', parentName: 'Avatar' },
     'avatar-sample-4': { displayName: 'Avatar with Icon', parentName: 'Avatar' },

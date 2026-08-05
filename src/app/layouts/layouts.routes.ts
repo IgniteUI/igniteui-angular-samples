@@ -6,6 +6,8 @@ import { AvatarSample3Component } from './avatar/avatar-sample-3/avatar-sample-3
 import { AvatarSample4Component } from './avatar/avatar-sample-4/avatar-sample-4.component';
 import { AvatarOverviewComponent } from './avatar/avatar-overview/avatar-overview.component';
 import { AvatarVariantsComponent } from './avatar/avatar-variants/avatar-variants.component';
+import { AvatarShapeComponent } from './avatar/avatar-shape/avatar-shape.component';
+import { AvatarSizeComponent } from './avatar/avatar-size/avatar-size.component';
 import { AvatarStylingSampleComponent } from './avatar/avatar-styling/avatar-styling.component';
 import { AvatarTailwindStylingSampleComponent } from './avatar/avatar-tailwind-styling/avatar-tailwind-styling.component';
 import { AvatarCSSVariablesComponent } from './avatar/avatar-css-variables/avatar-css-variables.component';
@@ -123,6 +125,16 @@ export const LayoutsRoutes: Routes = [
         component: AvatarVariantsComponent,
         data: layoutsRoutesData['avatar-variants'],
         path: 'avatar-variants'
+    },
+    {
+        component: AvatarShapeComponent,
+        data: layoutsRoutesData['avatar-shape'],
+        path: 'avatar-shape'
+    },
+    {
+        component: AvatarSizeComponent,
+        data: layoutsRoutesData['avatar-size'],
+        path: 'avatar-size'
     },
     {
         component: AvatarSample1Component,
