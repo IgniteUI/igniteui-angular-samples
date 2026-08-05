@@ -4,6 +4,7 @@ import { AvatarSample1Component } from './avatar/avatar-sample-1/avatar-sample-1
 import { AvatarSample2Component } from './avatar/avatar-sample-2/avatar-sample-2.component';
 import { AvatarSample3Component } from './avatar/avatar-sample-3/avatar-sample-3.component';
 import { AvatarSample4Component } from './avatar/avatar-sample-4/avatar-sample-4.component';
+import { AvatarOverviewComponent } from './avatar/avatar-overview/avatar-overview.component';
 import { AvatarStylingSampleComponent } from './avatar/avatar-styling/avatar-styling.component';
 import { AvatarTailwindStylingSampleComponent } from './avatar/avatar-tailwind-styling/avatar-tailwind-styling.component';
 import { AvatarCSSVariablesComponent } from './avatar/avatar-css-variables/avatar-css-variables.component';
@@ -111,6 +112,11 @@ export const LayoutsRoutes: Routes = [
         component: AccordionStyleComponent,
         data: layoutsRoutesData['accordion-style'],
         path: 'accordion-style'
+    },
+    {
+        component: AvatarOverviewComponent,
+        data: layoutsRoutesData['avatar-overview'],
+        path: 'avatar-overview'
     },
     {
         component: AvatarSample1Component,

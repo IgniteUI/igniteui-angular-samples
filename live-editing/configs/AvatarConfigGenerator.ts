@@ -8,6 +8,12 @@ export class AvatarConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
+            component: 'AvatarOverviewComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/layouts/avatar/"
+        }));
+
+        configs.push(new Config({
             component: 'AvatarSample3Component',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/avatar/"
