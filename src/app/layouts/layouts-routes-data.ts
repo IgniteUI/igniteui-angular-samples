@@ -6,6 +6,7 @@ export const layoutsRoutesData = {
     'accordion-sample-3': { displayName: 'Accordion 3', parentName: 'Accordion' },
     'accordion-style': { displayName: 'Accordion Styling', parentName: 'Accordion' },
     'avatar-overview': { displayName: 'Avatar Overview', parentName: 'Avatar' },
+    'avatar-variants': { displayName: 'Avatar Variants', parentName: 'Avatar' },
     'avatar-sample-1': { displayName: 'Avatar with Initials', parentName: 'Avatar' },
     'avatar-sample-2': { displayName: 'Avatar with Image', parentName: 'Avatar' },
     'avatar-sample-4': { displayName: 'Avatar with Icon', parentName: 'Avatar' },

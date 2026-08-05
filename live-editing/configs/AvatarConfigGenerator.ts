@@ -14,6 +14,12 @@ export class AvatarConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'AvatarVariantsComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/layouts/avatar/"
+        }));
+
+        configs.push(new Config({
             component: 'AvatarSample3Component',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/avatar/"
