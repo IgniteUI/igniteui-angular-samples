@@ -1,1 +1,111 @@
-<igx-avatar class="!light-avatar ![--ig-avatar-background:#FF4E00]" initials="DY" shape="rounded"></igx-avatar>
+<div class="container sample flex flex-row flex-nowrap items-center justify-center gap-10">
+    <igx-card class="box-border h-[479px] w-[344px] [--ig-card-border-radius:30px]">
+        <igx-card-media class="h-[189px] overflow-hidden">
+            <img
+                class="h-full w-full object-cover"
+                src="https://dl.infragistics.com/x/img/avatars/image-bg4.png"
+                alt="Cafe interior" />
+        </igx-card-media>
+
+        <igx-card-header>
+            <igx-avatar
+                igxCardThumbnail
+                class="[--ig-size:var(--ig-size-medium)]"
+                shape="circle"
+                src="https://dl.infragistics.com/x/img/avatars/avatar-profile-09.png"
+                alt="A profile photo of Kate Thompson.">
+            </igx-avatar>
+            <span igxCardHeaderTitle>Kate Thompson</span>
+        </igx-card-header>
+
+        <igx-card-content>
+            <p class="m-0">3D Artist. Turning polygons into worlds and immersive digital realities</p>
+            <div class="mt-4 grid w-full grid-cols-[1fr_auto_1fr_auto_1fr] items-center">
+                @for (stat of profileStats; track stat.label; let isLast = $last) {
+                    <div class="flex min-w-0 flex-col items-center gap-1 px-3">
+                        <span class="text-base font-bold leading-tight text-[var(--ig-gray-900)]">{{ stat.value }}</span>
+                        <span class="text-sm leading-tight text-[var(--ig-gray-600)]">{{ stat.label }}</span>
+                    </div>
+                    @if (!isLast) {
+                        <igx-divider class="h-12" vertical></igx-divider>
+                    }
+                }
+            </div>
+        </igx-card-content>
+
+        <igx-card-actions>
+            <button
+                igxButton="contained"
+                class="[--ig-contained-button-active-background:var(--ig-gray-400)] [--ig-contained-button-background:var(--ig-gray-200)] [--ig-contained-button-border-radius:16px] [--ig-contained-button-focus-background:var(--ig-gray-300)] [--ig-contained-button-hover-background:var(--ig-gray-300)] [--ig-size:var(--ig-size-small)]">
+                <span class="inline-flex items-center gap-1">
+                    FOLLOW
+                    <igx-icon class="h-4 w-4" name="plus" collection="material"></igx-icon>
+                </span>
+            </button>
+            <div igxEnd class="inline-flex items-center gap-1">
+                <button igxIconButton="flat" igxRipple aria-label="Open Instagram profile">
+                    <igx-icon name="instagram" collection="material"></igx-icon>
+                </button>
+                <button igxIconButton="flat" igxRipple aria-label="Open BeReal profile">
+                    <igx-icon name="bereal" collection="material"></igx-icon>
+                </button>
+                <button igxIconButton="flat" igxRipple aria-label="Open Threads profile">
+                    <igx-icon name="threads" collection="material"></igx-icon>
+                </button>
+            </div>
+        </igx-card-actions>
+    </igx-card>
+
+    <igx-card class="box-border h-[290px] w-[344px] [--ig-card-border-radius:30px]">
+        <igx-card-header>
+            <span
+                igxCardThumbnail
+                class="inline-flex rounded-full bg-[linear-gradient(135deg,#7dd3fc,#bff47a,#f5c2ff,#93c5fd)] p-[3px]">
+                <igx-avatar
+                    class="[--ig-size:var(--ig-size-medium)]"
+                    shape="circle"
+                    src="https://dl.infragistics.com/x/img/avatars/avatar-profile-09.png"
+                    alt="A profile photo of Kate Thompson.">
+                </igx-avatar>
+            </span>
+            <span igxCardHeaderTitle>Kate Thompson</span>
+        </igx-card-header>
+
+        <igx-card-content class="overflow-hidden">
+            <p class="m-0">3D Artist. Turning polygons into worlds and immersive digital realities</p>
+            <div class="mt-4 grid w-full grid-cols-[1fr_auto_1fr_auto_1fr] items-center">
+                @for (stat of profileStats; track stat.label; let isLast = $last) {
+                    <div class="flex min-w-0 flex-col items-center gap-1 px-3">
+                        <span class="text-base font-bold leading-tight text-[var(--ig-gray-900)]">{{ stat.value }}</span>
+                        <span class="text-sm leading-tight text-[var(--ig-gray-600)]">{{ stat.label }}</span>
+                    </div>
+                    @if (!isLast) {
+                        <igx-divider class="h-12" vertical></igx-divider>
+                    }
+                }
+            </div>
+        </igx-card-content>
+
+        <igx-card-actions>
+            <button
+                igxButton="contained"
+                class="[--ig-contained-button-active-background:var(--ig-gray-400)] [--ig-contained-button-background:var(--ig-gray-200)] [--ig-contained-button-border-radius:16px] [--ig-contained-button-focus-background:var(--ig-gray-300)] [--ig-contained-button-hover-background:var(--ig-gray-300)] [--ig-size:var(--ig-size-small)]">
+                <span class="inline-flex items-center gap-1">
+                    FOLLOW
+                    <igx-icon class="h-4 w-4" name="plus" collection="material"></igx-icon>
+                </span>
+            </button>
+            <div igxEnd class="inline-flex items-center gap-1">
+                <button igxIconButton="flat" igxRipple aria-label="Open Instagram profile">
+                    <igx-icon name="instagram" collection="material"></igx-icon>
+                </button>
+                <button igxIconButton="flat" igxRipple aria-label="Open BeReal profile">
+                    <igx-icon name="bereal" collection="material"></igx-icon>
+                </button>
+                <button igxIconButton="flat" igxRipple aria-label="Open Threads profile">
+                    <igx-icon name="threads" collection="material"></igx-icon>
+                </button>
+            </div>
+        </igx-card-actions>
+    </igx-card>
+</div>
