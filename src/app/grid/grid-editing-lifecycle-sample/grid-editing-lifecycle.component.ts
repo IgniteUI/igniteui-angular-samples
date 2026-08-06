@@ -1,4 +1,4 @@
-import { Component, ElementRef, Renderer2, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, inject } from '@angular/core';
 import { contains } from '@igniteui/material-icons-extended';
 import { DATA } from '../../data/nwindData';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
@@ -12,7 +12,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-editing-lifecycle',
     templateUrl: 'grid-editing-lifecycle.component.html',
     styleUrls: ['grid-editing-lifecycle.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class GridEditingLifecycleComponent {

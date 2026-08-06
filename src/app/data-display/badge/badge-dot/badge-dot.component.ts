@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { IgxIconComponent, IgxIconService} from 'igniteui-angular/icon';
@@ -8,7 +8,6 @@ import { facebookMessenger } from '@igniteui/material-icons-extended';
     selector: 'app-badge-dot',
     styleUrls: ['./badge-dot.component.scss'],
     templateUrl: './badge-dot.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxAvatarComponent, IgxBadgeComponent, IgxIconComponent]
 })
 export class BadgeDotComponent {

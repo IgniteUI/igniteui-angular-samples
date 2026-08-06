@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DATA } from '../../data/nwindData';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -9,7 +9,6 @@ import { CurrencyPipe } from '@angular/common';
     selector: 'app-grid-filtering-style',
     styleUrls: ['./grid-filtering-style.component.scss'],
     templateUrl: './grid-filtering-style.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, CurrencyPipe]
 })
 export class GridFilteringStyleComponent implements OnInit {

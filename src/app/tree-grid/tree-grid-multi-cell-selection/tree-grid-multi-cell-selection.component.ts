@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxToastComponent } from 'igniteui-angular/toast';
@@ -12,7 +12,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-multi-cell-selection-sample',
     styleUrls: ['./tree-grid-multi-cell-selection.component.scss'],
     templateUrl: './tree-grid-multi-cell-selection.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxGridComponent, IgxToastComponent]
 })
 export class TreeGridMultiCellSelectionComponent {

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { IgxBannerActionsDirective, IgxBannerComponent } from 'igniteui-angular/banner';
 import { IgxToastComponent } from 'igniteui-angular/toast';
 import { VerticalAlignment } from 'igniteui-angular/core';
@@ -12,7 +12,6 @@ import { Subject } from 'rxjs';
     selector: 'app-banner-advanced-sample',
     styleUrls: ['../banner-samples.scss'],
     templateUrl: 'banner-advanced-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent, IgxIconComponent, IgxBannerComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent, IgxToastComponent]
 })
 

@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnDestroy, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { NoopFilteringStrategy } from 'igniteui-angular/core';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -16,7 +16,6 @@ const DEBOUNCE_TIME = 300;
     selector: 'app-tree-grid-remote-filtering-sample',
     styleUrls: ['./tree-grid-remote-filtering-sample.component.scss'],
     templateUrl: './tree-grid-remote-filtering-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, AsyncPipe]
 })
 export class TreeGridRemoteFilteringSampleComponent implements OnInit, AfterViewInit, OnDestroy {
