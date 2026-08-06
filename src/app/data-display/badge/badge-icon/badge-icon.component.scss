@@ -1,10 +1,58 @@
-.wrapper {
-  position: relative;
-  margin: 15px 0 0 15px;
+igx-avatar {
+    --size: 40px;
+    --ig-avatar-background: var(--ig-gray-700);
+    --ig-avatar-color: var(--ig-gray-50);
 }
 
-igx-badge {
-  position: absolute;
-  bottom: 0;
-  left: 28px;
+.icon-wrapper {
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.icon-wrapper > igx-badge {
+    --ig-size: var(--ig-size-medium);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.avatar-wrapper igx-badge {
+    --ig-size: var(--ig-size-small);
+    position: absolute;
+    inset-block-start: -4px;
+    inset-inline-end: -6px;
+}
+
+.badge-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-height: 8.5rem;
+}
+
+.badge-icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 56px;
+}
+
+.badge-icon-item span {
+    color: var(--ig-gray-700);
+    font-size: 12px;
+    transform: translateY(4px);
+}
+
+.avatar-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
 }

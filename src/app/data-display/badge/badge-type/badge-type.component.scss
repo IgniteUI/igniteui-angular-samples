@@ -1,0 +1,44 @@
+igx-avatar {
+    --size: 40px;
+}
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+    position: absolute;
+    inset-block-end: -6px;
+    inset-inline-end: -4px;
+}
+
+.badge-type {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    min-height: 8.5rem;
+}
+
+.badge-type-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    min-width: 56px;
+    min-height: 72px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    display: flex;
+}
+
+.dot-badge {
+    inset-block-end: 0;
+    inset-inline-end: 0;
+}
+
+.badge-type-item span {
+    color: var(--ig-gray-700);
+    font-size: 12px;
+    line-height: 16px;
+}
