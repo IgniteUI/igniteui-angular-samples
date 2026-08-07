@@ -1,0 +1,63 @@
+<div class="ticket-container">
+  <div class="bs-toggle">
+    <button
+      igxButton="contained"
+      class="bs-btn buy-btn"
+      [class.bs-active-buy]="isBuy()"
+      (click)="isBuy.set(true)"
+    >Buy</button>
+    <button
+      igxButton="contained"
+      class="bs-btn sell-btn"
+      [class.bs-active-sell]="!isBuy()"
+      (click)="isBuy.set(false)"
+    >Sell</button>
+  </div>
+
+  <form [formGroup]="form" class="ticket-form" (ngSubmit)="placeOrder()">
+    <div class="inline-row">
+      <div class="form-row">
+        <label class="field-label">Quantity</label>
+        <igx-input-group type="border" class="form-field small-field">
+          <input igxInput formControlName="quantity" type="number" min="1" aria-label="Quantity" />
+        </igx-input-group>
+      </div>
+
+      <div class="form-row">
+        <label class="field-label">Order Type</label>
+        <igx-select
+          formControlName="orderType"
+          placeholder="Select type"
+          class="form-field small-field"
+          aria-label="Order type"
+        >
+          @for (t of orderTypes; track t) {
+          <igx-select-item [value]="t">{{ t }}</igx-select-item>
+          }
+        </igx-select>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <label class="field-label">Limit Price</label>
+      <igx-input-group type="border" class="form-field small-field">
+        <igx-prefix class="prefix-dollar">$</igx-prefix>
+        <input igxInput formControlName="limitPrice" type="number" step="0.01" aria-label="Limit price" />
+      </igx-input-group>
+    </div>
+
+    <div class="est-total-row">
+      <span class="est-label">Est. total</span>
+      <span class="est-value">${{ estTotal() }}</span>
+    </div>
+
+    <button
+      igxButton="contained"
+      type="submit"
+      class="place-btn"
+      [class.buy-action]="isBuy()"
+      [class.sell-action]="!isBuy()"
+      [disabled]="form.invalid"
+    >{{ btnLabel() }}</button>
+  </form>
+</div>

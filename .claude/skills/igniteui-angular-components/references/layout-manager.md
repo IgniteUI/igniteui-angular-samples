@@ -124,10 +124,10 @@ Because Dock Manager is a Web Component, it requires two one-time setup steps:
 **1. Register custom elements — `main.ts`:**
 
 ```typescript
-import { defineCustomElements } from 'igniteui-dockmanager/loader';
+import { defineComponents, IgcDockManagerComponent } from 'igniteui-dockmanager';
 
 // Must be called before bootstrapApplication
-defineCustomElements();
+defineComponents(IgcDockManagerComponent);
 ```
 
 **2. Add `CUSTOM_ELEMENTS_SCHEMA` to every standalone component that uses `<igc-dockmanager>`:**
@@ -400,7 +400,7 @@ export class DockManagerComponent {
 ### Key Rules for Dock Manager
 
 1. **Separate package** — `igniteui-dockmanager` is installed independently of `igniteui-angular`
-2. **Call `defineCustomElements()` in `main.ts`** before `bootstrapApplication` — without this the `<igc-dockmanager>` element renders as an unknown element
+2. **Call `defineComponents(IgcDockManagerComponent)` in `main.ts`** before `bootstrapApplication` — without this the `<igc-dockmanager>` element renders as an unknown element
 3. **Add `CUSTOM_ELEMENTS_SCHEMA`** to every standalone component or NgModule that uses `<igc-dockmanager>`
 4. **Slot names = `contentId` values** — the `slot="..."` attribute on child elements must exactly match the `contentId` string in the layout
 5. **Premium component** — requires a licensed Ignite UI subscription; verify availability before recommending to users

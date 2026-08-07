@@ -1,0 +1,143 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: var(--sd-surface);
+}
+
+.ticket-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.bs-toggle {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--sd-border);
+  gap: 8px;
+  padding: 2px;
+  background: transparent;
+}
+
+.bs-btn {
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 12px;
+  height: 34px;
+  background: var(--sd-panel);
+  color: var(--sd-muted);
+  border: 1px solid var(--sd-border);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  box-shadow: none;
+}
+
+.bs-btn:hover {
+  color: var(--sd-text);
+}
+
+.bs-active-buy {
+  background: var(--sd-green) !important;
+  color: #000 !important;
+}
+
+.bs-active-sell {
+  background: var(--sd-red) !important;
+  color: #fff !important;
+}
+
+.ticket-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inline-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.field-label {
+  font-size: 10px;
+  color: var(--sd-muted);
+  letter-spacing: 0.2px;
+}
+
+.form-field {
+  width: 100%;
+}
+
+.small-field {
+  --ig-size: var(--ig-size-small);
+}
+
+.prefix-dollar {
+  color: var(--sd-muted);
+  font-size: 12px;
+}
+
+.est-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0 4px;
+  background: transparent;
+  border: none;
+}
+
+.est-label {
+  font-size: 11px;
+  color: var(--sd-muted);
+}
+
+.est-value {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--sd-text);
+  font-variant-numeric: tabular-nums;
+  font-family: 'DM Mono', monospace;
+}
+
+.place-btn {
+  width: 100%;
+  height: 38px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+}
+
+@media (max-width: 520px) {
+  .inline-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.buy-action {
+  background: var(--sd-green) !important;
+  color: #000 !important;
+}
+
+.sell-action {
+  background: var(--sd-red) !important;
+  color: #fff !important;
+}
+
+.place-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

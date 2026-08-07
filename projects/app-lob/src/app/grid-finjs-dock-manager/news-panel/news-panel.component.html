@@ -1,0 +1,49 @@
+<div class="news-tabs">
+  <div class="news-tab-headers" role="tablist" aria-label="News categories">
+    <button
+      type="button"
+      class="news-tab-btn"
+      [class.news-tab-active]="activeTab() === 'news'"
+      role="tab"
+      [attr.aria-selected]="activeTab() === 'news'"
+      (click)="setActiveTab('news')"
+    >
+      News
+    </button>
+    <button
+      type="button"
+      class="news-tab-btn"
+      [class.news-tab-active]="activeTab() === 'alerts'"
+      role="tab"
+      [attr.aria-selected]="activeTab() === 'alerts'"
+      (click)="setActiveTab('alerts')"
+    >
+      Alerts <span class="alert-badge">{{ alerts.length }}</span>
+    </button>
+  </div>
+
+  <div class="news-content" role="tabpanel">
+    @if (activeTab() === 'news') {
+    <div class="item-list">
+      @for (item of newsItems; track item.id) {
+      <article class="news-item">
+        <div class="news-headline">{{ item.headline }}</div>
+        <div class="news-meta">{{ item.source }} &middot; {{ item.time }}</div>
+      </article>
+      }
+    </div>
+    } @else {
+    <div class="item-list">
+      @for (alert of alerts; track alert.id) {
+      <article class="alert-item">
+        <igx-icon class="alert-icon" [style.color]="alert.iconColor">{{ alert.icon }}</igx-icon>
+        <div class="alert-texts">
+          <div class="alert-title">{{ alert.title }}</div>
+          <div class="alert-desc">{{ alert.desc }}</div>
+        </div>
+      </article>
+      }
+    </div>
+    }
+  </div>
+</div>

@@ -1,197 +1,116 @@
-<igc-dockmanager #dock class="dock-m-position ig-scrollbar" [layout]="docLayout">
-  <div class="actionPane" slot="actionPane" style="height: 100%; padding: 20px;">
-    <div class="actionItem">
-      Change theme: <br/> <igx-switch [(ngModel)]="isDarkTheme">Dark Mode</igx-switch>
+<div class="app-shell" [class.light-theme]="!isDark()">
+  <aside class="platform-rail" role="navigation" aria-label="Platform tools">
+    <button class="rail-compose" type="button" aria-label="Create new order" disabled title="Create new order is not available yet">
+      <igx-icon aria-hidden="true">add</igx-icon>
+    </button>
+
+    <ul class="rail-nav" role="list">
+      @for (item of navItems; track item.label) {
+      <li class="rail-nav-item" role="listitem">
+        <button
+          type="button"
+          class="rail-btn"
+          [disabled]="!isNavEnabled(item.label)"
+          [class.rail-disabled]="!isNavEnabled(item.label)"
+          [class.rail-active]="activeNav() === item.label"
+          (click)="setActiveNav(item.label)"
+          [attr.aria-current]="activeNav() === item.label ? 'page' : null"
+          [attr.aria-label]="isNavEnabled(item.label) ? item.label : item.label + ' (not available yet)'"
+          [title]="isNavEnabled(item.label) ? item.label : item.label + ' (not available yet)'"
+        >
+          <igx-icon aria-hidden="true">{{ item.icon }}</igx-icon>
+          <span>{{ item.label }}</span>
+        </button>
+      </li>
+      }
+    </ul>
+
+    <div class="rail-footer">
+      <button class="rail-btn rail-disabled" type="button" aria-label="Settings (not available yet)" title="Settings is not available yet" disabled>
+        <igx-icon aria-hidden="true">settings</igx-icon>
+        <span>Settings</span>
+      </button>
     </div>
-    <div class="actionItem">
-      Start/Stop live data: <igx-switch [(ngModel)]="liveData" (change)="streamData($event)">{{ liveData ===
-    true ? 'Streaming' : 'Not Streaming' }}</igx-switch>
-  </div>
-  <div class="actionItem">
-    <!-- Change volume -->
-    <igx-select [(ngModel)]="dataVolume" (ngModelChange)="paramsChanged()" [overlaySettings]="customOverlaySettings">
-      <label igxLabel>Change data volume</label>
-      <igx-prefix>
-        <igx-icon>view_list</igx-icon>
-      </igx-prefix>
-      @for (item of dataVolumeItems; track item) {
-        <igx-select-item [value]="item">
-          {{item}}
-        </igx-select-item>
+  </aside>
+
+  <div class="workspace">
+    <header class="command-bar" role="banner">
+      <div class="brand">SignalDesk</div>
+
+      <label class="search-wrap" for="global-search-input">
+        <span class="sr-only">Global search</span>
+        <igx-icon aria-hidden="true">search</igx-icon>
+        <input
+          id="global-search-input"
+          type="text"
+          placeholder="Search symbol, order, action..."
+          [value]="searchQuery()"
+          (input)="updateSearchQuery($event)"
+        />
+      </label>
+
+      <div class="indices-ribbon" role="region" aria-label="Market indices">
+        @for (idx of indices; track idx.name) {
+        <div class="idx-item">
+          <span class="idx-name">{{ idx.name }}</span>
+          <span class="idx-value">{{ idx.value }}</span>
+          <span class="idx-change" [class.pos]="idx.positive" [class.neg]="!idx.positive">{{ idx.change }}</span>
+        </div>
+        }
+      </div>
+
+      <div class="account-strip" aria-label="Account summary">
+        <div class="acct-stat">
+          <span>Net Liq</span>
+          <strong>954,725.16</strong>
+        </div>
+        <div class="acct-stat">
+          <span>Daily P&amp;L</span>
+          <strong class="pos">+11,344.62</strong>
+        </div>
+        <div class="acct-stat">
+          <span>Buying Power</span>
+          <strong>1,850,000</strong>
+        </div>
+      </div>
+
+      <button
+        class="theme-toggle-btn"
+        (click)="toggleTheme()"
+        [title]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+        [attr.aria-label]="isDark() ? 'Switch to light mode' : 'Switch to dark mode'"
+      >
+        <igx-icon>{{ isDark() ? 'light_mode' : 'dark_mode' }}</igx-icon>
+      </button>
+      <button type="button" class="user-chip" aria-label="User profile">S</button>
+    </header>
+
+    <div class="sr-only-panels" aria-hidden="true">
+      @for (tab of strategyTabs; track tab; let i = $index) {
+      <section [id]="'strategy-panel-' + i" role="tabpanel" [attr.aria-labelledby]="'strategy-tab-' + i" [hidden]="activeStrategyIndex() !== i">
+        {{ tab }}
+      </section>
       }
-    </igx-select>
-  </div>
-  <div class="actionItem">
-    <!-- Change frequency -->
-    <igx-select [(ngModel)]="frequency" (ngModelChange)="paramsChanged()" [overlaySettings]="freqOverlaySettings" #freq>
-      <label igxLabel>Change update frequency</label>
-      <igx-prefix>
-        <igx-icon>cell_wifi</igx-icon>
-      </igx-prefix>
-      @for (item of frequencyItems; track item) {
-        <igx-select-item [value]="item">
-          {{item}}
-        </igx-select-item>
+    </div>
+
+    <div class="sr-only-panels" aria-hidden="true">
+      @for (tab of symbolTabs; track tab; let i = $index) {
+      <section [id]="'symbol-panel-' + i" role="tabpanel" [attr.aria-labelledby]="'symbol-tab-' + i" [hidden]="activeSymbolIndex() !== i">
+        {{ tab }}
+      </section>
       }
-    </igx-select>
+    </div>
+
+    <div class="main-area">
+      <igc-dockmanager [layout]="layout()" class="dock-area" [class.dark-theme]="isDark()" [class.light-theme]="!isDark()">
+        <div slot="watchlist" class="pane-host"><app-watchlist [searchQuery]="searchQuery()" /></div>
+        <div slot="chartAAPL" class="pane-host"><app-chart-panel symbol="AAPL" [basePrice]="227.14" /></div>
+        <div slot="chartTSLA" class="pane-host"><app-chart-panel symbol="TSLA" [basePrice]="248.50" /></div>
+        <div slot="chartNVDA" class="pane-host"><app-chart-panel symbol="NVDA" [basePrice]="138.92" /></div>
+        <div slot="orderTicket" class="pane-host"><app-order-ticket /></div>
+        <div slot="positions" class="pane-host"><app-positions-grid /></div>
+        <div slot="news" class="pane-host"><app-news-panel /></div>
+      </igc-dockmanager>
+    </div>
   </div>
-  <div igxButton (click)="createGrid()" [disabled]="docLayout.floatingPanes.length >= 5">Add Floating Pane</div>
-  <div igxOverlayOutlet #outlet></div>
 </div>
-<div slot="gridStockPrices" style="height: 100%;">
-  <igx-grid #grid1 [data]="data | async" [isLoading]="isLoading"
-    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
-    [columnSelection]="'multiple'" [cellSelection]="'none'" [outlet]="filteringOverlayOutlet">
-    <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
-    <igx-column [field]="'category'" [width]="'120px'" [sortable]="true"></igx-column>
-    <igx-column [field]="'type'" [width]="'100px'" [sortable]="true" [filterable]="false">
-    </igx-column>
-    <igx-column [field]="'contract'" [width]="'100px'" [sortable]="true" [groupable]="true">
-    </igx-column>
-    <igx-column [field]="'price'" [width]="'130px'" dataType="number" [cellClasses]="trends"
-      [sortable]="true">
-      <ng-template igxCell let-cell="cell" #priceTemplate>
-        <div class="finjs-icons">
-          <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-          @if (trends.positive(cell.row.data)) {
-            <igx-icon>trending_up</igx-icon>
-          }
-          @if (trends.negative(cell.row.data)) {
-            <igx-icon>trending_down</igx-icon>
-          }
-        </div>
-      </ng-template>
-    </igx-column>
-    <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-      [sortable]="true" [cellClasses]="trendsChange">
-    </igx-column>
-    <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
-      [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
-    </igx-column>
-    @for (c of columns; track c) {
-      <igx-column [field]="c.field" [width]="c.width"
-        [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type"
-        [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate" [groupable]="c.groupable">
-      </igx-column>
-    }
-  </igx-grid>
-</div>
-<div slot="forexMarket" style="height: 100%;">
-  <igx-grid #grid2 [data]="data | async" [isLoading]="isLoading"
-    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
-    [columnSelection]="'multiple'" [cellSelection]="'none'">
-    <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
-    <igx-column [field]="'category'" [width]="'120px'" [sortable]="true" [groupable]="true"></igx-column>
-    <igx-column [field]="'type'" [width]="'100px'" [sortable]="true" [filterable]="false" [groupable]="true">
-    </igx-column>
-    <igx-column [field]="'contract'" [width]="'100px'" [sortable]="true" [groupable]="true">
-    </igx-column>
-    <igx-column [field]="'price'" [width]="'120px'" dataType="number" [cellClasses]="trends"
-      [sortable]="true">
-      <ng-template igxCell let-cell="cell">
-        <div class="finjs-icons">
-          <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-          @if (trends.positive(cell.row.data)) {
-            <igx-icon>trending_up</igx-icon>
-          }
-          @if (trends.negative(cell.row.data)) {
-            <igx-icon>trending_down</igx-icon>
-          }
-        </div>
-      </ng-template>
-    </igx-column>
-    <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-      [sortable]="true" [cellClasses]="trendsChange">
-    </igx-column>
-    <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
-      [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
-    </igx-column>
-    @for (c of columns; track c) {
-      <igx-column [field]="c.field" [width]="c.width"
-        [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type"
-        [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate" [groupable]="c.groupable">
-      </igx-column>
-    }
-  </igx-grid>
-</div>
-<div slot="content4" style="height: 100%;">
-  <igx-grid #grid3 [data]="data | async" [isLoading]="isLoading"
-    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
-    [columnSelection]="'multiple'" [cellSelection]="'none'">
-    <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
-    <igx-column [field]="'category'" [width]="'120px'" [sortable]="true" [groupable]="true"></igx-column>
-    <igx-column [field]="'type'" [width]="'100px'" [sortable]="true" [filterable]="false" [groupable]="true">
-    </igx-column>
-    <igx-column [field]="'contract'" [width]="'100px'" [sortable]="true" [groupable]="true">
-    </igx-column>
-    <igx-column [field]="'price'" [width]="'120px'" dataType="number" [cellClasses]="trends"
-      [sortable]="true">
-      <ng-template igxCell let-cell="cell">
-        <div class="finjs-icons">
-          <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-          @if (trends.positive(cell.row.data)) {
-            <igx-icon>trending_up</igx-icon>
-          }
-          @if (trends.negative(cell.row.data)) {
-            <igx-icon>trending_down</igx-icon>
-          }
-        </div>
-      </ng-template>
-    </igx-column>
-    <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-      [sortable]="true" [cellClasses]="trendsChange">
-    </igx-column>
-    <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
-      [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
-    </igx-column>
-    @for (c of columns; track c) {
-      <igx-column [field]="c.field" [width]="c.width"
-        [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type"
-        [cellClasses]="c.cellClasses" [bodyTemplate]="c.bodyTemplate" [groupable]="c.groupable">
-      </igx-column>
-    }
-  </igx-grid>
-</div>
-<div slot="etfStockPrices" style="height: 100%;">
-  <igx-grid #grid4 [data]="data | async" [isLoading]="isLoading"
-    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
-    [columnSelection]="'multiple'" [cellSelection]="'none'">
-    <igx-paginator></igx-paginator>
-    <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
-    <igx-column [field]="'category'" [width]="'120px'" [sortable]="true" [groupable]="true"></igx-column>
-    <igx-column [field]="'type'" [width]="'100px'" [sortable]="true" [filterable]="false" [groupable]="true">
-    </igx-column>
-    <igx-column [field]="'contract'" [width]="'100px'" [sortable]="true" [groupable]="true">
-    </igx-column>
-    <igx-column [field]="'price'" [width]="'120px'" dataType="number" [cellClasses]="trends"
-      [sortable]="true">
-      <ng-template igxCell let-cell="cell">
-        <div class="finjs-icons">
-          <span>{{cell.value | currency:'USD':'symbol':'1.4-4'}}</span>
-          @if (trends.positive(cell.row.data)) {
-            <igx-icon>trending_up</igx-icon>
-          }
-          @if (trends.negative(cell.row.data)) {
-            <igx-icon>trending_down</igx-icon>
-          }
-        </div>
-      </ng-template>
-    </igx-column>
-    <igx-column [field]="'change'" [width]="'120px'" dataType="number" [headerClasses]="'headerAlignSyle'"
-      [sortable]="true" [cellClasses]="trendsChange">
-    </igx-column>
-    <igx-column [field]="'changeP'" [width]="'110px'" dataType="percent"
-      [pipeArgs]="columnFormatChangeP" [sortable]="true" [cellClasses]="trendsChange">
-    </igx-column>
-    @for (c of columns; track c) {
-      <igx-column [field]="c.field" [width]="c.width"
-        [sortable]="c.sortable" [filterable]="c.filterable" [dataType]="c.type" [cellClasses]="c.cellClasses"
-        [bodyTemplate]="c.bodyTemplate" [groupable]="c.groupable">
-      </igx-column>
-    }
-  </igx-grid>
-</div>
-<ng-template #host gridHost>
-</ng-template>
-</igc-dockmanager>
-<div [class]="isDarkTheme ? 'dark-theme' : 'light-theme'" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>

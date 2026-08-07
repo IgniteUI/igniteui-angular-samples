@@ -1,190 +1,525 @@
-@use 'igniteui-dockmanager/dist/collection/styles/igc.themes';
-@use '../../variables' as *;
-
-.actionItem {
-	margin-block-end: rem(20px);
+:host {
+	display: block;
+	height: 100vh;
+	overflow: hidden;
 }
 
-.finjs-icons {
+.app-shell {
+	--shell-rail-bg-start: #0f1724;
+	--shell-rail-bg-end: #0c1320;
+	--shell-command-bg-start: #0f1724;
+	--shell-command-bg-end: #0d1421;
+	--shell-strip-bg: #0d1420;
+	--shell-chip-bg: #1b2737;
+	--shell-chip-border: rgba(153, 178, 210, 0.35);
+	--shell-chip-text: #d7e6fa;
+	--shell-toggle-bg: #101b2a;
+	--shell-toggle-border: rgba(133, 165, 206, 0.35);
+	--shell-toggle-text: #8aa6c7;
+	--shell-toggle-hover-bg: rgba(138, 183, 236, 0.12);
+	--shell-toggle-hover-text: #d3e7ff;
+	--shell-toggle-hover-border: rgba(160, 202, 255, 0.5);
+	--shell-rail-btn-color: #b0bdd2;
+	--shell-rail-btn-hover: #b8cde6;
+	--shell-rail-active-color: #8ec7ff;
+	--shell-rail-active-bg: rgba(83, 158, 255, 0.15);
+	--shell-rail-active-border: #4aa2ff;
+	--shell-search-border: rgba(124, 155, 197, 0.22);
+	--shell-search-bg: rgba(4, 10, 18, 0.8);
+	--shell-search-icon: var(--sd-muted);
+	display: flex;
+	height: 100%;
+	background:
+		radial-gradient(circle at 35% 20%, rgba(44, 132, 255, 0.13), transparent 40%),
+		radial-gradient(circle at 80% 80%, rgba(44, 255, 196, 0.08), transparent 45%),
+		var(--sd-bg);
+	overflow: hidden;
+}
+
+.app-shell.light-theme {
+	--shell-rail-bg-start: #eef3f9;
+	--shell-rail-bg-end: #e8eef6;
+	--shell-command-bg-start: #f8fbff;
+	--shell-command-bg-end: #f1f6fc;
+	--shell-strip-bg: #edf3fa;
+	--shell-chip-bg: #ffffff;
+	--shell-chip-border: #cbd5e1;
+	--shell-chip-text: #0f172a;
+	--shell-toggle-bg: #ffffff;
+	--shell-toggle-border: #cbd5e1;
+	--shell-toggle-text: #1e3a5f;
+	--shell-toggle-hover-bg: #eef5fd;
+	--shell-toggle-hover-text: #0f172a;
+	--shell-toggle-hover-border: #93c5fd;
+	--shell-rail-btn-color: #475569;
+	--shell-rail-btn-hover: #1e293b;
+	--shell-rail-active-color: #0f172a;
+	--shell-rail-active-bg: rgba(56, 138, 255, 0.14);
+	--shell-rail-active-border: #3b82f6;
+	--shell-search-border: #cbd5e1;
+	--shell-search-bg: #ffffff;
+	--shell-search-icon: #64748b;
+}
+
+.platform-rail {
+	width: 58px;
+	flex-shrink: 0;
+	background: linear-gradient(180deg, var(--shell-rail-bg-start) 0%, var(--shell-rail-bg-end) 100%);
+	border-right: 1px solid var(--sd-border);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 10px 0;
+	gap: 10px;
+}
+
+.rail-compose {
 	display: flex;
 	align-items: center;
+	justify-content: center;
+	width: 30px;
+	height: 30px;
+	border: 1px solid rgba(255, 93, 93, 0.4);
+	border-radius: 8px;
+	background: rgba(255, 93, 93, 0.22);
+	color: #ff6a6a;
+	cursor: pointer;
+}
 
-	igx-icon {
-		font-size: rem(16px);
-		width: rem(16px);
-		height: rem(16px);
-		margin-inline-start: rem(4px);
+.rail-compose:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.rail-nav {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	width: 100%;
+	align-items: center;
+}
+
+.rail-nav-item {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+.rail-btn {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border: none;
+	background: transparent;
+	color: var(--shell-rail-btn-color);
+	gap: 2px;
+	font-size: 10px;
+	line-height: 1;
+	cursor: pointer;
+	padding: 7px 0;
+	border-left: 2px solid transparent;
+}
+
+.rail-btn igx-icon {
+	font-size: 15px;
+}
+
+.rail-btn:hover {
+	color: var(--shell-rail-btn-hover);
+	background: rgba(129, 186, 255, 0.07);
+}
+
+.rail-btn:disabled,
+.rail-disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.rail-btn:disabled:hover,
+.rail-disabled:hover {
+	color: #b0bdd2;
+	background: transparent;
+}
+
+.rail-active {
+	color: var(--shell-rail-active-color);
+	background: var(--shell-rail-active-bg);
+	border-left-color: var(--shell-rail-active-border);
+}
+
+.rail-footer {
+	width: 100%;
+	border-top: 1px solid rgba(142, 164, 196, 0.15);
+	padding-top: 8px;
+}
+
+.workspace {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.command-bar {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	height: 46px;
+	padding: 0 12px;
+	background: linear-gradient(180deg, var(--shell-command-bg-start) 0%, var(--shell-command-bg-end) 100%);
+	border-bottom: 1px solid var(--sd-border);
+	flex-shrink: 0;
+}
+
+.brand {
+	font-size: 18px;
+	font-weight: 700;
+	color: var(--sd-text);
+	letter-spacing: -0.3px;
+	white-space: nowrap;
+}
+
+.search-wrap {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	width: 290px;
+	height: 32px;
+	border: 1px solid var(--shell-search-border);
+	border-radius: 6px;
+	padding: 0 10px;
+	color: var(--shell-search-icon);
+	background: var(--shell-search-bg);
+}
+
+.search-wrap input {
+	width: 100%;
+	border: none;
+	outline: none;
+	background: transparent;
+	color: var(--sd-text);
+	font-size: 12px;
+}
+
+.search-wrap input::placeholder {
+	color: var(--sd-muted);
+	opacity: 1;
+}
+
+.indices-ribbon {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	flex: 1;
+	overflow: hidden;
+}
+
+.idx-item {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	white-space: nowrap;
+	font-size: 11px;
+}
+
+.idx-name  { color: var(--sd-muted); }
+.idx-value { color: var(--sd-text); font-weight: 600; font-variant-numeric: tabular-nums; }
+.pos       { color: var(--sd-green); }
+.neg       { color: var(--sd-red); }
+
+.account-strip {
+	display: flex;
+	align-items: center;
+	gap: 14px;
+	flex-shrink: 0;
+}
+
+.acct-stat {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 2px;
+}
+
+.acct-stat span {
+	color: var(--sd-muted);
+	font-size: 11px;
+	text-transform: uppercase;
+	letter-spacing: 0.4px;
+}
+
+.acct-stat strong {
+	color: var(--sd-text);
+	font-size: 18px;
+	line-height: 1;
+	font-variant-numeric: tabular-nums;
+	font-family: 'DM Mono', monospace;
+}
+
+.user-chip {
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background: var(--shell-chip-bg);
+	border: 1px solid var(--shell-chip-border);
+	color: var(--shell-chip-text);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 10px;
+	font-weight: 700;
+	cursor: pointer;
+	flex-shrink: 0;
+	outline: none;
+}
+
+.user-chip:focus-visible {
+	outline: 2px solid var(--sd-cyan);
+	outline-offset: 2px;
+}
+
+.main-area {
+	flex: 1;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.dock-area {
+	flex: 1;
+	display: block;
+	min-height: 0;
+	overflow: hidden;
+}
+
+.pane-host {
+	height: 100%;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	background: var(--sd-surface);
+}
+
+.theme-toggle-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+	border: 1px solid var(--shell-toggle-border);
+	border-radius: 6px;
+	background: var(--shell-toggle-bg);
+	color: var(--shell-toggle-text);
+	cursor: pointer;
+	padding: 0;
+	transition: background 0.15s, color 0.15s, border-color 0.15s;
+	outline: none;
+	flex-shrink: 0;
+}
+
+.theme-toggle-btn:hover {
+	background: var(--shell-toggle-hover-bg);
+	color: var(--shell-toggle-hover-text);
+	border-color: var(--shell-toggle-hover-border);
+}
+
+.theme-toggle-btn:focus-visible {
+	outline: 2px solid var(--sd-cyan);
+	outline-offset: 2px;
+}
+
+.theme-toggle-btn igx-icon {
+	font-size: 14px;
+	line-height: 1;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.sr-only-panels {
+	display: none;
+}
+
+:host,
+.app-shell {
+	--sd-bg: #12121a;
+	--sd-surface: #12121a;
+	--sd-panel: #12121a;
+	--sd-border: #272735;
+	--sd-text: #f1f5ff;
+	--sd-muted: #b0bdd2;
+	--sd-green: #34d399;
+	--sd-green-dim: rgba(52, 211, 153, 0.1);
+	--sd-red: #ff4d6a;
+	--sd-red-dim: rgba(255, 77, 106, 0.1);
+	--sd-cyan: #a78bfa;
+	--sd-cyan-dim: rgba(167, 139, 250, 0.09);
+	--sd-amber: #fbbf24;
+
+	--ig-surface-500: #0f1520;
+	--ig-gray-50: #0a0d14;
+	--ig-gray-100: #141e2e;
+	--ig-gray-200: #1e2d44;
+	--ig-gray-300: #273d58;
+	--ig-gray-700: #7a93b5;
+	--ig-gray-800: #a3bcd4;
+	--ig-gray-900: #e2e8f0;
+
+	--ig-grid-header-background: #141e2e;
+	--ig-grid-header-text-color: #5e7798;
+	--ig-grid-content-background: #0f1520;
+	--ig-grid-row-odd-background: #0f1520;
+	--ig-grid-row-even-background: #141e2e;
+	--ig-grid-row-hover-background: rgba(255, 255, 255, 0.04);
+	--ig-grid-row-border-color: #1e2d44;
+}
+
+igc-dockmanager {
+	color-scheme: dark;
+	--igc-background-color: var(--sd-bg);
+	--igc-accent-color: var(--sd-cyan);
+	--igc-text-color: var(--sd-text);
+	--igc-border-color: var(--sd-border);
+	--igc-pane-content-background: var(--sd-surface);
+	--igc-tab-background-active: var(--sd-panel);
+	--igc-splitter-background: var(--sd-border);
+	--igc-splitter-thickness: 4px;
+	--igc-floating-pane-border-color: var(--sd-border);
+	--igc-joystick-border-color: var(--sd-border);
+	--igc-joystick-icon-color-active: var(--sd-cyan);
+	--igc-context-menu-color-active: var(--sd-cyan);
+	--igc-flyout-shadow-color: rgba(0, 0, 0, 0.7);
+	--igc-sb-track-bg-color: var(--sd-panel);
+	--igc-sb-track-bg-color-hover: var(--sd-panel);
+	--igc-sb-thumb-bg-color: var(--sd-border);
+	--igc-sb-thumb-bg-color-hover: var(--sd-muted);
+	--igc-sb-corner-bg: var(--sd-panel);
+}
+
+igc-dockmanager::part(pane-header) {
+	background: var(--sd-panel);
+	color: var(--sd-text);
+}
+
+igc-dockmanager::part(pane-header-content) {
+	color: var(--sd-text);
+}
+
+igc-dockmanager::part(pane-header-close-button),
+igc-dockmanager::part(pane-header-maximize-button),
+igc-dockmanager::part(pane-header-minimize-button),
+igc-dockmanager::part(pane-header-pin-button),
+igc-dockmanager::part(pane-header-unpin-button),
+igc-dockmanager::part(tab-header-close-button),
+igc-dockmanager::part(tab-header-more-options) {
+	color: var(--sd-text);
+	opacity: 0.9;
+	border: none;
+	border-radius: 0;
+	background: transparent;
+	box-shadow: none;
+}
+
+igc-dockmanager::part(pane-header-close-button):hover,
+igc-dockmanager::part(pane-header-maximize-button):hover,
+igc-dockmanager::part(pane-header-minimize-button):hover,
+igc-dockmanager::part(pane-header-pin-button):hover,
+igc-dockmanager::part(pane-header-unpin-button):hover,
+igc-dockmanager::part(tab-header-close-button):hover,
+igc-dockmanager::part(tab-header-more-options):hover {
+	opacity: 1;
+	background: transparent;
+}
+
+.light-theme {
+	color-scheme: light;
+	--sd-bg: #f0f4f8;
+	--sd-surface: #ffffff;
+	--sd-panel: #f8fafc;
+	--sd-border: #e2e8f0;
+	--sd-text: #0f172a;
+	--sd-muted: #334155;
+	--sd-green: #16a34a;
+	--sd-green-dim: rgba(22, 163, 74, 0.1);
+	--sd-red: #dc2626;
+	--sd-red-dim: rgba(220, 38, 38, 0.1);
+	--sd-cyan: #0284c7;
+	--sd-cyan-dim: rgba(2, 132, 199, 0.08);
+
+	--ig-surface-500: #ffffff;
+	--ig-gray-50: #fafafa;
+	--ig-gray-100: #f1f5f9;
+	--ig-gray-200: #e2e8f0;
+	--ig-gray-300: #cbd5e1;
+	--ig-gray-700: #475569;
+	--ig-gray-800: #334155;
+	--ig-gray-900: #0f172a;
+
+	--ig-grid-header-background: #f1f5f9;
+	--ig-grid-header-text-color: #475569;
+	--ig-grid-content-background: #ffffff;
+	--ig-grid-row-odd-background: #ffffff;
+	--ig-grid-row-even-background: #f8fafc;
+	--ig-grid-row-hover-background: rgba(0, 0, 0, 0.04);
+	--ig-grid-row-border-color: #e2e8f0;
+}
+
+.light-theme igc-dockmanager {
+	color-scheme: light;
+	--igc-pane-content-background: #ffffff;
+	--igc-tab-background-active: #f8fafc;
+	--igc-border-color: #e2e8f0;
+}
+
+.light-theme igc-dockmanager::part(pane-header-close-button),
+.light-theme igc-dockmanager::part(pane-header-maximize-button),
+.light-theme igc-dockmanager::part(pane-header-minimize-button),
+.light-theme igc-dockmanager::part(pane-header-pin-button),
+.light-theme igc-dockmanager::part(pane-header-unpin-button),
+.light-theme igc-dockmanager::part(tab-header-close-button),
+.light-theme igc-dockmanager::part(tab-header-more-options) {
+	color: #0f172a;
+	opacity: 1;
+	border: none;
+	background: transparent;
+	filter: brightness(0) saturate(100%);
+}
+
+.light-theme igc-dockmanager::part(pane-header-close-button):hover,
+.light-theme igc-dockmanager::part(pane-header-maximize-button):hover,
+.light-theme igc-dockmanager::part(pane-header-minimize-button):hover,
+.light-theme igc-dockmanager::part(pane-header-pin-button):hover,
+.light-theme igc-dockmanager::part(pane-header-unpin-button):hover,
+.light-theme igc-dockmanager::part(tab-header-close-button):hover,
+.light-theme igc-dockmanager::part(tab-header-more-options):hover {
+	background: transparent;
+	filter: brightness(0) saturate(100%);
+}
+
+@media (max-width: 1240px) {
+	.account-strip {
+		display: none;
 	}
-}
 
-.changePos,
-.changeNeg,
-.strongPositive,
-.strongNegative {
-	color: contrast-color(null, 'gray', 500) !important;
-
-	.igx-grid__td-text {
-		padding: rem(2px) rem(5px);
+	.search-wrap {
+		width: 210px;
 	}
-}
-
-.positive {
-	color: color(null, 'success', 500) !important;
-}
-
-.positive.strongPositive {
-	.igx-grid__td-text {
-		color: color(null, 'success', 500, .8) !important;
-	}
-}
-
-.negative {
-	color: color(null, 'error', 500) !important;
-}
-
-.negative.strongNegative {
-	.igx-grid__td-text {
-		color: color(null, 'success', 500, .8) !important;
-	}
-}
-
-// NORMAL
-// positive
-.changePos {
-	.igx-grid__td-text {
-		background: color(null, 'success', 500, .5);
-	}
-}
-
-.changePos1 {
-	background: color(null, 'success', 500, .5);
-	color: contrast-color(null, 'gray', 900);
-}
-
-.changePos2 {
-	.igx-grid__td-text {
-		border-inline-end: rem(4px) solid color(null, 'success', 500, .5);
-		padding-inline-end: rem(15px);
-	}
-}
-
-// negative
-.changeNeg {
-	.igx-grid__td-text {
-		background: color(null, 'error', 500, .5);
-	}
-}
-
-.changeNeg1 {
-	background: color(null, 'error', 500, .5);
-	color: contrast-color(null, 'gray', 900);
-}
-
-.changeNeg2 {
-	.igx-grid__td-text {
-		border-inline-end: rem(4px) solid color(null, 'error', 500, .5);
-		padding-inline-end: rem(9px);
-	}
-}
-
-// STRONG
-// positive
-.strongPositive {
-	.igx-grid__td-text {
-		background: color(null, 'success', 500);
-	}
-}
-
-.strongPositive1 {
-	background: color(null, 'success', 500);
-	color: contrast-color(null, 'gray', 900);
-}
-
-.strongPositive2 {
-	.igx-grid__td-text {
-		border-inline-end: rem(4px) solid color(null, 'success', 500);
-		padding-inline-end: rem(15px);
-	}
-}
-
-// negative
-.strongNegative {
-	.igx-grid__td-text {
-		background: color(null, 'error', 500);
-		color: contrast-color(null, 'gray', 900);
-	}
-}
-
-.strongNegative1 {
-	background: color(null, 'error', 500);
-	color: contrast-color(null, 'gray', 900);
-}
-
-.strongNegative2 {
-	.igx-grid__td-text {
-		border-inline-end: rem(4px) solid color(null, 'error', 500);
-		padding-inline-end: rem(9px);
-	}
-}
-
-igx-grid {
-    --ig-size: var(--ig-size-small);
-
-	.grid-area {
-		margin-block-start: 1rem;
-		overflow-y: hidden;
-		overflow-x: hidden;
-		width: 100%;
-	}
-
-	// selected
-	.igx-grid__td--column-selected.changePos1,
-	.igx-grid__td--column-selected.changePos2,
-	.igx-grid__td--column-selected.changePos {
-		background-color: color(null, 'success', 500) !important;
-
-		.finjs-icons,
-		.igx-grid__td-text {
-			color: contrast-color(null, 'gray', 900);;
-		}
-	}
-
-	.igx-grid__td--column-selected.changeNeg1,
-	.igx-grid__td--column-selected.changeNeg2,
-	.igx-grid__td--column-selected.changeNeg {
-		background-color: color(null, 'error', 500) !important;
-
-		.finjs-icons,
-		.igx-grid__td-text {
-			color: contrast-color(null, 'gray', 900);
-		}
-	}
-
-	// selected
-	.igx-grid__td--column-selected.strongPositive1,
-	.igx-grid__td--column-selected.strongPositive2,
-	.igx-grid__td--column-selected.strongPositive {
-		background-color: color(null, 'success', 500) !important;
-
-		.finjs-icons,
-		.igx-grid__td-text {
-			color: contrast-color(null, 'gray', 900);
-		}
-	}
-
-	.igx-grid__td--column-selected.strongNegative1,
-	.igx-grid__td--column-selected.strongNegative2,
-	.igx-grid__td--column-selected.strongNegative {
-		background-color: color(null, 'error', 500) !important;
-
-		.finjs-icons,
-		.igx-grid__td-text {
-			color: contrast-color(null, 'gray', 900);
-		}
-	}
-}
-
-igx-select {
-    --ig-size: var(--ig-size-small);
 }
 

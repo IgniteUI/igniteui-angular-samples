@@ -1,0 +1,51 @@
+<div class="chart-panel">
+  <div class="chart-header">
+    <div class="price-block">
+      <span class="current-price">{{ currentPrice() | number:'1.2-2' }}</span>
+      <span
+        class="price-change"
+        [class.pos]="priceChange().positive"
+        [class.neg]="!priceChange().positive"
+      >
+        {{ priceChange().positive ? '+' : '-' }}{{ priceChange().value }}
+        ({{ priceChange().positive ? '+' : '-' }}{{ priceChange().pct }}%)
+      </span>
+    </div>
+    <div class="ohlc-stats">
+      <span class="stat-item">O <b>{{ todayStats().open }}</b></span>
+      <span class="stat-item">H <b>{{ todayStats().high }}</b></span>
+      <span class="stat-item">L <b>{{ todayStats().low }}</b></span>
+      <span class="stat-item">Vol <b>{{ todayStats().vol }}</b></span>
+    </div>
+    <div class="range-buttons" role="group" aria-label="Chart time range">
+      @for (r of ranges; track r) {
+      <button
+        igxButton="flat"
+        class="range-btn"
+        [class.active-range]="selectedRange() === r"
+        (click)="selectedRange.set(r)"
+      >{{ r }}</button>
+      }
+    </div>
+  </div>
+
+  <div class="chart-area">
+    <igx-financial-chart
+      [dataSource]="chartData()"
+      chartType="Candle"
+      xAxisMode="Time"
+      zoomSliderType="None"
+      [isToolbarVisible]="false"
+      brushes="#34d399"
+      outlines="#34d399"
+      negativeBrushes="#ef4444"
+      negativeOutlines="#ef4444"
+      xAxisLabelTextColor="#5e7798"
+      yAxisLabelTextColor="#5e7798"
+      xAxisMajorStroke="#1e2d44"
+      yAxisMajorStroke="#1e2d44"
+      height="100%"
+      width="100%"
+    ></igx-financial-chart>
+  </div>
+</div>

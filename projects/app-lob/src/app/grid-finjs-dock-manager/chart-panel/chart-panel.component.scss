@@ -1,0 +1,88 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--sd-bg);
+}
+
+.chart-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.chart-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--sd-border);
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+.price-block {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.current-price {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--sd-text);
+  font-variant-numeric: tabular-nums;
+  font-family: 'DM Mono', monospace;
+  letter-spacing: -0.5px;
+}
+
+.price-change {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.ohlc-stats {
+  display: flex;
+  gap: 14px;
+  flex: 1;
+}
+
+.stat-item {
+  font-size: 12px;
+  color: var(--sd-muted);
+  white-space: nowrap;
+}
+
+.stat-item b {
+  color: var(--sd-text);
+  font-weight: 500;
+}
+
+.range-buttons {
+  display: flex;
+  gap: 2px;
+}
+
+.range-btn {
+  font-size: 11px;
+  padding: 3px 9px;
+  color: var(--sd-muted);
+  min-width: unset;
+  border-radius: 4px;
+  transition: background 0.12s, color 0.12s;
+}
+
+.range-btn.active-range {
+  color: var(--sd-cyan);
+  background: var(--sd-cyan-dim);
+}
+
+.chart-area {
+  flex: 1;
+  min-height: 0;
+  padding: 4px 0 0;
+}
+
+.pos { color: var(--sd-green); }
+.neg { color: var(--sd-red); }
