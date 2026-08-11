@@ -1,0 +1,42 @@
+igx-badge {
+    --ig-size: var(--ig-size-small);
+    position: absolute;
+    inset-block-end: -4px;
+    inset-inline-end: -4px;
+}
+
+igx-avatar {
+    --ig-avatar-background: var(--ig-gray-700);
+    --ig-avatar-color: var(--ig-gray-50);
+}
+
+:host ::ng-deep .variant-item:first-child igx-avatar igx-icon,
+:host ::ng-deep .variant-item:nth-child(4) igx-avatar igx-icon {
+    color: var(--ig-gray-50);
+}
+
+.badge-variants {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-height: 8.5rem;
+}
+
+.variant-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    min-width: 56px;
+}
+
+.variant-item span {
+    color: var(--ig-gray-700);
+    font-size: 13px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    display: flex;
+}
