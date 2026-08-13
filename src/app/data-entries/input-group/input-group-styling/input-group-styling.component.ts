@@ -5,6 +5,6 @@ import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDi
     selector: 'app-input-group-style',
     templateUrl: 'input-group-styling.component.html',
     styleUrls: ['input-group-styling.component.scss'],
-    imports: [IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxHintDirective],
+    imports: [IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxHintDirective]
 })
 export class InputGroupStyleComponent { }
