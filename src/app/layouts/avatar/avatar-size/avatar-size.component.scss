@@ -1,0 +1,69 @@
+.avatar-size-sample {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    min-height: 100vh;
+}
+
+.avatar-size {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar-frame {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-frame-large {
+    width: 72px;
+    height: 72px;
+}
+
+.avatar-frame-medium {
+    width: 72px;
+    height: 72px;
+}
+
+.avatar-frame-small {
+    width: 72px;
+    height: 72px;
+}
+
+.avatar-label {
+    color: var(--ig-gray-600);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.avatar-with-badge {
+    position: relative;
+    display: inline-flex;
+}
+
+.avatar-status {
+    position: absolute;
+    line-height: 1;
+}
+
+.avatar-dot-badge-large {
+    --size: 16px;
+    right: 3px;
+    bottom: 3px;
+}
+
+.avatar-dot-badge-medium {
+    --size: 14px;
+    right: 2px;
+    bottom: 2px;
+}
+
+.avatar-dot-badge-small {
+    --size: 12px;
+    right: 1px;
+    bottom: 1px;
+}
