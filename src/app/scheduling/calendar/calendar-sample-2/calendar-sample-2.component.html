@@ -1,20 +1,18 @@
-<article class="sample-column location-wrapper">
-  <igx-select #select [(ngModel)]="locale">
-    <igx-prefix>Location: </igx-prefix>
+<igx-select #select [(ngModel)]="locale">
+    <igx-prefix>Location:</igx-prefix>
+
     @for (locale of locales; track locale) {
-      <igx-select-item [value]="locale">
-        {{ locale }}
-      </igx-select-item>
+        <igx-select-item [value]="locale">
+            {{ locale }}
+        </igx-select-item>
     }
-  </igx-select>
-</article>
-<article class="sample-column calendar-wrapper">
-  <igx-calendar
+</igx-select>
+
+<igx-calendar
     #calendar
     [locale]="locale"
     [weekStart]="1"
     [formatOptions]="formatOptions"
     [formatViews]="formatViews"
-    >
-  </igx-calendar>
-</article>
+>
+</igx-calendar>

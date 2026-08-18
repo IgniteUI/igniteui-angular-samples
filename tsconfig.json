@@ -1,6 +1,9 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "paths": {
+      "@shared/sample-size-reporter": ["./src/sample-size-reporter.ts"]
+    },
     "importHelpers": true,
     "module": "ES2022",
     "outDir": "./dist/out-tsc",

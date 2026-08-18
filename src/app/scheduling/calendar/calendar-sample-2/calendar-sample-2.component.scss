@@ -1,19 +1,9 @@
-@use '../../../../variables' as *;
-
-.calendar-wrapper {
-    max-width: 650px;
-    min-width: 300px;
-    margin: 8px;
-    border: 1px solid color($color: 'gray', $variant: 300);
-    border-radius: 6px;
+:host {
+    display: flex;
+    flex-direction: column;
+    gap:16px;
 }
 
-.igx-calendar {
-	--ig-size: 2;
-}
-
-.location-wrapper {
-    min-width: 200px;
-    max-width: 640px;
-    margin-bottom: 32px;
+igx-calendar {
+    border: 1px solid var(--ig-gray-100);
 }

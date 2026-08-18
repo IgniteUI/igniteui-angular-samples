@@ -16,6 +16,10 @@ export class CalendarMultiViewComponent {
     @ViewChild('alert', { static: true }) public dialog: IgxDialogComponent;
     public range = [];
 
+    public get isRangeSelected(): boolean {
+        return this.range.length >= 2;
+    }
+
     public selectDates(dates: Date | Date[]) {
         this.range = dates as Date[];
     }
@@ -45,7 +49,7 @@ export class CalendarMultiViewComponent {
     }
 
     get action() {
-        return this.range.length < 1 ? 'CHECK-IN' : 'CHECK-OUT';
+        return this.range.length < 1 ? 'Select a CHECK-IN date' : 'Now select a CHECK-OUT date';
     }
 
     get checkin() {

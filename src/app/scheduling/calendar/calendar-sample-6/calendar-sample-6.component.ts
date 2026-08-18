@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { DateRangeType } from 'igniteui-angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { DateRangeDescriptor, DateRangeType } from 'igniteui-angular/core';
 import { IgxCalendarComponent } from 'igniteui-angular/calendar';
 import { DatePipe } from '@angular/common';
 
@@ -10,15 +10,16 @@ import { DatePipe } from '@angular/common';
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCalendarComponent, DatePipe]
 })
-export class CalendarSample6Component implements OnInit{
-    @ViewChild('calendar', { static: true }) public calendar: IgxCalendarComponent;
+
+export class CalendarSample6Component {
     public today = new Date(Date.now());
+
     public range = [
         new Date(this.today.getFullYear(), this.today.getMonth(), 3),
         new Date(this.today.getFullYear(), this.today.getMonth(), 8)
     ];
 
-    public ngOnInit() {
-        this.calendar.disabledDates = [{ type: DateRangeType.Between, dateRange: this.range }];
-    }
+    public disabledDates: DateRangeDescriptor[] = [
+        { type: DateRangeType.Between, dateRange: this.range }
+    ];
 }

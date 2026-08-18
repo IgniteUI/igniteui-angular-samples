@@ -1,8 +1,9 @@
 @use "igniteui-angular/theming" as *;
 
 :host {
-    ::ng-deep {
+    padding: 1rem;
 
+    ::ng-deep {
         // Note: This is not the standard approach for styling the component.
         // We're using it here solely to mirror the UI5 sample.
 
@@ -111,12 +112,12 @@
     }
 }
 
-.calendar-wrapper {
-    max-width: rem(600px);
-    margin: rem(8px);
-}
-
 igx-calendar {
+    --ig-font-family: Arial, sans-serif;
+    --ig-subtitle-1-font-weight: 600;
+    --ig-size: 1;
+    --ig-radius-factor: 0.4;
+
     --current-border: #A100C2;
     --primary: #0064D9;
     --background: #EAECEE;
@@ -126,10 +127,5 @@ igx-calendar {
     width: rem(290px);
     min-height: rem(282px);
     box-sizing: border-box;
-    padding-top: rem(6px);
     box-shadow: elevation(4);
-    --ig-font-family: Arial, sans-serif;
-    --ig-subtitle-1-font-weight: 600;
-    --ig-size: 1;
-    --ig-radius-factor: 0.4;
 }

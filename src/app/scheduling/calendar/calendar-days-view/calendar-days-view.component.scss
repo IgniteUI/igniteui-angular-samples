@@ -1,9 +1,3 @@
-.igx-card {
-    max-width: 500px;
-    min-width: 200px;
-    margin: 8px;
-}
-
-.igx-calendar {
-	--ig-size: 2;
+igx-days-view {
+    border: 1px solid var(--ig-gray-300);
 }

@@ -1,19 +1,19 @@
-@use "layout.scss";
-@use "igniteui-angular/theming" as *;
+@use 'layout.scss';
+@use 'igniteui-angular/theming' as *;
 
 $initials-avatar-theme: avatar-theme(
-  $background: #72da67,
-  $border-radius: 16px
+    $background: #72da67,
+    $border-radius: 16px
 );
 
 $icon-avatar-theme: avatar-theme(
-  $background: #217346,
+    $background: #217346,
 );
 
-.initials{
-  @include tokens($initials-avatar-theme);
+.initials {
+    @include tokens($initials-avatar-theme);
 }
 
-.icon{
-  @include tokens($icon-avatar-theme);
+.icon {
+    @include tokens($icon-avatar-theme);
 }
