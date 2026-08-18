@@ -22,7 +22,12 @@
             ],
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              {
+                "glob": "igniteui-{angular,angular-dark,fluent-light,fluent-dark,bootstrap-light,bootstrap-dark,indigo-light,indigo-dark}.css",
+                "input": "node_modules/igniteui-angular/styles",
+                "output": "assets/themes"
+              }
             ],
             "styles": [
               "src/styles.scss"
