@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxComboComponent } from 'igniteui-angular/combo';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { localData } from './local-data';
@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-combo',
     styleUrls: ['./combo-features.component.scss'],
     templateUrl: './combo-features.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxComboComponent, IgxSwitchComponent, FormsModule]
 })
 export class ComboFeaturesComponent implements OnInit{

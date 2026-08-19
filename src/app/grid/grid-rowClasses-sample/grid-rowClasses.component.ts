@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, RowType } from 'igniteui-angular/grids/core';
 import { DATA } from '../../data/nwindData';
@@ -8,7 +8,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-row-classes-sample',
     styleUrls: ['./grid-rowClasses.component.scss'],
     templateUrl: 'grid-rowClasses.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class GridRowClassesComponent implements OnInit {

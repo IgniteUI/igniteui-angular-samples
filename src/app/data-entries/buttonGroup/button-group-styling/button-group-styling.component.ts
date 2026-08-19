@@ -1,12 +1,11 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { ButtonGroupAlignment, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 @Component({
-    selector: 'app-button-group-styling',
-    styleUrls: ['./button-group-styling.component.scss'],
-    templateUrl: './button-group-styling.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    selector: 'app-button-group-style',
+    styleUrls: ['./button-group-style.component.scss'],
+    templateUrl: './button-group-style.component.html',
     imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective]
 })
 export class ButtonGroupStylingComponent {

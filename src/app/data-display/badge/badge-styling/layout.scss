@@ -1,0 +1,33 @@
+.badge-teal {
+    --background-color: var(--ig-success-700);
+    --border-radius: 50%;
+}
+
+.badge-amber {
+    --background-color: #C97C00;
+    --border-radius: 50%;
+}
+
+.badge-magenta {
+    --background-color: #9C27B0;
+    --ig-avatar-color: var(--ig-gray-50);
+    --border-radius: 50%;
+}
+
+.badge-lime {
+    --background-color: var(--ig-success-700);
+    --border-radius: 50%;
+}
+
+.badge-styling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    min-height: 7rem;
+}
+
+.styling-item {
+    position: relative;
+    display: flex;
+}

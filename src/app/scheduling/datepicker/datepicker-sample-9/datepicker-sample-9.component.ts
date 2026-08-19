@@ -1,4 +1,4 @@
-import { Component, OnInit, Pipe, PipeTransform, ViewChild, forwardRef, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, Pipe, PipeTransform, ViewChild, forwardRef } from '@angular/core';
 import { IgxCalendarComponent } from 'igniteui-angular/calendar';
 import { IgxAutocompleteDirective, IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-datepicker-sample-9',
     styleUrls: ['./datepicker-sample-9.component.scss'],
     templateUrl: './datepicker-sample-9.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     IgxInputGroupComponent,
     IgxToggleActionDirective,

@@ -1,4 +1,4 @@
-import { Component, HostBinding, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent } from 'igniteui-angular/grids/core';
@@ -10,7 +10,6 @@ import { CurrencyPipe } from '@angular/common';
     selector: 'app-grid-sample',
     styleUrls: ['./grid-excel-style-filtering-sample-1.component.scss'],
     templateUrl: 'grid-excel-style-filtering-sample-1.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarHidingComponent, IgxColumnComponent, IgxCellTemplateDirective, CurrencyPipe]
 })
 

@@ -1,0 +1,15 @@
+@use "layout.scss";
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+}
+
+igx-avatar {
+    --size: 40px;
+    --ig-avatar-background: var(--ig-gray-700);
+    --ig-avatar-color: var(--ig-gray-50);
+}
+
+:host ::ng-deep igx-avatar igx-icon {
+    color: var(--ig-gray-50);
+}

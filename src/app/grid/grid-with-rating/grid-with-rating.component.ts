@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxToastComponent } from 'igniteui-angular/toast';
 import { CellType, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -14,7 +14,6 @@ defineComponents(IgcRatingComponent);
     selector: 'app-grid-rating-sample',
     styleUrls: ['./grid-with-rating.component.scss'],
     templateUrl: 'grid-with-rating.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgcFormControlDirective, FormsModule, IgxToastComponent]
 })
 export class GridWithRatingComponent implements OnInit {

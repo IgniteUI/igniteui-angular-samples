@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, Renderer2, inject, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, Renderer2, inject } from '@angular/core';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
 import { IgxDragDirective, IgxDropDirective } from 'igniteui-angular/directives';
@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-email-sample',
     templateUrl: './email-sample.component.html',
     styleUrls: ['./email-sample.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxIconComponent, IgxListComponent, IgxListItemComponent, IgxDropDirective, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxDragDirective, IgxListLineSubTitleDirective, IgxCheckboxComponent, FormsModule]
 })
 

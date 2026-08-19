@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 
 interface IButton {
@@ -32,10 +32,9 @@ class CustomToggle {
 }
 
 @Component({
-    selector: 'app-button-group-custom-toggle',
-    styleUrls: ['./button-group-custom-toggle.component.scss'],
-    templateUrl: './button-group-custom-toggle.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
+    selector: 'app-button-group-sample-3',
+    styleUrls: ['./button-group-sample-3.component.scss'],
+    templateUrl: './button-group-sample-3.component.html',
     imports: [IgxButtonGroupComponent]
 })
 export class ButtonGroupCustomToggleComponent implements OnInit {

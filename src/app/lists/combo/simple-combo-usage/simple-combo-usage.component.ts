@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
 import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
 import { FormsModule } from '@angular/forms';
@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-simple-combo-usage',
     templateUrl: 'simple-combo-usage.component.html',
     styleUrls: ['simple-combo-usage.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSimpleComboComponent, FormsModule]
 })
 export class SimpleComboUsageComponent implements OnInit {

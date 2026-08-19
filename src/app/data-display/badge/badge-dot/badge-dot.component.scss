@@ -1,0 +1,129 @@
+igx-badge {
+    --ig-size: var(--ig-size-small);
+}
+
+igx-avatar {
+    --size: 40px;
+}
+
+.icon-example igx-badge,
+.avatar-example igx-badge,
+.nav-icon igx-badge {
+    position: absolute;
+}
+
+.icon-example igx-badge {
+    inset-block-start: 0;
+    inset-inline-end: 2px;
+}
+
+.avatar-example igx-badge {
+	inset-block-start: -0.25rem;
+	inset-inline-end: -2px;
+}
+
+.nav-icon igx-badge {
+    inset-block-start: -2px;
+    inset-inline-end: -6px;
+}
+
+.badge-dot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    min-height: 8.5rem;
+}
+
+.dot-example {
+    position: relative;
+}
+
+.icon-example,
+.avatar-example,
+.icon-circle {
+    display: flex;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+}
+
+.icon-circle {
+    justify-content: center;
+    border-radius: 50%;
+    background: var(--ig-gray-200);
+    color: var(--ig-gray-800);
+}
+
+.notifications-card,
+.nav-card {
+    background: var(--ig-surface-500);
+    border-radius: 4px;
+    box-shadow: 0 1px 3px hsl(from var(--ig-gray-900) h s l / 0.12);
+}
+
+.notifications-card {
+    min-width: 272px;
+    padding: 8px 0;
+}
+
+.notification-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--ig-gray-900);
+}
+
+.row-indicator {
+    display: inline-flex;
+    justify-content: center;
+    width: 12px;
+}
+
+.row-title {
+    flex: 1;
+}
+
+.row-time {
+    font-size: 13px;
+    color: var(--ig-gray-900);
+}
+
+.row-time.unread {
+    color: #0057A9;
+    font-weight: 600;
+}
+
+.row-chevron {
+    --ig-size: 1rem;
+    color: var(--ig-gray-600);
+    font-size: 18px;
+}
+
+.nav-card {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    min-width: 56px;
+    color: var(--ig-gray-700);
+    font-size: 12px;
+}
+
+.nav-item.active {
+    color: #0057A9;
+}
+
+.nav-icon {
+    position: relative;
+    display: inline-flex;
+}

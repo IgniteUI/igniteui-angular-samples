@@ -1,4 +1,4 @@
-import { Component, Pipe, PipeTransform, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 import { DateRange } from 'igniteui-angular/core';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { IgxHintDirective, IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
@@ -12,7 +12,6 @@ import { PipeWithoutTownFrom as PipeWithoutTownFrom_1 } from '../../datepicker/d
     selector: 'app-flight-booking',
     styleUrls: ['./daterangepicker-flight-booking.scss'],
     templateUrl: './daterangepicker-flight-booking.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule, IgxSelectComponent, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxDateRangePickerComponent, IgxLabelDirective, IgxHintDirective, PipeWithoutTownFrom_1]
 })
 export class FlightBookingComponent {

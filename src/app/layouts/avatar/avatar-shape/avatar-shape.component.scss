@@ -1,0 +1,48 @@
+.avatar-shape-sample {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 90px;
+    min-height: 100vh;
+}
+
+.avatar-variant {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.avatar-label {
+    color: var(--ig-gray-600);
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.avatar-with-badge {
+    position: relative;
+    display: inline-flex;
+}
+
+.avatar-status {
+    --size: 18px;
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+    font-size: 0.75rem;
+    line-height: 1;
+}
+
+.avatar-dot-badge {
+    --size: 12px;
+    right: 3px;
+    bottom: 3px;
+}
+
+.avatar-count-badge {
+    --ig-badge-text-color: #ffffff;
+}
+
+.avatar-check-badge {
+    --ig-badge-icon-color: #ffffff;
+}

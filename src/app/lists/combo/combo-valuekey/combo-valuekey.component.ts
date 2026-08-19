@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxComboComponent } from 'igniteui-angular/combo';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { CITIES, ICity } from './cities';
@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-combo-valuekey',
     templateUrl: 'combo-valuekey.component.html',
     styleUrls: ['combo-valuekey.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxComboComponent, FormsModule, IgxButtonDirective]
 })
 export class ComboValueKeyComponent {

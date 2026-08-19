@@ -1,0 +1,50 @@
+@use "layout.scss";
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+}
+
+:host ::ng-deep .badge-teal igx-icon,
+:host ::ng-deep .badge-amber igx-icon,
+:host ::ng-deep .styling-item.pink igx-avatar igx-icon {
+    color: var(--ig-gray-50);
+}
+
+:host ::ng-deep .badge-teal igx-icon {
+    position: relative;
+}
+
+:host ::ng-deep .badge-teal igx-icon::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--ig-success-700);
+    transform: translate(-50%, -50%);
+}
+
+.styling-item.green igx-avatar {
+    --icon-color: var(--ig-success-700);
+}
+
+.styling-item igx-avatar {
+    --size: 40px;
+}
+
+.styling-item.green igx-avatar {
+    --ig-avatar-background: var(--ig-success-200);
+    --ig-avatar-color: var(--ig-gray-50);
+}
+
+.styling-item.pink igx-avatar {
+    --ig-avatar-background: #DA64FF;
+    --ig-avatar-color: var(--ig-gray-50);
+}
+
+.styling-item igx-badge {
+    position: absolute;
+    inset-block-end: -2px;
+    inset-inline-end: -2px;
+}
