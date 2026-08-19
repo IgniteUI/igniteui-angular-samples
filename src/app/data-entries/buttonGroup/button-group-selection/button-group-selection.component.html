@@ -1,19 +1,18 @@
-<article class="sample-column">
-    <h6>Selection Mode</h6>
-    <div class="radio-buttons">
-        <igx-radio [(ngModel)]="selectionMode" value="single">Single</igx-radio>
-        <igx-radio [(ngModel)]="selectionMode" value="singleRequired">Single-Required</igx-radio>
-        <igx-radio [(ngModel)]="selectionMode" value="multi">Multi</igx-radio>
-    </div>
-    <igx-buttongroup [selectionMode]="selectionMode">
-        <button igxButton [igxRipple]="rippleColor">
-            <igx-icon>format_bold</igx-icon>
-        </button>
-        <button igxButton [igxRipple]="rippleColor">
-            <igx-icon>format_italic</igx-icon>
-        </button>
-        <button igxButton [igxRipple]="rippleColor">
-            <igx-icon>format_underlined</igx-icon>
-        </button>
-    </igx-buttongroup>
+<article class="selection-samples">
+    @for (mode of selectionModes; track mode.value) {
+        <div class="selection-sample">
+            <span>{{ mode.label }}</span>
+            <igx-buttongroup [selectionMode]="mode.value">
+                <button igxButton [igxRipple]="rippleColor" [selected]="isBoldSelected(mode.value)">
+                    <igx-icon>format_bold</igx-icon>
+                </button>
+                <button igxButton [igxRipple]="rippleColor" [selected]="isItalicSelected(mode.value)">
+                    <igx-icon>format_italic</igx-icon>
+                </button>
+                <button igxButton [igxRipple]="rippleColor">
+                    <igx-icon>format_underlined</igx-icon>
+                </button>
+            </igx-buttongroup>
+        </div>
+    }
 </article>

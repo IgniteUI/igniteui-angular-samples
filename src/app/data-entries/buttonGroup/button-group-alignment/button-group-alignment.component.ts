@@ -3,12 +3,17 @@ import { ButtonGroupAlignment, IgxButtonGroupComponent } from 'igniteui-angular/
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 @Component({
-    selector: 'app-button-group-sample-2',
-    styleUrls: ['./button-group-sample-2.component.scss'],
-    templateUrl: './button-group-sample-2.component.html',
+    selector: 'app-button-group-alignment',
+    styleUrls: ['./button-group-alignment.component.scss'],
+    templateUrl: './button-group-alignment.component.html',
     imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective]
 })
 export class ButtonGroupAlignmentComponent {
-    public alignment = ButtonGroupAlignment.vertical;
-    public rippleColor = 'grey';
+    public rippleColor = 'gray';
+    public cities = ['Sofia', 'London', 'New York'];
+
+    public alignments: { label: string; value: ButtonGroupAlignment }[] = [
+        { label: 'Horizontal', value: ButtonGroupAlignment.horizontal },
+        { label: 'Vertical', value: ButtonGroupAlignment.vertical }
+    ];
 }

@@ -1,37 +1,23 @@
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
-
-type Button = {
-    label: string,
-    selected: boolean,
-    togglable: boolean
-}
+import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 @Component({
-    selector: 'app-button-group-sample-5',
-    styleUrls: ['./button-group-sample-5.component.scss'],
-    templateUrl: './button-group-sample-5.component.html',
-    imports: [IgxButtonGroupComponent]
+    selector: 'app-button-group-size',
+    styleUrls: ['./button-group-size.component.scss'],
+    templateUrl: './button-group-size.component.html',
+    imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective]
 })
-export class ButtonGroupSizeComponent implements OnInit {
-    public rippleColor = 'grey';
-    public size = 'large';
-    public sizes: Button[];
+export class ButtonGroupSizeComponent {
+    public rippleColor = 'gray';
+    public cities = ['Sofia', 'London', 'New York'];
+    public sizes = ['small', 'medium', 'large'];
 
-    public ngOnInit() {
-        this.sizes = [
-            { label: 'small', selected: this.size === 'small', togglable: true },
-            { label: 'medium', selected: this.size === 'medium', togglable: true },
-            { label: 'large', selected: this.size === 'large', togglable: true }
-        ];
+    public getLabel(size: string) {
+        return size.charAt(0).toUpperCase() + size.slice(1);
     }
 
-    public selectSize(event: any) {
-        this.size = this.sizes[event.index].label;
-    }
-
-    @HostBinding('style.--ig-size')
-    protected get sizeStyle() {
-        return `var(--ig-size-${this.size})`;
+    public getSizeStyle(size: string) {
+        return `var(--ig-size-${size})`;
     }
 }

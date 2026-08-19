@@ -32,9 +32,9 @@ class CustomToggle {
 }
 
 @Component({
-    selector: 'app-button-group-sample-3',
-    styleUrls: ['./button-group-sample-3.component.scss'],
-    templateUrl: './button-group-sample-3.component.html',
+    selector: 'app-button-group-custom-toggle',
+    styleUrls: ['./button-group-custom-toggle.component.scss'],
+    templateUrl: './button-group-custom-toggle.component.html',
     imports: [IgxButtonGroupComponent]
 })
 export class ButtonGroupCustomToggleComponent implements OnInit {

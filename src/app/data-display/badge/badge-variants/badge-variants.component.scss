@@ -32,8 +32,13 @@ igx-avatar {
 }
 
 .variant-item span {
-    color: var(--ig-gray-700);
+    color: #556c86;
+    font-family: "Aktiv Grotesk", sans-serif;
     font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: 0.3px;
 }
 
 .avatar-wrapper {

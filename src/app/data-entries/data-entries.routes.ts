@@ -5,6 +5,8 @@ import { ButtonGroupOverviewComponent } from './buttonGroup/button-group-overvie
 import { ButtonGroupLayoutComponent } from './buttonGroup/button-group-layout/button-group-layout.component';
 import { ButtonGroupAlignmentComponent } from './buttonGroup/button-group-alignment/button-group-alignment.component';
 import { ButtonGroupCustomToggleComponent } from './buttonGroup/button-group-custom-toggle/button-group-custom-toggle.component';
+import { ButtonGroupStatesComponent } from './buttonGroup/button-group-states/button-group-states.component';
+import { ButtonGroupInteractionStatesComponent } from './buttonGroup/button-group-interaction-states/button-group-interaction-states.component';
 import { ButtonGroupSelectionComponent } from './buttonGroup/button-group-selection/button-group-selection.component';
 import { ButtonGroupSizeComponent } from './buttonGroup/button-group-size/button-group-size.component';
 import { ButtonGroupStylingComponent } from './buttonGroup/button-group-styling/button-group-styling.component';
@@ -118,6 +120,16 @@ export const DataEntriesRoutes: Routes = [
         component: ButtonGroupCustomToggleComponent,
         data: dataEntriesRoutesData['button-group-custom-toggle'],
         path: 'button-group-custom-toggle'
+    },
+    {
+        component: ButtonGroupStatesComponent,
+        data: dataEntriesRoutesData['button-group-states'],
+        path: 'button-group-states'
+    },
+    {
+        component: ButtonGroupInteractionStatesComponent,
+        data: dataEntriesRoutesData['button-group-interaction-states'],
+        path: 'button-group-interaction-states'
     },
     {
         component: ButtonGroupSelectionComponent,

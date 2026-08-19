@@ -31,9 +31,23 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group toggle
+        // button group custom toggle
         configs.push(new Config({
-            component: 'ButtonGroupToggleComponent',
+            component: 'ButtonGroupCustomToggleComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
+        // button group states
+        configs.push(new Config({
+            component: 'ButtonGroupStatesComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
+        // button group interaction states
+        configs.push(new Config({
+            component: 'ButtonGroupInteractionStatesComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));

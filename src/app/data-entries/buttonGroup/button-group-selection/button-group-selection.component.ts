@@ -1,17 +1,30 @@
 import { Component } from '@angular/core';
-import { IgxRadioComponent } from 'igniteui-angular/radio';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
-import { FormsModule } from '@angular/forms';
+
+type SelectionMode = 'single' | 'singleRequired' | 'multi';
 
 @Component({
-    selector: 'app-button-group-sample',
-    styleUrls: ['./button-group-sample.component.scss'],
-    templateUrl: './button-group-sample.component.html',
-    imports: [IgxRadioComponent, FormsModule, IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxIconComponent]
+    selector: 'app-button-group-selection',
+    styleUrls: ['./button-group-selection.component.scss'],
+    templateUrl: './button-group-selection.component.html',
+    imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective, IgxIconComponent]
 })
 export class ButtonGroupSelectionComponent {
-    public rippleColor = 'grey';
-    public selectionMode: 'single' | 'singleRequired' | 'multi' = 'single';
+    public rippleColor = 'gray';
+
+    public selectionModes: { label: string; value: SelectionMode }[] = [
+        { label: 'Single', value: 'single' },
+        { label: 'Single-Required', value: 'singleRequired' },
+        { label: 'Multi', value: 'multi' }
+    ];
+
+    public isBoldSelected(mode: SelectionMode) {
+        return mode === 'singleRequired' || mode === 'multi';
+    }
+
+    public isItalicSelected(mode: SelectionMode) {
+        return mode === 'multi';
+    }
 }

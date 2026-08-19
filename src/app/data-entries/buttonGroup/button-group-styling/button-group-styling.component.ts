@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { ButtonGroupAlignment, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 
 @Component({
-    selector: 'app-button-group-style',
-    styleUrls: ['./button-group-style.component.scss'],
-    templateUrl: './button-group-style.component.html',
+    selector: 'app-button-group-styling',
+    styleUrls: ['./button-group-styling.component.scss'],
+    templateUrl: './button-group-styling.component.html',
     imports: [IgxButtonGroupComponent, IgxButtonDirective, IgxRippleDirective]
 })
 export class ButtonGroupStylingComponent {
-    public alignment = ButtonGroupAlignment.vertical;
+    public rippleColor = 'gray';
+    public layouts = ['Left', 'Center', 'Right'];
 }

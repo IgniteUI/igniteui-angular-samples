@@ -1,21 +1,35 @@
-@use "igniteui-angular/theming" as *;
-
-$overview-button-group-theme: button-group-theme(
-	$item-text-color: #000000,
-	$item-background: #2196f3,
-	$item-selected-background: #1976d2,
-	$item-selected-text-color: #000000,
-	$item-border-color: transparent,
-	$item-hover-border-color: transparent,
-	$item-active-border-color: transparent,
-	$item-focused-border-color: transparent
-);
-
-:host {
-	@include tokens($overview-button-group-theme);
+.button-group-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 igx-buttongroup {
-	display: inline-block;
-	max-width: 400px;
+    display: block;
+    width: 280px;
+    max-width: 100%;
+}
+
+.album {
+    margin-top: 8px;
+    width: 280px;
+    max-width: 100%;
+}
+
+.album-title {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #1f89d4;
+}
+
+.album-photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+}
+
+.album-photos img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
 }
