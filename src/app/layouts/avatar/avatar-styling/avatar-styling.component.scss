@@ -1,19 +1,35 @@
-@use "layout.scss";
-@use "igniteui-angular/theming" as *;
-
-$initials-avatar-theme: avatar-theme(
-  $background: #72da67,
-  $border-radius: 16px
-);
-
-$icon-avatar-theme: avatar-theme(
-  $background: #217346,
-);
-
-.initials{
-  @include tokens($initials-avatar-theme);
+.avatar-styling-sample {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.icon{
-  @include tokens($icon-avatar-theme);
+.chat-list {
+    width: 344px;
+    max-width: 100%;
+}
+
+.size-small {
+    --ig-size: var(--ig-size-small);
+}
+
+.avatar-with-badge {
+    position: relative;
+    display: inline-flex;
+}
+
+.avatar-status {
+    --ig-badge-icon-color: #ffffff;
+    position: absolute;
+    right: -4px;
+    bottom: -4px;
+}
+
+.avatar-muted-badge {
+    --ig-badge-background-color: var(--ig-gray-300);
+    --ig-badge-icon-color: var(--ig-gray-700);
+}
+
+.avatar-muted {
+    --ig-avatar-background: #D2DBE8;
 }
