@@ -4,7 +4,7 @@ import { MovieComponent } from './autocomplete/movie/movie.component';
 import { ButtonGroupOverviewComponent } from './buttonGroup/button-group-overview/button-group-overview.component';
 import { ButtonGroupLayoutComponent } from './buttonGroup/button-group-layout/button-group-layout.component';
 import { ButtonGroupAlignmentComponent } from './buttonGroup/button-group-alignment/button-group-alignment.component';
-import { ButtonGroupToggleComponent } from './buttonGroup/button-group-toggle/button-group-toggle.component';
+import { ButtonGroupCustomToggleComponent } from './buttonGroup/button-group-custom-toggle/button-group-custom-toggle.component';
 import { ButtonGroupSelectionComponent } from './buttonGroup/button-group-selection/button-group-selection.component';
 import { ButtonGroupSizeComponent } from './buttonGroup/button-group-size/button-group-size.component';
 import { ButtonGroupStylingComponent } from './buttonGroup/button-group-styling/button-group-styling.component';
@@ -115,9 +115,9 @@ export const DataEntriesRoutes: Routes = [
         path: 'button-group-alignment'
     },
     {
-        component: ButtonGroupToggleComponent,
-        data: dataEntriesRoutesData['button-group-toggle'],
-        path: 'button-group-toggle'
+        component: ButtonGroupCustomToggleComponent,
+        data: dataEntriesRoutesData['button-group-custom-toggle'],
+        path: 'button-group-custom-toggle'
     },
     {
         component: ButtonGroupSelectionComponent,

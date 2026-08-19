@@ -6,7 +6,7 @@ export const dataEntriesRoutesData = {
     "button-group-overview": { displayName: "Button Group Overview", parentName: "Button Group" },
     "button-group-layout": { displayName: "Button Group Layout", parentName: "Button Group" },
     "button-group-alignment": { displayName: "Vertical Button Group", parentName: "Button Group" },
-    "button-group-toggle": { displayName: "Toggle Button Group", parentName: "Button Group" },
+    "button-group-custom-toggle": { displayName: "Button Group Custom Toggle", parentName: "Button Group" },
     "button-group-selection": { displayName: "Selection Mode", parentName: "Button Group" },
     "button-group-size": { displayName: "Display Density", parentName: "Button Group" },
     "button-group-styling": { displayName: "Button Group Styling", parentName: "Button Group" },

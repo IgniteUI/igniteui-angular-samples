@@ -11,7 +11,7 @@ interface IButton {
     icon?: string;
 }
 
-class ToggleButton {
+class CustomToggle {
     private ripple: string;
     private label: string;
     private disabled: boolean;
@@ -32,21 +32,21 @@ class ToggleButton {
 }
 
 @Component({
-    selector: 'app-button-group-toggle',
-    styleUrls: ['./button-group-toggle.component.scss'],
-    templateUrl: './button-group-toggle.component.html',
+    selector: 'app-button-group-custom-toggle',
+    styleUrls: ['./button-group-custom-toggle.component.scss'],
+    templateUrl: './button-group-custom-toggle.component.html',
     changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent]
 })
-export class ButtonGroupToggleComponent implements OnInit {
-    public bordersButtons: ToggleButton[];
+export class ButtonGroupCustomToggleComponent implements OnInit {
+    public bordersButtons: CustomToggle[];
 
     public ngOnInit() {
         this.bordersButtons = [
-            new ToggleButton({ icon: 'border_top', selected: true }),
-            new ToggleButton({ icon: 'border_right', selected: false }),
-            new ToggleButton({ icon: 'border_bottom', selected: false }),
-            new ToggleButton({ icon: 'border_left', selected: false })
+            new CustomToggle({ icon: 'border_top', selected: true }),
+            new CustomToggle({ icon: 'border_right', selected: false }),
+            new CustomToggle({ icon: 'border_bottom', selected: false }),
+            new CustomToggle({ icon: 'border_left', selected: false })
         ];
     }
 }
