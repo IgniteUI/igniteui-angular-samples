@@ -15,12 +15,11 @@ $avatars: circle, square, rounded;
     padding: rem(32px);
 }
 
-// :where() keeps the sample's own rules at zero specificity
-:where(igx-avatar) {
+igx-avatar {
     grid-row: 1;
 }
 
-:where(span) {
+span {
     grid-row: 2;
     text-align: center;
     color: var(--ig-gray-600);
@@ -30,7 +29,7 @@ $avatars: circle, square, rounded;
     };
 }
 
-:where(igx-badge) {
+igx-badge {
     --ig-size: var(--ig-size-small);
 
     position: absolute;
