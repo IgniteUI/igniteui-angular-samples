@@ -1,12 +1,13 @@
+@use "igniteui-theming/sass/typography" as *;
+
 :host {
     display: flex;
-    place-items: center;
-    gap: 2rem;
     flex-wrap: wrap;
-    max-width: fit-content;
-    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: rem(32px);
     height: 100vh;
-    padding: 2rem;
+    padding: rem(32px);
 }
 
 .profile-status {
@@ -24,16 +25,16 @@
 .avatar-stack {
     display: flex;
 
-    > igx-avatar:not(:first-child) {
-        margin-left: -24px;
-    }
-
-    > *:last-child {
-        --ig-avatar-background: #e8eef6;
-        --ig-avatar-color: #6f8097;
-    }
-
     igx-avatar {
-        box-shadow: 0 0 0 .4rem var(--ig-surface-500);
+        box-shadow: 0 0 0 rem(6px) var(--ig-surface-500);
+
+        + igx-avatar {
+            margin-inline-start: rem(-24px);
+        }
+
+        &:last-child {
+            --ig-avatar-background: #e8eef6;
+            --ig-avatar-color: #6f8097;
+        }
     }
 }

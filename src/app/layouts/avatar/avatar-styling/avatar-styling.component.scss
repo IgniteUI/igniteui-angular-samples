@@ -1,22 +1,10 @@
+@use "igniteui-theming/sass/typography" as *;
+
 :host {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
-
-    igx-badge {
-        --ig-size: var(--ig-size-small);
-    }
-
-    igx-avatar {
-        --background: var(--ig-gray-300);
-        --color: var(--ig-gray-300-contrast);
-    }
-
-    igx-avatar.avatar-muted {
-        --background: var(--ig-gray-800);
-        --color: var(--ig-gray-800-contrast);
-    }
 }
 
 .chat-list {
@@ -27,8 +15,24 @@
     max-width: rem(328px);
 }
 
+// :where() drops this to zero specificity, so .avatar-muted below overrides it
+// without needing a longer selector to outrank it.
+:where(igx-avatar) {
+    --background: var(--ig-gray-300);
+    --color: var(--ig-gray-300-contrast);
+}
+
+.avatar-muted {
+    --background: var(--ig-gray-800);
+    --color: var(--ig-gray-800-contrast);
+}
+
 .avatar-with-badge {
     position: relative;
+}
+
+:where(igx-badge) {
+    --ig-size: var(--ig-size-small);
 }
 
 .avatar-status {
