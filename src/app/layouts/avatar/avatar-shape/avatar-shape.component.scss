@@ -1,48 +1,81 @@
-.avatar-shape-sample {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 90px;
-    min-height: 100vh;
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    place-content: center;
+    column-gap: rem(40px);
+    row-gap: rem(8px);
+    flex-wrap: wrap;
+    max-width: fit-content;
+    margin: 0 auto;
+    height: 100vh;
+    padding: rem(32px);
+
+    igx-avatar {
+        grid-row: 1;
+    }
+
+    span {
+        grid-row: 2;
+        text-align: center;
+        color: var(--ig-gray-600);
+        font-size: var(--ig-detail-1-font-size);
+        font-weight: var(--ig-detail-1-font-weight);
+        font-style: var(--ig-detail-1-font-style);
+        line-height: var(--ig-detail-1-line-height);
+        letter-spacing: var(--ig-detail-1-letter-spacing);
+        text-transform: var(--ig-detail-1-text-transform);
+    }
+
+    igx-avatar:nth-of-type(1) {
+        grid-column: 1;
+        anchor-name: --circle-anchor;
+    }
+
+    igx-avatar:nth-of-type(2) {
+        grid-column: 2;
+        anchor-name: --square-anchor;
+    }
+
+    igx-avatar:nth-of-type(3) {
+        grid-column: 3;
+        anchor-name: --rounded-anchor;
+    }
+
+    span:nth-of-type(1) {
+        grid-column: 1;
+    }
+
+    span:nth-of-type(2) {
+        grid-column: 2;
+    }
+
+    span:nth-of-type(3) {
+        grid-column: 3;
+    }
+
+    igx-badge {
+        --ig-size: var(--ig-size-small);
+
+        position: absolute;
+        inset-block-start: anchor(85.5%);
+        inset-inline-start: anchor(85.5%);
+        translate: -50% -50%;
+    }
+
+    igx-badge:nth-of-type(1) {
+        position-anchor: --circle-anchor;
+    }
+
+    igx-badge:nth-of-type(2) {
+        position-anchor: --square-anchor;
+    }
+
+    igx-badge:nth-of-type(3) {
+        position-anchor: --rounded-anchor;
+    }
 }
 
-.avatar-variant {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.avatar-label {
-    color: var(--ig-gray-600);
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-}
-
-.avatar-with-badge {
-    position: relative;
-    display: inline-flex;
-}
-
-.avatar-status {
-    --size: 18px;
-    position: absolute;
-    right: -4px;
-    bottom: -4px;
-    font-size: 0.75rem;
-    line-height: 1;
-}
-
-.avatar-dot-badge {
-    --size: 12px;
-    right: 3px;
-    bottom: 3px;
-}
-
-.avatar-count-badge {
-    --ig-badge-text-color: #ffffff;
-}
-
-.avatar-check-badge {
-    --ig-badge-icon-color: #ffffff;
-}

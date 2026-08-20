@@ -1,35 +1,43 @@
-.avatar-styling-sample {
+:host {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
+
+    igx-badge {
+        --ig-size: var(--ig-size-small);
+    }
+
+    igx-avatar {
+        --background: var(--ig-gray-300);
+        --color: var(--ig-gray-300-contrast);
+    }
+
+    igx-avatar.avatar-muted {
+        --background: var(--ig-gray-800);
+        --color: var(--ig-gray-800-contrast);
+    }
 }
 
 .chat-list {
-    width: 344px;
-    max-width: 100%;
-}
+    --border-width: #{rem(1px)};
+    --border-color: var(--ig-gray-300);
+    --header-text-color: var(--ig-gray-900);
 
-.size-small {
-    --ig-size: var(--ig-size-small);
+    max-width: rem(328px);
 }
 
 .avatar-with-badge {
     position: relative;
-    display: inline-flex;
 }
 
 .avatar-status {
-    --ig-badge-icon-color: #ffffff;
     position: absolute;
-    right: -4px;
-    bottom: -4px;
+    inset-inline-end: rem(-4px);
+    inset-block-end: rem(-4px);
 }
 
 .avatar-muted-badge {
-    --ig-badge-background-color: var(--ig-gray-300);
-    --ig-badge-icon-color: var(--ig-gray-700);
-}
-
-.avatar-muted {
-    --ig-avatar-background: #D2DBE8;
+    --background-color: var(--ig-gray-300);
+    --icon-color: var(--ig-gray-300-contrast);
 }
