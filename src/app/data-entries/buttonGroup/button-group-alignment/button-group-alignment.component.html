@@ -1,0 +1,12 @@
+<article class="button-group-alignment">
+    @for (alignment of alignments; track alignment.value) {
+        <div class="button-group-alignment-item">
+            <span>{{ alignment.label }}</span>
+            <igx-buttongroup [alignment]="alignment.value">
+                @for (city of cities; track city) {
+                    <button igxButton [igxRipple]="rippleColor">{{ city }}</button>
+                }
+            </igx-buttongroup>
+        </div>
+    }
+</article>

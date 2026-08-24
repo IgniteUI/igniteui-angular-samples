@@ -1,0 +1,26 @@
+<article class="button-group-states">
+    <div class="button-group-states-row">
+        <span class="row-label"></span>
+        <span class="column-label">Enabled</span>
+        <span class="column-label">Disabled</span>
+    </div>
+
+    @for (row of rows; track row.label) {
+        <div class="button-group-states-row">
+            <span class="row-label">{{ row.label }}</span>
+
+            <igx-buttongroup selectionMode="multi">
+                <button
+                    igxButton
+                    [igxRipple]="rippleColor"
+                    [selected]="row.selected"
+                    class="state-idle"
+                    [class.state-selected]="row.selected">Device</button>
+            </igx-buttongroup>
+
+            <igx-buttongroup selectionMode="multi" [disabled]="true">
+                <button igxButton [selected]="row.selected">Cloud</button>
+            </igx-buttongroup>
+        </div>
+    }
+</article>

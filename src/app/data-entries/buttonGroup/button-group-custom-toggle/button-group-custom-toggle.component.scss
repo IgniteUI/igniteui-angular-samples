@@ -1,0 +1,11 @@
+.button-group-custom-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 7rem;
+}
+
+igx-buttongroup {
+    display: inline-block;
+    width: 300px;
+}
