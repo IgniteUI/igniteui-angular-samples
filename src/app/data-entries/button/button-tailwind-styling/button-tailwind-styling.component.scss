@@ -1,1 +1,6 @@
 @use "layout.scss";
+
+.confirm-button { --hover-background: #3730a3; --hover-foreground: #fff; }
+.send-button { --hover-background: #db2777; --hover-border-color: #be185d; --hover-foreground: #fff; --icon-color-hover: #fff; }
+.cancel-button { --hover-background: #fef3c7; --hover-foreground: #78350f; }
+.add-button { --hover-background: #0f766e; --hover-foreground: #fff; --icon-color-hover: #fff; }

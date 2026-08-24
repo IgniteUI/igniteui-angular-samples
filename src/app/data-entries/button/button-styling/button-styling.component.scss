@@ -7,6 +7,7 @@
     --foreground: #fff;
     --hover-background: #1275c4;
     --hover-foreground: #fff;
+    &:hover { --hover-background: #0b4f8a; }
 }
 
 .send-button {
@@ -17,11 +18,13 @@
     --hover-foreground: #8a2be2;
     --icon-color: #8a2be2;
     --icon-color-hover: #8a2be2;
+    &:hover { --hover-background: #8a2be2; --hover-border-color: #6a1bb1; --hover-foreground: #fff; --icon-color-hover: #fff; }
 }
 
 .cancel-button {
     --foreground: #1275c4;
     --hover-foreground: #1275c4;
+    &:hover { --hover-background: #dbeeff; --hover-foreground: #063b68; }
 }
 
 .add-button {
@@ -32,4 +35,5 @@
     --icon-color: #000;
     --icon-color-hover: #000;
     --border-radius: 999px;
+    &:hover { --hover-background: #257a2b; --hover-foreground: #fff; --icon-color-hover: #fff; }
 }

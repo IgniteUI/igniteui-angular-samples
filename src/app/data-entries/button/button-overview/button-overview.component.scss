@@ -17,6 +17,13 @@
     width: 100%;
 }
 
+:host ::ng-deep .fields .igx-input-group__bundle {
+    background-color: #fff;
+}
+
+.fields igx-input-group {
+    --ig-size: var(--ig-size-medium);
+}
 .actions {
     display: flex;
     justify-content: flex-end;
