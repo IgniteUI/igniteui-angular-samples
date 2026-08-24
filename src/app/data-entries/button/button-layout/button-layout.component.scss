@@ -1,0 +1,70 @@
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    min-height: 95%;
+}
+
+.variant-selector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.variant-selector select {
+    min-width: 140px;
+    padding: 0.5rem;
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 13px;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.variant-selector select option {
+    background-color: #fff;
+    color: #000;
+}
+
+.button-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.button-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+}
+
+.button-sublabel,
+.button-label {
+    color: #556c86;
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+}
+
+.button-row button {
+    --ig-font-family: 'Titillium Web', sans-serif;
+    --ig-button-text-transform: uppercase;
+
+    letter-spacing: 1px;
+}

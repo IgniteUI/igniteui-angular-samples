@@ -1,0 +1,29 @@
+<div class="button-container">
+    <label class="variant-selector">
+        <span class="button-label">Button variant</span>
+        <select [value]="variant" (change)="onVariantChange($event)">
+            @for (option of variants; track option) {
+                <option [value]="option">{{ option | titlecase }}</option>
+            }
+        </select>
+    </label>
+    <div class="button-group">
+        <span class="button-label">{{ variant | titlecase }}</span>
+        <div class="button-row">
+            <div class="button-item">
+                <span class="button-sublabel">Left</span>
+                <button [igxButton]="variant">
+                    <igx-icon family="material">add</igx-icon>
+                    Add
+                </button>
+            </div>
+            <div class="button-item">
+                <span class="button-sublabel">Right</span>
+                <button [igxButton]="variant">
+                    Add
+                    <igx-icon family="material">add</igx-icon>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

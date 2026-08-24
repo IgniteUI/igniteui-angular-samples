@@ -1,0 +1,12 @@
+<div class="button-container">
+    @for (state of states; track state.value) {
+        <div class="button-item">
+            <span class="button-label">{{ state.label }}</span>
+            <button igxButton="contained" [class]="state.value">
+                <igx-icon family="material">notifications</igx-icon>
+                Contained
+                <igx-icon family="material">notifications</igx-icon>
+            </button>
+        </div>
+    }
+</div>

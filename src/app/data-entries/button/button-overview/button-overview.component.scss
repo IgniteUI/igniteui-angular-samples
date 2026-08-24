@@ -1,0 +1,25 @@
+.form {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 1.5rem;
+}
+
+.form igx-avatar {
+    --ig-size: var(--ig-size-large);
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 260px;
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}

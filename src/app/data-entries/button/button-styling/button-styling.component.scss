@@ -1,0 +1,35 @@
+@use "layout.scss";
+
+// CSS variables approach
+
+.confirm-button {
+    --background: #1275c4;
+    --foreground: #fff;
+    --hover-background: #1275c4;
+    --hover-foreground: #fff;
+}
+
+.send-button {
+    --background: transparent;
+    --border-color: #8a2be2;
+    --foreground: #8a2be2;
+    --hover-border-color: #8a2be2;
+    --hover-foreground: #8a2be2;
+    --icon-color: #8a2be2;
+    --icon-color-hover: #8a2be2;
+}
+
+.cancel-button {
+    --foreground: #1275c4;
+    --hover-foreground: #1275c4;
+}
+
+.add-button {
+    --background: #4caf50;
+    --foreground: #000;
+    --hover-background: #4caf50;
+    --hover-foreground: #000;
+    --icon-color: #000;
+    --icon-color-hover: #000;
+    --border-radius: 999px;
+}

@@ -8,19 +8,18 @@ import { ButtonGroupSampleComponent } from './buttonGroup/button-group-sample-4/
 import { ButtonGroupSample5Component } from './buttonGroup/button-group-sample-5/button-group-sample-5.component';
 import { ButtonGroupStyleComponent } from './buttonGroup/button-group-style/button-group-style.component';
 import { ButtonGroupTailwindStyleComponent } from './buttonGroup/button-group-tailwind-style/button-group-tailwind-style.component';
-import { ButtonsDisabledComponent } from './buttons/buttons-disabled-sample/buttons-disabled-sample';
-import { ButtonsDisplayDensityComponent } from './buttons/buttons-display-density/buttons-display-density.component';
-import { ButtonsRoundnessComponent } from './buttons/buttons-roundness-sample/buttons-roundness-sample';
-import { ButtonsSample1Component } from './buttons/buttons-sample-1/buttons-sample-1.component';
-import { ButtonsSample2Component } from './buttons/buttons-sample-2/buttons-sample-2.component';
-import { ButtonsSample3Component } from './buttons/buttons-sample-3/buttons-sample-3.component';
-import { ButtonsSample4Component } from './buttons/buttons-sample-4/buttons-sample-4.component';
-import { ButtonsSample5Component } from './buttons/buttons-sample-5/buttons-sample-5.component';
-import { ButtonsSample6Component } from './buttons/buttons-sample-6/buttons-sample-6.component';
-import { ButtonsSample7Component } from './buttons/buttons-sample-7/buttons-sample-7.component';
-import { ButtonsSample8Component } from './buttons/buttons-sample-8/buttons-sample-8.component';
-import { ButtonsStyleComponent } from './buttons/buttons-style/buttons-style.component';
-import { ButtonsTailwindStyleComponent } from './buttons/buttons-tailwind-style/buttons-tailwind-style.component';
+import { ButtonStatesComponent } from './button/button-states/button-states.component';
+import { ButtonSizeComponent } from './button/button-size/button-size.component';
+import { ButtonDownloadComponent } from './button/button-download/button-download.component';
+import { ButtonOverviewComponent } from './button/button-overview/button-overview.component';
+import { ButtonFlatComponent } from './button/button-flat/button-flat.component';
+import { ButtonInteractionStatesComponent } from './button/button-interaction-states/button-interaction-states.component';
+import { ButtonLayoutComponent } from './button/button-layout/button-layout.component';
+import { ButtonContainedComponent } from './button/button-contained/button-contained.component';
+import { ButtonFabComponent } from './button/button-fab/button-fab.component';
+import { ButtonOutlinedComponent } from './button/button-outlined/button-outlined.component';
+import { ButtonStylingComponent } from './button/button-styling/button-styling.component';
+import { ButtonTailwindStylingComponent } from './button/button-tailwind-styling/button-tailwind-styling.component';
 import { CheckboxSample1Component } from './checkbox/checkbox-sample-1/checkbox-sample-1.component';
 import { CheckboxSample2Component } from './checkbox/checkbox-sample-2/checkbox-sample-2.component';
 import { CheckboxSample3Component } from './checkbox/checkbox-sample-3/checkbox-sample-3.component';
@@ -94,9 +93,9 @@ export const DataEntriesRoutes: Routes = [
         path: 'movie'
     },
     {
-        component: ButtonsDisplayDensityComponent,
-        data: dataEntriesRoutesData['buttons-display-density'],
-        path: 'buttons-display-density'
+        component: ButtonSizeComponent,
+        data: dataEntriesRoutesData['button-size'],
+        path: 'button-size'
     },
     {
         component: ButtonGroupSample1Component,
@@ -134,64 +133,59 @@ export const DataEntriesRoutes: Routes = [
         path: 'button-group-tailwind-style'
     },
     {
-        component: ButtonsRoundnessComponent,
-        data: dataEntriesRoutesData['buttons-roundness-sample'],
-        path: 'buttons-roundness-sample'
+        component: ButtonOverviewComponent,
+        data: dataEntriesRoutesData['button-overview'],
+        path: 'button-overview'
     },
     {
-        component: ButtonsSample1Component,
-        data: dataEntriesRoutesData['buttons-sample-1'],
-        path: 'buttons-sample-1'
+        component: ButtonFlatComponent,
+        data: dataEntriesRoutesData['button-flat'],
+        path: 'button-flat'
     },
     {
-        component: ButtonsSample2Component,
-        data: dataEntriesRoutesData['buttons-sample-2'],
-        path: 'buttons-sample-2'
+        component: ButtonInteractionStatesComponent,
+        data: dataEntriesRoutesData['button-interaction-states'],
+        path: 'button-interaction-states'
     },
     {
-        component: ButtonsSample3Component,
-        data: dataEntriesRoutesData['buttons-sample-3'],
-        path: 'buttons-sample-3'
+        component: ButtonLayoutComponent,
+        data: dataEntriesRoutesData['button-layout'],
+        path: 'button-layout'
     },
     {
-        component: ButtonsSample4Component,
-        data: dataEntriesRoutesData['buttons-sample-4'],
-        path: 'buttons-sample-4'
+        component: ButtonContainedComponent,
+        data: dataEntriesRoutesData['button-contained'],
+        path: 'button-contained'
     },
     {
-        component: ButtonsSample5Component,
-        data: dataEntriesRoutesData['buttons-sample-5'],
-        path: 'buttons-sample-5'
+        component: ButtonFabComponent,
+        data: dataEntriesRoutesData['button-fab'],
+        path: 'button-fab'
     },
     {
-        component: ButtonsSample6Component,
-        data: dataEntriesRoutesData['buttons-sample-6'],
-        path: 'buttons-sample-6'
+        component: ButtonOutlinedComponent,
+        data: dataEntriesRoutesData['button-outlined'],
+        path: 'button-outlined'
     },
     {
-        component: ButtonsSample7Component,
-        data: dataEntriesRoutesData['buttons-sample-7'],
-        path: 'buttons-sample-7'
+        component: ButtonStatesComponent,
+        data: dataEntriesRoutesData['button-states'],
+        path: 'button-states'
     },
     {
-        component: ButtonsSample8Component,
-        data: dataEntriesRoutesData['buttons-sample-8'],
-        path: 'buttons-sample-8'
+        component: ButtonDownloadComponent,
+        data: dataEntriesRoutesData['button-download'],
+        path: 'button-download'
     },
     {
-        component: ButtonsDisabledComponent,
-        data: dataEntriesRoutesData['buttons-disabled-sample'],
-        path: 'buttons-disabled-sample'
+        component: ButtonStylingComponent,
+        data: dataEntriesRoutesData['button-styling'],
+        path: 'button-styling'
     },
     {
-        component: ButtonsStyleComponent,
-        data: dataEntriesRoutesData['buttons-style'],
-        path: 'buttons-style'
-    },
-    {
-        component: ButtonsTailwindStyleComponent,
-        data: dataEntriesRoutesData['buttons-tailwind-style'],
-        path: 'buttons-tailwind-style'
+        component: ButtonTailwindStylingComponent,
+        data: dataEntriesRoutesData['button-tailwind-styling'],
+        path: 'button-tailwind-styling'
     },
     {
         component: CheckboxSample1Component,

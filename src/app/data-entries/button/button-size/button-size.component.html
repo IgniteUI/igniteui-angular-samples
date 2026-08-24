@@ -1,0 +1,18 @@
+<div class="size-grid">
+    @for (size of sizes; track size) {
+        <div class="size-row" [class]="'size-' + size">
+            @for (variant of variants; track variant) {
+                <button [igxButton]="variant">
+                    <igx-icon family="material">notifications</igx-icon>
+                    {{ variant }}
+                    <igx-icon family="material">notifications</igx-icon>
+                </button>
+            }
+            <button igxButton="fab">
+                <igx-icon family="material">add</igx-icon>
+                Floating Action
+                <igx-icon family="material">add</igx-icon>
+            </button>
+        </div>
+    }
+</div>
