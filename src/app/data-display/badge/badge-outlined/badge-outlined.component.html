@@ -1,28 +1,18 @@
-<div class="badge-outlined">
-  <div class="outlined-example">
-    <div class="icon-circle">
-      <igx-icon>favorite_border</igx-icon>
-    </div>
-    <igx-badge value="23" type="info" outlined></igx-badge>
-  </div>
-  <div class="outlined-example">
-    <igx-avatar initials="AZ" shape="rounded" size="small"></igx-avatar>
-    <igx-badge icon="close" type="error" outlined></igx-badge>
-  </div>
-  <div class="steps">
+<igx-avatar class="icon-anchor" icon="favorite_border" shape="circle" size="small"></igx-avatar>
+<igx-badge value="23" type="info" outlined></igx-badge>
+
+<igx-avatar class="initials-anchor" initials="AZ" shape="rounded" size="small"></igx-avatar>
+<igx-badge icon="close" type="error" outlined></igx-badge>
+
+<igx-stepper orientation="horizontal" stepType="full" titlePosition="bottom">
     @for (step of steps; track step.label) {
-      @if (!$first) {
-        <span class="step-connector" [class.pending]="step.pending"></span>
-      }
-      <div class="step">
-        <div class="step-marker">
-          <span class="step-circle" [class.pending]="step.pending">{{ step.index }}</span>
-          @if (step.current) {
-            <igx-badge dot type="info" outlined></igx-badge>
-          }
-        </div>
-        <span class="step-label">{{ step.label }}</span>
-      </div>
+        <igx-step [active]="step.active" [completed]="step.completed">
+            <!-- The flagged step's indicator carries the anchor name, so the
+                 badge below stays on it no matter which step is selected. -->
+            <span igxStepIndicator [class.flagged-anchor]="step.flagged">{{ step.index }}</span>
+            <span igxStepTitle>{{ step.label }}</span>
+        </igx-step>
     }
-  </div>
-</div>
+</igx-stepper>
+<igx-badge class="flagged-badge" dot type="info" outlined></igx-badge>
+
