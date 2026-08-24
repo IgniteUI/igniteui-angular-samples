@@ -35,17 +35,6 @@ $anchors: icon, avatar;
     }
 }
 
-.icon-circle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: rem(36px);
-    height: rem(36px);
-    border-radius: 50%;
-    background: var(--ig-gray-200);
-    color: var(--ig-gray-800);
-}
-
 .notifications-card,
 .nav-card {
     background: var(--ig-surface-500);
