@@ -1,11 +1,11 @@
-.button-group-custom-toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 7rem;
+@use 'igniteui-theming' as *;
+
+:host {
+    display: grid;
+    place-items: center;
+    height: 100vh;
 }
 
 igx-buttongroup {
-    display: inline-block;
-    width: 300px;
+    max-width: rem(300px);
 }

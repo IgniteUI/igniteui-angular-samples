@@ -1,35 +1,31 @@
-.button-group-alignment {
+@use 'igniteui-theming' as *;
+
+:host {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.sample-layout {
     display: flex;
-    align-items: flex-start;
+    gap: rem(32px);
+    align-items: start;
     justify-content: center;
-    gap: 60px;
-    padding: 24px;
+    flex-wrap: wrap;
 }
 
-.button-group-alignment-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 16px;
+.sample-inner-layout {
+    display: grid;
+    gap: rem(8px);
+    align-items: start;
 }
 
-.button-group-alignment-item igx-buttongroup {
-    width: 240px;
+igx-buttongroup {
+    min-width: rem(280px);
 }
 
-.button-group-alignment-item:first-child igx-buttongroup {
-    width: 320px;
-}
+span {
+    @include type-style('body-2');
 
-.button-group-alignment-item span {
-    width: 100%;
-    text-align: center;
-    color: #556c86;
-    font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 20px;
-    letter-spacing: 0.3px;
+    color: var(--ig-gray-700);
 }
