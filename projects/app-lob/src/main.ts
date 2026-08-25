@@ -1,5 +1,5 @@
 import { enableProdMode } from '@angular/core';
-import { defineCustomElements } from 'igniteui-dockmanager/loader';
+import { defineComponents, IgcDockManagerComponent } from 'igniteui-dockmanager';
 
 
 import { environment } from './environments/environment';
@@ -16,4 +16,4 @@ initSampleSizeReporter();
 
 bootstrapApplication(AppComponent, AppConfig).catch(err => console.error(err));
 
-defineCustomElements(window);
+defineComponents(IgcDockManagerComponent);

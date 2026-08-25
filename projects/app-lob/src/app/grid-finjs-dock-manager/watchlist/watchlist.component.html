@@ -1,0 +1,109 @@
+<div class="wl-header">
+  <span class="wl-title">Market Watchlist</span>
+  <span class="wl-count">{{ filteredStocks().length }}</span>
+</div>
+
+<div class="watchlist-grid-wrap" role="region" aria-label="Market watchlist grid">
+  <igx-grid
+    [data]="filteredStocks()"
+    [autoGenerate]="false"
+    [allowFiltering]="false"
+    [hideRowSelectors]="true"
+    [rowHeight]="38"
+    width="100%"
+    height="100%"
+    class="watchlist-grid"
+  >
+    <igx-column field="symbol" header="Symbol" [sortable]="true" [pinned]="true" width="90px">
+      <ng-template igxCell let-cell="cell">
+        <span class="symbol-cell">{{ cell.value }}</span>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="lastPrice" header="Last Price" dataType="number" [sortable]="true" width="110px">
+      <ng-template igxCell let-cell="cell">
+        <span class="mono">{{ formatPrice(cell.value) }}</span>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="changePct" header="Change (%)" dataType="number" [sortable]="true" width="110px">
+      <ng-template igxCell let-cell="cell">
+        <span [class.pos]="cell.value >= 0" [class.neg]="cell.value < 0">{{ formatSignedPct(cell.value) }}</span>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="change" header="Change" dataType="number" [sortable]="true" width="92px">
+      <ng-template igxCell let-cell="cell">
+        <span [class.pos]="cell.value >= 0" [class.neg]="cell.value < 0">{{ formatSigned(cell.value) }}</span>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="currency" header="Currency" [sortable]="true" width="90px"></igx-column>
+    <igx-column field="marketTime" header="Market Time" [sortable]="true" width="130px"></igx-column>
+    <igx-column field="volume" header="Volume" [sortable]="true" width="110px"></igx-column>
+
+    <igx-column field="sharesAction" header="Shares" [sortable]="false" width="80px">
+      <ng-template igxCell let-cell="cell">
+        <button type="button" class="shares-link">{{ cell.value }}</button>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="avgVol3M" header="Avg Vol (3M)" [sortable]="true" width="120px"></igx-column>
+
+    <igx-column field="dayHigh" header="Day Range" [sortable]="true" width="260px">
+      <ng-template igxCell let-cell="cell">
+        <div class="range-cell">
+          <span class="range-value">{{ formatPrice(cell.row.data.dayLow) }}</span>
+          <div class="range-track" aria-hidden="true">
+            <div class="range-marker" [style.left.%]="rangePosition(cell.row.data.lastPrice, cell.row.data.dayLow, cell.row.data.dayHigh)"></div>
+          </div>
+          <span class="range-value">{{ formatPrice(cell.row.data.dayHigh) }}</span>
+        </div>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="week52High" header="52-Wk Range" [sortable]="true" width="260px">
+      <ng-template igxCell let-cell="cell">
+        <div class="range-cell">
+          <span class="range-value">{{ formatPrice(cell.row.data.week52Low) }}</span>
+          <div class="range-track" aria-hidden="true">
+            <div class="range-marker" [style.left.%]="rangePosition(cell.row.data.lastPrice, cell.row.data.week52Low, cell.row.data.week52High)"></div>
+          </div>
+          <span class="range-value">{{ formatPrice(cell.row.data.week52High) }}</span>
+        </div>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="marketCap" header="Market Cap" [sortable]="true" width="120px"></igx-column>
+  </igx-grid>
+</div>
+
+<section class="movers-panel" aria-label="Market movers">
+  <div class="movers-tabs" role="tablist" aria-label="Mover categories">
+    @for (tab of moverTabs; track tab) {
+    <button
+      type="button"
+      class="movers-tab"
+      [class.active-mover]="activeMoverTab() === tab"
+      role="tab"
+      [attr.aria-selected]="activeMoverTab() === tab"
+      (click)="setActiveMoverTab(tab)"
+    >
+      {{ tab }}
+    </button>
+    }
+  </div>
+
+  <div class="movers-rows" role="list">
+    @if (movers().length === 0) {
+    <div class="movers-empty" role="listitem">No matches for current search.</div>
+    }
+    @for (mover of movers(); track mover.symbol) {
+    <div class="mover-row" role="listitem">
+      <span class="mover-symbol">{{ mover.symbol }}</span>
+      <span class="mover-last">{{ formatPrice(mover.lastPrice) }}</span>
+      <span class="mover-change" [class.pos]="mover.changePct >= 0" [class.neg]="mover.changePct < 0">{{ formatSignedPct(mover.changePct) }}</span>
+    </div>
+    }
+  </div>
+</section>

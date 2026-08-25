@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, ViewContainerRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren, TemplateRef, inject } from '@angular/core';
 import { IgxChartIntegrationDirective, IgxConditionalFormattingDirective, IgxContextMenuDirective, OPTIONS_TYPE, CHART_TYPE, IDeterminedChartTypesArgs } from 'igniteui-angular-extras';
-import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
+import { IgcDockManagerComponent, IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { FinancialData } from '../../data/financialData';
 import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
@@ -68,7 +68,7 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     public grid: IgxGridComponent;
 
     @ViewChild('dock', { read: ElementRef })
-    public dockManager: ElementRef<HTMLIgcDockmanagerElement>;
+    public dockManager: ElementRef<IgcDockManagerComponent>;
 
     @ViewChild(IgxChartIntegrationDirective, { read: IgxChartIntegrationDirective, static: true })
     public chartIntegration: IgxChartIntegrationDirective;

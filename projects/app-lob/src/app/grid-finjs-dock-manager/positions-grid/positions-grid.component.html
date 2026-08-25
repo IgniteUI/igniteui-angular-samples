@@ -1,0 +1,47 @@
+<div class="grid-host">
+  <igx-grid
+    [data]="positions"
+    [autoGenerate]="false"
+    [primaryKey]="'symbol'"
+    [hideRowSelectors]="true"
+    [rowHeight]="38"
+    height="100%"
+    width="100%"
+    class="positions-grid"
+  >
+    <igx-column field="symbol" header="SYMBOL" [sortable]="true" width="90px">
+      <ng-template igxCell let-cell="cell">
+        <span class="symbol-cell">{{ cell.value }}</span>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="qty" header="QTY" dataType="number" [sortable]="true" width="60px">
+    </igx-column>
+
+    <igx-column field="avgCost" header="AVG COST" dataType="number" [sortable]="true">
+      <ng-template igxCell let-cell="cell">
+        <span class="mono">${{ cell.value.toFixed(2) }}</span>
+      </ng-template>
+    </igx-column>
+
+    <igx-column field="pl" header="P&amp;L" [sortable]="true">
+      <ng-template igxCell let-cell="cell">
+        <div
+          class="pl-cell"
+          [class.pos-pnl]="cell.row.data.positive"
+          [class.neg-pnl]="!cell.row.data.positive"
+        >
+          <span class="pl-amount">{{ cell.row.data.plFormatted }}</span>
+          <span class="pl-pct">{{ cell.row.data.plPct }}</span>
+        </div>
+      </ng-template>
+    </igx-column>
+  </igx-grid>
+</div>
+
+<div class="total-bar">
+  <span class="total-label">Total P&amp;L</span>
+  <span class="total-value" [class.pos-pnl]="totalPositive" [class.neg-pnl]="!totalPositive">
+    {{ totalPL }}
+  </span>
+</div>

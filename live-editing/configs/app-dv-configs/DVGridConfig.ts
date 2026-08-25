@@ -37,15 +37,14 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         GridFinJSComponent: '../../../projects/app-lob/src/app/grid-finjs/grid-finjs.component',
         SignalRService: '../../../projects/app-lob/src/app/services/signal-r.service',
         FloatingPanesService: '../../../projects/app-lob/src/app/services/floating-panes.service',
-        DockSlotComponent: '../../../projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component',
-        GridHostDirective: '../../../projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component',
+        DockSlotComponent: '../../../projects/app-lob/src/app/grid-dynamic-chart-data/data-analysis-dock-manager/dock-slot/dock-slot.component',
         FinancialDataService: '../../../projects/app-lob/src/app/services/financial.service'
     };
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        const dockManagerImport = 'import { defineCustomElements } from \'igniteui-dockmanager/loader\';';
-        const defineCustomElements = 'defineCustomElements();';
+        const dockManagerImport = 'import { defineComponents, IgcDockManagerComponent } from \'igniteui-dockmanager\';';
+        const defineDockManagerComponents = 'defineComponents(IgcDockManagerComponent);';
 
         configs.push(new Config({
             component: 'GridComponent',
@@ -88,11 +87,11 @@ export class DVGridConfigGenerator implements IConfigGenerator {
                 '/projects/app-lob/src/app/services/signal-r.service.ts',
                 '/projects/app-lob/src/app/data/financialData.ts',
                 '/projects/app-lob/src/app/services/floating-panes.service.ts',
-                '/projects/app-lob/src/app/grid-finjs-dock-manager/dock-slot.component.ts',
+                '/projects/app-lob/src/app/grid-dynamic-chart-data/data-analysis-dock-manager/dock-slot/dock-slot.component.ts',
                 '/projects/app-lob/src/_app-layout.scss', '/projects/app-lob/src/_variables.scss'
             ],
             appConfig: { ...BaseAppConfig,
-                additionalAdjustments: [dockManagerImport, defineCustomElements]
+                additionalAdjustments: [dockManagerImport, defineDockManagerComponents]
             }
         }));
 
