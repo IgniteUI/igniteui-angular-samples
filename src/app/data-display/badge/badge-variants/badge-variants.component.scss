@@ -1,47 +1,51 @@
-igx-badge {
-    --ig-size: var(--ig-size-small);
-    position: absolute;
-    inset-block-end: -4px;
-    inset-inline-end: -4px;
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+$variants: primary, info, success, warning, error;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(40px);
+    row-gap: rem(12px);
+    min-height: 8.5rem;
+    padding: rem(32px);
 }
 
 igx-avatar {
-    --ig-avatar-background: var(--ig-gray-700);
-    --ig-avatar-color: var(--ig-gray-50);
+    grid-row: 1;
 }
 
-:host ::ng-deep .variant-item:first-child igx-avatar igx-icon,
-:host ::ng-deep .variant-item:nth-child(4) igx-avatar igx-icon {
-    color: var(--ig-gray-50);
+span {
+    grid-row: 2;
+    text-align: center;
+    color: var(--ig-gray-700);
+
+    @include type-style("body-2") {
+        margin: 0;
+    }
 }
 
-.badge-variants {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    min-height: 8.5rem;
+igx-badge {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    inset-block-start: anchor(85.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
 }
 
-.variant-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    min-width: 56px;
-}
+@each $variant in $variants {
+    $i: list.index($variants, $variant);
 
-.variant-item span {
-    color: #556c86;
-    font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 20px;
-    letter-spacing: 0.3px;
-}
+    igx-avatar:nth-of-type(#{$i}) {
+        anchor-name: --#{$variant};
+    }
 
-.avatar-wrapper {
-    position: relative;
-    display: flex;
+    igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$variant};
+    }
 }

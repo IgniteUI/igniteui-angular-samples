@@ -1,134 +1,115 @@
-igx-badge {
-    --ig-size: var(--ig-size-small);
-}
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
 
-igx-avatar {
-    --size: 40px;
-}
+:host {
+    --sample-accent: #0057a9;
 
-.icon-example igx-badge,
-.avatar-example igx-badge,
-.nav-icon igx-badge {
-    position: absolute;
-}
-
-.icon-example igx-badge {
-    inset-block-start: 0;
-    inset-inline-end: 2px;
-}
-
-.avatar-example igx-badge {
-	inset-block-start: -0.25rem;
-	inset-inline-end: -2px;
-}
-
-.nav-icon igx-badge {
-    inset-block-start: -2px;
-    inset-inline-end: -6px;
-}
-
-.badge-dot {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(40px);
     min-height: 8.5rem;
 }
 
-.dot-example {
-    position: relative;
+igx-badge {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    inset-block-start: anchor(14.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
 }
 
-.icon-example,
-.avatar-example,
-.icon-circle {
-    display: flex;
-    align-items: center;
-    width: 36px;
-    height: 36px;
-}
+$anchors: icon, avatar;
 
-.icon-circle {
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--ig-gray-200);
-    color: var(--ig-gray-800);
+@each $anchor in $anchors {
+    $i: list.index($anchors, $anchor);
+
+    .#{$anchor}-anchor {
+        anchor-name: --#{$anchor};
+    }
+
+    :host > igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$anchor};
+    }
 }
 
 .notifications-card,
 .nav-card {
     background: var(--ig-surface-500);
-    border-radius: 4px;
-    box-shadow: 0 1px 3px hsl(from var(--ig-gray-900) h s l / 0.12);
+    border-radius: rem(4px);
+    box-shadow: 0 rem(1px) rem(3px) hsl(from var(--ig-gray-900) h s l / 0.12);
 }
 
 .notifications-card {
-    min-width: 272px;
-    padding: 8px 0;
+    min-width: rem(270px);
+    padding-block: rem(8px);
 }
 
 .notification-row {
+    @include type-style("body-2") {
+        margin: 0;
+    }
+
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    font-size: 14px;
+    gap: rem(8px);
+    padding: rem(8px) rem(12px);
     color: var(--ig-gray-900);
 }
 
 .row-indicator {
     display: inline-flex;
     justify-content: center;
-    width: 12px;
+    width: rem(12px);
 }
 
 .row-title {
     flex: 1;
 }
 
-.row-time {
-    font-size: 13px;
-    color: var(--ig-gray-900);
-}
-
-.row-time.unread {
-    color: #0057A9;
+.unread {
+    color: var(--sample-accent);
     font-weight: 600;
 }
 
 .row-chevron {
-    --ig-size: 1rem;
     color: var(--ig-gray-600);
-    font-size: 18px;
+    font-size: rem(18px);
 }
 
 .nav-card {
     display: flex;
     align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
+    gap: rem(8px);
+    padding: rem(8px) rem(12px);
 }
 
 .nav-item {
+    @include type-style("caption") {
+        margin: 0;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 4px;
-    min-width: 56px;
-    color: #556c86;
-    font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 20px;
-    letter-spacing: 0.3px;
-}
+    gap: rem(4px);
+    min-width: rem(56px);
+    color: var(--ig-gray-700);
 
-.nav-item.active {
-    color: #0057A9;
+    &.active {
+        color: var(--sample-accent);
+    }
 }
 
 .nav-icon {
     position: relative;
     display: inline-flex;
+
+    igx-badge {
+        position: absolute;
+        inset-block: rem(-2px) auto;
+        inset-inline: auto rem(-6px);
+    }
 }

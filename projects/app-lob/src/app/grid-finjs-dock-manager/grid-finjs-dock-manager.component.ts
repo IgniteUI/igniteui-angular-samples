@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, GridColumnDataType, IgxOverlayOutletDirective, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, GridColumnDataType, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
@@ -23,7 +23,7 @@ import { AsyncPipe, CurrencyPipe } from '@angular/common';
     selector: 'app-finjs-dock-manager',
     templateUrl: './grid-finjs-dock-manager.component.html',
     styleUrls: ['./grid-finjs-dock-manager.component.scss'],
-    imports: [IgxSwitchComponent, FormsModule, IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxButtonDirective, IgxOverlayOutletDirective, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxPaginatorComponent, GridHostDirective, AsyncPipe, CurrencyPipe],
+    imports: [IgxSwitchComponent, FormsModule, IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxButtonDirective, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxPaginatorComponent, GridHostDirective, AsyncPipe, CurrencyPipe],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterViewInit, DoCheck {
@@ -41,7 +41,6 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
     public priceTemplate: TemplateRef<any>;
     @ViewChild(IgxSelectComponent) public select: IgxSelectComponent;
     @ViewChild('freq', { read: IgxSelectComponent }) public selectFrequency: IgxSelectComponent;
-    @ViewChild(IgxOverlayOutletDirective) outlet: IgxOverlayOutletDirective;
 
     public isDarkTheme = true;
 
@@ -204,9 +203,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
             this.paneService.initialPanePosition = { x, y };
             this.grid2.selectColumns(['price', 'change', 'changeP']);
             this.customOverlaySettings.target = this.select.inputGroup.element.nativeElement;
-            this.customOverlaySettings.outlet = this.outlet;
             this.freqOverlaySettings.target = this.selectFrequency.inputGroup.element.nativeElement;
-            this.freqOverlaySettings.outlet = this.outlet;
             this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
                 fieldName: 'category',
