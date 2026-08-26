@@ -133,7 +133,7 @@ export class GridSaveStateComponent implements OnInit, AfterViewInit {
 
     public resetGridState() {
         const grid: IgxGridComponent = this.grid;
-        const pagingState = {index: 0, recordsPerPage: 15, metadata: { countPages: 3, countRecords: this.localData.length}};
+        const pagingState = { index: 0, recordsPerPage: 15, metadata: { countPages: 3, countRecords: this.localData.length, error: 0 } };
         grid.pagingState = pagingState;
         grid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
         grid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
