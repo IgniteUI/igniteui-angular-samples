@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit, inject } from '@angular/core';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
-import { FilteringExpressionsTree, FilteringLogic, IgxSummaryResult } from 'igniteui-angular/core';
-import { GridFeatures, IGridState, IGridStateOptions, IgxColumnComponent, IgxGridStateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
+import { FilteringExpressionsTree, FilteringLogic, IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
+import { GridFeatures, IGridState, IGridStateOptions, IgxColumnComponent, IgxGridStateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
