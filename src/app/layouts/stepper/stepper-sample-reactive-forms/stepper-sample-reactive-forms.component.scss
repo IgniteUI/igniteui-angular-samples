@@ -45,7 +45,7 @@ $my-card: card-theme(
 	$content-text-color: color($default-palette, 'gray', 900),
 );
 
-@include card($my-card);
+@include tokens($my-card);
 
 .selected-card {
 	border: 2px solid color($default-palette, 'primary', 400);
