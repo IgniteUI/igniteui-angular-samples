@@ -1,0 +1,7 @@
+<article class="button-group-tailwind-styling box-border h-full min-h-28 w-full bg-violet-50 p-6">
+    <igx-buttongroup class="button-group-style w-[420px] overflow-hidden">
+        @for (view of views; track view) {
+            <button igxButton [igxRipple]="rippleColor" [selected]="view === 'Week'">{{ view }}</button>
+        }
+    </igx-buttongroup>
+</article>

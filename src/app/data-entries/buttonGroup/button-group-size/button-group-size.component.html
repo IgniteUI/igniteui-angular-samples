@@ -1,0 +1,16 @@
+<article class="button-group-size">
+    @for (size of sizes; track size) {
+        <div class="button-group-size-item">
+            <span>{{ getLabel(size) }}</span>
+            <igx-buttongroup
+                [class.button-group-small]="size === 'small'"
+                [class.button-group-medium]="size === 'medium'"
+                [class.button-group-large]="size === 'large'"
+                [style.--ig-size]="getSizeStyle(size)">
+                @for (city of cities; track city) {
+                    <button igxButton [igxRipple]="rippleColor">{{ city }}</button>
+                }
+            </igx-buttongroup>
+        </div>
+    }
+</article>

@@ -1,0 +1,35 @@
+.button-group-overview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+igx-buttongroup {
+    display: block;
+    width: 280px;
+    max-width: 100%;
+}
+
+.album {
+    margin-top: 8px;
+    width: 280px;
+    max-width: 100%;
+}
+
+.album-title {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: #1f89d4;
+}
+
+.album-photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px;
+}
+
+.album-photos img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}
