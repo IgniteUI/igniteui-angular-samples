@@ -1,0 +1,41 @@
+.button-group-states {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.button-group-states-row {
+    display: grid;
+    grid-template-columns: 120px 160px 160px;
+    align-items: center;
+    gap: 16px;
+}
+
+.button-group-states .row-label,
+.button-group-states .column-label {
+    color: #556c86;
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    text-align: center;
+}
+
+.button-group-states igx-buttongroup {
+    width: 160px;
+}
+
+.button-group-states button {
+    width: 100%;
+}
+
+.button-group-states button.state-idle.state-selected {
+    background: var(--item-active-background);
+    border-color: var(--item-active-border-color);
+    color: var(--item-active-text-color);
+}

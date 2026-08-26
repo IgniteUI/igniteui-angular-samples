@@ -1,0 +1,28 @@
+<article class="button-group-interaction-states">
+    <div class="button-group-interaction-states-row">
+        <span class="row-label"></span>
+        @for (state of states; track state) {
+            <span class="column-label">{{ getLabel(state) }}</span>
+        }
+    </div>
+
+    @for (row of rows; track row.label) {
+        <div class="button-group-interaction-states-row">
+            <span class="row-label">{{ row.label }}</span>
+            @for (state of states; track state) {
+                <igx-buttongroup>
+                    <button
+                        igxButton
+                        [igxRipple]="rippleColor"
+                        [selected]="row.selected"
+                        [class]="'state-' + state"
+                        [class.state-selected]="row.selected">
+                        <igx-icon>notifications</igx-icon>
+                        Button
+                        <igx-icon>notifications</igx-icon>
+                    </button>
+                </igx-buttongroup>
+            }
+        </div>
+    }
+</article>

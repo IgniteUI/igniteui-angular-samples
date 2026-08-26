@@ -1,0 +1,20 @@
+@use "layout.scss" as *;
+@use "igniteui-angular/theming" as *;
+
+$custom-button-group: button-group-theme(
+    $item-text-color: #4a5a66,
+    $item-background: #cfe8fb,
+    $item-border-color: #4da3e8,
+    $item-hover-text-color: #4a5a66,
+    $item-hover-background: #b3daf8,
+    $item-hover-border-color: #4da3e8,
+    $item-selected-text-color: #2f4d6a,
+    $item-selected-background: #6db3ea,
+    $item-selected-border-color: #4da3e8,
+    $item-selected-hover-text-color: #2f4d6a,
+    $item-selected-hover-background: #6db3ea
+);
+
+:host {
+    @include tokens($custom-button-group);
+}
