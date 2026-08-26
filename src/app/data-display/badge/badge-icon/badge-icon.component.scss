@@ -1,67 +1,44 @@
-igx-avatar {
-    --size: 40px;
-    --ig-avatar-background: var(--ig-gray-700);
-    --ig-avatar-color: var(--ig-gray-50);
-}
+@use "igniteui-theming/sass/typography" as *;
 
-.icon-wrapper {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-}
-
-.icon-wrapper > igx-badge {
-    --ig-size: var(--ig-size-medium);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.avatar-wrapper igx-badge {
-    --ig-size: var(--ig-size-small);
-    position: absolute;
-    inset-block-start: -4px;
-    inset-inline-end: -6px;
-}
-
-.badge-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(40px);
+    row-gap: rem(10px);
     min-height: 8.5rem;
+    padding: rem(32px);
 }
 
-.badge-icon-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    min-width: 56px;
+igx-avatar {
+    grid-row: 1;
+    anchor-name: --avatar;
 }
 
-.badge-icon-item span {
-    color: #556c86;
-    font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 20px;
-    letter-spacing: 0.3px;
-    transform: translateY(4px);
+igx-badge {
+    --ig-size: var(--ig-size-medium);
+
+    grid-row: 1;
 }
 
-.badge-icon-item:last-child span {
-    white-space: nowrap;
+span {
+    @include type-style("body-2") {
+        margin: 0;
+    }
+
+    grid-row: 2;
+    text-align: center;
+    color: var(--ig-gray-700);
 }
 
-.avatar-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 40px;
+igx-badge:last-of-type {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    position-anchor: --avatar;
+    inset-block-start: anchor(14.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
 }

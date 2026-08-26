@@ -1,50 +1,52 @@
-@use "layout.scss";
+@use "sass:list";
+@use "sass:map";
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(60px);
+    min-height: 7rem;
+}
 
 igx-badge {
     --ig-size: var(--ig-size-small);
-}
 
-:host ::ng-deep .badge-teal igx-icon,
-:host ::ng-deep .badge-amber igx-icon,
-:host ::ng-deep .styling-item.pink igx-avatar igx-icon {
-    color: var(--ig-gray-50);
-}
-
-:host ::ng-deep .badge-teal igx-icon {
-    position: relative;
-}
-
-:host ::ng-deep .badge-teal igx-icon::after {
-    content: "";
     position: absolute;
-    inset: 50% auto auto 50%;
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--ig-success-700);
-    transform: translate(-50%, -50%);
+    inset-block-start: anchor(85.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
 }
 
-.styling-item.green igx-avatar {
-    --icon-color: var(--ig-success-700);
-}
-
-.styling-item igx-avatar {
-    --size: 40px;
-}
-
-.styling-item.green igx-avatar {
+.avatar-green {
     --ig-avatar-background: var(--ig-success-200);
-    --ig-avatar-color: var(--ig-gray-50);
+    --ig-avatar-icon-color: var(--ig-success-700);
 }
 
-.styling-item.pink igx-avatar {
-    --ig-avatar-background: #DA64FF;
-    --ig-avatar-color: var(--ig-gray-50);
+.avatar-pink {
+    --ig-avatar-background: #da64ff;
+    --ig-avatar-icon-color: var(--ig-gray-50);
 }
 
-.styling-item igx-badge {
-    position: absolute;
-    inset-block-end: -2px;
-    inset-inline-end: -2px;
+$badges: (
+    teal: var(--ig-success-700),
+    amber: #c97c00,
+    magenta: #9c27b0,
+    lime: var(--ig-success-700),
+);
+
+@each $name, $color in $badges {
+    $i: list.index(map.keys($badges), $name);
+
+    igx-avatar:nth-of-type(#{$i}) {
+        anchor-name: --#{$name};
+    }
+
+    .badge-#{$name} {
+        --ig-badge-background-color: #{$color};
+
+        position-anchor: --#{$name};
+    }
 }

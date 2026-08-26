@@ -1,48 +1,53 @@
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+$types: dot, icon, text;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(60px);
+    row-gap: rem(16px);
+    min-height: 8.5rem;
+    padding: rem(32px);
+}
+
 igx-avatar {
-    --size: 40px;
+    --ig-avatar-size: #{rem(40px)};
+
+    grid-row: 1;
+}
+
+span {
+    grid-row: 2;
+    text-align: center;
+    color: var(--ig-gray-700);
+
+    @include type-style("caption") {
+        margin: 0;
+    }
 }
 
 igx-badge {
     --ig-size: var(--ig-size-small);
+
     position: absolute;
-    inset-block-end: -6px;
-    inset-inline-end: -4px;
+    inset-block-start: anchor(85.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
 }
 
-.badge-type {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    min-height: 8.5rem;
-}
+@each $type in $types {
+    $i: list.index($types, $type);
 
-.badge-type-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 16px;
-    min-width: 56px;
-    min-height: 72px;
-}
+    igx-avatar:nth-of-type(#{$i}) {
+        anchor-name: --#{$type};
+    }
 
-.avatar-wrapper {
-    position: relative;
-    display: flex;
-}
-
-.dot-badge {
-    inset-block-end: 0;
-    inset-inline-end: 0;
-}
-
-.badge-type-item span {
-    color: #556c86;
-    font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 20px;
-    letter-spacing: 0.3px;
+    igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$type};
+    }
 }

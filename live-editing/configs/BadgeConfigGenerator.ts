@@ -55,7 +55,7 @@ export class BadgeConfigGenerator implements IConfigGenerator {
         // badge styling
         configs.push(new Config({
             component: 'BadgeStylingComponent',
-            additionalFiles: ["src/app/data-display/badge/model/member.model.ts", "src/app/data-display/badge/badge-styling/layout.scss"],
+            additionalFiles: ["src/app/data-display/badge/model/member.model.ts"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/badge/"
         }));
