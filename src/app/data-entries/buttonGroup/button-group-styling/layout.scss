@@ -1,0 +1,13 @@
+.button-group-styling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 7rem;
+}
+
+igx-buttongroup {
+    width: 420px;
+    border: 2px solid #4da3e8;
+    border-radius: 4px;
+    overflow: hidden;
+}

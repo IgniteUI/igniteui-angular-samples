@@ -1,67 +1,47 @@
-igx-avatar {
-    --size: 40px;
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(60px);
+    min-height: 7rem;
 }
 
 igx-icon {
     color: var(--ig-gray-700);
-    font-size: 1.5rem;
+    font-size: rem(24px);
+}
+
+igx-chip {
+    --ig-size: var(--ig-size-large);
 }
 
 igx-badge {
     --ig-size: var(--ig-size-small);
+
     position: absolute;
-    inset-block-start: -0.15rem;
-    inset-inline-end: -0.15rem;
+    inset-block-start: anchor(10%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
 }
 
-.avatar-example igx-badge {
-    inset-block-start: auto;
-    inset-block-end: -0.15rem;
-    inset-inline-end: -0.15rem;
+igx-badge:nth-of-type(1) {
+    inset-block-start: anchor(85.5%);
 }
 
-.event-example igx-chip {
-    --ig-size: var(--ig-size-large);
-}
+$anchors: avatar, mail, events, notifications;
 
-.event-example igx-badge {
-    inset-block-start: 0;
-    inset-inline-end: -0.8rem;
-}
+@each $anchor in $anchors {
+    $i: list.index($anchors, $anchor);
 
-.icon-example igx-badge {
-    inset-block-start: 0;
-    inset-inline-end: 0;
-}
+    .#{$anchor}-anchor {
+        anchor-name: --#{$anchor};
+    }
 
-.notification-example igx-badge {
-    inset-block-start: 0.5rem;
-    inset-inline-end: 0.5rem;
-}
-
-.event-example {
-    min-width: auto;
-}
-
-.badge-overview {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 60px;
-    min-height: 7rem;
-}
-
-.badge-example {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 2.5rem;
-    min-height: 2.5rem;
-}
-
-.icon-example,
-.notification-example {
-    width: 2.5rem;
-    height: 2.5rem;
+    igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$anchor};
+    }
 }

@@ -1,35 +1,40 @@
-.avatar-styling-sample {
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100vh;
 }
 
-.chat-list {
-    width: 344px;
-    max-width: 100%;
+igx-list {
+    --ig-list-border-width: #{rem(1px)};
+    --ig-list-border-color: var(--ig-gray-300);
+    --ig-list-header-text-color: var(--ig-gray-900);
+
+    max-width: rem(328px);
 }
 
-.size-small {
-    --ig-size: var(--ig-size-small);
+igx-avatar {
+    --ig-avatar-background: var(--ig-gray-300);
+    --ig-avatar-color: var(--ig-gray-300-contrast);
 }
 
 .avatar-with-badge {
     position: relative;
-    display: inline-flex;
+}
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
 }
 
 .avatar-status {
-    --ig-badge-icon-color: #ffffff;
     position: absolute;
-    right: -4px;
-    bottom: -4px;
+    inset-inline-end: rem(-4px);
+    inset-block-end: rem(-4px);
 }
 
 .avatar-muted-badge {
     --ig-badge-background-color: var(--ig-gray-300);
-    --ig-badge-icon-color: var(--ig-gray-700);
-}
-
-.avatar-muted {
-    --ig-avatar-background: #D2DBE8;
+    --ig-badge-icon-color: var(--ig-gray-300-contrast);
 }

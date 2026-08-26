@@ -1,0 +1,18 @@
+<article class="selection-samples">
+    @for (mode of selectionModes; track mode.value) {
+        <div class="selection-sample">
+            <span>{{ mode.label }}</span>
+            <igx-buttongroup [selectionMode]="mode.value">
+                <button igxButton [igxRipple]="rippleColor" [selected]="isBoldSelected(mode.value)">
+                    <igx-icon>format_bold</igx-icon>
+                </button>
+                <button igxButton [igxRipple]="rippleColor" [selected]="isItalicSelected(mode.value)">
+                    <igx-icon>format_italic</igx-icon>
+                </button>
+                <button igxButton [igxRipple]="rippleColor">
+                    <igx-icon>format_underlined</igx-icon>
+                </button>
+            </igx-buttongroup>
+        </div>
+    }
+</article>
