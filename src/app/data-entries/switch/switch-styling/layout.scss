@@ -1,12 +1,10 @@
 @use "igniteui-angular/theming" as *;
-@use "igniteui-angular/lib/core/styles/components/switch/switch-component" as switch;
 @use 'sass:map';
 
 :host {
     ::ng-deep {
         $_switch-schema: map.get($light-fluent-schema, switch);
-        @include switch(switch-theme($schema: $_switch-schema));
-        @include switch.component();
+        @include tokens(switch-theme($schema: $_switch-schema));
 
         // Note: This is not the standard approach for styling the component.
         // We're using it here solely to mirror the UI5 sample.

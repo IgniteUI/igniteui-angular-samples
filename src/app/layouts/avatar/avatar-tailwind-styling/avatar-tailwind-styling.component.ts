@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
-import { IgxButtonDirective, IgxDividerDirective, IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxButtonDirective, IgxDividerComponent, IgxIconButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 import {
     IgxCardActionsComponent,
     IgxCardComponent,
@@ -27,7 +27,7 @@ import { berealIcon, instagramIcon, plusIcon, threadsIcon } from './icons';
         IgxCardHeaderTitleDirective,
         IgxCardMediaDirective,
         IgxCardThumbnailDirective,
-        IgxDividerDirective,
+        IgxDividerComponent,
         IgxIconButtonDirective,
         IgxIconComponent,
         IgxRippleDirective

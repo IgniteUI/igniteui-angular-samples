@@ -1,6 +1,31 @@
 @use 'igniteui-dockmanager/dist/collection/styles/igc.themes';
 @use '../../variables' as *;
 
+// Set the grid's background/foreground/accent tokens; the grid's derived-themes
+// layer cascades them to the paginator, scrollbars, chips, drop-downs, select,
+// excel filter, etc. Scoped mode emits the short `--background`/`--foreground`/
+// `--accent-color` aliases the derived layer reads first.
+$finjs-grid-accent-color: var(--ig-primary-500);
+$finjs-grid-background: var(--ig-surface-500);
+$finjs-grid-foreground: var(--ig-surface-500-contrast);
+
+$finjs-dark-grid-theme: grid-theme(
+    $schema: $dark-material-schema,
+    $background: $finjs-grid-background,
+    $foreground: $finjs-grid-foreground,
+    $accent-color: $finjs-grid-accent-color,
+);
+
+$finjs-light-grid-theme: grid-theme(
+    $schema: $light-material-schema,
+    $background: $finjs-grid-background,
+    $foreground: $finjs-grid-foreground,
+    $accent-color: $finjs-grid-accent-color,
+);
+
+@include tokens($finjs-dark-grid-theme, $mode: 'scoped', $scope: '.dark-theme igx-grid');
+@include tokens($finjs-light-grid-theme, $mode: 'scoped', $scope: '.light-theme igx-grid');
+
 .actionItem {
 	margin-block-end: rem(20px);
 }
@@ -44,7 +69,7 @@
 
 .negative.strongNegative {
 	.igx-grid__td-text {
-		color: color(null, 'success', 500, .8) !important;
+		color: color(null, 'error', 500, .8) !important;
 	}
 }
 
@@ -183,8 +208,3 @@ igx-grid {
 		}
 	}
 }
-
-igx-select {
-    --ig-size: var(--ig-size-small);
-}
-
