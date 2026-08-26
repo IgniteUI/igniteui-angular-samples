@@ -23,8 +23,8 @@
 
             <div class="state-cell">
                 <span class="cell-label">Disabled</span>
-                <igx-buttongroup disabled>
-                    <button igxButton [selected]="row.selected">Cloud</button>
+                <igx-buttongroup selectionMode="multi">
+                    <button igxButton disabled [selected]="row.selected">Cloud</button>
                 </igx-buttongroup>
             </div>
         </section>
