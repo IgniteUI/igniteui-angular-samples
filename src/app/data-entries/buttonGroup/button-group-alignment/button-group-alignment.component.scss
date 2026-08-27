@@ -27,10 +27,10 @@ igx-buttongroup {
 span {
     color: #556c86;
     font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
+    font-size: rem(13px);
     font-weight: 400;
-    line-height: 20px;
-    letter-spacing: 0.3px;
-    margin: 0.5rem;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+    margin: rem(8px);
     text-align: center;
 }
