@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { GridSelectionMode, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { Data } from './data';
@@ -9,7 +9,6 @@ import { IgxSparklineCoreModule } from 'igniteui-angular-charts';
     selector: 'app-tree-grid-primaryforeignkey-sample',
     styleUrls: ['./tree-grid-primaryforeignkey-sample.component.scss'],
     templateUrl: './tree-grid-primaryforeignkey-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxSparklineCoreModule]
 })
 export class TreeGridPrimaryforeignkeySampleComponent implements OnInit {

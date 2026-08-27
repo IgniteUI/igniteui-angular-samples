@@ -1,4 +1,8 @@
-<div class="wrapper">
-    <igx-avatar icon="face" size="small" shape="rounded"></igx-avatar>
-    <igx-badge type="error" icon="heart-monitor" iconSet="imx-icons"></igx-badge>
-</div>
+@for (item of badges; track item.label) {
+    <igx-badge [icon]="item.icon" [type]="item.type"></igx-badge>
+    <span>{{ item.label }}</span>
+}
+
+<igx-avatar initials="AZ" shape="circle" size="small"></igx-avatar>
+<igx-badge icon="close" type="error" outlined></igx-badge>
+<span>on avatar</span>

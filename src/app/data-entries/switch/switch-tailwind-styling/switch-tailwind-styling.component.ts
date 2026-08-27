@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 
@@ -6,7 +6,6 @@ import { IgxSwitchComponent } from 'igniteui-angular/switch';
     selector: 'app-switch-tailwind-styling',
     styleUrls: ['./switch-tailwind-styling.component.scss'],
     templateUrl: './switch-tailwind-styling.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent]
 })
 export class SwitchTailwindStylingComponent {

@@ -1,0 +1,47 @@
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(60px);
+    min-height: 7rem;
+}
+
+igx-icon {
+    color: var(--ig-gray-700);
+    font-size: rem(24px);
+}
+
+igx-chip {
+    --ig-size: var(--ig-size-large);
+}
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    inset-block-start: anchor(10%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
+}
+
+igx-badge:nth-of-type(1) {
+    inset-block-start: anchor(85.5%);
+}
+
+$anchors: avatar, mail, events, notifications;
+
+@each $anchor in $anchors {
+    $i: list.index($anchors, $anchor);
+
+    .#{$anchor}-anchor {
+        anchor-name: --#{$anchor};
+    }
+
+    igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$anchor};
+    }
+}

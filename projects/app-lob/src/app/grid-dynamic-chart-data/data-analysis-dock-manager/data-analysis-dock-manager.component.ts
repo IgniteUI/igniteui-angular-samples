@@ -1,5 +1,5 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, ViewContainerRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren, TemplateRef, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, ViewContainerRef, Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, OnInit, Pipe, PipeTransform, QueryList, ViewChild, ViewChildren, TemplateRef, inject } from '@angular/core';
 import { IgxChartIntegrationDirective, IgxConditionalFormattingDirective, IgxContextMenuDirective, OPTIONS_TYPE, CHART_TYPE, IDeterminedChartTypesArgs } from 'igniteui-angular-extras';
 import { IgcDockManagerLayout, IgcDockManagerPaneType, IgcSplitPane, IgcSplitPaneOrientation } from 'igniteui-dockmanager';
 import { FinancialData } from '../../data/financialData';
@@ -7,7 +7,7 @@ import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IColumnSelectionEventArgs, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxDividerDirective } from 'igniteui-angular/directives';
+import { IgxDividerComponent } from 'igniteui-angular/directives';
 import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
 import { debounceTime } from 'rxjs/operators';
@@ -57,8 +57,7 @@ export class HastDuplicateLayouts implements PipeTransform {
     templateUrl: './data-analysis-dock-manager.component.html',
     styleUrls: ['./data-analysis-dock-manager.component.scss'],
     providers: [FloatingPanesService],
-    imports: [IgxGridComponent, IgxConditionalFormattingDirective, IgxChartIntegrationDirective, IgxContextMenuDirective, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgClass, IgxDividerDirective, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    imports: [IgxGridComponent, IgxConditionalFormattingDirective, IgxChartIntegrationDirective, IgxContextMenuDirective, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgClass, IgxDividerComponent, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {

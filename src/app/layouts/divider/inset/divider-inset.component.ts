@@ -1,12 +1,11 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { IgxDividerDirective } from 'igniteui-angular/directives';
+import { Component } from '@angular/core';
+import { IgxDividerComponent } from 'igniteui-angular/directives';
 
 @Component({
     selector: 'app-divider-inset',
     styleUrls: ['./divider-inset.component.scss'],
     templateUrl: './divider-inset.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IgxDividerDirective]
+    imports: [IgxDividerComponent]
 })
 export class DividerInsetComponent {
 

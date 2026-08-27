@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, OnInit, inject } from '@angular/core';
 import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
 import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
 
@@ -6,7 +6,6 @@ import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
     selector: 'app-simple-combo-styling',
     templateUrl: 'simple-combo-styling.component.html',
     styleUrls: ['simple-combo-styling.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSimpleComboComponent]
 })
 export class SimpleComboStylingComponent implements OnInit {

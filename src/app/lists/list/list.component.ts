@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxFilterOptions, IgxFilterPipe, IgxRippleDirective } from 'igniteui-angular/directives';
 import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-list',
     styleUrls: ['./list.component.scss'],
     templateUrl: './list.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, FormsModule, IgxInputDirective, IgxSuffixDirective, IgxListComponent, IgxListItemComponent, IgxRippleDirective, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxListActionDirective, IgxFilterPipe]
 })
 export class ListComponent {

@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet, RouterLinkActive, RouterLink } from '@angular/router';
 import { filter } from 'rxjs/operators';
 import { IgxBottomNavComponent, IgxBottomNavHeaderComponent, IgxBottomNavHeaderIconDirective, IgxBottomNavItemComponent } from 'igniteui-angular/bottom-nav';
@@ -8,7 +8,6 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-tabbar-sample-3',
     styleUrls: ['./tabbar-sample-3.component.scss'],
     templateUrl: './tabbar-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [RouterOutlet, IgxBottomNavComponent, IgxBottomNavItemComponent, RouterLinkActive, IgxBottomNavHeaderComponent, RouterLink, IgxIconComponent, IgxBottomNavHeaderIconDirective]
 })
 export class TabbarSample3Component implements OnInit {

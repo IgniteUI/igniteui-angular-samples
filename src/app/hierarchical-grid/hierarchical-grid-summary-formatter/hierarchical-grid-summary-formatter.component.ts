@@ -1,8 +1,8 @@
 import { DatePipe } from '@angular/common';
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { IgxColumnComponent, IgxDateSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
+import { Component, ViewChild } from '@angular/core';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxDateSummaryOperand, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxSummaryResult } from 'igniteui-angular/core';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
@@ -10,7 +10,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-hierarchical-grid-summary-formatter',
     styleUrls: ['./hierarchical-grid-summary-formatter.component.scss'],
     templateUrl: 'hierarchical-grid-summary-formatter.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxRowIslandComponent]
 })
 

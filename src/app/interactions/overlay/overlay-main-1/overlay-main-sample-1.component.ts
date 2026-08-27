@@ -1,4 +1,4 @@
-import { Component, OnDestroy, ViewContainerRef, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnDestroy, ViewContainerRef, inject } from '@angular/core';
 import { IgxOverlayService } from 'igniteui-angular/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { MyDynamicCardComponent} from '../overlay-dynamic-card/overlay-dynamic-card.component';
@@ -6,7 +6,6 @@ import { MyDynamicCardComponent} from '../overlay-dynamic-card/overlay-dynamic-c
     selector: 'app-overlay-sample',
     templateUrl: `./overlay-main-sample-1.component.html`,
     styleUrls: [`./overlay-main-sample-1.component.scss`],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective]
 })
 export class OverlaySampleMain1Component implements OnDestroy {

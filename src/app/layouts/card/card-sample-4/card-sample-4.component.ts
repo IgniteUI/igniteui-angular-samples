@@ -1,10 +1,10 @@
-import { Component, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent } from 'igniteui-angular/expansion-panel';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
 import { IgxSliderComponent } from 'igniteui-angular/slider';
 import { IgxListComponent, IgxListItemComponent } from 'igniteui-angular/list';
-import { IgxButtonDirective, IgxDividerDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxButtonDirective, IgxDividerComponent, IgxRippleDirective } from 'igniteui-angular/directives';
 import { IgxPrefixDirective } from 'igniteui-angular/input-group';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxChipComponent } from 'igniteui-angular/chips';
@@ -22,8 +22,7 @@ import {
     selector: 'app-card-sample-4',
     styleUrls: ['./card-sample-4.component.scss'],
     templateUrl: './card-sample-4.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxChipComponent, IgxIconComponent, IgxSliderComponent, IgxExpansionPanelComponent, IgxExpansionPanelBodyComponent, IgxListComponent, IgxListItemComponent, IgxDividerDirective, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective, IgxAvatarComponent]
+    imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective, IgxChipComponent, IgxIconComponent, IgxSliderComponent, IgxExpansionPanelComponent, IgxExpansionPanelBodyComponent, IgxListComponent, IgxListItemComponent, IgxDividerComponent, IgxCardActionsComponent, IgxButtonDirective, IgxRippleDirective, IgxPrefixDirective, IgxCardMediaDirective, IgxAvatarComponent]
 })
 export class CardSample4Component implements OnInit {
     private iconService = inject(IgxIconService);

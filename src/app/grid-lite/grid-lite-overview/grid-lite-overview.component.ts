@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
     defineComponents,
@@ -33,7 +33,6 @@ defineComponents(
         IgxBadgeComponent,
         IgxChipComponent
     ],
-    changeDetection: ChangeDetectionStrategy.Eager,
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridLiteOverviewComponent implements OnInit {

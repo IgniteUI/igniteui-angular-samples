@@ -1,0 +1,31 @@
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: grid;
+    grid-template-columns: rem(80px) rem(32px) rem(40px) rem(40px);
+    place-content: center;
+    place-items: center;
+    column-gap: rem(8px);
+    row-gap: rem(40px);
+    padding: rem(32px);
+}
+
+span {
+    justify-self: end;
+    color: var(--ig-gray-700);
+
+    @include type-style("body-2") {
+        margin: 0;
+    }
+}
+
+$sizes: small, medium, large;
+
+@each $size in $sizes {
+    $i: list.index($sizes, $size);
+
+    igx-badge:nth-of-type(n + #{($i - 1) * 3 + 1}):nth-of-type(-n + #{$i * 3}) {
+        --ig-size: var(--ig-size-#{$size});
+    }
+}

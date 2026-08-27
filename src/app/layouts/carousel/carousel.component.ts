@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
 
 
@@ -6,7 +6,6 @@ import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carous
     selector: 'app-carousel',
     styleUrls: ['./carousel.component.scss'],
     templateUrl: './carousel.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCarouselComponent, IgxSlideComponent]
 })
 

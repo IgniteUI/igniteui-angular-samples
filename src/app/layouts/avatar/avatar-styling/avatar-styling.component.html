@@ -1,8 +1,67 @@
-<article class="avatars-wrapper">
-  <div class="avatar-sample initials">
-    <igx-avatar initials="JS" shape="rounded" size="medium"></igx-avatar>
-  </div>
-  <div class="avatar-sample icon">
-    <igx-avatar icon="person" shape="circle" size="medium"></igx-avatar>
-  </div>
-</article>
+<igx-list class="chat-list">
+    <igx-list-item [isHeader]="true">Chats</igx-list-item>
+
+    <igx-list-item>
+        <div igxListThumbnail class="avatar-with-badge">
+            <igx-avatar
+                shape="circle"
+                src="https://dl.infragistics.com/x/img/avatars/avatar-profile-07.png"
+                alt="A profile photo of Nick Evans.">
+            </igx-avatar>
+            <igx-badge class="avatar-status" outlined shape="rounded" type="success">
+                <igx-icon name="check" collection="material"></igx-icon>
+            </igx-badge>
+        </div>
+        <p igxListLineTitle>Nick Evans</p>
+        <span igxListLineSubTitle>Hi Samira, thanks for the ...</span>
+        <span igxListAction>9:44 AM</span>
+    </igx-list-item>
+
+    <igx-list-item>
+        <div igxListThumbnail class="avatar-with-badge">
+            <igx-avatar class="avatar-muted" shape="circle" initials="JF" alt="James Ford initials."></igx-avatar>
+            <igx-badge class="avatar-status avatar-muted-badge" outlined shape="rounded">
+                <igx-icon name="x" collection="material"></igx-icon>
+            </igx-badge>
+        </div>
+        <p igxListLineTitle>James Ford</p>
+        <span igxListLineSubTitle>I'll send the text and im ...</span>
+        <span igxListAction>8:30 AM</span>
+    </igx-list-item>
+
+    <igx-list-item>
+        <div igxListThumbnail class="avatar-with-badge">
+            <igx-avatar
+                shape="circle"
+                src="https://dl.infragistics.com/x/img/avatars/avatar-profile-08.png"
+                alt="A profile photo of Kate Porter.">
+            </igx-avatar>
+            <igx-badge class="avatar-status" outlined shape="rounded" type="error">
+                <igx-icon name="horizontalRule" collection="material"></igx-icon>
+            </igx-badge>
+        </div>
+        <p igxListLineTitle>Kate Porter</p>
+        <span igxListLineSubTitle>That's great!</span>
+        <span igxListAction>Yesterday</span>
+    </igx-list-item>
+
+    <igx-list-item [isHeader]="true">Meetings</igx-list-item>
+
+    <igx-list-item>
+        <igx-avatar igxListThumbnail shape="circle" alt="Calendar icon.">
+            <igx-icon name="calendar" collection="material"></igx-icon>
+        </igx-avatar>
+        <p igxListLineTitle>Weekly Meeting</p>
+        <span igxListLineSubTitle>https://www.infra.com</span>
+        <span igxListAction>Monday</span>
+    </igx-list-item>
+
+    <igx-list-item>
+        <igx-avatar igxListThumbnail shape="circle" alt="Group icon.">
+            <igx-icon name="group" collection="material"></igx-icon>
+        </igx-avatar>
+        <p igxListLineTitle>Design Discussion</p>
+        <span igxListLineSubTitle>https://www.infra.com</span>
+        <span igxListAction>11:30 AM</span>
+    </igx-list-item>
+</igx-list>

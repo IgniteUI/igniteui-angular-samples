@@ -1,7 +1,18 @@
-<section class="wrapper">
-  <header>
-    <igx-avatar icon="person" shape="circle" size="small"></igx-avatar>
-    <igx-badge outlined type="error"></igx-badge>
-  </header>
-  <span>Terrance Orta</span>
-</section>
+<igx-avatar class="icon-anchor" icon="favorite_border" shape="circle" size="small"></igx-avatar>
+<igx-badge value="23" type="info" outlined></igx-badge>
+
+<igx-avatar class="initials-anchor" initials="AZ" shape="rounded" size="small"></igx-avatar>
+<igx-badge icon="close" type="error" outlined></igx-badge>
+
+<igx-stepper orientation="horizontal" stepType="full" titlePosition="bottom">
+    @for (step of steps; track step.label) {
+        <igx-step [active]="step.active" [completed]="step.completed">
+            <!-- The flagged step's indicator carries the anchor name, so the
+                 badge below stays on it no matter which step is selected. -->
+            <span igxStepIndicator [class.flagged-anchor]="step.flagged">{{ step.index }}</span>
+            <span igxStepTitle>{{ step.label }}</span>
+        </igx-step>
+    }
+</igx-stepper>
+<igx-badge class="flagged-badge" dot type="info" outlined></igx-badge>
+

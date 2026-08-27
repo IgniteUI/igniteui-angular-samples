@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { EMPLOYEE_FLAT_AVATARS_DATA } from '../data/employees-flat-avatars';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -9,7 +9,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-style',
     styleUrls: ['./tree-grid-style.component.scss'],
     templateUrl: './tree-grid-style.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent]
 })
 export class TreeGridStyleComponent implements OnInit {

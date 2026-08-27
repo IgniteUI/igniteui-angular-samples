@@ -1,3 +1,36 @@
-igx-avatar {
-    margin: 12px;
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, rem(344px));
+    gap: rem(40px);
+    place-content: center;
+    height: 100vh;
+}
+
+igx-card:nth-of-type(2) {
+    align-self: center;
+}
+
+.card-sample-custom-subtitle {
+    display: block;
+    color: var(--ig-gray-700);
+
+    @include type-style("body-2") {
+        margin-block-start: rem(8px);
+    };
+}
+
+.stats-title {
+    color: var(--ig-gray-900);
+
+    @include type-style("subtitle-1") {
+        font-weight: 600;
+    };
+}
+
+.stats-subtitle {
+    color: var(--ig-gray-500);
+
+    @include type-style("body-2");
 }

@@ -1,7 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { Card } from '../card.blueprint';
 import { IgxCardActionsComponent, IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxCardHeaderSubtitleDirective, IgxCardHeaderTitleDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
-import { IgxDividerDirective, IgxFlexDirective, IgxIconButtonDirective, IgxLayoutDirective, IgxRippleDirective } from 'igniteui-angular/directives';
+import { IgxDividerComponent, IgxFlexDirective, IgxIconButtonDirective, IgxLayoutDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 import { IgxSuffixDirective } from 'igniteui-angular/input-group';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 
@@ -10,8 +10,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-card-sample-2',
     styleUrls: ['./card-sample-2.component.scss'],
     templateUrl: './card-sample-2.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IgxCardComponent, IgxLayoutDirective, IgxFlexDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardMediaDirective, IgxCardContentDirective, IgxDividerDirective, IgxCardActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxSuffixDirective, IgxIconComponent]
+    imports: [IgxCardComponent, IgxLayoutDirective, IgxFlexDirective, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardMediaDirective, IgxCardContentDirective, IgxDividerComponent, IgxCardActionsComponent, IgxIconButtonDirective, IgxRippleDirective, IgxSuffixDirective, IgxIconComponent]
 })
 export class CardSample2Component {
     public card = new Card({

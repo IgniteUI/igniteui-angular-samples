@@ -1,0 +1,41 @@
+.button-group-size {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 32px;
+    padding: 13px;
+    padding-left: 3rem;
+}
+
+.button-group-size-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 32px;
+}
+
+.button-group-size-item span {
+    width: 52px;
+    text-align: right;
+    color: #556c86;
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+}
+
+.button-group-small button {
+    min-width: 90px;
+}
+
+.button-group-medium button {
+    min-width: 100px;
+}
+
+.button-group-large button {
+    min-width: 110px;
+}

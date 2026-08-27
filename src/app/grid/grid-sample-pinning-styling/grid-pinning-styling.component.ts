@@ -1,4 +1,4 @@
-import { Component, ViewChild, OnInit, inject, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ViewChild, OnInit, inject } from "@angular/core";
 import { IgxCellHeaderTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
@@ -9,7 +9,6 @@ import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scro
     selector: "app-grid-sample",
     styleUrls: ["grid-pinning-styling.component.scss"],
     templateUrl: "grid-pinning-styling.component.html",
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IgxGridComponent,
         IgxPreventDocumentScrollDirective,

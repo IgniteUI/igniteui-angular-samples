@@ -1,3 +1,7 @@
+<p>
+    <b>Selected:&nbsp;</b>
+    <span>{{ dropDown.selectedItem?.value ?? 'N/A' }}</span>
+</p>
 <igx-input-group #inputGroup [igxToggleAction]="dropDown" class="input-group">
   <input #input class="input" type="text" igxInput [igxDropDownItemNavigation]="dropDown" readonly="true"
     placeholder="Choose an option" [value]="$safeNavigationMigration(dropDown.selectedItem?.value)" (keydown.ArrowDown)="openDropDown()" />
@@ -5,7 +9,6 @@
       <igx-icon>arrow_drop{{ dropDown.collapsed ? '_down' : '_up' }}</igx-icon>
     </igx-suffix>
   </igx-input-group>
-  <span>Selected: {{ dropDown.selectedItem?.value }}</span>
   <igx-drop-down #dropDown [width]="'180px'">
     @for (item of items; track item) {
       <igx-drop-down-item [value]="item.field">

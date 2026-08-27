@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
-import { IgxSummaryResult } from 'igniteui-angular/core';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxButtonDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -36,7 +36,6 @@ class CustomNumberSummary {
     selector: 'app-tree-grid-editing-sample',
     styleUrls: ['./tree-grid-editing-sample.component.scss'],
     templateUrl: './tree-grid-editing-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxIconComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxDatePickerComponent, IgxCheckboxComponent]
 })
 export class TreeGridEditingSampleComponent implements OnInit {

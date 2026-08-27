@@ -1,5 +1,5 @@
 import { formatNumber, AsyncPipe } from '@angular/common';
-import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, Component, OnDestroy, OnInit, ViewChild, ViewEncapsulation, inject } from '@angular/core';
 import { GridPagingMode, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -14,7 +14,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-remote-paging-grid-sample',
     styleUrls: ['./tree-grid-remote-paging-sample.component.scss'],
     templateUrl: './tree-grid-remote-paging-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconComponent, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, AsyncPipe]
 })
 export class TreeGridRemotePagingSampleComponent implements OnInit, AfterViewInit, OnDestroy {

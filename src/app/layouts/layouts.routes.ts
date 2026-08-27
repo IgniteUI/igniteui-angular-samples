@@ -1,12 +1,11 @@
 // tslint:disable:no-string-literal
 import { Routes } from '@angular/router';
-import { AvatarSample1Component } from './avatar/avatar-sample-1/avatar-sample-1.component';
-import { AvatarSample2Component } from './avatar/avatar-sample-2/avatar-sample-2.component';
-import { AvatarSample3Component } from './avatar/avatar-sample-3/avatar-sample-3.component';
-import { AvatarSample4Component } from './avatar/avatar-sample-4/avatar-sample-4.component';
+import { AvatarOverviewComponent } from './avatar/avatar-overview/avatar-overview.component';
+import { AvatarVariantsComponent } from './avatar/avatar-variants/avatar-variants.component';
+import { AvatarShapeComponent } from './avatar/avatar-shape/avatar-shape.component';
+import { AvatarSizeComponent } from './avatar/avatar-size/avatar-size.component';
 import { AvatarStylingSampleComponent } from './avatar/avatar-styling/avatar-styling.component';
 import { AvatarTailwindStylingSampleComponent } from './avatar/avatar-tailwind-styling/avatar-tailwind-styling.component';
-import { AvatarCSSVariablesComponent } from './avatar/avatar-css-variables/avatar-css-variables.component';
 import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
 import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
 import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
@@ -113,24 +112,24 @@ export const LayoutsRoutes: Routes = [
         path: 'accordion-style'
     },
     {
-        component: AvatarSample1Component,
-        data: layoutsRoutesData['avatar-sample-1'],
-        path: 'avatar-sample-1'
+        component: AvatarOverviewComponent,
+        data: layoutsRoutesData['avatar-overview'],
+        path: 'avatar-overview'
     },
     {
-        component: AvatarSample2Component,
-        data: layoutsRoutesData['avatar-sample-2'],
-        path: 'avatar-sample-2'
+        component: AvatarVariantsComponent,
+        data: layoutsRoutesData['avatar-variants'],
+        path: 'avatar-variants'
     },
     {
-        component: AvatarSample3Component,
-        data: layoutsRoutesData['avatar-sample-3'],
-        path: 'avatar-sample-3'
+        component: AvatarShapeComponent,
+        data: layoutsRoutesData['avatar-shape'],
+        path: 'avatar-shape'
     },
     {
-        component: AvatarSample4Component,
-        data: layoutsRoutesData['avatar-sample-4'],
-        path: 'avatar-sample-4'
+        component: AvatarSizeComponent,
+        data: layoutsRoutesData['avatar-size'],
+        path: 'avatar-size'
     },
     {
         component: AvatarStylingSampleComponent,
@@ -141,11 +140,6 @@ export const LayoutsRoutes: Routes = [
         component: AvatarTailwindStylingSampleComponent,
         data: layoutsRoutesData['avatar-tailwind-styling'],
         path: 'avatar-tailwind-styling'
-    },
-    {
-        component: AvatarCSSVariablesComponent,
-        data: layoutsRoutesData['avatar-css-variables'],
-        path: 'avatar-css-variables'
     },
     {
         component: CarouselNoNavigationSampleComponent,

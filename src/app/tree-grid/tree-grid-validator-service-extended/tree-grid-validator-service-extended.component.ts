@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, Directive, Input, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { AbstractControl, FormGroup, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { Component, Directive, forwardRef, Input, OnInit, ViewChild } from '@angular/core';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IGridFormGroupCreatedEventArgs, IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnMaxValidatorDirective, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective } from 'igniteui-angular/grids/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -17,7 +17,7 @@ export function phoneFormatValidator(phoneReg: RegExp): ValidatorFn {
 
 @Directive({
     selector: '[phoneFormat]',
-    providers: [{ provide: NG_VALIDATORS, useExisting: TGridPhoneFormatDirective, multi: true }]
+    providers: [{ provide: NG_VALIDATORS, useExisting: forwardRef(() => TGridPhoneFormatDirective), multi: true }]
 })
 export class TGridPhoneFormatDirective extends Validators {
     @Input('phoneFormat')
@@ -33,7 +33,6 @@ export class TGridPhoneFormatDirective extends Validators {
     selector: 'app-tree-grid-validator-service-extended-component',
     styleUrls: ['tree-grid-validator-service-extended.component.scss'],
     templateUrl: 'tree-grid-validator-service-extended.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnMinValidatorDirective, IgxColumnRequiredValidatorDirective, IgxColumnMaxValidatorDirective, TGridPhoneFormatDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, IgxButtonDirective]
 })
 export class TreeGridValidatorServiceExtendedComponent implements OnInit {

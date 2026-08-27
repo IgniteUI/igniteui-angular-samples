@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { Transaction } from 'igniteui-angular/core';
@@ -17,7 +17,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-hierarchical-grid-batch-editing',
     styleUrls: ['./hierarchical-grid-batch-editing.component.scss'],
     templateUrl: 'hierarchical-grid-batch-editing.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent, IgxGridToolbarDirective, IgxGridToolbarComponent, IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxCheckboxComponent, IgxGridComponent]
 })
 
