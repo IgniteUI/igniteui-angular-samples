@@ -78,6 +78,11 @@ import { View1Component } from './tabs/views/view1/view1.component';
 import { View2Component } from './tabs/views/view2/view2.component';
 import { View3Component } from './tabs/views/view3/view3.component';
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
+import { AccordionCustomizationComponent } from './accordion/accordion-customization/accordion-customization.component';
+import { AccordionNestedScenarioComponent } from './accordion/accordion-nested-scenario/accordion-nested-scenario.component';
+import { AccordionOverviewComponent } from './accordion/accordion-overview/accordion-overview.component';
+import { AccordionStylingComponent } from './accordion/accordion-styling/accordion-styling.component';
+import { AccordionTailwindStylingComponent } from './accordion/accordion-tailwind-styling/accordion-tailwind-styling.component';
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
 import { AccordionProgrammaticExpansionComponent } from './accordion/accordion-programmatic-expansion/accordion-programmatic-expansion.component';
@@ -93,6 +98,31 @@ import { StepperSampleReactiveFormsComponent } from './stepper/stepper-sample-re
 import { TileManagerComponent } from './tile-manager/tile-manager-sample/tile-manager.component';
 
 export const LayoutsRoutes: Routes = [
+    {
+        component: AccordionOverviewComponent,
+        data: layoutsRoutesData['accordion-overview'],
+        path: 'accordion-overview'
+    },
+    {
+        component: AccordionCustomizationComponent,
+        data: layoutsRoutesData['accordion-customization'],
+        path: 'accordion-customization'
+    },
+    {
+        component: AccordionNestedScenarioComponent,
+        data: layoutsRoutesData['accordion-nested-scenario'],
+        path: 'accordion-nested-scenario'
+    },
+    {
+        component: AccordionStylingComponent,
+        data: layoutsRoutesData['accordion-styling'],
+        path: 'accordion-styling'
+    },
+    {
+        component: AccordionTailwindStylingComponent,
+        data: layoutsRoutesData['accordion-tailwind-styling'],
+        path: 'accordion-tailwind-styling'
+    },
     {
         component: AccordionSample1Component,
         data: layoutsRoutesData['accordion-sample-1'],

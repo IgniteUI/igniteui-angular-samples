@@ -5,7 +5,7 @@
 }
 
 .accordion-content {
-    width: min(720px, 100%);
+    width: min(760px, 100%);
     margin: 0 auto;
     padding: 24px;
     box-sizing: border-box;
@@ -14,10 +14,5 @@
 .accordion-toolbar {
     display: flex;
     justify-content: flex-end;
-    gap: 8px;
     margin-bottom: 12px;
-}
-
-.action-button {
-    min-width: 96px;
 }
