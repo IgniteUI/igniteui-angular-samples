@@ -130,7 +130,7 @@ export class GridThemePlaygroundComponent {
     private readonly stage = viewChild.required<ElementRef<HTMLElement>>('stage');
     /** The compiled theme, read from the stylesheet: the CSS export needs every
      *  token, not just the roots, to work in an app with no grid-theme(). */
-    private readonly themeTokens = signal<Array<[string, string]>>([]);
+    private readonly themeTokens = signal<[string, string][]>([]);
 
     constructor() {
         afterNextRender(() => {
@@ -278,7 +278,7 @@ export class GridThemePlaygroundComponent {
         this.preview.set((['grid', 'tree', 'hierarchical', 'pivot'] as const)[args.index]);
     }
     private readCompiledTheme(): void {
-        const tokens: Array<[string, string]> = [];
+        const tokens: [string, string][] = [];
 
         for (const sheet of Array.from(document.styleSheets)) {
             let rules: CSSRuleList;
