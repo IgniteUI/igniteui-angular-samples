@@ -1,10 +1,16 @@
+// Fits the smallest row density.
 .photo {
   vertical-align: middle;
-  max-height: 62px;
+  max-block-size: 24px;
+  border-radius: 50%;
 }
 
 .cell__inner_2 {
   margin: 1px
+}
+
+:host {
+  display: block;
 }
 
 .grid__wrapper{

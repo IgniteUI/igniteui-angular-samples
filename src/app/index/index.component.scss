@@ -3,19 +3,21 @@
 }
 
 .main {
+    display: flex;
+    flex-direction: column;
     width: calc(100% - 300px);
+    height: 100%;
 }
 
-.content {    
-    width: 100%;    
-    // height: calc(100% - 56px);    
-    height: 100%;
+.content {
+    width: 100%;
+    flex: 1 1 auto;
     max-height: 1000px;
     min-width: 300px;
     min-height: 300px;
     justify-content: center;
     align-items: stretch;
-    overflow: auto;    
+    overflow: auto;
 }
 
 .navdrawer-ellipsis {

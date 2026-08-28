@@ -1,4 +1,3 @@
-@use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
 $studio-bg: #faf4ed;
@@ -9,6 +8,11 @@ $editorial-bg: #333c43;
 $editorial-accent: #a7c080;
 $midnight-bg: #282a36;
 $midnight-accent: #bd93f9;
+
+:host {
+    display: block;
+    padding: 16px;
+}
 
 .theme-studio {
     --ig-size: var(--ig-size-large);
@@ -76,7 +80,7 @@ $midnight-accent: #bd93f9;
     ));
 }
 
-.grid__wrapper {
+.grid-theming-sample {
     display: flex;
     flex-direction: column;
     gap: 16px;

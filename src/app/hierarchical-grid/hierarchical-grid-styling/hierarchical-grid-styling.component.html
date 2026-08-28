@@ -1,36 +1,67 @@
 <div class="grid__wrapper">
-<igx-hierarchical-grid [igxPreventDocumentScroll]="true"  class="hierarchicalGrid" [data]="localdata" (columnResized)="onResize($event)" [autoGenerate]="false"
-    [height]="'480px'" [width]="'100%'" [rowHeight]="'65px'" #hierarchicalGrid>
-    <igx-column field="Artist" [resizable]="true"></igx-column>
-    <igx-column field="Photo" [resizable]="true" [minWidth]="'115px'">
-        <ng-template igxCell let-cell="cell">
-            <div class="cell__inner_2">
-                <img [src]="cell.value" class="photo" />
-            </div>
-        </ng-template>
-    </igx-column>
-    <igx-column field="Debut" [resizable]="true" [minWidth]="'88px'" [maxWidth]="'230px'" dataType="number" [formatter]="formatter"></igx-column>
-    <igx-column field="GrammyNominations" header="Grammy Nominations" [resizable]="true"></igx-column>
-    <igx-column field="GrammyAwards" header="Grammy Awards" [resizable]="true"></igx-column>
+    <div class="theme-picker">
+        <span class="theme-picker__label">Pick a theme</span>
 
-    <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
-        <igx-column field="Album" [resizable]="true"></igx-column>
-        <igx-column field="LaunchDate" header="Launch Date" [resizable]="true" [dataType]="'date'"></igx-column>
-        <igx-column field="BillboardReview" header="Billboard Review" [resizable]="true"></igx-column>
-        <igx-column field="USBillboard200" header="US Billboard 200" [resizable]="true"></igx-column>
-    <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false">
-            <igx-column field="Number" header="No." [resizable]="true"></igx-column>
-            <igx-column field="Title" [resizable]="true"></igx-column>
-            <igx-column field="Released" dataType="date" [resizable]="true"></igx-column>
-            <igx-column field="Genre" [resizable]="true"></igx-column>
-    </igx-row-island>
-    </igx-row-island>
+        <igx-buttongroup
+            class="theme-switcher"
+            selectionMode="singleRequired"
+            (selected)="selectTheme($event)">
+            @for (theme of themes; track theme.class) {
+                <button igxButton [selected]="activeTheme() === theme.class">
+                    <span class="theme-swatch" [class]="theme.swatch"></span>
+                    {{ theme.label }}
+                </button>
+            }
+        </igx-buttongroup>
 
-    <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false">
-        <igx-column field="Tour" [resizable]="true"></igx-column>
-        <igx-column field="StartedOn" header="Started on" [resizable]="true"></igx-column>
-        <igx-column field="Location" [resizable]="true"></igx-column>
-        <igx-column field="Headliner" [resizable]="true"></igx-column>
-    </igx-row-island>
-</igx-hierarchical-grid>
+        <p class="theme-picker__hint">
+            Custom themes, not built-in: each is a <code>grid-theme()</code> with its
+            own background and accent.
+        </p>
+    </div>
+
+    <igx-hierarchical-grid
+        [igxPreventDocumentScroll]="true"
+        [class]="activeTheme()"
+        [data]="localdata"
+        (columnResized)="onResize($event)"
+        [autoGenerate]="false"
+        [allowFiltering]="true"
+        [filterMode]="'excelStyleFilter'"
+        [rowSelection]="'multiple'"
+        [height]="'480px'"
+        [width]="'100%'"
+        #hierarchicalGrid>
+        <igx-column field="Artist" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+        <igx-column field="Photo" [resizable]="true" [minWidth]="'115px'">
+            <ng-template igxCell let-cell="cell">
+                <div class="cell__inner_2">
+                    <img [src]="cell.value" class="photo" />
+                </div>
+            </ng-template>
+        </igx-column>
+        <igx-column field="Debut" [resizable]="true" [minWidth]="'88px'" [maxWidth]="'230px'" dataType="number" [formatter]="formatter" [sortable]="true" [filterable]="true"></igx-column>
+        <igx-column field="GrammyNominations" header="Grammy Nominations" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+        <igx-column field="GrammyAwards" header="Grammy Awards" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+
+        <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+            <igx-column field="Album" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+            <igx-column field="LaunchDate" header="Launch Date" [resizable]="true" [dataType]="'date'" [sortable]="true" [filterable]="true"></igx-column>
+            <igx-column field="BillboardReview" header="Billboard Review" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+            <igx-column field="USBillboard200" header="US Billboard 200" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+            <igx-row-island [height]="null" [key]="'Songs'" [autoGenerate]="false">
+                <igx-column field="Number" header="No." [resizable]="true"></igx-column>
+                <igx-column field="Title" [resizable]="true"></igx-column>
+                <igx-column field="Released" dataType="date" [resizable]="true"></igx-column>
+                <igx-column field="Genre" [resizable]="true"></igx-column>
+            </igx-row-island>
+        </igx-row-island>
+
+        <igx-row-island [height]="null" [key]="'Tours'" [autoGenerate]="false" [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+            <igx-column field="Tour" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+            <igx-column field="StartedOn" header="Started on" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+            <igx-column field="Location" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+            <igx-column field="Headliner" [resizable]="true" [sortable]="true" [filterable]="true"></igx-column>
+        </igx-row-island>
+    </igx-hierarchical-grid>
 </div>

@@ -12,5 +12,6 @@ export const themingRoutesData = {
     'roundness': { displayName: 'Roundness', parentName: 'Themes' },
     'angular-sample': { displayName: 'Angular Material Theming', parentName: 'Themes' },
     'bootstrap-sample': { displayName: 'Bootstrap Theming', parentName: 'Themes' },
-    'card-sample-shadow': { displayName: 'card-sample-shadow', parentName: 'Shadows' }
+    'card-sample-shadow': { displayName: 'card-sample-shadow', parentName: 'Shadows' },
+    'grid-theme-playground': { displayName: 'Grid Theme Playground', parentName: 'Themes' }
 };

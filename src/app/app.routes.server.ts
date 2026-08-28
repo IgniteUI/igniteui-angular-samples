@@ -50,6 +50,16 @@ export const serverRoutes: ServerRoute[] = [
         renderMode: RenderMode.Client // TODO: Fails with Prerender
     },
     {
+        // Hosts grid previews, and grids fail under Prerender like every other
+        // grid route below. Must precede the theming/** globs.
+        path: 'theming/grid-theme-playground',
+        renderMode: RenderMode.Client
+    },
+    {
+        path: 'samples/theming/grid-theme-playground',
+        renderMode: RenderMode.Client
+    },
+    {
         path: 'theming/**',
         renderMode: RenderMode.Prerender
     },

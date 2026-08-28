@@ -1,0 +1,20 @@
+<div class="color-field">
+    <span class="color-field__label">{{ label() }}</span>
+    <igx-input-group type="border">
+        <igx-prefix>
+            <span class="color-field__swatch-wrap">
+                <input type="color" [value]="value() || fallback()" (input)="onPick($event)" [attr.aria-label]="label()" />
+                <span
+                    class="color-field__swatch"
+                    [style.background]="value() || null"
+                    [class.color-field__swatch--auto]="!value()"></span>
+            </span>
+        </igx-prefix>
+        <input igxInput type="text" [value]="value()" (change)="onTextChange($event)" placeholder="auto" spellcheck="false" />
+        @if (value()) {
+            <igx-suffix>
+                <button type="button" class="color-field__reset" (click)="reset()" title="Reset to auto">&#8635;</button>
+            </igx-suffix>
+        }
+    </igx-input-group>
+</div>

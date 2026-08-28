@@ -1,0 +1,64 @@
+<div class="sample grid-theming-sample">
+    <div class="theme-picker">
+        <span class="theme-picker__label">Pick a theme</span>
+
+        <igx-buttongroup
+            class="theme-switcher"
+            selectionMode="singleRequired"
+            (selected)="selectTheme($event)">
+            @for (theme of themes; track theme.class) {
+                <button igxButton [selected]="activeTheme() === theme.class">
+                    <span class="theme-swatch" [class]="theme.swatch"></span>
+                    {{ theme.label }}
+                </button>
+            }
+        </igx-buttongroup>
+
+        <p class="theme-picker__hint">
+            Custom themes, not built-in: each is a <code>grid-theme()</code> with its
+            own background and accent.
+        </p>
+    </div>
+
+    <igx-grid
+        [igxPreventDocumentScroll]="true"
+        [class]="activeTheme()"
+        [data]="data"
+        [width]="'100%'"
+        [height]="'560px'"
+        [allowFiltering]="true"
+        [filterMode]="'excelStyleFilter'"
+        [rowSelection]="'multiple'"
+        [columnSelection]="'multiple'">
+
+        <igx-grid-toolbar>
+            <igx-grid-toolbar-title>Invoices</igx-grid-toolbar-title>
+            <igx-grid-toolbar-actions>
+                <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+                <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+            </igx-grid-toolbar-actions>
+        </igx-grid-toolbar>
+
+        <igx-column field="ShipCountry" header="Country" width="160px"
+            [sortable]="true" [filterable]="true" [pinned]="true">
+        </igx-column>
+        <igx-column field="ShipCity" header="City" width="160px"
+            [sortable]="true" [filterable]="true">
+        </igx-column>
+        <igx-column field="ShipName" header="Ship Name" width="240px"
+            [sortable]="true" [filterable]="true">
+        </igx-column>
+        <igx-column field="Salesperson" header="Salesperson" width="200px"
+            [sortable]="true" [filterable]="true">
+        </igx-column>
+        <igx-column field="UnitPrice" header="Unit Price" width="140px"
+            dataType="number" [formatter]="formatCurrency"
+            [sortable]="true" [hasSummary]="true" [summaries]="compactSummary">
+        </igx-column>
+        <igx-column field="Quantity" header="Quantity" width="140px"
+            dataType="number" [sortable]="true">
+        </igx-column>
+
+        <igx-paginator [perPage]="10"></igx-paginator>
+    </igx-grid>
+</div>
