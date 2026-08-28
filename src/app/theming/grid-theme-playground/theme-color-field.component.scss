@@ -1,0 +1,76 @@
+.color-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    &__label {
+        font-size: 12px;
+        color: var(--ig-gray-700);
+    }
+
+    igx-input-group {
+        --ig-input-group-focused-border-color: var(--ig-gray-500);
+
+        [igxInput] {
+            font-size: 13px;
+            font-weight: 400;
+        }
+    }
+
+    &__swatch-wrap {
+        position: relative;
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+
+        input[type='color'] {
+            appearance: none;
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+    }
+
+    &__swatch {
+        position: absolute;
+        inset: 0;
+        border-radius: 5px;
+        border: 1px solid var(--ig-gray-400);
+        pointer-events: none;
+    }
+
+    // "auto" -- the token is deriving rather than being overridden.
+    &__swatch--auto {
+        background: repeating-linear-gradient(
+            45deg,
+            var(--ig-gray-200) 0 4px,
+            var(--ig-gray-100) 4px 8px
+        );
+    }
+
+    &__reset {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        border: none;
+        border-radius: 4px;
+        background: transparent;
+        color: var(--ig-gray-600);
+        font-size: 14px;
+        cursor: pointer;
+        transition: color 120ms ease, background 120ms ease;
+
+        &:hover {
+            color: var(--ig-gray-700);
+            background: var(--ig-gray-100);
+        }
+    }
+}

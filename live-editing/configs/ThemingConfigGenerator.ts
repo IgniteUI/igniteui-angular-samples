@@ -73,6 +73,22 @@ export class ThemingConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'GridThemePlaygroundComponent',
+            additionalFiles: [
+                '/src/app/theming/grid-theme-playground/theme-color-field.component.ts',
+                '/src/app/theming/grid-theme-playground/theme-color-field.component.html',
+                '/src/app/theming/grid-theme-playground/theme-color-field.component.scss',
+                '/src/app/theming/grid-theme-playground/color-utils.ts',
+                '/src/app/data/invoiceData.ts',
+                '/src/app/data/pivot-data.ts',
+                '/src/app/data/singersData.ts',
+                '/src/app/tree-grid/data/employees-flat-avatars.ts'
+            ],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: '/theming/grid-theme-playground/'
+        }));
+
+        configs.push(new Config({
             component: 'TailwindSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: '/theming/tailwind/',

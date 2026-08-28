@@ -1,9 +1,8 @@
 import { Routes } from '@angular/router';
 import { AnimationsSampleComponent } from './animations/animations-sample-1/animations-sample-1.component';
 import { AnimationsSample2Component } from './animations/animations-sample-2/animations-sample-2.component';
-import { AngularMaterialComponent } from './angular/angular-sample.component';
-import { BootstrapComponent } from './bootstrap/bootstrap-sample.component';
 import { DefaultThemeSampleComponent } from './default-theme-sample/default-theme-sample.component';
+import { GridThemePlaygroundComponent } from './grid-theme-playground/grid-theme-playground.component';
 import { DisplayDensityComponent } from './display-density/display-density.component';
 import { RoundnessComponent } from './roundness/roundness-sample.component';
 import { CardSampleShadowComponent} from './shadows/card-sample-shadow/card-sample-shadow';
@@ -55,12 +54,12 @@ export const ThemingRoutes: Routes = [
         path: 'animations-sample-2'
     },
     {
-        component: AngularMaterialComponent,
+        loadComponent: () => import('./angular/angular-sample.component').then(m => m.AngularMaterialComponent),
         data: themingRoutesData['angular-sample'],
         path: 'angular-sample'
     },
     {
-        component: BootstrapComponent,
+        loadComponent: () => import('./bootstrap/bootstrap-sample.component').then(m => m.BootstrapComponent),
         data: themingRoutesData['bootstrap-sample'],
         path: 'bootstrap-sample'
     },
@@ -68,5 +67,10 @@ export const ThemingRoutes: Routes = [
         component: TailwindSampleComponent,
         data: themingRoutesData['tailwind-sample'],
         path: 'tailwind-sample'
+    },
+    {
+        component: GridThemePlaygroundComponent,
+        data: themingRoutesData['grid-theme-playground'],
+        path: 'grid-theme-playground'
     }
 ];

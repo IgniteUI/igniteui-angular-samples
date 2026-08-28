@@ -25,7 +25,7 @@ export class TreeGridRowStylesComponent implements OnInit {
         row.data['Title'].includes('Senior') ? '#f8f9fa' : null;
 
     // eslint-disable-next-line @typescript-eslint/member-ordering
-    public  rowStyles = {
+    public  rowStyles: any = {
         background: this.background,
         'border-left': (row: RowType) => row.data['Title'] === 'CEO' || row.data['Title'].includes('President') ?
             '2px solid' : null,

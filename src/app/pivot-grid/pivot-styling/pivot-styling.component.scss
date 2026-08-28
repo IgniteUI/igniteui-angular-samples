@@ -1,16 +1,141 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-$background: #292826;
-$foreground: #eeece1;
-$accent: #ffcd0f;
+$studio-bg: #faf4ed;
+$studio-accent: #907aa9;
+$ledger-bg: #eceff4;
+$ledger-accent: #5e81ac;
+$editorial-bg: #333c43;
+$editorial-accent: #a7c080;
+$midnight-bg: #282a36;
+$midnight-accent: #bd93f9;
 
-$custom-grid: grid-theme(
-  $background: $background,
-  $foreground: $foreground,
-  $accent-color: $accent,
-);
+.theme-studio {
+    --ig-size: var(--ig-size-large);
+    --ig-radius-factor: 0.6;
 
-igx-pivot-grid {
-  @include tokens($custom-grid);
+    @include tokens(grid-theme(
+        $background: $studio-bg,
+        $foreground: #575279,
+        $accent-color: $studio-accent,
+        $header-background: #fffaf3,
+        $header-border-color: #dfdad9,
+        $row-border-color: #f2e9e1,
+        $grid-border-color: #dfdad9,
+        $grid-shadow: (0 1px 3px rgba(87, 82, 121, 0.10), 0 1px 2px rgba(87, 82, 121, 0.06))
+    ));
+}
+
+.theme-ledger {
+    --ig-size: var(--ig-size-small);
+    --ig-radius-factor: 0;
+
+    @include tokens(grid-theme(
+        $background: $ledger-bg,
+        $foreground: #2e3440,
+        $accent-color: $ledger-accent,
+        $header-background: #d8dee9,
+        $row-odd-background: #eceff4,
+        $row-even-background: #e5e9f0,
+        $body-column-border-color-odd: #d8dee9,
+        $body-column-border-color-even: #d8dee9,
+        $row-border-color: #d8dee9,
+        $grid-border-color: #c8d0dc
+    ));
+}
+
+.theme-editorial {
+    --ig-size: var(--ig-size-large);
+    --ig-radius-factor: 0;
+
+    @include tokens(grid-theme(
+        $schema: $dark-material-schema,
+        $background: $editorial-bg,
+        $foreground: #d3c6aa,
+        $accent-color: $editorial-accent,
+        $header-background: #3a464c,
+        $row-border-color: #333c43,
+        $grid-border-color: #333c43
+    ));
+}
+
+.theme-midnight {
+    --ig-size: var(--ig-size-medium);
+    --ig-radius-factor: 0.25;
+
+    @include tokens(grid-theme(
+        $schema: $dark-material-schema,
+        $background: $midnight-bg,
+        $foreground: #f8f8f2,
+        $accent-color: $midnight-accent,
+        $header-background: #21222c,
+        $body-column-border-color-odd: #44475a,
+        $body-column-border-color-even: #44475a,
+        $row-border-color: #44475a,
+        $grid-border-color: #44475a
+    ));
+}
+
+.pivot-theming-sample {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.theme-picker {
+    --ig-button-group-elevation: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-self: flex-start;
+}
+
+.theme-picker__label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--ig-gray-700);
+}
+
+.theme-picker__hint {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--ig-gray-600);
+
+    code {
+        font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+        font-size: 11px;
+    }
+}
+
+.theme-swatch {
+    display: inline-block;
+    min-width: 14px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid var(--ig-gray-300);
+    vertical-align: -2px;
+    background: linear-gradient(135deg, var(--swatch-bg) 0 50%, var(--swatch-accent) 50% 100%);
+}
+
+.theme-swatch--studio {
+    --swatch-bg: #{$studio-bg};
+    --swatch-accent: #{$studio-accent};
+}
+
+.theme-swatch--ledger {
+    --swatch-bg: #{$ledger-bg};
+    --swatch-accent: #{$ledger-accent};
+}
+
+.theme-swatch--editorial {
+    --swatch-bg: #{$editorial-bg};
+    --swatch-accent: #{$editorial-accent};
+}
+
+.theme-swatch--midnight {
+    --swatch-bg: #{$midnight-bg};
+    --swatch-accent: #{$midnight-accent};
 }

@@ -18,12 +18,12 @@ export class HGridRowStylesSampleComponent implements OnInit {
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     public localdata;
-    public  rowStyles = {
+    public  rowStyles: any = {
         background:(row: RowType) => row.data['HasGrammyAward'] ? '#eeddd3' : '#f0efeb',
         'border-left': (row: RowType) => row.data['HasGrammyAward'] ? '2px solid #dda15e' : null
     };
 
-    public  childRowStyles = {
+    public  childRowStyles: any = {
         'border-left': (row: RowType) => row.data['BillboardReview'] > 70 ? '3.5px solid #dda15e' : null
     };
     constructor() { }
