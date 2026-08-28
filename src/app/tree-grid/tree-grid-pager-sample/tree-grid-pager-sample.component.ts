@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, AfterViewInit, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, PLATFORM_ID, inject } from '@angular/core';
 import { IPaginatorResourceStrings } from 'igniteui-angular/core';
 import { IgxPageNavigationComponent, IgxPageSizeSelectorComponent, IgxPaginatorComponent, IgxPaginatorContentDirective } from 'igniteui-angular/paginator';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
@@ -14,7 +14,6 @@ import { isPlatformBrowser } from '@angular/common';
     selector: 'app-tree-grid-pager-sample',
     styleUrls: ['./tree-grid-pager-sample.component.scss'],
     templateUrl: './tree-grid-pager-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxPaginatorContentDirective, IgxPageSizeSelectorComponent, IgxPageNavigationComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxSwitchComponent, FormsModule]
 })
 export class TreeGridPagerSampleComponent implements OnInit, AfterViewInit {

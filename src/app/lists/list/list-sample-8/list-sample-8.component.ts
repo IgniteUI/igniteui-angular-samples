@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective, IgxListThumbnailDirective } from 'igniteui-angular/list';
 import { IgxToastComponent } from 'igniteui-angular/toast';
@@ -11,7 +11,6 @@ import { IgxRippleDirective } from 'igniteui-angular/directives';
     selector: 'app-list-8',
     styleUrls: ['./list-sample-8.component.scss'],
     templateUrl: './list-sample-8.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxListComponent, IgxListItemComponent, IgxAvatarComponent, IgxListThumbnailDirective, IgxListLineTitleDirective, IgxListLineSubTitleDirective, IgxIconComponent, IgxListActionDirective, IgxRippleDirective]
 })
 export class ListSample8Component implements OnInit {

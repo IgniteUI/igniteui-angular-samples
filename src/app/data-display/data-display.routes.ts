@@ -1,12 +1,16 @@
 import { BadgeIconComponent } from './badge/badge-icon/badge-icon.component';
-import { BadgeSample2Component } from './badge/badge-sample-2/badge-sample-2.component';
-import { BadgeSample3Component } from './badge/badge-sample-3/badge-sample-3.component';
+import { BadgeOverviewComponent } from './badge/badge-overview/badge-overview.component';
+import { BadgeSizeComponent } from './badge/badge-size/badge-size.component';
+import { BadgeTypeComponent } from './badge/badge-type/badge-type.component';
+import { BadgeShapeComponent } from './badge/badge-shape/badge-shape.component';
+import { BadgeVariantsComponent } from './badge/badge-variants/badge-variants.component';
 import { BadgeOutlinedComponent } from './badge/badge-outlined/badge-outlined.component';
-import { BadgeDotSampleComponent } from './badge/badge-dot-sample/badge-dot-sample.component';
-import { BadgeStylingSampleComponent } from './badge/badge-styling-sample/badge-styling-sample.component';
-import { BadgeTailwindStylingSampleComponent } from './badge/badge-tailwind-styling-sample/badge-tailwind-styling-sample.component';
+import { BadgeDotComponent } from './badge/badge-dot/badge-dot.component';
+import { BadgeStylingComponent } from './badge/badge-styling/badge-styling.component';
+import { BadgeTailwindStylingComponent } from './badge/badge-tailwind-styling/badge-tailwind-styling.component';
 import { ChipAreaSampleComponent } from './chip/chip-area-sample/chip-area-sample.component';
 import { ChipSimpleComponent } from './chip/chip-simple/chip-simple.component';
+import { ChipOutlinedComponent } from './chip/chip-outlined/chip-outlined.component';
 import { ChipVariantsComponent } from './chip/chip-variants/chip-variants.component';
 import { ChipStylingSampleComponent } from './chip/chip-styling/chip-styling.component';
 import { ChipTailwindStylingSampleComponent } from './chip/chip-tailwind-styling/chip-tailwind-styling.component';
@@ -55,34 +59,49 @@ export const DataDisplayRoutes: Routes = [
         path: 'badge-icon'
     },
     {
-        component: BadgeSample2Component,
-        data: dataDisplayRoutesData['badge-sample-2'],
-        path: 'badge-sample-2'
+        component: BadgeOverviewComponent,
+        data: dataDisplayRoutesData['badge-overview'],
+        path: 'badge-overview'
     },
     {
-        component: BadgeSample3Component,
-        data: dataDisplayRoutesData['badge-sample-3'],
-        path: 'badge-sample-3'
+        component: BadgeSizeComponent,
+        data: dataDisplayRoutesData['badge-size'],
+        path: 'badge-size'
+    },
+    {
+        component: BadgeTypeComponent,
+        data: dataDisplayRoutesData['badge-type'],
+        path: 'badge-type'
+    },
+    {
+        component: BadgeShapeComponent,
+        data: dataDisplayRoutesData['badge-shape'],
+        path: 'badge-shape'
+    },
+    {
+        component: BadgeVariantsComponent,
+        data: dataDisplayRoutesData['badge-variants'],
+        path: 'badge-variants'
     },
     {
         component: BadgeOutlinedComponent,
-        data: dataDisplayRoutesData['badge-outlined-sample'],
-        path: 'badge-outlined-sample'
+        data: dataDisplayRoutesData['badge-outlined'],
+        path: 'badge-outlined'
     },
     {
-        component: BadgeDotSampleComponent,
-        data: dataDisplayRoutesData['badge-dot-sample'],
-        path: 'badge-dot-sample'
+        component: BadgeDotComponent,
+        data: dataDisplayRoutesData['badge-dot'],
+        path: 'badge-dot'
     },
     {
-        component: BadgeStylingSampleComponent,
-        data: dataDisplayRoutesData['badge-styling-sample'],
-        path: 'badge-styling-sample'
+        component: BadgeStylingComponent,
+        data: dataDisplayRoutesData['badge-styling'],
+        path: 'badge-styling'
     },
     {
-        component: BadgeTailwindStylingSampleComponent,
-        data: dataDisplayRoutesData['badge-tailwind-styling-sample'],
-        path: 'badge-tailwind-styling-sample'
+        component: BadgeTailwindStylingComponent,
+        data: dataDisplayRoutesData['badge-tailwind-styling'],
+        path: 'badge-tailwind-styling'
     },
     {
         component: ChipAreaSampleComponent,
@@ -93,6 +112,11 @@ export const DataDisplayRoutes: Routes = [
         component: ChipSimpleComponent,
         data: dataDisplayRoutesData['chip-simple'],
         path: 'chip-simple'
+    },
+    {
+        component: ChipOutlinedComponent,
+        data: dataDisplayRoutesData['chip-outlined'],
+        path: 'chip-outlined'
     },
     {
         component: ChipVariantsComponent,

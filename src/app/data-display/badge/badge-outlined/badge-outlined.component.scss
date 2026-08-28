@@ -1,33 +1,66 @@
+@use "sass:list";
+@use "igniteui-theming/sass" as *;
+
 :host {
-  display: block;
-  padding-inline: 1rem;
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(60px);
+    min-height: 7rem;
+    padding-inline: rem(16px);
+
+    ::ng-deep {
+        // NOTE! This is just for the sake of the sample, don't do this in your app.
+        // The stepper body is where the content for each step goes, and it should be visible.
+        // This sample doesn't have any content, so we hide it to avoid the empty space.
+        .igx-stepper__body {
+            display: none;
+        }
+    }
 }
 
-.wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin-block: 1rem;
-  width: fit-content;
-  padding: 0.5rem;
-  gap: 0.5rem;
-  border: 1px solid var(--ig-gray-300);
-  border-radius: .25rem;
-}
-
-igx-avatar {
-    anchor-name: --avatar;
+.icon-anchor {
+    --ig-avatar-background: #{color($color: gray, $variant: 900, $opacity: 0.08)};
 }
 
 igx-badge {
-  --size: 1rem;
+    --ig-size: var(--ig-size-small);
 
-  position: absolute;
-  inset-block-end: anchor(--avatar bottom);
-  inset-inline-end: anchor(--avatar right);
+    position: absolute;
+    inset-block-start: anchor(14.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
+
+    &:nth-of-type(2) {
+        inset-block-start: anchor(85.5%);
+    }
 }
 
-span {
-  display: block;
-  font-weight: 600;
+$anchors: icon, initials, flagged;
+
+@each $anchor in $anchors {
+    $i: list.index($anchors, $anchor);
+
+    .#{$anchor}-anchor {
+        anchor-name: --#{$anchor};
+    }
+
+    :host > igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$anchor};
+    }
+}
+
+igx-stepper {
+    --ig-stepper-step-separator-style: dashed;
+    --ig-stepper-step-separator-color: var(--ig-gray-400);
+
+    max-width: rem(316px);
+}
+
+span[igxStepIndicator] {
+    display: grid;
+    place-items: center;
+    inline-size: 100%;
+    block-size: 100%;
 }

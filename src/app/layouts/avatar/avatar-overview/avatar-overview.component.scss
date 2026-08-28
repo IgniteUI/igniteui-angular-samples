@@ -1,0 +1,40 @@
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: rem(100px);
+    height: 100vh;
+    padding: rem(32px);
+}
+
+.profile-status {
+    anchor-name: --profile-status;
+}
+
+.status-badge {
+    position: absolute;
+    position-anchor: --profile-status;
+    inset-block-start: anchor(85%);
+    inset-inline-start: anchor(85%);
+    translate: -50% -50%;
+}
+
+.avatar-stack {
+    display: flex;
+
+    igx-avatar {
+        box-shadow: 0 0 0 rem(6px) var(--ig-surface-500);
+
+        + igx-avatar {
+            margin-inline-start: rem(-24px);
+        }
+
+        &:last-child {
+            --ig-avatar-background: #e8eef6;
+            --ig-avatar-color: #6f8097;
+        }
+    }
+}

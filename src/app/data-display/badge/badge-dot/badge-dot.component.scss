@@ -1,0 +1,115 @@
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    --sample-accent: #0057a9;
+
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(40px);
+    min-height: 8.5rem;
+}
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    inset-block-start: anchor(14.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
+}
+
+$anchors: icon, avatar;
+
+@each $anchor in $anchors {
+    $i: list.index($anchors, $anchor);
+
+    .#{$anchor}-anchor {
+        anchor-name: --#{$anchor};
+    }
+
+    :host > igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$anchor};
+    }
+}
+
+.notifications-card,
+.nav-card {
+    background: var(--ig-surface-500);
+    border-radius: rem(4px);
+    box-shadow: 0 rem(1px) rem(3px) hsl(from var(--ig-gray-900) h s l / 0.12);
+}
+
+.notifications-card {
+    min-width: rem(270px);
+    padding-block: rem(8px);
+}
+
+.notification-row {
+    @include type-style("body-2") {
+        margin: 0;
+    }
+
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+    padding: rem(8px) rem(12px);
+    color: var(--ig-gray-900);
+}
+
+.row-indicator {
+    display: inline-flex;
+    justify-content: center;
+    width: rem(12px);
+}
+
+.row-title {
+    flex: 1;
+}
+
+.unread {
+    color: var(--sample-accent);
+    font-weight: 600;
+}
+
+.row-chevron {
+    color: var(--ig-gray-600);
+    font-size: rem(18px);
+}
+
+.nav-card {
+    display: flex;
+    align-items: center;
+    gap: rem(8px);
+    padding: rem(8px) rem(12px);
+}
+
+.nav-item {
+    @include type-style("caption") {
+        margin: 0;
+    }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(4px);
+    min-width: rem(56px);
+    color: var(--ig-gray-700);
+
+    &.active {
+        color: var(--sample-accent);
+    }
+}
+
+.nav-icon {
+    position: relative;
+    display: inline-flex;
+
+    igx-badge {
+        position: absolute;
+        inset-block: rem(-2px) auto;
+        inset-inline: auto rem(-6px);
+    }
+}

@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
-import { IgxSummaryResult } from 'igniteui-angular/core';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxButtonDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -40,7 +40,6 @@ class MySummary {
     selector: 'app-hierarchical-grid-editing',
     styleUrls: ['./hierarchical-grid-editing.component.scss'],
     templateUrl: 'hierarchical-grid-editing.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent, IgxRowIslandComponent, IgxDialogComponent, IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxCheckboxComponent]
 })
 

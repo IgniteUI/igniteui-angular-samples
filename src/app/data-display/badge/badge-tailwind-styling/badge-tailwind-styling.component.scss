@@ -1,0 +1,34 @@
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+$anchors: close, volume, remove, check;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(48px);
+    min-height: 7rem;
+}
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    inset-block-start: anchor(85.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
+}
+
+@each $anchor in $anchors {
+    $i: list.index($anchors, $anchor);
+
+    igx-avatar:nth-of-type(#{$i}) {
+        anchor-name: --#{$anchor};
+    }
+
+    igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$anchor};
+    }
+}

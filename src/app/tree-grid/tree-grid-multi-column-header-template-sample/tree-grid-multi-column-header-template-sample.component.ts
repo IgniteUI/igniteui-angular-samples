@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { GridSelectionMode, IgxColumnComponent, IgxColumnGroupComponent } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -9,7 +9,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-multi-column-header-template-sample',
     styleUrls: ['./tree-grid-multi-column-header-template-sample.component.scss'],
     templateUrl: './tree-grid-multi-column-header-template-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxIconComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnGroupComponent]
 })
 export class TreeGridMultiColumnHeaderTemplateSampleComponent {

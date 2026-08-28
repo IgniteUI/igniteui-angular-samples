@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { facebook, linkedin } from '@igniteui/material-icons-extended';
 import { IgxChipComponent, IgxChipsAreaComponent } from 'igniteui-angular/chips';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
@@ -9,7 +9,6 @@ import { NgClass } from '@angular/common';
   selector: 'app-chip',
   styleUrls: ['./chip-styling.component.scss'],
   templateUrl: './chip-styling.component.html',
-  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [IgxChipsAreaComponent, IgxChipComponent, IgxIconComponent, IgxPrefixDirective, NgClass]
 })
 

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
 import localeBG from '@angular/common/locales/bg';
 import localeCS from '@angular/common/locales/cs';
@@ -37,7 +37,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-localization-all-resources-old',
     styleUrls: ['./localization-all-resources.component.scss'],
     templateUrl: 'localization-all-resources.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent, IgxSelectComponent, FormsModule, IgxSelectItemComponent, IgxColumnComponent]
 })
 export class LocalizationAllResourcesOldComponent implements OnInit {

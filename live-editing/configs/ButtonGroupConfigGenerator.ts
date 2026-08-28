@@ -10,45 +10,73 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // button group 1
+        // button group overview
         configs.push(new Config({
-            component: 'ButtonGroupSample1Component',
+            component: 'ButtonGroupOverviewComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group 2
+        // button group layout
         configs.push(new Config({
-            component: 'ButtonGroupSample2Component',
+            component: 'ButtonGroupLayoutComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group 3
+        // button group alignment
         configs.push(new Config({
-            component: 'ButtonGroupSample3Component',
+            component: 'ButtonGroupAlignmentComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group 4
+        // button group custom toggle
         configs.push(new Config({
-            component: 'ButtonGroupSampleComponent',
+            component: 'ButtonGroupCustomToggleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group 5
+        // button group states
         configs.push(new Config({
-            component: 'ButtonGroupSample5Component',
+            component: 'ButtonGroupStatesComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));
 
-        // button group style
+        // button group interaction states
         configs.push(new Config({
-            component: 'ButtonGroupStyleComponent',
-            additionalFiles: ["/src/app/data-entries/buttonGroup/button-group-style/layout.scss"],
+            component: 'ButtonGroupInteractionStatesComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
+        // button group selection
+        configs.push(new Config({
+            component: 'ButtonGroupSelectionComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
+        // button group size
+        configs.push(new Config({
+            component: 'ButtonGroupSizeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
+        // button group styling
+        configs.push(new Config({
+            component: 'ButtonGroupStylingComponent',
+            additionalFiles: ["/src/app/data-entries/buttonGroup/button-group-styling/layout.scss"],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/buttonGroup/"
+        }));
+
+        // button group tailwind styling
+        configs.push(new Config({
+            component: 'ButtonGroupTailwindStylingComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));

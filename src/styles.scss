@@ -19,6 +19,21 @@ body {
     margin: 0;
 }
 
+body.custom-body:has(
+    app-badge-overview,
+    app-badge-styling,
+    app-badge-dot,
+    app-badge-type,
+    app-badge-icon,
+    app-badge-size,
+    app-badge-shape,
+    app-badge-variants,
+    app-badge-outlined,
+    app-badge-tailwind-styling
+) {
+    background: transparent;
+}
+
 @include core();
 @include typography();
 @include theme(

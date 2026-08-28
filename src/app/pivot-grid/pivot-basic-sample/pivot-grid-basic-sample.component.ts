@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component } from "@angular/core";
 import { DATA } from '../../data/pivot-data';
 
 import { IPivotConfiguration, IgxPivotNumericAggregate } from 'igniteui-angular/grids/core';
@@ -8,7 +8,6 @@ import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
     selector: 'app-pivot-grid-basic-sample',
     styleUrls: ['./pivot-grid-basic-sample.component.scss'],
     templateUrl: './pivot-grid-basic-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxPivotGridComponent]
 })
 export class PivotGridBasicSampleComponent {
@@ -21,7 +20,7 @@ export class PivotGridBasicSampleComponent {
                 memberFunction: (data) => data.Product.Name,
                 enabled: true
             }
-            
+
         ],
         rows: [
             {

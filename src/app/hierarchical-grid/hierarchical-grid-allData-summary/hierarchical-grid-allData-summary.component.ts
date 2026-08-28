@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
-import { IgxSummaryResult } from 'igniteui-angular/core';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
 import { SINGERS } from '../../data/singersData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
@@ -47,7 +47,6 @@ class GrammySummary {
     selector: 'app-hierarchical-grid-all-data-summary',
     styleUrls: ['./hierarchical-grid-allData-summary.component.scss'],
     templateUrl: 'hierarchical-grid-allData-summary.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxRowIslandComponent]
 })
 

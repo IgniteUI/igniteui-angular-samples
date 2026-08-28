@@ -1,0 +1,53 @@
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+$types: dot, icon, text;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(60px);
+    row-gap: rem(16px);
+    min-height: 8.5rem;
+    padding: rem(32px);
+}
+
+igx-avatar {
+    --ig-avatar-size: #{rem(40px)};
+
+    grid-row: 1;
+}
+
+span {
+    grid-row: 2;
+    text-align: center;
+    color: var(--ig-gray-700);
+
+    @include type-style("caption") {
+        margin: 0;
+    }
+}
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    inset-block-start: anchor(85.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
+}
+
+@each $type in $types {
+    $i: list.index($types, $type);
+
+    igx-avatar:nth-of-type(#{$i}) {
+        anchor-name: --#{$type};
+    }
+
+    igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$type};
+    }
+}

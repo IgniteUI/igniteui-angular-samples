@@ -1,4 +1,4 @@
-import { Component, TemplateRef, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, TemplateRef, ViewChild, inject } from '@angular/core';
 
 import { IGridStateOptions, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridStateDirective } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -17,7 +17,6 @@ import { AsyncPipe } from '@angular/common';
     selector: 'app-grid-state-persistance-sample',
     styleUrls: ['./grid-state-persistance-sample.component.scss'],
     templateUrl: 'grid-state-persistance-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxIconComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxGridStateDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxBadgeComponent, AsyncPipe]
 })
 
@@ -42,7 +41,7 @@ export class GridStatePersistenceSampleComponent {
     @ViewChild('startY', { static: true }) public startYTemplate: TemplateRef<any>;
     @ViewChild('changeOnYear', { static: true }) public changeOnYearTemplate: TemplateRef<any>;
     @ViewChild('changePercentage', { static: true }) public changePercentageTemplate: TemplateRef<any>;
-    
+
     public data: Observable<any[]>;
     public customStrategy = NoopSortingStrategy.instance();
     public options: IGridStateOptions = {

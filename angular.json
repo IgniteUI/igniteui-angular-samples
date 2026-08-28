@@ -17,10 +17,6 @@
             },
             "index": "src/index.html",
             "tsConfig": "src/tsconfig.app.json",
-            "polyfills": [
-              "zone.js",
-              "hammerjs"
-            ],
             "assets": [
               "src/assets",
               "src/favicon.ico"
@@ -90,7 +86,6 @@
           "options": {
             "main": "src/test.ts",
             "karmaConfig": "./karma.conf.js",
-            "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.spec.json",
             "scripts": [],
             "styles": [
@@ -136,9 +131,6 @@
               "base": "dist/app-lob"
             },
             "index": "projects/app-lob/src/index.html",
-            "polyfills": [
-              "projects/app-lob/src/polyfills.ts"
-            ],
             "tsConfig": "projects/app-lob/tsconfig.app.json",
             "assets": [
               "projects/app-lob/src/favicon.ico",
@@ -220,7 +212,6 @@
           "builder": "@angular/build:karma",
           "options": {
             "main": "projects/app-lob/src/test.ts",
-            "polyfills": "projects/app-lob/src/polyfills.ts",
             "tsConfig": "projects/app-lob/tsconfig.spec.json",
             "karmaConfig": "projects/app-lob/karma.conf.js",
             "assets": [
@@ -267,9 +258,6 @@
               "base": "dist/app-crm"
             },
             "index": "projects/app-crm/src/index.html",
-            "polyfills": [
-              "projects/app-crm/src/polyfills.ts"
-            ],
             "tsConfig": "projects/app-crm/tsconfig.app.json",
             "assets": [
               "projects/app-crm/src/favicon.ico",
@@ -350,7 +338,6 @@
           "builder": "@angular/build:karma",
           "options": {
             "main": "projects/app-crm/src/test.ts",
-            "polyfills": "projects/app-crm/src/polyfills.ts",
             "tsConfig": "projects/app-crm/tsconfig.spec.json",
             "karmaConfig": "projects/app-crm/karma.conf.js",
             "assets": [

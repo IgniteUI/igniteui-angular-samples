@@ -1,0 +1,52 @@
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+$avatars: circle, square, rounded;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(40px);
+    row-gap: rem(8px);
+    height: 100vh;
+    padding: rem(32px);
+}
+
+igx-avatar {
+    grid-row: 1;
+}
+
+span {
+    grid-row: 2;
+    text-align: center;
+    color: var(--ig-gray-600);
+
+    @include type-style("body-1") {
+        margin: 0;
+    };
+}
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    inset-block-start: anchor(85.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
+}
+
+// The avatars and badges are flat siblings, so every badge needs its own anchor name to pin to.
+@each $avatar in $avatars {
+    $i: list.index($avatars, $avatar);
+
+    igx-avatar:nth-of-type(#{$i}) {
+        anchor-name: --#{$avatar};
+    }
+
+    igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$avatar};
+    }
+}

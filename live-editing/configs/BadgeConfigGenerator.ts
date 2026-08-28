@@ -17,34 +17,53 @@ export class BadgeConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/data-display/badge/"
         }));
 
-        // badge sample 2
+        // badge overview
         configs.push(new Config({
-            component: 'BadgeSample2Component',
+            component: 'BadgeOverviewComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
+        // badge size
+        configs.push(new Config({
+            component: 'BadgeSizeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
+        // badge type
+        configs.push(new Config({
+            component: 'BadgeTypeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
+        // badge shape
+        configs.push(new Config({
+            component: 'BadgeShapeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
+        // badge variants
+        configs.push(new Config({
+            component: 'BadgeVariantsComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/badge/"
+        }));
+
+        // badge styling
+        configs.push(new Config({
+            component: 'BadgeStylingComponent',
             additionalFiles: ["src/app/data-display/badge/model/member.model.ts"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/badge/"
         }));
 
-        // badge sample 3
+        // badge dot
         configs.push(new Config({
-            component: 'BadgeSample3Component',
-            additionalFiles: ["src/app/data-display/badge/model/member.model.ts"],
-            appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-display/badge/"
-        }));
-
-        // badge styling sample
-        configs.push(new Config({
-            component: 'BadgeStylingSampleComponent',
-            additionalFiles: ["src/app/data-display/badge/model/member.model.ts", "src/app/data-display/badge/badge-styling-sample/layout.scss"],
-            appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-display/badge/"
-        }));
-
-        // badge dot sample
-        configs.push(new Config({
-            component: 'BadgeDotSampleComponent',
-            additionalFiles: ["src/app/data-display/badge/model/member.model.ts", "src/app/data-display/badge/badge-dot-sample/badge-dot-sample.component.scss"],
+            component: 'BadgeDotComponent',
+            additionalFiles: ["src/app/data-display/badge/badge-dot/badge-dot.component.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/badge/"
         }));

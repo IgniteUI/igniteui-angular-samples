@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { GridSelectionMode, IgxColumnComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
@@ -12,7 +12,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-tree-grid-column-selection',
     templateUrl: './tree-grid-column-selection.component.html',
     styleUrls: ['./tree-grid-column-selection.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxSelectComponent, FormsModule, IgxLabelDirective, IgxSelectItemComponent, IgxColumnComponent]
 })
 export class TreeGridColumnSelectionComponent implements OnInit, AfterViewInit {

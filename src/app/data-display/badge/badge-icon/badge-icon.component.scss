@@ -1,10 +1,44 @@
-.wrapper {
-  position: relative;
-  margin: 15px 0 0 15px;
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(40px);
+    row-gap: rem(10px);
+    min-height: 8.5rem;
+    padding: rem(32px);
+}
+
+igx-avatar {
+    grid-row: 1;
+    anchor-name: --avatar;
 }
 
 igx-badge {
-  position: absolute;
-  bottom: 0;
-  left: 28px;
+    --ig-size: var(--ig-size-medium);
+
+    grid-row: 1;
+}
+
+span {
+    @include type-style("body-2") {
+        margin: 0;
+    }
+
+    grid-row: 2;
+    text-align: center;
+    color: var(--ig-gray-700);
+}
+
+igx-badge:last-of-type {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    position-anchor: --avatar;
+    inset-block-start: anchor(14.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
 }
