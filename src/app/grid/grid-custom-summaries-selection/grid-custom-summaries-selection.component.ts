@@ -1,8 +1,8 @@
 import { formatDate } from '@angular/common';
 import { AfterViewInit, Component, ViewChild, OnInit, ChangeDetectorRef, inject } from '@angular/core';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxDateSummaryOperand, IgxGridFooterComponent, IgxNumberSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
+import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridFooterComponent } from 'igniteui-angular/grids/core';
+import { IgxDateSummaryOperand, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxSummaryResult } from 'igniteui-angular/core';
 import { DATA } from '../../data/nwindData';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 

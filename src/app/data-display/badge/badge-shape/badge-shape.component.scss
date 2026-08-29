@@ -1,31 +1,31 @@
-.badge-shape {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: grid;
+    grid-template-columns: rem(80px) rem(40px) rem(40px) rem(40px);
+    place-content: center;
+    place-items: center;
+    column-gap: rem(8px);
+    row-gap: rem(40px);
     min-height: 8.5rem;
 }
 
-.badge-shape-row {
-    display: grid;
-    grid-template-columns: 80px 40px 40px 40px;
-    align-items: center;
-    justify-items: center;
-    gap: 8px;
-}
-
-.row-label {
+span {
     justify-self: end;
-    color: #556c86;
-    font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 20px;
-    letter-spacing: 0.3px;
+    color: var(--ig-gray-700);
+
+    @include type-style("body-2") {
+        margin: 0;
+    }
 }
 
-.badge-small {
-    --ig-size: var(--ig-size-small);
+$sizes: small, medium, large;
+
+@each $size in $sizes {
+    $i: list.index($sizes, $size);
+
+    igx-badge:nth-of-type(3n + #{$i}) {
+        --ig-size: var(--ig-size-#{$size});
+    }
 }

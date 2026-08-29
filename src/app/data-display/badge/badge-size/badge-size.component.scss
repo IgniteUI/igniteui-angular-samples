@@ -1,31 +1,31 @@
-.badge-size {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 40px;
-    padding: 32px;
-}
+@use "sass:list";
+@use "igniteui-theming/sass/typography" as *;
 
-.badge-size-row {
+:host {
     display: grid;
-    grid-template-columns: 80px 32px 40px 40px;
-    align-items: center;
-    justify-items: center;
-    gap: 8px;
+    grid-template-columns: rem(80px) rem(32px) rem(40px) rem(40px);
+    place-content: center;
+    place-items: center;
+    column-gap: rem(8px);
+    row-gap: rem(40px);
+    padding: rem(32px);
 }
 
-.row-label {
+span {
     justify-self: end;
-    color: #556c86;
-    font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 20px;
-    letter-spacing: 0.3px;
+    color: var(--ig-gray-700);
+
+    @include type-style("body-2") {
+        margin: 0;
+    }
 }
 
-.badge-large { --ig-size: var(--ig-size-large); }
-.badge-medium { --ig-size: var(--ig-size-medium); }
-.badge-small { --ig-size: var(--ig-size-small); }
+$sizes: small, medium, large;
+
+@each $size in $sizes {
+    $i: list.index($sizes, $size);
+
+    igx-badge:nth-of-type(n + #{($i - 1) * 3 + 1}):nth-of-type(-n + #{$i * 3}) {
+        --ig-size: var(--ig-size-#{$size});
+    }
+}
