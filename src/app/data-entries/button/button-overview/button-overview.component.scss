@@ -18,7 +18,7 @@
 }
 
 :host ::ng-deep .fields .igx-input-group__bundle {
-    background-color: #fff;
+    background-color: var(--ig-gray-0);
 }
 
 .fields igx-input-group {
