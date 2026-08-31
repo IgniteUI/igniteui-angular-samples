@@ -12,6 +12,7 @@ export const dataDisplayRoutesData = {
     "badge-styling": { displayName: "Badge Styling", parentName: "Badge" },
     "badge-tailwind-styling": { displayName: "Badge Tailwind Styling", parentName: "Badge" },
     "chip-simple": { displayName: "Chip Simple", parentName: "Chip" },
+    "chip-outlined": { displayName: "Chip Outlined", parentName: "Chip" },
     "chip-variants": { displayName: "Chip Variants", parentName: "Chip" },
     "chip-area-sample": { displayName: "Chip Area Sample", parentName: "Chip" },
     "chip-styling": { displayName: "Chip Styling", parentName: "Chip" },

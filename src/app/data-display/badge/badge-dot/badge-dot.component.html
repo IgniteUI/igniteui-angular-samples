@@ -1,43 +1,44 @@
-<div class="badge-dot">
-    <div class="dot-example icon-example">
-        <div class="icon-circle">
-            <igx-icon>notifications</igx-icon>
+<igx-avatar
+    class="icon-anchor"
+    icon="notifications"
+    shape="circle"
+    size="small">
+</igx-avatar>
+<igx-badge dot outlined type="error"></igx-badge>
+
+<div class="notifications-card">
+    @for (item of notifications; track item.title) {
+        <div class="notification-row">
+            <span class="row-indicator">
+                @if (item.unread) {
+                    <igx-badge dot type="info"></igx-badge>
+                }
+            </span>
+            <span class="row-title">{{ item.title }}</span>
+            <span class="row-time" [class.unread]="item.unread">{{ item.time }}</span>
+            <igx-icon class="row-chevron">chevron_right</igx-icon>
         </div>
-        <igx-badge dot outlined type="error"></igx-badge>
-    </div>
-    <div class="dot-example notifications-card">
-        @for (item of notifications; track item.title) {
-            <div class="notification-row">
-                <span class="row-indicator">
-                    @if (item.unread) {
-                        <igx-badge dot type="info"></igx-badge>
-                    }
-                </span>
-                <span class="row-title">{{ item.title }}</span>
-                <span class="row-time" [class.unread]="item.unread">{{ item.time }}</span>
-                <igx-icon class="row-chevron">chevron_right</igx-icon>
-            </div>
-        }
-    </div>
-    <div class="dot-example avatar-example">
-        <igx-avatar src="https://dl.infragistics.com/x/img/avatars/avatar-profile-04.png" shape="circle" size="small"></igx-avatar>
-        <igx-badge dot outlined type="error"></igx-badge>
-    </div>
-    <div class="dot-example nav-card">
-        @for (tab of tabs; track tab.label) {
-            <div class="nav-item" [class.active]="tab.active">
-                <span class="nav-icon">
-                    @if (tab.icon === 'facebookMessenger') {
-                        <igx-icon name="facebookMessenger"></igx-icon>
-                    } @else {
-                        <igx-icon [name]="tab.icon"></igx-icon>
-                    }
-                    @if (tab.hasUpdates) {
-                        <igx-badge dot type="info"></igx-badge>
-                    }
-                </span>
-                <span class="nav-label">{{ tab.label }}</span>
-            </div>
-        }
-    </div>
+    }
+</div>
+
+<igx-avatar
+    class="avatar-anchor"
+    src="https://dl.infragistics.com/x/img/avatars/avatar-profile-04.png"
+    shape="circle"
+    size="small">
+</igx-avatar>
+<igx-badge dot outlined type="error"></igx-badge>
+
+<div class="nav-card">
+    @for (tab of tabs; track tab.label) {
+        <div class="nav-item" [class.active]="tab.active">
+            <span class="nav-icon">
+                <igx-icon [name]="tab.icon"></igx-icon>
+                @if (tab.hasUpdates) {
+                    <igx-badge dot type="info"></igx-badge>
+                }
+            </span>
+            <span class="nav-label">{{ tab.label }}</span>
+        </div>
+    }
 </div>

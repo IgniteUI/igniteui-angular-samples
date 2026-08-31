@@ -1,17 +1,8 @@
-<div class="badge-icon">
-    @for (item of badges; track item.label) {
-        <div class="badge-icon-item">
-            <div class="icon-wrapper">
-                <igx-badge [icon]="item.icon" [type]="item.type"></igx-badge>
-            </div>
-            <span>{{ item.label }}</span>
-        </div>
-    }
-    <div class="badge-icon-item">
-        <div class="icon-wrapper avatar-wrapper">
-            <igx-avatar initials="AZ" shape="circle" size="small"></igx-avatar>
-            <igx-badge icon="close" type="error" outlined ></igx-badge>
-        </div>
-        <span>on avatar</span>
-    </div>
-</div>
+@for (item of badges; track item.label) {
+    <igx-badge [icon]="item.icon" [type]="item.type"></igx-badge>
+    <span>{{ item.label }}</span>
+}
+
+<igx-avatar initials="AZ" shape="circle" size="small"></igx-avatar>
+<igx-badge icon="close" type="error" outlined></igx-badge>
+<span>on avatar</span>
