@@ -230,16 +230,13 @@ export class GridThemePlaygroundComponent {
     }
 
     protected async showCode(dialog: IgxDialogComponent): Promise<void> {
-        // Loaded on demand so shiki stays out of the initial bundle.
         if (!this.highlighter) {
-            // shiki/core with explicit grammars: the bundled entry point resolves
-            // languages dynamically and emits a chunk for every one it ships.
             const [core, engine, scss, css, theme] = await Promise.all([
                 import('shiki/core'),
                 import('shiki/engine/javascript'),
                 import('shiki/langs/scss.mjs'),
                 import('shiki/langs/css.mjs'),
-                import('shiki/themes/material-theme-lighter.mjs')
+                import('shiki/themes/dark-plus.mjs')
             ]);
 
             this.highlighter = await core.createHighlighterCore({
@@ -250,7 +247,7 @@ export class GridThemePlaygroundComponent {
         }
 
         const render = (code: string | null, lang: string) => code
-            ? this.sanitizer.bypassSecurityTrustHtml(this.highlighter.codeToHtml(code, { lang, theme: 'material-theme-lighter' }))
+            ? this.sanitizer.bypassSecurityTrustHtml(this.highlighter.codeToHtml(code, { lang, theme: 'dark-plus' }))
             : null;
 
         this.scssHtml.set(render(this.exportScss(), 'scss'));
