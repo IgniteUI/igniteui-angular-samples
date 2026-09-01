@@ -1,41 +1,56 @@
+@use 'igniteui-theming' as *;
+
+:host {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    place-items: center;
+    height: 100vh;
+}
+
 .button-group-size {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 32px;
-    padding: 13px;
-    padding-left: 3rem;
-}
-
-.button-group-size-item {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: auto minmax(rem(240px), 1fr);
     align-items: center;
-    justify-content: flex-start;
-    gap: 32px;
+    gap: rem(24px) rem(32px);
+    inline-size: 100%;
+    max-inline-size: rem(480px);
+    margin-inline: auto;
 }
 
-.button-group-size-item span {
-    width: 52px;
-    text-align: right;
-    color: #556c86;
+.sample-label {
+    color: var(--ig-gray-600);
     font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
+    font-size: rem(13px);
     font-weight: 400;
-    font-style: normal;
-    line-height: 20px;
-    letter-spacing: 0.3px;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+    text-align: end;
 }
 
-.button-group-small button {
-    min-width: 90px;
+igx-buttongroup {
+    &:nth-of-type(1n) {
+        --ig-size: var(--ig-size-small);
+    }
+    &:nth-of-type(2n) {
+        --ig-size: var(--ig-size-medium);
+    }
+    &:nth-of-type(3n) {
+        --ig-size: var(--ig-size-large);
+    }
 }
 
-.button-group-medium button {
-    min-width: 100px;
-}
+@container (width < 22rem) {
+    .button-group-size {
+        grid-template-columns: minmax(0, 1fr);
+        gap: rem(4px);
+    }
 
-.button-group-large button {
-    min-width: 110px;
+    .sample-label {
+        text-align: start;
+
+        &:not(:first-of-type) {
+            margin-block-start: rem(16px);
+        }
+    }
 }
