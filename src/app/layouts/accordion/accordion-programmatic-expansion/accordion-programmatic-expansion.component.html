@@ -1,0 +1,40 @@
+<div class="accordion-sample">
+    <div class="accordion-content">
+        <div class="accordion-toolbar">
+            <button class="action-button" igxButton="contained" igxRipple type="button" (click)="accordion.expandAll()">Show All</button>
+            <button class="action-button" igxButton="contained" igxRipple type="button" (click)="accordion.collapseAll()">Hide All</button>
+        </div>
+
+        <igx-accordion #accordion>
+            <igx-expansion-panel [collapsed]="false">
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Billing</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Invoices and payment settings</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p>Review invoices, update payment methods, and manage billing contacts.</p>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel [collapsed]="false">
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Security</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Password and access controls</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p>Configure password rules, multi-factor authentication, and recovery options.</p>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Notifications</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Product updates and account alerts</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p>Choose which product updates and account alerts are sent to your team.</p>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+        </igx-accordion>
+    </div>
+</div>

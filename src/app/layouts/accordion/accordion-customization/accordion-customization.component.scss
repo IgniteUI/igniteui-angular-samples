@@ -1,0 +1,60 @@
+.accordion-sample {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.accordion-content {
+    width: min(760px, 100%);
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+.panel-description {
+    margin: 0 0 16px;
+    color: var(--ig-gray-700);
+}
+
+.categories-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 24px;
+    max-width: 520px;
+}
+
+.category-option,
+.rating-option {
+    margin: 4px 0;
+}
+
+.range-summary {
+    display: flex;
+    justify-content: space-between;
+    max-width: 560px;
+    margin-bottom: 4px;
+    font-weight: 600;
+}
+
+.cost-slider {
+    max-width: 560px;
+    margin: 8px 0 0;
+}
+
+.rating-options {
+    display: grid;
+    gap: 8px;
+    max-width: 360px;
+}
+
+.rating-control {
+    flex-direction: row;
+}
+
+.time-input {
+    max-width: 260px;
+}
+
+.size-small {
+    --ig-size: var(--ig-size-small);
+}

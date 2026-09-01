@@ -1,9 +1,15 @@
 /* eslint-disable quote-props */
 
 export const layoutsRoutesData = {
+    'accordion-customization': { displayName: 'Accordion Customization', parentName: 'Accordion' },
+    'accordion-nested-scenario': { displayName: 'Accordion Nested Scenario', parentName: 'Accordion' },
+    'accordion-overview': { displayName: 'Accordion Overview', parentName: 'Accordion' },
+    'accordion-styling': { displayName: 'Accordion Styling', parentName: 'Accordion' },
+    'accordion-tailwind-styling': { displayName: 'Accordion Tailwind Styling', parentName: 'Accordion' },
     'accordion-sample-1': { displayName: 'Accordion 1', parentName: 'Accordion' },
     'accordion-sample-2': { displayName: 'Accordion 2', parentName: 'Accordion' },
     'accordion-sample-3': { displayName: 'Accordion 3', parentName: 'Accordion' },
+    'accordion-programmatic-expansion': { displayName: 'Accordion Programmatic Expansion', parentName: 'Accordion' },
     'accordion-style': { displayName: 'Accordion Styling', parentName: 'Accordion' },
     'avatar-overview': { displayName: 'Avatar Overview', parentName: 'Avatar' },
     'avatar-variants': { displayName: 'Avatar Variants', parentName: 'Avatar' },
