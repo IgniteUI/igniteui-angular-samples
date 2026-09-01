@@ -1,0 +1,223 @@
+<div class="playground">
+    <aside class="playground__rail">
+        <igx-accordion [singleBranchExpand]="false">
+            <igx-expansion-panel [collapsed]="true">
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Grid Type</igx-expansion-panel-title>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p class="playground__hint">
+                        One grid-theme() serves every grid. Switch here to see the same
+                        tokens applied to a different one.
+                    </p>
+                    <igx-buttongroup [values]="previews" [alignment]="'vertical'" (selected)="onPreview($event)"></igx-buttongroup>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel [collapsed]="false">
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Primary tokens</igx-expansion-panel-title>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p class="playground__hint">
+                        Start here. Background and accent are enough to theme the whole
+                        grid &mdash; header, rows, icons and popups all derive from them.
+                        Foreground is picked for contrast automatically; set it only to
+                        override that.
+                    </p>
+                    <div class="playground__fields">
+                        @for (token of primaryTokens; track token.key) {
+                            <app-theme-color-field
+                                [label]="token.label"
+                                [value]="colors()[token.key]"
+                                (valueChange)="setColor(token.key, $event)" />
+                        }
+                    </div>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Header</igx-expansion-panel-title>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p class="playground__hint">
+                        Optional. The header normally derives from the background.
+                        Declare one here and it detaches, becoming a root of its own —
+                        its text then takes contrast against the new header rather
+                        than following the grid foreground.
+                    </p>
+                    <div class="playground__fields">
+                        @for (token of headerTokens; track token.key) {
+                            <app-theme-color-field
+                                [label]="token.label"
+                                [value]="colors()[token.key]"
+                                (valueChange)="setColor(token.key, $event)" />
+                        }
+                    </div>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel [collapsed]="false">
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Structure</igx-expansion-panel-title>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <div class="playground__fields">
+                        <div class="playground__control">
+                            <span class="playground__label">Density</span>
+                            <igx-buttongroup [values]="sizes" [alignment]="'vertical'" (selected)="onSize($event)"></igx-buttongroup>
+                        </div>
+                        <div class="playground__control">
+                            <span class="playground__label">Roundness</span>
+                            <igx-buttongroup [values]="roundnessOptions" [alignment]="'vertical'" (selected)="onRoundness($event)"></igx-buttongroup>
+                        </div>
+                        <igx-switch [checked]="horizontalDividers()" (change)="horizontalDividers.set($event.checked)">
+                            Horizontal dividers
+                        </igx-switch>
+                        <igx-switch [checked]="verticalDividers()" (change)="verticalDividers.set($event.checked)">
+                            Vertical dividers
+                        </igx-switch>
+                        <igx-switch [checked]="zebra()" (change)="zebra.set($event.checked)">
+                            Zebra rows
+                        </igx-switch>
+                        <p class="playground__hint">
+                            Both dividers use the same derived colour, and switching one
+                            off tints it to the surface rather than removing it, so the
+                            row metrics never change.
+                        </p>
+                    </div>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+        </igx-accordion>
+
+        <div class="playground__actions">
+            <button igxButton="outlined" type="button" (click)="reset()">Reset</button>
+            <button igxButton="contained" type="button" (click)="showCode(code)">Show code</button>
+        </div>
+    </aside>
+    <section class="playground__preview">
+        <div class="playground__stage" #stage
+            [style.--ig-grid-background]="previewStyle()['--ig-grid-background'] || null"
+            [style.--ig-grid-foreground]="previewStyle()['--ig-grid-foreground'] || null"
+            [style.--ig-grid-accent-color]="previewStyle()['--ig-grid-accent-color'] || null"
+            [style.--ig-grid-header-background]="previewStyle()['--ig-grid-header-background'] || null"
+            [style.--ig-grid-header-text-color]="previewStyle()['--ig-grid-header-text-color'] || null"
+            [style.--ig-grid-row-border-color]="previewStyle()['--ig-grid-row-border-color'] || null"
+            [style.--ig-grid-body-column-border-color-odd]="previewStyle()['--ig-grid-body-column-border-color-odd'] || null"
+            [style.--ig-grid-body-column-border-color-even]="previewStyle()['--ig-grid-body-column-border-color-even'] || null"
+            [style.--ig-grid-row-even-background]="previewStyle()['--ig-grid-row-even-background'] || null"
+            [style.--ig-size]="previewStyle()['--ig-size'] || null"
+            [style.--ig-radius-factor]="previewStyle()['--ig-radius-factor'] || null">
+
+            @switch (preview()) {
+                @case ('grid') {
+                    <igx-grid [data]="data" [width]="'100%'" [height]="'100%'"
+                        [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
+                        [rowSelection]="'multiple'">
+                        <igx-column field="ShipCountry" header="Country" width="150px" [sortable]="true" [filterable]="true" [groupable]="true"></igx-column>
+                        <igx-column field="ShipCity" header="City" width="150px" [sortable]="true" [filterable]="true" [groupable]="true"></igx-column>
+                        <igx-column field="ShipName" header="Ship Name" width="220px" [sortable]="true" [filterable]="true"></igx-column>
+                        <igx-column field="Salesperson" header="Salesperson" width="180px" [sortable]="true" [filterable]="true"></igx-column>
+                        <igx-column field="Quantity" header="Quantity" width="120px" dataType="number"
+                            [sortable]="true" [hasSummary]="true" [summaries]="compactSummary"></igx-column>
+                        <igx-paginator [perPage]="50"></igx-paginator>
+                    </igx-grid>
+                }
+                @case ('tree') {
+                    @defer (on immediate) {
+                        <igx-tree-grid [data]="treeData" primaryKey="ID" foreignKey="ParentID"
+                            [autoGenerate]="false" [width]="'100%'" [height]="'100%'"
+                            [allowFiltering]="true" [filterMode]="'excelStyleFilter'"
+                            [rowSelection]="'multiple'">
+                            <igx-column field="Name" width="260px" [sortable]="true" [filterable]="true">
+                                <ng-template igxCell let-cell="cell">
+                                    <div class="playground__cell">
+                                        <igx-avatar [src]="cell.row.data.Avatar" shape="circle" size="small"></igx-avatar>
+                                        <span>{{ cell.value }}</span>
+                                    </div>
+                                </ng-template>
+                            </igx-column>
+                            <igx-column field="Title" dataType="string" [sortable]="true" [filterable]="true"></igx-column>
+                            <igx-column field="Age" dataType="number" [sortable]="true" [filterable]="true"></igx-column>
+                            <igx-column field="HireDate" dataType="date" [sortable]="true" [filterable]="true"></igx-column>
+                        </igx-tree-grid>
+                    } @placeholder {
+                        <div class="playground__loading">Loading preview…</div>
+                    }
+                }
+                @case ('hierarchical') {
+                    @defer (on immediate) {
+                        <igx-hierarchical-grid [data]="hierarchicalData" [autoGenerate]="false"
+                            [width]="'100%'" [height]="'100%'"
+                            [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+                            <igx-column field="Artist" [sortable]="true" [filterable]="true"></igx-column>
+                            <igx-column field="Debut" dataType="number" [sortable]="true" [filterable]="true"></igx-column>
+                            <igx-column field="GrammyNominations" header="Nominations" [sortable]="true" [filterable]="true"></igx-column>
+                            <igx-column field="GrammyAwards" header="Awards" [sortable]="true" [filterable]="true"></igx-column>
+                            <igx-row-island [height]="null" [key]="'Albums'" [autoGenerate]="false">
+                                <igx-column field="Album" [sortable]="true"></igx-column>
+                                <igx-column field="LaunchDate" header="Launch Date" dataType="date" [sortable]="true"></igx-column>
+                                <igx-column field="BillboardReview" header="Review" [sortable]="true"></igx-column>
+                            </igx-row-island>
+                        </igx-hierarchical-grid>
+                    } @placeholder {
+                        <div class="playground__loading">Loading preview…</div>
+                    }
+                }
+                @case ('pivot') {
+                    @defer (on immediate) {
+                        <igx-pivot-grid [data]="pivotData" [pivotConfiguration]="pivotConfig"
+                            [width]="'100%'" [height]="'100%'"
+                            [allowFiltering]="true" [filterMode]="'excelStyleFilter'">
+                        </igx-pivot-grid>
+                    } @placeholder {
+                        <div class="playground__loading">Loading preview…</div>
+                    }
+                }
+            }
+        </div>
+    </section>
+</div>
+
+<igx-dialog #code [closeOnOutsideSelect]="true">
+    <igx-dialog-title>
+        <div class="playground__dialog-title">Theme code</div>
+    </igx-dialog-title>
+
+    <div class="playground__dialog-body">
+        <igx-accordion [singleBranchExpand]="true">
+            <igx-expansion-panel [collapsed]="false">
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>SCSS</igx-expansion-panel-title>
+                    <button igxIconButton="outlined" type="button" class="playground__copy"
+                        [title]="copied() === 'scss' ? 'Copied' : 'Copy code'"
+                        (click)="copy(exportScss(), 'scss'); $event.stopPropagation()">
+                        <igx-icon>{{ copied() === 'scss' ? 'check' : 'content_copy' }}</igx-icon>
+                    </button>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <div class="playground__code" [innerHTML]="scssHtml()"></div>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>CSS variables</igx-expansion-panel-title>
+                    <button igxIconButton="outlined" type="button" class="playground__copy"
+                        [title]="copied() === 'css' ? 'Copied' : 'Copy code'"
+                        (click)="copy(exportCss(), 'css'); $event.stopPropagation()">
+                        <igx-icon>{{ copied() === 'css' ? 'check' : 'content_copy' }}</igx-icon>
+                    </button>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <div class="playground__code" [innerHTML]="cssHtml()"></div>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+        </igx-accordion>
+    </div>
+
+    <div igxDialogActions>
+        <button igxButton="flat" type="button" (click)="code.close()">Close</button>
+    </div>
+</igx-dialog>

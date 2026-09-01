@@ -17,7 +17,7 @@ export class HGridValidationStyleComponent {
     @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
     @ViewChild('childGrid', { static: true }) private childGrid: IgxRowIslandComponent;
     public localData: Singer[];
-    public rowStyles = {
+    public rowStyles: any = {
         background: (row: RowType) => row.validation.status === 'INVALID' ? '#FF000033' : '#00000000'
     };
     public cellStyles = {
