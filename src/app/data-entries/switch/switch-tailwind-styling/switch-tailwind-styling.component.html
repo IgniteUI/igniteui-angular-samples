@@ -1,7 +1,19 @@
-<div class="switch-wrapper">
-  @for (setting of settings; track setting) {
-    <igx-switch class="!light-switch ![--track-off-color:#7B9E89] ![--track-on-color:#7B9E89]" [checked]="setting.state">
-      {{ setting.name }}
-    </igx-switch>
-  }
+<div [class]="(isDarkMode ? 'dark ' : '') + 'w-full max-w-[384px] overflow-hidden rounded-lg shadow-[var(--ig-elevation-2)] bg-white dark:bg-[#1A314A]'">
+    <div class="flex items-center justify-between gap-4 border-b border-gray-700 bg-gray-900 px-6 py-4 !bg-[#111827] !border-[#374151]">
+        <span class="font-sans text-[14px] font-medium leading-6 tracking-[0.1px] text-[#E6F2FF]">Dashboard</span>
+        <igx-switch labelPosition="before" [checked]="isDarkMode" (change)="isDarkMode = $event.checked"
+            class="![--track-on-color:var(--color-blue-500)] ![--track-off-color:var(--color-slate-600)] ![--thumb-on-color:var(--color-white)] ![--thumb-off-color:var(--color-slate-300)] ![--track-on-hover-color:var(--color-blue-600)]">
+            <span class="flex items-center gap-2 font-sans text-[14px] font-medium leading-6 tracking-[0.1px] text-[#E6F2FF]">
+                <igx-icon family="material" name="dark_mode" class="![--size:20px] !text-[var(--ig-warn-300)]"></igx-icon>
+                Dark mode
+            </span>
+        </igx-switch>
+    </div>
+    <div [class]="isDarkMode ? 'px-6 py-4 bg-[#1A314A]' : 'px-6 py-4 bg-white'">
+        <h6 [class]="isDarkMode ? 'm-0 !font-sans !text-[16px] !leading-6 font-semibold text-gray-50' : 'm-0 !font-sans !text-[16px] !leading-6 font-semibold text-gray-800'">Revenue overview</h6>
+        <p [class]="isDarkMode ? '!m-0 !mt-2 !font-sans !text-[14px] !leading-5 font-medium tracking-[0.25px] text-gray-400' : '!m-0 !mt-2 !font-sans !text-[14px] !leading-5 font-medium tracking-[0.25px] text-gray-700'">
+            $84,290 this month, up 12% from July.<br />
+            Your top-performing channel is Direct, driving 41% of total revenue.
+        </p>
+    </div>
 </div>

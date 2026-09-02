@@ -1,8 +1,22 @@
-<div class="switch-wrapper">
-  @for (setting of settings; track setting) {
-    <igx-switch [checked]="setting.state">
-      {{ setting.name }}
-    </igx-switch>
-  }
-</div>
+<igx-expansion-panel class="security" #panel [collapsed]="false">
+    <igx-expansion-panel-header [iconPosition]="'right'">
+        <igx-expansion-panel-title>
+            <span class="option">
+                <span class="option__label">Two-factor authentication</span>
+                <span class="option__hint">Extra sign-in verification</span>
+            </span>
+        </igx-expansion-panel-title>
+        <igx-expansion-panel-icon>
+            <!-- a click on the switch bubbles up to the panel header, so only the open state has to be mirrored back -->
+            <igx-switch [checked]="!panel.collapsed"></igx-switch>
+        </igx-expansion-panel-icon>
+    </igx-expansion-panel-header>
+    <igx-expansion-panel-body>
+        <igx-radio-group [alignment]="alignment">
+            <igx-radio [(ngModel)]="method" value="app">Authenticator app</igx-radio>
+            <igx-radio [(ngModel)]="method" value="key">Security key</igx-radio>
+            <igx-radio [(ngModel)]="method" value="codes">Backup codes</igx-radio>
+        </igx-radio-group>
+    </igx-expansion-panel-body>
+</igx-expansion-panel>
 

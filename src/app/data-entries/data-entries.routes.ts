@@ -67,8 +67,11 @@ import { SelectSample2Component } from './select/select-sample-2/select-sample-2
 import { SelectSample4Component } from './select/select-sample-4/select-sample-4.component';
 import { SelectStylingComponent } from './select/select-styling/select-styling.component';
 import { SelectTailwindStylingComponent } from './select/select-tailwind-styling/select-tailwind-styling.component';
-import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1.component';
-import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
+import { SwitchOverviewComponent } from './switch/switch-overview/switch-overview.component';
+import { SwitchEnabledComponent } from './switch/switch-enabled/switch-enabled.component';
+import { SwitchDisabledComponent } from './switch/switch-disabled/switch-disabled.component';
+import { SwitchSelectedComponent } from './switch/switch-selected/switch-selected.component';
+import { SwitchLayoutComponent } from './switch/switch-layout/switch-layout.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
 import { SwitchTailwindStylingComponent } from './switch/switch-tailwind-styling/switch-tailwind-styling.component';
 import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
@@ -427,14 +430,29 @@ export const DataEntriesRoutes: Routes = [
         path: 'rating-form'
     },
     {
-        component: SwitchSample1Component,
-        data: dataEntriesRoutesData['switch-sample-1'],
-        path: 'switch-sample-1'
+        component: SwitchOverviewComponent,
+        data: dataEntriesRoutesData['switch-overview'],
+        path: 'switch-overview'
     },
     {
-        component: SwitchSample2Component,
-        data: dataEntriesRoutesData['switch-sample-2'],
-        path: 'switch-sample-2'
+        component: SwitchEnabledComponent,
+        data: dataEntriesRoutesData['switch-enabled'],
+        path: 'switch-enabled'
+    },
+    {
+        component: SwitchDisabledComponent,
+        data: dataEntriesRoutesData['switch-disabled'],
+        path: 'switch-disabled'
+    },
+    {
+        component: SwitchSelectedComponent,
+        data: dataEntriesRoutesData['switch-selected'],
+        path: 'switch-selected'
+    },
+    {
+        component: SwitchLayoutComponent,
+        data: dataEntriesRoutesData['switch-layout'],
+        path: 'switch-layout'
     },
     {
         component: SwitchStylingComponent,

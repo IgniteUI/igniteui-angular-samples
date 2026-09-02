@@ -1,1 +1,6 @@
-@use "layout.scss";
+:host {
+	display: flex;
+	place-content: center;
+	place-items: center;
+	padding: 40px;
+}
