@@ -1,40 +1,101 @@
-@use "layout.scss";
 @use "igniteui-angular/theming" as *;
+@use "sass:map";
 
-// CSS variables approach
+:host {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    min-block-size: 100%;
+    padding: 1rem;
 
-igx-switch {
-    --thumb-on-color: #e3f0ff;
-    --thumb-off-color: #fff;
-    --thumb-off-hover-color: #ededed;
-    --track-on-color: #0064d9;
-    --track-off-color: #788fa6;
-    --track-on-hover-color: #0058bf;
-    --border-radius-track: 1rem;
-    --focus-outline-color: #0032a5;
-    --border-on-color: transparent;
-    --border-color: transparent;
-    --border-on-hover-color: transparent;
-    --border-hover-color: transparent;
+    @include tokens(switch-theme($schema: map.get($light-material-schema, switch)));
+    @include tokens(radio-theme($schema: map.get($light-material-schema, radio)));
 }
 
-// Sass theme approach
+.security {
+    display: block;
+    inline-size: 100%;
+    max-inline-size: 348px;
+    background: var(--ig-surface-500);
+    border: rem(1px) solid var(--ig-gray-300);
+    border-radius: rem(16px);
+    box-shadow: 0 rem(1px) rem(3px) rgb(0 0 0 / 12%);
+    overflow: hidden;
 
-// $custom-switch-theme: switch-theme(
-//     $thumb-on-color: #e3f0ff,
-//     $track-on-color: #0064d9,
-//     $track-on-hover-color: #0058bf,
-//     $thumb-off-color: #fff,
-//     $thumb-off-hover-color: #ededed,
-//     $track-off-color: #788fa6,
-//     $border-radius-track: 1rem,
-//     $focus-outline-color: #0032a5,
-//     $border-on-color: transparent,
-//     $border-on-hover-color: transparent,
-//     $border-color: transparent,
-//     $border-hover-color: transparent,
-// );
+    igx-expansion-panel-header {
+        display: block !important;
+    }
 
-// :host {
-//     @include tokens($custom-switch-theme);
-// }
+    ::ng-deep igx-expansion-panel-header > div {
+        padding: rem(12px) rem(16px) !important;
+        gap: rem(16px) !important;
+    }
+
+    igx-expansion-panel-title {
+        flex: 1 1 auto;
+        min-inline-size: 0;
+    }
+
+    igx-expansion-panel-icon {
+        flex: 0 0 auto;
+        transform: none;
+        margin-inline-start: 0;
+    }
+
+    igx-expansion-panel-body {
+        display: block;
+        padding-inline-start: rem(5px);
+        border-block-start: rem(1px) solid var(--ig-gray-300);
+    }
+
+    igx-switch {
+        inline-size: rem(43px);
+        block-size: rem(24px);
+        transform: translateX(rem(2px));
+    }
+
+    igx-radio-group {
+        display: flex;
+        flex-direction: column;
+        gap: rem(8px);
+        margin-inline-start: rem(10px);
+    }
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+    gap: rem(2px);
+    text-align: start;
+    white-space: normal;
+    min-inline-size: 0;
+
+    .option__label {
+        font: 600 #{rem(16px)} / #{rem(24px)} "Aktiv Grotesk", sans-serif;
+        letter-spacing: #{rem(0.15px)};
+        color: var(--ig-gray-700);
+    }
+
+    .option__hint {
+        font: 500 #{rem(14px)} / #{rem(24px)} "Aktiv Grotesk", sans-serif;
+        letter-spacing: #{rem(0.1px)};
+        color: var(--ig-gray-600);
+    }
+}
+
+igx-switch {
+    --track-on-color: var(--ig-primary-200);
+    --track-on-hover-color: var(--ig-primary-200);
+    --thumb-on-color: var(--ig-primary-400);
+    --thumb-on-hover-color: var(--ig-primary-400);
+}
+
+igx-radio {
+    font: 600 #{rem(12px)} / #{rem(16px)} "Aktiv Grotesk", sans-serif;
+    letter-spacing: #{rem(0.15px)};
+    color: var(--ig-primary-900);
+
+    --fill-color: var(--ig-primary-500);
+    --fill-color-hover: var(--ig-primary-500);
+    --fill-hover-border-color: var(--ig-primary-500);
+}

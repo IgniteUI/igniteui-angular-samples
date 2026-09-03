@@ -1,0 +1,37 @@
+@use "igniteui-angular/theming" as *;
+@use "sass:map";
+
+:host {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    padding: 16px;
+
+    @include tokens(switch-theme($schema: map.get($light-material-schema, switch)));
+}
+
+.states {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    gap: 32px 24px;
+
+    .states__column,
+    .states__row {
+        font: 500 14px / 24px "Aktiv Grotesk", sans-serif;
+        letter-spacing: 0.1px;
+        color: var(--ig-gray-600);
+    }
+
+    .states__column {
+        text-align: center;
+    }
+
+    .states__row {
+        text-align: end;
+    }
+
+    igx-switch {
+        justify-self: center;
+    }
+}
