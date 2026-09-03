@@ -71,14 +71,14 @@
     min-inline-size: 0;
 
     .option__label {
-        font: 600 16px / 24px "Aktiv Grotesk", sans-serif;
-        letter-spacing: 0.15px;
+        font: 600 #{rem(16px)} / #{rem(24px)} "Aktiv Grotesk", sans-serif;
+        letter-spacing: #{rem(0.15px)};
         color: var(--ig-gray-700);
     }
 
     .option__hint {
-        font: 500 14px / 24px "Aktiv Grotesk", sans-serif;
-        letter-spacing: 0.1px;
+        font: 500 #{rem(14px)} / #{rem(24px)} "Aktiv Grotesk", sans-serif;
+        letter-spacing: #{rem(0.1px)};
         color: var(--ig-gray-600);
     }
 }
@@ -91,8 +91,8 @@ igx-switch {
 }
 
 igx-radio {
-    font: 600 12px / 16px "Aktiv Grotesk", sans-serif;
-    letter-spacing: 0.15px;
+    font: 600 #{rem(12px)} / #{rem(16px)} "Aktiv Grotesk", sans-serif;
+    letter-spacing: #{rem(0.15px)};
     color: var(--ig-primary-900);
 
     --fill-color: var(--ig-primary-500);
