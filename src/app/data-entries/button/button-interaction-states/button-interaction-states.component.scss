@@ -1,3 +1,4 @@
+@use '../_bootstrap-button-theme';
 @use "igniteui-angular/theming" as *;
 
 .button-container {
@@ -13,6 +14,12 @@
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
+    --hover-background: var(--ig-contained-button-hover-background);
+    --hover-foreground: var(--ig-contained-button-hover-foreground);
+    --focus-background: var(--ig-contained-button-focus-background);
+    --focus-foreground: var(--ig-contained-button-focus-foreground);
+    --focus-hover-background: var(--ig-contained-button-focus-hover-background);
+    --focus-hover-foreground: var(--ig-contained-button-focus-hover-foreground);
 }
 
 .button-label {
@@ -25,13 +32,17 @@
     letter-spacing: 0.3px;
 }
 
-.button-item button.state-hover,
-.button-item button.state-focused-hover {
-    background: color($color: 'secondary', $variant: 400);
-    color: contrast-color($color: 'secondary', $variant: 400);
+.button-item button.state-hover {
+    background: var(--hover-background);
+    color: var(--hover-foreground);
 }
 
 .button-item button.state-focused {
-    background: color($color: 'secondary', $variant: 300);
-    color: contrast-color($color: 'secondary', $variant: 300);
+    background: var(--focus-background);
+    color: var(--focus-foreground);
+}
+
+.button-item button.state-focused-hover {
+    background: var(--focus-hover-background);
+    color: var(--focus-hover-foreground);
 }

@@ -6,7 +6,7 @@
             @for (variant of variants; track variant) {
                 <button [igxButton]="variant" [class]="'size-' + size">
                     <igx-icon family="material">notifications</igx-icon>
-                    {{ variant }}
+                    {{ variant | titlecase }}
                     <igx-icon family="material">notifications</igx-icon>
                 </button>
             }

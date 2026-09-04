@@ -1,3 +1,5 @@
+@use '../_bootstrap-button-theme';
+
 :host {
     display: flex;
     justify-content: center;
@@ -24,18 +26,38 @@
     width: 100%;
 }
 
-.size-header { display: grid; grid-template-columns: 70px repeat(4, minmax(0, 1fr)); align-items: center; justify-items: center; column-gap: 1rem; width: 100%; color: var(--ig-gray-600); font: 13px/20px "Aktiv Grotesk", sans-serif; letter-spacing: .3px; }
-.size-label { justify-self: start; color: var(--ig-gray-600); font: 400 13px/20px "Aktiv Grotesk", sans-serif; letter-spacing: .3px; }
-.size-row button { width: auto; transform: scale(.9); }
+.size-header {
+    display: grid;
+    grid-template-columns: 70px repeat(4, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    column-gap: 1rem;
+    width: 100%;
+    color: var(--ig-gray-600);
+    font: 13px/20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: .3px;
+}
+
+.size-label {
+    justify-self: start;
+    color: var(--ig-gray-600);
+    font: 400 13px/20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: .3px;
+}
+
+.size-row button {
+    width: auto;
+    transform: scale(.9);
+}
 
 .size-small {
-    --ig-size: var(--ig-size-small);
+    --ig-size: var(--ig-size-small) !important;
 }
 
 .size-medium {
-    --ig-size: var(--ig-size-medium);
+    --ig-size: var(--ig-size-medium) !important;
 }
 
 .size-large {
-    --ig-size: var(--ig-size-large);
+    --ig-size: var(--ig-size-large) !important;
 }
