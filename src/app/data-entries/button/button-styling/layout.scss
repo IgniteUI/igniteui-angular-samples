@@ -1,0 +1,41 @@
+@use "igniteui-angular/theming" as *;
+@use "igniteui-angular/lib/core/styles/components/button/button-component" as button;
+@use "igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light";
+
+.bootstrap-theme {
+    ::ng-deep {
+        @include button(
+            $flat: flat-button-theme($schema: $light-bootstrap-schema),
+            $contained: contained-button-theme($schema: $light-bootstrap-schema),
+            $outlined: outlined-button-theme($schema: $light-bootstrap-schema),
+            $fab: fab-button-theme($schema: $light-bootstrap-schema)
+        );
+        @include button.component();
+    }
+}
+
+.button-row button.confirm-button,
+.button-row button.send-button,
+.button-row button.cancel-button {
+    height: 40px;
+    min-height: 40px;
+    width: 90%;
+}
+
+.button-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.button-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 3rem;
+}
