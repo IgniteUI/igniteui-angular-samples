@@ -1,3 +1,4 @@
+@use '../_bootstrap-button-group-theme';
 @use 'igniteui-theming' as *;
 
 :host {
@@ -7,5 +8,5 @@
 }
 
 igx-buttongroup {
-    max-width: rem(300px);
+    inline-size: rem(180px);
 }

@@ -1,3 +1,4 @@
+@use '../_bootstrap-button-group-theme';
 @use 'igniteui-theming' as *;
 
 :host {
@@ -31,12 +32,26 @@
 igx-buttongroup {
     &:nth-of-type(1n) {
         --ig-size: var(--ig-size-small);
+
+        ::ng-deep button.igx-button-group__item {
+            min-height: rem(32px);
+        }
     }
+
     &:nth-of-type(2n) {
         --ig-size: var(--ig-size-medium);
+
+        ::ng-deep button.igx-button-group__item {
+            min-height: rem(40px);
+        }
     }
+
     &:nth-of-type(3n) {
         --ig-size: var(--ig-size-large);
+
+        ::ng-deep button.igx-button-group__item {
+            min-height: rem(48px);
+        }
     }
 }
 

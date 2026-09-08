@@ -1,3 +1,4 @@
+@use '../_bootstrap-button-group-theme';
 @use "igniteui-theming/sass/typography" as *;
 
 :host {
@@ -87,33 +88,33 @@ igx-buttongroup{
     pointer-events: none;
 }
 
-.state-hover:not(.state-selected) {
-    background: var(--item-hover-background);
-    border-color: var(--item-hover-border-color);
-    color: var(--item-hover-text-color);
+.igx-button-group__item.state-hover:not(.state-selected) {
+    background: var(--ig-button-group-item-hover-background);
+    border-color: var(--ig-button-group-item-hover-border-color);
+    color: var(--ig-button-group-item-hover-text-color);
 }
 
-.state-idle.state-selected {
-    background: var(--item-active-background);
-    border-color: var(--item-active-border-color);
-    color: var(--item-active-text-color);
+.igx-button-group__item.state-idle.state-selected {
+    background: var(--ig-button-group-item-selected-background);
+    border-color: var(--ig-button-group-item-selected-border-color);
+    color: var(--ig-button-group-item-selected-text-color);
 }
 
-.state-focused:not(.state-selected) {
-    background: var(--item-focused-hover-background);
-    border-color: var(--item-focused-hover-border-color);
-    color: var(--item-focused-hover-text-color);
+.igx-button-group__item.state-focused:not(.state-selected) {
+    background: var(--ig-button-group-item-focused-background);
+    border-color: var(--ig-button-group-item-focused-border-color);
+    color: var(--ig-button-group-item-focused-text-color);
 }
 
-.state-hover.state-selected {
-    background: var(--item-selected-active-background);
-    border-color: var(--item-selected-active-border-color);
-    color: var(--item-selected-hover-text-color);
+.igx-button-group__item.state-hover.state-selected {
+    background: var(--ig-button-group-item-selected-hover-background);
+    border-color: var(--ig-button-group-item-selected-hover-border-color);
+    color: var(--ig-button-group-item-selected-hover-text-color);
 }
 
-.state-focused.state-selected {
-    background: var(--item-selected-active-background);
-    border-color: var(--item-selected-active-border-color);
-    color: var(--item-focused-hover-text-color);
+.igx-button-group__item.state-focused.state-selected {
+    background: var(--ig-button-group-item-selected-focus-background);
+    border-color: var(--ig-button-group-item-selected-hover-border-color);
+    color: var(--ig-button-group-item-selected-text-color);
 }
 // WARNING END

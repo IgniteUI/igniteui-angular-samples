@@ -1,3 +1,4 @@
+@use '../_bootstrap-button-group-theme';
 @use 'igniteui-theming' as *;
 
 :host {
@@ -85,8 +86,8 @@ igx-buttongroup  {
 }
 
 button.state-idle.state-selected {
-    background: var(--item-active-background);
-    border-color: var(--item-active-border-color);
-    color: var(--item-active-text-color);
+    background: var(--ig-button-group-item-selected-background);
+    border-color: var(--ig-button-group-item-selected-border-color);
+    color: var(--ig-button-group-item-selected-text-color);
 }
 // WARNING END
