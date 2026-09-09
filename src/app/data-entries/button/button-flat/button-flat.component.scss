@@ -1,0 +1,11 @@
+@use '../_bootstrap-button-theme';
+
+.button-sample {
+    display: flex;
+    padding: 2.5rem;
+}
+
+.button-sample button {
+    width: 46%;
+    margin: auto;
+}

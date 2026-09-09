@@ -1,0 +1,39 @@
+@use '../_bootstrap-button-theme';
+
+.form {
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 2.5rem;
+}
+
+.form igx-avatar {
+    --ig-size: var(--ig-size-large);
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 260px;
+    width: 100%;
+}
+
+:host ::ng-deep .fields .igx-input-group__bundle {
+    background-color: var(--ig-gray-50);
+}
+
+:host ::ng-deep .fields igx-input-group,
+:host ::ng-deep .fields igx-input-group .igx-input-group__input {
+    --ig-size: var(--ig-size-medium);
+}
+
+:host ::ng-deep .fields .igx-input-group__input {
+    margin: 0;
+}
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}

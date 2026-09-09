@@ -1,0 +1,56 @@
+@use "igniteui-angular/theming" as *;
+@use "igniteui-angular/lib/core/styles/components/button/button-component" as button;
+@use "igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light";
+
+:host {
+    ::ng-deep {
+        @include button(
+            $flat: flat-button-theme($schema: $light-bootstrap-schema),
+            $contained: contained-button-theme($schema: $light-bootstrap-schema),
+            $outlined: outlined-button-theme($schema: $light-bootstrap-schema),
+            $fab: fab-button-theme($schema: $light-bootstrap-schema)
+        );
+        @include button.component();
+    }
+}
+
+.button-row button.confirm-button,
+.button-row button.send-button,
+.button-row button.cancel-button {
+    height: 40px;
+    min-height: 40px;
+    width: 90%;
+}
+
+.confirm-button {
+    --background: #4338ca;
+    --foreground: #fff;
+    --hover-background: #4338ca;
+    --hover-foreground: #fff;
+}
+
+.send-button {
+    --background: transparent;
+    --border-color: #db2777;
+    --foreground: #db2777;
+    --hover-border-color: #db2777;
+    --hover-foreground: #db2777;
+    --icon-color: #db2777;
+    --icon-color-hover: #db2777;
+}
+
+.cancel-button {
+    --foreground: #b45309;
+    --hover-foreground: #b45309;
+}
+
+.add-button {
+    --background: #14b8a6;
+    --foreground: #000;
+    --hover-background: #14b8a6;
+    --hover-foreground: #000;
+    --icon-color: #fff;
+    --icon-color-hover: #fff;
+    --border-radius: 9999px;
+    background-color: #14b8a6;
+}
