@@ -1,0 +1,20 @@
+<div class="container sample">
+  <igx-radio-group alignment="horizontal" class="size-selector">
+    <igx-radio name="size" value="small" [(ngModel)]="listSize">Small</igx-radio>
+    <igx-radio name="size" value="medium" [(ngModel)]="listSize">Medium</igx-radio>
+    <igx-radio name="size" value="large" [(ngModel)]="listSize">Large</igx-radio>
+  </igx-radio-group>
+
+  <igx-list [class]="'size-' + listSize">
+    <igx-list-item [isHeader]="true">Contacts</igx-list-item>
+    @for (contact of contacts; track contact.name) {
+      <igx-list-item>
+        <igx-avatar igxListThumbnail [src]="contact.avatar" shape="circle"></igx-avatar>
+        <span igxListLineTitle>{{ contact.name }}</span>
+        <span igxListLineSubTitle>{{ contact.phone }}</span>
+        <button igxButton="outlined" igxListAction>Text</button>
+        <button igxButton="outlined" igxListAction>Call</button>
+      </igx-list-item>
+    }
+  </igx-list>
+</div>
