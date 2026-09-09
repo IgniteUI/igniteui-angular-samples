@@ -1,0 +1,31 @@
+<div class="carousel-wrapper">
+  <div class="action-wrapper">
+    <div class="action">
+      <span class="action-label">Animation</span>
+      <igx-select type="border" [(ngModel)]="animationType">
+        @for (animation of animationTypes; track animation.value) {
+          <igx-select-item [value]="animation.value">{{ animation.label }}</igx-select-item>
+        }
+      </igx-select>
+    </div>
+    <div class="action">
+      <igx-switch labelPosition="before" [(ngModel)]="isCarouselVertical">Vertical</igx-switch>
+    </div>
+  </div>
+
+  <igx-carousel [animationType]="animationType" [indicators]="false" [vertical]="isCarouselVertical">
+    @for (slide of slides; track slide.title) {
+      <igx-slide>
+        <article class="slide-wrapper">
+          <div class="slide-content">
+            <span class="slide-label">{{ slide.label }}</span>
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.subtitle }}</p>
+            <div class="slide-details"><span>{{ slide.detail }}</span><strong>{{ slide.metric }}</strong></div>
+          </div>
+          <div class="slide-preview" aria-hidden="true"><span></span><span></span><span></span></div>
+        </article>
+      </igx-slide>
+    }
+  </igx-carousel>
+</div>

@@ -1,0 +1,60 @@
+.configuration-sample {
+    display: grid;
+    width: min(860px, 100%);
+    gap: 16px;
+    margin: 16px auto 0;
+}
+
+.configuration-controls {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    align-items: center;
+    justify-content: end;
+    gap: 16px;
+}
+
+igx-switch { --ig-size: var(--ig-size-small); }
+
+igx-carousel {
+    height: 340px;
+    overflow: hidden;
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 8px;
+    background: var(--ig-surface-500);
+}
+
+:host ::ng-deep {
+    .igx-carousel__arrow { width: 40px; height: 40px; }
+    .igx-carousel__arrow--prev { left: 16px; }
+    .igx-carousel__arrow--next { right: 16px; }
+    .igx-slide {
+        display: grid;
+        height: 100%;
+        place-items: center;
+        background:
+            linear-gradient(135deg, rgba(25, 118, 210, 0.10), transparent 42%),
+            linear-gradient(315deg, rgba(0, 150, 136, 0.10), transparent 42%),
+            var(--ig-gray-100);
+    }
+}
+
+.slide-card {
+    display: grid;
+    width: min(420px, 100%);
+    gap: 10px;
+    margin: 0;
+    padding: 28px;
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 8px;
+    color: var(--ig-gray-900);
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: 0 14px 34px rgba(11, 31, 53, 0.14);
+}
+
+.slide-card span { color: var(--ig-primary-600); font-size: 12px; font-weight: 700; }
+.slide-card h3 { margin: 0; font-size: 28px; line-height: 1.2; }
+.slide-card p { margin: 0; color: var(--ig-gray-700); line-height: 1.45; }
+
+@media (max-width: 760px) {
+    .configuration-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); justify-content: stretch; }
+}
