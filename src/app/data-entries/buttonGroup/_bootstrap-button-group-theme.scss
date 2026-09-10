@@ -1,0 +1,100 @@
+@use 'igniteui-angular/theming' as *;
+
+$bs-primary: color($light-bootstrap-palette, 'primary', 500);
+$bs-primary-hover: color($light-bootstrap-palette, 'primary', 600);
+$bs-primary-active: color($light-bootstrap-palette, 'primary', 700);
+$bs-primary-hover-light: mix(#fff, $bs-primary-hover, 3%);
+$bs-primary-focus-dark: mix(#000, color($light-bootstrap-palette, 'primary', 800), 8%);
+$bs-on-primary: #fff;
+
+:host,
+igx-buttongroup {
+    --ig-theme: bootstrap;
+    --ig-theme-variant: light;
+
+    @include typography(
+        $font-family: $bootstrap-typeface,
+        $type-scale: $bootstrap-type-scale
+    );
+
+    @include tokens(
+        button-group-theme(
+            $schema: $light-bootstrap-schema,
+            $item-background: $bs-primary,
+            $item-text-color: $bs-on-primary,
+            $item-icon-color: $bs-on-primary,
+            $item-border-color: $bs-primary,
+            $item-hover-background: $bs-primary-hover-light,
+            $item-hover-text-color: $bs-on-primary,
+            $item-hover-icon-color: $bs-on-primary,
+            $item-hover-border-color: $bs-primary-hover-light,
+            $item-focused-background: $bs-primary-hover-light,
+            $item-focused-text-color: $bs-on-primary,
+            $item-focused-border-color: $bs-primary-hover-light,
+            $item-focused-hover-background: $bs-primary-hover,
+            $item-focused-hover-text-color: $bs-on-primary,
+            $item-focused-hover-border-color: $bs-primary-hover,
+            $item-selected-background: $bs-primary-active,
+            $item-selected-text-color: $bs-on-primary,
+            $item-selected-icon-color: $bs-on-primary,
+            $item-selected-border-color: $bs-primary-active,
+            $item-selected-hover-background: $bs-primary-focus-dark,
+            $item-selected-hover-text-color: $bs-on-primary,
+            $item-selected-hover-icon-color: $bs-on-primary,
+            $item-selected-hover-border-color: $bs-primary-focus-dark,
+            $item-selected-focus-background: $bs-primary-focus-dark,
+            $item-selected-focus-hover-background: $bs-primary-hover
+        )
+    );
+}
+
+:host ::ng-deep igx-buttongroup button.igx-button-group__item {
+    background: $bs-primary;
+    color: $bs-on-primary;
+    border-color: $bs-primary;
+    border-radius: 0;
+    text-transform: none;
+}
+
+:host ::ng-deep igx-buttongroup .igx-button-group__buttons-container {
+    border-radius: 4px;
+}
+
+:host ::ng-deep igx-buttongroup button.igx-button-group__item:first-of-type {
+    border-start-start-radius: 4px;
+    border-end-start-radius: 4px;
+}
+
+:host ::ng-deep igx-buttongroup button.igx-button-group__item:last-of-type {
+    border-start-end-radius: 4px;
+    border-end-end-radius: 4px;
+}
+
+:host ::ng-deep igx-buttongroup button.igx-button-group__item:hover {
+    background: $bs-primary-hover;
+    color: $bs-on-primary;
+    border-color: $bs-primary-hover;
+}
+
+:host ::ng-deep igx-buttongroup button.igx-button-group__item--selected {
+    background: $bs-primary-active;
+    color: $bs-on-primary;
+    border-color: $bs-primary-active;
+}
+
+:host ::ng-deep igx-buttongroup button.igx-button-group__item:disabled {
+    background: color($light-bootstrap-palette, 'primary', 50);
+    color: color($light-bootstrap-palette, 'primary', 200);
+    border-color: color($light-bootstrap-palette, 'primary', 50);
+    cursor: not-allowed;
+}
+
+:host ::ng-deep igx-buttongroup button.igx-button-group__item--selected:disabled {
+    background: color($light-bootstrap-palette, 'primary', 100);
+    color: color($light-bootstrap-palette, 'primary', 200);
+    border-color: color($light-bootstrap-palette, 'primary', 100);
+}
+
+:host ::ng-deep igx-buttongroup button.igx-button-group__item igx-icon {
+    color: $bs-on-primary;
+}
