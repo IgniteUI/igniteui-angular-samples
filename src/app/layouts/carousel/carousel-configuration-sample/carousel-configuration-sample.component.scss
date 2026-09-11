@@ -1,6 +1,6 @@
 .configuration-sample {
     display: grid;
-    width: min(860px, 100%);
+    width: min(860px, calc(100% - 32px));
     gap: 16px;
     margin: 16px auto 0;
 }

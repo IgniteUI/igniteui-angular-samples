@@ -1,6 +1,6 @@
 .carousel-wrapper {
     display: flex;
-    width: min(860px, 100%);
+    width: min(860px, calc(100% - 32px));
     flex-direction: column;
     gap: 16px;
     margin: 16px auto 0;
@@ -16,7 +16,13 @@
 .action { display: flex; align-items: center; gap: 8px; }
 .action-label { color: var(--ig-gray-700); }
 
-igx-select { width: 150px; --ig-size: var(--ig-size-small); }
+igx-select {
+    width: 150px;
+    --ig-size: 1;
+}
+
+:host ::ng-deep igx-select igx-input-group { --size: 2rem; }
+
 igx-switch { --ig-size: var(--ig-size-small); }
 
 igx-carousel {
