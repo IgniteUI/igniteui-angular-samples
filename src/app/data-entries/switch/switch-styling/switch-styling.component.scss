@@ -1,5 +1,17 @@
 @use "igniteui-angular/theming" as *;
 @use "sass:map";
+@use "../switch-bootstrap" as switch-bootstrap;
+
+@include switch-bootstrap.bootstrap-switch;
+
+:host ::ng-deep igx-switch .igx-switch__thumb {
+	min-width: 10px;
+    transform: translateY(-1px);
+}
+
+:host ::ng-deep igx-switch .igx-switch__ripple {
+    display: none;
+}
 
 :host {
     display: flex;
@@ -8,8 +20,8 @@
     min-block-size: 100%;
     padding: 1rem;
 
-    @include tokens(switch-theme($schema: map.get($light-material-schema, switch)));
-    @include tokens(radio-theme($schema: map.get($light-material-schema, radio)));
+    @include tokens(switch-theme($schema: map.get($light-bootstrap-schema, switch)));
+    @include tokens(radio-theme($schema: map.get($light-bootstrap-schema, radio)));
 }
 
 .security {
@@ -83,13 +95,6 @@
     }
 }
 
-igx-switch {
-    --track-on-color: var(--ig-primary-200);
-    --track-on-hover-color: var(--ig-primary-200);
-    --thumb-on-color: var(--ig-primary-400);
-    --thumb-on-hover-color: var(--ig-primary-400);
-}
-
 igx-radio {
     font: 600 #{rem(12px)} / #{rem(16px)} "Aktiv Grotesk", sans-serif;
     letter-spacing: #{rem(0.15px)};
@@ -98,4 +103,35 @@ igx-radio {
     --fill-color: var(--ig-primary-500);
     --fill-color-hover: var(--ig-primary-500);
     --fill-hover-border-color: var(--ig-primary-500);
+}
+
+:host ::ng-deep igx-radio.igx-radio--checked .igx-radio__composite::after {
+    background: transparent;
+    border-color: transparent;
+}
+
+:host ::ng-deep igx-radio.igx-radio--checked .igx-radio__composite::before {
+    transform: none !important;
+}
+
+:host ::ng-deep igx-radio .igx-radio__composite::before,
+:host ::ng-deep igx-radio .igx-radio__composite::after {
+    width: 16px;
+    height: 16px;
+}
+
+:host ::ng-deep igx-radio .igx-radio__label {
+    transform: translateY(-2px);
+}
+
+:host ::ng-deep igx-radio .igx-radio__composite,
+:host ::ng-deep igx-radio .igx-radio__composite::before,
+:host ::ng-deep igx-radio .igx-radio__composite::after {
+    animation: none !important;
+    transition: none !important;
+}
+
+:host ::ng-deep igx-radio .igx-radio__ripple {
+    opacity: 0;
+    pointer-events: none;
 }
