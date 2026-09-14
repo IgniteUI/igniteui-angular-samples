@@ -168,12 +168,19 @@ igx-carousel {
 
 .event-visual { position: relative; width: 120px; height: 180px; }
 
-.ticket { position: absolute; display: grid; width: 96px; height: 144px; border-radius: 10px; }
-.ticket--back { top: 16px; left: 4px; opacity: 0.56; transform: rotate(-8deg); }
+.ticket-stack {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 96px;
+    height: 144px;
+}
+
+.ticket { position: absolute; display: grid; width: 96px; height: 144px; border-radius: 10px; box-sizing: content-box; }
+.ticket--back { top: 12px; left: -20px; opacity: 0.56; transform: rotate(-8deg); }
 
 .ticket--front {
-    top: 10px;
-    right: 2px;
+    inset: 0;
     grid-template-rows: 1fr auto 1fr;
     padding: 18px;
     transform: rotate(5deg);
