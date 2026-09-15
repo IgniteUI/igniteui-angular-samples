@@ -17,7 +17,7 @@ export class TreeGridValidationStyleComponent implements OnInit {
     public data: IEmployee[];
     public columns: any[];
     public selectionMode = 'multiple';
-    public rowStyles = {
+    public rowStyles: any = {
         background: (row: RowType) => row.cells.find(c => c.validation.errors !== null && c.validation.errors !== undefined) ? '#FF000033' : '#00000000'
     };
     public cellStyles = {
