@@ -33,6 +33,17 @@ igx-carousel {
     background: var(--ig-surface-500);
 }
 
+:host ::ng-deep igx-carousel .igx-carousel__arrow--prev,
+:host ::ng-deep igx-carousel .igx-carousel__arrow--next {
+    transition: opacity 120ms ease-in-out;
+}
+
+:host ::ng-deep igx-carousel.is-orientation-changing .igx-carousel__arrow--prev,
+:host ::ng-deep igx-carousel.is-orientation-changing .igx-carousel__arrow--next {
+    opacity: 0;
+    pointer-events: none;
+}
+
 :host ::ng-deep .igx-slide {
     height: 100%;
 }

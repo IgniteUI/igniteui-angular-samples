@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CarouselAnimationType, IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
@@ -21,6 +21,8 @@ import { IgxSwitchComponent } from 'igniteui-angular/switch';
 export class CarouselAnimationsComponent {
     public animationType: CarouselAnimationType = CarouselAnimationType.slide;
     public isCarouselVertical = false;
+    public isOrientationChanging = false;
+    private orientationTimer?: ReturnType<typeof setTimeout>;
     public readonly animationTypes = [
         { label: 'Slide', value: CarouselAnimationType.slide },
         { label: 'Fade', value: CarouselAnimationType.fade },
@@ -49,4 +51,23 @@ export class CarouselAnimationsComponent {
             title: 'No transition'
         }
     ];
+
+    constructor(private cdr: ChangeDetectorRef) {}
+
+    public changeOrientation(isVertical: boolean): void {
+        if (this.orientationTimer !== undefined) {
+            clearTimeout(this.orientationTimer);
+        }
+
+        this.isOrientationChanging = true;
+        this.cdr.detectChanges();
+        this.orientationTimer = setTimeout(() => {
+            this.isCarouselVertical = isVertical;
+            this.cdr.detectChanges();
+            this.orientationTimer = setTimeout(() => {
+                this.isOrientationChanging = false;
+                this.cdr.detectChanges();
+            }, 16);
+        }, 120);
+    }
 }

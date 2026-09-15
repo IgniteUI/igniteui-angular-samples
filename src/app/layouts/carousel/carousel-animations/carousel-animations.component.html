@@ -9,11 +9,11 @@
       </igx-select>
     </div>
     <div class="action">
-      <igx-switch labelPosition="before" [(ngModel)]="isCarouselVertical">Vertical</igx-switch>
+      <igx-switch labelPosition="before" [ngModel]="isCarouselVertical" (ngModelChange)="changeOrientation($event)">Vertical</igx-switch>
     </div>
   </div>
 
-  <igx-carousel [animationType]="animationType" [indicators]="false" [vertical]="isCarouselVertical">
+  <igx-carousel [class.is-orientation-changing]="isOrientationChanging" [animationType]="animationType" [indicators]="false" [vertical]="isCarouselVertical">
     @for (slide of slides; track slide.title) {
       <igx-slide>
         <article class="slide-wrapper">
