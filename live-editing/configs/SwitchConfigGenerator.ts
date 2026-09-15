@@ -7,16 +7,37 @@ export class SwitchConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // switch sample 1
+        // switch overview
         configs.push(new Config({
-            component: 'SwitchSample1Component',
+            component: 'SwitchOverviewComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/switch/"
         }));
 
-        // switch sample 2
+        // switch enabled
         configs.push(new Config({
-            component: 'SwitchSample2Component',
+            component: 'SwitchEnabledComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/switch/"
+        }));
+
+        // switch disabled
+        configs.push(new Config({
+            component: 'SwitchDisabledComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/switch/"
+        }));
+
+        // switch selected
+        configs.push(new Config({
+            component: 'SwitchSelectedComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/switch/"
+        }));
+
+        // switch layout
+        configs.push(new Config({
+            component: 'SwitchLayoutComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/switch/"
         }));
@@ -24,7 +45,6 @@ export class SwitchConfigGenerator implements IConfigGenerator {
         // switch styling
         configs.push(new Config({
             component: 'SwitchStylingComponent',
-            additionalFiles: ["/src/app/data-entries/switch/switch-styling/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/switch/"
         }));
