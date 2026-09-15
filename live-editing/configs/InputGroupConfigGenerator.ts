@@ -18,6 +18,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'InputGroupSample1Component',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/input-group/"
         }));
@@ -25,6 +28,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // input group sample 2
         configs.push(new Config({
             component: 'InputGroupSample2Component',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/input-group/"
         }));
@@ -32,6 +38,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // input group sample 5
         configs.push(new Config({
             component: 'InputGroupSample5Component',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/input-group/"
         }));
@@ -39,6 +48,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // reactive forms
         configs.push(new Config({
             component: 'ReactiveFormsSampleComponent',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
@@ -59,6 +71,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // template-driven form validation
         configs.push(new Config({
             component: 'TemplateDrivenFormValidationComponent',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
@@ -66,6 +81,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // reactive form validation
         configs.push(new Config({
             component: 'ReactiveFormValidationComponent',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));
@@ -73,6 +91,9 @@ export class InputGroupConfigGenerator implements IConfigGenerator {
         // reactive form custom validation
         configs.push(new Config({
             component: 'ReactiveFormCustomValidationComponent',
+            additionalFiles: [
+                "/src/app/data-entries/input-group/base-input.component.ts"
+            ],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/"
         }));

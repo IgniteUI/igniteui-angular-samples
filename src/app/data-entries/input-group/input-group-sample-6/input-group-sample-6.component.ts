@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BaseInputGroupSampleComponent } from '../base-input.component';
 import { FormsModule } from '@angular/forms';
 import { IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxSelectToggleIconDirective } from 'igniteui-angular/select';
 import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective, IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
@@ -15,7 +16,7 @@ import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directi
     templateUrl: './input-group-sample-6.component.html',
     imports: [FormsModule, IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxLabelDirective, IgxSelectToggleIconDirective, IgxIconComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxPrefixDirective, IgxHintDirective, IgxComboComponent, IgxDatePickerComponent, IgxPickerToggleComponent, IgxTimePickerComponent, IgxButtonDirective, IgxRippleDirective]
 })
-export class InputGroupSample6Component {
+export class InputGroupSample6Component extends BaseInputGroupSampleComponent {
     public user = {
         dateTime: new Date(),
         email: undefined,
