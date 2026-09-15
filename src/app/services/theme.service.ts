@@ -45,7 +45,7 @@ const LOCAL_FAMILIES = new Set([
 ]);
 
 const isTheme = (value: unknown): value is IgxTheme =>
-    typeof value === 'string' && value in THEME_STYLESHEETS;
+    typeof value === 'string' && Object.hasOwn(THEME_STYLESHEETS, value);
 
 const isMode = (value: unknown): value is ThemeMode =>
     value === 'light' || value === 'dark' || value === 'system';
