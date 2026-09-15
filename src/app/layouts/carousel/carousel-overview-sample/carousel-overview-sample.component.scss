@@ -1,0 +1,30 @@
+.carousel-container {
+    padding: 16px;
+}
+
+.image-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+igx-carousel {
+    height: 450px;
+    margin-inline: auto;
+    max-width: 75%;
+}
+
+img {
+    max-height: 90%;
+    max-width: 90%;
+    object-fit: contain;
+}
+
+:host ::ng-deep .igx-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 75%;
+    margin-inline: auto;
+}

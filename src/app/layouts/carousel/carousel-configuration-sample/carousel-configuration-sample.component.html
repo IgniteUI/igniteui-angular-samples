@@ -1,0 +1,19 @@
+<div class="configuration-sample">
+  <div class="configuration-controls">
+    <igx-switch labelPosition="before" [(ngModel)]="hideNavigation">Hide navigation</igx-switch>
+    <igx-switch labelPosition="before" [(ngModel)]="hideIndicators">Hide indicators</igx-switch>
+    <igx-switch labelPosition="before" [(ngModel)]="disableLoop">Disable loop</igx-switch>
+  </div>
+
+  <igx-carousel [navigation]="!hideNavigation" [indicators]="!hideIndicators" [loop]="!disableLoop">
+    <igx-slide>
+      <article class="slide-card"><span>01</span><h3>Coastal route</h3><p>A compact visual slide for checking navigation and indicators.</p></article>
+    </igx-slide>
+    <igx-slide>
+      <article class="slide-card"><span>02</span><h3>City guide</h3><p>A second slide makes loop behavior easy to verify.</p></article>
+    </igx-slide>
+    <igx-slide>
+      <article class="slide-card"><span>03</span><h3>Resort access</h3><p>Use the controls to compare the Carousel configuration states.</p></article>
+    </igx-slide>
+  </igx-carousel>
+</div>

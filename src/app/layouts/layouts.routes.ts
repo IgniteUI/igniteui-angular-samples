@@ -28,6 +28,27 @@ import {
 import {
     CarouselStylingSampleComponent
 } from './carousel/carousel-styling-sample/carousel-styling-sample.component';
+import {
+    CarouselOverviewSampleComponent
+} from './carousel/carousel-overview-sample/carousel-overview-sample.component';
+import {
+    CarouselConfigurationSampleComponent
+} from './carousel/carousel-configuration-sample/carousel-configuration-sample.component';
+import {
+    CarouselComponentsSampleComponent
+} from './carousel/carousel-components-sample/carousel-components-sample.component';
+import {
+    CarouselAnimationsComponent
+} from './carousel/carousel-animations/carousel-animations.component';
+import {
+    CarouselThumbnailComponent
+} from './carousel/carousel-thumbnail/carousel-thumbnail.component';
+import {
+    CarouselStylingComponent
+} from './carousel/carousel-styling/carousel-styling.component';
+import {
+    CarouselTailwindStylingComponent
+} from './carousel/carousel-tailwind-styling/carousel-tailwind-styling.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DividerDashedComponent } from './divider/dashed/divider-dashed.component';
 import { DividerDefaultComponent } from './divider/default/divider-default.component';
@@ -165,6 +186,41 @@ export const LayoutsRoutes: Routes = [
         component: CarouselStylingSampleComponent,
         data: layoutsRoutesData['carousel-styling-sample'],
         path: 'carousel-styling-sample'
+    },
+    {
+        component: CarouselOverviewSampleComponent,
+        data: layoutsRoutesData['carousel-overview-sample'],
+        path: 'carousel-overview-sample'
+    },
+    {
+        component: CarouselConfigurationSampleComponent,
+        data: layoutsRoutesData['carousel-configuration-sample'],
+        path: 'carousel-configuration-sample'
+    },
+    {
+        component: CarouselComponentsSampleComponent,
+        data: layoutsRoutesData['carousel-components-sample'],
+        path: 'carousel-components-sample'
+    },
+    {
+        component: CarouselAnimationsComponent,
+        data: layoutsRoutesData['carousel-animations'],
+        path: 'carousel-animations'
+    },
+    {
+        component: CarouselThumbnailComponent,
+        data: layoutsRoutesData['carousel-thumbnail'],
+        path: 'carousel-thumbnail'
+    },
+    {
+        component: CarouselStylingComponent,
+        data: layoutsRoutesData['carousel-styling'],
+        path: 'carousel-styling'
+    },
+    {
+        component: CarouselTailwindStylingComponent,
+        data: layoutsRoutesData['carousel-tailwind-styling'],
+        path: 'carousel-tailwind-styling'
     },
     {
         component: CarouselComponent,
