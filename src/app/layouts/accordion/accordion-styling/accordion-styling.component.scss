@@ -1,0 +1,44 @@
+@use "igniteui-angular/theming" as *;
+
+.accordion-sample {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.accordion-content {
+    width: min(720px, 100%);
+    margin: 0 auto;
+    padding: 24px;
+    box-sizing: border-box;
+}
+
+$custom-panel-theme: expansion-panel-theme(
+    $header-background: var(--ig-gray-100),
+    $header-focus-background: var(--ig-primary-50),
+    $body-background: var(--ig-gray-50),
+    $body-color: var(--ig-gray-700),
+    $header-title-color: var(--ig-gray-900),
+    $header-description-color: var(--ig-gray-900),
+    $header-icon-color: var(--ig-primary-500),
+    $border-radius: 4px
+);
+
+:host {
+    @include tokens($custom-panel-theme);
+}
+
+::ng-deep {
+    .igx-expansion-panel--expanded .igx-expansion-panel__header-inner {
+        background-color: var(--ig-primary-50);
+    }
+
+    .igx-expansion-panel--expanded .igx-expansion-panel__header-title,
+    .igx-expansion-panel--expanded .igx-expansion-panel__header-description {
+        color: var(--ig-primary-700);
+    }
+
+    .igx-expansion-panel__header-title {
+        font-weight: 600;
+    }
+}
