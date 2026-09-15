@@ -1,0 +1,16 @@
+:host {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+    background: #111;
+    width: fit-content;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-inline: auto;
+}
+
+@media (width < 800px) {
+    :host {
+        flex-direction: column;
+    }
+}
