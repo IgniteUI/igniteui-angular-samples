@@ -1,0 +1,31 @@
+@use 'igniteui-angular/theming' as *;
+
+@include core();
+
+:host::ng-deep {
+    @include theme($palette: $light-bootstrap-palette,
+        $schema: $light-bootstrap-schema);
+}
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    overflow-y: auto;
+}
+
+.qr-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+
+igx-radio-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+}

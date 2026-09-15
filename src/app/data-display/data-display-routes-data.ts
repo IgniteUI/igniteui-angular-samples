@@ -43,5 +43,8 @@ export const dataDisplayRoutesData = {
     "mask-sample-5": { displayName: "Placeholder", parentName: "Mask" },
     "text-highlight-1": { displayName: "Search within a single container", parentName: "Text Highlight" },
     "text-highlight-2": { displayName: "Search within multiple containers", parentName: "Text Highlight" },
-    "text-highlight-style": { displayName: "Text Highlight Style", parentName: "Text Highlight" }
+    "text-highlight-style": { displayName: "Text Highlight Style", parentName: "Text Highlight" },
+    "qr-code-overview": { displayName: "Overview", parentName: "QR Code" },
+    "qr-code-styling": { displayName: "QR Code Styling", parentName: "QR Code" },
+    "qr-code-tailwind-styling": { displayName: "QR Code Tailwind Styling", parentName: "QR Code" }
 };

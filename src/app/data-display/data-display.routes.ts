@@ -49,6 +49,9 @@ import { TextHighlightStyleComponent } from './text-highlight/text-highlight-sty
 import {
     MaterialIconsExtendedComponent} from './icon/material-icons-extended/material-icons-extended.component';
 import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbols.component';
+import { QrCodeOverviewComponent } from './qr-code/qr-code-overview/qr-code-overview.component';
+import { QrCodeStylingComponent } from './qr-code/qr-code-styling/qr-code-styling.component';
+import { QrCodeTailwindStylingComponent } from './qr-code/qr-code-tailwind-styling/qr-code-tailwind-styling.component';
 import { dataDisplayRoutesData } from './data-display-routes-data';
 import { Routes } from '@angular/router';
 
@@ -282,5 +285,20 @@ export const DataDisplayRoutes: Routes = [
         component: MaterialIconsExtendedComponent,
         data: dataDisplayRoutesData['material-icons-extended'],
         path: 'material-icons-extended'
+    },
+    {
+        component: QrCodeOverviewComponent,
+        data: dataDisplayRoutesData['qr-code-overview'],
+        path: 'qr-code-overview'
+    },
+    {
+        component: QrCodeStylingComponent,
+        data: dataDisplayRoutesData['qr-code-styling'],
+        path: 'qr-code-styling'
+    },
+    {
+        component: QrCodeTailwindStylingComponent,
+        data: dataDisplayRoutesData['qr-code-tailwind-styling'],
+        path: 'qr-code-tailwind-styling'
     }
 ];
