@@ -9,8 +9,8 @@ import {
   ChangeDetectionStrategy
 } from "@angular/core";
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
-import { IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
-import { ConnectedPositioningStrategy, HorizontalAlignment, IgxSummaryResult, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
+import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { ConnectedPositioningStrategy, HorizontalAlignment, IgxNumberSummaryOperand, IgxSummaryResult, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxButtonDirective, IgxToggleDirective } from 'igniteui-angular/directives';
 import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { SINGERS } from "../../data/singersData";

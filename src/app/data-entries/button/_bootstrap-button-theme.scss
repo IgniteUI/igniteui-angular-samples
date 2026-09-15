@@ -1,0 +1,61 @@
+@use 'igniteui-angular/theming' as *;
+@use 'igniteui-angular/lib/core/styles/components/button/button-component' as button;
+@use 'igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light';
+@use 'igniteui-theming/sass/typography/presets' as typography-presets;
+
+:host ::ng-deep {
+    @include typography(
+        $font-family: typography-presets.$bootstrap-typeface,
+        $type-scale: typography-presets.$bootstrap-type-scale
+    );
+
+    @include button(
+        $flat: flat-button-theme(
+            $schema: $light-bootstrap-schema,
+            $foreground: color($light-bootstrap-palette, 'primary'),
+            $hover-foreground: color($light-bootstrap-palette, 'primary'),
+            $disabled-foreground: color($light-bootstrap-palette, 'primary', 200)
+        ),
+        $contained: contained-button-theme(
+            $schema: $light-bootstrap-schema,
+            $background: color($light-bootstrap-palette, 'primary'),
+            $foreground: var(--ig-gray-50),
+            $hover-background: color($light-bootstrap-palette, 'primary', 600),
+            $hover-foreground: var(--ig-gray-50),
+            $focus-background: color($light-bootstrap-palette, 'primary', 800),
+            $focus-foreground: var(--ig-gray-50),
+            $focus-hover-background: color($light-bootstrap-palette, 'primary', 600),
+            $focus-hover-foreground: var(--ig-gray-50),
+            $disabled-background: color($light-bootstrap-palette, 'primary', 50),
+            $disabled-foreground: color($light-bootstrap-palette, 'primary', 200)
+        ),
+        $outlined: outlined-button-theme(
+            $schema: $light-bootstrap-schema,
+            $foreground: color($light-bootstrap-palette, 'primary'),
+            $hover-background: color($light-bootstrap-palette, 'primary'),
+            $hover-foreground: var(--ig-gray-50),
+            $disabled-foreground: color($light-bootstrap-palette, 'primary', 200),
+            $disabled-border-color: color($light-bootstrap-palette, 'primary', 50)
+        ),
+        $fab: fab-button-theme(
+            $schema: $light-bootstrap-schema,
+            $background: color($light-bootstrap-palette, 'secondary'),
+            $foreground: var(--ig-gray-50),
+            $hover-background: color($light-bootstrap-palette, 'primary'),
+            $hover-foreground: var(--ig-gray-50),
+            $disabled-background: color($light-bootstrap-palette, 'gray', 300),
+            $disabled-foreground: color($light-bootstrap-palette, 'gray', 500),
+            $resting-shadow: none,
+            $hover-shadow: none
+        )
+    );
+    @include button.component();
+
+    [igxButton] {
+        --ig-size: var(--ig-size-medium);
+    }
+
+    button[igxButton='fab'] {
+        --ig-size: var(--ig-size-large);
+    }
+}

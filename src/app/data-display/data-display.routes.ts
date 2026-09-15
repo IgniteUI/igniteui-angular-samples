@@ -10,6 +10,7 @@ import { BadgeStylingComponent } from './badge/badge-styling/badge-styling.compo
 import { BadgeTailwindStylingComponent } from './badge/badge-tailwind-styling/badge-tailwind-styling.component';
 import { ChipAreaSampleComponent } from './chip/chip-area-sample/chip-area-sample.component';
 import { ChipSimpleComponent } from './chip/chip-simple/chip-simple.component';
+import { ChipOutlinedComponent } from './chip/chip-outlined/chip-outlined.component';
 import { ChipVariantsComponent } from './chip/chip-variants/chip-variants.component';
 import { ChipStylingSampleComponent } from './chip/chip-styling/chip-styling.component';
 import { ChipTailwindStylingSampleComponent } from './chip/chip-tailwind-styling/chip-tailwind-styling.component';
@@ -111,6 +112,11 @@ export const DataDisplayRoutes: Routes = [
         component: ChipSimpleComponent,
         data: dataDisplayRoutesData['chip-simple'],
         path: 'chip-simple'
+    },
+    {
+        component: ChipOutlinedComponent,
+        data: dataDisplayRoutesData['chip-outlined'],
+        path: 'chip-outlined'
     },
     {
         component: ChipVariantsComponent,

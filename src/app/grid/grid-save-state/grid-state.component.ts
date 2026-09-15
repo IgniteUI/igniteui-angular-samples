@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterViewInit, inject } from '@angular/core';
 import { NavigationStart, Router, RouterLink } from '@angular/router';
-import { FilteringExpressionsTree, FilteringLogic, IgxSummaryResult } from 'igniteui-angular/core';
-import { GridFeatures, IGridState, IGridStateOptions, IgxColumnComponent, IgxGridStateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
+import { FilteringExpressionsTree, FilteringLogic, IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
+import { GridFeatures, IGridState, IGridStateOptions, IgxColumnComponent, IgxGridStateDirective, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarHidingComponent, IgxGridToolbarPinningComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -133,7 +133,7 @@ export class GridSaveStateComponent implements OnInit, AfterViewInit {
 
     public resetGridState() {
         const grid: IgxGridComponent = this.grid;
-        const pagingState = {index: 0, recordsPerPage: 15, metadata: { countPages: 3, countRecords: this.localData.length}};
+        const pagingState = { index: 0, recordsPerPage: 15, metadata: { countPages: 3, countRecords: this.localData.length, error: 0 } };
         grid.pagingState = pagingState;
         grid.filteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);
         grid.advancedFilteringExpressionsTree = new FilteringExpressionsTree(FilteringLogic.And);

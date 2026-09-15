@@ -10,7 +10,8 @@ import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxPrefixD
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxColumnComponent, IgxTimeSummaryOperand } from 'igniteui-angular/grids/core';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxTimeSummaryOperand } from 'igniteui-angular/core';
 import { FormsModule } from "@angular/forms";
 import { IgxPreventDocumentScrollDirective } from "../../directives/prevent-scroll.directive";
 

@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-import { DefaultSortingStrategy, GridSummaryCalculationMode, ISortingExpression, IgxSummaryResult, SortingDirection } from 'igniteui-angular/core';
-import { GridSelectionMode, GridSummaryPosition, IgxColumnComponent, IgxNumberSummaryOperand, IgxSummaryOperand } from 'igniteui-angular/grids/core';
+import { DefaultSortingStrategy, GridSummaryCalculationMode, ISortingExpression, IgxNumberSummaryOperand, IgxSummaryOperand, IgxSummaryResult, SortingDirection } from 'igniteui-angular/core';
+import { GridSelectionMode, GridSummaryPosition, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';

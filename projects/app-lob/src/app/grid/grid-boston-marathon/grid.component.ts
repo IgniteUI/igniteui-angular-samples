@@ -1,7 +1,7 @@
 import { Component, HostListener, OnDestroy, OnInit, ViewChild, ElementRef, AfterViewInit, DOCUMENT, inject, ChangeDetectorRef } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { CellType, IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
-import { AbsolutePosition, IgxOverlayService, IgxStringFilteringOperand, IgxSummaryResult, OverlayClosingEventArgs, OverlaySettings } from 'igniteui-angular/core';
+import { CellType, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { AbsolutePosition, IgxNumberSummaryOperand, IgxOverlayService, IgxStringFilteringOperand, IgxSummaryResult, OverlayClosingEventArgs, OverlaySettings } from 'igniteui-angular/core';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { IgxInputDirective, IgxInputGroupComponent } from 'igniteui-angular/input-group';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
