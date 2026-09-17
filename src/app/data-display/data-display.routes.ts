@@ -54,6 +54,10 @@ import { QrCodeStylingComponent } from './qr-code/qr-code-styling/qr-code-stylin
 import { QrCodeTailwindStylingComponent } from './qr-code/qr-code-tailwind-styling/qr-code-tailwind-styling.component';
 import { dataDisplayRoutesData } from './data-display-routes-data';
 import { Routes } from '@angular/router';
+import { QrCodeErrorCorrectionComponent } from './qr-code/qr-code-error-correction/qr-code-error-correction.component';
+import { QrCodeSizeComponent } from './qr-code/qr-code-size/qr-code-size.component';
+import { QrCodeShapesComponent } from './qr-code/qr-code-shapes/qr-code-shapes.component';
+import { QrCodeLogoComponent } from './qr-code/qr-code-logo/qr-code-logo.component';
 
 export const DataDisplayRoutes: Routes = [
     {
@@ -292,10 +296,31 @@ export const DataDisplayRoutes: Routes = [
         path: 'qr-code-overview'
     },
     {
+        component: QrCodeErrorCorrectionComponent,
+        data: dataDisplayRoutesData['qr-code-error-correction'],
+        path: 'qr-code-error-correction'
+    },
+    {
+        component: QrCodeSizeComponent,
+        data: dataDisplayRoutesData['qr-code-size'],
+        path: 'qr-code-size'
+    },
+    {
         component: QrCodeStylingComponent,
         data: dataDisplayRoutesData['qr-code-styling'],
         path: 'qr-code-styling'
     },
+    {
+        component: QrCodeShapesComponent,
+        data: dataDisplayRoutesData['qr-code-shapes'],
+        path: 'qr-code-shapes'
+    },
+    {
+        component: QrCodeLogoComponent,
+        data: dataDisplayRoutesData['qr-code-logo'],
+        path: 'qr-code-logo'
+    },
+
     {
         component: QrCodeTailwindStylingComponent,
         data: dataDisplayRoutesData['qr-code-tailwind-styling'],

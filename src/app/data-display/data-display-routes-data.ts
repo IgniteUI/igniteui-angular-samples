@@ -45,6 +45,10 @@ export const dataDisplayRoutesData = {
     "text-highlight-2": { displayName: "Search within multiple containers", parentName: "Text Highlight" },
     "text-highlight-style": { displayName: "Text Highlight Style", parentName: "Text Highlight" },
     "qr-code-overview": { displayName: "Overview", parentName: "QR Code" },
+    "qr-code-error-correction": { displayName: "QR Code Error Correction", parentName: "QR Code" },
+    "qr-code-size": { displayName: "QR Code Size", parentName: "QR Code" },
+    "qr-code-shapes": { displayName: "QR Code Shapes", parentName: "QR Code" },
+    "qr-code-logo": { displayName: "QR Code Logo", parentName: "QR Code" },
     "qr-code-styling": { displayName: "QR Code Styling", parentName: "QR Code" },
     "qr-code-tailwind-styling": { displayName: "QR Code Tailwind Styling", parentName: "QR Code" }
 };

@@ -13,6 +13,7 @@
     align-items: center;
     gap: 2.5rem;
     overflow-y: auto;
+    height: 100%;
 }
 
 .qr-controls {
@@ -27,5 +28,6 @@ igx-radio-group {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    width: fit-content;
     gap: 0.25rem;
 }
