@@ -26,6 +26,7 @@ import { ExportCsvConfigGenerator } from '../configs/ExportCsvConfigGenerator';
 import { ExportExcelConfigGenerator } from '../configs/ExportExcelConfigGenerator';
 import { ExportPdfConfigGenerator } from '../configs/ExportPdfConfigGenerator';
 import { ForConfigGenerator } from '../configs/ForConfigGenerator';
+import { VirtualScrollConfigGenerator } from '../configs/VirtualScrollConfigGenerator';
 import { GridConfigGenerator } from '../configs/GridConfigGenerator';
 import { HierarchicalGridConfigGenerator } from '../configs/HierarchicalGridConfigGenerator';
 import { IconConfigGenerator } from '../configs/IconConfigGenerator';
@@ -128,6 +129,7 @@ export const CONFIG_GENERATORS =
         CircularProgressbarConfigGenerator,
         DividerConfigGenerator,
         ForConfigGenerator,
+        VirtualScrollConfigGenerator,
         IconConfigGenerator,
         OverlayConfigGenerator,
         LinearProgressbarConfigGenerator,

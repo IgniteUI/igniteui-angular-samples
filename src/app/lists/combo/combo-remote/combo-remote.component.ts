@@ -83,8 +83,9 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     }
 
     public onOpened() {
-        const scroll: number = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
-        this.remoteCombo.virtualScrollContainer.scrollPosition = scroll + this.additionalScroll;
+        // additionalScroll is one row, set when the selection is the last item. Landing a
+        // row further down puts that item at the bottom of the viewport.
+        void this.remoteCombo.virtualScrollContainer.scrollToIndex(this.itemID - 1 + (this.additionalScroll ? 1 : 0), { block: 'start' });
         this.cdr.detectChanges();
     }
 
