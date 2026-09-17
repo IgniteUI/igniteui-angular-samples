@@ -1,4 +1,10 @@
 :host {
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.container {
     display: flex;
     gap: 1.5rem;
     padding: 1rem;
@@ -10,7 +16,7 @@
 }
 
 @media (width < 800px) {
-    :host {
+    .container {
         flex-direction: column;
     }
 }
