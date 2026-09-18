@@ -1,48 +1,95 @@
-import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
-import { IgxButtonModule, IgxRippleModule } from 'igniteui-angular/directives';
-import { IgxIconModule } from 'igniteui-angular/icon';
-import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
+import { Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
-import { ButtonsRoundnessComponent } from '../../src/app/data-entries/buttons/buttons-roundness-sample/buttons-roundness-sample';
 export class ButtonConfigGenerator implements IConfigGenerator {
 
 
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // buttons sample 1
+        // button overview
         configs.push(new Config({
-            component: 'ButtonsSample1Component',
+            component: 'ButtonOverviewComponent',
             appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-entries/buttons/"
+            shortenComponentPathBy: "/data-entries/button/"
         }));
 
-        // buttons roundness
+        // flat button
         configs.push(new Config({
-            component: 'ButtonsDisabledComponent',
+            component: 'ButtonFlatComponent',
             appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-entries/buttons/"
+            shortenComponentPathBy: "/data-entries/button/"
         }));
 
-        // buttons display density
+        // button interaction states
         configs.push(new Config({
-            component: 'ButtonsDisplayDensityComponent',
+            component: 'ButtonInteractionStatesComponent',
             appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-entries/buttons/"
+            shortenComponentPathBy: "/data-entries/button/"
         }));
 
+        // button layout
         configs.push(new Config({
-            component: 'ButtonsRoundnessComponent',
+            component: 'ButtonLayoutComponent',
             appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-entries/buttons/"
+            shortenComponentPathBy: "/data-entries/button/"
         }));
 
-        // button style
+        // contained button
         configs.push(new Config({
-            component: 'ButtonsStyleComponent',
-            additionalFiles: ["/src/app/data-entries/buttons/buttons-style/layout.scss"],
+            component: 'ButtonContainedComponent',
             appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-entries/buttons/"
+            shortenComponentPathBy: "/data-entries/button/"
+        }));
+
+        // floating action button
+        configs.push(new Config({
+            component: 'ButtonFabComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/button/"
+        }));
+
+        // outlined button
+        configs.push(new Config({
+            component: 'ButtonOutlinedComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/button/"
+        }));
+
+        // button states
+        configs.push(new Config({
+            component: 'ButtonStatesComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/button/"
+        }));
+
+        // button size
+        configs.push(new Config({
+            component: 'ButtonSizeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/button/"
+        }));
+
+        // download button
+        configs.push(new Config({
+            component: 'ButtonDownloadComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/button/"
+        }));
+
+        // button styling
+        configs.push(new Config({
+            component: 'ButtonStylingComponent',
+            additionalFiles: ["/src/app/data-entries/button/button-styling/layout.scss"],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/button/"
+        }));
+
+        // button tailwind styling
+        configs.push(new Config({
+            component: 'ButtonTailwindStylingComponent',
+            additionalFiles: ["/src/app/data-entries/button/button-tailwind-styling/layout.scss"],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/button/"
         }));
 
         return configs;

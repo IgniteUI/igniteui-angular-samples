@@ -1,0 +1,173 @@
+@use "igniteui-angular/theming" as *;
+
+:host {
+    display: block;
+    block-size: 100%;
+}
+
+.playground {
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+    padding: 16px;
+    box-sizing: border-box;
+    block-size: 100%;
+    min-block-size: 520px;
+    overflow: hidden;
+}
+
+.playground__stage {
+    @include tokens(grid-theme(
+        $background: #08002e,
+        $accent-color: #ff7d52
+    ));
+}
+
+.playground__rail {
+    --ig-size: var(--ig-size-medium);
+    --ig-button-group-elevation: 0;
+
+    flex: 0 0 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    min-block-size: 0;
+    overflow-y: auto;
+    padding-inline-end: 4px;
+
+    igx-expansion-panel-title {
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--ig-gray-700);
+    }
+}
+
+.playground__hint {
+    margin: 0 0 10px;
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--ig-gray-600);
+}
+
+.playground__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.playground__control {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.playground__label {
+    font-size: 12px;
+    color: var(--ig-gray-700);
+}
+
+.playground__actions {
+    position: sticky;
+    inset-block-end: 0;
+    z-index: 1;
+    display: flex;
+    gap: 8px;
+    padding-block: 8px;
+    background: var(--ig-surface-500);
+    border-block-start: 1px solid var(--ig-gray-200);
+
+    button {
+        flex: 1;
+    }
+}
+
+.playground__dialog-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.playground__dialog-body {
+    --ig-size: var(--ig-size-medium);
+    --ig-icon-size: 18px;
+    --ig-h5-font-size: 14px;
+    --ig-h5-font-weight: 600;
+    --ig-expansion-panel-border-radius: 4px;
+    --ig-expansion-panel-header-background: var(--ig-gray-100);
+
+    inline-size: min(680px, 80vw);
+
+    ::ng-deep .igx-expansion-panel__body {
+        padding: 0;
+    }
+}
+
+.playground__copy {
+    margin-inline-start: auto;
+}
+
+.playground__export {
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.playground__code {
+    ::ng-deep pre.shiki {
+        margin: 0;
+        padding: 10px 12px;
+        font-size: 13px;
+        line-height: 1.5;
+        font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+        max-block-size: 55vh;
+        overflow: auto;
+        overscroll-behavior: contain;
+    }
+}
+
+.playground__loading {
+    display: grid;
+    place-items: center;
+    block-size: 100%;
+    color: var(--ig-gray-600);
+    font-size: 13px;
+}
+
+.playground__preview {
+    flex: 1 1 auto;
+    min-inline-size: 0;
+    min-block-size: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.playground__stage {
+    flex: 1 1 auto;
+    min-block-size: 0;
+    overflow: hidden;
+}
+
+.playground__cell {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
+}
+
+@media (max-width: 860px) {
+    .playground {
+        flex-direction: column;
+        block-size: auto;
+        overflow: visible;
+    }
+
+    .playground__rail {
+        flex: 0 0 auto;
+        overflow: visible;
+    }
+
+    .playground__stage {
+        min-block-size: 460px;
+    }
+}
