@@ -7,7 +7,8 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-carousel',
-    styleUrls: ['./carousel-with-components-sample.component.scss'],
+    host: { class: 'ig-typography' },
+    styleUrls: ['./carousel-with-components-sample.component.scss', '../carousel-bootstrap-theme.scss'],
     templateUrl: './carousel-with-components-sample.component.html',
     imports: [IgxCarouselComponent, IgxSlideComponent, FormsModule, IgxInputGroupComponent, IgxPrefixDirective, IgxIconComponent, IgxLabelDirective, IgxInputDirective, IgxButtonDirective]
 })

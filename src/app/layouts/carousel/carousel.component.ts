@@ -4,7 +4,8 @@ import { IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carous
 
 @Component({
     selector: 'app-carousel',
-    styleUrls: ['./carousel.component.scss'],
+    host: { class: 'ig-typography' },
+    styleUrls: ['./carousel.component.scss', './carousel-bootstrap-theme.scss'],
     templateUrl: './carousel.component.html',
     imports: [IgxCarouselComponent, IgxSlideComponent]
 })
