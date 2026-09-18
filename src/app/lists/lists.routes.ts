@@ -30,6 +30,7 @@ import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/si
 import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple-combo-styling.component';
 import { ListItemSelectionComponent } from './list/list-item-selection/list-item-selection.component';
 import { SimpleComboRemoteComponent } from './combo/simple-combo-remote/simple-combo-remote.component';
+import { ListOverviewComponent } from './list/list-overview/list-overview.component';
 
 export const ListsRoutes: Routes = [
     {
@@ -101,6 +102,11 @@ export const ListsRoutes: Routes = [
         component: SimpleComboRemoteComponent,
         data: listsRoutesData['simple-combo-remote'],
         path: 'simple-combo-remote'
+    },
+    {
+        component: ListOverviewComponent,
+        data: listsRoutesData['list-overview'],
+        path: 'list-overview'
     },
     {
         component: ListComponent,
