@@ -1,0 +1,115 @@
+@use "../checkbox-bootstrap-theme" as checkbox-theme;
+
+@include checkbox-theme.bootstrap-checkbox;
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.filter-panel {
+    box-sizing: border-box;
+    width: 218px;
+    font-family: "Aktiv Grotesk", sans-serif;
+    background: var(--ig-surface-100);
+}
+
+igx-accordion {
+    display: flex;
+    flex-direction: column;
+    transform: translateY(-1rem);
+    padding: 8px 0 0;
+}
+
+igx-expansion-panel {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    border-bottom: 1px solid var(--ig-gray-200);
+}
+
+igx-expansion-panel:last-of-type {
+    border-bottom: 0;
+}
+
+igx-expansion-panel:last-of-type .section-options {
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+igx-expansion-panel-header {
+    --header-background: transparent;
+    --header-focus-background: transparent;
+    --header-icon-color: var(--ig-gray-800);
+    --header-title-color: var(--ig-primary-800);
+    padding-left: 0;
+}
+
+igx-expansion-panel-header ::ng-deep .igx-expansion-panel__title-wrapper {
+    margin-left: -0.5rem;
+}
+
+igx-expansion-panel-body {
+    --body-color: var(--ig-gray-800);
+
+    padding: 0;
+    background: transparent;
+}
+
+.panel-title {
+    color: var(--ig-primary-800);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+}
+
+.section-options {
+    gap: 0;
+    margin: -0.5rem 0 -1rem;
+    padding: 0 0 1rem 1rem;
+}
+
+.filter-option {
+    --size: 20px;
+    --tick-color: var(--ig-gray-50);
+    --empty-color: var(--ig-gray-400);
+    --fill-color: var(--ig-primary-500);
+    --empty-color-hover: var(--ig-primary-600);
+    --border-radius: 0.125rem;
+    --label-color: var(--ig-gray-800);
+    --ig-subtitle-1-font-family: "Aktiv Grotesk", sans-serif;
+    --ig-subtitle-1-font-size: 0.875rem;
+    --ig-subtitle-1-font-weight: 500;
+    --ig-subtitle-1-line-height: 1.5rem;
+    --ig-subtitle-1-letter-spacing: 0.1px;
+
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.1px;
+}
+
+.filter-option::part(label) {
+    color: var(--ig-gray-800);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.1px;
+    margin-left: -2px;
+}
+
+.filter-option ::ng-deep .igx-checkbox__label {
+    color: var(--ig-gray-800);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: 0.1px;
+    margin-left: -2px;
+}

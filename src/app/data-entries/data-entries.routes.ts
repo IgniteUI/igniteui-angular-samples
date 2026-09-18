@@ -23,9 +23,8 @@ import { ButtonFabComponent } from './button/button-fab/button-fab.component';
 import { ButtonOutlinedComponent } from './button/button-outlined/button-outlined.component';
 import { ButtonStylingComponent } from './button/button-styling/button-styling.component';
 import { ButtonTailwindStylingComponent } from './button/button-tailwind-styling/button-tailwind-styling.component';
-import { CheckboxSample1Component } from './checkbox/checkbox-sample-1/checkbox-sample-1.component';
-import { CheckboxSample2Component } from './checkbox/checkbox-sample-2/checkbox-sample-2.component';
-import { CheckboxSample3Component } from './checkbox/checkbox-sample-3/checkbox-sample-3.component';
+import { CheckboxOverviewComponent } from './checkbox/checkbox-overview/checkbox-overview.component';
+import { CheckboxStatesComponent } from './checkbox/checkbox-states/checkbox-states.component';
 import { CheckboxStylingComponent } from './checkbox/checkbox-styling/checkbox-styling.component';
 import { CheckboxTailwindStylingComponent } from './checkbox/checkbox-tailwind-styling/checkbox-tailwind-styling.component';
 import { dataEntriesRoutesData } from './data-entries-routes-data';
@@ -209,19 +208,14 @@ export const DataEntriesRoutes: Routes = [
         path: 'button-tailwind-styling'
     },
     {
-        component: CheckboxSample1Component,
-        data: dataEntriesRoutesData['checkbox-sample-1'],
-        path: 'checkbox-sample-1'
+        component: CheckboxOverviewComponent,
+        data: dataEntriesRoutesData['checkbox-overview'],
+        path: 'checkbox-overview'
     },
     {
-        component: CheckboxSample2Component,
-        data: dataEntriesRoutesData['checkbox-sample-2'],
-        path: 'checkbox-sample-2'
-    },
-    {
-        component: CheckboxSample3Component,
-        data: dataEntriesRoutesData['checkbox-sample-3'],
-        path: 'checkbox-sample-3'
+        component: CheckboxStatesComponent,
+        data: dataEntriesRoutesData['checkbox-states'],
+        path: 'checkbox-states'
     },
     {
         component: CheckboxStylingComponent,

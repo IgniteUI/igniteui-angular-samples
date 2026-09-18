@@ -1,0 +1,143 @@
+@use "../checkbox-bootstrap-theme" as checkbox-theme;
+
+@include checkbox-theme.bootstrap-checkbox;
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.shopping-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 24.5rem;
+    height: 25.5rem;
+    padding: 1rem;
+    overflow: hidden;
+    font-family: "Aktiv Grotesk", sans-serif;
+    border-radius: 0.25rem;
+    background: var(--ig-surface-100);
+    box-shadow: 0 0.0625rem 0.25rem rgb(0 0 0 / 16%);
+}
+
+.list {
+    background: transparent;
+    border: none;
+    overflow: hidden;
+}
+
+.group-header {
+    padding: 0;
+    background: transparent;
+    font-family: var(--ig-body-1-font-family);
+    font-size: var(--ig-body-1-font-size);
+    font-weight: var(--ig-body-1-font-weight);
+    line-height: var(--ig-body-1-line-height);
+    letter-spacing: var(--ig-body-1-letter-spacing);
+    text-transform: none;
+}
+
+.group-header:first-child {
+    transform: translateY(-0.25rem);
+}
+
+.shopping-item + .group-header {
+    margin-top: 1rem;
+}
+
+.shopping-item + .shopping-item {
+    margin-top: 0.25rem;
+}
+
+.group-header:not(:first-child) + .shopping-item {
+    margin-top: 0.25rem;
+}
+
+.group-title {
+    color: var(--ig-primary-500);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0;
+}
+
+.shopping-item {
+    height: 2.25rem;
+    min-height: 2.25rem;
+    gap: 0.25rem;
+    padding: 0 0.25rem 0 0;
+    background: transparent;
+    border-bottom: none;
+}
+
+.shopping-item:hover,
+.shopping-item:focus-within {
+    background: transparent;
+    box-shadow: none;
+}
+
+:host ::ng-deep .shopping-item .igx-list-item__content,
+:host ::ng-deep .shopping-item .igx-list-item__content:hover,
+:host ::ng-deep .shopping-item .igx-list-item__content:focus-within {
+    height: 2.25rem;
+    min-height: 2.25rem;
+    background: transparent;
+    box-shadow: none;
+}
+
+.shopping-item-checked,
+.shopping-item-checked:hover,
+.shopping-item-checked:focus-within {
+    background: var(--ig-primary-50);
+    box-shadow: none;
+}
+
+:host ::ng-deep .shopping-item-checked .igx-list-item__content,
+:host ::ng-deep .shopping-item-checked:hover .igx-list-item__content,
+:host ::ng-deep .shopping-item-checked:focus-within .igx-list-item__content {
+    height: 2.25rem;
+    min-height: 2.25rem;
+    background: var(--ig-primary-50);
+}
+
+:host ::ng-deep .shopping-item .igx-checkbox__label {
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    letter-spacing: 0;
+    transform: translateX(-0.25rem);
+}
+
+.shopping-item igx-checkbox {
+    --tick-color: var(--ig-gray-50);
+    --fill-color: var(--ig-primary-500);
+    --fill-color-hover: var(--ig-primary-600);
+    --empty-color: var(--ig-gray-300);
+    --empty-color-hover: var(--ig-gray-300);
+    transform: translateX(-0.5rem);
+}
+
+.item-menu {
+    margin-inline-start: auto;
+    color: var(--ig-gray-500);
+    transform: translateX(1.25rem);
+}
+
+.item-menu igx-icon {
+    font-size: 1.5rem;
+}
+
+.add-item {
+    position: absolute;
+    inset-inline-end: 1.25rem;
+    inset-block-end: 1rem;
+    background-color: var(--ig-primary-500);
+    color: var(--ig-gray-50);
+}

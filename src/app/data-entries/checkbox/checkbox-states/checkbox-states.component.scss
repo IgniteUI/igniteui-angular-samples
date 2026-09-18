@@ -1,0 +1,45 @@
+@use "../checkbox-bootstrap-theme" as checkbox-theme;
+
+@include checkbox-theme.bootstrap-checkbox;
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.states {
+    display: flex;
+    align-items: flex-end;
+    gap: 4.5rem;
+}
+
+.state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.state igx-checkbox {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+}
+
+.state igx-checkbox ::ng-deep .igx-checkbox__composite-wrapper {
+    width: 1rem;
+    height: 1rem;
+    padding: 0;
+}
+
+.state-label {
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: var(--ig-gray-600);
+}
