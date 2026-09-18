@@ -1,26 +1,32 @@
-<article class="button-group-states">
-    <div class="button-group-states-row">
+<article class="states-matrix">
+    <header class="states-row">
         <span class="row-label"></span>
         <span class="column-label">Enabled</span>
         <span class="column-label">Disabled</span>
-    </div>
+    </header>
 
     @for (row of rows; track row.label) {
-        <div class="button-group-states-row">
+        <section class="states-row">
             <span class="row-label">{{ row.label }}</span>
 
-            <igx-buttongroup selectionMode="multi">
-                <button
-                    igxButton
-                    [igxRipple]="rippleColor"
-                    [selected]="row.selected"
-                    class="state-idle"
-                    [class.state-selected]="row.selected">Device</button>
-            </igx-buttongroup>
+            <div class="state-cell">
+                <span class="cell-label">Enabled</span>
+                <igx-buttongroup selectionMode="multi">
+                    <button
+                        igxButton
+                        [igxRipple]="rippleColor"
+                        [selected]="row.selected"
+                        class="state-idle"
+                        [class.state-selected]="row.selected">Device</button>
+                </igx-buttongroup>
+            </div>
 
-            <igx-buttongroup selectionMode="multi" [disabled]="true">
-                <button igxButton [selected]="row.selected">Cloud</button>
-            </igx-buttongroup>
-        </div>
+            <div class="state-cell">
+                <span class="cell-label">Disabled</span>
+                <igx-buttongroup selectionMode="multi">
+                    <button igxButton disabled [selected]="row.selected">Cloud</button>
+                </igx-buttongroup>
+            </div>
+        </section>
     }
 </article>

@@ -1,7 +1,5 @@
-<article class="button-group-styling">
-    <igx-buttongroup>
-        @for (layout of layouts; track layout) {
-            <button igxButton [igxRipple]="rippleColor" [selected]="layout === 'Left'">{{ layout }}</button>
-        }
-    </igx-buttongroup>
-</article>
+<igx-buttongroup>
+    @for (layout of layouts; track layout) {
+        <button igxButton [igxRipple]="rippleColor" [selected]="layout === 'Left'">{{ layout }}</button>
+    }
+</igx-buttongroup>
