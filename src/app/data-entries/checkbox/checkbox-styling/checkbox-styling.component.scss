@@ -1,39 +1,127 @@
-@use "sass:map";
-@use "igniteui-angular/theming" as *;
+@use "../checkbox-bootstrap-theme" as checkbox-theme;
+
+@include checkbox-theme.bootstrap-checkbox;
 
 :host {
-    --ig-font-family: Arial, Helvetica, sans-serif;
-    --ig-subtitle-1-font-size: #{rem(14px)};
-
-    display: block;
-    padding: rem(18px) 0 0 rem(18px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
 }
 
-// CSS variables approach
-.igx-checkbox {
-    --tick-color: black;
-    --tick-color-hover: black;
-    --tick-width: 4;
-    --fill-color: orange;
-    --fill-color-hover: oklch(from var(--fill-color) calc(l * 0.9) c h);
-    --label-color: black;
-    --empty-color: orange;
-    --border-width: #{rem(3px)};
-    --border-radius: #{rem(3px)};
+.team-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    width: 24.3125rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background: var(--ig-surface-500);
+    box-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 12%);
 }
 
-// Sass theme approach
-// $custom-checkbox-theme: checkbox-theme(
-//     $tick-color: black,
-//     $tick-color-hover: black,
-//     $tick-width: 4,
-//     $fill-color: orange,
-//     $fill-color-hover: oklch(from var(--fill-color) calc(l * 0.9) c h),
-//     $label-color: black,
-//     $empty-color: orange,
-//     $border-radius: rem(3px),
-// );
-//
-// :host ::ng-deep {
-//     @include tokens($custom-checkbox-theme);
-// }
+.team-title {
+    margin: 0 0 0.5rem;
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.select-all {
+    --label-color: var(--ig-primary-500);
+    --tick-color: var(--ig-gray-50);
+    --fill-color: var(--ig-primary-500);
+    --fill-color-hover: var(--ig-primary-600);
+
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 1rem;
+}
+
+.select-all ::ng-deep .igx-checkbox__label,
+.select-all ::ng-deep .igx-checkbox__label:hover,
+.select-all ::ng-deep .igx-checkbox__label:focus {
+    color: var(--ig-primary-500);
+}
+
+.select-all ::ng-deep .igx-checkbox__composite-wrapper {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    padding: 0;
+}
+
+.members {
+    background: transparent;
+    border: none;
+    overflow: hidden;
+}
+
+.member {
+    gap: 0.75rem;
+    border-radius: 0.25rem;
+    background: transparent;
+    border-bottom: none;
+}
+
+.member:hover,
+.member:focus-within {
+    background: transparent;
+    box-shadow: none;
+}
+
+.member:hover ::ng-deep .igx-list-item__content,
+.member:focus-within ::ng-deep .igx-list-item__content {
+    background: transparent;
+    box-shadow: none;
+}
+
+.member-selected,
+.member-selected:hover,
+.member-selected:focus-within {
+    background: var(--ig-primary-50);
+}
+
+.member-selected ::ng-deep .igx-list-item__content,
+.member-selected:hover ::ng-deep .igx-list-item__content,
+.member-selected:focus-within ::ng-deep .igx-list-item__content {
+    background: var(--ig-primary-50);
+}
+
+.member-check {
+    --tick-color: var(--ig-gray-50);
+    --fill-color: var(--ig-primary-500);
+    --fill-color-hover: var(--ig-primary-600);
+}
+
+.member igx-avatar {
+    --ig-size: var(--ig-size-small);
+}
+
+.member-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.member-email {
+    color: var(--ig-gray-600);
+    font-size: 0.75rem;
+}
+
+.continue-button {
+    margin-top: 1rem;
+    align-self: flex-end;
+    background: var(--ig-primary-500);
+    color: var(--ig-gray-50);
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-weight: 400;
+    text-transform: none;
+}
