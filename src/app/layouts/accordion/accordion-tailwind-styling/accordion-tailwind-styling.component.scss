@@ -1,0 +1,20 @@
+.accordion-tailwind-sample {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+::ng-deep {
+    .igx-expansion-panel--expanded .igx-expansion-panel__header-inner {
+        background-color: var(--ig-primary-50);
+    }
+
+    .igx-expansion-panel--expanded .igx-expansion-panel__header-title,
+    .igx-expansion-panel--expanded .igx-expansion-panel__header-description {
+        color: var(--ig-primary-700);
+    }
+
+    .igx-expansion-panel__header-title {
+        font-weight: 600;
+    }
+}
