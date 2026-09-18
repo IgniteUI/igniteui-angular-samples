@@ -3,7 +3,7 @@
     <igx-virtual-scroll
         class="employees__viewport"
         [data]="employees()"
-        [estimatedItemSize]="64"
+        [estimatedItemSize]="62"
         (dataRequest)="loadMore($event)">
         <ng-template igxVirtualItem let-employee let-index="index" let-count="count">
             <igx-list-item [attr.aria-posinset]="index + 1" [attr.aria-setsize]="totalCount">

@@ -1,13 +1,16 @@
 <button class="button" igxButton="contained" [igxToggleAction]="remoteDropDown" [igxDropDownItemNavigation]="remoteDropDown">Products</button>
 <igx-drop-down #remoteDropDown>
-    <div class="drop-down-virtual-wrapper">
-        <igx-drop-down-item
-            *igxFor="let item of rData | async; index as index; scrollOrientation: 'vertical'; containerSize: itemsMaxHeight; itemSize: itemHeight;"
-            [value]="item.ProductName" role="option" [disabled]="item.disabled" [index]="index"
-            (onChunkPreload)="dataLoading($event)">
-            {{ item.ProductName }}
-        </igx-drop-down-item>
-    </div>
+    <igx-virtual-scroll
+        class="drop-down-virtual-wrapper"
+        [dataWindow]="page()"
+        [estimatedItemSize]="itemHeight"
+        (stateChange)="onStateChange($event)">
+        <ng-template igxVirtualItem let-item let-index="index">
+            <igx-drop-down-item [value]="item.ProductName" [disabled]="item.disabled" [index]="index">
+                {{ item.ProductName }}
+            </igx-drop-down-item>
+        </ng-template>
+    </igx-virtual-scroll>
 </igx-drop-down>
 <div class="selection">Selected Product:
     <span>{{ remoteDropDown.selectedItem?.value }}</span>

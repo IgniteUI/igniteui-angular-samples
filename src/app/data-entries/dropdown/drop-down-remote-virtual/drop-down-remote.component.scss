@@ -1,5 +1,5 @@
+// The virtual scroll host is the scroll container, so it needs a fixed height.
 .drop-down-virtual-wrapper {
-    overflow-y: hidden;
     width: 260px;
     height: 320px;
 }

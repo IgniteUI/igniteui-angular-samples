@@ -1,12 +1,11 @@
 <button class="button" igxButton="contained" [igxToggleAction]="dropdown" [igxDropDownItemNavigation]="dropdown">Item Series</button>
 <igx-drop-down #dropdown>
-    <div class="drop-down-virtual-wrapper">
-        <igx-drop-down-item
-            *igxFor="let item of items; index as index; scrollOrientation: 'vertical'; containerSize: itemsMaxHeight; itemSize: itemHeight;"
-            [value]="item" [isHeader]="item.header" role="option" [disabled]="item.disabled"
-            [index]="index">
-            {{ item.name }}
-        </igx-drop-down-item>
-    </div>
+    <igx-virtual-scroll class="drop-down-virtual-wrapper" [data]="items" [estimatedItemSize]="itemHeight">
+        <ng-template igxVirtualItem let-item let-index="index">
+            <igx-drop-down-item [value]="item" [isHeader]="item.header" [disabled]="item.disabled" [index]="index">
+                {{ item.name }}
+            </igx-drop-down-item>
+        </ng-template>
+    </igx-virtual-scroll>
 </igx-drop-down>
 <div class="selection">Selected Model: <span>{{ dropdown.selectedItem?.value.name }}</span></div>
