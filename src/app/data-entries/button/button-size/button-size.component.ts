@@ -11,5 +11,5 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
 })
 export class ButtonSizeComponent {
     public sizes = ['large', 'medium', 'small'];
-    public variants = ['contained', 'outlined', 'flat'];
+    public variants = ['contained', 'outlined', 'flat'] as const;
 }
