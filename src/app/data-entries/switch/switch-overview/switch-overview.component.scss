@@ -1,16 +1,8 @@
-@use "igniteui-angular/theming" as *;
-@use "sass:map";
-@use "../switch-bootstrap" as switch-bootstrap;
-
-@include switch-bootstrap.bootstrap-switch;
-
 :host {
     display: flex;
     place-content: center;
     place-items: center;
     padding: 16px;
-
-    @include tokens(switch-theme($schema: map.get($light-bootstrap-schema, switch)));
 }
 
 .notifications {
@@ -26,7 +18,7 @@
         font: 400 10px / 16px "Titillium Web", sans-serif;
         letter-spacing: 1.5px;
         text-transform: uppercase;
-        color: var(--ig-primary-500);
+        color: var(--ig-secondary-500);
     }
 
     .notifications__row {

@@ -1,6 +1,6 @@
-<article class="button-group-alignment">
+<div class="sample-layout">
     @for (alignment of alignments; track alignment.value) {
-        <div class="button-group-alignment-item">
+        <div class="sample-inner-layout">
             <span>{{ alignment.label }}</span>
             <igx-buttongroup [alignment]="alignment.value">
                 @for (city of cities; track city) {
@@ -9,4 +9,4 @@
             </igx-buttongroup>
         </div>
     }
-</article>
+</div>
