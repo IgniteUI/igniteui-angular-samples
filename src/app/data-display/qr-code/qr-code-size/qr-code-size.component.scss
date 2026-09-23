@@ -15,6 +15,11 @@ div {
     align-items: center;
 }
 
+span {
+    margin-block-start: 1rem;
+    color: var(--ig-gray-600);
+}
+
 @media (width < 850px) {
     :host {
         flex-direction: column;

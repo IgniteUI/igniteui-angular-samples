@@ -7,7 +7,7 @@ defineComponents(IgcQrCodeComponent);
     selector: 'app-qr-code-corner-shapes',
     templateUrl: './qr-code-corner-shapes.component.html',
     styleUrls: ['./qr-code-corner-shapes.component.scss'],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class QrCodeCornerShapesComponent {
 }

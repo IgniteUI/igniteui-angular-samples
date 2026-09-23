@@ -7,7 +7,6 @@ defineComponents(IgcQrCodeComponent);
     selector: 'app-qr-code-tailwind-styling',
     templateUrl: './qr-code-tailwind-styling.component.html',
     styleUrls: ['./qr-code-tailwind-styling.component.scss'],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    imports: []
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class QrCodeTailwindStylingComponent { }

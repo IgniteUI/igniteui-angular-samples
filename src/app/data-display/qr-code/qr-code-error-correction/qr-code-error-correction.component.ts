@@ -7,7 +7,7 @@ defineComponents(IgcQrCodeComponent);
     selector: 'app-qr-code-error-correction',
     templateUrl: './qr-code-error-correction.component.html',
     styleUrls: ['./qr-code-error-correction.component.scss'],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class QrCodeErrorCorrectionComponent {
 }
