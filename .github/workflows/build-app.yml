@@ -46,4 +46,8 @@ jobs:
       - name: 'Generate live editing and build samples'
         run: npm run build
         env:
+          # esbuild is a Go binary: Node heap flags do not limit it, GOMEMLIMIT/GOGC do.
+          # Without this the app build OOM-kills the runner ("The operation was canceled").
+          GOMEMLIMIT: '6GiB'
+          GOGC: '50'
           NODE_OPTIONS: "--max_old_space_size=4096"
