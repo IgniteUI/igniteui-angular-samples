@@ -79,14 +79,8 @@
 }
 
 // WARNING START: Demo overrides only. Do not copy to production.
-// Forced state classes are used here solely to present all component states visually.
+// Interaction is disabled so the matrix stays a static picture of each state.
 igx-buttongroup  {
     pointer-events: none;
-}
-
-button.state-idle.state-selected {
-    background: var(--ig-button-group-item-selected-background);
-    border-color: var(--ig-button-group-item-selected-border-color);
-    color: var(--ig-button-group-item-selected-text-color);
 }
 // WARNING END
