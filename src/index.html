@@ -17,6 +17,8 @@
        documentation site's theming widget posts a new selection into the
        sample; it stays ahead of the application's own stylesheet so that
        styles.scss keeps overriding the theme. -->
+  <!-- Declares Tailwind's layers before the theme's `ig.*` layers so Tailwind's preflight can't override the theme. -->
+  <style>@layer theme, base, components, utilities;</style>
   <link id="igniteui-theme" rel="stylesheet" href="assets/themes/igniteui-angular.css">
 </head>
 
