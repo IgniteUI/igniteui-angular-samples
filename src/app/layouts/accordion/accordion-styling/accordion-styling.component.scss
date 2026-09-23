@@ -13,6 +13,12 @@
     box-sizing: border-box;
 }
 
+igx-accordion {
+    display: block;
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 4px;
+}
+
 $custom-panel-theme: expansion-panel-theme(
     $header-background: var(--ig-gray-100),
     $header-focus-background: var(--ig-primary-50),

@@ -16,3 +16,9 @@
     justify-content: flex-end;
     margin-bottom: 12px;
 }
+
+igx-accordion {
+    display: block;
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 4px;
+}

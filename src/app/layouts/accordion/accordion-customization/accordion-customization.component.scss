@@ -11,6 +11,12 @@
     box-sizing: border-box;
 }
 
+igx-accordion {
+    display: block;
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 4px;
+}
+
 .panel-description {
     margin: 0 0 16px;
     color: var(--ig-gray-700);

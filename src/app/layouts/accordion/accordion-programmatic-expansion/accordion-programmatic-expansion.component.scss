@@ -21,3 +21,9 @@
 .action-button {
     min-width: 96px;
 }
+
+igx-accordion {
+    display: block;
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 4px;
+}
