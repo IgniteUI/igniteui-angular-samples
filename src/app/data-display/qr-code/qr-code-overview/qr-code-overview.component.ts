@@ -11,7 +11,7 @@ defineComponents(IgcQrCodeComponent);
     templateUrl: './qr-code-overview.component.html',
     styleUrls: ['./qr-code-overview.component.scss'],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    imports: [FormsModule, IgxRadioGroupDirective, IgxRadioComponent, IgxSwitchComponent],
+    imports: [FormsModule, IgxRadioGroupDirective, IgxRadioComponent, IgxSwitchComponent]
 })
 export class QrCodeOverviewComponent {
     public shape: 'square' | 'circle' | 'rounded' = 'square';

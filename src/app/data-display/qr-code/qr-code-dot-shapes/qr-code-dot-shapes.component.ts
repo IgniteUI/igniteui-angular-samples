@@ -7,7 +7,7 @@ defineComponents(IgcQrCodeComponent);
     selector: 'app-qr-code-dot-shapes',
     templateUrl: './qr-code-dot-shapes.component.html',
     styleUrls: ['./qr-code-dot-shapes.component.scss'],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class QrCodeDotShapesComponent {
 }
