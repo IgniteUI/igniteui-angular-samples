@@ -4,10 +4,10 @@ import { defineComponents, IgcQrCodeComponent } from 'igniteui-webcomponents';
 defineComponents(IgcQrCodeComponent);
 
 @Component({
-    selector: 'app-qr-code-shapes',
-    templateUrl: './qr-code-shapes.component.html',
-    styleUrls: ['./qr-code-shapes.component.scss'],
+    selector: 'app-qr-code-dot-shapes',
+    templateUrl: './qr-code-dot-shapes.component.html',
+    styleUrls: ['./qr-code-dot-shapes.component.scss'],
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class QrCodeShapesComponent {
+export class QrCodeDotShapesComponent {
 }
