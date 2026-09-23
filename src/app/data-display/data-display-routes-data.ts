@@ -47,7 +47,8 @@ export const dataDisplayRoutesData = {
     "qr-code-overview": { displayName: "Overview", parentName: "QR Code" },
     "qr-code-error-correction": { displayName: "QR Code Error Correction", parentName: "QR Code" },
     "qr-code-size": { displayName: "QR Code Size", parentName: "QR Code" },
-    "qr-code-shapes": { displayName: "QR Code Shapes", parentName: "QR Code" },
+    "qr-code-dot-shapes": { displayName: "QR Code Dot Shapes", parentName: "QR Code" },
+    "qr-code-corner-shapes": { displayName: "QR Code Corner Shapes", parentName: "QR Code" },
     "qr-code-logo": { displayName: "QR Code Logo", parentName: "QR Code" },
     "qr-code-styling": { displayName: "QR Code Styling", parentName: "QR Code" },
     "qr-code-tailwind-styling": { displayName: "QR Code Tailwind Styling", parentName: "QR Code" }

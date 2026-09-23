@@ -56,7 +56,8 @@ import { dataDisplayRoutesData } from './data-display-routes-data';
 import { Routes } from '@angular/router';
 import { QrCodeErrorCorrectionComponent } from './qr-code/qr-code-error-correction/qr-code-error-correction.component';
 import { QrCodeSizeComponent } from './qr-code/qr-code-size/qr-code-size.component';
-import { QrCodeShapesComponent } from './qr-code/qr-code-shapes/qr-code-shapes.component';
+import { QrCodeDotShapesComponent } from './qr-code/qr-code-dot-shapes/qr-code-dot-shapes.component';
+import { QrCodeCornerShapesComponent } from './qr-code/qr-code-corner-shapes/qr-code-corner-shapes.component';
 import { QrCodeLogoComponent } from './qr-code/qr-code-logo/qr-code-logo.component';
 
 export const DataDisplayRoutes: Routes = [
@@ -311,9 +312,14 @@ export const DataDisplayRoutes: Routes = [
         path: 'qr-code-styling'
     },
     {
-        component: QrCodeShapesComponent,
-        data: dataDisplayRoutesData['qr-code-shapes'],
-        path: 'qr-code-shapes'
+        component: QrCodeDotShapesComponent,
+        data: dataDisplayRoutesData['qr-code-dot-shapes'],
+        path: 'qr-code-dot-shapes'
+    },
+    {
+        component: QrCodeCornerShapesComponent,
+        data: dataDisplayRoutesData['qr-code-corner-shapes'],
+        path: 'qr-code-corner-shapes'
     },
     {
         component: QrCodeLogoComponent,
