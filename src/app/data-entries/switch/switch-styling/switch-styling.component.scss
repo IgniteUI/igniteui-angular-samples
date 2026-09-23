@@ -1,8 +1,4 @@
 @use "igniteui-angular/theming" as *;
-@use "sass:map";
-@use "../switch-bootstrap" as switch-bootstrap;
-
-@include switch-bootstrap.bootstrap-switch;
 
 :host ::ng-deep igx-switch .igx-switch__thumb {
 	min-width: 10px;
@@ -19,9 +15,6 @@
     place-items: center;
     min-block-size: 100%;
     padding: 1rem;
-
-    @include tokens(switch-theme($schema: map.get($light-bootstrap-schema, switch)));
-    @include tokens(radio-theme($schema: map.get($light-bootstrap-schema, radio)));
 }
 
 .security {
