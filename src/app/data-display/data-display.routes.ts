@@ -30,6 +30,12 @@ import { IconServiceSampleComponent } from './icon/icon-service-sample/icon-serv
 import { SvgIconSampleComponent } from './icon/svg-icon-sample/svg-icon-sample.component';
 import { IgxForComponent } from './igxFor/igxFor.component';
 import { IgxForHorizontalComponent } from './igxFor/igxFor-horizontal-sample/igxFor-horizontal.component';
+import { VirtualScrollOverviewComponent } from './virtual-scroll/virtual-scroll-overview/virtual-scroll-overview.component';
+import { VirtualScrollVariableSizeComponent } from './virtual-scroll/virtual-scroll-variable-size/virtual-scroll-variable-size.component';
+import { VirtualScrollHorizontalComponent } from './virtual-scroll/virtual-scroll-horizontal/virtual-scroll-horizontal.component';
+import { VirtualScrollScrollToIndexComponent } from './virtual-scroll/virtual-scroll-scroll-to-index/virtual-scroll-scroll-to-index.component';
+import { VirtualScrollInfiniteScrollComponent } from './virtual-scroll/virtual-scroll-infinite-scroll/virtual-scroll-infinite-scroll.component';
+import { VirtualScrollPagedDataComponent } from './virtual-scroll/virtual-scroll-paged-data/virtual-scroll-paged-data.component';
 import { LinearDynamicSampleComponent } from './linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component';
 import { LinearProgressbarSample1Component } from './linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component';
 import { LinearProgressbarSample2Component } from './linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component';
@@ -190,6 +196,36 @@ export const DataDisplayRoutes: Routes = [
         component: IgxForHorizontalComponent,
         data: dataDisplayRoutesData['igx-for-sample-2'],
         path: 'igx-for-sample-2'
+    },
+    {
+        component: VirtualScrollOverviewComponent,
+        data: dataDisplayRoutesData['virtual-scroll-overview'],
+        path: 'virtual-scroll-overview'
+    },
+    {
+        component: VirtualScrollVariableSizeComponent,
+        data: dataDisplayRoutesData['virtual-scroll-variable-size'],
+        path: 'virtual-scroll-variable-size'
+    },
+    {
+        component: VirtualScrollHorizontalComponent,
+        data: dataDisplayRoutesData['virtual-scroll-horizontal'],
+        path: 'virtual-scroll-horizontal'
+    },
+    {
+        component: VirtualScrollScrollToIndexComponent,
+        data: dataDisplayRoutesData['virtual-scroll-scroll-to-index'],
+        path: 'virtual-scroll-scroll-to-index'
+    },
+    {
+        component: VirtualScrollInfiniteScrollComponent,
+        data: dataDisplayRoutesData['virtual-scroll-infinite-scroll'],
+        path: 'virtual-scroll-infinite-scroll'
+    },
+    {
+        component: VirtualScrollPagedDataComponent,
+        data: dataDisplayRoutesData['virtual-scroll-paged-data'],
+        path: 'virtual-scroll-paged-data'
     },
     {
         component: LinearDynamicSampleComponent,
