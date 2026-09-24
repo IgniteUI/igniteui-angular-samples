@@ -1,10 +1,9 @@
-<article class="sample-column button-group-layout">
+<div class="sample-layout">
     <igx-buttongroup>
         @for (layout of layouts; track layout.value) {
             <button igxButton [igxRipple]="rippleColor">{{ layout.label }}</button>
         }
     </igx-buttongroup>
-
     <igx-buttongroup>
         @for (layout of layouts; track layout.value) {
             <button igxButton [igxRipple]="rippleColor">
@@ -12,4 +11,4 @@
             </button>
         }
     </igx-buttongroup>
-</article>
+</div>
