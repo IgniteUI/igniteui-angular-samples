@@ -1,0 +1,40 @@
+:host {
+    display: block;
+    padding: 16px;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-block-end: 16px;
+}
+
+.toolbar__index {
+    inline-size: 140px;
+}
+
+.toolbar__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.employees__viewport {
+    block-size: 400px;
+}
+
+.employees__item--highlighted {
+    animation: highlight 1.5s ease-out;
+}
+
+@keyframes highlight {
+    from {
+        box-shadow: inset 0 0 0 3px var(--ig-warn-500);
+    }
+
+    to {
+        box-shadow: inset 0 0 0 3px transparent;
+    }
+}

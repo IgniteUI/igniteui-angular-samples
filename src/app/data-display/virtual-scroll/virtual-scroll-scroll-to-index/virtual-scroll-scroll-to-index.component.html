@@ -1,0 +1,45 @@
+<div class="toolbar">
+    <igx-input-group class="toolbar__index" type="border">
+        <label igxLabel for="targetIndex">Index</label>
+        <input
+            igxInput
+            id="targetIndex"
+            type="number"
+            min="0"
+            [max]="employees.length - 1"
+            [ngModel]="targetIndex()"
+            (ngModelChange)="targetIndex.set($event)"
+            (keydown.enter)="goTo(targetIndex())" />
+    </igx-input-group>
+
+    <igx-radio-group class="toolbar__alignment" name="alignment" alignment="horizontal" [ngModel]="alignment()" (ngModelChange)="alignment.set($event)">
+        @for (value of alignments; track value) {
+            <igx-radio [value]="value">{{ value }}</igx-radio>
+        }
+    </igx-radio-group>
+
+    <div class="toolbar__actions">
+        <button igxButton="contained" (click)="goTo(targetIndex())">Go</button>
+        <button igxButton="outlined" (click)="goTo(0)">First</button>
+        <button igxButton="outlined" (click)="goTo(employees.length / 2)">Middle</button>
+        <button igxButton="outlined" (click)="goTo(employees.length - 1)">Last</button>
+        <button igxButton="outlined" (click)="goToRandom()">Random</button>
+    </div>
+</div>
+
+<igx-list class="employees">
+    <igx-list-item [isHeader]="true">Employees ({{ employees.length }})</igx-list-item>
+    <igx-virtual-scroll #virtualScroll class="employees__viewport" [data]="employees" [estimatedItemSize]="62">
+        <ng-template igxVirtualItem let-employee let-index="index" let-count="count">
+            <igx-list-item
+                [class.employees__item--highlighted]="index === highlightedIndex()"
+                [attr.aria-posinset]="index + 1"
+                [attr.aria-setsize]="count">
+                <igx-avatar igxListThumbnail shape="circle" [initials]="employee.initials"></igx-avatar>
+                <span igxListLineTitle>#{{ index }} {{ employee.name }}</span>
+                <span igxListLineSubTitle>{{ employee.email }}</span>
+                <igx-chip igxListAction [variant]="employee.variant">{{ employee.department }}</igx-chip>
+            </igx-list-item>
+        </ng-template>
+    </igx-virtual-scroll>
+</igx-list>

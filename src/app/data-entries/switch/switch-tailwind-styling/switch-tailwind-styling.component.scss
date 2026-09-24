@@ -1,7 +1,3 @@
-@use "../switch-bootstrap" as switch-bootstrap;
-
-@include switch-bootstrap.bootstrap-switch;
-
 :host ::ng-deep igx-switch .igx-switch__thumb {
 	min-width: 10px;
 }
