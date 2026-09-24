@@ -30,7 +30,12 @@ span {
 
     grid-row: 2;
     text-align: center;
-    color: var(--ig-gray-700);
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    font-weight: 400;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
 }
 
 igx-badge:last-of-type {

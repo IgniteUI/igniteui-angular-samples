@@ -1,21 +1,20 @@
-.button-group-layout {
+@use 'igniteui-theming' as *;
+
+:host {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.sample-layout {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 80px;
-    min-height: 5.5rem;
+    flex-wrap: wrap;
+    gap: rem(60px);
 }
 
 igx-buttongroup {
-    display: inline-block;
     max-width: 400px;
-}
-
-.button-group-layout button {
-    min-width: 100px;
-}
-
-.button-group-layout igx-icon {
-    --ig-icon-size: 20px;
+    min-width: 280px;
 }
