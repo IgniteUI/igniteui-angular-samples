@@ -8,7 +8,7 @@ import { IgxInputDirective, IgxInputGroupComponent, IgxPrefixDirective } from 'i
 @Component({
     selector: 'app-carousel-components-sample',
     host: { class: 'ig-typography' },
-    styleUrls: ['./carousel-components-sample.component.scss', '../carousel-bootstrap-theme.scss'],
+    styleUrls: ['./carousel-components-sample.component.scss'],
     templateUrl: './carousel-components-sample.component.html',
     imports: [
         IgxButtonDirective,

@@ -6,7 +6,7 @@ import { IgxSwitchComponent } from 'igniteui-angular/switch';
 @Component({
     selector: 'app-carousel-configuration-sample',
     host: { class: 'ig-typography' },
-    styleUrls: ['./carousel-configuration-sample.component.scss', '../carousel-bootstrap-theme.scss'],
+    styleUrls: ['./carousel-configuration-sample.component.scss'],
     templateUrl: './carousel-configuration-sample.component.html',
     imports: [FormsModule, IgxCarouselComponent, IgxSlideComponent, IgxSwitchComponent]
 })

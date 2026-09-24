@@ -11,7 +11,7 @@ import { TitleCasePipe } from '@angular/common';
 @Component({
     selector: 'app-carousel',
     host: { class: 'ig-typography' },
-    styleUrls: ['./carousel-animations-sample.component.scss', '../carousel-bootstrap-theme.scss'],
+    styleUrls: ['./carousel-animations-sample.component.scss'],
     templateUrl: './carousel-animations-sample.component.html',
     imports: [IgxSelectComponent, IgxSwitchComponent, FormsModule, IgxSelectItemComponent, IgxCarouselComponent, IgxSlideComponent, IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardContentDirective, IgxCardMediaDirective, IgxCardActionsComponent, IgxButtonDirective, IgxPrefixDirective, TitleCasePipe]
 })

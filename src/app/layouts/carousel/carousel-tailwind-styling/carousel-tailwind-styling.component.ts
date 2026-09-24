@@ -12,7 +12,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
 @Component({
     selector: 'app-carousel-tailwind-styling',
     host: { class: 'ig-typography' },
-    styleUrls: ['./carousel-tailwind-styling.component.scss', '../carousel-bootstrap-theme.scss'],
+    styleUrls: ['./carousel-tailwind-styling.component.scss'],
     templateUrl: './carousel-tailwind-styling.component.html',
     imports: [
         IgxButtonDirective,

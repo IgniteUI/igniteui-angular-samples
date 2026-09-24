@@ -11,7 +11,7 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
 @Component({
     selector: 'app-carousel-styling',
     host: { class: 'ig-typography' },
-    styleUrls: ['./carousel-styling.component.scss', '../carousel-bootstrap-theme.scss'],
+    styleUrls: ['./carousel-styling.component.scss'],
     templateUrl: './carousel-styling.component.html',
     imports: [
         IgxCarouselComponent,

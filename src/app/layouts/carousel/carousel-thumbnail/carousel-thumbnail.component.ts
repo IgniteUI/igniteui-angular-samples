@@ -4,7 +4,7 @@ import { IgxCarouselComponent, IgxCarouselIndicatorDirective, IgxSlideComponent 
 @Component({
     selector: 'app-carousel-thumbnail',
     host: { class: 'ig-typography' },
-    styleUrls: ['./carousel-thumbnail.component.scss', '../carousel-bootstrap-theme.scss'],
+    styleUrls: ['./carousel-thumbnail.component.scss'],
     templateUrl: './carousel-thumbnail.component.html',
     imports: [IgxCarouselComponent, IgxCarouselIndicatorDirective, IgxSlideComponent]
 })
