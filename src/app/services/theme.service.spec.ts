@@ -53,4 +53,15 @@ describe('ThemeService theme validation', () => {
                 .toBe(`assets/themes/${stylesheet}`);
         });
     }
+
+    it('reflects the color mode as the root color-scheme', () => {
+        const root = document.documentElement;
+        expect(root.style.colorScheme).toBe('light');
+
+        expect(service.set('bootstrap', 'dark')).toBeTrue();
+        expect(root.style.colorScheme).toBe('dark');
+
+        expect(service.set('bootstrap', 'light')).toBeTrue();
+        expect(root.style.colorScheme).toBe('light');
+    });
 });

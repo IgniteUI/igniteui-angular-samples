@@ -154,6 +154,10 @@ export class ThemeService {
         const root = this.document.documentElement;
         root.dataset.igTheme = theme;
         root.dataset.igMode = scheme;
+        // The Sample component gives its iframe the same color-scheme. When the
+        // two differ, the browser paints an opaque default canvas behind the
+        // page instead of leaving it transparent for that surface to show through.
+        root.style.colorScheme = scheme;
 
         const href = THEMES_PATH + THEME_STYLESHEETS[theme][scheme];
         const link = this.themeLink();
