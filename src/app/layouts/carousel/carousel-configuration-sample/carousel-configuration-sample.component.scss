@@ -32,8 +32,8 @@ igx-carousel {
         height: 100%;
         place-items: center;
         background:
-            linear-gradient(135deg, rgba(25, 118, 210, 0.10), transparent 42%),
-            linear-gradient(315deg, rgba(0, 150, 136, 0.10), transparent 42%),
+            linear-gradient(135deg, color-mix(in srgb, var(--ig-primary-500) 12%, transparent), transparent 42%),
+            linear-gradient(315deg, color-mix(in srgb, var(--ig-secondary-500) 12%, transparent), transparent 42%),
             var(--ig-gray-100);
     }
 }
@@ -47,11 +47,11 @@ igx-carousel {
     border: 1px solid var(--ig-gray-300);
     border-radius: 8px;
     color: var(--ig-gray-900);
-    background: rgba(255, 255, 255, 0.88);
-    box-shadow: 0 14px 34px rgba(11, 31, 53, 0.14);
+    background: color-mix(in srgb, var(--ig-surface-500) 88%, transparent);
+    box-shadow: 0 14px 34px rgb(0 0 0 / 0.14);
 }
 
-.slide-card span { color: var(--ig-primary-600); font-size: 12px; font-weight: 700; }
+.slide-card span { color: var(--ig-primary-500); font-size: 12px; font-weight: 700; }
 .slide-card h3 { margin: 0; font-size: 28px; line-height: 1.2; }
 .slide-card p { margin: 0; color: var(--ig-gray-700); line-height: 1.45; }
 

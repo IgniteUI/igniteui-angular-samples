@@ -31,20 +31,20 @@ igx-carousel {
 
     .igx-slide.slide-coast {
         background:
-            linear-gradient(135deg, rgba(25, 118, 210, 0.12), transparent 45%),
+            linear-gradient(135deg, color-mix(in srgb, var(--ig-primary-500) 12%, transparent), transparent 45%),
             var(--ig-gray-100);
     }
 
     .igx-slide.slide-city {
         background:
-            linear-gradient(135deg, rgba(103, 58, 183, 0.12), transparent 45%),
+            linear-gradient(135deg, color-mix(in srgb, var(--ig-secondary-500) 12%, transparent), transparent 45%),
             var(--ig-gray-100);
     }
 
     .igx-slide.slide-resort {
         padding-bottom: 76px;
         background:
-            linear-gradient(135deg, rgba(0, 150, 136, 0.12), transparent 45%),
+            linear-gradient(135deg, color-mix(in srgb, var(--ig-success-500) 12%, transparent), transparent 45%),
             var(--ig-gray-100);
     }
 }
@@ -67,12 +67,12 @@ igx-carousel {
     padding: 22px 24px;
     border: 1px solid var(--ig-gray-300);
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.86);
-    box-shadow: 0 14px 34px rgba(11, 31, 53, 0.14);
+    background: color-mix(in srgb, var(--ig-surface-500) 86%, transparent);
+    box-shadow: 0 14px 34px rgb(0 0 0 / 0.14);
 }
 
 .slide-label {
-    color: var(--ig-primary-600);
+    color: var(--ig-primary-500);
     font-size: 12px;
     font-weight: 700;
 }
@@ -128,8 +128,8 @@ igx-carousel {
 .amenity-visual span {
     display: block;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.72);
-    box-shadow: 0 10px 24px rgba(11, 31, 53, 0.12);
+    background: color-mix(in srgb, var(--ig-surface-500) 72%, transparent);
+    box-shadow: 0 10px 24px rgb(0 0 0 / 0.12);
 }
 
 .route-visual span:nth-child(1) { height: 46%; opacity: 0.75; }
@@ -154,8 +154,8 @@ igx-carousel {
     padding: 4px 0;
     place-items: center;
     border-radius: 6px;
-    color: var(--ig-primary-600);
-    background: var(--ig-primary-100);
+    color: var(--ig-primary-500);
+    background: color-mix(in srgb, var(--ig-primary-500) 16%, transparent);
     font-size: 10px;
     font-weight: 700;
     line-height: 1.1;
@@ -211,7 +211,7 @@ igx-carousel {
 .amenity-visual { display: grid; width: 120px; height: 180px; align-content: center; gap: 12px; }
 .amenity-visual span { height: 44px; border-radius: 12px; }
 .amenity-visual span:nth-child(1) { width: 78%; }
-.amenity-visual span:nth-child(2) { width: 100%; background: rgba(255, 255, 255, 0.9); }
+.amenity-visual span:nth-child(2) { width: 100%; background: color-mix(in srgb, var(--ig-surface-500) 90%, transparent); }
 .amenity-visual span:nth-child(3) { width: 62%; justify-self: end; }
 
 @media (max-width: 720px) {
