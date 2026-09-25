@@ -1,0 +1,37 @@
+:host {
+    display: flex;
+    align-items: flex-start;
+    gap: 3.75rem;
+    justify-content: center;
+    flex-direction: row;
+    overflow-y: auto;
+    height: 100%;
+}
+
+.qr-blue {
+    --ig-qr-code-background: #e3edfb;
+    --ig-qr-code-dark-color: #1361e0;
+}
+
+.qr-orange {
+    --ig-qr-code-background: #fbe6e1;
+    --ig-qr-code-dark-color: #f0562b;
+}
+
+.qr-green {
+    --ig-qr-code-background: #e5f7e6;
+    --ig-qr-code-dark-color: #3fa845;
+}
+
+.qr-dark {
+    --ig-qr-code-background: #0b1b3a;
+    --ig-qr-code-dark-color: #ffffff;
+}
+
+@media (width < 850px) {
+    :host {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+}

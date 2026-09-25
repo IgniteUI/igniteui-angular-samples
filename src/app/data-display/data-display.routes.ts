@@ -30,6 +30,12 @@ import { IconServiceSampleComponent } from './icon/icon-service-sample/icon-serv
 import { SvgIconSampleComponent } from './icon/svg-icon-sample/svg-icon-sample.component';
 import { IgxForComponent } from './igxFor/igxFor.component';
 import { IgxForHorizontalComponent } from './igxFor/igxFor-horizontal-sample/igxFor-horizontal.component';
+import { VirtualScrollOverviewComponent } from './virtual-scroll/virtual-scroll-overview/virtual-scroll-overview.component';
+import { VirtualScrollVariableSizeComponent } from './virtual-scroll/virtual-scroll-variable-size/virtual-scroll-variable-size.component';
+import { VirtualScrollHorizontalComponent } from './virtual-scroll/virtual-scroll-horizontal/virtual-scroll-horizontal.component';
+import { VirtualScrollScrollToIndexComponent } from './virtual-scroll/virtual-scroll-scroll-to-index/virtual-scroll-scroll-to-index.component';
+import { VirtualScrollInfiniteScrollComponent } from './virtual-scroll/virtual-scroll-infinite-scroll/virtual-scroll-infinite-scroll.component';
+import { VirtualScrollPagedDataComponent } from './virtual-scroll/virtual-scroll-paged-data/virtual-scroll-paged-data.component';
 import { LinearDynamicSampleComponent } from './linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component';
 import { LinearProgressbarSample1Component } from './linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component';
 import { LinearProgressbarSample2Component } from './linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component';
@@ -49,8 +55,16 @@ import { TextHighlightStyleComponent } from './text-highlight/text-highlight-sty
 import {
     MaterialIconsExtendedComponent} from './icon/material-icons-extended/material-icons-extended.component';
 import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbols.component';
+import { QrCodeOverviewComponent } from './qr-code/qr-code-overview/qr-code-overview.component';
+import { QrCodeStylingComponent } from './qr-code/qr-code-styling/qr-code-styling.component';
+import { QrCodeTailwindStylingComponent } from './qr-code/qr-code-tailwind-styling/qr-code-tailwind-styling.component';
 import { dataDisplayRoutesData } from './data-display-routes-data';
 import { Routes } from '@angular/router';
+import { QrCodeErrorCorrectionComponent } from './qr-code/qr-code-error-correction/qr-code-error-correction.component';
+import { QrCodeSizeComponent } from './qr-code/qr-code-size/qr-code-size.component';
+import { QrCodeDotShapesComponent } from './qr-code/qr-code-dot-shapes/qr-code-dot-shapes.component';
+import { QrCodeCornerShapesComponent } from './qr-code/qr-code-corner-shapes/qr-code-corner-shapes.component';
+import { QrCodeLogoComponent } from './qr-code/qr-code-logo/qr-code-logo.component';
 
 export const DataDisplayRoutes: Routes = [
     {
@@ -184,6 +198,36 @@ export const DataDisplayRoutes: Routes = [
         path: 'igx-for-sample-2'
     },
     {
+        component: VirtualScrollOverviewComponent,
+        data: dataDisplayRoutesData['virtual-scroll-overview'],
+        path: 'virtual-scroll-overview'
+    },
+    {
+        component: VirtualScrollVariableSizeComponent,
+        data: dataDisplayRoutesData['virtual-scroll-variable-size'],
+        path: 'virtual-scroll-variable-size'
+    },
+    {
+        component: VirtualScrollHorizontalComponent,
+        data: dataDisplayRoutesData['virtual-scroll-horizontal'],
+        path: 'virtual-scroll-horizontal'
+    },
+    {
+        component: VirtualScrollScrollToIndexComponent,
+        data: dataDisplayRoutesData['virtual-scroll-scroll-to-index'],
+        path: 'virtual-scroll-scroll-to-index'
+    },
+    {
+        component: VirtualScrollInfiniteScrollComponent,
+        data: dataDisplayRoutesData['virtual-scroll-infinite-scroll'],
+        path: 'virtual-scroll-infinite-scroll'
+    },
+    {
+        component: VirtualScrollPagedDataComponent,
+        data: dataDisplayRoutesData['virtual-scroll-paged-data'],
+        path: 'virtual-scroll-paged-data'
+    },
+    {
         component: LinearDynamicSampleComponent,
         data: dataDisplayRoutesData['linear-dynamic-sample'],
         path: 'linear-dynamic-sample'
@@ -282,5 +326,46 @@ export const DataDisplayRoutes: Routes = [
         component: MaterialIconsExtendedComponent,
         data: dataDisplayRoutesData['material-icons-extended'],
         path: 'material-icons-extended'
+    },
+    {
+        component: QrCodeOverviewComponent,
+        data: dataDisplayRoutesData['qr-code-overview'],
+        path: 'qr-code-overview'
+    },
+    {
+        component: QrCodeErrorCorrectionComponent,
+        data: dataDisplayRoutesData['qr-code-error-correction'],
+        path: 'qr-code-error-correction'
+    },
+    {
+        component: QrCodeSizeComponent,
+        data: dataDisplayRoutesData['qr-code-size'],
+        path: 'qr-code-size'
+    },
+    {
+        component: QrCodeStylingComponent,
+        data: dataDisplayRoutesData['qr-code-styling'],
+        path: 'qr-code-styling'
+    },
+    {
+        component: QrCodeDotShapesComponent,
+        data: dataDisplayRoutesData['qr-code-dot-shapes'],
+        path: 'qr-code-dot-shapes'
+    },
+    {
+        component: QrCodeCornerShapesComponent,
+        data: dataDisplayRoutesData['qr-code-corner-shapes'],
+        path: 'qr-code-corner-shapes'
+    },
+    {
+        component: QrCodeLogoComponent,
+        data: dataDisplayRoutesData['qr-code-logo'],
+        path: 'qr-code-logo'
+    },
+
+    {
+        component: QrCodeTailwindStylingComponent,
+        data: dataDisplayRoutesData['qr-code-tailwind-styling'],
+        path: 'qr-code-tailwind-styling'
     }
 ];

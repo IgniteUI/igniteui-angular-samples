@@ -7,7 +7,7 @@
     place-content: center;
     place-items: center;
     column-gap: rem(60px);
-    min-height: 7rem;
+    min-height: 100vh;
     padding-inline: rem(16px);
 
     ::ng-deep {
@@ -55,7 +55,7 @@ igx-stepper {
     --ig-stepper-step-separator-style: dashed;
     --ig-stepper-step-separator-color: var(--ig-gray-400);
 
-    max-width: rem(316px);
+    inline-size: rem(320px);
 }
 
 span[igxStepIndicator] {

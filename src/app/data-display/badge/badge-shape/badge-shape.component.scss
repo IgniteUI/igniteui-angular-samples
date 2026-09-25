@@ -13,7 +13,12 @@
 
 span {
     justify-self: end;
-    color: var(--ig-gray-700);
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    font-weight: 400;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
 
     @include type-style("body-2") {
         margin: 0;

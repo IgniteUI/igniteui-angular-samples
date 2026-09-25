@@ -1,0 +1,62 @@
+<div class="sample-container">
+    <div class="theme-editor">
+        <div class="theme-editor-header">
+            <div>
+                <h2>Theme Editor</h2>
+                <p>Use the pickers to style the card.</p>
+            </div>
+            <button igxIconButton="flat" igxRipple aria-label="Reset theme" (click)="reset()">
+                <igx-icon>refresh</igx-icon>
+            </button>
+        </div>
+        <div class="swatches">
+            <div class="swatch-item">
+                <igc-color-picker
+                    class="!light-color-picker [--ig-color-picker-picker-background:#fff0eb] [--ig-color-picker-picker-border-color:#f95924] [--ig-color-picker-anchor-background-hover:#e9e9e914] [--ig-color-picker-picker-border-radius:0.5rem]"
+                    [value]="background" label="Background" (igcInput)="onBackgroundInput($event)">
+                    <span slot="helper-text">Card surface color</span>
+                </igc-color-picker>
+            </div>
+            <div class="swatch-item">
+                <igc-color-picker
+                    class="!light-color-picker [--ig-color-picker-picker-background:#fff0eb] [--ig-color-picker-picker-border-color:#f95924] [--ig-color-picker-anchor-background-hover:#e9e9e914] [--ig-color-picker-picker-border-radius:0.5rem]"
+                    [value]="text" size="small" label="Text" (igcInput)="onTextInput($event)">
+                    <span slot="helper-text" class="swatch-hint">Body &amp; heading color</span>
+                </igc-color-picker>
+            </div>
+            <div class="swatch-item">
+                <igc-color-picker
+                    class="!light-color-picker [--ig-color-picker-picker-background:#fff0eb] [--ig-color-picker-picker-border-color:#f95924] [--ig-color-picker-anchor-background-hover:#e9e9e914] [--ig-color-picker-picker-border-radius:0.5rem]"
+                    [value]="accent" size="small" label="Accent" (igcInput)="onAccentInput($event)">
+                    <span slot="helper-text" class="swatch-hint">Button &amp; tag color</span>
+                </igc-color-picker>
+            </div>
+            <div class="swatch-item">
+                <igc-color-picker
+                    class="!light-color-picker [--ig-color-picker-picker-background:#fff0eb] [--ig-color-picker-picker-border-color:#f95924] [--ig-color-picker-anchor-background-hover:#e9e9e914] [--ig-color-picker-picker-border-radius:0.5rem]"
+                    [value]="border" size="small" label="Border" (igcInput)="onBorderInput($event)">
+                    <span slot="helper-text" class="swatch-hint">Card edge color</span>
+                </igc-color-picker>
+            </div>
+            <div class="swatch-item disabled">
+                <igc-color-picker
+                    class="!light-color-picker [--ig-color-picker-picker-background:#fff0eb] [--ig-color-picker-picker-border-color:#f95924] [--ig-color-picker-anchor-background-hover:#e9e9e914] [--ig-color-picker-picker-border-radius:0.5rem]"
+                    disabled value="#7d91ab" size="small" label="Shadow (Pro)">
+                    <span slot="helper-text" class="swatch-hint">Upgrade to unlock</span>
+                </igc-color-picker>
+            </div>
+        </div>
+        <igx-card [style.--preview-bg]="background" [style.--preview-text]="text"
+            [style.--preview-accent]="accent" [style.--preview-border]="border">
+            <igx-card-content>
+                <igx-chip class="preview-chip">Design</igx-chip>
+                <h3 class="preview-title">Color Picker in Practice</h3>
+                <p class="preview-text">Pick colors above to see them applied live across every element of this card.</p>
+                <div class="preview-actions">
+                    <button igxButton="contained" igxRipple class="preview-primary">Read more</button>
+                    <button igxButton="outlined" igxRipple class="preview-secondary">Save</button>
+                </div>
+            </igx-card-content>
+        </igx-card>
+    </div>
+</div>

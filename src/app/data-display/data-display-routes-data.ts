@@ -31,6 +31,12 @@ export const dataDisplayRoutesData = {
     "material-icons-extended": { displayName: "Material Icons Extended", parentName: "Icon" },
     "igx-for-sample-1": { displayName: "List with igxFor directive", parentName: "For" },
     "igx-for-sample-2": { displayName: "IgxFor Horizontal virtualization", parentName: "For" },
+    "virtual-scroll-overview": { displayName: "Virtual Scroll Overview", parentName: "Virtual Scroll" },
+    "virtual-scroll-variable-size": { displayName: "Virtual Scroll Variable Item Size", parentName: "Virtual Scroll" },
+    "virtual-scroll-horizontal": { displayName: "Virtual Scroll Horizontal", parentName: "Virtual Scroll" },
+    "virtual-scroll-scroll-to-index": { displayName: "Virtual Scroll Scroll to Index", parentName: "Virtual Scroll" },
+    "virtual-scroll-infinite-scroll": { displayName: "Virtual Scroll Infinite Scroll", parentName: "Virtual Scroll" },
+    "virtual-scroll-paged-data": { displayName: "Virtual Scroll Paged Data", parentName: "Virtual Scroll" },
     "linear-dynamic-sample": { displayName: "Dynamic Linear Progressbar", parentName: "Linear Progressbar" },
     "linear-progressbar": { displayName: "Simple Linear Progressbar", parentName: "Linear Progressbar" },
     "linear-progressbar-sample-1": { displayName: "Linear Progressbar Types", parentName: "Linear Progressbar" },
@@ -43,5 +49,13 @@ export const dataDisplayRoutesData = {
     "mask-sample-5": { displayName: "Placeholder", parentName: "Mask" },
     "text-highlight-1": { displayName: "Search within a single container", parentName: "Text Highlight" },
     "text-highlight-2": { displayName: "Search within multiple containers", parentName: "Text Highlight" },
-    "text-highlight-style": { displayName: "Text Highlight Style", parentName: "Text Highlight" }
+    "text-highlight-style": { displayName: "Text Highlight Style", parentName: "Text Highlight" },
+    "qr-code-overview": { displayName: "Overview", parentName: "QR Code" },
+    "qr-code-error-correction": { displayName: "QR Code Error Correction", parentName: "QR Code" },
+    "qr-code-size": { displayName: "QR Code Size", parentName: "QR Code" },
+    "qr-code-dot-shapes": { displayName: "QR Code Dot Shapes", parentName: "QR Code" },
+    "qr-code-corner-shapes": { displayName: "QR Code Corner Shapes", parentName: "QR Code" },
+    "qr-code-logo": { displayName: "QR Code Logo", parentName: "QR Code" },
+    "qr-code-styling": { displayName: "QR Code Styling", parentName: "QR Code" },
+    "qr-code-tailwind-styling": { displayName: "QR Code Tailwind Styling", parentName: "QR Code" }
 };
