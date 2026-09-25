@@ -26,10 +26,13 @@
     display: flex;
 
     igx-avatar {
-        box-shadow: 0 0 0 rem(6px) var(--ig-surface-500);
+        box-shadow: 0 0 0 calc(var(--size) * 0.07) var(--ig-surface-500);
 
         + igx-avatar {
-            margin-inline-start: rem(-24px);
+            // Proportional to the avatar's own rendered size (--size, set by
+            // the theme) rather than a fixed length, since themes disagree
+            // widely on how big a "large" avatar actually is.
+            margin-inline-start: calc(var(--size) * -0.27);
         }
 
         &:last-child {
