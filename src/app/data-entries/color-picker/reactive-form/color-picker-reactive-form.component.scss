@@ -1,0 +1,62 @@
+.sample-container {
+    --ig-size: 2;
+
+    display: flex;
+    justify-content: center;
+    padding-block-start: 0.5rem;
+}
+
+igx-card {
+    width: 24rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--ig-gray-900);
+}
+
+igc-color-picker[mode="input"] {
+    width: 100%;
+}
+
+igc-color-picker[mode="input"]::part(color-picker) {
+    width: 100%;
+    grid-template-columns: auto;
+}
+
+igc-color-picker::part(picker) {
+    --picker-elevation: var(--ig-elevation-4);
+
+    margin-top: 0.5rem;
+}
+
+.preview {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.preview-caption {
+    font-size: 0.875rem;
+    color: var(--ig-gray-600);
+}
+
+.preview-label {
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}

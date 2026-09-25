@@ -1,0 +1,40 @@
+.small-picker {
+    --ig-size: var(--ig-size-small);
+}
+
+.medium-picker {
+    --ig-size: var(--ig-size-medium);
+}
+
+.large-picker {
+    --ig-size: var(--ig-size-large);
+}
+
+.sample-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    padding-block-start: 0.5rem;
+    font-family: "Aktiv Grotesk", sans-serif;
+}
+
+span {
+    display: block;
+    text-align: center;
+    margin-block-end: 1rem;
+    color: var(--ig-gray-600);
+}
+
+igc-color-picker::part(picker) {
+    --picker-elevation: var(--ig-elevation-4);
+
+    margin-top: 0.5rem;
+}
+
+@media (width < 450px) {
+    .sample-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
