@@ -28,6 +28,18 @@ import { CheckboxSample2Component } from './checkbox/checkbox-sample-2/checkbox-
 import { CheckboxSample3Component } from './checkbox/checkbox-sample-3/checkbox-sample-3.component';
 import { CheckboxStylingComponent } from './checkbox/checkbox-styling/checkbox-styling.component';
 import { CheckboxTailwindStylingComponent } from './checkbox/checkbox-tailwind-styling/checkbox-tailwind-styling.component';
+import { ColorPickerOverviewComponent } from './color-picker/overview/color-picker-overview.component';
+import { ColorPickerValueComponent } from './color-picker/value/color-picker-value.component';
+import { ColorPickerInputComponent } from './color-picker/input/color-picker-input.component';
+import { ColorPickerFormatComponent } from './color-picker/format/color-picker-format.component';
+import { ColorPickerAlphaComponent } from './color-picker/alpha/color-picker-alpha.component';
+import { ColorPickerSwatchesComponent } from './color-picker/swatches/color-picker-swatches.component';
+import { ColorPickerStatesComponent } from './color-picker/states/color-picker-states.component';
+import { ColorPickerSizesComponent } from './color-picker/sizes/color-picker-sizes.component';
+import { ColorPickerInputSizesComponent } from './color-picker/input-sizes/color-picker-input-sizes.component';
+import { ColorPickerStylingComponent } from './color-picker/styling/color-picker-styling.component';
+import { ColorPickerTailwindStylingComponent } from './color-picker/tailwind-styling/color-picker-tailwind-styling.component';
+import { ColorPickerReactiveFormComponent } from './color-picker/reactive-form/color-picker-reactive-form.component';
 import { dataEntriesRoutesData } from './data-entries-routes-data';
 import { DropDownRemoteComponent } from './dropdown/drop-down-remote-virtual/drop-down-remote.component';
 import { DropDownVirtualComponent } from './dropdown/drop-down-virtual/drop-down-virtual.component';
@@ -232,6 +244,66 @@ export const DataEntriesRoutes: Routes = [
         component: CheckboxTailwindStylingComponent,
         data: dataEntriesRoutesData['checkbox-tailwind-styling'],
         path: 'checkbox-tailwind-styling'
+    },
+    {
+        component: ColorPickerOverviewComponent,
+        data: dataEntriesRoutesData['color-picker-overview'],
+        path: 'color-picker-overview'
+    },
+    {
+        component: ColorPickerValueComponent,
+        data: dataEntriesRoutesData['color-picker-value'],
+        path: 'color-picker-value'
+    },
+    {
+        component: ColorPickerInputComponent,
+        data: dataEntriesRoutesData['color-picker-input'],
+        path: 'color-picker-input'
+    },
+    {
+        component: ColorPickerFormatComponent,
+        data: dataEntriesRoutesData['color-picker-format'],
+        path: 'color-picker-format'
+    },
+    {
+        component: ColorPickerAlphaComponent,
+        data: dataEntriesRoutesData['color-picker-alpha'],
+        path: 'color-picker-alpha'
+    },
+    {
+        component: ColorPickerSwatchesComponent,
+        data: dataEntriesRoutesData['color-picker-swatches'],
+        path: 'color-picker-swatches'
+    },
+    {
+        component: ColorPickerStatesComponent,
+        data: dataEntriesRoutesData['color-picker-states'],
+        path: 'color-picker-states'
+    },
+    {
+        component: ColorPickerSizesComponent,
+        data: dataEntriesRoutesData['color-picker-sizes'],
+        path: 'color-picker-sizes'
+    },
+    {
+        component: ColorPickerInputSizesComponent,
+        data: dataEntriesRoutesData['color-picker-input-sizes'],
+        path: 'color-picker-input-sizes'
+    },
+    {
+        component: ColorPickerStylingComponent,
+        data: dataEntriesRoutesData['color-picker-styling'],
+        path: 'color-picker-styling'
+    },
+    {
+        component: ColorPickerTailwindStylingComponent,
+        data: dataEntriesRoutesData['color-picker-tailwind-styling'],
+        path: 'color-picker-tailwind-styling'
+    },
+    {
+        component: ColorPickerReactiveFormComponent,
+        data: dataEntriesRoutesData['color-picker-reactive-form'],
+        path: 'color-picker-reactive-form'
     },
     {
         component: DropdownMenuComponent,
