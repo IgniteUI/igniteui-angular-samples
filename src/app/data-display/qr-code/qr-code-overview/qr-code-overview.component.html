@@ -1,0 +1,27 @@
+<div class="qr-controls">
+    <igx-radio-group [(ngModel)]="shape" name="shape">
+        <igx-radio value="square" checked>Square</igx-radio>
+        <igx-radio value="circle">Circle</igx-radio>
+        <igx-radio value="rounded">Rounded</igx-radio>
+    </igx-radio-group>
+
+    <igx-radio-group [(ngModel)]="size" name="size">
+        <igx-radio [value]="120" checked>Small</igx-radio>
+        <igx-radio [value]="180">Medium</igx-radio>
+        <igx-radio [value]="240">Large</igx-radio>
+        <igx-radio [value]="300">Extra large</igx-radio>
+    </igx-radio-group>
+
+    <igx-switch [(ngModel)]="showLogo" labelPosition="before">Logo</igx-switch>
+</div>
+
+<igc-qr-code
+    [value]="value"
+    [attr.size]="size"
+    [attr.dot-style]="shape"
+    [attr.square-style]="shape"
+    error-level="H"
+    [attr.logo-src]="showLogo ? logoSrc : null"
+    logo-size="1"
+    logo-margin="3"
+></igc-qr-code>
