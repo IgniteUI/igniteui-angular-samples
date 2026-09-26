@@ -1,3 +1,29 @@
-<igx-checkbox id="checkbox-1" disableRipple [checked]="true">
-  Styled checkbox
-</igx-checkbox>
+<div class="team-card">
+    <p class="team-title">Team members</p>
+
+    <igx-checkbox
+        class="select-all"
+        labelPosition="before"
+        [checked]="allSelected"
+        [indeterminate]="someSelected && !allSelected"
+        (change)="toggleAll($event.checked)">
+        <span>Select all</span>
+    </igx-checkbox>
+
+    <igx-list class="members">
+        @for (member of members; track member.email) {
+            <igx-list-item class="member" [class.member-selected]="member.selected">
+                <igx-avatar igxListThumbnail [src]="member.avatar" shape="circle" [attr.aria-label]="member.name"></igx-avatar>
+                <span igxListLineTitle class="member-name">{{ member.name }}</span>
+                <span igxListLineSubTitle class="member-email">{{ member.email }}</span>
+                <igx-checkbox
+                    igxListAction
+                    class="member-check"
+                    [attr.aria-label]="member.name"
+                    [(ngModel)]="member.selected"></igx-checkbox>
+            </igx-list-item>
+        }
+    </igx-list>
+
+    <button igxButton="contained" type="button" class="continue-button">Continue</button>
+</div>

@@ -1,3 +1,22 @@
-<igx-checkbox class="!light-checkbox ![--empty-color:#7B9E89] ![--fill-color:#7B9E89]" [checked]="true">
-    Styled checkbox
-</igx-checkbox>
+<div class="filter-panel flex flex-col rounded-2xl border border-[var(--ig-primary-500)] p-2">
+    <igx-accordion>
+        @for (section of sections; track section.title) {
+            <igx-expansion-panel class="filter-section" [(collapsed)]="section.collapsed">
+                <igx-expansion-panel-header [iconPosition]="'right'">
+                    <igx-expansion-panel-title>
+                        <span class="panel-title">{{ section.title }}</span>
+                    </igx-expansion-panel-title>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <div class="section-options flex flex-col">
+                        @for (option of section.options; track option.label) {
+                            <igx-checkbox class="filter-option" [(ngModel)]="option.checked">
+                                <span>{{ option.label }}</span>
+                            </igx-checkbox>
+                        }
+                    </div>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+        }
+    </igx-accordion>
+</div>
