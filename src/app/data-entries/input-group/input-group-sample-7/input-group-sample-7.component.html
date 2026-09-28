@@ -1,0 +1,56 @@
+<article class="sample-column">
+    <form>
+        <!-- Example 1: Simple text input with correct id and for pairing -->
+        <igx-input-group>
+            <input igxInput id="fullName" name="fullName" type="text" />
+            <label igxLabel for="fullName">Full Name</label>
+        </igx-input-group>
+
+        <!-- Example 2: Email input with icon and correct id and for pairing -->
+        <igx-input-group>
+            <input igxInput id="emailAddress" name="emailAddress" type="email" />
+            <label igxLabel for="emailAddress">Email Address</label>
+            <igx-suffix>
+                <igx-icon>email</igx-icon>
+            </igx-suffix>
+        </igx-input-group>
+
+        <!-- Example 3: Phone input with correct id and for pairing -->
+        <igx-input-group>
+            <input igxInput id="phoneNumber" name="phoneNumber" type="tel" />
+            <label igxLabel for="phoneNumber">Phone Number</label>
+            <igx-suffix>
+                <igx-icon>phone</igx-icon>
+            </igx-suffix>
+        </igx-input-group>
+
+        <!-- Example 4: Required field with correct id and for pairing -->
+        <igx-input-group>
+            <input igxInput id="userName" name="userName" type="text" required="required" />
+            <label igxLabel for="userName">Username</label>
+            <igx-suffix>
+                <igx-icon>person</igx-icon>
+            </igx-suffix>
+        </igx-input-group>
+    </form>
+
+    <!-- Accessibility Information Section -->
+    <div class="accessibility-info">
+        <h4>Accessibility Best Practice</h4>
+        <p>
+            This sample demonstrates the correct use of <code>id</code> and <code>for</code> attributes 
+            for proper label-input association, which is essential for accessibility:
+        </p>
+        <ul>
+            <li>Each <code>&lt;input&gt;</code> element has a unique <code>id</code> attribute</li>
+            <li>The corresponding <code>&lt;label&gt;</code> has a <code>for</code> attribute that matches the input's <code>id</code></li>
+            <li>This pairing ensures screen readers like JAWS and NVDA can properly announce labels</li>
+            <li>It also allows users to click the label to focus the input, improving usability</li>
+        </ul>
+        <p>
+            <strong>Note:</strong> The <code>for</code> attribute must match the <code>id</code> attribute, 
+            not the <code>name</code> attribute. Using <code>name</code> alone without <code>id</code> breaks 
+            screen reader functionality and fails HTML validation.
+        </p>
+    </div>
+</article>
