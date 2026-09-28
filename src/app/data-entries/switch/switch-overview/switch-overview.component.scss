@@ -1,38 +1,46 @@
+@use "igniteui-theming/sass/typography" as *;
+
 :host {
     display: flex;
     place-content: center;
     place-items: center;
-    padding: 16px;
+    padding: rem(16px);
 }
 
 .notifications {
     inline-size: 100%;
-    max-inline-size: 384px;
+    max-inline-size: rem(384px);
     background: var(--ig-surface-500);
-    border-radius: 4px;
+    border-radius: rem(4px);
     overflow: hidden;
 
     .notifications__title {
-        margin: 0;
-        padding: 16px;
-        font: 400 10px / 16px "Titillium Web", sans-serif;
-        letter-spacing: 1.5px;
+        @include type-style("overline") {
+            margin: 0;
+        }
+
+        padding: rem(16px);
         text-transform: uppercase;
         color: var(--ig-secondary-500);
+        font-family: "Titillium Web", sans-serif;
+        font-size: rem(10px);
+        font-weight: 400;
+        line-height: rem(16px);
+        letter-spacing: rem(1.5px);
     }
 
     .notifications__row {
-        padding-block: 12px;
-        padding-inline: 16px;
+        padding-block: rem(12px);
+        padding-inline: rem(16px);
 
         igx-switch {
             inline-size: 100%;
             justify-content: space-between;
-            gap: 16px;
-            transform: translateX(-10px);
+            gap: rem(16px);
+            transform: translateX(rem(-10px));
 
             ::ng-deep .igx-switch__composite {
-                transform: translateX(8px);
+                transform: translateX(rem(8px));
             }
         }
     }
@@ -41,16 +49,33 @@
 .option {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    gap: rem(2px);
     text-align: start;
     white-space: normal;
 
     .option__label {
+        @include type-style("body-1") {
+            margin: 0;
+        }
+
         color: var(--ig-gray-900);
+        font-family: "Titillium Web", sans-serif;
+        font-size: rem(16px);
+        font-weight: 400;
+        line-height: rem(24px);
+        letter-spacing: rem(0.15px);
     }
 
     .option__hint {
-        font-size: 13px;
+        @include type-style("body-2") {
+            margin: 0;
+        }
+
         color: var(--ig-gray-700);
+        font-family: "Titillium Web", sans-serif;
+        font-size: rem(14px);
+        font-weight: 400;
+        line-height: rem(20px);
+        letter-spacing: rem(0.25px);
     }
 }

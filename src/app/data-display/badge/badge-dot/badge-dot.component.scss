@@ -107,6 +107,10 @@ $anchors: icon, avatar;
     }
 }
 
+.nav-item.active {
+	color: var(--ig-primary-500);
+}
+
 .nav-icon {
     position: relative;
     display: inline-flex;
