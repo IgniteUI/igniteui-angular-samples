@@ -1,0 +1,176 @@
+igc-color-picker::part(copy),
+igc-color-picker::part(eye-dropper) {
+    --foreground: #c6451b;
+}
+
+igc-color-picker::part(picker) {
+    --ig-input-group-border-color: #f95924;
+    --ig-input-group-hover-border-color: #f95924;
+    --ig-input-group-focused-border-color: #f95924;
+
+    margin-top: 1.25rem;
+}
+
+igc-color-picker::part(buttons) {
+    gap: 0rem;
+}
+
+igc-color-picker {
+    --ig-color-picker-picker-elevation: none;
+}
+
+.sample-container {
+    --ig-size: 2;
+
+    display: flex;
+    height: fit-content;
+    max-width: 55rem;
+    margin-inline: auto;
+    padding-block-start: 0.5rem;
+}
+
+.theme-editor {
+    --ig-font-family: "Aktiv Grotesk", sans-serif;
+
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 0.063rem solid;
+    padding: 1.5rem;
+    border-color: var(--ig-gray-200);
+    background: var(--ig-surface-500);
+}
+
+.theme-editor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+    border-bottom: 0.063rem solid;
+    border-color: var(--ig-gray-200);
+}
+
+.theme-editor-header h2 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: var(--ig-gray-900);
+    letter-spacing: 0.009rem;
+}
+
+.theme-editor-header p {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin: 0.125rem 0 0;
+    color: var(--ig-gray-600);
+}
+
+.theme-editor-header igx-icon {
+    --size: 1.5rem;
+}
+
+.swatches {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem 1rem;
+}
+
+.swatch-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    max-width: 8.5rem;
+    width: 100%;
+}
+
+.swatch-item igc-color-picker {
+    --ig-color-picker-anchor-border-radius: 0.375rem;
+    --ig-color-picker-label-color: var(--ig-gray-900);
+}
+
+.swatch-item igc-color-picker::part(label) {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+
+igc-color-picker::part(anchor) {
+    --anchor-border-radius: 0.25rem;
+    --anchor-border-color: var(--ig-gray-600);
+    --swatch-preview-border-color: var(--ig-gray-300);
+}
+
+.swatch-item.disabled igc-color-picker {
+    --ig-color-picker-label-color-disabled: var(--ig-gray-400);
+}
+
+.swatch-item.disabled .swatch-hint {
+    color: var(--ig-gray-400);
+}
+
+.swatch-hint {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    color: var(--ig-gray-600);
+}
+
+igx-card {
+    margin-block-start: 1rem;
+    border-radius: 0.5rem;
+    background: var(--preview-bg);
+    border: 0.063rem solid var(--preview-border);
+    box-shadow: var(--ig-elevation-4);
+}
+
+.preview-chip {
+    --ig-size: var(--ig-size-large);
+    --ig-chip-background: color-mix(in srgb, var(--preview-accent) 25%, transparent);
+    --ig-chip-hover-background: color-mix(in srgb, var(--preview-accent) 75%, transparent);
+    --ig-chip-text-color: var(--preview-accent);
+}
+
+.preview-primary,
+.preview-secondary {
+    --ig-size: var(--ig-size-medium);
+    text-transform: capitalize;
+}
+
+.preview-primary {
+    --background: var(--preview-accent);
+    --foreground: var(--preview-bg);
+    --hover-background: hsl(from var(--preview-accent) h s 40%);
+}
+
+.preview-secondary {
+    --foreground: var(--preview-accent);
+    --hover-foreground: hsl(from var(--preview-accent) h s 40%);
+    --border-color: var(--preview-accent);
+    --hover-border-color: hsl(from var(--preview-accent) h s 40%);
+    min-width: unset;
+}
+
+.preview-title,
+.preview-text {
+    color: var(--preview-text);
+}
+
+.preview-title {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    margin: 1rem 0 0.25rem;
+    letter-spacing: 0.009rem;
+}
+
+.preview-text {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+}
+
+.preview-actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}

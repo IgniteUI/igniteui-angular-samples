@@ -1,0 +1,99 @@
+.sample-container {
+    --ig-size: 2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block-start: 0.5rem;
+}
+
+.editor-toolbar {
+    display: flex;
+    align-items: stretch;
+    gap: 0.5rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background: #00142b;
+    font-family: "Aktiv Grotesk", sans-serif;
+}
+
+.toolbar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+.toolbar-group-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1rem;
+    letter-spacing: 0.009375rem;
+    color: #d2dbe8;
+}
+
+.toolbar-actions {
+    border-radius: 0.5rem;
+    background: #556c86;
+}
+
+[igxIconButton] {
+    width: fit-content;
+    height: fit-content;
+    padding: 0.5rem;
+    --foreground: #fcfcfc;
+    --hover-foreground: #fff;
+}
+
+[igxIconButton] igx-icon {
+    --size: 0.875rem;
+    width: 1.6em;
+    height: 1.6em;
+    align-items: center;
+    justify-content: center;
+}
+
+.toolbar-group:nth-child(2) {
+    [igxIconButton]:nth-of-type(2) {
+        padding-inline: unset;
+    }
+
+    [igxIconButton]:nth-of-type(3) {
+        padding-inline-end: unset;
+    }
+}
+
+.toolbar-group:nth-child(3) [igxIconButton]:nth-of-type(2) {
+    padding-inline: unset;
+}
+
+igc-color-picker {
+    --ig-size: var(--ig-size-small);
+    --ig-input-group-border-color: transparent;
+    --ig-input-group-hover-border-color: rgb(255 255 255 / 15%);
+    --ig-input-group-focused-border-color: transparent;
+    --ig-input-group-border-border-radius: 0.5rem;
+    --ig-input-group-filled-text-color: #fff;
+    --ig-input-group-filled-text-hover-color: #fff;
+    --ig-input-group-focused-text-color: #fff;
+    --ig-input-group-placeholder-color: #fff;
+    --ig-input-group-hover-placeholder-color: #fff;
+    --ig-input-group-focus-placeholder-color: #fff;
+
+    width: 8.75rem;
+}
+
+igc-color-picker::part(picker) {
+    --ig-input-group-filled-text-color: var(--ig-gray-900);
+    --ig-input-group-filled-text-hover-color: var(--ig-gray-900);
+    --ig-input-group-focused-text-color: var(--ig-gray-900);
+    --ig-input-group-placeholder-color: var(--ig-gray-900);
+    --ig-input-group-hover-placeholder-color: var(--ig-gray-900);
+    --ig-input-group-focus-placeholder-color: var(--ig-gray-900);
+    --ig-input-group-border-color: var(--ig-gray-500);
+    --ig-input-group-hover-border-color: var(--ig-gray-500);
+    --ig-input-group-focused-border-color: var(--ig-gray-500);
+    --ig-input-group-border-border-radius: 0.25rem;
+
+    margin-top: 1.25rem;
+}
