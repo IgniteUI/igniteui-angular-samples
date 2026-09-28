@@ -1,0 +1,37 @@
+<div class="accordion-sample">
+    <div class="accordion-content">
+        <div class="accordion-toolbar">
+            <igx-switch [(ngModel)]="singleBranchExpand">Single Expand</igx-switch>
+        </div>
+
+        <igx-accordion [singleBranchExpand]="singleBranchExpand">
+            <igx-expansion-panel [collapsed]="false">
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Account</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Profile and security settings</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p>Update your profile details, password, and sign-in preferences.</p>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Notifications</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Email and product updates</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p>Choose which notifications you receive and how often they are delivered.</p>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Billing</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Payment and invoice settings</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p>Manage payment methods, billing contacts, and invoice delivery options.</p>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+        </igx-accordion>
+    </div>
+</div>
