@@ -1,4 +1,8 @@
-:host {
+@use "sass:meta";
+@import url("https://use.typekit.net/bng2zgw.css");
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-checkbox-styling {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,52 +11,77 @@
 }
 
 .team-card {
+    /* The design's own palette and typeface. They are set here instead of
+       coming from the theme, so the sample keeps its custom look in every theme. */
+    --team-surface: #fff;
+    --team-primary: #0176ff;
+    --team-gray-100: #f3f6fa;
+    --team-gray-200: #e5ebf3;
+    --team-gray-400: #a9b8cc;
+    --team-gray-500: #7d91ab;
+    --team-gray-600: #556c86;
+    --team-gray-700: #344b65;
+    --team-gray-900: #00142b;
+    /* aktiv-grotesk is the kit's family name. */
+    --ig-font-family: aktiv-grotesk, sans-serif;
+
+    --ig-checkbox-empty-color: var(--team-gray-400);
+    --ig-checkbox-empty-color-hover: var(--team-gray-400);
+    --ig-checkbox-fill-color: var(--team-primary);
+    --ig-checkbox-fill-color-hover: var(--team-primary);
+    --ig-checkbox-tick-color: #fff;
+    --ig-checkbox-tick-color-hover: #fff;
+
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    width: 24.3125rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background: var(--ig-surface-500);
-    box-shadow: 0 0.125rem 0.5rem rgb(0 0 0 / 12%);
+    box-sizing: border-box;
+    width: 26.3125rem;
+    padding: 0.5rem 0;
+    border: 1px solid var(--team-gray-200);
+    border-radius: 0.75rem;
+    background: var(--team-surface);
+    font-family: var(--ig-font-family);
 }
 
 .team-title {
-    margin: 0 0 0.5rem;
-    color: var(--ig-gray-600);
-    font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    margin: 0;
+    padding: 0 1rem;
+    color: var(--team-gray-500);
+    font-family: var(--ig-body-1-font-family, var(--ig-font-family));
+    font-size: var(--ig-body-1-font-size);
+    font-weight: var(--ig-body-1-font-weight);
+    line-height: var(--ig-body-1-line-height);
+    letter-spacing: var(--ig-body-1-letter-spacing);
+    text-transform: var(--ig-body-1-text-transform);
 }
 
 .select-all {
-    --label-color: var(--ig-primary-500);
-    --tick-color: var(--ig-gray-50);
-    --fill-color: var(--ig-primary-500);
-    --fill-color-hover: var(--ig-primary-600);
+    --ig-checkbox-empty-color: var(--team-gray-500);
+    --ig-checkbox-empty-color-hover: var(--team-gray-500);
+    --ig-checkbox-label-color: var(--team-gray-600);
+    --ig-checkbox-label-color-hover: var(--team-gray-600);
 
+    box-sizing: border-box;
     width: 100%;
     justify-content: space-between;
-    padding: 0.5rem;
-    border-radius: 0.25rem;
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 0.5rem 1rem;
+}
+
+.select-all .igx-checkbox__label--before {
+    margin-inline-start: 0;
     font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    letter-spacing: 0.15px;
 }
 
-.select-all ::ng-deep .igx-checkbox__label,
-.select-all ::ng-deep .igx-checkbox__label:hover,
-.select-all ::ng-deep .igx-checkbox__label:focus {
-    color: var(--ig-primary-500);
-}
-
-.select-all ::ng-deep .igx-checkbox__composite-wrapper {
-    width: 1rem;
-    height: 1rem;
-    margin-right: 0.5rem;
-    padding: 0;
+/* A 24px slot around the 20px box, as in the design. */
+.select-all .igx-checkbox__composite-wrapper,
+.member-check .igx-checkbox__composite-wrapper {
+    margin: 0.125rem;
 }
 
 .members {
@@ -62,10 +91,17 @@
 }
 
 .member {
-    gap: 0.75rem;
-    border-radius: 0.25rem;
     background: transparent;
     border-bottom: none;
+    --border-color: transparent;
+    --border-width: 0;
+}
+
+/* The row's own padding and gap sit on the item's content wrapper. */
+.member .igx-list-item__content {
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
 }
 
 .member:hover,
@@ -74,8 +110,8 @@
     box-shadow: none;
 }
 
-.member:hover ::ng-deep .igx-list-item__content,
-.member:focus-within ::ng-deep .igx-list-item__content {
+.member:hover .igx-list-item__content,
+.member:focus-within .igx-list-item__content {
     background: transparent;
     box-shadow: none;
 }
@@ -83,41 +119,49 @@
 .member-selected,
 .member-selected:hover,
 .member-selected:focus-within {
-    background: var(--ig-primary-50);
+    background: var(--team-gray-100);
 }
 
-.member-selected ::ng-deep .igx-list-item__content,
-.member-selected:hover ::ng-deep .igx-list-item__content,
-.member-selected:focus-within ::ng-deep .igx-list-item__content {
-    background: var(--ig-primary-50);
-}
-
-.member-check {
-    --tick-color: var(--ig-gray-50);
-    --fill-color: var(--ig-primary-500);
-    --fill-color-hover: var(--ig-primary-600);
+.member-selected .igx-list-item__content,
+.member-selected:hover .igx-list-item__content,
+.member-selected:focus-within .igx-list-item__content {
+    background: var(--team-gray-100);
 }
 
 .member igx-avatar {
     --ig-size: var(--ig-size-small);
 }
 
-.member-name {
+.member .member-name {
+    display: block;
+    color: var(--team-gray-900);
     font-size: 0.875rem;
     font-weight: 600;
+    line-height: 1.125rem;
 }
 
-.member-email {
-    color: var(--ig-gray-600);
+.member .member-email {
+    display: block;
+    color: var(--team-gray-700);
     font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.4px;
 }
 
 .continue-button {
-    margin-top: 1rem;
     align-self: flex-end;
-    background: var(--ig-primary-500);
-    color: var(--ig-gray-50);
-    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
-    font-weight: 400;
+    margin: 1rem 1rem 0;
+    min-width: auto;
+    width: 5.25rem;
+    min-height: 1.875rem;
+    height: 1.875rem;
+    padding: 0 0.75rem;
+    border-color: var(--team-primary);
+    background: var(--team-primary);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.375rem;
+    letter-spacing: 0.1px;
     text-transform: none;
 }

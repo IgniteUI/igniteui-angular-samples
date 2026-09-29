@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxAccordionComponent } from 'igniteui-angular/accordion';
 import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
@@ -17,6 +17,7 @@ interface FilterSection {
 
 @Component({
     selector: 'app-checkbox-tailwind-styling',
+    encapsulation: ViewEncapsulation.None,
     styleUrls: ['./checkbox-tailwind-styling.component.scss'],
     templateUrl: './checkbox-tailwind-styling.component.html',
     imports: [

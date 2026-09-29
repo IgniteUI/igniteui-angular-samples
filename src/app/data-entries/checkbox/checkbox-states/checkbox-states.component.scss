@@ -19,10 +19,12 @@
     gap: 0.75rem;
 }
 
+/* the checkboxes are display-only, so they don't offer a pointer */
 .state igx-checkbox {
     display: block;
     width: 1rem;
     height: 1rem;
+    cursor: default;
 }
 
 .state igx-checkbox ::ng-deep .igx-checkbox__composite-wrapper {

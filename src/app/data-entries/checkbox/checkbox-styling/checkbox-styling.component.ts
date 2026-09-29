@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
@@ -14,6 +14,7 @@ interface TeamMember {
 
 @Component({
     selector: 'app-checkbox-styling',
+    encapsulation: ViewEncapsulation.None,
     styleUrls: ['./checkbox-styling.component.scss'],
     templateUrl: './checkbox-styling.component.html',
     imports: [
