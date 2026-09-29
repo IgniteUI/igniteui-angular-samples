@@ -1,0 +1,26 @@
+<div class="container sample center">
+  <igx-carousel class="styled-carousel">
+    <ng-template igxCarouselPrevButton>
+      <span class="carousel-navigation-button"><igx-icon>chevron_left</igx-icon></span>
+    </ng-template>
+    <ng-template igxCarouselNextButton>
+      <span class="carousel-navigation-button"><igx-icon>chevron_right</igx-icon></span>
+    </ng-template>
+    <ng-template igxCarouselIndicator let-slide>
+      <span class="carousel-indicator" [class.carousel-indicator-active]="slide.active"></span>
+    </ng-template>
+
+    @for (slide of slides; track slide.image) {
+      <igx-slide>
+        <article class="slide-card">
+          <img class="slide-image" [src]="slide.image" [alt]="slide.alt" />
+          <div class="slide-content">
+            <span class="slide-label">{{ slide.label }}</span>
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.subtitle }}</p>
+          </div>
+        </article>
+      </igx-slide>
+    }
+  </igx-carousel>
+</div>

@@ -1,0 +1,70 @@
+<div class="accordion-sample">
+    <div class="accordion-content">
+        <igx-accordion>
+            <igx-expansion-panel [collapsed]="false">
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Transportation@if (selectedCategories) {<span>: {{ selectedCategories }}</span>}</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Choose how you want to travel</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p class="panel-description">Select one or more transportation options for your trip.</p>
+                    <div class="categories-container">
+                        @for (category of categories; track category.type) {
+                            <igx-checkbox class="category-option" [(ngModel)]="category.checked">{{ category.type }}</igx-checkbox>
+                        }
+                    </div>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Budget: ${{ slider.lowerValue }} - ${{ slider.upperValue }}</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Set the price range</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p class="panel-description">Adjust the minimum and maximum cost for available options.</p>
+                    <div class="range-summary">
+                        <span>${{ slider.lowerValue }}</span>
+                        <span>${{ slider.upperValue }}</span>
+                    </div>
+                    <igx-slider #slider class="cost-slider" [type]="sliderType.RANGE" [minValue]="0" [maxValue]="1000" [(ngModel)]="priceRange"></igx-slider>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Minimum Rating@if (rating) {<span>: {{ rating }}</span>}</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Filter by review score</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p class="panel-description">Choose the lowest rating you want to include in the results.</p>
+                    <div class="rating-options">
+                        @for (ratingOption of ratingOptions; track ratingOption) {
+                            <igx-radio class="rating-option" [(ngModel)]="rating" [value]="ratingOption + ' stars or more'">
+                                <span>{{ ratingOption }} stars or more</span>
+                                <span class="rating-control">
+                                    @for (star of [].constructor(ratingOption); track $index) {
+                                        <igx-icon>star</igx-icon>
+                                    }
+                                </span>
+                            </igx-radio>
+                        }
+                    </div>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Arrival Time{{ time }}</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Set the latest arrival time</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p class="panel-description">Pick the latest acceptable arrival time for your trip.</p>
+                    <igx-time-picker class="time-input size-small" [(ngModel)]="arriveTime" mode="dropdown" [spinLoop]="false">
+                        <label igxLabel>Arrive before</label>
+                    </igx-time-picker>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+        </igx-accordion>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+@use "layout.scss";
+
+igc-color-picker {
+    --ig-color-picker-picker-background: #e6f2ff;
+    --ig-color-picker-picker-border-color: #a9b8cc;
+    --ig-color-picker-picker-border-radius: 1rem;
+    --ig-color-picker-picker-elevation: none;
+}
+
+igc-color-picker::part(anchor) {
+    border: 0.125rem solid #a9b8cc;
+}
+
+igc-color-picker::part(picker-canvas) {
+    border-radius: 0.25rem;
+}
