@@ -1,0 +1,18 @@
+<nav aria-label="Breadcrumb">
+    <igc-breadcrumbs>
+        <igc-breadcrumb>
+            <igc-icon slot="prefix" name="home"></igc-icon>
+            <a href="/home" (click)="$event.preventDefault()">Home</a>
+        </igc-breadcrumb>
+        <igc-breadcrumb>
+            <a href="/home/mail" (click)="$event.preventDefault()">Mail</a>
+        </igc-breadcrumb>
+        <igc-breadcrumb>
+            <a href="/home/mail/messages" (click)="$event.preventDefault()">Messages</a>
+        </igc-breadcrumb>
+        <igc-breadcrumb current>
+            <a href="/home/mail/messages/inbox" (click)="$event.preventDefault()">Inbox</a>
+            <igc-badge slot="suffix" outlined variant="danger">3</igc-badge>
+        </igc-breadcrumb>
+    </igc-breadcrumbs>
+</nav>

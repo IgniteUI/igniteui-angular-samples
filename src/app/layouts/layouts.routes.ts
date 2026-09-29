@@ -6,6 +6,14 @@ import { AvatarShapeComponent } from './avatar/avatar-shape/avatar-shape.compone
 import { AvatarSizeComponent } from './avatar/avatar-size/avatar-size.component';
 import { AvatarStylingSampleComponent } from './avatar/avatar-styling/avatar-styling.component';
 import { AvatarTailwindStylingSampleComponent } from './avatar/avatar-tailwind-styling/avatar-tailwind-styling.component';
+import { BreadcrumbsOverviewComponent } from './breadcrumbs/breadcrumbs-overview/breadcrumbs-overview.component';
+import { BreadcrumbsCustomSeparatorComponent } from './breadcrumbs/breadcrumbs-custom-separator/breadcrumbs-custom-separator.component';
+import { BreadcrumbsPrefixSuffixComponent } from './breadcrumbs/breadcrumbs-prefix-suffix/breadcrumbs-prefix-suffix.component';
+import { BreadcrumbsStylingComponent } from './breadcrumbs/breadcrumbs-styling/breadcrumbs-styling.component';
+import { BreadcrumbsTailwindStylingComponent } from './breadcrumbs/breadcrumbs-tailwind-styling/breadcrumbs-tailwind-styling.component';
+import { BreadcrumbsWrappingComponent } from './breadcrumbs/breadcrumbs-wrapping/breadcrumbs-wrapping.component';
+import { BreadcrumbsSizesComponent } from './breadcrumbs/breadcrumbs-sizes/breadcrumbs-sizes.component';
+import { BreadcrumbsStatesComponent } from './breadcrumbs/breadcrumbs-states/breadcrumbs-states.component';
 import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
 import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
 import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
@@ -197,6 +205,46 @@ export const LayoutsRoutes: Routes = [
         component: AvatarTailwindStylingSampleComponent,
         data: layoutsRoutesData['avatar-tailwind-styling'],
         path: 'avatar-tailwind-styling'
+    },
+    {
+        component: BreadcrumbsOverviewComponent,
+        data: layoutsRoutesData['breadcrumbs-overview'],
+        path: 'breadcrumbs-overview'
+    },
+    {
+        component: BreadcrumbsCustomSeparatorComponent,
+        data: layoutsRoutesData['breadcrumbs-custom-separator'],
+        path: 'breadcrumbs-custom-separator'
+    },
+    {
+        component: BreadcrumbsPrefixSuffixComponent,
+        data: layoutsRoutesData['breadcrumbs-prefix-suffix'],
+        path: 'breadcrumbs-prefix-suffix'
+    },
+    {
+        component: BreadcrumbsStylingComponent,
+        data: layoutsRoutesData['breadcrumbs-styling'],
+        path: 'breadcrumbs-styling'
+    },
+    {
+        component: BreadcrumbsTailwindStylingComponent,
+        data: layoutsRoutesData['breadcrumbs-tailwind-styling'],
+        path: 'breadcrumbs-tailwind-styling'
+    },
+    {
+        component: BreadcrumbsWrappingComponent,
+        data: layoutsRoutesData['breadcrumbs-wrapping'],
+        path: 'breadcrumbs-wrapping'
+    },
+    {
+        component: BreadcrumbsSizesComponent,
+        data: layoutsRoutesData['breadcrumbs-sizes'],
+        path: 'breadcrumbs-sizes'
+    },
+    {
+        component: BreadcrumbsStatesComponent,
+        data: layoutsRoutesData['breadcrumbs-states'],
+        path: 'breadcrumbs-states'
     },
     {
         component: CarouselNoNavigationSampleComponent,
