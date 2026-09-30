@@ -3,6 +3,7 @@ import { AutocompleteConfigGenerator } from '../configs/AutocompleteConfigGenera
 import { AvatarConfigGenerator } from '../configs/AvatarConfigGenerator';
 import { BadgeConfigGenerator } from '../configs/BadgeConfigGenerator';
 import { BannerConfigGenerator } from '../configs/BannerConfigGenerator';
+import { BreadcrumbsConfigGenerator } from '../configs/BreadcrumbsConfigGenerator';
 import { ButtonConfigGenerator } from '../configs/ButtonConfigGenerator';
 import { ButtonGroupConfigGenerator } from '../configs/ButtonGroupConfigGenerator';
 import { CalendarConfigGenerator } from '../configs/CalendarConfigGenerator';
@@ -12,6 +13,7 @@ import { ChatConfigGenerator } from '../configs/ChatConfigGenerator';
 import { CheckboxConfigGenerator } from '../configs/CheckboxConfigGenerator';
 import { ChipConfigGenerator } from '../configs/ChipConfigGenerator';
 import { CircularProgressbarConfigGenerator } from '../configs/CircularProgressbarConfigGenerator';
+import { ColorPickerConfigGenerator } from '../configs/ColorPickerConfigGenerator';
 import { ComboConfigGenerator } from '../configs/ComboConfigGenerator';
 import { DatePickerConfigGenerator } from '../configs/DatePickerConfigGenerator';
 import { DateRangePickerConfigGenerator } from '../configs/DateRangePickerConfigGenerator';
@@ -64,6 +66,7 @@ import { StepperConfigGenerator } from '../configs/StepperConfigGenerator';
 import { PaginationConfigGenerator } from '../configs/PaginationConfigGenerator';
 import { PivotGridConfigGenerator } from '../configs/PivotGridConfigGenerator';
 import { QueryBuilderConfigGenerator } from '../configs/QueryBuilderConfigGenerator';
+import { QrCodeConfigGenerator } from '../configs/QrCodeConfigGenerator';
 import { TileManagerConfigGenerator } from '../configs/TileManagerConfigGenerator';
 import { GridLiteConfigGenerator } from '../configs/GridLiteConfigGenerator';
 
@@ -80,6 +83,7 @@ export const CONFIG_GENERATORS =
         AvatarConfigGenerator,
         BadgeConfigGenerator,
         BannerConfigGenerator,
+        BreadcrumbsConfigGenerator,
         CardConfigGenerator,
         CarouselConfigGenerator,
         ChipConfigGenerator,
@@ -100,6 +104,7 @@ export const CONFIG_GENERATORS =
         ButtonGroupConfigGenerator,
         CalendarConfigGenerator,
         CheckboxConfigGenerator,
+        ColorPickerConfigGenerator,
         ComboConfigGenerator,
         DatePickerConfigGenerator,
         DateRangePickerConfigGenerator,
@@ -145,5 +150,6 @@ export const CONFIG_GENERATORS =
         DockManagerConfigGenerator,
         TileManagerConfigGenerator,
         PaginationConfigGenerator,
-        QueryBuilderConfigGenerator
+        QueryBuilderConfigGenerator,
+        QrCodeConfigGenerator
     ];
