@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
+import { IgxButtonGroupComponent, IButtonGroupButton } from 'igniteui-angular/button-group';
 
 interface IButton {
     ripple?: string;
@@ -11,14 +11,14 @@ interface IButton {
     icon?: string;
 }
 
-class CustomToggle {
-    private ripple: string;
-    private label: string;
-    private disabled: boolean;
-    private togglable: boolean;
-    private selected: boolean;
-    private color: string;
-    private icon: string;
+class CustomToggle implements IButtonGroupButton {
+    label: string;
+    icon?: string;
+    ripple?: string;
+    selected?: boolean;
+    disabled?: boolean;
+    togglable?: boolean;
+    color?: string;
 
     constructor(obj?: IButton) {
         this.ripple = obj.ripple || 'gray';
