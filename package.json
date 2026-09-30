@@ -61,7 +61,7 @@
     "@angular/ssr": "^22.0.1",
     "@igniteui/material-icons-extended": "^3.1.0",
     "@microsoft/signalr": "^8.0.7",
-    "@ng-bootstrap/ng-bootstrap": "^20.0.0",
+    "@ng-bootstrap/ng-bootstrap": "^21.0.0",
     "@popperjs/core": "2.11.8",
     "@tailwindcss/postcss": "^4.1.10",
     "@types/file-saver": "^2.0.2",
@@ -92,13 +92,6 @@
     "tslib": "^2.6.1"
   },
   "overrides": {
-    "@ng-bootstrap/ng-bootstrap": {
-      "@angular/common": "^22.0.0",
-      "@angular/core": "^22.0.0",
-      "@angular/forms": "^22.0.0",
-      "@angular/localize": "^22.0.0",
-      "@angular/compiler": "^22.0.0"
-    },
     "igniteui-angular-core": {
       "@angular/core": "^22.0.0",
       "@angular/common": "^22.0.0",
