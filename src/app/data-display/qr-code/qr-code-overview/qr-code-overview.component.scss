@@ -1,12 +1,3 @@
-@use 'igniteui-angular/theming' as *;
-
-@include core();
-
-:host::ng-deep {
-    @include theme($palette: $light-bootstrap-palette,
-        $schema: $light-bootstrap-schema);
-}
-
 :host {
     display: flex;
     flex-direction: column;
