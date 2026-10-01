@@ -1,4 +1,5 @@
-import { Component, ElementRef, afterNextRender, computed, inject, signal, viewChild } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, PLATFORM_ID, afterNextRender, computed, inject, signal, viewChild } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { IgxAccordionComponent } from 'igniteui-angular/accordion';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
@@ -15,11 +16,11 @@ import { IgxPivotGridComponent } from 'igniteui-angular/grids/pivot-grid';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
+import { defineComponents, IgcColorPickerComponent } from 'igniteui-webcomponents';
 import { INVOICE_DATA } from '../../data/invoiceData';
 import { DATA as PIVOT_DATA } from '../../data/pivot-data';
 import { SINGERS } from '../../data/singersData';
 import { EMPLOYEE_FLAT_AVATARS_DATA } from '../../tree-grid/data/employees-flat-avatars';
-import { ThemeColorFieldComponent } from './theme-color-field.component';
 
 type TokenKey = 'background' | 'accentColor' | 'foreground' | 'headerBackground' | 'headerForeground';
 
@@ -64,14 +65,16 @@ const NO_DIVIDER = 'var(--ig-grid-background)';
         IgxButtonGroupComponent, IgxCellTemplateDirective, IgxColumnComponent,
         IgxDialogActionsDirective, IgxDialogComponent, IgxDialogTitleDirective, IgxGridComponent,
         IgxHierarchicalGridComponent, IgxIconButtonDirective, IgxIconComponent, IgxPaginatorComponent, IgxPivotGridComponent, IgxRowIslandComponent,
-        IgxSwitchComponent, IgxTreeGridComponent, ThemeColorFieldComponent
-    ]
+        IgxSwitchComponent, IgxTreeGridComponent
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridThemePlaygroundComponent {
     protected readonly primaryTokens = PRIMARY_TOKENS;
     protected readonly headerTokens = HEADER_TOKENS;
     protected readonly compactSummary = CompactSummary;
 
+    private initialColors: Record<TokenKey, string> = { ...EMPTY_COLORS };
     protected readonly colors = signal<Record<TokenKey, string>>({ ...EMPTY_COLORS });
     protected readonly size = signal<'small' | 'medium' | 'large'>('medium');
     protected readonly radiusFactor = signal(0.4);
@@ -133,6 +136,9 @@ export class GridThemePlaygroundComponent {
     private readonly themeTokens = signal<[string, string][]>([]);
 
     constructor() {
+        if (isPlatformBrowser(inject(PLATFORM_ID))) {
+            defineComponents(IgcColorPickerComponent);
+        }
         afterNextRender(() => {
             this.seedFromStylesheet();
             this.readCompiledTheme();
@@ -215,18 +221,25 @@ export class GridThemePlaygroundComponent {
         return `.my-grid {\n${[...extras, ...lines].join('\n')}\n}`;
     });
 
+    protected onColorChange(key: TokenKey, event: Event): void {
+        // Ignore input events bubbling from the picker's internal text fields;
+        // only the picker itself emits validated color values.
+        if (event.composedPath()[0] === event.currentTarget) {
+            this.setColor(key, (event as CustomEvent<string>).detail);
+        }
+    }
+
     protected setColor(key: TokenKey, value: string): void {
         this.colors.update(current => ({ ...current, [key]: value }));
     }
 
     protected reset(): void {
-        this.colors.set({ ...EMPTY_COLORS });
+        this.colors.set({ ...this.initialColors });
         this.size.set('medium');
         this.radiusFactor.set(0.4);
         this.horizontalDividers.set(true);
         this.verticalDividers.set(false);
         this.zebra.set(false);
-        this.seedFromStylesheet();
     }
 
     protected async showCode(dialog: IgxDialogComponent): Promise<void> {
@@ -306,10 +319,11 @@ export class GridThemePlaygroundComponent {
     private seedFromStylesheet(): void {
         const styles = getComputedStyle(this.stage().nativeElement);
 
-        this.colors.update(current => ({
-            ...current,
+        this.initialColors = {
+            ...EMPTY_COLORS,
             background: styles.getPropertyValue('--ig-grid-background').trim(),
             accentColor: styles.getPropertyValue('--ig-grid-accent-color').trim()
-        }));
+        };
+        this.colors.set({ ...this.initialColors });
     }
 }
