@@ -15,7 +15,7 @@ defineComponents(IgcQrCodeComponent);
 })
 export class QrCodeOverviewComponent {
     public shape: 'square' | 'circle' | 'rounded' = 'square';
-    public size = 120;
+    public size = 300;
     public showLogo = true;
 
     public readonly value = 'https://www.infragistics.com/products/ignite-ui-web-components';
