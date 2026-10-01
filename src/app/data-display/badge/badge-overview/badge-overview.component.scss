@@ -17,6 +17,19 @@ igx-icon {
 
 igx-chip {
     --ig-size: var(--ig-size-large);
+    --ig-chip-border-radius: #{rem(16px)};
+
+    ::ng-deep .igx-chip__item {
+        @include type-style("body-2") {
+            margin: 0;
+        }
+
+        font-family: "Titillium Web", sans-serif;
+        font-size: rem(14px);
+        font-weight: 400;
+        line-height: rem(20px);
+        letter-spacing: rem(0.25px);
+    }
 }
 
 igx-badge {
