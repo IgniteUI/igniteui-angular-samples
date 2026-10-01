@@ -27,10 +27,20 @@
                     </p>
                     <div class="playground__fields">
                         @for (token of primaryTokens; track token.key) {
-                            <app-theme-color-field
-                                [label]="token.label"
-                                [value]="colors()[token.key]"
-                                (valueChange)="setColor(token.key, $event)" />
+                            <div class="playground__color-control">
+                                <igc-color-picker mode="input"
+                                    [label]="token.label"
+                                    [value]="colors()[token.key]"
+                                    (igcInput)="onColorChange(token.key, $event)"
+                                    (igcChange)="onColorChange(token.key, $event)">
+                                </igc-color-picker>
+                                <button igxIconButton="flat" type="button"
+                                    [disabled]="!colors()[token.key]"
+                                    [attr.aria-label]="'Reset ' + token.label + ' to auto'"
+                                    title="Reset to auto" (click)="setColor(token.key, '')">
+                                    <igx-icon>restart_alt</igx-icon>
+                                </button>
+                            </div>
                         }
                     </div>
                 </igx-expansion-panel-body>
@@ -49,10 +59,20 @@
                     </p>
                     <div class="playground__fields">
                         @for (token of headerTokens; track token.key) {
-                            <app-theme-color-field
-                                [label]="token.label"
-                                [value]="colors()[token.key]"
-                                (valueChange)="setColor(token.key, $event)" />
+                            <div class="playground__color-control">
+                                <igc-color-picker mode="input"
+                                    [label]="token.label"
+                                    [value]="colors()[token.key]"
+                                    (igcInput)="onColorChange(token.key, $event)"
+                                    (igcChange)="onColorChange(token.key, $event)">
+                                </igc-color-picker>
+                                <button igxIconButton="flat" type="button"
+                                    [disabled]="!colors()[token.key]"
+                                    [attr.aria-label]="'Reset ' + token.label + ' to auto'"
+                                    title="Reset to auto" (click)="setColor(token.key, '')">
+                                    <igx-icon>restart_alt</igx-icon>
+                                </button>
+                            </div>
                         }
                     </div>
                 </igx-expansion-panel-body>
