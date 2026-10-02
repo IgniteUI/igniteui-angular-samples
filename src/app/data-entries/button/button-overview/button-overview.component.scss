@@ -1,8 +1,10 @@
+@use "igniteui-theming/sass/typography" as *;
+
 .form {
     display: flex;
     justify-content: center;
-    gap: 1.25rem;
-    padding: 2.5rem;
+    gap: rem(20px);
+    padding: rem(40px);
 }
 
 .form igx-avatar {
@@ -12,9 +14,9 @@
 .fields {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-width: 260px;
-    width: 100%;
+    gap: rem(16px);
+    max-inline-size: rem(260px);
+    inline-size: 100%;
 }
 
 :host ::ng-deep .fields .igx-input-group__bundle {
@@ -29,9 +31,10 @@
 :host ::ng-deep .fields .igx-input-group__input {
     margin: 0;
 }
+
 .actions {
     display: flex;
     justify-content: flex-end;
-    gap: 1rem;
-    margin-top: 0.5rem;
+    gap: rem(16px);
+    margin-block-start: rem(8px);
 }

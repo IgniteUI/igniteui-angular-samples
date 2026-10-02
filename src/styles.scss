@@ -27,28 +27,6 @@ body {
     margin: 0;
 }
 
-// Nothing here paints a page background per color mode on purpose. The sample
-// is embedded in an iframe and the documentation's Sample component draws the
-// surface behind it from the same mode the theming widget posts down here, so
-// the iframe is left transparent for it to show through. `ThemeService` still
-// reflects `data-ig-theme` / `data-ig-mode` onto the root element for samples
-// that need to react to the selection themselves.
-
-body.custom-body:has(
-    app-badge-overview,
-    app-badge-styling,
-    app-badge-dot,
-    app-badge-type,
-    app-badge-icon,
-    app-badge-size,
-    app-badge-shape,
-    app-badge-variants,
-    app-badge-outlined,
-    app-badge-tailwind-styling
-) {
-    background: transparent;
-}
-
 // `core()`, `typography()`, `theme()` and the root palette all ship inside the
 // prebuilt stylesheets loaded through the `igniteui-theme` link (see above).
 

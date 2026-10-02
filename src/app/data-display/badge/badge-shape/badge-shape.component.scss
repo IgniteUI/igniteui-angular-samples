@@ -25,7 +25,7 @@ span {
     }
 }
 
-$sizes: small, medium, large;
+$sizes: large, medium, small;
 
 @each $size in $sizes {
     $i: list.index($sizes, $size);
