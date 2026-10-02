@@ -1,0 +1,27 @@
+<!-- the checkboxes are display-only, so user interaction is blocked -->
+<div class="states">
+    <div class="state">
+        <span class="state-label">Indeterminate</span>
+        <igx-checkbox [readonly]="true" [indeterminate]="true" aria-label="Indeterminate"></igx-checkbox>
+    </div>
+    <div class="state">
+        <span class="state-label">On</span>
+        <igx-checkbox [readonly]="true" [checked]="true" aria-label="On"></igx-checkbox>
+    </div>
+    <div class="state">
+        <span class="state-label">Off</span>
+        <igx-checkbox [readonly]="true" aria-label="Off"></igx-checkbox>
+    </div>
+    <div class="state">
+        <span class="state-label">Disabled</span>
+        <igx-checkbox [disabled]="true" aria-label="Disabled"></igx-checkbox>
+    </div>
+    <div class="state">
+        <span class="state-label">Invalid</span>
+        <igx-checkbox [readonly]="true" [invalid]="true" aria-label="Invalid"></igx-checkbox>
+    </div>
+    <div class="state">
+        <span class="state-label">Required</span>
+        <igx-checkbox [readonly]="true" [required]="true" aria-label="Required"></igx-checkbox>
+    </div>
+</div>
