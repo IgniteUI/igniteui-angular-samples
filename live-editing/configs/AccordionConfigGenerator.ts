@@ -32,6 +32,12 @@ export class AccordionConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'AccordionProgrammaticExpansionComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: '/layouts/accordion/'
+        }));
+
+        configs.push(new Config({
             component: 'AccordionStyleComponent',
             additionalFiles: ["/src/app/layouts/accordion/accordion-style/layout.scss"],
             appConfig: BaseAppConfig,

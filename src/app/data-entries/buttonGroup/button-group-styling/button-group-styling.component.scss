@@ -1,7 +1,19 @@
-@use "layout.scss" as *;
 @use "igniteui-angular/theming" as *;
 
+:host {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+igx-buttongroup {
+    display: inline-block;
+    width: 100%;
+    max-width: rem(400px);
+}
+
 $custom-button-group: button-group-theme(
+    $border-radius: 4px,
     $item-text-color: #4a5a66,
     $item-background: #cfe8fb,
     $item-border-color: #4da3e8,

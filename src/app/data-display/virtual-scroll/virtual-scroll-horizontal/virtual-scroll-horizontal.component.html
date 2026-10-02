@@ -1,0 +1,21 @@
+<igx-virtual-scroll class="cards" orientation="horizontal" [data]="employees" [estimatedItemSize]="253">
+    <ng-template igxVirtualItem let-employee let-index="index" let-count="count">
+        <div
+            class="cards__item"
+            role="listitem"
+            [class.cards__item--wide]="employee.bio"
+            [attr.aria-posinset]="index + 1"
+            [attr.aria-setsize]="count">
+            <igx-card elevated>
+                <igx-card-header>
+                    <igx-avatar igxCardThumbnail shape="circle" [initials]="employee.initials"></igx-avatar>
+                    <h3 igxCardHeaderTitle>{{ employee.name }}</h3>
+                    <h5 igxCardHeaderSubtitle>{{ employee.bio ? employee.email : '#' + employee.id }}</h5>
+                </igx-card-header>
+                <igx-card-content>
+                    <igx-chip [variant]="employee.variant">{{ employee.department }}</igx-chip>
+                </igx-card-content>
+            </igx-card>
+        </div>
+    </ng-template>
+</igx-virtual-scroll>

@@ -1,0 +1,20 @@
+<div class="size-grid">
+    <div class="size-header"><span></span><span>Contained</span><span>Outlined</span><span>Flat</span><span>Fab</span></div>
+    @for (size of sizes; track size) {
+        <div class="size-row">
+            <span class="size-label" [class]="'size-' + size">{{ size | titlecase }}</span>
+            @for (variant of variants; track variant) {
+                <button [igxButton]="variant" [class]="'size-' + size">
+                    <igx-icon family="material">notifications</igx-icon>
+                    {{ variant | titlecase }}
+                    <igx-icon family="material">notifications</igx-icon>
+                </button>
+            }
+            <button igxButton="fab" [class]="'size-' + size">
+                <igx-icon family="material">add</igx-icon>
+                Floating Action
+                <igx-icon family="material">add</igx-icon>
+            </button>
+        </div>
+    }
+</div>

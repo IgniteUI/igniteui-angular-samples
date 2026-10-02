@@ -1,4 +1,4 @@
-<article class="sample-column button-group-overview">
+<div class="sample-layout">
     <igx-buttongroup selectionMode="singleRequired">
         <button igxButton [igxRipple]="rippleColor" [selected]="source === 'device'" (click)="selectSource('device')">
             Device
@@ -9,11 +9,11 @@
     </igx-buttongroup>
 
     <div class="album">
-        <span class="album-title">{{ album.title }}</span>
+        <p class="album-title">{{ album.title }}</p>
         <div class="album-photos">
             @for (photo of album.photos; track photo) {
                 <img [src]="photo" [alt]="album.title" />
             }
         </div>
     </div>
-</article>
+</div>

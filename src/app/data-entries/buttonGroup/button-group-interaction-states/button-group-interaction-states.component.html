@@ -1,28 +1,31 @@
-<article class="button-group-interaction-states">
-    <div class="button-group-interaction-states-row">
+<article class="states-matrix" [style.--state-columns]="states.length">
+    <header class="states-row">
         <span class="row-label"></span>
         @for (state of states; track state) {
             <span class="column-label">{{ getLabel(state) }}</span>
         }
-    </div>
+    </header>
 
     @for (row of rows; track row.label) {
-        <div class="button-group-interaction-states-row">
+        <section class="states-row">
             <span class="row-label">{{ row.label }}</span>
             @for (state of states; track state) {
-                <igx-buttongroup>
-                    <button
-                        igxButton
-                        [igxRipple]="rippleColor"
-                        [selected]="row.selected"
-                        [class]="'state-' + state"
-                        [class.state-selected]="row.selected">
-                        <igx-icon>notifications</igx-icon>
-                        Button
-                        <igx-icon>notifications</igx-icon>
-                    </button>
-                </igx-buttongroup>
+                <div class="state-cell">
+                    <span class="cell-label">{{ getLabel(state) }}</span>
+                    <igx-buttongroup>
+                        <button
+                            igxButton
+                            [igxRipple]="rippleColor"
+                            [selected]="row.selected"
+                            [class]="'state-' + state"
+                            [class.state-selected]="row.selected">
+                            <igx-icon>notifications</igx-icon>
+                            Button
+                            <igx-icon>notifications</igx-icon>
+                        </button>
+                    </igx-buttongroup>
+                </div>
             }
-        </div>
+        </section>
     }
 </article>

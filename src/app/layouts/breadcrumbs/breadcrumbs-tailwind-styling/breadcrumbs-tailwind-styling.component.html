@@ -1,0 +1,10 @@
+<nav aria-label="Breadcrumb">
+    <igc-breadcrumbs separator="slash"
+        class="!light-breadcrumb ![--ig-breadcrumb-text-color:var(--ig-primary-50)] ![--ig-breadcrumb-hover-text-color:var(--ig-primary-50)] ![--ig-breadcrumb-focus-text-color:var(--ig-primary-50)] ![--ig-breadcrumb-current-text-color:var(--ig-primary-200)] ![--ig-breadcrumb-separator-color:var(--ig-primary-200)] ![--ig-breadcrumb-focus-pressed-text-color:var(--ig-primary-50)] ![padding:0.5rem_1.125rem] ![background:#002146] ![border-radius:3.125rem] max-[235px]:![border-radius:0]">
+        <igc-breadcrumb><a href="/" (click)="$event.preventDefault()">Home</a></igc-breadcrumb>
+        <igc-breadcrumb><a href="/electronics" (click)="$event.preventDefault()">Electronics</a></igc-breadcrumb>
+        <igc-breadcrumb><a href="/electronics/audio" (click)="$event.preventDefault()">Audio</a></igc-breadcrumb>
+        <igc-breadcrumb><a href="/electronics/audio/headphones" (click)="$event.preventDefault()">Headphones</a></igc-breadcrumb>
+        <igc-breadcrumb current><a href="/electronics/audio/headphones/sony-x" (click)="$event.preventDefault()">Sony X Wireless</a></igc-breadcrumb>
+    </igc-breadcrumbs>
+</nav>

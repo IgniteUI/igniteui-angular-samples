@@ -575,6 +575,11 @@ export class GridConfigGenerator implements IConfigGenerator {
             appConfig: BaseAppConfig
         }));
         configs.push(new Config({
+            component: 'GridThemingComponent',
+            additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts'],
+            appConfig: BaseAppConfig
+        }));
+        configs.push(new Config({
             component: 'GridGroupByStylingComponent',
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/src/app/data/invoiceData.ts', '/src/app/grid/grid-groupby-styling/layout.scss'],
             appConfig: BaseAppConfig

@@ -1,1 +1,14 @@
-@use "layout.scss";
+:host ::ng-deep igx-switch .igx-switch__thumb {
+	min-width: 10px;
+}
+
+:host ::ng-deep igx-switch .igx-switch__ripple {
+	display: none;
+}
+
+:host {
+	display: flex;
+	place-content: center;
+	place-items: center;
+	padding: 40px;
+}

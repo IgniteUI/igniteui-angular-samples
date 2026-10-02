@@ -5,6 +5,14 @@
 @use 'app-layout';
 @import "tailwindcss";
 
+// The Ignite UI theme itself is deliberately NOT compiled into this file. Every
+// sample is embedded in the documentation next to a theming widget that can
+// switch it between the Material, Fluent, Bootstrap and Indigo themes in light
+// or dark, so the theme is loaded as a swappable stylesheet instead - see the
+// `igniteui-theme` link in index.html, the `assets/themes` entry in angular.json
+// and `src/app/services/theme.service.ts`. A theme compiled in here would sit
+// later in the cascade and win over the one the visitor picked.
+
 // Specifies large size for all components to match the previous defaults
 // This may not be needed for your project. Please consult https://www.infragistics.com/products/ignite-ui-angular/angular/components/general/update-guide for more details.
 :root {
@@ -18,6 +26,13 @@ body {
     overflow: hidden;
     margin: 0;
 }
+
+// Nothing here paints a page background per color mode on purpose. The sample
+// is embedded in an iframe and the documentation's Sample component draws the
+// surface behind it from the same mode the theming widget posts down here, so
+// the iframe is left transparent for it to show through. `ThemeService` still
+// reflects `data-ig-theme` / `data-ig-mode` onto the root element for samples
+// that need to react to the selection themselves.
 
 body.custom-body:has(
     app-badge-overview,
@@ -34,16 +49,8 @@ body.custom-body:has(
     background: transparent;
 }
 
-@include core();
-@include typography();
-@include theme(
-    $palette: $palette,
-    $schema: $schema
-);
-
-:root {
-    @include palette($palette);
-}
+// `core()`, `typography()`, `theme()` and the root palette all ship inside the
+// prebuilt stylesheets loaded through the `igniteui-theme` link (see above).
 
 .light-theme {
     @include light-theme($palette);

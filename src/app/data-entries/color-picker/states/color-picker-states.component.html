@@ -1,0 +1,14 @@
+<div class="sample-container">
+    <div>
+        <span>Default state</span>
+        <igc-color-picker #colorPicker label="Pick a color"></igc-color-picker>
+    </div>
+    <div>
+        <span>Invalid state</span>
+        <igc-color-picker [invalid]="invalid" required label="Pick a color" (igcInput)="onInput()"></igc-color-picker>
+    </div>
+    <div>
+        <span>Disabled state</span>
+        <igc-color-picker disabled label="Pick a color"></igc-color-picker>
+    </div>
+</div>

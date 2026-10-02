@@ -1,0 +1,23 @@
+<div class="shopping-list">
+    <igx-list class="list">
+        @for (group of groups; track group.title) {
+            <igx-list-item [isHeader]="true" class="group-header">
+                <span class="group-title">{{ group.title }}</span>
+            </igx-list-item>
+            @for (item of group.items; track item.label) {
+                <igx-list-item class="shopping-item" [class.shopping-item-checked]="item.checked">
+                    <igx-checkbox igxListThumbnail [(ngModel)]="item.checked">
+                        <span>{{ item.label }}</span>
+                    </igx-checkbox>
+                    <button igxListAction type="button" igxIconButton="flat" class="item-menu" [attr.aria-label]="'Options for ' + item.label">
+                        <igx-icon>more_vert</igx-icon>
+                    </button>
+                </igx-list-item>
+            }
+        }
+    </igx-list>
+
+    <button igxButton="fab" type="button" class="add-item" aria-label="Add item">
+        <igx-icon>add</igx-icon>
+    </button>
+</div>

@@ -1,0 +1,19 @@
+:host {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    overflow: auto;
+    align-items: center;
+}
+
+igc-breadcrumbs {
+    --ig-size: var(--ig-size-medium);
+
+    max-width: 16rem;    
+}
+
+@layer base {
+    a {
+        color: revert-layer;
+    }
+}

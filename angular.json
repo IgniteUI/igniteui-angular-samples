@@ -19,7 +19,12 @@
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              {
+                "glob": "igniteui-{angular,angular-dark,fluent-light,fluent-dark,bootstrap-light,bootstrap-dark,indigo-light,indigo-dark}.css",
+                "input": "node_modules/igniteui-angular/styles",
+                "output": "assets/themes"
+              }
             ],
             "styles": [
               "src/styles.scss"
@@ -155,7 +160,6 @@
                 "node_modules"
               ]
             },
-            "preserveSymlinks": true,
             "browser": "projects/app-lob/src/main.ts",
             "server": "projects/app-lob/src/main.server.ts",
             "outputMode": "static",

@@ -69,7 +69,6 @@ export class ButtonGroupConfigGenerator implements IConfigGenerator {
         // button group styling
         configs.push(new Config({
             component: 'ButtonGroupStylingComponent',
-            additionalFiles: ["/src/app/data-entries/buttonGroup/button-group-styling/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/buttonGroup/"
         }));

@@ -4,6 +4,7 @@ import { AnimationsSample2Component } from './animations/animations-sample-2/ani
 import { AngularMaterialComponent } from './angular/angular-sample.component';
 import { BootstrapComponent } from './bootstrap/bootstrap-sample.component';
 import { DefaultThemeSampleComponent } from './default-theme-sample/default-theme-sample.component';
+import { GridThemePlaygroundComponent } from './grid-theme-playground/grid-theme-playground.component';
 import { DisplayDensityComponent } from './display-density/display-density.component';
 import { RoundnessComponent } from './roundness/roundness-sample.component';
 import { CardSampleShadowComponent} from './shadows/card-sample-shadow/card-sample-shadow';
@@ -68,5 +69,10 @@ export const ThemingRoutes: Routes = [
         component: TailwindSampleComponent,
         data: themingRoutesData['tailwind-sample'],
         path: 'tailwind-sample'
+    },
+    {
+        component: GridThemePlaygroundComponent,
+        data: themingRoutesData['grid-theme-playground'],
+        path: 'grid-theme-playground'
     }
 ];

@@ -1,0 +1,45 @@
+<div class="sample-container">
+    <igx-card>
+        <igx-card-content>
+            <form #formRef [formGroup]="labelForm">
+                <h2>Create a label</h2>
+                <igx-input-group type="border">
+                    <label igxLabel for="labelName">Label name</label>
+                    <input igxInput id="labelName" name="name" formControlName="name" autocomplete="off" />
+                    @if (name.touched && name.invalid) {
+                        <igx-hint>A label name is required.</igx-hint>
+                    }
+                </igx-input-group>
+                <igc-color-picker
+                    formControlName="color"
+                    name="color"
+                    mode="input"
+                    label="Label color"
+                    required
+                    [swatches]="swatches"
+                    [invalid]="color.touched && color.invalid">
+                    <span slot="helper-text">Pick a swatch or select any color value.</span>
+                    <span slot="value-missing">A label color is required.</span>
+                </igc-color-picker>
+                <igc-color-picker
+                    formControlName="textColor"
+                    name="textColor"
+                    label="Text color"
+                    hide-formats>
+                </igc-color-picker>
+                <div class="preview">
+                    <span class="preview-caption">Preview</span>
+                    <span class="preview-label"
+                        [style.background]="labelForm.value.color || 'var(--ig-gray-200)'"
+                        [style.color]="labelForm.value.textColor || 'inherit'">
+                        {{ labelForm.value.name || 'Label' }}
+                    </span>
+                </div>
+                <div class="actions">
+                    <button igxButton="flat" type="button" (click)="onReset(formRef)">Reset</button>
+                    <button igxButton="contained" type="submit" [disabled]="labelForm.invalid">Create</button>
+                </div>
+            </form>
+        </igx-card-content>
+    </igx-card>
+</div>

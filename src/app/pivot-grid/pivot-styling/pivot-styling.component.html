@@ -1,2 +1,32 @@
-<igx-pivot-grid #grid1 [data]="data" [pivotConfiguration]="pivotConfigHierarchy" height="500px">
-</igx-pivot-grid>
+<div class="pivot-theming-sample">
+    <div class="theme-picker">
+        <span class="theme-picker__label">Pick a theme</span>
+
+        <igx-buttongroup
+            class="theme-switcher"
+            selectionMode="singleRequired"
+            (selected)="selectTheme($event)">
+            @for (theme of themes; track theme.class) {
+                <button igxButton [selected]="activeTheme() === theme.class">
+                    <span class="theme-swatch" [class]="theme.swatch"></span>
+                    {{ theme.label }}
+                </button>
+            }
+        </igx-buttongroup>
+
+        <p class="theme-picker__hint">
+            Custom themes, not built-in: each is a <code>grid-theme()</code> with its
+            own background and accent.
+        </p>
+    </div>
+
+    <igx-pivot-grid
+        #grid1
+        [class]="activeTheme()"
+        [data]="data"
+        [pivotConfiguration]="pivotConfigHierarchy"
+        [allowFiltering]="true"
+        [filterMode]="'excelStyleFilter'"
+        height="500px">
+    </igx-pivot-grid>
+</div>

@@ -6,6 +6,14 @@ import { AvatarShapeComponent } from './avatar/avatar-shape/avatar-shape.compone
 import { AvatarSizeComponent } from './avatar/avatar-size/avatar-size.component';
 import { AvatarStylingSampleComponent } from './avatar/avatar-styling/avatar-styling.component';
 import { AvatarTailwindStylingSampleComponent } from './avatar/avatar-tailwind-styling/avatar-tailwind-styling.component';
+import { BreadcrumbsOverviewComponent } from './breadcrumbs/breadcrumbs-overview/breadcrumbs-overview.component';
+import { BreadcrumbsCustomSeparatorComponent } from './breadcrumbs/breadcrumbs-custom-separator/breadcrumbs-custom-separator.component';
+import { BreadcrumbsPrefixSuffixComponent } from './breadcrumbs/breadcrumbs-prefix-suffix/breadcrumbs-prefix-suffix.component';
+import { BreadcrumbsStylingComponent } from './breadcrumbs/breadcrumbs-styling/breadcrumbs-styling.component';
+import { BreadcrumbsTailwindStylingComponent } from './breadcrumbs/breadcrumbs-tailwind-styling/breadcrumbs-tailwind-styling.component';
+import { BreadcrumbsWrappingComponent } from './breadcrumbs/breadcrumbs-wrapping/breadcrumbs-wrapping.component';
+import { BreadcrumbsSizesComponent } from './breadcrumbs/breadcrumbs-sizes/breadcrumbs-sizes.component';
+import { BreadcrumbsStatesComponent } from './breadcrumbs/breadcrumbs-states/breadcrumbs-states.component';
 import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
 import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
 import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
@@ -28,6 +36,27 @@ import {
 import {
     CarouselStylingSampleComponent
 } from './carousel/carousel-styling-sample/carousel-styling-sample.component';
+import {
+    CarouselOverviewSampleComponent
+} from './carousel/carousel-overview-sample/carousel-overview-sample.component';
+import {
+    CarouselConfigurationSampleComponent
+} from './carousel/carousel-configuration-sample/carousel-configuration-sample.component';
+import {
+    CarouselComponentsSampleComponent
+} from './carousel/carousel-components-sample/carousel-components-sample.component';
+import {
+    CarouselAnimationsComponent
+} from './carousel/carousel-animations/carousel-animations.component';
+import {
+    CarouselThumbnailComponent
+} from './carousel/carousel-thumbnail/carousel-thumbnail.component';
+import {
+    CarouselStylingComponent
+} from './carousel/carousel-styling/carousel-styling.component';
+import {
+    CarouselTailwindStylingComponent
+} from './carousel/carousel-tailwind-styling/carousel-tailwind-styling.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { DividerDashedComponent } from './divider/dashed/divider-dashed.component';
 import { DividerDefaultComponent } from './divider/default/divider-default.component';
@@ -77,8 +106,14 @@ import { View1Component } from './tabs/views/view1/view1.component';
 import { View2Component } from './tabs/views/view2/view2.component';
 import { View3Component } from './tabs/views/view3/view3.component';
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
+import { AccordionCustomizationComponent } from './accordion/accordion-customization/accordion-customization.component';
+import { AccordionNestedScenarioComponent } from './accordion/accordion-nested-scenario/accordion-nested-scenario.component';
+import { AccordionOverviewComponent } from './accordion/accordion-overview/accordion-overview.component';
+import { AccordionStylingComponent } from './accordion/accordion-styling/accordion-styling.component';
+import { AccordionTailwindStylingComponent } from './accordion/accordion-tailwind-styling/accordion-tailwind-styling.component';
 import { AccordionSample2Component } from './accordion/accordion-sample-2/accordion-sample-2.component';
 import { AccordionSample3Component } from './accordion/accordion-sample-3/accordion-sample-3.component';
+import { AccordionProgrammaticExpansionComponent } from './accordion/accordion-programmatic-expansion/accordion-programmatic-expansion.component';
 import { AccordionStyleComponent } from './accordion/accordion-style/accordion-style.component';
 import {StepperLabelPositionAndOrientationSampleComponent
 } from './stepper/stepper-label-position-and-orientation-sample/stepper-label-position-and-orientation-sample.component';
@@ -91,6 +126,31 @@ import { StepperSampleReactiveFormsComponent } from './stepper/stepper-sample-re
 import { TileManagerComponent } from './tile-manager/tile-manager-sample/tile-manager.component';
 
 export const LayoutsRoutes: Routes = [
+    {
+        component: AccordionOverviewComponent,
+        data: layoutsRoutesData['accordion-overview'],
+        path: 'accordion-overview'
+    },
+    {
+        component: AccordionCustomizationComponent,
+        data: layoutsRoutesData['accordion-customization'],
+        path: 'accordion-customization'
+    },
+    {
+        component: AccordionNestedScenarioComponent,
+        data: layoutsRoutesData['accordion-nested-scenario'],
+        path: 'accordion-nested-scenario'
+    },
+    {
+        component: AccordionStylingComponent,
+        data: layoutsRoutesData['accordion-styling'],
+        path: 'accordion-styling'
+    },
+    {
+        component: AccordionTailwindStylingComponent,
+        data: layoutsRoutesData['accordion-tailwind-styling'],
+        path: 'accordion-tailwind-styling'
+    },
     {
         component: AccordionSample1Component,
         data: layoutsRoutesData['accordion-sample-1'],
@@ -105,6 +165,11 @@ export const LayoutsRoutes: Routes = [
         component: AccordionSample3Component,
         data: layoutsRoutesData['accordion-sample-3'],
         path: 'accordion-sample-3'
+    },
+    {
+        component: AccordionProgrammaticExpansionComponent,
+        data: layoutsRoutesData['accordion-programmatic-expansion'],
+        path: 'accordion-programmatic-expansion'
     },
     {
         component: AccordionStyleComponent,
@@ -142,6 +207,46 @@ export const LayoutsRoutes: Routes = [
         path: 'avatar-tailwind-styling'
     },
     {
+        component: BreadcrumbsOverviewComponent,
+        data: layoutsRoutesData['breadcrumbs-overview'],
+        path: 'breadcrumbs-overview'
+    },
+    {
+        component: BreadcrumbsCustomSeparatorComponent,
+        data: layoutsRoutesData['breadcrumbs-custom-separator'],
+        path: 'breadcrumbs-custom-separator'
+    },
+    {
+        component: BreadcrumbsPrefixSuffixComponent,
+        data: layoutsRoutesData['breadcrumbs-prefix-suffix'],
+        path: 'breadcrumbs-prefix-suffix'
+    },
+    {
+        component: BreadcrumbsStylingComponent,
+        data: layoutsRoutesData['breadcrumbs-styling'],
+        path: 'breadcrumbs-styling'
+    },
+    {
+        component: BreadcrumbsTailwindStylingComponent,
+        data: layoutsRoutesData['breadcrumbs-tailwind-styling'],
+        path: 'breadcrumbs-tailwind-styling'
+    },
+    {
+        component: BreadcrumbsWrappingComponent,
+        data: layoutsRoutesData['breadcrumbs-wrapping'],
+        path: 'breadcrumbs-wrapping'
+    },
+    {
+        component: BreadcrumbsSizesComponent,
+        data: layoutsRoutesData['breadcrumbs-sizes'],
+        path: 'breadcrumbs-sizes'
+    },
+    {
+        component: BreadcrumbsStatesComponent,
+        data: layoutsRoutesData['breadcrumbs-states'],
+        path: 'breadcrumbs-states'
+    },
+    {
         component: CarouselNoNavigationSampleComponent,
         data: layoutsRoutesData['carousel-no-navigation-sample'],
         path: 'carousel-no-navigation-sample'
@@ -165,6 +270,41 @@ export const LayoutsRoutes: Routes = [
         component: CarouselStylingSampleComponent,
         data: layoutsRoutesData['carousel-styling-sample'],
         path: 'carousel-styling-sample'
+    },
+    {
+        component: CarouselOverviewSampleComponent,
+        data: layoutsRoutesData['carousel-overview-sample'],
+        path: 'carousel-overview-sample'
+    },
+    {
+        component: CarouselConfigurationSampleComponent,
+        data: layoutsRoutesData['carousel-configuration-sample'],
+        path: 'carousel-configuration-sample'
+    },
+    {
+        component: CarouselComponentsSampleComponent,
+        data: layoutsRoutesData['carousel-components-sample'],
+        path: 'carousel-components-sample'
+    },
+    {
+        component: CarouselAnimationsComponent,
+        data: layoutsRoutesData['carousel-animations'],
+        path: 'carousel-animations'
+    },
+    {
+        component: CarouselThumbnailComponent,
+        data: layoutsRoutesData['carousel-thumbnail'],
+        path: 'carousel-thumbnail'
+    },
+    {
+        component: CarouselStylingComponent,
+        data: layoutsRoutesData['carousel-styling'],
+        path: 'carousel-styling'
+    },
+    {
+        component: CarouselTailwindStylingComponent,
+        data: layoutsRoutesData['carousel-tailwind-styling'],
+        path: 'carousel-tailwind-styling'
     },
     {
         component: CarouselComponent,
