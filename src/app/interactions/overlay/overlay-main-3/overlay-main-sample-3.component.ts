@@ -1,13 +1,13 @@
 import { Component, ElementRef, OnDestroy, ViewChild, inject } from '@angular/core';
 import { ConnectedPositioningStrategy, IgxOverlayService } from 'igniteui-angular/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-sample-1.component';
+import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: 'app-overlay-sample',
     templateUrl: `overlay-main-sample-3.component.html`,
     styleUrls: ['overlay-main-sample-3.component.scss'],
-    imports: [IgxButtonDirective, CardSample1Component]
+    imports: [IgxButtonDirective, MyDynamicCardComponent]
 })
 export class OverlaySampleMain3Component implements OnDestroy {
     private overlayService = inject<IgxOverlayService>(IgxOverlayService);

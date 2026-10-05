@@ -1,0 +1,110 @@
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100vh;
+    gap: rem(48px);
+    padding: rem(40px) rem(24px);
+}
+
+.card-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(20px);
+}
+
+.card-item__label {
+    @include type-style("body-2") {
+        margin: 0;
+    }
+
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    font-weight: 400;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+}
+
+.post-card {
+    --ig-card-border-radius: #{rem(8px)};
+
+    width: rem(310px);
+
+    igx-card-header {
+        padding: rem(16px) rem(16px) 0;
+    }
+
+    [igxCardHeaderTitle] {
+        color: var(--ig-gray-900);
+        font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
+        font-size: rem(20px);
+        font-weight: 600;
+        line-height: rem(24px);
+        letter-spacing: rem(0.15px);
+    }
+
+    [igxCardHeaderSubtitle] {
+        color: var(--ig-gray-600);
+        font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
+        font-size: rem(14px);
+        font-weight: 600;
+        line-height: rem(24px);
+        letter-spacing: rem(0.1px);
+    }
+
+    igx-card-content {
+        padding: rem(24px) rem(16px) 0;
+        overflow: visible;
+
+        p {
+            margin: 0;
+            color: var(--ig-gray-700);
+            font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
+            font-size: rem(14px);
+            font-weight: 400;
+            line-height: rem(20px);
+            letter-spacing: rem(0.25px);
+        }
+    }
+
+    igx-card-actions {
+        padding: rem(12px) rem(16px) rem(8px);
+    }
+
+    [igxIconButton] {
+        --ig-size: var(--ig-size-small);
+        --ig-flat-icon-button-foreground: var(--ig-gray-900);
+    }
+}
+
+.post-card--vertical {
+    width: rem(390px);
+
+    igx-card-content {
+        padding-block-end: rem(16px);
+    }
+
+    igx-card-actions {
+        justify-content: flex-start;
+        padding: rem(16px) rem(16px) rem(16px) 0;
+    }
+}
+
+.post-card__body {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.post-card__actions {
+    display: flex;
+    flex-direction: column;
+    gap: rem(8px);
+}

@@ -1,0 +1,60 @@
+<div class="card-options">
+    <igx-switch labelPosition="before" [checked]="media" (change)="media = $event.checked">
+        <span>Media</span>
+    </igx-switch>
+    <igx-switch labelPosition="before" [checked]="header" (change)="header = $event.checked">
+        <span>Header</span>
+    </igx-switch>
+    <igx-switch labelPosition="before" [checked]="content" (change)="content = $event.checked">
+        <span>Content</span>
+    </igx-switch>
+    <igx-switch labelPosition="before" [checked]="actions" (change)="actions = $event.checked">
+        <span>Actions</span>
+    </igx-switch>
+</div>
+
+<div class="card-container">
+    <igx-card>
+        @if (media) {
+            <igx-card-media>
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-1.2.1&amp;auto=format&amp;fit=crop&amp;w=640&amp;q=50"
+                    alt="Mountain range above the clouds at sunset" />
+            </igx-card-media>
+        }
+        @if (header) {
+            <igx-card-header>
+                <igx-avatar
+                    igxCardThumbnail
+                    shape="circle"
+                    src="https://dl.infragistics.com/x/img/avatars/avatar-profile-04.png"
+                    alt="profile picture">
+                </igx-avatar>
+                <span igxCardHeaderTitle>Title</span>
+                <span igxCardHeaderSubtitle>Subtitle</span>
+            </igx-card-header>
+        }
+        @if (content) {
+            <igx-card-content>
+                <p>
+                    A paragraph is a self-contained unit of a discourse in writing
+                    dealing with a particular point or idea.
+                </p>
+            </igx-card-content>
+        }
+        @if (actions) {
+            <igx-card-actions>
+                <button igxButton="flat" igxStart>Button</button>
+                <button igxButton="flat" igxStart>Button</button>
+                <button igxIconButton="flat" igxEnd>
+                    <igx-icon>add</igx-icon>
+                </button>
+                <button igxIconButton="flat" igxEnd>
+                    <igx-icon>add</igx-icon>
+                </button>
+                <button igxIconButton="flat" igxEnd>
+                    <igx-icon>add</igx-icon>
+                </button>
+            </igx-card-actions>
+        }
+    </igx-card>
+</div>

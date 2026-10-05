@@ -1,0 +1,76 @@
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: flex;
+    flex-flow: row wrap;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100vh;
+    gap: rem(20px);
+    padding: rem(32px) rem(8px);
+}
+
+.media-card {
+    --ig-card-border-radius: #{rem(4px)};
+
+    width: rem(240px);
+
+    igx-card-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    igx-card-header {
+        padding: rem(16px) rem(16px) 0;
+    }
+
+    [igxCardHeaderTitle] {
+        margin-block-end: 0;
+        color: var(--ig-gray-900);
+        font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
+        font-size: rem(18px);
+        font-weight: 600;
+        line-height: rem(24px);
+        letter-spacing: rem(0.15px);
+    }
+
+    [igxCardHeaderSubtitle] {
+        color: var(--ig-gray-900);
+        font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
+        font-size: rem(14px);
+        font-weight: 600;
+        line-height: rem(24px);
+        letter-spacing: rem(0.1px);
+    }
+
+    igx-card-actions {
+        flex-wrap: nowrap;
+        padding: rem(24px) rem(16px) rem(12px);
+    }
+}
+
+.media-card__icons {
+    display: inline-flex;
+    align-items: center;
+    gap: rem(4px);
+    color: var(--ig-gray-900);
+
+    igx-icon {
+        --ig-icon-size: #{rem(16px)};
+    }
+}
+
+.media-card__action {
+    --ig-size: var(--ig-size-small);
+
+    padding: 0;
+    background: transparent;
+    font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
+    font-size: rem(13px);
+    font-weight: 600;
+    letter-spacing: rem(0.25px);
+    text-transform: uppercase;
+}
