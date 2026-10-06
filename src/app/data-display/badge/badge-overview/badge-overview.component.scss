@@ -17,6 +17,7 @@ igx-icon {
 
 igx-chip {
     --ig-size: var(--ig-size-large);
+    --ig-chip-background: var(--ig-gray-300);
     --ig-chip-border-radius: #{rem(16px)};
 
     ::ng-deep .igx-chip__item {
@@ -43,6 +44,10 @@ igx-badge {
 
 igx-badge:nth-of-type(1) {
     inset-block-start: anchor(85.5%);
+}
+
+igx-badge:nth-of-type(3) {
+    inset-inline-start: anchor(93%);
 }
 
 $anchors: avatar, mail, events, notifications;
