@@ -20,6 +20,7 @@ export const layoutsRoutesData = {
     'breadcrumbs-overview': { displayName: 'Breadcrumbs Overview', parentName: 'Breadcrumbs' },
     'breadcrumbs-custom-separator': { displayName: 'Breadcrumbs Custom Separator', parentName: 'Breadcrumbs' },
     'breadcrumbs-prefix-suffix': { displayName: 'Breadcrumbs Prefix and Suffix', parentName: 'Breadcrumbs' },
+    'breadcrumbs-dropdown': { displayName: 'Breadcrumbs Dropdown', parentName: 'Breadcrumbs' },
     'breadcrumbs-styling': { displayName: 'Breadcrumbs Styling', parentName: 'Breadcrumbs' },
     'breadcrumbs-tailwind-styling': { displayName: 'Breadcrumbs Tailwind Styling', parentName: 'Breadcrumbs' },
     'breadcrumbs-wrapping': { displayName: 'Breadcrumbs Wrapping', parentName: 'Breadcrumbs' },

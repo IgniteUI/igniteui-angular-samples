@@ -1,0 +1,57 @@
+:host {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    overflow: auto;
+}
+
+igc-breadcrumbs {
+    --ig-size: var(--ig-size-medium);
+}
+
+[slot="target"] {
+    color: var(--text-color);
+
+    &:hover {
+        color: var(--hover-text-color);
+        cursor: pointer;
+    }
+
+    &:focus {
+        color: var(--focus-text-color);
+    }
+}
+
+igc-dropdown-item[selected] {
+    background: var(--background-color);
+    outline: none;
+    color: var(--item-text-color);
+
+    igc-icon {
+        color: var(--item-icon-color);
+    }
+
+    &:hover {
+        background: var(--hover-item-background);
+        color: var(--hover-item-text-color);
+
+        igc-icon {
+            color: var(--hover-item-icon-color);
+        }
+    }
+}
+
+igc-icon {
+    --ig-size: 2;
+}
+
+@layer base {
+    a {
+        color: revert-layer;
+    }
+
+    * {
+        padding: revert-layer;
+        margin: revert-layer;
+    }
+}
