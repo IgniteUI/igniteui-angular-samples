@@ -1,3 +1,26 @@
-<igx-checkbox class="!light-checkbox ![--empty-color:#7B9E89] ![--fill-color:#7B9E89]" [checked]="true">
-    Styled checkbox
-</igx-checkbox>
+<div class="flex w-[218px] flex-col rounded-2xl border border-[#0176ff] bg-white p-[7px] [--ig-font-family:aktiv-grotesk,sans-serif]">
+    <igx-accordion class="flex flex-col divide-y divide-[#e5ebf3] pb-2">
+        @for (section of sections; track section.title) {
+            <igx-expansion-panel
+                class="[--ig-expansion-panel-body-background:transparent] [--ig-expansion-panel-expanded-margin:0] [--ig-expansion-panel-header-background:transparent] [--ig-expansion-panel-header-focus-background:transparent] [--ig-expansion-panel-header-icon-color:#1a314a]"
+                [(collapsed)]="section.collapsed">
+                <igx-expansion-panel-header [iconPosition]="'right'">
+                    <igx-expansion-panel-title>
+                        <span class="pb-2 text-base font-bold leading-5 text-[#004699]">{{ section.title }}</span>
+                    </igx-expansion-panel-title>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <div class="flex flex-col">
+                        @for (option of section.options; track option.label) {
+                            <igx-checkbox
+                                class="filter-option [--ig-checkbox-border-radius:0.125rem] [--ig-checkbox-empty-color-hover:#0176ff] [--ig-checkbox-empty-color:#a9b8cc] [--ig-checkbox-fill-color-hover:#0176ff] [--ig-checkbox-fill-color:#0176ff] [--ig-checkbox-label-color-hover:#1a314a] [--ig-checkbox-label-color:#1a314a] [--ig-checkbox-tick-color-hover:#fff] [--ig-checkbox-tick-color:#fff]"
+                                [(ngModel)]="option.checked">
+                                <span class="text-sm font-medium leading-6 tracking-[0.1px]">{{ option.label }}</span>
+                            </igx-checkbox>
+                        }
+                    </div>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+        }
+    </igx-accordion>
+</div>

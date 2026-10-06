@@ -1,39 +1,167 @@
-@use "sass:map";
-@use "igniteui-angular/theming" as *;
+@use "sass:meta";
+@import url("https://use.typekit.net/bng2zgw.css");
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
 
-:host {
-    --ig-font-family: Arial, Helvetica, sans-serif;
-    --ig-subtitle-1-font-size: #{rem(14px)};
+app-checkbox-styling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
 
+.team-card {
+    /* The design's own palette and typeface. They are set here instead of
+       coming from the theme, so the sample keeps its custom look in every theme. */
+    --team-surface: #fff;
+    --team-primary: #0176ff;
+    --team-gray-100: #f3f6fa;
+    --team-gray-200: #e5ebf3;
+    --team-gray-400: #a9b8cc;
+    --team-gray-500: #7d91ab;
+    --team-gray-600: #556c86;
+    --team-gray-700: #344b65;
+    --team-gray-900: #00142b;
+    /* aktiv-grotesk is the kit's family name. */
+    --ig-font-family: aktiv-grotesk, sans-serif;
+
+    --ig-checkbox-empty-color: var(--team-gray-400);
+    --ig-checkbox-empty-color-hover: var(--team-gray-400);
+    --ig-checkbox-fill-color: var(--team-primary);
+    --ig-checkbox-fill-color-hover: var(--team-primary);
+    --ig-checkbox-tick-color: #fff;
+    --ig-checkbox-tick-color-hover: #fff;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 26.3125rem;
+    padding: 0.5rem 0;
+    border: 1px solid var(--team-gray-200);
+    border-radius: 0.75rem;
+    background: var(--team-surface);
+    font-family: var(--ig-font-family);
+}
+
+.team-title {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    margin: 0;
+    padding: 0 1rem;
+    color: var(--team-gray-500);
+    font-family: var(--ig-body-1-font-family, var(--ig-font-family));
+    font-size: var(--ig-body-1-font-size);
+    font-weight: var(--ig-body-1-font-weight);
+    line-height: var(--ig-body-1-line-height);
+    letter-spacing: var(--ig-body-1-letter-spacing);
+    text-transform: var(--ig-body-1-text-transform);
+}
+
+.select-all {
+    --ig-checkbox-empty-color: var(--team-gray-500);
+    --ig-checkbox-empty-color-hover: var(--team-gray-500);
+    --ig-checkbox-label-color: var(--team-gray-600);
+    --ig-checkbox-label-color-hover: var(--team-gray-600);
+
+    box-sizing: border-box;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+}
+
+.select-all .igx-checkbox__label--before {
+    margin-inline-start: 0;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    letter-spacing: 0.15px;
+}
+
+/* A 24px slot around the 20px box, as in the design. */
+.select-all .igx-checkbox__composite-wrapper,
+.member-check .igx-checkbox__composite-wrapper {
+    margin: 0.125rem;
+}
+
+.members {
+    background: transparent;
+    border: none;
+    overflow: hidden;
+}
+
+.member {
+    background: transparent;
+    border-bottom: none;
+    --border-color: transparent;
+    --border-width: 0;
+}
+
+/* The row's own padding and gap sit on the item's content wrapper. */
+.member .igx-list-item__content {
+    gap: 1rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+}
+
+.member:hover,
+.member:focus-within {
+    background: transparent;
+    box-shadow: none;
+}
+
+.member:hover .igx-list-item__content,
+.member:focus-within .igx-list-item__content {
+    background: transparent;
+    box-shadow: none;
+}
+
+.member-selected,
+.member-selected:hover,
+.member-selected:focus-within {
+    background: var(--team-gray-100);
+}
+
+.member-selected .igx-list-item__content,
+.member-selected:hover .igx-list-item__content,
+.member-selected:focus-within .igx-list-item__content {
+    background: var(--team-gray-100);
+}
+
+.member igx-avatar {
+    --ig-size: var(--ig-size-small);
+}
+
+.member .member-name {
     display: block;
-    padding: rem(18px) 0 0 rem(18px);
+    color: var(--team-gray-900);
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.125rem;
 }
 
-// CSS variables approach
-.igx-checkbox {
-    --tick-color: black;
-    --tick-color-hover: black;
-    --tick-width: 4;
-    --fill-color: orange;
-    --fill-color-hover: oklch(from var(--fill-color) calc(l * 0.9) c h);
-    --label-color: black;
-    --empty-color: orange;
-    --border-width: #{rem(3px)};
-    --border-radius: #{rem(3px)};
+.member .member-email {
+    display: block;
+    color: var(--team-gray-700);
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.4px;
 }
 
-// Sass theme approach
-// $custom-checkbox-theme: checkbox-theme(
-//     $tick-color: black,
-//     $tick-color-hover: black,
-//     $tick-width: 4,
-//     $fill-color: orange,
-//     $fill-color-hover: oklch(from var(--fill-color) calc(l * 0.9) c h),
-//     $label-color: black,
-//     $empty-color: orange,
-//     $border-radius: rem(3px),
-// );
-//
-// :host ::ng-deep {
-//     @include tokens($custom-checkbox-theme);
-// }
+.continue-button {
+    align-self: flex-end;
+    margin: 1rem 1rem 0;
+    min-width: auto;
+    width: 5.25rem;
+    min-height: 1.875rem;
+    height: 1.875rem;
+    padding: 0 0.75rem;
+    border-color: var(--team-primary);
+    background: var(--team-primary);
+    color: #fff;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.375rem;
+    letter-spacing: 0.1px;
+    text-transform: none;
+}
