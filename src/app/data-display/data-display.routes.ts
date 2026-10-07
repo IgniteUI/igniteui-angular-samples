@@ -19,15 +19,11 @@ import { CircularDynamicSampleComponent } from './circular-progressbar/circular-
 import { CircularIndeterminateProgressbarComponent } from './circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component';
 import { CircularProgressbarComponent } from './circular-progressbar/circular-progressbar.component';
 import { CircularStylingSampleComponent } from './circular-progressbar/circular-styling-sample/circular-styling-sample.component';
-import { IconSample1Component } from './icon/icon-sample-1/icon-sample-1.component';
-import { IconSample2Component } from './icon/icon-sample-2/icon-sample-2.component';
-import { IconSample3Component } from './icon/icon-sample-3/icon-sample-3.component';
-import { IconSample4Component } from './icon/icon-sample-4/icon-sample-4.component';
-import { IconSample5Component } from './icon/icon-sample-5/icon-sample-5.component';
+import { IconOverviewComponent } from './icon/icon-overview/icon-overview.component';
+import { IconSizeComponent } from './icon/icon-size/icon-size.component';
 import { IconStylingSampleComponent } from './icon/icon-styling-sample/icon-styling-sample.component';
 import { IconTailwindStylingSampleComponent } from './icon/icon-tailwind-styling-sample/icon-tailwind-styling-sample.component';
 import { IconServiceSampleComponent } from './icon/icon-service-sample/icon-service-sample.component';
-import { SvgIconSampleComponent } from './icon/svg-icon-sample/svg-icon-sample.component';
 import { IgxForComponent } from './igxFor/igxFor.component';
 import { IgxForHorizontalComponent } from './igxFor/igxFor-horizontal-sample/igxFor-horizontal.component';
 import { VirtualScrollOverviewComponent } from './virtual-scroll/virtual-scroll-overview/virtual-scroll-overview.component';
@@ -54,7 +50,6 @@ import { TextHighlightSample2Component } from './text-highlight/text-highlight-s
 import { TextHighlightStyleComponent } from './text-highlight/text-highlight-style/text-highlight-style.component';
 import {
     MaterialIconsExtendedComponent} from './icon/material-icons-extended/material-icons-extended.component';
-import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbols.component';
 import { QrCodeOverviewComponent } from './qr-code/qr-code-overview/qr-code-overview.component';
 import { QrCodeStylingComponent } from './qr-code/qr-code-styling/qr-code-styling.component';
 import { QrCodeTailwindStylingComponent } from './qr-code/qr-code-tailwind-styling/qr-code-tailwind-styling.component';
@@ -158,34 +153,14 @@ export const DataDisplayRoutes: Routes = [
         path: 'circular-progressbar'
     },
     {
-        component: IconSample1Component,
-        data: dataDisplayRoutesData['icon-sample-1'],
-        path: 'icon-sample-1'
+        component: IconOverviewComponent,
+        data: dataDisplayRoutesData['icon-overview'],
+        path: 'icon-overview'
     },
     {
-        component: IconSample2Component,
-        data: dataDisplayRoutesData['icon-sample-2'],
-        path: 'icon-sample-2'
-    },
-    {
-        component: IconSample3Component,
-        data: dataDisplayRoutesData['icon-sample-3'],
-        path: 'icon-sample-3'
-    },
-    {
-        component: IconSample4Component,
-        data: dataDisplayRoutesData['icon-sample-4'],
-        path: 'icon-sample-4'
-    },
-    {
-        component: IconSample5Component,
-        data: dataDisplayRoutesData['icon-sample-5'],
-        path: 'icon-sample-5'
-    },
-    {
-        component: SvgIconSampleComponent,
-        data: dataDisplayRoutesData['svg-icon-sample'],
-        path: 'svg-icon-sample'
+        component: IconSizeComponent,
+        data: dataDisplayRoutesData['icon-size'],
+        path: 'icon-size'
     },
     {
         component: IgxForComponent,
@@ -316,11 +291,6 @@ export const DataDisplayRoutes: Routes = [
         component: ChipTailwindStylingSampleComponent,
         data: dataDisplayRoutesData['chip-tailwind-styling'],
         path: 'chip-tailwind-styling'
-    },
-    {
-        component: MaterialSymbolsComponent,
-        data: dataDisplayRoutesData['material-symbols'],
-        path: 'material-symbols'
     },
     {
         component: MaterialIconsExtendedComponent,

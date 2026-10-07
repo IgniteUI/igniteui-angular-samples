@@ -1,0 +1,39 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.icon-sizes {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: auto auto;
+    place-items: center;
+    column-gap: 4.25rem;
+    row-gap: 1.0625rem;
+}
+
+.icon-sizes igx-icon {
+    color: var(--ig-gray-800);
+}
+
+.size-large {
+    --ig-size: var(--ig-size-large);
+}
+
+.size-medium {
+    --ig-size: var(--ig-size-medium);
+}
+
+.size-small {
+    --ig-size: var(--ig-size-small);
+}
+
+.size-label {
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", Arial, sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}

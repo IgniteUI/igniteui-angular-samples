@@ -15,24 +15,30 @@ export class IconConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // icon sample 1
+        // icon overview
         configs.push(new Config({
-            component: 'IconSample1Component',
+            component: 'IconOverviewComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));
 
-        // SVG icon sample
+        // icon size
         configs.push(new Config({
-            component: 'SvgIconSampleComponent',
+            component: 'IconSizeComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));
 
-        // Icon Styling Sample
+        // icon styling
         configs.push(new Config({
             component: 'IconStylingSampleComponent',
-            additionalFiles: ["/src/app/data-display/icon/icon-styling-sample/layout.scss"],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/icon/"
+        }));
+
+        // icon tailwind styling
+        configs.push(new Config({
+            component: 'IconTailwindStylingSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));
@@ -42,13 +48,6 @@ export class IconConfigGenerator implements IConfigGenerator {
             component: 'IconServiceSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
-        }));
-
-        // Material Symbols Sample
-        configs.push(new Config({
-            component: 'MaterialSymbolsComponent',
-            appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-display/material-symbols/"
         }));
 
         // Material icons extended sample

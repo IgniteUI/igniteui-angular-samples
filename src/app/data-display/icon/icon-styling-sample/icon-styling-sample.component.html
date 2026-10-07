@@ -1,17 +1,33 @@
-<div class="wrapper">
-    <div class="icon-sample">
-        <igx-icon>person</igx-icon>
+<div class="icon-styling">
+    <div class="button-row">
+        <button igxButton="contained" type="button" class="download-button">
+            <igx-icon>download</igx-icon>
+            Download
+        </button>
+        <button igxButton="outlined" type="button" class="continue-button">
+            Continue
+            <igx-icon>arrow_forward</igx-icon>
+        </button>
+        <button igxButton="outlined" type="button" class="delete-button">
+            <igx-icon>delete</igx-icon>
+            Delete
+        </button>
+        <button igxButton="fab" type="button" class="add-button" aria-label="Add">
+            <igx-icon>add</igx-icon>
+        </button>
     </div>
-    <div class="icon-sample">
-        <igx-icon>wifi</igx-icon>
-    </div>
-    <div class="icon-sample">
-        <igx-icon>laptop_mac</igx-icon>
-    </div>
-    <div class="icon-sample">
-        <igx-icon>pin_drop</igx-icon>
-    </div>
-    <div class="icon-sample">
-        <igx-icon [active]="false">cloud</igx-icon>
+    <div class="icon-toolbar">
+        @for (action of actions; track action.label) {
+            <button
+                igxIconButton="flat"
+                type="button"
+                [attr.aria-label]="action.label"
+                [igxTooltipTarget]="tooltip"
+                [hasArrow]="true"
+                [positionSettings]="tooltipPosition">
+                <igx-icon>{{ action.icon }}</igx-icon>
+            </button>
+            <span #tooltip="tooltip" igxTooltip class="icon-tooltip">{{ action.label }}</span>
+        }
     </div>
 </div>
