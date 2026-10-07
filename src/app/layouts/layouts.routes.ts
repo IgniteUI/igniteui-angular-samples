@@ -9,6 +9,7 @@ import { AvatarTailwindStylingSampleComponent } from './avatar/avatar-tailwind-s
 import { BreadcrumbsOverviewComponent } from './breadcrumbs/breadcrumbs-overview/breadcrumbs-overview.component';
 import { BreadcrumbsCustomSeparatorComponent } from './breadcrumbs/breadcrumbs-custom-separator/breadcrumbs-custom-separator.component';
 import { BreadcrumbsPrefixSuffixComponent } from './breadcrumbs/breadcrumbs-prefix-suffix/breadcrumbs-prefix-suffix.component';
+import { BreadcrumbsDropdownComponent } from './breadcrumbs/breadcrubms-dropdown/breadcrumbs-dropdown.component';
 import { BreadcrumbsStylingComponent } from './breadcrumbs/breadcrumbs-styling/breadcrumbs-styling.component';
 import { BreadcrumbsTailwindStylingComponent } from './breadcrumbs/breadcrumbs-tailwind-styling/breadcrumbs-tailwind-styling.component';
 import { BreadcrumbsWrappingComponent } from './breadcrumbs/breadcrumbs-wrapping/breadcrumbs-wrapping.component';
@@ -220,6 +221,11 @@ export const LayoutsRoutes: Routes = [
         component: BreadcrumbsPrefixSuffixComponent,
         data: layoutsRoutesData['breadcrumbs-prefix-suffix'],
         path: 'breadcrumbs-prefix-suffix'
+    },
+    {
+        component: BreadcrumbsDropdownComponent,
+        data: layoutsRoutesData['breadcrumbs-dropdown'],
+        path: 'breadcrumbs-dropdown'
     },
     {
         component: BreadcrumbsStylingComponent,
