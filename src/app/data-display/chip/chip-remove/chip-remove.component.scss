@@ -1,0 +1,40 @@
+/* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
+@import url("https://use.typekit.net/bng2zgw.css");
+
+:host {
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.chip-remove-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* A row as tall as the chip. The restore button can be taller in some themes, so it
+   overflows the row evenly instead of resizing the sample when it replaces the chip. */
+.chip-remove-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+}
+
+.restore-button {
+    --ig-size: var(--ig-size-small);
+}
+
+.chip-remove-item span {
+    color: var(--ig-gray-600);
+    font-family: aktiv-grotesk, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: 0.3px;
+}

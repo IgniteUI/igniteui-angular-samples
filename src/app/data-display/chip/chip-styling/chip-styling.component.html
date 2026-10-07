@@ -1,8 +1,14 @@
-<igx-chips-area>
-  @for (chip of chipList; track chip) {
-    <igx-chip [ngClass]="chip.class">
-      <igx-icon igxPrefix name={{chip.icon}}></igx-icon>
-      {{chip.text}}
-    </igx-chip>
-  }
-</igx-chips-area>
+<igx-chip class="tag-chip" removable>
+    Prototyping
+</igx-chip>
+<igx-chip class="filter-chip" selectable [selected]="true">
+    Motion Design
+</igx-chip>
+<igx-chip class="product-chip" outlined>
+    Sony Headphones
+    <igx-icon igxSuffix family="styling" name="star_half"></igx-icon>
+</igx-chip>
+<igx-chip class="contact-chip" outlined>
+    <igx-icon igxPrefix family="styling" name="people"></igx-icon>
+    Simon and Lisa
+</igx-chip>

@@ -1,56 +1,64 @@
-@use "layout.scss";
-@use "igniteui-angular/theming" as *;
-
-igx-chips-area {
+:host {
     --ig-size: var(--ig-size-medium);
 
-    gap: rem(8px);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem 1.875rem;
+    height: 100%;
 }
 
-igx-icon {
-    --ig-icon-size: #{rem(13px)};
+// Default chip
+.tag-chip {
+    --ig-chip-background: var(--ig-error-50);
+    --ig-chip-text-color: var(--ig-error-50-contrast);
+    --ig-chip-hover-background: var(--ig-error-100);
+    --ig-chip-hover-text-color: var(--ig-error-100-contrast);
+    --ig-chip-focus-background: var(--ig-error-200);
+    --ig-chip-focus-text-color: var(--ig-error-200-contrast);
+    --ig-chip-remove-icon-color: var(--ig-error-500);
+    --ig-chip-remove-icon-color-focus: var(--ig-error-500);
 }
 
-// CSS variables approach
-igx-chip {
-    --text-color: #fff;
-    --hover-text-color: #fff;
-    --focus-text-color: #fff;
-    --border-radius: #{rem(5px)};
-
-    &.xcom {
-        --background: #000;
-        --hover-background: #000;
-        --focus-background: #323232;
-    }
-
-    &.youtube {
-        --background: #cd201f;
-        --hover-background: #cd201f;
-        --focus-background: #9f1717;
-    }
-
-    &.facebook {
-        --background: #3b5999;
-        --hover-background: #3b5999;
-        --focus-background: #2c4378;
-    }
-
-    &.linkedin {
-        --background: #55acee;
-        --hover-background: #55acee;
-        --focus-background: #4682af;
-    }
+// Selected chip
+.filter-chip {
+    --ig-chip-selected-background: var(--ig-primary-50);
+    --ig-chip-selected-text-color: var(--ig-primary-50-contrast);
+    --ig-chip-hover-selected-background: var(--ig-primary-100);
+    --ig-chip-hover-selected-text-color: var(--ig-primary-100-contrast);
+    --ig-chip-focus-selected-background: var(--ig-primary-200);
+    --ig-chip-focus-selected-text-color: var(--ig-primary-200-contrast);
 }
 
-//Sass theme approach
-// $custom-chip-theme: chip-theme(
-//     $text-color: #fff,
-//     $hover-background: #fff,
-//     $focus-background: #fff,
-//     $border-radius: rem(5px)
-// );
-//
-// :host {
-//     @include tokens($custom-chip-theme);
-// }
+// The start element holds the select icon.
+:host ::ng-deep .filter-chip .igx-chip__start {
+    color: var(--ig-primary-500);
+}
+
+// Outlined chips
+.product-chip {
+    --ig-chip-outlined-background: var(--ig-surface-500);
+    --ig-chip-outlined-text-color: var(--ig-gray-700);
+    --ig-chip-border-color: var(--ig-gray-700);
+    --ig-chip-hover-outlined-text-color: var(--ig-gray-800);
+    --ig-chip-hover-border-color: var(--ig-gray-800);
+    --ig-chip-focus-outlined-text-color: var(--ig-gray-900);
+    --ig-chip-focus-border-color: var(--ig-gray-900);
+}
+
+.contact-chip {
+    --ig-chip-outlined-background: var(--ig-secondary-100);
+    --ig-chip-outlined-text-color: var(--ig-secondary-100-contrast);
+    --ig-chip-border-color: var(--ig-secondary-500);
+    --ig-chip-hover-outlined-background: var(--ig-secondary-200);
+    --ig-chip-hover-outlined-text-color: var(--ig-secondary-200-contrast);
+    --ig-chip-hover-border-color: var(--ig-secondary-500);
+    --ig-chip-focus-outlined-background: var(--ig-secondary-300);
+    --ig-chip-focus-outlined-text-color: var(--ig-secondary-300-contrast);
+    --ig-chip-focus-border-color: var(--ig-secondary-500);
+}
+
+:host ::ng-deep .contact-chip .igx-chip__start {
+    color: var(--ig-secondary-800);
+}

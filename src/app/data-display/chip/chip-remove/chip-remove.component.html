@@ -1,0 +1,10 @@
+<div class="chip-remove-item">
+    <span>Remove Chip</span>
+    <div class="chip-remove-slot">
+        @if (isVisible) {
+            <igx-chip #chip removable (remove)="toggleChip(false)">Chip</igx-chip>
+        } @else {
+            <button #restore igxButton="flat" class="restore-button" (click)="toggleChip(true)">Restore chip</button>
+        }
+    </div>
+</div>
