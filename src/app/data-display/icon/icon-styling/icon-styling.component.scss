@@ -1,7 +1,7 @@
 @use "sass:meta";
 @include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
 
-app-icon-styling-sample {
+app-icon-styling {
     display: flex;
     align-items: center;
     justify-content: center;

@@ -6,10 +6,10 @@ import { IgxHintDirective, IgxInputDirective, IgxInputGroupComponent, IgxLabelDi
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 @Component({
-    selector: 'app-icon-tailwind-styling-sample',
+    selector: 'app-icon-tailwind-styling',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['./icon-tailwind-styling-sample.component.scss'],
-    templateUrl: './icon-tailwind-styling-sample.component.html',
+    styleUrls: ['./icon-tailwind-styling.component.scss'],
+    templateUrl: './icon-tailwind-styling.component.html',
     imports: [
         IgxInputGroupComponent,
         IgxInputDirective,
@@ -21,7 +21,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         IgxIconButtonDirective
     ]
 })
-export class IconTailwindStylingSampleComponent {
+export class IconTailwindStylingComponent {
     public fieldClasses = 'w-[260px] [--ig-input-group-input-prefix-background:transparent] [--ig-input-group-input-prefix-background--filled:transparent] [--ig-input-group-input-prefix-background--focused:transparent] [--ig-input-group-input-suffix-background:transparent] [--ig-input-group-input-suffix-background--filled:transparent] [--ig-input-group-input-suffix-background--focused:transparent] [--ig-input-group-placeholder-color:#344b65] [--ig-input-group-hover-placeholder-color:#344b65] [--ig-input-group-focused-secondary-color:transparent]';
     public focusClasses = 'focus-within:[--ig-input-group-border-color:var(--ig-primary-500)] focus-within:[--ig-input-group-focused-border-color:var(--ig-primary-500)]';
     public invalidClasses = '[--ig-input-group-border-color:#ff134a] [--ig-input-group-focused-border-color:#ff134a]';

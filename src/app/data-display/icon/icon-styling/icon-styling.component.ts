@@ -9,13 +9,13 @@ interface ToolbarAction {
 }
 
 @Component({
-    selector: 'app-icon-styling-sample',
+    selector: 'app-icon-styling',
     encapsulation: ViewEncapsulation.None,
-    styleUrls: ['./icon-styling-sample.component.scss'],
-    templateUrl: './icon-styling-sample.component.html',
+    styleUrls: ['./icon-styling.component.scss'],
+    templateUrl: './icon-styling.component.html',
     imports: [IgxButtonDirective, IgxIconButtonDirective, IgxIconComponent, IgxTooltipDirective, IgxTooltipTargetDirective]
 })
-export class IconStylingSampleComponent {
+export class IconStylingComponent {
     public actions: ToolbarAction[] = [
         { icon: 'edit', label: 'Edit' },
         { icon: 'content_copy', label: 'Copy' },

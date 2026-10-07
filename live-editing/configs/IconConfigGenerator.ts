@@ -31,14 +31,14 @@ export class IconConfigGenerator implements IConfigGenerator {
 
         // icon styling
         configs.push(new Config({
-            component: 'IconStylingSampleComponent',
+            component: 'IconStylingComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));
 
         // icon tailwind styling
         configs.push(new Config({
-            component: 'IconTailwindStylingSampleComponent',
+            component: 'IconTailwindStylingComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));

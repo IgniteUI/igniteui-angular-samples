@@ -21,8 +21,8 @@ import { CircularProgressbarComponent } from './circular-progressbar/circular-pr
 import { CircularStylingSampleComponent } from './circular-progressbar/circular-styling-sample/circular-styling-sample.component';
 import { IconOverviewComponent } from './icon/icon-overview/icon-overview.component';
 import { IconSizeComponent } from './icon/icon-size/icon-size.component';
-import { IconStylingSampleComponent } from './icon/icon-styling-sample/icon-styling-sample.component';
-import { IconTailwindStylingSampleComponent } from './icon/icon-tailwind-styling-sample/icon-tailwind-styling-sample.component';
+import { IconStylingComponent } from './icon/icon-styling/icon-styling.component';
+import { IconTailwindStylingComponent } from './icon/icon-tailwind-styling/icon-tailwind-styling.component';
 import { IconServiceSampleComponent } from './icon/icon-service-sample/icon-service-sample.component';
 import { IgxForComponent } from './igxFor/igxFor.component';
 import { IgxForHorizontalComponent } from './igxFor/igxFor-horizontal-sample/igxFor-horizontal.component';
@@ -273,12 +273,12 @@ export const DataDisplayRoutes: Routes = [
         path: 'icon-service'
     },
     {
-        component: IconStylingSampleComponent,
+        component: IconStylingComponent,
         data: dataDisplayRoutesData['icon-styling'],
         path: 'icon-styling'
     },
     {
-        component: IconTailwindStylingSampleComponent,
+        component: IconTailwindStylingComponent,
         data: dataDisplayRoutesData['icon-tailwind-styling'],
         path: 'icon-tailwind-styling'
     },
