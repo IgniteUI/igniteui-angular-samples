@@ -1,0 +1,69 @@
+/* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
+@import url("https://use.typekit.net/bng2zgw.css");
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.radio-states-grid {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    align-items: center;
+    gap: 1.875rem 3.25rem;
+}
+
+/* The enabled and the invalid rows each share the columns of the whole grid. */
+.radio-states-group {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: center;
+    row-gap: 1.875rem;
+}
+
+.radio-states-group + .radio-states-group {
+    margin-top: 1.25rem;
+}
+
+.radio-states-grid span {
+    color: var(--ig-gray-600);
+    font-family: aktiv-grotesk, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: 0.3px;
+}
+
+.column-caption {
+    text-align: center;
+}
+
+/* The row captions sit closer to the radios than the columns sit to each other. */
+.row-caption {
+    margin-inline-end: -1.3125rem;
+}
+
+/* Hover can't be turned on from code, so the hover columns take the theme's hover
+   colors, and the Hover column also shows the ripple of the Material theme. */
+.hover,
+.focused-hover {
+    --fill-color: var(--fill-color-hover);
+    --label-color: var(--label-color-hover);
+    --error-color: var(--error-color-hover);
+}
+
+.hover ::ng-deep .igx-radio__ripple {
+    background: var(--empty-color);
+    opacity: 0.06;
+}
+
+.hover.igx-radio--checked ::ng-deep .igx-radio__ripple {
+    background: var(--fill-color);
+}
+
+.hover.igx-radio--invalid ::ng-deep .igx-radio__ripple {
+    background: var(--error-color);
+}

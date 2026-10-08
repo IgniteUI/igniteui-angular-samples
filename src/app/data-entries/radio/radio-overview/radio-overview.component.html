@@ -1,0 +1,9 @@
+<form class="feedback-form" (submit)="$event.preventDefault()">
+    <span id="feedback-title" class="feedback-title">Does our app meet your expectations?*</span>
+    <igx-radio-group name="expectations" alignment="vertical" value="exceeds" aria-labelledby="feedback-title">
+        <igx-radio value="exceeds">Exceeds expectations</igx-radio>
+        <igx-radio value="meets">Meets expectations</igx-radio>
+        <igx-radio value="below">Below expectations</igx-radio>
+    </igx-radio-group>
+    <button igxButton="contained" type="submit" class="feedback-send">Send</button>
+</form>

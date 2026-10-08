@@ -1,0 +1,64 @@
+/* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
+@import url("https://use.typekit.net/bng2zgw.css");
+
+:host {
+    /* The design's own palette. It lives here instead of coming from the theme
+       palette, so the sample keeps its colors in every theme. */
+    --color-export-primary: #0176ff;
+    --color-export-primary-strong: #006ae6;
+    --color-export-tint: #e6f2ff;
+    --color-export-tint-strong: #cce4ff;
+    --color-export-title: #00142b;
+    --color-export-ink: #002b5c;
+    --color-export-muted: #556c86;
+    --color-export-divider: #d2dbe8;
+    --color-export-empty: #a9b8cc;
+    --color-export-cancel: #616161;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* The design draws the radio as a 2px ring with a 10px dot in a 40px slot. Each
+   theme draws the radio its own way, so the whole radio is drawn here. */
+.format-option {
+    --label-margin: 0.125rem;
+}
+
+.format-option ::ng-deep .igx-radio__composite {
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+}
+
+.format-option ::ng-deep .igx-radio__composite::before,
+.format-option ::ng-deep .igx-radio__composite::after {
+    top: 0.625rem;
+    inset-inline-start: 0.625rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+}
+
+/* The ring */
+.format-option ::ng-deep .igx-radio__composite::after {
+    border: 0.125rem solid var(--color-export-empty);
+    background: white;
+}
+
+.format-option.igx-radio--checked ::ng-deep .igx-radio__composite::after {
+    border-color: var(--color-export-primary);
+}
+
+/* The dot */
+.format-option ::ng-deep .igx-radio__composite::before {
+    transform: scale(0);
+    border: none;
+    background: var(--color-export-primary);
+}
+
+.format-option.igx-radio--checked ::ng-deep .igx-radio__composite::before {
+    transform: scale(0.5);
+}
