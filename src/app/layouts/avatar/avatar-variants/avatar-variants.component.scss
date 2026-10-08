@@ -21,6 +21,10 @@ $avatars: circle, square, rounded;
 }
 
 :where(span) {
+    @include type-style("body-1") {
+        margin: 0;
+    }
+
     grid-row: 2;
     text-align: center;
     color: var(--ig-gray-600);
@@ -29,10 +33,6 @@ $avatars: circle, square, rounded;
     font-weight: 400;
     line-height: rem(20px);
     letter-spacing: rem(0.3px);
-
-    @include type-style("body-1") {
-        margin: 0;
-    };
 }
 
 :where(igx-badge) {
