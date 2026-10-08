@@ -5,6 +5,7 @@ import { NgStyle, NgClass, CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-carousel',
+    host: { class: 'ig-typography' },
     styleUrls: ['./carousel-no-navigation-sample.component.scss'],
     templateUrl: './carousel-no-navigation-sample.component.html',
     imports: [IgxCarouselComponent, IgxSlideComponent, NgStyle, NgClass, IgxListComponent, IgxListItemComponent, IgxListThumbnailDirective, CurrencyPipe]

@@ -7,22 +7,16 @@ export class CheckboxConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // checkbox sample 2
+        // checkbox overview
         configs.push(new Config({
-            component: 'CheckboxSample1Component',
+            component: 'CheckboxOverviewComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
 
-        // checkbox sample 2
+        // checkbox states
         configs.push(new Config({
-            component: 'CheckboxSample2Component',
-            appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-entries/checkbox/"
-        }));
-
-        configs.push(new Config({
-            component: 'CheckboxSample3Component',
+            component: 'CheckboxStatesComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));
@@ -30,6 +24,13 @@ export class CheckboxConfigGenerator implements IConfigGenerator {
         // checkbox styling
         configs.push(new Config({
             component: 'CheckboxStylingComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/checkbox/"
+        }));
+
+        // checkbox tailwind styling
+        configs.push(new Config({
+            component: 'CheckboxTailwindStylingComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));

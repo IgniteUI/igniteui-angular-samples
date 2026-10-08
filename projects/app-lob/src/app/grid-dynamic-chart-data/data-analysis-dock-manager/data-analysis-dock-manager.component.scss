@@ -19,6 +19,15 @@
     --igc-pane-content-background: #{contrast-color($color: 'gray', $variant: 900)};
 
     igx-grid {
+        // The host carries `light-theme` for the dock manager's own theme (igc.themes.css),
+        // but styles.scss also emits every Ignite UI component theme under that same class,
+        // so the host keeps the last one's short aliases - the tooltip's dark, translucent
+        // background and foreground. The grid's derived-themes layer reads those aliases
+        // before its own tokens, which tints its scrollbars. Drop them so the grid falls
+        // back to --ig-grid-background / --ig-grid-foreground.
+        --background: initial;
+        --foreground: initial;
+
         --ig-size: var(--ig-size-small);
     }
 }
@@ -31,8 +40,6 @@
 }
 
 .selection-area {
-
-    @include scrollbar(scrollbar-theme());
     width: 100%;
     height: 90%;
     display: inline-flex;
@@ -89,12 +96,6 @@ $custom-badge-theme: badge-theme(
         }
     }
 
-    .grid-chart-contextmenu-wrapper {
-        igx-grid {
-            @include scrollbar(scrollbar-theme());
-        }
-    }
-
     .analytics-btn {
         @include tokens(
             contained-button-theme(
@@ -123,10 +124,6 @@ $custom-badge-theme: badge-theme(
         height: auto;
     }
 
-    igx-tab-content {
-        @include scrollbar(scrollbar-theme());
-    }
-
 }
 
 .selected, .disabled {
@@ -146,8 +143,6 @@ $custom-badge-theme: badge-theme(
 $font-family: 'Titillium Web', 'Roboto', 'Helvetica Neue', sans-serif;
 
 .tab-options-wrapper {
-    @include scrollbar(scrollbar-theme());
-
     display: flex;
     flex-flow: column;
     max-height: rem(110px);

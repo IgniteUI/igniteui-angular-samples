@@ -1,0 +1,18 @@
+<div class="carousel-container">
+  <igx-carousel [navigation]="false" [pause]="false" [interval]="2000" [vertical]="true" animationType="fade">
+    <ng-template igxCarouselIndicator let-slide>
+      <img
+        [class.blurred]="!slide.active"
+        [src]="slides[slide.index].thumbnail"
+        [alt]="slides[slide.index].alt + ' thumbnail'"
+        width="50"
+        height="60" />
+    </ng-template>
+
+    @for (slide of slides; track slide.image) {
+      <igx-slide>
+        <img class="slide-image" [src]="slide.image" [alt]="slide.alt" />
+      </igx-slide>
+    }
+  </igx-carousel>
+</div>

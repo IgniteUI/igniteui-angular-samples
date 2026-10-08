@@ -56,6 +56,23 @@
     gap: 14px;
 }
 
+.playground__color-control {
+    anchor-scope: --grid-color-input;
+
+    igc-color-picker {
+        anchor-name: --grid-color-input;
+        inline-size: 100%;
+    }
+
+    button {
+        position: absolute;
+        position-anchor: --grid-color-input;
+        inset-inline-end: calc(anchor(self-end) + 0.5rem);
+        align-self: anchor-center;
+        z-index: 1;
+    }
+}
+
 .playground__control {
     display: flex;
     flex-direction: column;
