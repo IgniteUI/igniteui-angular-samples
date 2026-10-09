@@ -12,18 +12,31 @@
     height: 100%;
 }
 
-.chip-outlined-item {
+.chip-state-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
 
-.chip-outlined-item span {
+.chip-state-item span {
     color: var(--ig-gray-600);
     font-family: aktiv-grotesk, sans-serif;
     font-size: 0.8125rem;
     font-weight: 400;
     line-height: 1.25rem;
     letter-spacing: 0.3px;
+}
+
+// Hover and focus only happen on interaction, so these chips show the colors the theme uses for them.
+:host ::ng-deep igx-chip.state-hover .igx-chip__item {
+    background: var(--hover-background);
+    color: var(--hover-text-color);
+}
+
+// The focus ring color is transparent in themes that show focus through the background alone.
+:host ::ng-deep igx-chip.state-focused .igx-chip__item {
+    background: var(--focus-background);
+    color: var(--focus-text-color);
+    outline: 0.25rem solid var(--focus-shadow-color);
 }

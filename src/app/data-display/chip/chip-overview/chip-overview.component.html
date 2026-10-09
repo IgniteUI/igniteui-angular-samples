@@ -1,0 +1,25 @@
+<div class="profile-card">
+    <div>
+        <span class="section-header" id="name-header">Name</span>
+        <igx-input-group class="name-input" type="border">
+            <input igxInput value="Jordan Lee" aria-labelledby="name-header" />
+        </igx-input-group>
+    </div>
+    <div>
+        <span class="section-header" id="skills-header">Skills · {{ selectedSkills.length }} selected</span>
+        <div class="skills" role="group" aria-labelledby="skills-header">
+            @for (skill of skills; track skill) {
+                <igx-chip
+                    outlined
+                    selectable
+                    [selected]="selectedSkills.includes(skill)"
+                    (selectedChange)="toggleSkill(skill, $event)">
+                    {{ skill }}
+                </igx-chip>
+            }
+        </div>
+    </div>
+    <div class="actions">
+        <button igxButton="contained">Save profile</button>
+    </div>
+</div>

@@ -5,21 +5,32 @@
     --ig-size: var(--ig-size-medium);
 
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem 2.5rem;
     height: 100%;
 }
 
-.chip-outlined-item {
+.chip-remove-item {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
 }
 
-.chip-outlined-item span {
+/* A row as tall as the chip. The restore button can be taller in some themes, so it
+   overflows the row evenly instead of resizing the sample when it replaces the chip. */
+.chip-remove-slot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 1.5rem;
+}
+
+.restore-button {
+    --ig-size: var(--ig-size-small);
+}
+
+.chip-remove-item span {
     color: var(--ig-gray-600);
     font-family: aktiv-grotesk, sans-serif;
     font-size: 0.8125rem;

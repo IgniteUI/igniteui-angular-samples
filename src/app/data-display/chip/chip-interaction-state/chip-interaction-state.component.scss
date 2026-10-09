@@ -8,18 +8,17 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem 2.5rem;
+    gap: 1.5rem 3.75rem;
     height: 100%;
 }
 
-.chip-outlined-item {
+.chip-states-item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 1.875rem;
 }
 
-.chip-outlined-item span {
+.chip-states-item span {
     color: var(--ig-gray-600);
     font-family: aktiv-grotesk, sans-serif;
     font-size: 0.8125rem;
