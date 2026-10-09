@@ -1,0 +1,24 @@
+<div class="container sample ig-typography">
+  <div class="container fill">
+    <igx-grid
+      id="grid"
+      [data]="data"
+      [autoGenerate]="false"
+      [primaryKey]="'ProductID'"
+      [allowFiltering]="true"
+      filterMode="excelStyleFilter">
+      <igx-paginator [perPage]="10"></igx-paginator>
+
+      <igx-column field="ProductName" header="Product Name" [headerClasses]="'grid-header-title'" dataType="string" [sortable]="true" [hasSummary]="true" [editable]="true" [resizable]="true"></igx-column>
+      <igx-column field="UnitPrice" header="Unit Price" [headerClasses]="'grid-header-title'" dataType="number" [sortable]="true" [hasSummary]="true" [editable]="true" [resizable]="true"></igx-column>
+      <igx-column field="UnitsInStock" header="Units in Stock" [headerClasses]="'grid-header-title'" dataType="number" [sortable]="true" [hasSummary]="true" [editable]="true" [resizable]="true"></igx-column>
+      <igx-column field="OrderDate" header="Order Date" [headerClasses]="'grid-header-title'" dataType="date" [sortable]="true" [hasSummary]="true" [editable]="true" [resizable]="true"></igx-column>
+      <igx-column field="Discontinued" header="Discontinued" [headerClasses]="'grid-header-title'" dataType="boolean" width="150px" [sortable]="true" [hasSummary]="true" [editable]="true">
+        <ng-template igxCell let-cell="cell">
+          <img class="status-icon" [src]="booleanCellTemplate(cell.value)" [alt]="cell.value ? 'Continued' : 'Discontinued'" [title]="cell.value ? 'Continued' : 'Discontinued'">
+        </ng-template>
+      </igx-column>
+      <igx-column field="ReorderLevel" header="Reorder Level" [headerClasses]="'grid-header-title'" dataType="number" width="140px" [sortable]="true" [hasSummary]="true" [editable]="true" [filterable]="true"></igx-column>
+    </igx-grid>
+  </div>
+</div>
