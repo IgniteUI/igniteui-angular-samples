@@ -1,9 +1,11 @@
+@use "igniteui-theming/sass/typography" as *;
+
 .button-sample {
     display: flex;
-    padding: 2rem;
+    padding: rem(32px);
 }
 
 .button-sample button {
-    width: 45%;
+    inline-size: 45%;
     margin: auto;
 }
