@@ -12,6 +12,10 @@
     box-sizing: border-box;
     width: 22.5rem;
     padding: 1rem;
+
+    /* The card of the design: white in light themes, a raised surface in dark ones. */
+    border-radius: 0.5rem;
+    background: var(--ig-surface-50);
 }
 
 .feedback-title {

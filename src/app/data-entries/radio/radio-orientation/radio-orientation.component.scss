@@ -14,6 +14,10 @@
     align-self: flex-start;
     box-sizing: border-box;
     padding: 1rem;
+
+    /* The card of the design: white in light themes, a raised surface in dark ones. */
+    border-radius: 0.5rem;
+    background: var(--ig-surface-50);
 }
 
 .billing-cycle {
