@@ -1,0 +1,17 @@
+<div class="examples">
+    <div class="example">
+        <span class="example-label">Custom icon and color</span>
+        <igc-rating class="heart-rating" aria-label="Rate your experience" [value]="3">
+            @for (symbol of symbols; track symbol) {
+                <igc-rating-symbol>
+                    <igc-icon name="favorite" collection="material"></igc-icon>
+                    <igc-icon slot="empty" name="favorite_border" collection="material"></igc-icon>
+                </igc-rating-symbol>
+            }
+        </igc-rating>
+    </div>
+    <div class="example">
+        <span class="example-label">10 stars</span>
+        <igc-rating class="star-rating" aria-label="Rate your experience" [max]="10" [value]="5"></igc-rating>
+    </div>
+</div>
