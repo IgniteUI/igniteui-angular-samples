@@ -44,6 +44,7 @@ import { NavbarConfigGenerator } from '../configs/NavbarConfigGenerator';
 import { NavdrawerConfigGenerator } from '../configs/NavDrawerConfigGenerator';
 import { OverlayConfigGenerator } from '../configs/OverlayConfigGenerator';
 import { RadioConfigGenerator } from '../configs/RadioConfigGenerator';
+import { RatingConfigGenerator } from '../configs/RatingConfigGenerator';
 import { RippleConfigGenerator } from '../configs/RippleConfigGenerator';
 import { SelectConfigGenerator } from '../configs/SelectConfigGenerator';
 import { SliderConfigGenerator } from '../configs/SliderConfigGenerator';
@@ -115,6 +116,7 @@ export const CONFIG_GENERATORS =
         MaskConfigGenerator,
         MonthPickerConfigGenerator,
         RadioConfigGenerator,
+        RatingConfigGenerator,
         SelectConfigGenerator,
         SliderConfigGenerator,
         SwitchConfigGenerator,

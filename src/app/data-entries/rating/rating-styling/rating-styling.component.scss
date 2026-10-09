@@ -1,0 +1,45 @@
+@use "sass:meta";
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-rating-styling {
+    /* styles.scss asks the page for the large size; the ratings keep their own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.examples {
+    display: flex;
+    align-items: center;
+    gap: 3.75rem;
+}
+
+.example {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+.example-label {
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: #556c86;
+}
+
+.heart-rating {
+    --ig-rating-symbol-full-color: #d9357f;
+    --ig-rating-symbol-empty-color: #d9357f;
+}
+
+.star-rating {
+    --ig-rating-symbol-full-color: #faa419;
+    --ig-rating-symbol-empty-color: #8a8a8a;
+}

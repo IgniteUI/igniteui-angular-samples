@@ -85,6 +85,13 @@ import { SwitchLayoutComponent } from './switch/switch-layout/switch-layout.comp
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
 import { SwitchTailwindStylingComponent } from './switch/switch-tailwind-styling/switch-tailwind-styling.component';
 import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
+import { RatingOverviewComponent } from './rating/rating-overview/rating-overview.component';
+import { RatingLayoutComponent } from './rating/rating-layout/rating-layout.component';
+import { RatingInteractionStatesComponent } from './rating/rating-interaction-states/rating-interaction-states.component';
+import { RatingStatesComponent } from './rating/rating-states/rating-states.component';
+import { RatingSizeComponent } from './rating/rating-size/rating-size.component';
+import { RatingStylingComponent } from './rating/rating-styling/rating-styling.component';
+import { RatingTailwindStylingComponent } from './rating/rating-tailwind-styling/rating-tailwind-styling.component';
 import { TemplateDrivenFormValidationComponent } from './input-group/template-driven-form-validation/template-driven-form-validation.component';
 import { ReactiveFormValidationComponent } from './input-group/reactive-form-validation/reactive-form-validation.component';
 import { ReactiveFormCustomValidationComponent } from './input-group/reactive-form-custom-validation/reactive-form-custom-validation.component';
@@ -488,6 +495,41 @@ export const DataEntriesRoutes: Routes = [
         component: RatingInFormComponent,
         data: dataEntriesRoutesData['rating-in-form'],
         path: 'rating-form'
+    },
+    {
+        component: RatingOverviewComponent,
+        data: dataEntriesRoutesData['rating-overview'],
+        path: 'rating-overview'
+    },
+    {
+        component: RatingLayoutComponent,
+        data: dataEntriesRoutesData['rating-layout'],
+        path: 'rating-layout'
+    },
+    {
+        component: RatingInteractionStatesComponent,
+        data: dataEntriesRoutesData['rating-interaction-states'],
+        path: 'rating-interaction-states'
+    },
+    {
+        component: RatingStatesComponent,
+        data: dataEntriesRoutesData['rating-states'],
+        path: 'rating-states'
+    },
+    {
+        component: RatingSizeComponent,
+        data: dataEntriesRoutesData['rating-size'],
+        path: 'rating-size'
+    },
+    {
+        component: RatingStylingComponent,
+        data: dataEntriesRoutesData['rating-styling'],
+        path: 'rating-styling'
+    },
+    {
+        component: RatingTailwindStylingComponent,
+        data: dataEntriesRoutesData['rating-tailwind-styling'],
+        path: 'rating-tailwind-styling'
     },
     {
         component: SwitchOverviewComponent,
