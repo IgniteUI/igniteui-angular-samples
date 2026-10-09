@@ -1,0 +1,128 @@
+@use "sass:meta";
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-icon-styling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.icon-styling {
+    --ig-font-family: "Aktiv Grotesk", Arial, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.8125rem;
+}
+
+.button-row {
+    /* The buttons keep the medium size of the design, while styles.scss asks
+       the page for the large one. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.button-row .igx-button {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.1px;
+    text-transform: none;
+}
+
+.download-button {
+    border-color: #a9b8cc;
+    background: #e5ebf3;
+    color: #344b65;
+    box-shadow: none;
+}
+
+.download-button igx-icon {
+    color: #344b65;
+}
+
+.continue-button {
+    --ig-outlined-button-hover-background: rgb(0 93 204 / 8%);
+    --ig-outlined-button-focus-hover-background: rgb(0 93 204 / 8%);
+    --ig-outlined-button-active-background: rgb(0 93 204 / 16%);
+    --ig-outlined-button-focus-background: rgb(0 93 204 / 16%);
+    --ig-outlined-button-focus-visible-background: rgb(0 93 204 / 16%);
+
+    border-color: #005dcc;
+    color: #005dcc;
+}
+
+.continue-button igx-icon {
+    color: #005dcc;
+}
+
+.delete-button {
+    --ig-outlined-button-hover-background: rgb(223 27 116 / 8%);
+    --ig-outlined-button-focus-hover-background: rgb(223 27 116 / 8%);
+    --ig-outlined-button-active-background: rgb(223 27 116 / 16%);
+    --ig-outlined-button-focus-background: rgb(223 27 116 / 16%);
+    --ig-outlined-button-focus-visible-background: rgb(223 27 116 / 16%);
+
+    border-color: #df1b74;
+    color: #df1b74;
+}
+
+.delete-button igx-icon {
+    color: #df1b74;
+}
+
+.add-button {
+    --ig-size: var(--ig-size-small);
+
+    width: 2.25rem;
+    min-width: 0;
+    height: 2.25rem;
+    min-height: 0;
+    padding: 0;
+    border: 1px solid #0176ff;
+    border-radius: 50%;
+    background: #cce4ff;
+    box-shadow: none;
+}
+
+.add-button igx-icon {
+    color: #005dcc;
+}
+
+.icon-toolbar {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0.5rem;
+    border: 1px solid #e5ebf3;
+    border-radius: 999px;
+    background: #fff;
+}
+
+.icon-toolbar .igx-icon-button {
+    --ig-flat-icon-button-hover-background: #f8f8f8;
+    --ig-flat-icon-button-focus-background: #e0e0e0;
+    --ig-flat-icon-button-focus-hover-background: #f8f8f8;
+    --ig-flat-icon-button-active-background: #e0e0e0;
+
+    width: 1.5rem;
+    min-width: 0;
+    height: 1.5rem;
+    min-height: 0;
+    padding: 0;
+    border-radius: 50%;
+}
+
+.icon-toolbar igx-icon {
+    color: #344b65;
+}
+
+/* The tooltips are moved to the overlay, outside of the toolbar. */
+.icon-tooltip {
+    --ig-tooltip-background: rgb(52 75 101 / 90%);
+    --ig-tooltip-text-color: #fff;
+}
