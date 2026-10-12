@@ -35,7 +35,7 @@
 .position-card {
     --ig-card-border-radius: #{rem(4px)};
 
-    width: rem(240px);
+    width: rem(256px);
 
     igx-card-media img {
         width: 100%;
@@ -50,7 +50,6 @@
     [igxCardHeaderTitle] {
         margin-block-end: 0;
         color: var(--ig-gray-900);
-        font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
         font-size: rem(18px);
         font-weight: 600;
         line-height: rem(24px);
@@ -59,7 +58,6 @@
 
     [igxCardHeaderSubtitle] {
         color: var(--ig-gray-900);
-        font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
         font-size: rem(14px);
         font-weight: 600;
         line-height: rem(24px);
@@ -96,7 +94,6 @@
 
     padding: 0;
     background: transparent;
-    font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
     font-size: rem(13px);
     font-weight: 600;
     letter-spacing: rem(0.25px);
