@@ -1,11 +1,9 @@
 import { IgxAvatarModule } from 'igniteui-angular/avatar';
-import { IgxButtonModule, IgxDividerModule, IgxLayoutModule, IgxRippleModule } from 'igniteui-angular/directives';
+import { IgxButtonModule, IgxDividerModule, IgxRippleModule } from 'igniteui-angular/directives';
 import { IgxCardModule } from 'igniteui-angular/card';
 import { IgxChipsModule } from 'igniteui-angular/chips';
-import { IgxExpansionPanelModule } from 'igniteui-angular/expansion-panel';
 import { IgxIconModule } from 'igniteui-angular/icon';
-import { IgxListModule } from 'igniteui-angular/list';
-import { IgxSliderModule } from 'igniteui-angular/slider';
+import { IgxSwitchModule } from 'igniteui-angular/switch';
 import { AppModuleConfig, Config, IConfigGenerator } from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';
 export class CardConfigGenerator implements IConfigGenerator {
@@ -14,63 +12,53 @@ export class CardConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // card sample
+        // card overview
         configs.push(new Config({
-            component: 'CardComponent',
+            component: 'CardOverviewComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/layouts/card/"
+        }));
+
+        // card actions
+        configs.push(new Config({
+            component: 'CardActionsComponent',
             appConfig: BaseAppConfig,
             additionalFiles: [
-                "/src/app/layouts/card/card.blueprint.ts"
+                "/src/app/layouts/card/card-actions/icons.ts"
             ],
             shortenComponentPathBy: "/layouts/card/"
         }));
 
-        // card sample 1
+        // card media
         configs.push(new Config({
-            component: 'CardSample1Component',
+            component: 'CardMediaComponent',
             appConfig: BaseAppConfig,
             additionalFiles: [
-                "/src/app/layouts/card/card.blueprint.ts"
+                "/src/app/layouts/card/card-media/icons.ts"
             ],
             shortenComponentPathBy: "/layouts/card/"
         }));
 
-        // card sample 2
+        // card media position
         configs.push(new Config({
-            component: 'CardSample2Component',
+            component: 'CardPositionComponent',
             appConfig: BaseAppConfig,
-            additionalFiles: [
-                "/src/app/layouts/card/card.blueprint.ts"
-            ],
             shortenComponentPathBy: "/layouts/card/"
         }));
 
-        // card sample 3
+        // card styling
         configs.push(new Config({
-            component: 'CardSample3Component',
+            component: 'CardStylingComponent',
             appConfig: BaseAppConfig,
-            additionalFiles: [
-                "/src/app/layouts/card/card.blueprint.ts"
-            ],
             shortenComponentPathBy: "/layouts/card/"
         }));
 
-        // card sample 4
+        // card tailwind styling
         configs.push(new Config({
-            component: 'CardSample4Component',
+            component: 'CardTailwindStylingComponent',
             appConfig: BaseAppConfig,
             additionalFiles: [
-                "/src/app/layouts/card/card.blueprint.ts"
-            ],
-            shortenComponentPathBy: "/layouts/card/"
-        }));
-
-        // card styling sample
-        configs.push(new Config({
-            component: 'CardStylingSampleComponent',
-            appConfig: BaseAppConfig,
-            additionalFiles: [
-                "/src/app/layouts/card/card.blueprint.ts",
-                "/src/app/layouts/card/card-styling-sample/layout.scss"
+                "/src/app/layouts/card/card-tailwind-styling/icons.ts"
             ],
             shortenComponentPathBy: "/layouts/card/"
         }));
