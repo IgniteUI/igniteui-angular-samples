@@ -39,10 +39,13 @@
     --ig-size: var(--ig-size-small);
 }
 
-.skills {
+/* The minimum height keeps the card from shrinking when no skill is selected. */
+.chip-group {
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    min-height: 2rem;
     padding: 0.25rem;
 }
 

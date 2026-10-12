@@ -6,8 +6,8 @@
         </igx-input-group>
     </div>
     <div>
-        <span class="section-header" id="skills-header">Skills · {{ selectedSkills.length }} selected</span>
-        <div class="skills" role="group" aria-labelledby="skills-header">
+        <span class="section-header" id="skills-header">Skills · {{ selected.length }} selected</span>
+        <div #skillsGroup class="chip-group" role="group" aria-labelledby="skills-header">
             @for (skill of skills; track skill) {
                 <igx-chip
                     outlined
@@ -16,6 +16,14 @@
                     (selectedChange)="toggleSkill(skill, $event)">
                     {{ skill }}
                 </igx-chip>
+            }
+        </div>
+    </div>
+    <div>
+        <span class="section-header" id="selected-header">Selected</span>
+        <div #selectedGroup class="chip-group" role="group" aria-labelledby="selected-header">
+            @for (skill of selected; track skill) {
+                <igx-chip outlined removable (remove)="removeSkill(skill)">{{ skill }}</igx-chip>
             }
         </div>
     </div>
