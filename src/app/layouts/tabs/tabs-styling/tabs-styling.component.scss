@@ -1,0 +1,132 @@
+@use "sass:meta";
+@import url("https://use.typekit.net/bng2zgw.css");
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-tabs-styling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.profile-card {
+    --ig-font-family: aktiv-grotesk, sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 19.125rem;
+    height: 15.25rem;
+    padding: 0.5rem;
+    border: 1px solid #e5ebf3;
+    border-radius: 1rem;
+    background: #fff;
+}
+
+.profile-card igx-list {
+    --ig-size: var(--ig-size-large);
+    --ig-list-background: #fff;
+    --ig-list-item-background: #fff;
+
+    border: none;
+}
+
+.profile-name {
+    font: 600 16px / 24px aktiv-grotesk, sans-serif;
+    letter-spacing: 0.15px;
+    color: #212121;
+}
+
+.profile-role {
+    font: 600 12px / 16px aktiv-grotesk, sans-serif;
+    letter-spacing: 0.15px;
+    color: #556c86;
+}
+
+.profile-status {
+    --ig-size: var(--ig-size-small);
+    --ig-chip-background: #cde6d1;
+    --ig-chip-hover-background: #cde6d1;
+    --ig-chip-text-color: #000;
+    --ig-chip-hover-text-color: #000;
+    --ig-chip-border-radius: 1rem;
+}
+
+.profile-status .igx-chip__item {
+    font: 400 12px / 16px aktiv-grotesk, sans-serif;
+    letter-spacing: 0.4px;
+}
+
+.profile-tabs {
+    --ig-tabs-item-background: #fff;
+    --ig-tabs-item-hover-background: #fff;
+    --ig-tabs-item-active-background: #fff;
+    --ig-tabs-item-active-hover-background: #fff;
+    --ig-tabs-item-text-color: #556c86;
+    --ig-tabs-item-hover-color: #344b65;
+    --ig-tabs-item-active-color: #0176ff;
+    --ig-tabs-item-active-hover-color: #0176ff;
+    --ig-tabs-item-disabled-color: #a9b8cc;
+    --ig-tabs-indicator-color: #0176ff;
+    --ig-tabs-border-color: transparent;
+    --ig-tabs-border-color--hover: transparent;
+
+    flex: 1 1 0;
+    min-height: 0;
+}
+
+.profile-tabs [igxTabHeaderLabel] {
+    font: 500 14px / 20px aktiv-grotesk, sans-serif;
+    letter-spacing: 0.25px;
+    text-transform: none;
+}
+
+/* The theme draws no indicator under the selected tab, so the design's line is drawn here. */
+.profile-tabs .igx-tab-header--selected::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: auto;
+    background: none;
+    box-shadow: inset 0 -2px 0 #0176ff;
+    z-index: -1;
+}
+
+.profile-details {
+    --ig-list-border-color: #e5ebf3;
+    --ig-list-border-width: 1px;
+}
+
+.profile-details igx-list-item {
+    box-sizing: border-box;
+    height: 2.25rem;
+}
+
+/* The row's own padding sits on the item's content wrapper, which fills the row. */
+.profile-details .igx-list-item__content {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.profile-details .igx-list-item__thumbnail {
+    display: none;
+}
+
+/* The content wrapper paints the row's background, so the line above the
+   first row is drawn on it rather than on the item. */
+.profile-details igx-list-item:first-of-type .igx-list-item__content {
+    box-shadow: inset 0 1px 0 #e5ebf3;
+}
+
+.detail-label {
+    font: 400 13px / 20px aktiv-grotesk, sans-serif;
+    letter-spacing: 0.3px;
+    color: #344b65;
+}
+
+.detail-value {
+    font: 600 12px / 16px "Titillium Web", sans-serif;
+    letter-spacing: 0.15px;
+    color: #344b65;
+}
