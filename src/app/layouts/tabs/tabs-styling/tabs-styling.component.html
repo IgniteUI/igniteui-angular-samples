@@ -1,0 +1,29 @@
+<div class="profile-card">
+    <igx-list class="profile-header">
+        <igx-list-item>
+            <igx-avatar igxListThumbnail src="https://dl.infragistics.com/x/img/avatars/avatar-profile-09.png" shape="circle" aria-label="Emily Carter"></igx-avatar>
+            <span igxListLineTitle class="profile-name">Emily Carter</span>
+            <span igxListLineSubTitle class="profile-role">Finance lead - Sofia</span>
+            <igx-chip igxListAction class="profile-status">Active</igx-chip>
+        </igx-list-item>
+    </igx-list>
+    <igx-tabs class="profile-tabs" tabAlignment="justify">
+        @for (section of sections; track section.label) {
+            <igx-tab-item [selected]="$first" [disabled]="section.disabled">
+                <igx-tab-header>
+                    <span igxTabHeaderLabel>{{ section.label }}</span>
+                </igx-tab-header>
+                <igx-tab-content>
+                    <igx-list class="profile-details">
+                        @for (detail of section.details; track detail.label) {
+                            <igx-list-item>
+                                <span igxListLineTitle class="detail-label">{{ detail.label }}</span>
+                                <span igxListAction class="detail-value">{{ detail.value }}</span>
+                            </igx-list-item>
+                        }
+                    </igx-list>
+                </igx-tab-content>
+            </igx-tab-item>
+        }
+    </igx-tabs>
+</div>

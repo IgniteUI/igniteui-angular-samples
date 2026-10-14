@@ -1,0 +1,34 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.team-tabs {
+    width: 23.9375rem;
+    height: 17rem;
+    background: var(--ig-surface-500);
+}
+
+.team-tabs igx-tabs {
+    height: 100%;
+}
+
+.team-tabs igx-tab-content {
+    overflow: hidden;
+}
+
+.team-tabs igx-list {
+    --ig-size: var(--ig-size-large);
+}
+
+.team-name {
+    font-family: var(--ig-subtitle-2-font-family, var(--ig-font-family));
+    font-size: var(--ig-subtitle-2-font-size);
+    font-weight: var(--ig-subtitle-2-font-weight);
+    line-height: var(--ig-subtitle-2-line-height);
+    letter-spacing: var(--ig-subtitle-2-letter-spacing);
+    color: var(--ig-gray-900);
+}
