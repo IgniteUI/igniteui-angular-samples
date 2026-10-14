@@ -1,6 +1,7 @@
 
 import { Component, HostListener, OnInit, DOCUMENT, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { SampleIconsService } from './services/sample-icons.service';
 import { ThemeService } from './services/theme.service';
 
 @Component({
@@ -12,12 +13,14 @@ import { ThemeService } from './services/theme.service';
 export class AppComponent implements OnInit {
     private document = inject<Document>(DOCUMENT);
     private themeService = inject(ThemeService);
+    private sampleIcons = inject(SampleIconsService);
 
     public title = 'Samples';
 
     public ngOnInit() {
         this.document.body.classList.add('custom-body');
         this.themeService.init();
+        this.sampleIcons.init();
     }
 
     /**
