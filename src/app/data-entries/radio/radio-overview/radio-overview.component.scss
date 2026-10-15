@@ -13,9 +13,9 @@
     width: 22.5rem;
     padding: 1rem;
 
-    /* The card of the design: white in light themes, a raised surface in dark ones. */
+    /* The card of the design, in the surface color of the theme. */
     border-radius: 0.5rem;
-    background: var(--ig-surface-50);
+    background: var(--ig-surface-500);
 }
 
 .feedback-title {

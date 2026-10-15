@@ -1,7 +1,9 @@
 :host {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    /* Centers the row of cards vertically, while the cards stay top-aligned to each other. */
+    align-content: center;
+    align-items: flex-start;
     justify-content: center;
     gap: 1.5rem 3.75rem;
     height: 100%;
@@ -15,9 +17,9 @@
     box-sizing: border-box;
     padding: 1rem;
 
-    /* The card of the design: white in light themes, a raised surface in dark ones. */
+    /* The card of the design, in the surface color of the theme. */
     border-radius: 0.5rem;
-    background: var(--ig-surface-50);
+    background: var(--ig-surface-500);
 }
 
 .billing-cycle {

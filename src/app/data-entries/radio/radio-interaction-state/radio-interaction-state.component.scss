@@ -67,3 +67,46 @@
 .hover.igx-radio--invalid ::ng-deep .igx-radio__ripple {
     background: var(--error-color);
 }
+
+/* Fluent also draws a dot in an off radio on hover, which no color can show. The docs
+   set data-ig-theme on the page, so the hover columns draw the dot in the Fluent theme. */
+:host-context([data-ig-theme='fluent']) {
+    .hover.off,
+    .focused-hover.off {
+        ::ng-deep .igx-radio__composite::before {
+            background: light-dark(var(--ig-gray-700), var(--ig-gray-400));
+            transform: scale(0.5);
+        }
+    }
+
+    .hover.off.igx-radio--invalid,
+    .focused-hover.off.igx-radio--invalid {
+        ::ng-deep .igx-radio__composite::before {
+            background: var(--ig-error-500);
+        }
+    }
+}
+
+/* Bootstrap and Indigo darken the ring of an off radio on hover, and Bootstrap darkens
+   its focus color when the radio is also focused. */
+:host-context([data-ig-theme='bootstrap']) {
+    .hover.off:not(.igx-radio--invalid),
+    .focused-hover.off:not(.igx-radio--invalid) {
+        ::ng-deep .igx-radio__composite::after {
+            border-color: var(--ig-gray-500);
+        }
+    }
+
+    .focused-hover.off:not(.igx-radio--invalid) ::ng-deep .igx-radio__composite::after {
+        border-color: hsl(from var(--ig-primary-200) h calc(s * 1.12) calc(l * 0.82));
+    }
+}
+
+:host-context([data-ig-theme='indigo']) {
+    .hover.off:not(.igx-radio--invalid),
+    .focused-hover.off:not(.igx-radio--invalid) {
+        ::ng-deep .igx-radio__composite::after {
+            border-color: light-dark(var(--ig-gray-600), hsl(from var(--ig-primary-500-contrast) h s l / 0.8));
+        }
+    }
+}
