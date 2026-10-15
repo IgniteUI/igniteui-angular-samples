@@ -1,0 +1,118 @@
+/* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
+@import url("https://use.typekit.net/bng2zgw.css");
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.shipping-card {
+    /* The design's own palette. It is set here instead of coming from the theme,
+       so the sample keeps its look in every theme. */
+    --shipping-surface: #fff;
+    --shipping-primary: #0176ff;
+    --shipping-title: #00142b;
+    --shipping-ink: #002b5c;
+    --shipping-gray-100: #f3f6fa;
+    --shipping-gray-300: #d2dbe8;
+    --shipping-gray-400: #a9b8cc;
+    --shipping-gray-600: #556c86;
+
+    /* The colors of the hover and focus effects the theme draws around the radio. */
+    --ig-radio-fill-color: var(--shipping-primary);
+    --ig-radio-empty-color: var(--shipping-gray-400);
+
+    box-sizing: border-box;
+    width: 21.75rem;
+    border: 1px solid var(--shipping-gray-300);
+    border-radius: 1rem;
+    background: var(--shipping-surface);
+    font-family: aktiv-grotesk, sans-serif;
+}
+
+.shipping-header {
+    box-sizing: border-box;
+    height: 3.75rem;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--shipping-gray-300);
+}
+
+.shipping-title {
+    color: var(--shipping-title);
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    letter-spacing: 0.15px;
+}
+
+.shipping-methods {
+    row-gap: 0;
+    padding: 1rem 1.5rem;
+}
+
+.shipping-method ::ng-deep .igx-radio__label {
+    color: var(--shipping-ink);
+    font-family: aktiv-grotesk, sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    line-height: 1rem;
+    letter-spacing: 0.15px;
+}
+
+.shipping-detail {
+    color: var(--shipping-gray-600);
+}
+
+.shipping-method.igx-radio--disabled ::ng-deep .igx-radio__label,
+.shipping-method.igx-radio--disabled .shipping-detail {
+    color: var(--shipping-gray-400);
+}
+
+/* The design draws the radio as a 2px ring with a 10px dot in a 40px slot. Each
+   theme draws the radio its own way, so the whole radio is drawn here. */
+.shipping-method {
+    --label-margin: 0.125rem;
+}
+
+.shipping-method ::ng-deep .igx-radio__composite {
+    width: 2.5rem;
+    min-width: 2.5rem;
+    height: 2.5rem;
+}
+
+.shipping-method ::ng-deep .igx-radio__composite::before,
+.shipping-method ::ng-deep .igx-radio__composite::after {
+    top: 0.625rem;
+    inset-inline-start: 0.625rem;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+}
+
+/* The ring */
+.shipping-method ::ng-deep .igx-radio__composite::after {
+    border: 0.125rem solid var(--shipping-gray-400);
+    background: var(--shipping-surface);
+}
+
+.shipping-method.igx-radio--checked ::ng-deep .igx-radio__composite::after {
+    border-color: var(--shipping-primary);
+}
+
+.shipping-method.igx-radio--disabled ::ng-deep .igx-radio__composite::after {
+    border-color: var(--shipping-gray-300);
+    background: var(--shipping-gray-100);
+}
+
+/* The dot */
+.shipping-method ::ng-deep .igx-radio__composite::before {
+    transform: scale(0);
+    border: none;
+    background: var(--shipping-primary);
+}
+
+.shipping-method.igx-radio--checked ::ng-deep .igx-radio__composite::before {
+    transform: scale(0.5);
+}
