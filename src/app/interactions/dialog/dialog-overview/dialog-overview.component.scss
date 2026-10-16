@@ -1,0 +1,26 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.9375rem 1rem 1rem;
+}
+
+.open-button {
+    width: 11.25rem;
+}
+
+igx-dialog {
+    --ig-overlay-background-color: transparent;
+    --ig-dialog-message-color: var(--ig-gray-700);
+}
+
+igx-dialog ::ng-deep .igx-dialog__window {
+    width: 17.5rem;
+    margin-top: 6.9375rem;
+}
+
+igx-dialog [igxButton] {
+    --ig-size: var(--ig-size-medium);
+
+    min-width: auto;
+}
