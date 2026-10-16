@@ -1,0 +1,45 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.dialog-types {
+    display: flex;
+    align-items: flex-start;
+    gap: 3.75rem;
+}
+
+.dialog-types igx-dialog {
+    --ig-dialog-message-color: var(--ig-gray-700);
+
+    display: block;
+    flex: 0 1 17.5rem;
+    min-width: 0;
+}
+
+.dialog-types igx-dialog ::ng-deep .igx-toggle--hidden {
+    display: block !important;
+}
+
+.dialog-types igx-dialog ::ng-deep .igx-dialog__window {
+    min-width: 0;
+}
+
+.dialog-types [igxButton] {
+    --ig-size: var(--ig-size-medium);
+
+    min-width: auto;
+}
+
+.sign-in-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.75rem;
+}
+
+.sign-in-form igx-input-group {
+    --ig-size: var(--ig-size-small);
+}

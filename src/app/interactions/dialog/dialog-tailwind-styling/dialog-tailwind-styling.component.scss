@@ -1,0 +1,19 @@
+@use "sass:meta";
+@import url("https://use.typekit.net/bng2zgw.css");
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-dialog-tailwind-styling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+app-dialog-tailwind-styling igx-dialog {
+    display: block;
+}
+
+app-dialog-tailwind-styling .igx-dialog.igx-toggle--hidden {
+    display: block !important;
+}
