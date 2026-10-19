@@ -1,0 +1,10 @@
+<div class="variants">
+    <div class="target" [igxTooltipTarget]="arrowTooltip" [positionSettings]="positionSettings" [hasArrow]="true" hideTriggers=""></div>
+    <div class="target" [igxTooltipTarget]="arrowCloseTooltip" [positionSettings]="positionSettings" [hasArrow]="true" [sticky]="true"></div>
+    <div class="target" [igxTooltipTarget]="noArrowTooltip" [positionSettings]="positionSettings" hideTriggers=""></div>
+    <div class="target" [igxTooltipTarget]="noArrowCloseTooltip" [positionSettings]="positionSettings" [sticky]="true"></div>
+</div>
+<div #arrowTooltip="tooltip" igxTooltip>Tooltip message</div>
+<div #arrowCloseTooltip="tooltip" igxTooltip>Tooltip message</div>
+<div #noArrowTooltip="tooltip" igxTooltip>Tooltip message</div>
+<div #noArrowCloseTooltip="tooltip" igxTooltip>Tooltip message</div>

@@ -62,13 +62,13 @@ import { ToggleSample2Component } from './toggle/toggle-sample-2/toggle-sample-2
 import { ToggleSample3Component } from './toggle/toggle-sample-3/toggle-sample-3.component';
 import { ToggleSample4Component } from './toggle/toggle-sample-4/toggle-sample-4.component';
 import { ToggleComponent } from './toggle/toggle.component';
-import { TooltipRichComponent } from './tooltip/tooltip-rich/tooltip-rich.component';
-import { TooltipSimpleComponent } from './tooltip/tooltip-simple/tooltip-simple.component';
-import { TooltipStyleComponent } from './tooltip/tooltip-style/tooltip-style.component';
-import { TooltipTailwindStyleComponent } from './tooltip/tooltip-tailwind-style/tooltip-tailwind-style.component';
-import { TooltipPlacementComponent } from './tooltip/tooltip-placement/tooltip-placement.component';
-import { TooltipAdvancedComponent } from './tooltip/tooltip-advanced/tooltip-advanced.component';
-import { TooltipTriggersComponent } from './tooltip/tooltip-triggers/tooltip-triggers.component';
+import { TooltipOverviewComponent } from './tooltip/tooltip-overview/tooltip-overview.component';
+import { TooltipVariantsComponent } from './tooltip/tooltip-variants/tooltip-variants.component';
+import { TooltipPositionComponent } from './tooltip/tooltip-position/tooltip-position.component';
+import { TooltipArrowPositionComponent } from './tooltip/tooltip-arrow-position/tooltip-arrow-position.component';
+import { TooltipCustomComponent } from './tooltip/tooltip-custom/tooltip-custom.component';
+import { TooltipStylingComponent } from './tooltip/tooltip-styling/tooltip-styling.component';
+import { TooltipTailwindStylingComponent } from './tooltip/tooltip-tailwind-styling/tooltip-tailwind-styling.component';
 
 export const InteractionsRoutes: Routes = [
     {
@@ -227,39 +227,39 @@ export const InteractionsRoutes: Routes = [
         path: 'toggle-sample-4'
     },
     {
-        component: TooltipSimpleComponent,
-        data: interactionsRoutesData['tooltip-simple'],
-        path: 'tooltip-simple'
+        component: TooltipOverviewComponent,
+        data: interactionsRoutesData['tooltip-overview'],
+        path: 'tooltip-overview'
     },
     {
-        component: TooltipRichComponent,
-        data: interactionsRoutesData['tooltip-rich'],
-        path: 'tooltip-rich'
+        component: TooltipVariantsComponent,
+        data: interactionsRoutesData['tooltip-variants'],
+        path: 'tooltip-variants'
     },
     {
-        component: TooltipPlacementComponent,
-        data: interactionsRoutesData['tooltip-placement'],
-        path: 'tooltip-placement'
+        component: TooltipPositionComponent,
+        data: interactionsRoutesData['tooltip-position'],
+        path: 'tooltip-position'
     },
     {
-        component: TooltipAdvancedComponent,
-        data: interactionsRoutesData['tooltip-advanced'],
-        path: 'tooltip-advanced'
+        component: TooltipArrowPositionComponent,
+        data: interactionsRoutesData['tooltip-arrow-position'],
+        path: 'tooltip-arrow-position'
     },
     {
-        component: TooltipTriggersComponent,
-        data: interactionsRoutesData['tooltip-triggers'],
-        path: 'tooltip-triggers'
+        component: TooltipCustomComponent,
+        data: interactionsRoutesData['tooltip-custom'],
+        path: 'tooltip-custom'
     },
     {
-        component: TooltipStyleComponent,
-        data: interactionsRoutesData['tooltip-style'],
-        path: 'tooltip-style'
+        component: TooltipStylingComponent,
+        data: interactionsRoutesData['tooltip-styling'],
+        path: 'tooltip-styling'
     },
     {
-        component: TooltipTailwindStyleComponent,
-        data: interactionsRoutesData['tooltip-tailwind-style'],
-        path: 'tooltip-tailwind-style'
+        component: TooltipTailwindStylingComponent,
+        data: interactionsRoutesData['tooltip-tailwind-styling'],
+        path: 'tooltip-tailwind-styling'
     },
     {
         component: OverlaySampleMain1Component,

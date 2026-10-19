@@ -1,0 +1,20 @@
+<igx-list class="trigger" [igxTooltipTarget]="statusTooltip" [positionSettings]="positionSettings" [hasArrow]="true">
+    <igx-list-item>
+        <div igxListThumbnail class="avatar">
+            <igx-avatar src="https://dl.infragistics.com/x/img/avatars/avatar-profile-03.png" shape="circle" aria-label="Aron Watson"></igx-avatar>
+            <igx-badge type="error">
+                <igx-icon family="material" name="block"></igx-icon>
+            </igx-badge>
+        </div>
+        <span igxListLineTitle>Aron Watson</span>
+    </igx-list-item>
+</igx-list>
+<div #statusTooltip="tooltip" igxTooltip class="status-tooltip">
+    <igx-icon family="material" name="block"></igx-icon>
+    <span>
+        My notifications are silenced to focus. Urgent matters only, please,
+        otherwise I'll reply when I'm free.
+    </span>
+</div>
+<igx-date-picker class="registration" type="border" placeholder="First Registration" [igxTooltipTarget]="hintTooltip" [positionSettings]="positionSettings"></igx-date-picker>
+<div #hintTooltip="tooltip" igxTooltip class="hint-tooltip">The date when your car was first registered</div>

@@ -26,6 +26,24 @@ export const serverRoutes: ServerRoute[] = [
         renderMode: RenderMode.Client // TODO: Fails with Prerender
     },
     {
+        // Charts access `window` in their constructors, which fails under
+        // Prerender. Must precede the interactions/** globs.
+        path: 'interactions/tooltip-custom',
+        renderMode: RenderMode.Client
+    },
+    {
+        path: 'samples/interactions/tooltip-custom',
+        renderMode: RenderMode.Client
+    },
+    {
+        path: 'interactions/tooltip-tailwind-styling',
+        renderMode: RenderMode.Client
+    },
+    {
+        path: 'samples/interactions/tooltip-tailwind-styling',
+        renderMode: RenderMode.Client
+    },
+    {
         path: 'interactions/**',
         renderMode: RenderMode.Prerender
     },
