@@ -1,21 +1,30 @@
+@use "igniteui-theming/sass/typography" as *;
+
 :host {
     display: flex;
     place-content: center;
     place-items: center;
-    padding: 16px;
+    padding: rem(16px);
 }
 
 .states {
     display: grid;
     grid-template-columns: repeat(4, auto);
     align-items: center;
-    gap: 32px 24px;
+    gap: rem(32px) rem(24px);
 
     .states__column,
     .states__row {
-        font: 500 14px / 24px "Aktiv Grotesk", sans-serif;
-        letter-spacing: 0.1px;
+        @include type-style("body-2") {
+            margin: 0;
+        }
+
         color: var(--ig-gray-600);
+        font-family: "Aktiv Grotesk", sans-serif;
+        font-size: rem(14px);
+        font-weight: 500;
+        line-height: rem(24px);
+        letter-spacing: rem(0.1px);
     }
 
     .states__column {

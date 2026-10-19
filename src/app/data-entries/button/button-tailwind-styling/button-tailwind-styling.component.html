@@ -1,12 +1,20 @@
-<div class="button-grid flex flex-col items-center justify-center h-full gap-6 p-4">
-  <div class="button-row grid grid-cols-4 items-center justify-items-center gap-12">
-    <button igxButton="contained" class="confirm-button">Confirm</button>
-    <button igxButton="outlined" class="send-button">
+<div class="flex flex-col items-center justify-center h-full gap-6 p-4">
+  <div class="grid grid-cols-4 items-center justify-items-center gap-12">
+    <button igxButton="contained"
+      class="!h-10 !min-h-10 !w-[90%] ![--background:var(--color-indigo-700)] ![--foreground:var(--color-white)] ![--hover-background:var(--color-indigo-800)] ![--hover-foreground:var(--color-white)]">
+      Confirm
+    </button>
+    <button igxButton="outlined"
+      class="!h-10 !min-h-10 !w-[90%] ![--background:transparent] ![--border-color:var(--color-pink-600)] ![--foreground:var(--color-pink-600)] ![--icon-color:var(--color-pink-600)] ![--hover-background:var(--color-pink-600)] ![--hover-border-color:var(--color-pink-700)] ![--hover-foreground:var(--color-white)] ![--icon-color-hover:var(--color-white)]">
       <igx-icon family="material">send</igx-icon>
       Send
     </button>
-    <button igxButton="flat" class="cancel-button">Cancel</button>
-    <button igxButton="fab" class="add-button">
+    <button igxButton="flat"
+      class="!h-10 !min-h-10 !w-[90%] ![--foreground:var(--color-amber-700)] ![--hover-background:var(--color-amber-100)] ![--hover-foreground:var(--color-amber-900)]">
+      Cancel
+    </button>
+    <button igxButton="fab"
+      class="![--border-radius:9999px] ![--background:var(--color-teal-500)] ![--foreground:var(--color-black)] ![--icon-color:var(--color-white)] ![--hover-background:var(--color-teal-700)] ![--hover-foreground:var(--color-white)] ![--icon-color-hover:var(--color-white)]">
       Add
       <igx-icon family="material">add</igx-icon>
     </button>

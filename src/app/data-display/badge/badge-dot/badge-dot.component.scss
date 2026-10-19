@@ -2,8 +2,6 @@
 @use "igniteui-theming/sass/typography" as *;
 
 :host {
-    --sample-accent: var(--ig-primary-800);
-
     display: grid;
     grid-auto-flow: column;
     place-content: center;
@@ -103,7 +101,7 @@ $anchors: icon, avatar;
     color: var(--ig-gray-700);
 
     &.active {
-        color: var(--sample-accent);
+        color: var(--ig-primary-500);
     }
 }
 
