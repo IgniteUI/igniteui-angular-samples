@@ -1,7 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, ViewEncapsulation } from '@angular/core';
 import { configureTheme, defineComponents, IgcRatingComponent } from 'igniteui-webcomponents';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { IgxIconComponent } from 'igniteui-angular/icon';
 
 defineComponents(IgcRatingComponent);
 
@@ -10,7 +9,7 @@ defineComponents(IgcRatingComponent);
     encapsulation: ViewEncapsulation.None,
     styleUrls: ['./rating-tailwind-styling.component.scss'],
     templateUrl: './rating-tailwind-styling.component.html',
-    imports: [IgxButtonDirective, IgxIconComponent],
+    imports: [IgxButtonDirective],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RatingTailwindStylingComponent {
