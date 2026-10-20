@@ -37,28 +37,30 @@
 }
 
 // Outlined chips
+// The design's blue-gray and orange are not in the theme palette, so these two
+// chips take the design's own colors and darken them for hover and focus.
 .product-chip {
     --ig-chip-outlined-background: var(--ig-surface-500);
-    --ig-chip-outlined-text-color: var(--ig-gray-700);
-    --ig-chip-border-color: var(--ig-gray-700);
-    --ig-chip-hover-outlined-text-color: var(--ig-gray-800);
-    --ig-chip-hover-border-color: var(--ig-gray-800);
-    --ig-chip-focus-outlined-text-color: var(--ig-gray-900);
-    --ig-chip-focus-border-color: var(--ig-gray-900);
+    --ig-chip-outlined-text-color: #556c86;
+    --ig-chip-border-color: #556c86;
+    --ig-chip-hover-outlined-text-color: color-mix(in srgb, #556c86, black 20%);
+    --ig-chip-hover-border-color: color-mix(in srgb, #556c86, black 20%);
+    --ig-chip-focus-outlined-text-color: color-mix(in srgb, #556c86, black 40%);
+    --ig-chip-focus-border-color: color-mix(in srgb, #556c86, black 40%);
 }
 
 .contact-chip {
-    --ig-chip-outlined-background: var(--ig-secondary-100);
-    --ig-chip-outlined-text-color: var(--ig-secondary-100-contrast);
-    --ig-chip-border-color: var(--ig-secondary-500);
-    --ig-chip-hover-outlined-background: var(--ig-secondary-200);
-    --ig-chip-hover-outlined-text-color: var(--ig-secondary-200-contrast);
-    --ig-chip-hover-border-color: var(--ig-secondary-500);
-    --ig-chip-focus-outlined-background: var(--ig-secondary-300);
-    --ig-chip-focus-outlined-text-color: var(--ig-secondary-300-contrast);
-    --ig-chip-focus-border-color: var(--ig-secondary-500);
+    --ig-chip-outlined-background: #ffe1d6;
+    --ig-chip-outlined-text-color: black;
+    --ig-chip-border-color: #f95924;
+    --ig-chip-hover-outlined-background: color-mix(in srgb, #ffe1d6, #f95924 25%);
+    --ig-chip-hover-outlined-text-color: black;
+    --ig-chip-hover-border-color: #f95924;
+    --ig-chip-focus-outlined-background: color-mix(in srgb, #ffe1d6, #f95924 50%);
+    --ig-chip-focus-outlined-text-color: black;
+    --ig-chip-focus-border-color: #f95924;
 }
 
 :host ::ng-deep .contact-chip .igx-chip__start {
-    color: var(--ig-secondary-800);
+    color: #933313;
 }

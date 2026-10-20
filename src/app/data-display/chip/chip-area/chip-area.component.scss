@@ -10,6 +10,8 @@ igx-chips-area {
 
     display: flex;
     flex-wrap: wrap;
+    // The chips area takes the full width and packs its chips to the start.
+    justify-content: center;
     gap: 0.5rem;
     padding: 0.25rem;
 }
