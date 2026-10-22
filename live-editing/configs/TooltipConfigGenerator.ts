@@ -57,7 +57,8 @@ export class TooltipConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'TooltipTailwindStylingComponent',
             appConfig: BaseAppConfig,
-            additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
+            additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core', 'tailwindcss', '@tailwindcss/postcss'],
+            additionalFiles: ['.postcssrc.json'],
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
