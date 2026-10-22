@@ -57,6 +57,8 @@ export class TabsConfigGenerator implements IConfigGenerator {
         // tabs tailwind styling
         configs.push(new Config({
             component: 'TabsTailwindStylingComponent',
+            additionalDependencies: ["tailwindcss", "@tailwindcss/postcss"],
+            additionalFiles: [".postcssrc.json"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
