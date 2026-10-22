@@ -56,7 +56,8 @@ export class RatingConfigGenerator implements IConfigGenerator {
         // rating tailwind styling
         configs.push(new Config({
             component: 'RatingTailwindStylingComponent',
-            additionalDependencies: ['igniteui-webcomponents'],
+            additionalDependencies: ['igniteui-webcomponents', 'tailwindcss', '@tailwindcss/postcss'],
+            additionalFiles: ['.postcssrc.json'],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/rating/"
         }));
