@@ -34,6 +34,8 @@ export class DialogConfigGenerator implements IConfigGenerator {
         // dialog tailwind styling
         configs.push(new Config({
             component: 'DialogTailwindStylingComponent',
+            additionalDependencies: ["tailwindcss", "@tailwindcss/postcss"],
+            additionalFiles: [".postcssrc.json"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/dialog/"
         }));
