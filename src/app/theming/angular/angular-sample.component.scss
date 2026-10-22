@@ -36,6 +36,7 @@ $igx-light-palette: palette(
     $success: #4eb862,
     $warn: #fbb13c,
     $error: #ff134a,
+    $generator: 'legacy',
 );
 
 $custom-dark-palette: palette(
@@ -46,6 +47,7 @@ $custom-dark-palette: palette(
     $success: #4eb862,
     $warn: #fbb13c,
     $error: #ff134a,
+    $generator: 'legacy',
 );
 
 $light-palette-primary: mat.m2-define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
