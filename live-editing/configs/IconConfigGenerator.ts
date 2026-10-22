@@ -39,6 +39,8 @@ export class IconConfigGenerator implements IConfigGenerator {
         // icon tailwind styling
         configs.push(new Config({
             component: 'IconTailwindStylingComponent',
+            additionalDependencies: ["tailwindcss", "@tailwindcss/postcss"],
+            additionalFiles: [".postcssrc.json"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/icon/"
         }));
