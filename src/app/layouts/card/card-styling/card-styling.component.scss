@@ -1,0 +1,173 @@
+@use "igniteui-theming/sass/typography" as *;
+@import url("https://use.typekit.net/bng2zgw.css");
+
+// The design brings its own palette and typeface, so the colors below are
+// literal instead of theme tokens - the sample keeps its look in every theme.
+// aktiv-grotesk is the typekit family name loaded above.
+app-card-styling {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100vh;
+    gap: rem(60px);
+    padding: rem(40px) rem(24px);
+
+    .balance-card {
+        --ig-card-border-radius: #{rem(16px)};
+        --ig-card-outline-color: #99c9ff;
+
+        position: relative;
+        width: rem(312px);
+        padding: rem(8px);
+        background: #e6f2ff;
+
+        igx-card-header {
+            padding: rem(16px) rem(16px) 0;
+        }
+
+        [igxCardHeaderTitle] {
+            color: #004699;
+            font-family: "aktiv-grotesk", "Aktiv Grotesk", Arial, sans-serif;
+            font-size: rem(14px);
+            font-weight: 500;
+            line-height: rem(24px);
+            letter-spacing: rem(0.1px);
+        }
+
+        igx-card-content {
+            padding: 0 rem(16px);
+            overflow: visible;
+        }
+
+        igx-card-actions {
+            padding: rem(16px);
+        }
+    }
+
+    .trend-chip {
+        position: absolute;
+        inset-block-start: rem(24px);
+        inset-inline-end: rem(24px);
+        z-index: 1;
+
+        .igx-chip__item {
+            box-sizing: border-box;
+            height: rem(24px);
+            padding: rem(2px) rem(6px);
+            border: none;
+            border-radius: rem(16px);
+            background: #cce4ff;
+            color: #004699;
+            font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
+            font-size: rem(14px);
+            font-weight: 400;
+            line-height: rem(20px);
+            letter-spacing: rem(0.25px);
+        }
+
+        .igx-chip__start {
+            color: #004699;
+        }
+
+        igx-icon {
+            --ig-icon-size: #{rem(20px)};
+        }
+    }
+
+    .balance-amount {
+        display: block;
+        color: #0176ff;
+        font-family: "aktiv-grotesk", "Aktiv Grotesk", Arial, sans-serif;
+        font-size: rem(32px);
+        font-weight: 600;
+        line-height: rem(40px);
+        letter-spacing: 0;
+    }
+
+    .balance-actions {
+        display: inline-flex;
+        gap: rem(8px);
+
+        [igxIconButton] {
+            --ig-flat-icon-button-foreground: #004699;
+
+            width: rem(36px);
+            height: rem(36px);
+            border-radius: 50%;
+            background: #ffffff;
+        }
+    }
+
+    .support-card {
+        --ig-card-border-radius: #{rem(16px)};
+        --ig-card-outline-color: #e5ebf3;
+
+        position: relative;
+        width: rem(246px);
+        padding: rem(8px);
+        background: #ffffff;
+
+        igx-card-header {
+            padding: rem(16px) rem(16px) 0;
+        }
+
+        [igxCardHeaderTitle] {
+            margin-block-end: 0;
+            color: #004699;
+            font-family: "aktiv-grotesk", "Aktiv Grotesk", Arial, sans-serif;
+            font-size: rem(16px);
+            font-weight: 700;
+            line-height: rem(20px);
+            letter-spacing: 0;
+        }
+
+        igx-card-actions {
+            padding: rem(16px) rem(16px) rem(8px);
+        }
+    }
+
+    .support-media {
+        box-sizing: border-box;
+        padding: rem(16px);
+        border-radius: rem(16px);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    .support-tag {
+        position: absolute;
+        inset-block-start: rem(12px);
+        inset-inline-start: rem(16px);
+        z-index: 1;
+
+        .igx-chip__item {
+            box-sizing: border-box;
+            height: rem(24px);
+            padding: rem(2px) rem(10px);
+            border: none;
+            border-radius: rem(16px);
+            background: #e6f2ff;
+            color: #004699;
+            font-family: "Titillium Web", Verdana, Tahoma, sans-serif;
+            font-size: rem(14px);
+            font-weight: 400;
+            line-height: rem(20px);
+            letter-spacing: rem(0.25px);
+        }
+    }
+
+    .support-link {
+        color: #7d91ab;
+        font-family: "aktiv-grotesk", "Aktiv Grotesk", Arial, sans-serif;
+        font-size: rem(12px);
+        font-weight: 600;
+        line-height: rem(16px);
+        letter-spacing: rem(0.15px);
+    }
+}

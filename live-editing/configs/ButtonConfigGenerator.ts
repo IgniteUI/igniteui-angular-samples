@@ -79,7 +79,6 @@ export class ButtonConfigGenerator implements IConfigGenerator {
         // button styling
         configs.push(new Config({
             component: 'ButtonStylingComponent',
-            additionalFiles: ["/src/app/data-entries/button/button-styling/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/button/"
         }));
@@ -87,7 +86,6 @@ export class ButtonConfigGenerator implements IConfigGenerator {
         // button tailwind styling
         configs.push(new Config({
             component: 'ButtonTailwindStylingComponent',
-            additionalFiles: ["/src/app/data-entries/button/button-tailwind-styling/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/button/"
         }));
