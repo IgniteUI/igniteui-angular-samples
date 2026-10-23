@@ -1,0 +1,21 @@
+:host {
+    /* styles.scss asks the page for the large size; the rating keeps its own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.rating-card {
+    width: 15rem;
+    box-shadow: var(--ig-elevation-2);
+}
+
+.rating-card igx-card-content {
+    display: flex;
+    padding-bottom: 0.5rem;
+}
