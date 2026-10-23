@@ -9,18 +9,18 @@ import { AvatarTailwindStylingSampleComponent } from './avatar/avatar-tailwind-s
 import { BreadcrumbsOverviewComponent } from './breadcrumbs/breadcrumbs-overview/breadcrumbs-overview.component';
 import { BreadcrumbsCustomSeparatorComponent } from './breadcrumbs/breadcrumbs-custom-separator/breadcrumbs-custom-separator.component';
 import { BreadcrumbsPrefixSuffixComponent } from './breadcrumbs/breadcrumbs-prefix-suffix/breadcrumbs-prefix-suffix.component';
+import { BreadcrumbsDropdownComponent } from './breadcrumbs/breadcrubms-dropdown/breadcrumbs-dropdown.component';
 import { BreadcrumbsStylingComponent } from './breadcrumbs/breadcrumbs-styling/breadcrumbs-styling.component';
 import { BreadcrumbsTailwindStylingComponent } from './breadcrumbs/breadcrumbs-tailwind-styling/breadcrumbs-tailwind-styling.component';
 import { BreadcrumbsWrappingComponent } from './breadcrumbs/breadcrumbs-wrapping/breadcrumbs-wrapping.component';
 import { BreadcrumbsSizesComponent } from './breadcrumbs/breadcrumbs-sizes/breadcrumbs-sizes.component';
 import { BreadcrumbsStatesComponent } from './breadcrumbs/breadcrumbs-states/breadcrumbs-states.component';
-import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
-import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
-import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
-import { CardSample4Component } from './card/card-sample-4/card-sample-4.component';
-import { CardStylingSampleComponent } from './card/card-styling-sample/card-styling-sample.component';
-import { CardTailwindStylingSampleComponent } from './card/card-tailwind-styling-sample/card-tailwind-styling-sample.component';
-import { CardComponent } from './card/card.component';
+import { CardActionsComponent } from './card/card-actions/card-actions.component';
+import { CardMediaComponent } from './card/card-media/card-media.component';
+import { CardOverviewComponent } from './card/card-overview/card-overview.component';
+import { CardPositionComponent } from './card/card-position/card-position.component';
+import { CardStylingComponent } from './card/card-styling/card-styling.component';
+import { CardTailwindStylingComponent } from './card/card-tailwind-styling/card-tailwind-styling.component';
 import {
     CarouselAnimationsSampleComponent
 } from './carousel/carousel-animations-sample/carousel-animations-sample.component';
@@ -220,6 +220,11 @@ export const LayoutsRoutes: Routes = [
         component: BreadcrumbsPrefixSuffixComponent,
         data: layoutsRoutesData['breadcrumbs-prefix-suffix'],
         path: 'breadcrumbs-prefix-suffix'
+    },
+    {
+        component: BreadcrumbsDropdownComponent,
+        data: layoutsRoutesData['breadcrumbs-dropdown'],
+        path: 'breadcrumbs-dropdown'
     },
     {
         component: BreadcrumbsStylingComponent,
@@ -542,39 +547,34 @@ export const LayoutsRoutes: Routes = [
         path: 'tabs-header-prefix-suffix'
     },
     {
-        component: CardComponent,
-        data: layoutsRoutesData['card-sample-0'],
-        path: 'card-sample-0'
+        component: CardOverviewComponent,
+        data: layoutsRoutesData['card-overview'],
+        path: 'card-overview'
     },
     {
-        component: CardSample1Component,
-        data: layoutsRoutesData['card-sample-1'],
-        path: 'card-sample-1'
+        component: CardActionsComponent,
+        data: layoutsRoutesData['card-actions'],
+        path: 'card-actions'
     },
     {
-        component: CardSample2Component,
-        data: layoutsRoutesData['card-sample-2'],
-        path: 'card-sample-2'
+        component: CardMediaComponent,
+        data: layoutsRoutesData['card-media'],
+        path: 'card-media'
     },
     {
-        component: CardSample3Component,
-        data: layoutsRoutesData['card-sample-3'],
-        path: 'card-sample-3'
+        component: CardPositionComponent,
+        data: layoutsRoutesData['card-position'],
+        path: 'card-position'
     },
     {
-        component: CardSample4Component,
-        data: layoutsRoutesData['card-sample-4'],
-        path: 'card-sample-4'
+        component: CardStylingComponent,
+        data: layoutsRoutesData['card-styling'],
+        path: 'card-styling'
     },
     {
-        component: CardStylingSampleComponent,
-        data: layoutsRoutesData['card-styling-sample'],
-        path: 'card-styling-sample'
-    },
-    {
-        component: CardTailwindStylingSampleComponent,
-        data: layoutsRoutesData['card-tailwind-styling-sample'],
-        path: 'card-tailwind-styling-sample'
+        component: CardTailwindStylingComponent,
+        data: layoutsRoutesData['card-tailwind-styling'],
+        path: 'card-tailwind-styling'
     },
     {
         component: TileManagerComponent,

@@ -1,0 +1,74 @@
+<div class="card-item">
+    <span class="card-item__label">Horizontal actions (default)</span>
+
+    <igx-card class="post-card">
+        <igx-card-header>
+            <igx-avatar
+                igxCardThumbnail
+                shape="circle"
+                src="https://dl.infragistics.com/x/img/avatars/avatar-profile-06.png"
+                alt="A profile photo of Lena Fischer.">
+            </igx-avatar>
+            <span igxCardHeaderTitle>Lena Fischer</span>
+            <span igxCardHeaderSubtitle>&#64;lena &middot; 2h ago</span>
+        </igx-card-header>
+        <igx-card-content>
+            <p>
+                Just shipped our new design system &#128640; Six months of tokens,
+                components, and documentation &mdash; and it&rsquo;s finally live.
+                So proud of the team.
+            </p>
+        </igx-card-content>
+        <igx-card-actions [vertical]="false">
+            <button igxIconButton="flat" igxEnd aria-label="Like">
+                <igx-icon>favorite_border</igx-icon>
+            </button>
+            <button igxIconButton="flat" igxEnd aria-label="Save">
+                <igx-icon>bookmark</igx-icon>
+            </button>
+            <button igxIconButton="flat" igxEnd aria-label="Share on LinkedIn">
+                <igx-icon name="linkedin" family="material"></igx-icon>
+            </button>
+        </igx-card-actions>
+    </igx-card>
+</div>
+
+<div class="card-item">
+    <span class="card-item__label">Vertical actions</span>
+
+    <igx-card class="post-card post-card--vertical" [horizontal]="true">
+        <div class="post-card__body">
+            <igx-card-header>
+                <igx-avatar
+                    igxCardThumbnail
+                    shape="circle"
+                    src="https://dl.infragistics.com/x/img/avatars/avatar-profile-06.png"
+                    alt="A profile photo of Lena Fischer.">
+                </igx-avatar>
+                <span igxCardHeaderTitle>Lena Fischer</span>
+                <span igxCardHeaderSubtitle>&#64;lena &middot; 2h ago</span>
+            </igx-card-header>
+            <igx-card-content>
+                <p>
+                    Just shipped our new design system &#128640; Six months of tokens,
+                    components, and documentation &mdash; and it&rsquo;s finally live.
+                    So proud of the team.
+                </p>
+            </igx-card-content>
+        </div>
+
+        <igx-card-actions [vertical]="true">
+            <div class="post-card__actions">
+                <button igxIconButton="flat" aria-label="Like">
+                    <igx-icon>favorite_border</igx-icon>
+                </button>
+                <button igxIconButton="flat" aria-label="Save">
+                    <igx-icon>bookmark</igx-icon>
+                </button>
+                <button igxIconButton="flat" aria-label="Share on LinkedIn">
+                    <igx-icon name="linkedin" family="material"></igx-icon>
+                </button>
+            </div>
+        </igx-card-actions>
+    </igx-card>
+</div>

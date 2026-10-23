@@ -1,13 +1,41 @@
-@use "layout.scss";
+@use "igniteui-angular/theming" as *;
+@use "igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light";
 
-// CSS variables approach
+.button-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    block-size: 100%;
+    gap: rem(24px);
+    padding: rem(16px);
+}
+
+.button-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: rem(48px);
+}
+
+.button-row button.confirm-button,
+.button-row button.send-button,
+.button-row button.cancel-button {
+    block-size: rem(40px);
+    min-block-size: rem(40px);
+    inline-size: 90%;
+}
 
 .confirm-button {
     --background: #1275c4;
     --foreground: #fff;
     --hover-background: #1275c4;
     --hover-foreground: #fff;
-    &:hover { --hover-background: #0b4f8a; }
+
+    &:hover {
+        --hover-background: #0b4f8a;
+    }
 }
 
 .send-button {
@@ -18,13 +46,23 @@
     --hover-foreground: #8a2be2;
     --icon-color: #8a2be2;
     --icon-color-hover: #8a2be2;
-    &:hover { --hover-background: #8a2be2; --hover-border-color: #6a1bb1; --hover-foreground: #fff; --icon-color-hover: #fff; }
+
+    &:hover {
+        --hover-background: #8a2be2;
+        --hover-border-color: #6a1bb1;
+        --hover-foreground: #fff;
+        --icon-color-hover: #fff;
+    }
 }
 
 .cancel-button {
     --foreground: #1275c4;
     --hover-foreground: #1275c4;
-    &:hover { --hover-background: #dbeeff; --hover-foreground: #063b68; }
+
+    &:hover {
+        --hover-background: #dbeeff;
+        --hover-foreground: #063b68;
+    }
 }
 
 .add-button {
@@ -35,5 +73,10 @@
     --icon-color: #000;
     --icon-color-hover: #000;
     --border-radius: 999px;
-    &:hover { --hover-background: #257a2b; --hover-foreground: #fff; --icon-color-hover: #fff; }
+
+    &:hover {
+        --hover-background: #257a2b;
+        --hover-foreground: #fff;
+        --icon-color-hover: #fff;
+    }
 }
