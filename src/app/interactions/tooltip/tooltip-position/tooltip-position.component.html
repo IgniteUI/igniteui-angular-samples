@@ -1,0 +1,10 @@
+<div class="positions">
+    <div class="target" [igxTooltipTarget]="topTooltip" [positionSettings]="positions.top" [hasArrow]="true" [overlaySettings]="overlaySettings"></div>
+    <div class="target" [igxTooltipTarget]="leftTooltip" [positionSettings]="positions.left" [hasArrow]="true" [overlaySettings]="overlaySettings"></div>
+    <div class="target" [igxTooltipTarget]="rightTooltip" [positionSettings]="positions.right" [hasArrow]="true" [overlaySettings]="overlaySettings"></div>
+    <div class="target" [igxTooltipTarget]="bottomTooltip" [positionSettings]="positions.bottom" [hasArrow]="true" [overlaySettings]="overlaySettings"></div>
+</div>
+<div #topTooltip="tooltip" igxTooltip>Tooltip message Top</div>
+<div #leftTooltip="tooltip" igxTooltip>Tooltip message Left</div>
+<div #rightTooltip="tooltip" igxTooltip>Tooltip message Right</div>
+<div #bottomTooltip="tooltip" igxTooltip>Tooltip message Bottom</div>

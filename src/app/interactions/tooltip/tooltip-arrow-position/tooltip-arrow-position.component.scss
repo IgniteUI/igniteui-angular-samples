@@ -1,0 +1,89 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 1rem;
+}
+
+.placements {
+    display: grid;
+    grid-template-columns: repeat(3, 12.75rem);
+    column-gap: 3.75rem;
+    row-gap: 1.5rem;
+}
+
+.placement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.placement-label {
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}
+
+.placement-area {
+    position: relative;
+    width: 12.5rem;
+    height: 2.75rem;
+}
+
+.placement-area.left,
+.placement-area.right {
+    width: 12.75rem;
+    height: 2.5rem;
+}
+
+::ng-deep .igx-tooltip {
+    pointer-events: none;
+}
+
+.anchor {
+    position: absolute;
+    width: 2.5rem;
+    height: 1px;
+    pointer-events: none;
+}
+
+.top .anchor {
+    top: calc(100% + 0.125rem);
+}
+
+.bottom .anchor {
+    bottom: calc(100% + 0.125rem);
+}
+
+.top .anchor.start,
+.bottom .anchor.start {
+    left: 0;
+}
+
+.top .anchor.center,
+.bottom .anchor.center {
+    left: calc(50% - 1.25rem);
+}
+
+.top .anchor.end,
+.bottom .anchor.end {
+    right: 0;
+}
+
+.left .anchor,
+.right .anchor {
+    top: 0;
+    width: 1px;
+    height: 2.5rem;
+}
+
+.left .anchor {
+    left: calc(100% + 0.125rem);
+}
+
+.right .anchor {
+    right: calc(100% + 0.125rem);
+}

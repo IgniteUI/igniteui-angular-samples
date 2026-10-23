@@ -1,0 +1,77 @@
+<div class="flex flex-wrap items-start justify-center gap-25 pt-14">
+    <igx-list class="mt-10.5 w-65 !overflow-hidden !rounded-full !border !border-[#e0e0e0]" [igxTooltipTarget]="btcTooltip" [positionSettings]="positionSettings" [sticky]="true">
+        <igx-list-item class="[&_.igx-list-item\_\_content]:!px-4 [&_.igx-list-item\_\_content]:!py-2">
+            <span igxListLineTitle class="!flex !items-center !gap-1 !font-[aktiv-grotesk,sans-serif] !text-sm/[1.125rem] !font-semibold !text-[#00142b]">
+                <igx-icon family="material" name="bitcoin" class="!text-[#f95924]"></igx-icon>
+                BTC
+            </span>
+            <span igxListAction class="font-[aktiv-grotesk,sans-serif] text-sm/5 font-medium tracking-[0.25px] text-[#0176ff]">
+                Daily: + 2,6%
+            </span>
+        </igx-list-item>
+    </igx-list>
+    <div #btcTooltip="tooltip" igxTooltip class="[--ig-tooltip-background:white] [--ig-tooltip-text-color:#212121] [--ig-tooltip-border-radius:1rem] !w-65 border border-[#e0e0e0] !p-4 [&_igx-tooltip-close-button]:text-[#616161]">
+        <div class="flex flex-1 flex-col gap-2 p-2">
+            <span class="flex items-center gap-2.5 text-xl/6 font-semibold tracking-[0.15px]">
+                BTC
+                <igx-icon family="material" name="bitcoin" class="!text-[#f95924]"></igx-icon>
+            </span>
+            <span class="flex flex-col gap-0.5">
+                <span class="text-xs/4 font-semibold tracking-[0.15px] text-[#e04f1f]">Exchange Balance</span>
+                <span class="font-[aktiv-grotesk,sans-serif] text-sm/6 font-medium tracking-[0.1px]">USD 81,459.00</span>
+            </span>
+            <span class="flex flex-col gap-0.5">
+                <span class="text-xs/4 font-semibold tracking-[0.15px] text-[#0176ff]">Assets Balance</span>
+                <span class="font-[aktiv-grotesk,sans-serif] text-sm/6 font-medium tracking-[0.1px]">USD 46,287.90</span>
+            </span>
+        </div>
+    </div>
+    <div class="relative me-55 size-50.75" (pointerenter)="portfolioTarget.showTooltip()" (pointerleave)="portfolioTarget.hideTooltip()">
+        <igx-pie-chart
+            width="100%"
+            height="100%"
+            [dataSource]="portfolio"
+            valueMemberPath="share"
+            labelMemberPath="asset"
+            labelsPosition="None"
+            [radiusFactor]="1"
+            [startAngle]="-90"
+            brushes="#cce4ff #66adff #99c9ff"
+            outlines="#cce4ff #66adff #99c9ff">
+        </igx-pie-chart>
+        <span #portfolioTarget="tooltipTarget" class="absolute top-1/2 left-33.75" [igxTooltipTarget]="portfolioTooltip" [positionSettings]="portfolioPositionSettings"></span>
+    </div>
+    <div #portfolioTooltip="tooltip" igxTooltip class="pointer-events-none [--ig-tooltip-background:white] [--ig-tooltip-border-radius:0] border border-[#d2dbe8] !p-4" (opened)="chart.notifyResized()">
+        <div class="h-34 w-63.75">
+            <igx-category-chart #chart
+                width="100%"
+                height="100%"
+                chartType="SplineArea"
+                [dataSource]="balanceHistory"
+                [includedProperties]="['period', 'exchange', 'assets']"
+                brushes="#ff885c #66adff"
+                outlines="#ff885c #66adff"
+                [areaFillOpacity]="0.5"
+                [thickness]="1.5"
+                markerTypes="None"
+                toolTipType="None"
+                [isHorizontalZoomEnabled]="false"
+                [isVerticalZoomEnabled]="false"
+                [xAxisInterval]="2"
+                xAxisStroke="#7d91ab"
+                xAxisTickStroke="#7d91ab"
+                [xAxisTickLength]="8"
+                xAxisLabelTextColor="#7d91ab"
+                xAxisLabelTextStyle="400 10px 'Titillium Web'"
+                [yAxisMinimumValue]="0"
+                [yAxisMaximumValue]="60"
+                [yAxisInterval]="20"
+                [yAxisMinorInterval]="10"
+                yAxisMajorStroke="#d2dbe8"
+                yAxisMinorStroke="#d2dbe8"
+                yAxisLabelTextColor="#7d91ab"
+                yAxisLabelTextStyle="400 10px 'Titillium Web'">
+            </igx-category-chart>
+        </div>
+    </div>
+</div>
