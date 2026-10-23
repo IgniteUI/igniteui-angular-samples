@@ -8,8 +8,14 @@ import { BadgeOutlinedComponent } from './badge/badge-outlined/badge-outlined.co
 import { BadgeDotComponent } from './badge/badge-dot/badge-dot.component';
 import { BadgeStylingComponent } from './badge/badge-styling/badge-styling.component';
 import { BadgeTailwindStylingComponent } from './badge/badge-tailwind-styling/badge-tailwind-styling.component';
-import { ChipAreaSampleComponent } from './chip/chip-area-sample/chip-area-sample.component';
-import { ChipSimpleComponent } from './chip/chip-simple/chip-simple.component';
+import { ChipOverviewComponent } from './chip/chip-overview/chip-overview.component';
+import { ChipLayoutComponent } from './chip/chip-layout/chip-layout.component';
+import { ChipTypesComponent } from './chip/chip-types/chip-types.component';
+import { ChipSizeComponent } from './chip/chip-size/chip-size.component';
+import { ChipInteractionStateComponent } from './chip/chip-interaction-state/chip-interaction-state.component';
+import { ChipStateComponent } from './chip/chip-state/chip-state.component';
+import { ChipRemoveComponent } from './chip/chip-remove/chip-remove.component';
+import { ChipAreaComponent } from './chip/chip-area/chip-area.component';
 import { ChipOutlinedComponent } from './chip/chip-outlined/chip-outlined.component';
 import { ChipVariantsComponent } from './chip/chip-variants/chip-variants.component';
 import { ChipStylingSampleComponent } from './chip/chip-styling/chip-styling.component';
@@ -118,14 +124,44 @@ export const DataDisplayRoutes: Routes = [
         path: 'badge-tailwind-styling'
     },
     {
-        component: ChipAreaSampleComponent,
-        data: dataDisplayRoutesData['chip-area-sample'],
-        path: 'chip-area-sample'
+        component: ChipOverviewComponent,
+        data: dataDisplayRoutesData['chip-overview'],
+        path: 'chip-overview'
     },
     {
-        component: ChipSimpleComponent,
-        data: dataDisplayRoutesData['chip-simple'],
-        path: 'chip-simple'
+        component: ChipLayoutComponent,
+        data: dataDisplayRoutesData['chip-layout'],
+        path: 'chip-layout'
+    },
+    {
+        component: ChipTypesComponent,
+        data: dataDisplayRoutesData['chip-types'],
+        path: 'chip-types'
+    },
+    {
+        component: ChipSizeComponent,
+        data: dataDisplayRoutesData['chip-size'],
+        path: 'chip-size'
+    },
+    {
+        component: ChipInteractionStateComponent,
+        data: dataDisplayRoutesData['chip-interaction-state'],
+        path: 'chip-interaction-state'
+    },
+    {
+        component: ChipStateComponent,
+        data: dataDisplayRoutesData['chip-state'],
+        path: 'chip-state'
+    },
+    {
+        component: ChipRemoveComponent,
+        data: dataDisplayRoutesData['chip-remove'],
+        path: 'chip-remove'
+    },
+    {
+        component: ChipAreaComponent,
+        data: dataDisplayRoutesData['chip-area'],
+        path: 'chip-area'
     },
     {
         component: ChipOutlinedComponent,
