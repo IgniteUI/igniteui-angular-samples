@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { DOCUMENT, Injectable, PLATFORM_ID, inject, signal } from '@angular/core';
 import { THEME_TOKEN, type IgxTheme } from 'igniteui-angular/core';
+import { configureTheme, type Theme, type ThemeVariant } from 'igniteui-webcomponents';
 
 /**
  * Message type posted by the documentation site's theming widget into the
@@ -163,7 +164,10 @@ export class ThemeService {
         const link = this.themeLink();
 
         if (!link.getAttribute('href')?.endsWith(href)) {
-            link.addEventListener('load', () => this.loadTypeface(), { once: true });
+            link.addEventListener('load', () => {
+                this.syncWebComponentsTheme();
+                this.loadTypeface();
+            }, { once: true });
             link.href = href;
         }
 
@@ -195,6 +199,26 @@ export class ThemeService {
         }
 
         return link;
+    }
+
+    /**
+     * Web components such as igc-rating adopt a stylesheet per theme in their
+     * shadow DOM, and they read the theme off `--ig-theme` only once, when the
+     * first of them connects. Once a theme stylesheet is in place, hand them
+     * the theme it declares. It is read back from the page rather than taken
+     * from the selection, so samples that load a theme of their own keep it.
+     */
+    private syncWebComponentsTheme(): void {
+        const styles = this.document.defaultView?.getComputedStyle(this.document.documentElement);
+
+        if (!styles) {
+            return;
+        }
+
+        configureTheme(
+            styles.getPropertyValue('--ig-theme').trim() as Theme,
+            styles.getPropertyValue('--ig-theme-variant').trim() as ThemeVariant
+        );
     }
 
     /**
