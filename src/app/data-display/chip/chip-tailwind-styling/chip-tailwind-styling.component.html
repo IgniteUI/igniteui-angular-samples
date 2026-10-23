@@ -1,25 +1,38 @@
-<igx-chips-area (reorder)="chipsOrderChanged($event)">
-  @for (chip of chipList; track chip) {
-    <igx-chip
-      class="!light-chip ![--background:#99BAA6]
-      ![--remove-icon-color:#C92828]"
-      [id]="chip.id"
-      [selectable]="true"
-      [selectIcon]="mySelectIcon"
-      [removable]="true"
-      [removeIcon]="myRemoveIcon"
-      (remove)="chipRemoved($event)"
-      [draggable]="true">
-      <igx-icon igxPrefix>{{chip.icon}}</igx-icon>
-      {{chip.text}}
-    </igx-chip>
-  }
-</igx-chips-area>
-
-<ng-template #mySelectIcon>
-  <igx-icon>check_circle</igx-icon>
-</ng-template>
-
-<ng-template #myRemoveIcon>
-  <igx-icon>delete</igx-icon>
-</ng-template>
+<div
+    role="group"
+    aria-labelledby="activity-title"
+    class="box-border flex w-full max-w-[517px] flex-col gap-4 rounded-2xl bg-[var(--color-activity-surface)] p-4 font-[aktiv-grotesk,sans-serif] [--ig-font-family:aktiv-grotesk,sans-serif] [--ig-size:var(--ig-size-large)]">
+    <!-- Not a heading: the theme's heading styles sit in a later CSS layer and would override these utilities. -->
+    <span id="activity-title" class="flex h-8 items-center text-xl font-medium leading-6 text-[var(--color-activity-ink)]">Preferred Activity</span>
+    <div role="group" aria-label="Selected activities" class="box-border flex min-h-[72px] flex-wrap items-center gap-4 rounded-2xl bg-white px-6 py-5">
+        @for (activity of selected; track activity.label) {
+            <igx-chip
+                [attr.data-activity]="activity.label"
+                class="flex [--ig-chip-border-radius:0.5rem] [--ig-chip-background:var(--color-activity-primary)] [--ig-chip-text-color:white] [--ig-chip-hover-background:var(--color-activity-primary-strong)] [--ig-chip-hover-text-color:white] [--ig-chip-focus-background:var(--color-activity-primary-strong)] [--ig-chip-focus-text-color:white] [--ig-chip-remove-icon-color:white] [--ig-chip-remove-icon-color-focus:white]"
+                removable
+                [removeIcon]="removeIcon"
+                (remove)="removeActivity(activity)">
+                <igx-icon igxPrefix family="activity" [name]="activity.icon"></igx-icon>
+                <span class="text-sm font-medium leading-5 tracking-[0.25px]">{{ activity.label }}</span>
+            </igx-chip>
+            <ng-template #removeIcon>
+                <igx-icon class="[--ig-icon-size:1.125rem]" family="activity" name="close" [attr.aria-label]="'Remove ' + activity.label"></igx-icon>
+            </ng-template>
+        }
+        <!-- The theme colors icons from their token in a later CSS layer, so a text color utility would not apply. -->
+        <igx-icon class="ms-auto [--ig-icon-color:var(--color-activity-primary)] [--ig-icon-size:1.125rem]" family="activity" name="add" aria-hidden="true"></igx-icon>
+    </div>
+    <div role="group" aria-label="Add an activity" class="flex flex-wrap gap-4 rounded-2xl bg-white p-5">
+        @for (activity of available; track activity.label) {
+            <igx-chip
+                [attr.data-activity]="activity.label"
+                class="flex [--ig-chip-border-radius:0.5rem] [--ig-chip-border-color:var(--color-activity-primary)] [--ig-chip-outlined-background:var(--color-activity-tint)] [--ig-chip-outlined-text-color:var(--color-activity-primary)] [--ig-chip-hover-outlined-background:var(--color-activity-tint-strong)] [--ig-chip-hover-outlined-text-color:var(--color-activity-primary)] [--ig-chip-hover-border-color:var(--color-activity-primary)] [--ig-chip-focus-outlined-background:var(--color-activity-tint-strong)] [--ig-chip-focus-outlined-text-color:var(--color-activity-primary)] [--ig-chip-focus-border-color:var(--color-activity-primary)]"
+                outlined
+                (chipClick)="addActivity(activity)"
+                (keyDown)="onAvailableKeyDown($event, activity)">
+                <igx-icon igxPrefix family="activity" [name]="activity.icon"></igx-icon>
+                <span class="text-sm font-medium leading-5 tracking-[0.25px]">{{ activity.label }}</span>
+            </igx-chip>
+        }
+    </div>
+</div>
