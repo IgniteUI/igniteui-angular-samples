@@ -1,0 +1,12 @@
+<div class="shipping-card">
+    <div class="shipping-header">
+        <span id="shipping-title" class="shipping-title">Shipping method</span>
+    </div>
+    <igx-radio-group class="shipping-methods" name="shipping" alignment="vertical" value="standard" aria-labelledby="shipping-title">
+        @for (method of methods; track method.value) {
+            <igx-radio class="shipping-method" [value]="method.value" [disabled]="!!method.disabled">
+                {{ method.name }} <span class="shipping-detail">{{ method.detail }}</span>
+            </igx-radio>
+        }
+    </igx-radio-group>
+</div>
