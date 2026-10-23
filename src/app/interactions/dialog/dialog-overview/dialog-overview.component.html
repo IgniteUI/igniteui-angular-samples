@@ -1,0 +1,12 @@
+<button igxButton="outlined" type="button" class="open-button" (click)="dialog.open()">Open dialog</button>
+
+<igx-dialog #dialog
+    title="Confirmation"
+    message="Your email will be permanently deleted"
+    [positionSettings]="positionSettings"
+    [isOpen]="isBrowser">
+    <div igxDialogActions>
+        <button igxButton="flat" type="button" (click)="dialog.close()">Cancel</button>
+        <button igxButton="flat" type="button" (click)="dialog.close()">OK</button>
+    </div>
+</igx-dialog>

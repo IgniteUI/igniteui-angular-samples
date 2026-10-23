@@ -10,32 +10,34 @@ export class DialogConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // dialog sample 1
+        // dialog overview
         configs.push(new Config({
-            component: 'DialogSample1Component',
+            component: 'DialogOverviewComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/dialog/"
         }));
 
-        // dialog sample 2
+        // dialog types
         configs.push(new Config({
-            component: 'DialogSample2Component',
+            component: 'DialogTypesComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/dialog/"
         }));
 
-        // dialog sample 3
+        // dialog styling
         configs.push(new Config({
-            component: 'DialogSample3Component',
+            component: 'DialogStylingComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/dialog/"
         }));
 
+        // dialog tailwind styling
         configs.push(new Config({
-            component: 'DialogStylingSampleComponent',
-            additionalFiles: ["/src/app/interactions/dialog/dialog-styling-sample/layout.scss"],
+            component: 'DialogTailwindStylingComponent',
+            additionalDependencies: ["tailwindcss", "@tailwindcss/postcss"],
+            additionalFiles: [".postcssrc.json"],
             appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/interactions/"
+            shortenComponentPathBy: "/interactions/dialog/"
         }));
 
         return configs;
