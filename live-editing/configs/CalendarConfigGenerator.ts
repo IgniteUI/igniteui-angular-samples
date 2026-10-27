@@ -26,7 +26,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'CalendarRtlSampleComponent',
+            component: 'CalendarRtlComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/scheduling/calendar/"
         }));
