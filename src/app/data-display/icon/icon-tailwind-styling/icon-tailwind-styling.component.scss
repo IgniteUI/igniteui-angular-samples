@@ -1,0 +1,22 @@
+@use "sass:meta";
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-icon-tailwind-styling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+/* The icons sit inside the field, so the input drops the border that would set
+   them apart. The border is on the input's wrapper, which the template can't
+   reach with a class. */
+.search-field .igx-input-group__bundle-main,
+.email-field .igx-input-group__bundle-main {
+    border-inline-start-width: 0;
+}
+
+.email-field.igx-input-group--suffixed .igx-input-group__bundle-main {
+    border-inline-end-width: 0;
+}
