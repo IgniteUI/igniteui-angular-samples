@@ -1,9 +1,4 @@
-@use "igniteui-angular/theming" as *;
-
-:host ::ng-deep igx-switch .igx-switch__thumb {
-	min-width: 10px;
-    transform: translateY(-1px);
-}
+@use "igniteui-theming/sass/typography" as *;
 
 :host ::ng-deep igx-switch .igx-switch__ripple {
     display: none;
@@ -14,26 +9,26 @@
     place-content: center;
     place-items: center;
     min-block-size: 100%;
-    padding: 1rem;
+    padding: rem(16px);
 }
 
 .security {
     display: block;
     inline-size: 100%;
-    max-inline-size: 348px;
+    max-inline-size: rem(348px);
     background: var(--ig-surface-500);
     border: rem(1px) solid var(--ig-gray-300);
     border-radius: rem(16px);
-    box-shadow: 0 rem(1px) rem(3px) rgb(0 0 0 / 12%);
+    box-shadow: 0 rem(1px) rem(3px) hsl(from var(--ig-gray-900) h s l / 0.12);
     overflow: hidden;
 
     igx-expansion-panel-header {
-        display: block !important;
+        display: block;
     }
 
     ::ng-deep igx-expansion-panel-header > div {
-        padding: rem(12px) rem(16px) !important;
-        gap: rem(16px) !important;
+        padding: rem(12px) rem(16px);
+        gap: rem(16px);
     }
 
     igx-expansion-panel-title {
@@ -54,9 +49,27 @@
     }
 
     igx-switch {
-        inline-size: rem(43px);
-        block-size: rem(24px);
-        transform: translateX(rem(2px));
+        --switch-width: #{rem(32px)};
+        --switch-height: #{rem(16px)};
+        --switch-thumb-size: #{rem(10px)};
+        --switch-on-offset: #{rem(4px)};
+        --switch-off-offset: calc(var(--switch-thumb-size) / 4);
+        --transform-thumb: calc(var(--switch-width) - var(--switch-thumb-size) - var(--switch-on-offset));
+
+        --ig-switch-border-color: var(--ig-gray-400);
+        --ig-switch-border-hover-color: var(--ig-gray-500);
+        --ig-switch-border-on-color: var(--ig-primary-500);
+        --ig-switch-border-on-hover-color: var(--ig-primary-600);
+        --ig-switch-track-off-color: var(--ig-gray-900-contrast);
+        --ig-switch-track-on-color: var(--ig-primary-500);
+        --ig-switch-track-on-hover-color: var(--ig-primary-600);
+        --ig-switch-thumb-off-color: var(--ig-gray-400);
+        --ig-switch-thumb-off-hover-color: var(--ig-gray-500);
+        --ig-switch-thumb-on-color: var(--ig-primary-800-contrast);
+        --ig-switch-border-radius-track: #{rem(32px)};
+        --ig-switch-border-radius-thumb: #{rem(32px)};
+        --ig-switch-resting-elevation: none;
+        --ig-switch-hover-elevation: none;
     }
 
     igx-radio-group {
@@ -76,26 +89,47 @@
     min-inline-size: 0;
 
     .option__label {
-        font: 600 #{rem(16px)} / #{rem(24px)} "Aktiv Grotesk", sans-serif;
-        letter-spacing: #{rem(0.15px)};
+        @include type-style("body-1") {
+            margin: 0;
+        }
+
         color: var(--ig-gray-700);
+        font-family: "Aktiv Grotesk", sans-serif;
+        font-size: rem(16px);
+        font-weight: 600;
+        line-height: rem(24px);
+        letter-spacing: rem(0.15px);
     }
 
     .option__hint {
-        font: 500 #{rem(14px)} / #{rem(24px)} "Aktiv Grotesk", sans-serif;
-        letter-spacing: #{rem(0.1px)};
+        @include type-style("body-2") {
+            margin: 0;
+        }
+
         color: var(--ig-gray-600);
+        font-family: "Aktiv Grotesk", sans-serif;
+        font-size: rem(14px);
+        font-weight: 500;
+        line-height: rem(24px);
+        letter-spacing: rem(0.1px);
     }
 }
 
 igx-radio {
-    font: 600 #{rem(12px)} / #{rem(16px)} "Aktiv Grotesk", sans-serif;
-    letter-spacing: #{rem(0.15px)};
-    color: var(--ig-primary-900);
+    @include type-style("caption") {
+        margin: 0;
+    }
 
     --fill-color: var(--ig-primary-500);
     --fill-color-hover: var(--ig-primary-500);
     --fill-hover-border-color: var(--ig-primary-500);
+
+    color: var(--ig-primary-900);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(12px);
+    font-weight: 600;
+    line-height: rem(16px);
+    letter-spacing: rem(0.15px);
 }
 
 :host ::ng-deep igx-radio.igx-radio--checked .igx-radio__composite::after {
@@ -104,24 +138,24 @@ igx-radio {
 }
 
 :host ::ng-deep igx-radio.igx-radio--checked .igx-radio__composite::before {
-    transform: none !important;
+    transform: none;
 }
 
 :host ::ng-deep igx-radio .igx-radio__composite::before,
 :host ::ng-deep igx-radio .igx-radio__composite::after {
-    width: 16px;
-    height: 16px;
+    inline-size: rem(16px);
+    block-size: rem(16px);
 }
 
 :host ::ng-deep igx-radio .igx-radio__label {
-    transform: translateY(-2px);
+    transform: translateY(rem(-2px));
 }
 
 :host ::ng-deep igx-radio .igx-radio__composite,
 :host ::ng-deep igx-radio .igx-radio__composite::before,
 :host ::ng-deep igx-radio .igx-radio__composite::after {
-    animation: none !important;
-    transition: none !important;
+    animation: none;
+    transition: none;
 }
 
 :host ::ng-deep igx-radio .igx-radio__ripple {
