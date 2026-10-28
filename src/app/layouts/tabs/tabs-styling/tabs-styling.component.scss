@@ -93,6 +93,10 @@ app-tabs-styling {
     z-index: -1;
 }
 
+.profile-tabs .igx-tab-header:focus {
+    box-shadow: none;
+}
+
 .profile-details {
     --ig-list-border-color: #e5ebf3;
     --ig-list-border-width: 1px;
