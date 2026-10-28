@@ -67,7 +67,7 @@
     "@types/file-saver": "^2.0.2",
     "angular-in-memory-web-api": "^0.22.0",
     "bootstrap": "5.3.3",
-    "dompurify": "^3.2.7",
+    "dompurify": "^3.4.17",
     "express": "^4.18.2",
     "file-saver": "^2.0.2",
     "fuse.js": "^7.1.0",
