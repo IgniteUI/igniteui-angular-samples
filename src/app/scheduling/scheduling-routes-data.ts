@@ -8,7 +8,7 @@ export const schedulingRoutesData = {
     'calendar-sample-7': { displayName: 'Calendar Special Dates', parentName: 'Calendar' },
     'calendar-sample-8': { displayName: 'Calendar Range Mode', parentName: 'Calendar' },
     'calendar-sample-9': { displayName: 'Calendar Orientation', parentName: 'Calendar' },
-    'calendar-rtl-sample': { displayName: 'Calendar RTL Support', parentName: 'Calendar' },
+    'calendar-rtl': { displayName: 'Calendar RTL', parentName: 'Calendar' },
     'calendar-days-view': { displayName: 'Calendar Days View', parentName: 'Calendar' },
     'calendar-months-view': { displayName: 'Calendar Months View', parentName: 'Calendar' },
     'calendar-years-view': { displayName: 'Calendar Years View', parentName: 'Calendar' },
