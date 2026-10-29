@@ -1,0 +1,13 @@
+<igx-tabs
+    tabAlignment="justify"
+    class="h-auto w-[511px] rounded-full [--ig-font-family:aktiv-grotesk,sans-serif] [--ig-tabs-border-color--hover:transparent] [--ig-tabs-border-color:transparent] [--ig-tabs-border-radius:0] [--ig-tabs-indicator-color:transparent] [--ig-tabs-item-active-background:var(--color-nav-active)] [--ig-tabs-item-active-color:#fff] [--ig-tabs-item-active-hover-background:var(--color-nav-active)] [--ig-tabs-item-active-hover-color:#fff] [--ig-tabs-item-active-hover-icon-color:#fff] [--ig-tabs-item-active-icon-color:#fff] [--ig-tabs-item-background:var(--color-nav-surface)] [--ig-tabs-item-hover-background:var(--color-nav-hover)] [--ig-tabs-item-hover-color:var(--color-nav-ink)] [--ig-tabs-item-hover-icon-color:var(--color-nav-ink)] [--ig-tabs-item-icon-color:var(--color-nav-ink)] [--ig-tabs-item-text-color:var(--color-nav-ink)]">
+    @for (destination of destinations; track destination.label) {
+        <igx-tab-item [selected]="destination.selected">
+            <igx-tab-header class="!py-3">
+                <igx-icon igxTabHeaderIcon family="material" [name]="destination.icon" class="[--ig-icon-size:1.5rem]"></igx-icon>
+                <span igxTabHeaderLabel class="!text-xs !leading-4 !font-semibold !tracking-[0.15px] !normal-case">{{ destination.label }}</span>
+            </igx-tab-header>
+            <igx-tab-content></igx-tab-content>
+        </igx-tab-item>
+    }
+</igx-tabs>
