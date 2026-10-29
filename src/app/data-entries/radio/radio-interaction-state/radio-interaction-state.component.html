@@ -1,0 +1,27 @@
+<!-- The radios only show their states, so they take no pointer or keyboard input. -->
+<div class="radio-states-grid" inert>
+    <span></span>
+    <span class="column-caption">Hover</span>
+    <span class="column-caption">Focused</span>
+    <span class="column-caption">Focused &amp; Hover</span>
+    <div class="radio-states-group">
+        <span class="row-caption">Enabled / On</span>
+        <igx-radio class="hover" [checked]="true">Daily Updates</igx-radio>
+        <igx-radio class="focused" [checked]="true">Weekly Updates</igx-radio>
+        <igx-radio class="focused-hover" [checked]="true">Monthly Updates</igx-radio>
+        <span class="row-caption">Enabled / Off</span>
+        <igx-radio class="hover off">Daily Updates</igx-radio>
+        <igx-radio class="focused off">Weekly Updates</igx-radio>
+        <igx-radio class="focused-hover off">Monthly Updates</igx-radio>
+    </div>
+    <div class="radio-states-group">
+        <span class="row-caption">Invalid / On</span>
+        <igx-radio class="hover" [checked]="true" [invalid]="true">Daily Updates</igx-radio>
+        <igx-radio class="focused" [checked]="true" [invalid]="true">Weekly Updates</igx-radio>
+        <igx-radio class="focused-hover" [checked]="true" [invalid]="true">Monthly Updates</igx-radio>
+        <span class="row-caption">Invalid / Off</span>
+        <igx-radio class="hover off" [invalid]="true">Daily Updates</igx-radio>
+        <igx-radio class="focused off" [invalid]="true">Weekly Updates</igx-radio>
+        <igx-radio class="focused-hover off" [invalid]="true">Monthly Updates</igx-radio>
+    </div>
+</div>
