@@ -1,34 +1,39 @@
-@use "igniteui-angular/theming" as *;
+@use "igniteui-theming/sass/typography" as *;
 
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    padding: 1rem;
+    gap: rem(32px);
+    padding: rem(16px);
 }
 
 .button-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
     --hover-background: var(--ig-contained-button-hover-background);
     --hover-foreground: var(--ig-contained-button-hover-foreground);
     --focus-background: var(--ig-contained-button-focus-background);
     --focus-foreground: var(--ig-contained-button-focus-foreground);
     --focus-hover-background: var(--ig-contained-button-focus-hover-background);
     --focus-hover-foreground: var(--ig-contained-button-focus-hover-foreground);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(12px);
 }
 
 .button-label {
+    @include type-style("body-2") {
+        margin: 0;
+    }
+
     color: var(--ig-gray-600);
     font-family: "Aktiv Grotesk", sans-serif;
-    font-size: 13px;
+    font-size: rem(13px);
     font-weight: 400;
     font-style: normal;
-    line-height: 20px;
-    letter-spacing: 0.3px;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
 }
 
 .button-item button.state-hover {
