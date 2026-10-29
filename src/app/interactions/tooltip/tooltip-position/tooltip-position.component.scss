@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 1rem;
+}
+
+.positions {
+    display: flex;
+    flex-direction: column;
+    gap: 1.875rem;
+}
+
+.target {
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px dashed #e8178a;
+    border-radius: 0.125rem;
+    background: rgb(232 23 138 / 20%);
+    pointer-events: none;
+}
+
+.igx-tooltip {
+    pointer-events: none;
+}

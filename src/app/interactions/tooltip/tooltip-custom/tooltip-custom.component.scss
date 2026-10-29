@@ -1,0 +1,135 @@
+:host {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6.25rem;
+    padding: clamp(1rem, 100vh - 25rem, 6.25rem) 1rem 1rem;
+}
+
+.trigger {
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 0;
+}
+
+.trigger igx-list-item ::ng-deep .igx-list-item__content {
+    padding: 0.5rem 1rem;
+}
+
+.taxes-trigger {
+    width: 21.6875rem;
+}
+
+.employee-trigger {
+    width: 17.5rem;
+}
+
+.taxes-trigger [igxListLineTitle] {
+    font-family: var(--ig-body-2-font-family, var(--ig-font-family));
+    font-size: var(--ig-body-2-font-size);
+    font-weight: var(--ig-body-2-font-weight);
+    line-height: var(--ig-body-2-line-height);
+    letter-spacing: var(--ig-body-2-letter-spacing);
+}
+
+.amount {
+    font-size: 0.8125rem;
+    line-height: 1.125rem;
+    letter-spacing: 0.3px;
+    text-decoration: underline;
+    color: var(--ig-gray-600);
+}
+
+.avatar {
+    position: relative;
+    display: flex;
+}
+
+.avatar igx-badge {
+    position: absolute;
+    right: -0.3125rem;
+    bottom: -0.3125rem;
+}
+
+.avatar igx-icon {
+    --ig-icon-size: 0.75rem;
+
+    color: #fff;
+}
+
+.custom-tooltip {
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 0.5rem;
+    background: var(--ig-surface-500);
+    color: var(--ig-gray-900);
+    box-shadow: var(--ig-elevation-1);
+}
+
+.chart-tooltip {
+    flex-direction: column;
+    width: 21.8125rem;
+}
+
+.tooltip-title {
+    font-family: var(--ig-h6-font-family, var(--ig-font-family));
+    font-size: var(--ig-h6-font-size);
+    font-weight: var(--ig-h6-font-weight);
+    line-height: var(--ig-h6-line-height);
+    letter-spacing: var(--ig-h6-letter-spacing);
+}
+
+.chart {
+    box-sizing: border-box;
+    width: 100%;
+    height: 11.125rem;
+    padding: 1.5rem 0.5rem;
+    border: 1px solid var(--ig-gray-300);
+    border-radius: 0.375rem;
+    background: var(--ig-surface-500);
+}
+
+.tooltip-description {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.125rem;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-700);
+}
+
+.employee-tooltip {
+    width: 17.5rem;
+}
+
+.employee-tooltip .avatar {
+    flex-shrink: 0;
+}
+
+.employee-tooltip .avatar igx-avatar {
+    --ig-size: var(--ig-size-large);
+}
+
+.employee-tooltip .avatar igx-badge {
+    right: -0.1875rem;
+    bottom: -0.1875rem;
+}
+
+.employee-details {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.employee-details .tooltip-title {
+    margin-bottom: 0.125rem;
+}
+
+.employee-details span:not(.tooltip-title) {
+    font-family: var(--ig-body-2-font-family, var(--ig-font-family));
+    font-size: var(--ig-body-2-font-size);
+    font-weight: 400;
+    line-height: var(--ig-body-2-line-height);
+    letter-spacing: var(--ig-body-2-letter-spacing);
+    color: var(--ig-gray-700);
+}
