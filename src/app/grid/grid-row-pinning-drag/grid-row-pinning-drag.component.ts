@@ -20,7 +20,7 @@ export class GridPinningDragSampleComponent implements OnInit {
     public pinningConfig: IPinningConfig = { rows: RowPinningPosition.Top };
 
     constructor() {
-        this.data = DATA;
+        this.data = [...DATA];
     }
 
     public ngOnInit() {
@@ -56,6 +56,7 @@ export class GridPinningDragSampleComponent implements OnInit {
         // remove the row that was dragged and place it onto its new location
         this.grid.deleteRow((args.dragData as RowType).key);
         this.data.splice(currRowIndex, 0, args.dragData.data);
+        this.data = [...this.data];
         if (currentRow.pinned && !args.dragData.pinned) {
             this.grid.pinRow(args.dragData.key, currRowPinnedIndex);
         } else if (!currentRow.pinned && args.dragData.pinned) {
@@ -75,8 +76,8 @@ export class GridPinningDragSampleComponent implements OnInit {
     private getCurrentRowIndex(rowList, cursorPosition) {
         for (const row of rowList) {
             const rowRect = row.nativeElement.getBoundingClientRect();
-            if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
-                cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
+            if (cursorPosition.y > rowRect.top && cursorPosition.y < rowRect.bottom &&
+                cursorPosition.x > rowRect.left && cursorPosition.x < rowRect.right) {
                 // return the index of the targeted row
                 return this.data.indexOf(this.data.find((r) => r.ID === row.key));
             }
@@ -88,8 +89,8 @@ export class GridPinningDragSampleComponent implements OnInit {
     private getCurrentRowID(rowList: IgxRowDirective[], cursorPosition) {
         for (const row of rowList) {
             const rowRect = row.nativeElement.getBoundingClientRect();
-            if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
-                cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
+            if (cursorPosition.y > rowRect.top && cursorPosition.y < rowRect.bottom &&
+                cursorPosition.x > rowRect.left && cursorPosition.x < rowRect.right) {
                 // return the ID of the targeted row
                 return row.key;
             }
