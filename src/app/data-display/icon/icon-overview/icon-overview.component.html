@@ -1,0 +1,10 @@
+<igx-nav-drawer class="menu" [isOpen]="true" [pin]="true" [pinThreshold]="0">
+    <ng-template igxDrawer>
+        @for (item of menuItems; track item.label) {
+            <span igxDrawerItem [active]="item.label === activeItem" (click)="activeItem = item.label">
+                <igx-icon [name]="item.icon"></igx-icon>
+                <span>{{ item.label }}</span>
+            </span>
+        }
+    </ng-template>
+</igx-nav-drawer>

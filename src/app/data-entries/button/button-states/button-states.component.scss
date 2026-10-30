@@ -1,14 +1,16 @@
+@use "igniteui-theming/sass/typography" as *;
+
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
-    padding: 2rem;
+    gap: rem(32px);
+    padding: rem(32px);
 }
 
 .button-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1.5rem;
+    gap: rem(24px);
 }

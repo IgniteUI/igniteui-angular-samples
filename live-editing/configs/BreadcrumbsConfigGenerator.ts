@@ -30,6 +30,12 @@ export class BreadcrumbsConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'BreadcrumbsDropdownComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/layouts/breadcrumbs/"
+        }));
+
+        configs.push(new Config({
             component: 'BreadcrumbsCustomSeparatorComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/breadcrumbs/"
