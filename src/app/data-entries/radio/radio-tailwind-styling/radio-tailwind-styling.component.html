@@ -1,0 +1,21 @@
+<div class="box-border flex w-[280px] flex-col overflow-hidden rounded-2xl border border-[var(--color-export-divider)] bg-white font-[aktiv-grotesk,sans-serif] [--ig-font-family:aktiv-grotesk,sans-serif] [--ig-radio-empty-color:var(--color-export-empty)] [--ig-radio-fill-color:var(--color-export-primary)]">
+    <div class="flex flex-col border-b border-[var(--color-export-divider)] p-4 font-semibold tracking-[0.15px]">
+        <span id="export-title" class="text-base leading-6 text-[var(--color-export-title)]">Export report</span>
+        <span class="text-xs leading-4 text-[var(--color-export-muted)]">Choose a format to export</span>
+    </div>
+    <igx-radio-group class="!gap-0 px-6 py-3.5" name="format" alignment="vertical" [value]="format" (change)="format = $event.value" aria-labelledby="export-title">
+        @for (option of formats; track option.value) {
+            <igx-radio class="format-option" [value]="option.value">
+                <span class="text-xs font-semibold leading-4 tracking-[0.15px] text-[var(--color-export-ink)]">{{ option.label }}</span>
+            </igx-radio>
+        }
+    </igx-radio-group>
+    <div class="flex justify-end gap-4 bg-[var(--color-export-tint)] p-4">
+        <!-- The theme styles buttons in a later CSS layer than the utilities, so these are important.
+             Without the theme's shadow, the focused button shows an outline instead. -->
+        <button igxButton="flat" type="button"
+            class="!h-[30px] !min-h-0 !min-w-0 !px-3 !shadow-none !text-sm !font-semibold !normal-case !leading-4 !tracking-[0.75px] [&.igx-button--focused]:!outline-2 [&.igx-button--focused]:!outline-offset-2 [&.igx-button--focused]:!outline-[color:var(--color-export-primary)] !rounded !border-transparent !bg-transparent !text-[var(--color-export-cancel)] hover:!bg-[var(--color-export-tint-strong)]">Cancel</button>
+        <button igxButton="contained" type="button"
+            class="!h-[30px] !min-h-0 !min-w-0 !px-3 !shadow-none !text-sm !font-semibold !normal-case !leading-4 !tracking-[0.75px] [&.igx-button--focused]:!outline-2 [&.igx-button--focused]:!outline-offset-2 [&.igx-button--focused]:!outline-[color:var(--color-export-primary)] !rounded-lg !border-[var(--color-export-primary)] !bg-[var(--color-export-primary)] !text-white hover:!border-[var(--color-export-primary-strong)] hover:!bg-[var(--color-export-primary-strong)]">Export as {{ format.toUpperCase() }}</button>
+    </div>
+</div>

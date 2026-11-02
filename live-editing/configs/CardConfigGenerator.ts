@@ -56,9 +56,11 @@ export class CardConfigGenerator implements IConfigGenerator {
         // card tailwind styling
         configs.push(new Config({
             component: 'CardTailwindStylingComponent',
+            additionalDependencies: ["tailwindcss", "@tailwindcss/postcss"],
             appConfig: BaseAppConfig,
             additionalFiles: [
-                "/src/app/layouts/card/card-tailwind-styling/icons.ts"
+                "/src/app/layouts/card/card-tailwind-styling/icons.ts",
+                ".postcssrc.json"
             ],
             shortenComponentPathBy: "/layouts/card/"
         }));
