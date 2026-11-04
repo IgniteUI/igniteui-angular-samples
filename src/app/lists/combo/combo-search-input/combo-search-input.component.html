@@ -1,0 +1,16 @@
+<div class="states">
+    @for (state of states; track state.label) {
+        <div class="state">
+            <span class="state-label">{{ state.label }}</span>
+            <!-- The input field is hidden, so the dropdown opens at the element around the combo,
+                 and a click elsewhere does not close it. -->
+            <div #search class="search {{ state.className }}">
+                <igx-combo
+                    [searchPlaceholder]="state.text ?? 'Search'"
+                    [data]="[]"
+                    [overlaySettings]="{ target: search, closeOnOutsideClick: false }">
+                </igx-combo>
+            </div>
+        </div>
+    }
+</div>
