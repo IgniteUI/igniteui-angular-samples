@@ -30,7 +30,7 @@ igx-carousel {
     overflow: hidden;
     border: 1px solid var(--ig-gray-300);
     border-radius: 8px;
-    background: var(--ig-surface-500);
+    background: var(--ig-surface-base);
 }
 
 :host ::ng-deep igx-carousel .igx-carousel__arrow--prev,
@@ -85,7 +85,7 @@ igx-carousel {
     padding: 10px 14px;
     border: 1px solid var(--ig-gray-300);
     border-radius: 999px;
-    background: color-mix(in srgb, var(--ig-surface-500) 72%, transparent);
+    background: color-mix(in srgb, var(--ig-surface-base) 72%, transparent);
 }
 
 .slide-details span { color: var(--ig-gray-700); }
