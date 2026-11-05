@@ -20,8 +20,8 @@
                         tabindex="0"
                         role="button"
                         [attr.aria-label]="(parts.date | date: 'LLLL') + ', select month'"
-                        (click)="calendar.activeView = 'year'"
-                        (keydown.enter)="calendar.activeView = 'year'">
+                        (click)="switchView($event, calendar, 'year')"
+                        (keydown)="onSubheaderKeydown($event, calendar, 'year')">
                         {{ parts.month.value }}
                     </span>
                 }
@@ -30,8 +30,8 @@
                     tabindex="0"
                     role="button"
                     [attr.aria-label]="(parts.date | date: 'yyyy') + ', select year'"
-                    (click)="calendar.activeView = 'decade'"
-                    (keydown.enter)="calendar.activeView = 'decade'">
+                    (click)="switchView($event, calendar, 'decade')"
+                    (keydown)="onSubheaderKeydown($event, calendar, 'decade')">
                     {{ parts.year.value }}
                 </span>
                 @if (calendar.activeView === 'month') {

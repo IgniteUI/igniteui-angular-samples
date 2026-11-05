@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
 import {
     IGX_CALENDAR_DIRECTIVES,
-    IgxCalendarComponent
+    IgxCalendarComponent,
+    IgxCalendarView
 } from 'igniteui-angular/calendar';
 
 interface CalendarEvent {
@@ -59,6 +60,24 @@ export class CalendarTemplatesComponent {
 
     public onSelection(date: Date | Date[]) {
         this.selectedDate = date as Date;
+    }
+
+    public onSubheaderKeydown(event: KeyboardEvent, calendar: IgxCalendarComponent, view: IgxCalendarView) {
+        // Keep the key from reaching the calendar's own keyboard navigation.
+        event.stopPropagation();
+
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            this.switchView(event, calendar, view);
+        }
+    }
+
+    public switchView(event: Event, calendar: IgxCalendarComponent, view: IgxCalendarView) {
+        // The subheader is re-rendered for the new view, which removes the focused button.
+        // Move focus to the calendar body (the grid around the subheader) so keyboard navigation continues in the new view.
+        const grid = (event.target as HTMLElement).closest<HTMLElement>('[role="grid"]');
+        calendar.activeView = view;
+        grid?.focus();
     }
 
     private isCurrentMonth(date: Date): boolean {
