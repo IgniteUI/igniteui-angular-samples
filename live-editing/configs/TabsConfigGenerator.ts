@@ -76,6 +76,12 @@ export class TabsConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
+        configs.push(new Config({
+            component: 'TabsHeaderPositionComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/layouts/tabs/"
+        }));
+
         return configs;
     }
 }

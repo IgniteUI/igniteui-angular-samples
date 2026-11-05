@@ -80,6 +80,7 @@ export const layoutsRoutesData = {
     'tabs-tailwind-style': { displayName: 'Tabs Tailwind Styling', parentName: 'Tabs' },
     'tabs-alignment': { displayName: 'Tabs Alignment', parentName: 'Tabs' },
     'tabs-header-prefix-suffix': { displayName: 'Tabs Prefix/Suffix', parentName: 'Tabs' },
+    'tabs-header-position': { displayName: 'Tabs Header Position', parentName: 'Tabs' },
     'card-overview': { displayName: 'Overview', parentName: 'Card' },
     'card-actions': { displayName: 'Card Actions', parentName: 'Card' },
     'card-media': { displayName: 'Card Media', parentName: 'Card' },

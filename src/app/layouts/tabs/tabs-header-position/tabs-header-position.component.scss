@@ -1,0 +1,25 @@
+@use "igniteui-theming/sass/typography" as *;
+
+.sample {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 1rem;
+}
+
+.tabs-container {
+    width: 100%;
+    max-width: 33.125rem;
+}
+
+igx-tabs {
+    height: 11rem;
+}
+
+igx-tab-content {
+    @include type-style("body-2");
+
+    padding: 0.75rem 1rem;
+    color: var(--ig-gray-900);
+}
