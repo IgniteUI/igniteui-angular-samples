@@ -1,0 +1,21 @@
+<div class="settings">
+    <igx-radio-group alignment="horizontal" name="placement" [ngModel]="placement" (ngModelChange)="onPlacementChange($event)">
+        @for (item of placements; track item.value) {
+            <igx-radio [value]="item.value">{{ item.label }}</igx-radio>
+        }
+    </igx-radio-group>
+    <igx-switch labelPosition="before" [(ngModel)]="closeButton" (ngModelChange)="repositionTooltip()">Close Button</igx-switch>
+    <igx-switch labelPosition="before" [(ngModel)]="arrow" (ngModelChange)="repositionTooltip()">Arrow</igx-switch>
+</div>
+<div class="target"
+    #target="tooltipTarget"
+    [igxTooltipTarget]="tooltip"
+    [positionSettings]="positions[placement]"
+    [hasArrow]="arrow"
+    [sticky]="closeButton">
+</div>
+<div #tooltip="tooltip" igxTooltip>
+    This is a tooltip message
+    <br />
+    Multiline message here.
+</div>

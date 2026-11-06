@@ -1,0 +1,12 @@
+@use "sass:meta";
+@import url("https://use.typekit.net/bng2zgw.css");
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-angular");
+
+app-tooltip-tailwind-styling {
+    display: block;
+    padding: 0.5rem;
+}
+
+.igx-overlay__content:has(> .pointer-events-none) {
+    pointer-events: none;
+}

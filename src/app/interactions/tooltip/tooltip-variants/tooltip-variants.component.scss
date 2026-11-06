@@ -1,0 +1,24 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 2.875rem 1rem 1rem;
+}
+
+.variants {
+    display: grid;
+    grid-template-columns: repeat(2, 1.5rem);
+    column-gap: 11.375rem;
+    row-gap: 5.125rem;
+}
+
+.target {
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1px dashed #e8178a;
+    border-radius: 0.125rem;
+    background: rgb(232 23 138 / 20%);
+}

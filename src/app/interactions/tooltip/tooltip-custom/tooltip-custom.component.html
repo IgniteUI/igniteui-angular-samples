@@ -1,0 +1,69 @@
+<igx-list class="trigger taxes-trigger" [igxTooltipTarget]="taxesTooltip" [positionSettings]="positionSettings">
+    <igx-list-item>
+        <span igxListLineTitle>Individual Income Taxes</span>
+        <span igxListAction class="amount">($2.4T)</span>
+    </igx-list-item>
+</igx-list>
+<div #taxesTooltip="tooltip" igxTooltip class="custom-tooltip chart-tooltip" (opened)="chart.notifyResized()">
+    <span class="tooltip-title">Individual Income Taxes</span>
+    <div class="chart">
+        <igx-category-chart #chart
+            width="100%"
+            height="100%"
+            chartType="SplineArea"
+            [dataSource]="incomeTaxes"
+            [includedProperties]="['year', 'revenue']"
+            brushes="#9de772"
+            outlines="#9de772"
+            [areaFillOpacity]="0.5"
+            [thickness]="2"
+            markerTypes="None"
+            toolTipType="None"
+            [isHorizontalZoomEnabled]="false"
+            [isVerticalZoomEnabled]="false"
+            [yAxisMinimumValue]="0"
+            [yAxisMaximumValue]="60"
+            [yAxisInterval]="20"
+            yAxisTitle="IFT"
+            yAxisMajorStroke="transparent"
+            xAxisStroke="#9e9e9e"
+            xAxisTickStroke="#9e9e9e"
+            [xAxisTickLength]="8"
+            xAxisLabelTextColor="#616161"
+            xAxisLabelTextStyle="400 10px 'Titillium Web'"
+            yAxisLabelTextColor="#616161"
+            yAxisLabelTextStyle="400 10px 'Titillium Web'"
+            yAxisTitleTextColor="#212121"
+            yAxisTitleTextStyle="400 10px 'Titillium Web'">
+        </igx-category-chart>
+    </div>
+    <span class="tooltip-description">
+        In fiscal year (FY) 2024, the largest source of federal revenue was
+        Individual Income Taxes (49.3% of total revenue).
+    </span>
+</div>
+<igx-list class="trigger employee-trigger" [igxTooltipTarget]="employeeTooltip" [positionSettings]="positionSettings">
+    <igx-list-item>
+        <div igxListThumbnail class="avatar">
+            <igx-avatar [src]="avatarUrl" shape="circle" aria-label="Eliza Morales"></igx-avatar>
+            <igx-badge type="error">
+                <igx-icon family="material" name="block"></igx-icon>
+            </igx-badge>
+        </div>
+        <span igxListLineTitle>Eliza Morales</span>
+    </igx-list-item>
+</igx-list>
+<div #employeeTooltip="tooltip" igxTooltip class="custom-tooltip employee-tooltip">
+    <div class="avatar">
+        <igx-avatar [src]="avatarUrl" shape="circle" aria-label="Eliza Morales"></igx-avatar>
+        <igx-badge type="error">
+            <igx-icon family="material" name="block"></igx-icon>
+        </igx-badge>
+    </div>
+    <div class="employee-details">
+        <span class="tooltip-title">Eliza Morales</span>
+        <span>Software Engineer</span>
+        <span>In a meeting</span>
+        <span>Available at 2:00 pm</span>
+    </div>
+</div>

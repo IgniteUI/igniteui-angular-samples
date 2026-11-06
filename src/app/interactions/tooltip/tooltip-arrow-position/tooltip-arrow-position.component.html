@@ -1,0 +1,19 @@
+<div class="placements">
+    @for (placement of placements; track placement.value) {
+        @let side = placement.value.split('-')[0];
+        @let alignment = placement.value.split('-')[1] ?? 'center';
+        <div class="placement">
+            <span class="placement-label">{{ placement.label }}</span>
+            <div class="placement-area" [class]="side">
+                <span class="anchor"
+                    [class]="alignment"
+                    igxTooltipTarget
+                    [positionSettings]="positions[placement.value]"
+                    [hasArrow]="true"
+                    [overlaySettings]="overlaySettings"
+                    tooltip="This is a tooltip message. This tooltip shows a long message.">
+                </span>
+            </div>
+        </div>
+    }
+</div>

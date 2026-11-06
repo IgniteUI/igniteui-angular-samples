@@ -1,0 +1,28 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3.25rem 1rem 1rem;
+}
+
+.settings {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.settings igx-radio-group {
+    column-gap: 1.5rem;
+}
+
+.target {
+    box-sizing: border-box;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-top: 6rem;
+    border: 1px dashed #e8178a;
+    border-radius: 0.125rem;
+    background: rgb(232 23 138 / 20%);
+}
