@@ -1,34 +1,44 @@
-import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
-import { IComboSelectionChangingEventArgs, IgxComboComponent } from 'igniteui-angular/combo';
-import { IgxToastComponent } from 'igniteui-angular/toast';
-import { VerticalAlignment } from 'igniteui-angular/core';
-import { getHeroWeaponsData, IHeroWeapon } from '../../../data/heroData';
+import { Component, ElementRef, ViewEncapsulation, afterNextRender, inject, viewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { IgxComboComponent } from 'igniteui-angular/combo';
+import { take } from 'rxjs';
+
+interface Country {
+    id: string;
+    name: string;
+    region: string;
+}
 
 @Component({
     selector: 'app-combo-tailwind-styling',
+    encapsulation: ViewEncapsulation.None,
     styleUrls: ['./combo-tailwind-styling.component.scss'],
     templateUrl: './combo-tailwind-styling.component.html',
-    imports: [IgxComboComponent, IgxToastComponent]
+    imports: [IgxComboComponent, FormsModule]
 })
-export class ComboTailwindStylingComponent implements OnInit {
-    elem = inject(ElementRef);
+export class ComboTailwindStylingComponent {
+    public countries: Country[] = [
+        { id: 'BY', name: 'Belarus', region: 'Europe' },
+        { id: 'BE', name: 'Belgium', region: 'Europe' },
+        { id: 'BG', name: 'Bulgaria', region: 'Europe' }
+    ];
 
-    @ViewChild('loadToast', { read: IgxToastComponent, static: true })
-    public loadToast: IgxToastComponent;
+    public selection = ['BY'];
 
-    public weaponsData: IHeroWeapon[] = [];
+    private combo = viewChild.required(IgxComboComponent);
 
-    public ngOnInit() {
-        this.weaponsData = getHeroWeaponsData();
-    }
+    constructor() {
+        const element = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
 
-    public setWeaponsLimit(event: IComboSelectionChangingEventArgs) {
-        this.loadToast.positionSettings.verticalDirection = VerticalAlignment.Middle;
-        // this.loadToast.autoHide = true;
-
-        if (event.newValue.length > 2) {
-            event.cancel = true;
-            this.loadToast.open('Choose only two items');
-        }
+        // The combo is shown open. Opening it moves the focus to its search input, so the
+        // sample is inert until the combo opens and the page keeps its focus.
+        afterNextRender(() => {
+            const combo = this.combo();
+            element.inert = true;
+            combo.opened.pipe(take(1)).subscribe(() => {
+                element.inert = false;
+            });
+            combo.open();
+        });
     }
 }
