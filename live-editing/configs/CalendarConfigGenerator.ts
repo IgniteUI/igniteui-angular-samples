@@ -74,6 +74,12 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'CalendarTemplatesComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/scheduling/calendar/"
+        }));
+
+        configs.push(new Config({
             component: 'CalendarStylingSampleComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/scheduling/calendar/"
