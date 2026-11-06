@@ -32,8 +32,16 @@ import { TreeBasicSampleComponent } from './tree/tree-basic-sample/tree-basic-sa
 import { TreeAdvancedSampleComponent } from './tree/tree-advanced-sample/tree-advanced-sample.component';
 import { TreeStylingComponent } from './tree/tree-styling/tree-styling.component';
 import { TreeTailwindStylingComponent } from './tree/tree-tailwind-styling/tree-tailwind-styling.component';
-import { SimpleComboMainComponent } from './combo/simple-combo-main/simple-combo-main.component';
-import { SimpleComboUsageComponent } from './combo/simple-combo-usage/simple-combo-usage.component';
+import { SimpleComboOverviewComponent } from './combo/simple-combo-overview/simple-combo-overview.component';
+import { SimpleComboTypeComponent } from './combo/simple-combo-type/simple-combo-type.component';
+import { SimpleComboDisabledComponent } from './combo/simple-combo-disabled/simple-combo-disabled.component';
+import { SimpleComboSizeComponent } from './combo/simple-combo-size/simple-combo-size.component';
+import { SimpleComboStatesComponent } from './combo/simple-combo-states/simple-combo-states.component';
+import { SimpleComboValidationComponent } from './combo/simple-combo-validation/simple-combo-validation.component';
+import { SimpleComboDropdownSizeComponent } from './combo/simple-combo-dropdown-size/simple-combo-dropdown-size.component';
+import { SimpleComboDropdownItemsComponent } from './combo/simple-combo-dropdown-items/simple-combo-dropdown-items.component';
+import { SimpleComboDropdownItemsStatesComponent } from './combo/simple-combo-dropdown-items-states/simple-combo-dropdown-items-states.component';
+import { SimpleComboTailwindStylingComponent } from './combo/simple-combo-tailwind-styling/simple-combo-tailwind-styling.component';
 import { SimpleComboCascadingComponent } from './combo/simple-combo-cascading/simple-combo-cascading.component';
 import { SimpleComboStylingComponent } from './combo/simple-combo-styling/simple-combo-styling.component';
 import { ListItemSelectionComponent } from './list/list-item-selection/list-item-selection.component';
@@ -126,14 +134,54 @@ export const ListsRoutes: Routes = [
         path: 'combo-search-input'
     },
     {
-        component: SimpleComboMainComponent,
-        data: listsRoutesData['simple-combo-main'],
-        path: 'simple-combo-main'
+        component: SimpleComboOverviewComponent,
+        data: listsRoutesData['simple-combo-overview'],
+        path: 'simple-combo-overview'
     },
     {
-        component: SimpleComboUsageComponent,
-        data: listsRoutesData['simple-combo-usage'],
-        path: 'simple-combo-usage'
+        component: SimpleComboTypeComponent,
+        data: listsRoutesData['simple-combo-type'],
+        path: 'simple-combo-type'
+    },
+    {
+        component: SimpleComboDisabledComponent,
+        data: listsRoutesData['simple-combo-disabled'],
+        path: 'simple-combo-disabled'
+    },
+    {
+        component: SimpleComboSizeComponent,
+        data: listsRoutesData['simple-combo-size'],
+        path: 'simple-combo-size'
+    },
+    {
+        component: SimpleComboStatesComponent,
+        data: listsRoutesData['simple-combo-states'],
+        path: 'simple-combo-states'
+    },
+    {
+        component: SimpleComboValidationComponent,
+        data: listsRoutesData['simple-combo-validation'],
+        path: 'simple-combo-validation'
+    },
+    {
+        component: SimpleComboDropdownSizeComponent,
+        data: listsRoutesData['simple-combo-dropdown-size'],
+        path: 'simple-combo-dropdown-size'
+    },
+    {
+        component: SimpleComboDropdownItemsComponent,
+        data: listsRoutesData['simple-combo-dropdown-items'],
+        path: 'simple-combo-dropdown-items'
+    },
+    {
+        component: SimpleComboDropdownItemsStatesComponent,
+        data: listsRoutesData['simple-combo-dropdown-items-states'],
+        path: 'simple-combo-dropdown-items-states'
+    },
+    {
+        component: SimpleComboTailwindStylingComponent,
+        data: listsRoutesData['simple-combo-tailwind-styling'],
+        path: 'simple-combo-tailwind-styling'
     },
     {
         component: SimpleComboCascadingComponent,

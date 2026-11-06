@@ -138,17 +138,67 @@ export class ComboConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/lists/combo/'
         }));
 
+        // simple combo overview
         configs.push(new Config({
-            additionalFiles: ['/src/app/data/stocks-data.ts'],
-            additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
             appConfig: BaseAppConfig,
-            component: 'SimpleComboMainComponent'
+            component: 'SimpleComboOverviewComponent',
+            shortenComponentPathBy: '/lists/combo/'
         }));
 
+        // simple combo type
         configs.push(new Config({
-            additionalFiles: ['/src/app/data/cities15000-regions-countries.ts'],
             appConfig: BaseAppConfig,
-            component: 'SimpleComboUsageComponent'
+            component: 'SimpleComboTypeComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // simple combo disabled
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'SimpleComboDisabledComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // simple combo size
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'SimpleComboSizeComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // simple combo states
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'SimpleComboStatesComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // simple combo validation
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'SimpleComboValidationComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // simple combo dropdown size
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'SimpleComboDropdownSizeComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // simple combo dropdown items
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'SimpleComboDropdownItemsComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // simple combo dropdown items states
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'SimpleComboDropdownItemsStatesComponent',
+            shortenComponentPathBy: '/lists/combo/'
         }));
 
         configs.push(new Config({
@@ -163,10 +213,20 @@ export class ComboConfigGenerator implements IConfigGenerator {
             component: 'SimpleComboRemoteComponent'
         }));
 
+        // simple combo styling
         configs.push(new Config({
-            additionalFiles: ['/src/app/data/cities15000-regions-countries.ts', '/src/app/lists/combo/simple-combo-styling/layout.scss'],
             appConfig: BaseAppConfig,
-            component: 'SimpleComboStylingComponent'
+            component: 'SimpleComboStylingComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // simple combo tailwind styling
+        configs.push(new Config({
+            additionalDependencies: ['tailwindcss', '@tailwindcss/postcss'],
+            additionalFiles: ['.postcssrc.json'],
+            appConfig: BaseAppConfig,
+            component: 'SimpleComboTailwindStylingComponent',
+            shortenComponentPathBy: '/lists/combo/'
         }));
 
         return configs;

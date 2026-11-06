@@ -1,8 +1,10 @@
-<div class="sample-wrapper">
-    <div class="input-row">
-        <igx-simple-combo
-            [overlaySettings]="{ outlet: element.nativeElement }"
-            [data]="cities" [displayKey]="'name'">
-        </igx-simple-combo>
-    </div>
-</div>
+<igx-simple-combo
+    class="styled-combo"
+    type="border"
+    placeholder="Country"
+    valueKey="id"
+    displayKey="name"
+    groupKey="region"
+    [data]="countries"
+    [(ngModel)]="selection">
+</igx-simple-combo>

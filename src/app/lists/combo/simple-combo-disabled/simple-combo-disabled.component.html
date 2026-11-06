@@ -1,0 +1,23 @@
+<div class="states">
+    <span></span>
+    <span class="state-label state-column">Enabled</span>
+    <span class="state-label state-column">Disabled</span>
+    @for (row of rows; track $index) {
+        @let groupStart = $index === 2;
+        <span class="state-label" [class.group-start]="groupStart">{{ row.label }}</span>
+        @for (disabled of [false, true]; track disabled) {
+            <div [class.group-start]="groupStart">
+                <igx-simple-combo
+                    [type]="row.type"
+                    [disabled]="disabled"
+                    placeholder="Country"
+                    valueKey="id"
+                    displayKey="name"
+                    groupKey="region"
+                    [data]="countries"
+                    [ngModel]="row.value">
+                </igx-simple-combo>
+            </div>
+        }
+    }
+</div>
