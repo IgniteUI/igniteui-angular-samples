@@ -8,7 +8,7 @@ igx-carousel {
     overflow: hidden;
     border: 1px solid var(--ig-gray-300);
     border-radius: 8px;
-    background: var(--ig-surface-500);
+    background: var(--ig-surface-base);
 }
 
 :host ::ng-deep {
@@ -67,7 +67,7 @@ igx-carousel {
     padding: 22px 24px;
     border: 1px solid var(--ig-gray-300);
     border-radius: 8px;
-    background: color-mix(in srgb, var(--ig-surface-500) 86%, transparent);
+    background: color-mix(in srgb, var(--ig-surface-base) 86%, transparent);
     box-shadow: 0 14px 34px rgb(0 0 0 / 0.14);
 }
 
@@ -110,7 +110,7 @@ igx-carousel {
     border: 1px solid var(--ig-gray-300);
     border-radius: 999px;
     color: var(--ig-gray-700);
-    background: var(--ig-surface-500);
+    background: var(--ig-surface-base);
     font-size: 14px;
 }
 
@@ -128,7 +128,7 @@ igx-carousel {
 .amenity-visual span {
     display: block;
     border-radius: 8px;
-    background: color-mix(in srgb, var(--ig-surface-500) 72%, transparent);
+    background: color-mix(in srgb, var(--ig-surface-base) 72%, transparent);
     box-shadow: 0 10px 24px rgb(0 0 0 / 0.12);
 }
 
@@ -145,7 +145,7 @@ igx-carousel {
     padding: 10px 12px;
     border: 1px solid var(--ig-gray-300);
     border-radius: 8px;
-    background: var(--ig-surface-500);
+    background: var(--ig-surface-base);
 }
 
 .event-date {
@@ -211,7 +211,7 @@ igx-carousel {
 .amenity-visual { display: grid; width: 120px; height: 180px; align-content: center; gap: 12px; }
 .amenity-visual span { height: 44px; border-radius: 12px; }
 .amenity-visual span:nth-child(1) { width: 78%; }
-.amenity-visual span:nth-child(2) { width: 100%; background: color-mix(in srgb, var(--ig-surface-500) 90%, transparent); }
+.amenity-visual span:nth-child(2) { width: 100%; background: color-mix(in srgb, var(--ig-surface-base) 90%, transparent); }
 .amenity-visual span:nth-child(3) { width: 62%; justify-self: end; }
 
 @media (max-width: 720px) {
