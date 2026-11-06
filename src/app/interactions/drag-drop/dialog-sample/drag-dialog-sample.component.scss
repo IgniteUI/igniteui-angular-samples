@@ -8,9 +8,9 @@ $theme: dialog-theme(
     display: block;
     margin: 16px;
 
-    .dialog {
-        @include tokens($theme, $mode: 'scoped');
+    @include tokens($theme, $mode: 'scoped', $scope: '.dialog');
 
+    .dialog {
         display: flex;
         flex-direction: column;
         width: rem(280px);
