@@ -1,0 +1,20 @@
+<div class="sizes">
+    @for (size of sizes; track size.label) {
+        <div class="size">
+            <span class="state-label">{{ size.label }}</span>
+            <!-- The input field is hidden, so the dropdown opens at the element around the combo,
+                 and a click elsewhere does not close it. -->
+            <div #dropdown class="dropdown {{ size.className }}">
+                <igx-combo
+                    searchPlaceholder="Search"
+                    valueKey="id"
+                    displayKey="name"
+                    groupKey="group"
+                    [data]="options"
+                    [overlaySettings]="{ target: dropdown, closeOnOutsideClick: false }"
+                    (closing)="keepOpen($event)">
+                </igx-combo>
+            </div>
+        </div>
+    }
+</div>

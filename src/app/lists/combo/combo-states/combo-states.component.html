@@ -1,0 +1,19 @@
+<div class="states">
+    @for (state of states; track state.label) {
+        <div class="state">
+            <span class="state-label">{{ state.label }}</span>
+            <igx-combo
+                class="state-combo {{ state.className }}"
+                type="border"
+                placeholder="Country"
+                searchPlaceholder="Search"
+                valueKey="id"
+                displayKey="name"
+                groupKey="region"
+                [data]="countries"
+                [ngModel]="state.value"
+                [overlaySettings]="overlaySettings">
+            </igx-combo>
+        </div>
+    }
+</div>
