@@ -40,7 +40,7 @@
 // The design's blue-gray and orange are not in the theme palette, so these two
 // chips take the design's own colors and darken them for hover and focus.
 .product-chip {
-    --ig-chip-outlined-background: var(--ig-surface-500);
+    --ig-chip-outlined-background: var(--ig-surface-base);
     --ig-chip-outlined-text-color: #556c86;
     --ig-chip-border-color: #556c86;
     --ig-chip-hover-outlined-text-color: color-mix(in srgb, #556c86, black 20%);

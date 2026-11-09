@@ -39,7 +39,7 @@ $anchors: icon, avatar;
 
 .notifications-card,
 .nav-card {
-    background: var(--ig-surface-500);
+    background: var(--ig-surface-base);
     border-radius: rem(4px);
     box-shadow: 0 rem(1px) rem(3px) hsl(from var(--ig-gray-900) h s l / 0.12);
 }
