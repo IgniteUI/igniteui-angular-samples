@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
 
@@ -6,7 +6,6 @@ import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular
     selector: 'app-tooltip-simple',
     styleUrls: ['./tooltip-simple.component.scss'],
     templateUrl: './tooltip-simple.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxAvatarComponent, IgxTooltipTargetDirective, IgxTooltipDirective]
 })
 export class TooltipSimpleComponent { }

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxSplitterComponent, IgxSplitterPaneComponent } from 'igniteui-angular/splitter';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 
@@ -6,7 +6,6 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-splitter-collapsible-sample',
     styleUrls: ['splitter-collapsible-sample.component.scss'],
     templateUrl: 'splitter-collapsible-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSplitterComponent, IgxSplitterPaneComponent, IgxButtonDirective]
 })
 export class SplitterCollapsibleSampleComponent {

@@ -17,7 +17,6 @@ import notoSansFontData from './fonts/noto-sans.json';
     selector: 'app-export-pdf-custom-font',
     templateUrl: './export-pdf-custom-font.component.html',
     styleUrls: ['./export-pdf-custom-font.component.scss'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [IgxGridComponent, IgxColumnComponent]
 })
 export class ExportPdfCustomFontComponent {

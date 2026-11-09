@@ -1,0 +1,48 @@
+@use 'igniteui-theming' as *;
+
+:host {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    height: 100vh;
+}
+
+.selection-samples {
+    display: grid;
+    grid-template-columns: auto minmax(rem(180px), 1fr);
+    align-items: center;
+    gap: rem(24px) rem(32px);
+    inline-size: 100%;
+    max-inline-size: rem(380px);
+    margin-inline: auto;
+}
+
+.sample-label {
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    font-weight: 400;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+    text-align: end;
+}
+
+igx-buttongroup {
+    inline-size: 100%;
+}
+
+@container (width < 22rem) {
+    .selection-samples {
+        grid-template-columns: minmax(0, 1fr);
+        gap: rem(4px);
+    }
+
+    .sample-label {
+        text-align: start;
+
+        &:not(:first-of-type) {
+            margin-block-start: rem(16px);
+        }
+    }
+}

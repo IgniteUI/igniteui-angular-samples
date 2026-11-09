@@ -1,1 +1,16 @@
-@use "layout.scss";
+@use "igniteui-theming/sass/typography" as *;
+
+:host ::ng-deep igx-switch .igx-switch__thumb {
+    min-inline-size: rem(10px);
+}
+
+:host ::ng-deep igx-switch .igx-switch__ripple {
+    display: none;
+}
+
+:host {
+    display: flex;
+    place-content: center;
+    place-items: center;
+    padding: rem(40px);
+}

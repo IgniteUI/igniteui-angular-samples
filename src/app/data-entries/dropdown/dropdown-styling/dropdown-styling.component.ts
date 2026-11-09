@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { ISelectionEventArgs, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
 import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
 import { getHeroClassData, IHeroClass } from '../../../data/heroData';
@@ -8,7 +8,6 @@ import { getHeroClassData, IHeroClass } from '../../../data/heroData';
     selector: 'app-dropdown-styling',
     styleUrls: ['./dropdown-styling.component.scss'],
     templateUrl: './dropdown-styling.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxDropDownGroupComponent, IgxDropDownItemComponent]
 })
 export class DropDownStylingComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
 import { IgxLabelDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
@@ -10,7 +10,6 @@ import { DatePipe } from '@angular/common';
     selector: 'app-datepicker-sample-7',
     styleUrls: ['./datepicker-sample-7.component.scss'],
     templateUrl: './datepicker-sample-7.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDatePickerComponent, IgxLabelDirective, IgxPickerToggleComponent, IgxSuffixDirective, IgxIconComponent, IgxSnackbarComponent, DatePipe]
 })
 

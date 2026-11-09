@@ -46,7 +46,13 @@ app.use('/**', (req, res, next) => {
     .then((response) =>
       response ? writeResponseToNodeResponse(response, res) : next()
     )
-    .catch(next);
+    .catch((error: unknown) => {
+      if (error instanceof Error && error.name === 'AbortError') {
+        return;
+      }
+
+      next(error);
+    });
 });
 
 /**

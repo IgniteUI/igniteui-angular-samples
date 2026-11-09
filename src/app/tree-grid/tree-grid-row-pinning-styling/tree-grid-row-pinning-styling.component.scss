@@ -2,10 +2,9 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-theme: grid-theme(
-  $pinned-border-width: 5px,
-  $pinned-border-style: double,
-  $pinned-border-color: #ffcd0f,
-  $cell-active-border-color: #ffcd0f
+  $pinned-border-width: 1px,
+  $pinned-border-style: dashed,
+  $pinned-border-color: #f325e9,
 );
 
 :host {

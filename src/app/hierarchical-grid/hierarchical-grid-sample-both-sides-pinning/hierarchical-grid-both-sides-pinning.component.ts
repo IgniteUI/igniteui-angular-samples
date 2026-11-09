@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from "@angular/core";
+import { Component, OnInit, ViewChild, ViewEncapsulation } from "@angular/core";
 import { ColumnPinningPosition, ColumnType } from 'igniteui-angular/core';
 import { IPinningConfig, IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarTitleComponent } from 'igniteui-angular/grids/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
@@ -15,7 +15,6 @@ import { DatePipe } from "@angular/common";
     selector: "hierarchical-grid-sample-both-side-pinning",
     styleUrls: ["hierarchical-grid-both-sides-pinning.component.scss"],
     templateUrl: "hierarchical-grid-both-sides-pinning.component.html",
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
         IgxHierarchicalGridComponent,
         IgxGridToolbarComponent,

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxStepComponent, IgxStepContentDirective, IgxStepTitleDirective, IgxStepperComponent, IgxStepperOrientation, IgxStepperTitlePosition } from 'igniteui-angular/stepper';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -7,7 +7,6 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     selector: 'app-stepper-label-position-and-orientation-sample',
     styleUrls: ['./stepper-label-position-and-orientation-sample.component.scss'],
     templateUrl: './stepper-label-position-and-orientation-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonGroupComponent, IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxButtonDirective]
 })
 export class StepperLabelPositionAndOrientationSampleComponent {

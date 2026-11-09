@@ -1,7 +1,7 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { ColumnType, IgxSummaryResult } from 'igniteui-angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { ColumnType, IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
+import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { DATA } from '../../data/nwindData';
@@ -25,7 +25,6 @@ class MySummary  {
     selector: 'app-grid-sample-3',
     styleUrls: ['./grid-sample-3.component.scss'],
     templateUrl: './grid-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxPaginatorComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxIconComponent, DatePipe]
 })
 export class GridSample3Component {

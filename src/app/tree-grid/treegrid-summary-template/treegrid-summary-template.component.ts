@@ -1,6 +1,6 @@
-import { Component, HostBinding, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { IgxColumnComponent, IgxSummaryOperand, IgxSummaryTemplateDirective } from 'igniteui-angular/grids/core';
-import { IgxSummaryResult } from 'igniteui-angular/core';
+import { Component, HostBinding, OnInit } from '@angular/core';
+import { IgxColumnComponent, IgxSummaryTemplateDirective } from 'igniteui-angular/grids/core';
+import { IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
@@ -49,7 +49,6 @@ class PTOSummary {
     selector: 'app-treegrid-summary-template',
     styleUrls: ['./treegrid-summary-template.component.scss'],
     templateUrl: './treegrid-summary-template.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxSwitchComponent, IgxButtonGroupComponent, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxSummaryTemplateDirective]
 })
 export class TreeGridSummaryTemplateComponent implements OnInit {

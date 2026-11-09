@@ -67,7 +67,7 @@ export class DVGridConfigGenerator implements IConfigGenerator {
         configs.push(new Config({
             component: 'FinJSDemoComponent',
             dependenciesType: DependenciesType.Charts,
-            additionalDependencies: ['@microsoft/signalr'],
+            additionalDependencies: ['@microsoft/signalr', 'igniteui-angular-charts', 'igniteui-angular-core'],
             additionalFiles: ['/src/app/directives/prevent-scroll.directive.ts', '/projects/app-lob/src/app/services/financial.service.ts',
                 '/projects/app-lob/src/app/services/signal-r.service.ts',
                 '/projects/app-lob/src/app/data/financialData.ts', '/projects/app-lob/src/app/grid-finjs/controllers.component.ts',

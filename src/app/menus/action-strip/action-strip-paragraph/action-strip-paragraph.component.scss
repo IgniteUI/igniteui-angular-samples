@@ -5,7 +5,7 @@ $custom-strip: action-strip-theme(
 );
 
 .my-action-strip {
-    @include action-strip($custom-strip);
+    @include tokens($custom-strip);
     display: flex;
     align-items: flex-start;
     justify-content: center;

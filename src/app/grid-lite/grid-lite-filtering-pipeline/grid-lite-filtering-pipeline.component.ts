@@ -1,4 +1,4 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { defineComponents, IgcCheckboxComponent, IgcCircularProgressComponent } from 'igniteui-webcomponents';
 import { GridLiteDataService, User } from '../grid-lite-data.service';
@@ -12,7 +12,6 @@ defineComponents(IgcCheckboxComponent, IgcCircularProgressComponent);
   selector: 'app-grid-lite-filtering-pipeline',
   templateUrl: './grid-lite-filtering-pipeline.component.html',
   styleUrls: ['./grid-lite-filtering-pipeline.component.scss'],
-  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [
     CommonModule,
     IgxGridLiteComponent,

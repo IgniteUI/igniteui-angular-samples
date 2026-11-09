@@ -1,1 +1,5 @@
-@use "layout.scss";
+:host {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}

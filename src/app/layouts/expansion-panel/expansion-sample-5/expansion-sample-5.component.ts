@@ -1,5 +1,5 @@
 import { useAnimation } from '@angular/animations';
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
 import { IgxExpansionPanelBodyComponent, IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective } from 'igniteui-angular/expansion-panel';
 import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
@@ -9,7 +9,6 @@ import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
     selector: 'app-expansion-sample-5',
     styleUrls: ['./expansion-sample-5.component.scss'],
     templateUrl: './expansion-sample-5.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxExpansionPanelComponent, IgxExpansionPanelHeaderComponent, IgxExpansionPanelTitleDirective, IgxExpansionPanelBodyComponent]
 })
 export class ExpansionPanelSample5Component {

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild, inject } from '@angular/core';
 import { GridColumnDataType, ISortingExpression, SortingDirection } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent, IgxExcelExporterService } from 'igniteui-angular/grids/core';
@@ -9,7 +9,6 @@ import { INVOICE_DATA } from '../data/invoiceData';
     selector: 'app-excel-export-sample-1',
     styleUrls: ['./excel-export-sample-1.component.scss'],
     templateUrl: './excel-export-sample-1.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxGridToolbarExporterComponent, IgxColumnComponent]
 })
 export class ExcelExportSample1Component implements OnInit {

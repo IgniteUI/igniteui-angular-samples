@@ -1,0 +1,52 @@
+@use "igniteui-theming/sass/typography" as *;
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: rem(32px);
+    padding: rem(16px);
+}
+
+.button-item {
+    --hover-background: var(--ig-contained-button-hover-background);
+    --hover-foreground: var(--ig-contained-button-hover-foreground);
+    --focus-background: var(--ig-contained-button-focus-background);
+    --focus-foreground: var(--ig-contained-button-focus-foreground);
+    --focus-hover-background: var(--ig-contained-button-focus-hover-background);
+    --focus-hover-foreground: var(--ig-contained-button-focus-hover-foreground);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: rem(12px);
+}
+
+.button-label {
+    @include type-style("body-2") {
+        margin: 0;
+    }
+
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    font-weight: 400;
+    font-style: normal;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+}
+
+.button-item button.state-hover {
+    background: var(--hover-background);
+    color: var(--hover-foreground);
+}
+
+.button-item button.state-focused {
+    background: var(--focus-background);
+    color: var(--focus-foreground);
+}
+
+.button-item button.state-focused-hover {
+    background: var(--focus-hover-background);
+    color: var(--focus-hover-foreground);
+}

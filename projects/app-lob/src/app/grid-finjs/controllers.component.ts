@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, OnInit, Output, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IButtonGroupEventArgs, IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IChangeCheckboxEventArgs } from 'igniteui-angular/checkbox';
@@ -15,7 +15,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-finjs-controllers',
     styleUrls: ['./controllers.component.scss'],
     templateUrl: './controllers.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, FormsModule, IgxSliderComponent, IgxButtonGroupComponent, IgxToastComponent]
 })
 export class ControllerComponent implements OnInit, OnDestroy {
@@ -69,7 +68,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
         this.frequencyChanged$ = this.intervalSlider.valueChange.pipe(debounce(() => timer(200)));
         this.frequencyChangedSubscription = this.frequencyChanged$
             .subscribe(() => this.frequencyChanged.emit(this.intervalSlider.value as number));
-        
+
         this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
 
         // Hide theme switcher

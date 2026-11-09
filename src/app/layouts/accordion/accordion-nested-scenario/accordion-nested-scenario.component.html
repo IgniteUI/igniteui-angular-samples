@@ -1,0 +1,69 @@
+<div class="accordion-sample">
+    <div class="accordion-content">
+        <div class="accordion-toolbar">
+            <igx-switch [(ngModel)]="singleBranchExpand">Single Expand</igx-switch>
+        </div>
+
+        <igx-accordion [singleBranchExpand]="singleBranchExpand">
+            <igx-expansion-panel [collapsed]="false">
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Workspace Settings</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Nested account, access, and billing options</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <igx-accordion [singleBranchExpand]="singleBranchExpand">
+                        <igx-expansion-panel [collapsed]="false">
+                            <igx-expansion-panel-header>
+                                <igx-expansion-panel-title>Profile</igx-expansion-panel-title>
+                                <igx-expansion-panel-description>Name, photo, and contact details</igx-expansion-panel-description>
+                            </igx-expansion-panel-header>
+                            <igx-expansion-panel-body>
+                                <p>Update the public information shown to other workspace members.</p>
+                            </igx-expansion-panel-body>
+                        </igx-expansion-panel>
+
+                        <igx-expansion-panel>
+                            <igx-expansion-panel-header>
+                                <igx-expansion-panel-title>Security</igx-expansion-panel-title>
+                                <igx-expansion-panel-description>Password and sign-in preferences</igx-expansion-panel-description>
+                            </igx-expansion-panel-header>
+                            <igx-expansion-panel-body>
+                                <p>Review active sessions, change your password, and configure sign-in requirements.</p>
+                            </igx-expansion-panel-body>
+                        </igx-expansion-panel>
+
+                        <igx-expansion-panel>
+                            <igx-expansion-panel-header>
+                                <igx-expansion-panel-title>Notifications</igx-expansion-panel-title>
+                                <igx-expansion-panel-description>Email and product updates</igx-expansion-panel-description>
+                            </igx-expansion-panel-header>
+                            <igx-expansion-panel-body>
+                                <p>Choose the messages you receive for comments, assignments, and releases.</p>
+                            </igx-expansion-panel-body>
+                        </igx-expansion-panel>
+                    </igx-accordion>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Team Access</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Members, roles, and permissions</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p>Invite teammates, assign roles, and review workspace permissions.</p>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+
+            <igx-expansion-panel>
+                <igx-expansion-panel-header>
+                    <igx-expansion-panel-title>Billing</igx-expansion-panel-title>
+                    <igx-expansion-panel-description>Plan, invoices, and payment method</igx-expansion-panel-description>
+                </igx-expansion-panel-header>
+                <igx-expansion-panel-body>
+                    <p>Manage subscription details, billing contacts, and invoice delivery.</p>
+                </igx-expansion-panel-body>
+            </igx-expansion-panel>
+        </igx-accordion>
+    </div>
+</div>

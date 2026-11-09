@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, ViewChild, inject } from '@angular/core';
 import { NgForm, FormsModule } from '@angular/forms';
 import { IgxStepComponent, IgxStepContentDirective, IgxStepTitleDirective, IgxStepperComponent } from 'igniteui-angular/stepper';
 import { IgxCardComponent, IgxCardContentDirective, IgxCardMediaDirective } from 'igniteui-angular/card';
@@ -15,7 +15,6 @@ import { NgClass, DatePipe } from '@angular/common';
     selector: 'app-stepper-overview-sample',
     styleUrls: ['./stepper-overview-sample.component.scss'],
     templateUrl: './stepper-overview-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxStepperComponent, IgxStepComponent, IgxStepTitleDirective, IgxStepContentDirective, IgxBadgeComponent, IgxCardComponent, NgClass, IgxCardMediaDirective, IgxCardContentDirective, FormsModule, IgxInputGroupComponent, IgxInputDirective, IgxLabelDirective, IgxSelectComponent, IgxSelectItemComponent, IgxMaskDirective, IgxCheckboxComponent, IgxHintDirective, IgxRadioGroupDirective, IgxRadioComponent, IgxButtonDirective, IgxIconComponent, DatePipe]
 })
 export class StepperOverviewSampleComponent {

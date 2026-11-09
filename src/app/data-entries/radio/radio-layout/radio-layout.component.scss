@@ -1,0 +1,26 @@
+/* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
+@import url("https://use.typekit.net/bng2zgw.css");
+
+:host {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem 3.75rem;
+    height: 100%;
+}
+
+.radio-layout-item {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+.radio-layout-item span {
+    color: var(--ig-gray-600);
+    font-family: aktiv-grotesk, sans-serif;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: 0.3px;
+}

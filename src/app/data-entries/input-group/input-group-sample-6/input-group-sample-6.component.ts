@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { BaseInputGroupSampleComponent } from '../base-input.component';
 import { FormsModule } from '@angular/forms';
 import { IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxSelectToggleIconDirective } from 'igniteui-angular/select';
@@ -14,7 +14,6 @@ import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directi
     selector: 'app-input-group-sample-6',
     styleUrls: ['./input-group-sample-6.component.scss'],
     templateUrl: './input-group-sample-6.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule, IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxLabelDirective, IgxSelectToggleIconDirective, IgxIconComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxPrefixDirective, IgxHintDirective, IgxComboComponent, IgxDatePickerComponent, IgxPickerToggleComponent, IgxTimePickerComponent, IgxButtonDirective, IgxRippleDirective]
 })
 export class InputGroupSample6Component extends BaseInputGroupSampleComponent {

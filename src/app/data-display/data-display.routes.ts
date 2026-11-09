@@ -1,11 +1,22 @@
 import { BadgeIconComponent } from './badge/badge-icon/badge-icon.component';
-import { BadgeSample2Component } from './badge/badge-sample-2/badge-sample-2.component';
-import { BadgeSample3Component } from './badge/badge-sample-3/badge-sample-3.component';
-import { BadgeDotSampleComponent } from './badge/badge-dot-sample/badge-dot-sample.component';
-import { BadgeStylingSampleComponent } from './badge/badge-styling-sample/badge-styling-sample.component';
-import { BadgeTailwindStylingSampleComponent } from './badge/badge-tailwind-styling-sample/badge-tailwind-styling-sample.component';
-import { ChipAreaSampleComponent } from './chip/chip-area-sample/chip-area-sample.component';
-import { ChipSimpleComponent } from './chip/chip-simple/chip-simple.component';
+import { BadgeOverviewComponent } from './badge/badge-overview/badge-overview.component';
+import { BadgeSizeComponent } from './badge/badge-size/badge-size.component';
+import { BadgeTypeComponent } from './badge/badge-type/badge-type.component';
+import { BadgeShapeComponent } from './badge/badge-shape/badge-shape.component';
+import { BadgeVariantsComponent } from './badge/badge-variants/badge-variants.component';
+import { BadgeOutlinedComponent } from './badge/badge-outlined/badge-outlined.component';
+import { BadgeDotComponent } from './badge/badge-dot/badge-dot.component';
+import { BadgeStylingComponent } from './badge/badge-styling/badge-styling.component';
+import { BadgeTailwindStylingComponent } from './badge/badge-tailwind-styling/badge-tailwind-styling.component';
+import { ChipOverviewComponent } from './chip/chip-overview/chip-overview.component';
+import { ChipLayoutComponent } from './chip/chip-layout/chip-layout.component';
+import { ChipTypesComponent } from './chip/chip-types/chip-types.component';
+import { ChipSizeComponent } from './chip/chip-size/chip-size.component';
+import { ChipInteractionStateComponent } from './chip/chip-interaction-state/chip-interaction-state.component';
+import { ChipStateComponent } from './chip/chip-state/chip-state.component';
+import { ChipRemoveComponent } from './chip/chip-remove/chip-remove.component';
+import { ChipAreaComponent } from './chip/chip-area/chip-area.component';
+import { ChipOutlinedComponent } from './chip/chip-outlined/chip-outlined.component';
 import { ChipVariantsComponent } from './chip/chip-variants/chip-variants.component';
 import { ChipStylingSampleComponent } from './chip/chip-styling/chip-styling.component';
 import { ChipTailwindStylingSampleComponent } from './chip/chip-tailwind-styling/chip-tailwind-styling.component';
@@ -14,17 +25,19 @@ import { CircularDynamicSampleComponent } from './circular-progressbar/circular-
 import { CircularIndeterminateProgressbarComponent } from './circular-progressbar/circular-indeterminate-progressbar/circular-indeterminate-progressbar.component';
 import { CircularProgressbarComponent } from './circular-progressbar/circular-progressbar.component';
 import { CircularStylingSampleComponent } from './circular-progressbar/circular-styling-sample/circular-styling-sample.component';
-import { IconSample1Component } from './icon/icon-sample-1/icon-sample-1.component';
-import { IconSample2Component } from './icon/icon-sample-2/icon-sample-2.component';
-import { IconSample3Component } from './icon/icon-sample-3/icon-sample-3.component';
-import { IconSample4Component } from './icon/icon-sample-4/icon-sample-4.component';
-import { IconSample5Component } from './icon/icon-sample-5/icon-sample-5.component';
-import { IconStylingSampleComponent } from './icon/icon-styling-sample/icon-styling-sample.component';
-import { IconTailwindStylingSampleComponent } from './icon/icon-tailwind-styling-sample/icon-tailwind-styling-sample.component';
+import { IconOverviewComponent } from './icon/icon-overview/icon-overview.component';
+import { IconSizeComponent } from './icon/icon-size/icon-size.component';
+import { IconStylingComponent } from './icon/icon-styling/icon-styling.component';
+import { IconTailwindStylingComponent } from './icon/icon-tailwind-styling/icon-tailwind-styling.component';
 import { IconServiceSampleComponent } from './icon/icon-service-sample/icon-service-sample.component';
-import { SvgIconSampleComponent } from './icon/svg-icon-sample/svg-icon-sample.component';
 import { IgxForComponent } from './igxFor/igxFor.component';
 import { IgxForHorizontalComponent } from './igxFor/igxFor-horizontal-sample/igxFor-horizontal.component';
+import { VirtualScrollOverviewComponent } from './virtual-scroll/virtual-scroll-overview/virtual-scroll-overview.component';
+import { VirtualScrollVariableSizeComponent } from './virtual-scroll/virtual-scroll-variable-size/virtual-scroll-variable-size.component';
+import { VirtualScrollHorizontalComponent } from './virtual-scroll/virtual-scroll-horizontal/virtual-scroll-horizontal.component';
+import { VirtualScrollScrollToIndexComponent } from './virtual-scroll/virtual-scroll-scroll-to-index/virtual-scroll-scroll-to-index.component';
+import { VirtualScrollInfiniteScrollComponent } from './virtual-scroll/virtual-scroll-infinite-scroll/virtual-scroll-infinite-scroll.component';
+import { VirtualScrollPagedDataComponent } from './virtual-scroll/virtual-scroll-paged-data/virtual-scroll-paged-data.component';
 import { LinearDynamicSampleComponent } from './linear-progressbar/linear-dynamic-sample/linear-dynamic-sample.component';
 import { LinearProgressbarSample1Component } from './linear-progressbar/linear-progressbar-sample-1/linear-progressbar-sample-1.component';
 import { LinearProgressbarSample2Component } from './linear-progressbar/linear-progressbar-sample-2/linear-progressbar-sample-2.component';
@@ -43,9 +56,16 @@ import { TextHighlightSample2Component } from './text-highlight/text-highlight-s
 import { TextHighlightStyleComponent } from './text-highlight/text-highlight-style/text-highlight-style.component';
 import {
     MaterialIconsExtendedComponent} from './icon/material-icons-extended/material-icons-extended.component';
-import { MaterialSymbolsComponent } from './icon/material-symbols/material-symbols.component';
+import { QrCodeOverviewComponent } from './qr-code/qr-code-overview/qr-code-overview.component';
+import { QrCodeStylingComponent } from './qr-code/qr-code-styling/qr-code-styling.component';
+import { QrCodeTailwindStylingComponent } from './qr-code/qr-code-tailwind-styling/qr-code-tailwind-styling.component';
 import { dataDisplayRoutesData } from './data-display-routes-data';
 import { Routes } from '@angular/router';
+import { QrCodeErrorCorrectionComponent } from './qr-code/qr-code-error-correction/qr-code-error-correction.component';
+import { QrCodeSizeComponent } from './qr-code/qr-code-size/qr-code-size.component';
+import { QrCodeDotShapesComponent } from './qr-code/qr-code-dot-shapes/qr-code-dot-shapes.component';
+import { QrCodeCornerShapesComponent } from './qr-code/qr-code-corner-shapes/qr-code-corner-shapes.component';
+import { QrCodeLogoComponent } from './qr-code/qr-code-logo/qr-code-logo.component';
 
 export const DataDisplayRoutes: Routes = [
     {
@@ -54,39 +74,94 @@ export const DataDisplayRoutes: Routes = [
         path: 'badge-icon'
     },
     {
-        component: BadgeSample2Component,
-        data: dataDisplayRoutesData['badge-sample-2'],
-        path: 'badge-sample-2'
+        component: BadgeOverviewComponent,
+        data: dataDisplayRoutesData['badge-overview'],
+        path: 'badge-overview'
     },
     {
-        component: BadgeSample3Component,
-        data: dataDisplayRoutesData['badge-sample-3'],
-        path: 'badge-sample-3'
+        component: BadgeSizeComponent,
+        data: dataDisplayRoutesData['badge-size'],
+        path: 'badge-size'
     },
     {
-        component: BadgeDotSampleComponent,
-        data: dataDisplayRoutesData['badge-dot-sample'],
-        path: 'badge-dot-sample'
+        component: BadgeTypeComponent,
+        data: dataDisplayRoutesData['badge-type'],
+        path: 'badge-type'
     },
     {
-        component: BadgeStylingSampleComponent,
-        data: dataDisplayRoutesData['badge-styling-sample'],
-        path: 'badge-styling-sample'
+        component: BadgeShapeComponent,
+        data: dataDisplayRoutesData['badge-shape'],
+        path: 'badge-shape'
     },
     {
-        component: BadgeTailwindStylingSampleComponent,
-        data: dataDisplayRoutesData['badge-tailwind-styling-sample'],
-        path: 'badge-tailwind-styling-sample'
+        component: BadgeVariantsComponent,
+        data: dataDisplayRoutesData['badge-variants'],
+        path: 'badge-variants'
     },
     {
-        component: ChipAreaSampleComponent,
-        data: dataDisplayRoutesData['chip-area-sample'],
-        path: 'chip-area-sample'
+        component: BadgeOutlinedComponent,
+        data: dataDisplayRoutesData['badge-outlined'],
+        path: 'badge-outlined'
     },
     {
-        component: ChipSimpleComponent,
-        data: dataDisplayRoutesData['chip-simple'],
-        path: 'chip-simple'
+        component: BadgeDotComponent,
+        data: dataDisplayRoutesData['badge-dot'],
+        path: 'badge-dot'
+    },
+    {
+        component: BadgeStylingComponent,
+        data: dataDisplayRoutesData['badge-styling'],
+        path: 'badge-styling'
+    },
+    {
+        component: BadgeTailwindStylingComponent,
+        data: dataDisplayRoutesData['badge-tailwind-styling'],
+        path: 'badge-tailwind-styling'
+    },
+    {
+        component: ChipOverviewComponent,
+        data: dataDisplayRoutesData['chip-overview'],
+        path: 'chip-overview'
+    },
+    {
+        component: ChipLayoutComponent,
+        data: dataDisplayRoutesData['chip-layout'],
+        path: 'chip-layout'
+    },
+    {
+        component: ChipTypesComponent,
+        data: dataDisplayRoutesData['chip-types'],
+        path: 'chip-types'
+    },
+    {
+        component: ChipSizeComponent,
+        data: dataDisplayRoutesData['chip-size'],
+        path: 'chip-size'
+    },
+    {
+        component: ChipInteractionStateComponent,
+        data: dataDisplayRoutesData['chip-interaction-state'],
+        path: 'chip-interaction-state'
+    },
+    {
+        component: ChipStateComponent,
+        data: dataDisplayRoutesData['chip-state'],
+        path: 'chip-state'
+    },
+    {
+        component: ChipRemoveComponent,
+        data: dataDisplayRoutesData['chip-remove'],
+        path: 'chip-remove'
+    },
+    {
+        component: ChipAreaComponent,
+        data: dataDisplayRoutesData['chip-area'],
+        path: 'chip-area'
+    },
+    {
+        component: ChipOutlinedComponent,
+        data: dataDisplayRoutesData['chip-outlined'],
+        path: 'chip-outlined'
     },
     {
         component: ChipVariantsComponent,
@@ -114,34 +189,14 @@ export const DataDisplayRoutes: Routes = [
         path: 'circular-progressbar'
     },
     {
-        component: IconSample1Component,
-        data: dataDisplayRoutesData['icon-sample-1'],
-        path: 'icon-sample-1'
+        component: IconOverviewComponent,
+        data: dataDisplayRoutesData['icon-overview'],
+        path: 'icon-overview'
     },
     {
-        component: IconSample2Component,
-        data: dataDisplayRoutesData['icon-sample-2'],
-        path: 'icon-sample-2'
-    },
-    {
-        component: IconSample3Component,
-        data: dataDisplayRoutesData['icon-sample-3'],
-        path: 'icon-sample-3'
-    },
-    {
-        component: IconSample4Component,
-        data: dataDisplayRoutesData['icon-sample-4'],
-        path: 'icon-sample-4'
-    },
-    {
-        component: IconSample5Component,
-        data: dataDisplayRoutesData['icon-sample-5'],
-        path: 'icon-sample-5'
-    },
-    {
-        component: SvgIconSampleComponent,
-        data: dataDisplayRoutesData['svg-icon-sample'],
-        path: 'svg-icon-sample'
+        component: IconSizeComponent,
+        data: dataDisplayRoutesData['icon-size'],
+        path: 'icon-size'
     },
     {
         component: IgxForComponent,
@@ -152,6 +207,36 @@ export const DataDisplayRoutes: Routes = [
         component: IgxForHorizontalComponent,
         data: dataDisplayRoutesData['igx-for-sample-2'],
         path: 'igx-for-sample-2'
+    },
+    {
+        component: VirtualScrollOverviewComponent,
+        data: dataDisplayRoutesData['virtual-scroll-overview'],
+        path: 'virtual-scroll-overview'
+    },
+    {
+        component: VirtualScrollVariableSizeComponent,
+        data: dataDisplayRoutesData['virtual-scroll-variable-size'],
+        path: 'virtual-scroll-variable-size'
+    },
+    {
+        component: VirtualScrollHorizontalComponent,
+        data: dataDisplayRoutesData['virtual-scroll-horizontal'],
+        path: 'virtual-scroll-horizontal'
+    },
+    {
+        component: VirtualScrollScrollToIndexComponent,
+        data: dataDisplayRoutesData['virtual-scroll-scroll-to-index'],
+        path: 'virtual-scroll-scroll-to-index'
+    },
+    {
+        component: VirtualScrollInfiniteScrollComponent,
+        data: dataDisplayRoutesData['virtual-scroll-infinite-scroll'],
+        path: 'virtual-scroll-infinite-scroll'
+    },
+    {
+        component: VirtualScrollPagedDataComponent,
+        data: dataDisplayRoutesData['virtual-scroll-paged-data'],
+        path: 'virtual-scroll-paged-data'
     },
     {
         component: LinearDynamicSampleComponent,
@@ -224,12 +309,12 @@ export const DataDisplayRoutes: Routes = [
         path: 'icon-service'
     },
     {
-        component: IconStylingSampleComponent,
+        component: IconStylingComponent,
         data: dataDisplayRoutesData['icon-styling'],
         path: 'icon-styling'
     },
     {
-        component: IconTailwindStylingSampleComponent,
+        component: IconTailwindStylingComponent,
         data: dataDisplayRoutesData['icon-tailwind-styling'],
         path: 'icon-tailwind-styling'
     },
@@ -244,13 +329,49 @@ export const DataDisplayRoutes: Routes = [
         path: 'chip-tailwind-styling'
     },
     {
-        component: MaterialSymbolsComponent,
-        data: dataDisplayRoutesData['material-symbols'],
-        path: 'material-symbols'
-    },
-    {
         component: MaterialIconsExtendedComponent,
         data: dataDisplayRoutesData['material-icons-extended'],
         path: 'material-icons-extended'
+    },
+    {
+        component: QrCodeOverviewComponent,
+        data: dataDisplayRoutesData['qr-code-overview'],
+        path: 'qr-code-overview'
+    },
+    {
+        component: QrCodeErrorCorrectionComponent,
+        data: dataDisplayRoutesData['qr-code-error-correction'],
+        path: 'qr-code-error-correction'
+    },
+    {
+        component: QrCodeSizeComponent,
+        data: dataDisplayRoutesData['qr-code-size'],
+        path: 'qr-code-size'
+    },
+    {
+        component: QrCodeStylingComponent,
+        data: dataDisplayRoutesData['qr-code-styling'],
+        path: 'qr-code-styling'
+    },
+    {
+        component: QrCodeDotShapesComponent,
+        data: dataDisplayRoutesData['qr-code-dot-shapes'],
+        path: 'qr-code-dot-shapes'
+    },
+    {
+        component: QrCodeCornerShapesComponent,
+        data: dataDisplayRoutesData['qr-code-corner-shapes'],
+        path: 'qr-code-corner-shapes'
+    },
+    {
+        component: QrCodeLogoComponent,
+        data: dataDisplayRoutesData['qr-code-logo'],
+        path: 'qr-code-logo'
+    },
+
+    {
+        component: QrCodeTailwindStylingComponent,
+        data: dataDisplayRoutesData['qr-code-tailwind-styling'],
+        path: 'qr-code-tailwind-styling'
     }
 ];

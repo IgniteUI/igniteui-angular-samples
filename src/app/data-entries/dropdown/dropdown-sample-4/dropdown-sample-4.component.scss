@@ -1,20 +1,8 @@
 :host {
-    margin: 8px;
+    display: block;
+    padding: 0.5rem;
 }
 
-.input {
-    padding-left: 0.2rem;
-}
-
-.input-group {
-    width: 220px;
-}
-
-.igx-input-group {
-    display: inline-block;
-}
-
-span {
-    display: inline;
-    padding-left: 24px;
+igx-input-group {
+    max-width: 300px;
 }

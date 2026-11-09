@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { employeesData } from '../../data/employeesData';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
@@ -11,7 +11,6 @@ import { DatePipe } from '@angular/common';
     selector: 'app-grid-validator-service',
     styleUrls: ['./grid-validator-service.component.scss'],
     templateUrl: './grid-validator-service.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, FormsModule, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxAvatarComponent, IgxColumnRequiredValidatorDirective, IgxColumnEmailValidatorDirective, IgxColumnMinValidatorDirective, DatePipe]
 })
 export class GridValidatorServiceComponent {

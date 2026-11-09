@@ -1,0 +1,24 @@
+<igx-list class="employees">
+    <igx-list-item [isHeader]="true">
+        Records {{ page().startIndex + 1 }}–{{ page().startIndex + page().items.length }} of {{ page().totalCount }} in memory
+    </igx-list-item>
+    <igx-virtual-scroll
+        class="employees__viewport"
+        [dataWindow]="page()"
+        [estimatedItemSize]="62"
+        (stateChange)="onStateChange($event)">
+        <ng-template igxVirtualItem let-employee let-index="index" let-count="count">
+            <igx-list-item [attr.aria-posinset]="index + 1" [attr.aria-setsize]="count">
+                <igx-avatar igxListThumbnail shape="circle" [initials]="employee.initials"></igx-avatar>
+                <span igxListLineTitle>#{{ employee.id }} {{ employee.name }}</span>
+                <span igxListLineSubTitle>{{ employee.email }}</span>
+                <igx-chip igxListAction [variant]="employee.variant">{{ employee.department }}</igx-chip>
+            </igx-list-item>
+        </ng-template>
+    </igx-virtual-scroll>
+    <div class="employees__status">
+        @if (loading()) {
+            <igx-linear-bar [indeterminate]="true" [textVisibility]="false"></igx-linear-bar>
+        }
+    </div>
+</igx-list>

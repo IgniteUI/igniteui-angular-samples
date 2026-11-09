@@ -1,0 +1,34 @@
+<div class="sample-container">
+    <igx-card>
+        <igx-card-content>
+            <h2>Choose your interior color</h2>
+            <igx-select value="Satin" type="border">
+                <label igxLabel>Type of wall paints</label>
+                @for (item of paintTypes; track item) {
+                    <igx-select-item [value]="item">{{ item }}</igx-select-item>
+                }
+            </igx-select>
+            <igx-select value="3 litres" type="border">
+                <label igxLabel>Paint quantity</label>
+                @for (item of paintQuantities; track item) {
+                    <igx-select-item [value]="item">{{ item }}</igx-select-item>
+                }
+            </igx-select>
+            <div class="color-row">
+                <igc-color-picker #picker mode="input" value="#0598fa"></igc-color-picker>
+                <button igxIconButton="flat" (click)="resetColor()">
+                    <igx-icon>refresh</igx-icon>
+                </button>
+            </div>
+        </igx-card-content>
+        <igx-card-actions>
+            <button igxButton="flat" igxStart>Back</button>
+            <div class="stepper">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot active"></span>
+            </div>
+            <button igxButton="flat" igxEnd>Confirm</button>
+        </igx-card-actions>
+    </igx-card>
+</div>

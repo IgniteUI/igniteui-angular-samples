@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxToastComponent } from 'igniteui-angular/toast';
 import { VerticalAlignment } from 'igniteui-angular/core';
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
@@ -7,7 +7,6 @@ import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directi
     selector: 'app-toast-sample-1',
     styleUrls: ['./toast-sample-1.component.scss'],
     templateUrl: './toast-sample-1.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxRippleDirective, IgxToastComponent]
 })
 export class ToastSample1Component {

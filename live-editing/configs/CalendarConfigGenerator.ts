@@ -26,7 +26,7 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
-            component: 'CalendarRtlSampleComponent',
+            component: 'CalendarRtlComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/scheduling/calendar/"
         }));
@@ -74,8 +74,13 @@ export class CalendarConfigGenerator implements IConfigGenerator {
         }));
 
         configs.push(new Config({
+            component: 'CalendarTemplatesComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/scheduling/calendar/"
+        }));
+
+        configs.push(new Config({
             component: 'CalendarStylingSampleComponent',
-            additionalFiles: ["/src/app/scheduling/calendar/calendar-styling-sample/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/scheduling/calendar/"
         }));

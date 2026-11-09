@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxColumnComponent, RowType } from 'igniteui-angular/grids/core';
 import { generateEmployeeFlatData, IEmployee } from '../data/employees-flat';
@@ -9,7 +9,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-row-styles-sample',
     styleUrls: ['tree-grid-rowStyle.component.scss'],
     templateUrl: 'tree-grid-rowStyle.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridRowStylesComponent implements OnInit {
@@ -26,7 +25,7 @@ export class TreeGridRowStylesComponent implements OnInit {
         row.data['Title'].includes('Senior') ? '#f8f9fa' : null;
 
     // eslint-disable-next-line @typescript-eslint/member-ordering
-    public  rowStyles = {
+    public  rowStyles: any = {
         background: this.background,
         'border-left': (row: RowType) => row.data['Title'] === 'CEO' || row.data['Title'].includes('President') ?
             '2px solid' : null,

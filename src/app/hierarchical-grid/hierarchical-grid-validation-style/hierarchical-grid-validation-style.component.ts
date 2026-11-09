@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IgxCellValidationErrorDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, RowType } from 'igniteui-angular/grids/core';
@@ -11,14 +11,13 @@ import { NgTemplateOutlet } from '@angular/common';
     selector: 'app-hierarchical-grid-validation-style',
     styleUrls: ['./hierarchical-grid-validation-style.component.scss'],
     templateUrl: 'hierarchical-grid-validation-style.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnRequiredValidatorDirective, IgxCellValidationErrorDirective, NgTemplateOutlet, IgxRowIslandComponent]
 })
 export class HGridValidationStyleComponent {
     @ViewChild('hierarchicalGrid', { read: IgxHierarchicalGridComponent, static: true }) public hierarchicalGrid: IgxHierarchicalGridComponent;
     @ViewChild('childGrid', { static: true }) private childGrid: IgxRowIslandComponent;
     public localData: Singer[];
-    public rowStyles = {
+    public rowStyles: any = {
         background: (row: RowType) => row.validation.status === 'INVALID' ? '#FF000033' : '#00000000'
     };
     public cellStyles = {

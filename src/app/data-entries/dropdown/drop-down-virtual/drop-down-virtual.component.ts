@@ -1,6 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-import { IgxButtonDirective, IgxForOfDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
+import { Component } from '@angular/core';
+import { IgxButtonDirective, IgxToggleActionDirective } from 'igniteui-angular/directives';
 import { IgxDropDownComponent, IgxDropDownItemComponent, IgxDropDownItemNavigationDirective } from 'igniteui-angular/drop-down';
+import { IgxVirtualItemDirective, IgxVirtualScrollComponent } from 'igniteui-angular/virtual-scroll';
 
 // tslint:disable:object-literal-sort-keys
 // tslint:disable-next-line:interface-name
@@ -15,13 +16,11 @@ interface DataItem {
     selector: 'app-drop-down-virtual',
     templateUrl: './drop-down-virtual.component.html',
     styleUrls: ['./drop-down-virtual.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxForOfDirective, IgxDropDownItemComponent]
+    imports: [IgxButtonDirective, IgxToggleActionDirective, IgxDropDownItemNavigationDirective, IgxDropDownComponent, IgxVirtualScrollComponent, IgxVirtualItemDirective, IgxDropDownItemComponent]
 })
 export class DropDownVirtualComponent {
   public items: DataItem[];
-  public itemHeight = 48;
-  public itemsMaxHeight = 240;
+  public itemHeight = 40;
 
   constructor() {
     const itemsCollection: DataItem[] = [];

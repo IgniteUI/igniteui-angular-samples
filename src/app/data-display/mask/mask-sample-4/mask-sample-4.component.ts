@@ -1,4 +1,4 @@
-import { Component, Pipe, PipeTransform, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Pipe, PipeTransform } from '@angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxMaskDirective, IgxTextSelectionDirective } from 'igniteui-angular/directives';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
 @Component({
     selector: 'app-mask-sample-4',
     templateUrl: './mask-sample-4.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxInputGroupComponent, IgxLabelDirective, FormsModule, IgxInputDirective, IgxMaskDirective, IgxTextSelectionDirective]
 })
 export class MaskSample4Component {

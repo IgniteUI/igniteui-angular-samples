@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxMaskDirective } from 'igniteui-angular/directives';
@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-mask-sample-3',
     styleUrls: ['./mask-sample-3.component.scss'],
     templateUrl: './mask-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSwitchComponent, FormsModule, IgxInputGroupComponent, IgxLabelDirective, IgxInputDirective, IgxMaskDirective]
 })
 export class MaskSample3Component {

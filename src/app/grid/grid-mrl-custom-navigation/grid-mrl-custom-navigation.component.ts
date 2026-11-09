@@ -1,4 +1,4 @@
-import { Component, ViewChild, ViewEncapsulation, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, IgxColumnLayoutComponent } from 'igniteui-angular/grids/core';
 import { DATA } from '../../data/company-data';
@@ -9,7 +9,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-grid-mrl-custom-navigation-sample',
     styleUrls: ['./grid-mrl-custom-navigation.component.scss'],
     templateUrl: './grid-mrl-custom-navigation.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnLayoutComponent, IgxColumnComponent]
 })
 export class GridMRLCustomNavigationComponent {

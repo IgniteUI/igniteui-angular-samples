@@ -1,0 +1,6 @@
+@for (item of variants; track item.label) {
+    <div class="chip-outlined-item">
+        <span>{{ item.label }}</span>
+        <igx-chip [variant]="item.variant" outlined selectable removable>Chip</igx-chip>
+    </div>
+}

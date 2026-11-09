@@ -1,14 +1,15 @@
-@use "layout.scss";
-@use "igniteui-angular/theming" as *;
+@use 'layout.scss';
+@use 'igniteui-angular/theming' as *;
 
 $custom-theme: grid-theme(
-  $header-background: #e0f3ff,
-  $header-text-color: #e41c77,
-  $header-border-width: 1px,
-  $header-border-style: solid,
-  $header-border-color: rgba(0, 0, 0, 0.08)
+	$header-background: #f1eaf6,
+	$header-text-color: #8c1bdd,
+	$header-border-width: 1px,
+	$header-border-style: solid,
+	$header-border-color: #d3b9e6,
+	$cell-active-border-color: #7409c1
 );
 
 :host {
-  @include tokens($custom-theme);
+	@include tokens($custom-theme);
 }

@@ -1,8 +1,7 @@
-igx-chip {
-    margin-right: 5px;
-}
-
 .sample-container {
-    padding-top: 15px;
-    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 5px;
+    padding: 1rem 0 0 1rem;
 }

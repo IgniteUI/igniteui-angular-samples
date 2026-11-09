@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { Component } from "@angular/core";
 
 import { IPivotConfiguration, IgxPivotDateDimension, IgxPivotNumericAggregate, PivotAggregation } from 'igniteui-angular/grids/core';
 import { FilteringExpressionsTree, FilteringLogic, IgxStringFilteringOperand } from 'igniteui-angular/core';
@@ -36,7 +36,6 @@ export class IgxTotalSaleAggregate {
     selector: 'app-pivot-features-sample',
     styleUrls: ['./pivot-features.component.scss'],
     templateUrl: './pivot-features.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxPivotGridComponent, IgxPivotDataSelectorComponent]
 })
 export class PivotFeaturesComponent {

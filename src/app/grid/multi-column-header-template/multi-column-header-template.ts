@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { GridSelectionMode, IgxColumnComponent, IgxColumnGroupComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -9,7 +9,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-multi-column-header-template',
     styleUrls: ['multi-column-header-template.scss'],
     templateUrl: 'multi-column-header-template.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxIconComponent, IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxColumnGroupComponent]
 })
 export class GridMultiColumnHeaderTemplateComponent {

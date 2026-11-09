@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DateRange, IgxPickerToggleComponent } from 'igniteui-angular/core';
 import { IRangeSliderValue, IgxSliderComponent } from 'igniteui-angular/slider';
@@ -38,7 +38,6 @@ export interface User{
     selector: 'app-reactive-form',
     styleUrls: ['./reactive-forms.component.scss'],
     templateUrl: './reactive-forms.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [FormsModule, ReactiveFormsModule, IgxSelectComponent, IgxSelectGroupComponent, IgxSelectItemComponent, IgxLabelDirective, IgxSelectToggleIconDirective, IgxIconComponent, IgxInputGroupComponent, IgxInputDirective, IgxSuffixDirective, IgxHintDirective, IgxPrefixDirective, IgxComboComponent, IgxDatePickerComponent, IgxPickerToggleComponent, IgxTimePickerComponent, IgcFormControlDirective, IgxCheckboxComponent, IgxRadioGroupDirective, IgxRadioComponent, IgxSwitchComponent, IgxDateRangePickerComponent, IgxSliderComponent, IgxCalendarComponent, IgxCardComponent, IgxMonthPickerComponent, IgxButtonDirective, IgxRippleDirective]
 })
 export class ReactiveFormsSampleComponent {

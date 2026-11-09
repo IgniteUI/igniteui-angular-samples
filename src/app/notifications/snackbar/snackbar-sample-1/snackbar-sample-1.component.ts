@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
 import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
 
@@ -6,7 +6,6 @@ import { IgxSnackbarComponent } from 'igniteui-angular/snackbar';
     selector: 'app-snackbar-sample-1',
     styleUrls: ['./snackbar-sample-1.component.scss'],
     templateUrl: './snackbar-sample-1.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxSnackbarComponent]
 })
 export class SnackbarSample1Component { }

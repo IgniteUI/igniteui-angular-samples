@@ -1,5 +1,5 @@
 
-import { Component, ViewChild, DOCUMENT, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, DOCUMENT, inject } from '@angular/core';
 import { IViewDateChangeEventArgs, IgxCalendarComponent, IgxCalendarView } from 'igniteui-angular/calendar';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 
@@ -7,7 +7,6 @@ import { IgxDialogComponent } from 'igniteui-angular/dialog';
     selector: 'app-calendar',
     styleUrls: ['./calendar-sample-3.component.scss'],
     templateUrl: './calendar-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCalendarComponent]
 })
 export class CalendarSample3Component {

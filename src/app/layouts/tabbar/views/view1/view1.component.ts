@@ -1,8 +1,7 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-view1',
-    changeDetection: ChangeDetectionStrategy.Eager,
     templateUrl: './view1.component.html'
 })
 export class TabbarView1Component { }

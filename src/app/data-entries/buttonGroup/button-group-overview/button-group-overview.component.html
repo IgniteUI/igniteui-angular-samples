@@ -1,0 +1,19 @@
+<div class="sample-layout">
+    <igx-buttongroup selectionMode="singleRequired">
+        <button igxButton [igxRipple]="rippleColor" [selected]="source === 'device'" (click)="selectSource('device')">
+            Device
+        </button>
+        <button igxButton [igxRipple]="rippleColor" [selected]="source === 'cloud'" (click)="selectSource('cloud')">
+            Cloud
+        </button>
+    </igx-buttongroup>
+
+    <div class="album">
+        <p class="album-title">{{ album.title }}</p>
+        <div class="album-photos">
+            @for (photo of album.photos; track photo) {
+                <img [src]="photo" [alt]="album.title" />
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+@use "sass:meta";
+@import url("https://use.typekit.net/bng2zgw.css");
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-checkbox-tailwind-styling {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+/* The design's 44px header: an 8px inset around the title's 28px box. */
+igx-expansion-panel-header .igx-expansion-panel__header-inner {
+    padding: 0.5rem 1rem;
+}
+
+/* The body's own inset is the theme's, so it is set here instead: 6px, which
+   the option's 10px of padding completes into the header's 16px. */
+igx-expansion-panel-body {
+    padding: 0 0.375rem 0.5rem;
+}
+
+/* A 40px row in every theme. The padding sits on the checkbox itself rather
+   than on the box, so the padding a theme adds around the box for its ripple
+   can no longer stretch the row. */
+.filter-option {
+    --label-margin: 0.75rem;
+
+    padding: 0.5rem 0.625rem;
+}

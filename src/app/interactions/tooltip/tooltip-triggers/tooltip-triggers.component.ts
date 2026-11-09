@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ChangeDetectionStrategy } from "@angular/core";
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import {
     IgxTooltipTargetDirective,
     IgxTooltipDirective,
@@ -17,7 +17,6 @@ defineComponents(IgcInputComponent);
     styleUrls: ["./tooltip-triggers.component.scss"],
     templateUrl: "./tooltip-triggers.component.html",
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [
     IgxTooltipTargetDirective,
     IgxTooltipDirective,

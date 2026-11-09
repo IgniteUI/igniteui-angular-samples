@@ -1,0 +1,16 @@
+<nav aria-label="Breadcrumb">
+    <igc-breadcrumbs>
+        <igc-breadcrumb>
+            <a href="/home" (click)="$event.preventDefault()">Home</a>
+        </igc-breadcrumb>
+        <igc-breadcrumb>
+            <a href="/home/billing" (click)="$event.preventDefault()">Billing</a>
+        </igc-breadcrumb>
+        <igc-breadcrumb>
+            <a href="/home/billing/subscriptions" (click)="$event.preventDefault()">Subscriptions</a>
+        </igc-breadcrumb>
+        <igc-breadcrumb current>
+            <a href="/home/billing/subscriptions/add-seats" (click)="$event.preventDefault()">How to add seats to an existing subscription</a>
+        </igc-breadcrumb>
+    </igc-breadcrumbs>
+</nav>

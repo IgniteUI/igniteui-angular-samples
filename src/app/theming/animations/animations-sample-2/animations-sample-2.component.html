@@ -1,32 +1,30 @@
-<div class="sample-column card-wrapper">
-    <igx-card [horizontal]="horizontal">
-        <div igxLayout igxLayoutDir="column" igxFlex [igxFlexGrow]="1">
-            <igx-card-header>
-                <h5 class="igx-card-header__title">Rozes</h5>
-                <h5 class="igx-card-header__subtitle">Under the Grave (2016)</h5>
-                <igx-card-media width="64px" height="64px">
-                    <img src="assets/images/card/media/ROZES-Under-the-Grave.jpg">
-                </igx-card-media>
-            </igx-card-header>
+<igx-card [horizontal]="horizontal">
+    <div igxLayout igxLayoutDir="column" igxFlex [igxFlexGrow]="1">
+        <igx-card-header>
+            <span igxCardHeaderTitle>Rozes</span>
+            <span igxCardHeaderSubtitle>Under the Grave (2016)</span>
+            <igx-card-media width="64px" height="64px">
+                <img src="assets/images/card/media/ROZES-Under-the-Grave.jpg">
+            </igx-card-media>
+        </igx-card-header>
 
-            <igx-card-content>
-                <p class="igx-card-content__text">As I have always said: I write what's real and what's true,
-                    even if it means throwing myself under the bus.</p>
-            </igx-card-content>
-        </div>
+        <igx-card-content>
+            <p>As I have always said: I write what's real and what's true,
+                even if it means throwing myself under the bus.</p>
+        </igx-card-content>
+    </div>
 
-        <igx-divider [vertical]="horizontal"></igx-divider>
+    <igx-divider [vertical]="horizontal"></igx-divider>
 
-        <igx-card-actions layout="justify">
-            <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" igxEnd>
-                <igx-icon family="material">skip_previous</igx-icon>
-            </button>
-            <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" igxEnd>
-                <igx-icon family="material">play_arrow</igx-icon>
-            </button>
-            <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" igxEnd>
-                <igx-icon family="material">skip_next</igx-icon>
-            </button>
-        </igx-card-actions>
-    </igx-card>
-</div>
+    <igx-card-actions layout="justify">
+        <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" igxEnd>
+            <igx-icon family="material">skip_previous</igx-icon>
+        </button>
+        <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" igxEnd>
+            <igx-icon family="material">play_arrow</igx-icon>
+        </button>
+        <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" igxEnd>
+            <igx-icon family="material">skip_next</igx-icon>
+        </button>
+    </igx-card-actions>
+</igx-card>

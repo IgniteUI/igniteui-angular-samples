@@ -7,62 +7,55 @@
         <igx-grid-toolbar-exporter></igx-grid-toolbar-exporter>
       </igx-grid-toolbar-actions>
       <igx-grid-toolbar-title>
-        <div class="crm-toolbar-template">
-          <div class="crm-sample-toolbar__title">
-            <span class="logo-propeller">
-              <img width="28px" height="28px" src="assets/images/grid-crm/propeller-logo.svg" class="animated-fan" />
-            </span>
-            <span class="crm-sample-toolbar__ellipsis">Business Propeller</span>
-          </div>
-          <div class="sample-flex-container">
             <igx-input-group type="search">
               <igx-prefix>
                 @if (searchText.length === 0) {
-                  <igx-icon class="prefixIcon">search</igx-icon>
+                  <igx-icon>search</igx-icon>
                 }
                 @if (searchText.length > 0) {
-                  <igx-icon class="prefixIcon" (click)="clearSearch()">clear
-                  </igx-icon>
+                  <igx-icon (click)="clearSearch()">clear</igx-icon>
                 }
               </igx-prefix>
 
-              <input #search1 name="search" id="search1" class="searchInput" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="grid1.findNext(searchText, caseSensitive)" (keydown)="searchKeyDown($event)" />
+              <input #search1 name="search" id="search1" igxInput placeholder="Search" [(ngModel)]="searchText" (ngModelChange)="grid1.findNext(searchText, caseSensitive)" (keydown)="searchKeyDown($event)" />
 
               @if (searchText.length > 0) {
-                <igx-suffix>
+                <igx-suffix class="search-extras">
                   @if (grid1.lastSearchInfo) {
-                    <div class="resultsText">
+                    <div class="search-extras__inner-container">
                       @if (grid1.lastSearchInfo.matchInfoCache.length > 0) {
-                        <span>
+                        <span class="search-results">
                           {{ grid1.lastSearchInfo.activeMatchIndex + 1 }} of {{
                           grid1.lastSearchInfo.matchInfoCache.length }} results
                         </span>
                       }
                       @if (grid1.lastSearchInfo.matchInfoCache.length === 0) {
-                        <span>
+                        <span class="search-results">
                           No results
                         </span>
                       }
                     </div>
                   }
-                  <div class="caseSensitiveButton">
-                    <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="updateSearch()" [class]="caseSensitive? 'case-sensitive--active' : ''">
-                      <igx-icon class="caseSensitiveIcon" family="material">text_fields</igx-icon>
+
+                  <div class="search-extras__inner-container">
+                    <button igxIconButton="flat" (click)="updateSearch()" [class]="caseSensitive? 'case-sensitive--active' : 'case-sensitive--inactive'">
+                      <igx-icon family="material">text_fields</igx-icon>
                     </button>
+
                   </div>
-                  <div class="searchButtons">
-                    <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="grid1.findPrev(searchText, caseSensitive)">
+
+                  <div class="search-extras__inner-container">
+                    <button igxIconButton="flat" (click)="grid1.findPrev(searchText, caseSensitive)">
                       <igx-icon family="material">navigate_before</igx-icon>
                     </button>
-                    <button igxIconButton="flat" igxRipple [igxRippleCentered]="true" (click)="grid1.findNext(searchText, caseSensitive)">
+
+                    <button igxIconButton="flat" (click)="grid1.findNext(searchText, caseSensitive)">
                       <igx-icon family="material">navigate_next</igx-icon>
                     </button>
                   </div>
                 </igx-suffix>
               }
             </igx-input-group>
-          </div>
-        </div>
       </igx-grid-toolbar-title>
     </igx-grid-toolbar>
 

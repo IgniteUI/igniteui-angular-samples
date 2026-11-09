@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IgxCircularProgressBarComponent, IgxProgressBarGradientDirective } from 'igniteui-angular/progressbar';
 import { IgxIconButtonDirective } from 'igniteui-angular/directives';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -7,7 +7,6 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-circular-dynamic-sample',
     styleUrls: ['./circular-dynamic-sample.component.scss'],
     templateUrl: './circular-dynamic-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCircularProgressBarComponent, IgxProgressBarGradientDirective, IgxIconButtonDirective, IgxIconComponent]
 })
 export class CircularDynamicSampleComponent implements OnInit {

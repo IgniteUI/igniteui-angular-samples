@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
 
@@ -7,7 +7,6 @@ import { IgxLabelDirective } from 'igniteui-angular/input-group';
     selector: 'app-select-sample-1',
     styleUrls: ['select-sample-1.component.scss'],
     templateUrl: 'select-sample-1.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxSelectComponent, IgxLabelDirective, IgxSelectItemComponent]
 })
 export class SelectSample1Component {

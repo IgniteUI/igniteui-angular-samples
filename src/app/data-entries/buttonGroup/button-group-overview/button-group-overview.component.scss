@@ -1,0 +1,39 @@
+@use 'igniteui-theming' as *;
+
+:host {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.sample-layout {
+    display: grid;
+    width: rem(280px);
+    gap: rem(8px);
+}
+
+igx-buttongroup {
+    max-width: rem(280px);
+}
+
+.album-title {
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    font-weight: 400;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+    margin: rem(8px);
+}
+
+.album-photos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(4px);
+}
+
+.album-photos img {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+}

@@ -1,0 +1,76 @@
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.size-grid {
+    display: flex;
+    flex-direction: column;
+    gap: rem(20px);
+    padding: rem(16px);
+    inline-size: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.size-row {
+    display: grid;
+    grid-template-columns: rem(70px) repeat(4, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    column-gap: rem(16px);
+    row-gap: rem(8px);
+    inline-size: 100%;
+}
+
+.size-header {
+    @include type-style("body-2") {
+        margin: 0;
+    }
+
+    display: grid;
+    grid-template-columns: rem(70px) repeat(4, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    column-gap: rem(16px);
+    inline-size: 100%;
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+}
+
+.size-label {
+    @include type-style("body-2") {
+        margin: 0;
+    }
+
+    justify-self: start;
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    font-weight: 400;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+}
+
+.size-row button {
+    inline-size: auto;
+    transform: scale(0.9);
+}
+
+.size-small {
+    --ig-size: var(--ig-size-small) !important;
+}
+
+.size-medium {
+    --ig-size: var(--ig-size-medium) !important;
+}
+
+.size-large {
+    --ig-size: var(--ig-size-large) !important;
+}
