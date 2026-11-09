@@ -25,9 +25,9 @@ export class GridRowReorderComponent {
         const currRowIndex = this.getCurrentRowIndex(this.grid.rowList.toArray(),
             { x: event.clientX, y: event.clientY });
         if (currRowIndex === -1) { return; }
-        this.grid.deleteRow(args.dragData.key);
-        this.data.splice(currRowIndex, 0, args.dragData.data);
-        this.data = [...this.data];
+        const newData = this.data.filter(r => r.ID !== args.dragData.key);
+        newData.splice(currRowIndex, 0, args.dragData.data);
+        this.data = newData;
     }
 
     private getCurrentRowIndex(rowList: IgxRowDirective[], cursorPosition) {
