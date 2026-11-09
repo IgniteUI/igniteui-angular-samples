@@ -20,7 +20,7 @@ igx-carousel {
     overflow: hidden;
     border: 1px solid var(--ig-gray-300);
     border-radius: 8px;
-    background: var(--ig-surface-500);
+    background: var(--ig-surface-base);
 }
 
 :host ::ng-deep {
@@ -47,7 +47,7 @@ igx-carousel {
     border: 1px solid var(--ig-gray-300);
     border-radius: 8px;
     color: var(--ig-gray-900);
-    background: color-mix(in srgb, var(--ig-surface-500) 88%, transparent);
+    background: color-mix(in srgb, var(--ig-surface-base) 88%, transparent);
     box-shadow: 0 14px 34px rgb(0 0 0 / 0.14);
 }
 

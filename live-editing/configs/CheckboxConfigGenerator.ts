@@ -31,6 +31,8 @@ export class CheckboxConfigGenerator implements IConfigGenerator {
         // checkbox tailwind styling
         configs.push(new Config({
             component: 'CheckboxTailwindStylingComponent',
+            additionalDependencies: ["tailwindcss", "@tailwindcss/postcss"],
+            additionalFiles: [".postcssrc.json"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/checkbox/"
         }));

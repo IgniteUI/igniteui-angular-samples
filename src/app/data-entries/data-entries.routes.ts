@@ -68,8 +68,14 @@ import { RadioGroupSampleComponent } from './radio/radio-group-sample/radio-grou
 import { RadioSample1Component } from './radio/radio-sample-1/radio-sample-1.component';
 import { RadioSample2Component } from './radio/radio-sample-2/radio-sample-2.component';
 import { RadioSample3Component } from './radio/radio-sample-3/radio-sample-3.component';
-import { RadioStylingSampleComponent } from './radio/radio-styling-sample/radio-styling-sample.component';
-import { RadioTailwindStylingSampleComponent } from './radio/radio-tailwind-styling-sample/radio-tailwind-styling-sample.component';
+import { RadioOverviewComponent } from './radio/radio-overview/radio-overview.component';
+import { RadioLayoutComponent } from './radio/radio-layout/radio-layout.component';
+import { RadioOrientationComponent } from './radio/radio-orientation/radio-orientation.component';
+import { RadioInteractionStateComponent } from './radio/radio-interaction-state/radio-interaction-state.component';
+import { RadioDisabledComponent } from './radio/radio-disabled/radio-disabled.component';
+import { RadioOnOffStateComponent } from './radio/radio-on-off-state/radio-on-off-state.component';
+import { RadioStylingComponent } from './radio/radio-styling/radio-styling.component';
+import { RadioTailwindStylingComponent } from './radio/radio-tailwind-styling/radio-tailwind-styling.component';
 import { SelectHeaderFooterComponent } from './select/select-header-footer/select-header-footer.component';
 import { SelectInputDirectivesComponent } from './select/select-input-directives/select-input-directives';
 import { SelectSample1Component } from './select/select-sample-1/select-sample-1.component';
@@ -85,6 +91,13 @@ import { SwitchLayoutComponent } from './switch/switch-layout/switch-layout.comp
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
 import { SwitchTailwindStylingComponent } from './switch/switch-tailwind-styling/switch-tailwind-styling.component';
 import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
+import { RatingOverviewComponent } from './rating/rating-overview/rating-overview.component';
+import { RatingLayoutComponent } from './rating/rating-layout/rating-layout.component';
+import { RatingInteractionStatesComponent } from './rating/rating-interaction-states/rating-interaction-states.component';
+import { RatingStatesComponent } from './rating/rating-states/rating-states.component';
+import { RatingSizeComponent } from './rating/rating-size/rating-size.component';
+import { RatingStylingComponent } from './rating/rating-styling/rating-styling.component';
+import { RatingTailwindStylingComponent } from './rating/rating-tailwind-styling/rating-tailwind-styling.component';
 import { TemplateDrivenFormValidationComponent } from './input-group/template-driven-form-validation/template-driven-form-validation.component';
 import { ReactiveFormValidationComponent } from './input-group/reactive-form-validation/reactive-form-validation.component';
 import { ReactiveFormCustomValidationComponent } from './input-group/reactive-form-custom-validation/reactive-form-custom-validation.component';
@@ -450,6 +463,46 @@ export const DataEntriesRoutes: Routes = [
         path: 'reactive-forms'
     },
     {
+        component: RadioOverviewComponent,
+        data: dataEntriesRoutesData['radio-overview'],
+        path: 'radio-overview'
+    },
+    {
+        component: RadioLayoutComponent,
+        data: dataEntriesRoutesData['radio-layout'],
+        path: 'radio-layout'
+    },
+    {
+        component: RadioOrientationComponent,
+        data: dataEntriesRoutesData['radio-orientation'],
+        path: 'radio-orientation'
+    },
+    {
+        component: RadioInteractionStateComponent,
+        data: dataEntriesRoutesData['radio-interaction-state'],
+        path: 'radio-interaction-state'
+    },
+    {
+        component: RadioDisabledComponent,
+        data: dataEntriesRoutesData['radio-disabled'],
+        path: 'radio-disabled'
+    },
+    {
+        component: RadioOnOffStateComponent,
+        data: dataEntriesRoutesData['radio-on-off-state'],
+        path: 'radio-on-off-state'
+    },
+    {
+        component: RadioStylingComponent,
+        data: dataEntriesRoutesData['radio-styling'],
+        path: 'radio-styling'
+    },
+    {
+        component: RadioTailwindStylingComponent,
+        data: dataEntriesRoutesData['radio-tailwind-styling'],
+        path: 'radio-tailwind-styling'
+    },
+    {
         component: RadioSample1Component,
         data: dataEntriesRoutesData['radio-sample-1'],
         path: 'radio-sample-1'
@@ -475,19 +528,44 @@ export const DataEntriesRoutes: Routes = [
         path: 'radio-group-vertical'
     },
     {
-        component: RadioStylingSampleComponent,
-        data: dataEntriesRoutesData['radio-styling-sample'],
-        path: 'radio-styling-sample'
-    },
-    {
-        component: RadioTailwindStylingSampleComponent,
-        data: dataEntriesRoutesData['radio-tailwind-styling-sample'],
-        path: 'radio-tailwind-styling-sample'
-    },
-    {
         component: RatingInFormComponent,
         data: dataEntriesRoutesData['rating-in-form'],
         path: 'rating-form'
+    },
+    {
+        component: RatingOverviewComponent,
+        data: dataEntriesRoutesData['rating-overview'],
+        path: 'rating-overview'
+    },
+    {
+        component: RatingLayoutComponent,
+        data: dataEntriesRoutesData['rating-layout'],
+        path: 'rating-layout'
+    },
+    {
+        component: RatingInteractionStatesComponent,
+        data: dataEntriesRoutesData['rating-interaction-states'],
+        path: 'rating-interaction-states'
+    },
+    {
+        component: RatingStatesComponent,
+        data: dataEntriesRoutesData['rating-states'],
+        path: 'rating-states'
+    },
+    {
+        component: RatingSizeComponent,
+        data: dataEntriesRoutesData['rating-size'],
+        path: 'rating-size'
+    },
+    {
+        component: RatingStylingComponent,
+        data: dataEntriesRoutesData['rating-styling'],
+        path: 'rating-styling'
+    },
+    {
+        component: RatingTailwindStylingComponent,
+        data: dataEntriesRoutesData['rating-tailwind-styling'],
+        path: 'rating-tailwind-styling'
     },
     {
         component: SwitchOverviewComponent,

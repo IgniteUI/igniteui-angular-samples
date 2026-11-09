@@ -15,13 +15,12 @@ import { BreadcrumbsTailwindStylingComponent } from './breadcrumbs/breadcrumbs-t
 import { BreadcrumbsWrappingComponent } from './breadcrumbs/breadcrumbs-wrapping/breadcrumbs-wrapping.component';
 import { BreadcrumbsSizesComponent } from './breadcrumbs/breadcrumbs-sizes/breadcrumbs-sizes.component';
 import { BreadcrumbsStatesComponent } from './breadcrumbs/breadcrumbs-states/breadcrumbs-states.component';
-import { CardSample1Component } from './card/card-sample-1/card-sample-1.component';
-import { CardSample2Component } from './card/card-sample-2/card-sample-2.component';
-import { CardSample3Component } from './card/card-sample-3/card-sample-3.component';
-import { CardSample4Component } from './card/card-sample-4/card-sample-4.component';
-import { CardStylingSampleComponent } from './card/card-styling-sample/card-styling-sample.component';
-import { CardTailwindStylingSampleComponent } from './card/card-tailwind-styling-sample/card-tailwind-styling-sample.component';
-import { CardComponent } from './card/card.component';
+import { CardActionsComponent } from './card/card-actions/card-actions.component';
+import { CardMediaComponent } from './card/card-media/card-media.component';
+import { CardOverviewComponent } from './card/card-overview/card-overview.component';
+import { CardPositionComponent } from './card/card-position/card-position.component';
+import { CardStylingComponent } from './card/card-styling/card-styling.component';
+import { CardTailwindStylingComponent } from './card/card-tailwind-styling/card-tailwind-styling.component';
 import {
     CarouselAnimationsSampleComponent
 } from './carousel/carousel-animations-sample/carousel-animations-sample.component';
@@ -95,17 +94,13 @@ import { TabbarTailwindStyleComponent } from './tabbar/tabbar-tailwind-style/tab
 import { TabbarView1Component } from './tabbar/views/view1/view1.component';
 import { TabbarView2Component } from './tabbar/views/view2/view2.component';
 import { TabbarView3Component } from './tabbar/views/view3/view3.component';
-import { TabsSample1Component } from './tabs/tabs-sample-1/tabs-sample-1.component';
-import { TabsSample2Component } from './tabs/tabs-sample-2/tabs-sample-2.component';
-import { TabsSample3Component } from './tabs/tabs-sample-3/tabs-sample-3.component';
-import { TabsSample4Component } from './tabs/tabs-sample-4/components/tabs-sample-4.component';
-import { TabsStyleComponent } from './tabs/tabs-style/tabs-style.component';
-import { TabsTailwindStyleComponent } from './tabs/tabs-tailwind-style/tabs-tailwind-style.component';
-import { TabsAlignmentComponent } from './tabs/tabs-alignment/tabs-alignment.component';
-import { TabsHeaderPrefixSuffixComponent } from './tabs/tabs-header-prefix-suffix/tabs-header-prefix-suffix';
-import { View1Component } from './tabs/views/view1/view1.component';
-import { View2Component } from './tabs/views/view2/view2.component';
-import { View3Component } from './tabs/views/view3/view3.component';
+import { TabsOverviewComponent } from './tabs/tabs-overview/tabs-overview.component';
+import { TabsTypeComponent } from './tabs/tabs-type/tabs-type.component';
+import { TabsResponsivenessComponent } from './tabs/tabs-responsiveness/tabs-responsiveness.component';
+import { TabsAmountComponent } from './tabs/tabs-amount/tabs-amount.component';
+import { TabsStatesComponent } from './tabs/tabs-states/tabs-states.component';
+import { TabsStylingComponent } from './tabs/tabs-styling/tabs-styling.component';
+import { TabsTailwindStylingComponent } from './tabs/tabs-tailwind-styling/tabs-tailwind-styling.component';
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
 import { AccordionCustomizationComponent } from './accordion/accordion-customization/accordion-customization.component';
 import { AccordionNestedScenarioComponent } from './accordion/accordion-nested-scenario/accordion-nested-scenario.component';
@@ -508,79 +503,69 @@ export const LayoutsRoutes: Routes = [
         path: 'tabbar-tailwind-style'
     },
     {
-        component: TabsSample1Component,
-        data: layoutsRoutesData['tabs-sample-1'],
-        path: 'tabs-sample-1'
+        component: TabsOverviewComponent,
+        data: layoutsRoutesData['tabs-overview'],
+        path: 'tabs-overview'
     },
     {
-        component: TabsSample2Component,
-        data: layoutsRoutesData['tabs-sample-2'],
-        path: 'tabs-sample-2'
+        component: TabsTypeComponent,
+        data: layoutsRoutesData['tabs-type'],
+        path: 'tabs-type'
     },
     {
-        component: TabsSample3Component,
-        data: layoutsRoutesData['tabs-sample-3'],
-        path: 'tabs-sample-3'
+        component: TabsResponsivenessComponent,
+        data: layoutsRoutesData['tabs-responsiveness'],
+        path: 'tabs-responsiveness'
     },
     {
-        component: TabsSample4Component,
-        path: 'tabs-sample-4',
-        children: [
-            { path: 'view1', component: View1Component },
-            { path: 'view2', component: View2Component },
-            { path: 'view3', component: View3Component }
-        ]
+        component: TabsAmountComponent,
+        data: layoutsRoutesData['tabs-amount'],
+        path: 'tabs-amount'
     },
     {
-        component: TabsStyleComponent,
-        path: 'tabs-style'
+        component: TabsStatesComponent,
+        data: layoutsRoutesData['tabs-states'],
+        path: 'tabs-states'
     },
     {
-        component: TabsTailwindStyleComponent,
-        path: 'tabs-tailwind-style'
+        component: TabsStylingComponent,
+        data: layoutsRoutesData['tabs-styling'],
+        path: 'tabs-styling'
     },
     {
-        component: TabsAlignmentComponent,
-        path: 'tabs-alignment'
+        component: TabsTailwindStylingComponent,
+        data: layoutsRoutesData['tabs-tailwind-styling'],
+        path: 'tabs-tailwind-styling'
     },
     {
-        component: TabsHeaderPrefixSuffixComponent,
-        path: 'tabs-header-prefix-suffix'
+        component: CardOverviewComponent,
+        data: layoutsRoutesData['card-overview'],
+        path: 'card-overview'
     },
     {
-        component: CardComponent,
-        data: layoutsRoutesData['card-sample-0'],
-        path: 'card-sample-0'
+        component: CardActionsComponent,
+        data: layoutsRoutesData['card-actions'],
+        path: 'card-actions'
     },
     {
-        component: CardSample1Component,
-        data: layoutsRoutesData['card-sample-1'],
-        path: 'card-sample-1'
+        component: CardMediaComponent,
+        data: layoutsRoutesData['card-media'],
+        path: 'card-media'
     },
     {
-        component: CardSample2Component,
-        data: layoutsRoutesData['card-sample-2'],
-        path: 'card-sample-2'
+        component: CardPositionComponent,
+        data: layoutsRoutesData['card-position'],
+        path: 'card-position'
     },
     {
-        component: CardSample3Component,
-        data: layoutsRoutesData['card-sample-3'],
-        path: 'card-sample-3'
+        component: CardStylingComponent,
+        data: layoutsRoutesData['card-styling'],
+        path: 'card-styling'
     },
     {
-        component: CardSample4Component,
-        data: layoutsRoutesData['card-sample-4'],
-        path: 'card-sample-4'
-    },
-    {
-        component: CardStylingSampleComponent,
-        data: layoutsRoutesData['card-styling-sample'],
-        path: 'card-styling-sample'
-    },
-    {
-        component: CardTailwindStylingSampleComponent,
-        data: layoutsRoutesData['card-tailwind-styling-sample'],
-        path: 'card-tailwind-styling-sample'
+        component: CardTailwindStylingComponent,
+        data: layoutsRoutesData['card-tailwind-styling'],
+        path: 'card-tailwind-styling'
     },
     {
         component: TileManagerComponent,
