@@ -41,7 +41,7 @@ export class GridStatePersistenceSampleComponent {
     @ViewChild('startY', { static: true }) public startYTemplate: TemplateRef<any>;
     @ViewChild('changeOnYear', { static: true }) public changeOnYearTemplate: TemplateRef<any>;
     @ViewChild('changePercentage', { static: true }) public changePercentageTemplate: TemplateRef<any>;
-    
+
     public data: Observable<any[]>;
     public customStrategy = NoopSortingStrategy.instance();
     public options: IGridStateOptions = {

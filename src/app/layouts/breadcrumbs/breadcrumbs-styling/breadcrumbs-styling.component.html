@@ -1,0 +1,12 @@
+<nav aria-label="Breadcrumb">
+    <igc-breadcrumbs separator="music_note">
+        <igc-breadcrumb>
+            <igc-icon slot="prefix" name="home"></igc-icon>
+            <a href="/home" (click)="$event.preventDefault()">Home</a>
+        </igc-breadcrumb>
+        <igc-breadcrumb><a href="/home/item" (click)="$event.preventDefault()">Item</a></igc-breadcrumb>
+        <igc-breadcrumb><a href="/home/item/item" (click)="$event.preventDefault()">Item</a></igc-breadcrumb>
+        <igc-breadcrumb><a href="/home/item/item/item" (click)="$event.preventDefault()">Item</a></igc-breadcrumb>
+        <igc-breadcrumb current><a href="/home/item/item/item/current" (click)="$event.preventDefault()">Current Item</a></igc-breadcrumb>
+    </igc-breadcrumbs>
+</nav>

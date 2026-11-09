@@ -10,6 +10,7 @@ import { IgxButtonDirective } from 'igniteui-angular/directives';
     templateUrl: './timepicker-styling.component.html',
     imports: [IgxTimePickerComponent, IgxLabelDirective, IgxButtonDirective]
 })
-export class TimePickerStylingComponent {    element = inject(ElementRef);
+export class TimePickerStylingComponent {
+    element = inject(ElementRef);
 
  }

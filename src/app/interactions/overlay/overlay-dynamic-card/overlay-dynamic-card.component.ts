@@ -6,6 +6,7 @@ import { IgxCardComponent, IgxCardContentDirective, IgxCardHeaderComponent, IgxC
     styleUrls: [`overlay-dynamic-card.component.scss`],
     imports: [IgxCardComponent, IgxCardHeaderComponent, IgxCardHeaderTitleDirective, IgxCardHeaderSubtitleDirective, IgxCardContentDirective]
 })
-export class MyDynamicCardComponent {    elementRef = inject(ElementRef);
+export class MyDynamicCardComponent {
+    elementRef = inject(ElementRef);
 
 }

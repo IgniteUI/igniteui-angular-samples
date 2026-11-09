@@ -23,7 +23,7 @@ export class HGridAdvancedFilteringSampleComponent implements AfterViewInit{
     constructor() {
         this.localData = SINGERS;
     }
-    
+
     public ngAfterViewInit() {
         const albumsTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Albums', ['Artist']);
         albumsTree.filteringOperands.push({

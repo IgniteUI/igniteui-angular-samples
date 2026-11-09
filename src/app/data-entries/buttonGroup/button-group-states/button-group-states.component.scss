@@ -1,0 +1,86 @@
+@use 'igniteui-theming' as *;
+
+:host {
+    container-type: inline-size;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    height: 100vh;
+}
+
+.states-matrix {
+    --state-columns: 2;
+
+    display: grid;
+    grid-template-columns: auto repeat(var(--state-columns), minmax(rem(120px), 1fr));
+    gap: rem(16px);
+    inline-size: 100%;
+    max-inline-size: rem(520px);
+    margin-inline: auto;
+}
+
+.states-row {
+    display: grid;
+    grid-column: 1 / -1;
+    grid-template-columns: subgrid;
+    align-items: center;
+}
+
+.row-label,
+.column-label,
+.cell-label {
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    font-weight: 400;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+}
+
+.column-label,
+.cell-label {
+    text-align: center;
+}
+
+.cell-label {
+    display: none;
+}
+
+.state-cell {
+    display: grid;
+    gap: rem(4px);
+}
+
+// Too narrow for the matrix: drop the header, let the cells wrap, and move
+// each column label into the cell it describes.
+@container (width < 24rem) {
+    .states-matrix {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .states-row {
+        grid-template-columns: repeat(auto-fit, minmax(rem(140px), 1fr));
+        column-gap: rem(8px);
+    }
+
+    header.states-row {
+        display: none;
+    }
+
+    .row-label {
+        grid-column: 1 / -1;
+    }
+
+    .cell-label {
+        display: block;
+        text-align: start;
+        margin-block-start: rem(16px);
+    }
+}
+
+// WARNING START: Demo overrides only. Do not copy to production.
+// Interaction is disabled so the matrix stays a static picture of each state.
+igx-buttongroup  {
+    pointer-events: none;
+}
+// WARNING END

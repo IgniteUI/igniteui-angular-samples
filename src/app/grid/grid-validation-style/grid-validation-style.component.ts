@@ -14,7 +14,7 @@ import { NgTemplateOutlet } from '@angular/common';
 export class GridValidationStyleComponent {
     @ViewChild('grid', { read: IgxGridComponent, static: true }) public grid: IgxGridComponent;
     public data: any[];
-    public rowStyles = {
+    public rowStyles: any = {
         background: (row: RowType) => row.validation.status === 'INVALID' ? '#FF000033' : '#00000000'
     };
     public cellStyles = {

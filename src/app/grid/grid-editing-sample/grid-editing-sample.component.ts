@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxSummaryResult, VerticalAlignment } from 'igniteui-angular/core';
-import { IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
+import { IgxNumberSummaryOperand, IgxSummaryResult, VerticalAlignment } from 'igniteui-angular/core';
+import { IgxCellEditorTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarComponent } from 'igniteui-angular/grids/core';
 import { IgxToastComponent } from 'igniteui-angular/toast';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
 import { IgxButtonDirective, IgxFocusDirective, IgxIconButtonDirective } from 'igniteui-angular/directives';
@@ -103,7 +103,6 @@ export class GridEditingSampleComponent implements OnInit, AfterViewInit {
         this.product = new Product(this.id);
     }
 
-    // eslint-disable-next-line @typescript-eslint/member-delimiter-style
     public parseArray(arr: { shop: string, lastInventory: string}[]): string {
         return  (arr || []).map((e) => e.shop).join(', ');
     }

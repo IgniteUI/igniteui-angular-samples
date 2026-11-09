@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
-import { AfterViewInit, ChangeDetectorRef, Component, ComponentFactoryResolver, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
-import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, GridColumnDataType, IgxOverlayOutletDirective, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, ElementRef, Renderer2, OnDestroy, OnInit, DoCheck, TemplateRef, ViewChild, ViewContainerRef, ViewEncapsulation, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
+import { AbsoluteScrollStrategy, ConnectedPositioningStrategy, DefaultSortingStrategy, GridColumnDataType, OverlaySettings, SortingDirection } from 'igniteui-angular/core';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxSelectComponent, IgxSelectItemComponent } from 'igniteui-angular/select';
@@ -23,14 +23,13 @@ import { AsyncPipe, CurrencyPipe } from '@angular/common';
     selector: 'app-finjs-dock-manager',
     templateUrl: './grid-finjs-dock-manager.component.html',
     styleUrls: ['./grid-finjs-dock-manager.component.scss'],
-    imports: [IgxSwitchComponent, FormsModule, IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxButtonDirective, IgxOverlayOutletDirective, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxPaginatorComponent, GridHostDirective, AsyncPipe, CurrencyPipe],
+    imports: [IgxSwitchComponent, FormsModule, IgxSelectComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent, IgxSelectItemComponent, IgxButtonDirective, IgxGridComponent, IgxColumnComponent, IgxCellTemplateDirective, IgxPaginatorComponent, GridHostDirective, AsyncPipe, CurrencyPipe],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterViewInit, DoCheck {
     dataService = inject(SignalRService);
     private paneService = inject(FloatingPanesService);
     private cdr = inject(ChangeDetectorRef);
-    private componentFactoryResolver = inject(ComponentFactoryResolver);
     private elementRef = inject(ElementRef);
     private renderer = inject(Renderer2);
 
@@ -42,7 +41,6 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
     public priceTemplate: TemplateRef<any>;
     @ViewChild(IgxSelectComponent) public select: IgxSelectComponent;
     @ViewChild('freq', { read: IgxSelectComponent }) public selectFrequency: IgxSelectComponent;
-    @ViewChild(IgxOverlayOutletDirective) outlet: IgxOverlayOutletDirective;
 
     public isDarkTheme = true;
 
@@ -174,6 +172,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         this.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             if (data.length !== 0) {
                 this.isLoading = false;
+                this.cdr.markForCheck();
             };
         });
     }
@@ -204,9 +203,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
             this.paneService.initialPanePosition = { x, y };
             this.grid2.selectColumns(['price', 'change', 'changeP']);
             this.customOverlaySettings.target = this.select.inputGroup.element.nativeElement;
-            this.customOverlaySettings.outlet = this.outlet;
             this.freqOverlaySettings.target = this.selectFrequency.inputGroup.element.nativeElement;
-            this.freqOverlaySettings.outlet = this.outlet;
             this.grid1.groupingExpressions = [{
                 dir: SortingDirection.Desc,
                 fieldName: 'category',
@@ -225,6 +222,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
                 ignoreCase: false,
                 strategy: DefaultSortingStrategy.instance()
             }];
+            this.cdr.markForCheck();
         }, 500);
     }
 
@@ -289,8 +287,7 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
         this.cdr.detectChanges();
 
         // Create Dock Slot Component
-        const dockSlotComponentFactory = this.componentFactoryResolver.resolveComponentFactory(DockSlotComponent);
-        const dockSlotComponent = this.host.viewContainerRef.createComponent(dockSlotComponentFactory);
+        const dockSlotComponent = this.host.viewContainerRef.createComponent(DockSlotComponent);
         dockSlotComponent.instance.id = id;
         dockSlotComponent.instance.viewInit.pipe(first()).subscribe(() => {
             const gridViewContainerRef = dockSlotComponent.instance.gridHost.viewContainerRef;
@@ -299,13 +296,15 @@ export class GridFinJSDockManagerComponent implements OnInit, OnDestroy, AfterVi
     }
 
     public loadGridComponent(viewContainerRef: ViewContainerRef, destructor: Subject<any>) {
-        const componentFactory = this.componentFactoryResolver.resolveComponentFactory(IgxGridComponent);
         viewContainerRef.clear();
 
-        const componentRef = viewContainerRef.createComponent(componentFactory);
+        const componentRef = viewContainerRef.createComponent(IgxGridComponent);
         const grid = (componentRef.instance as IgxGridComponent);
         grid.autoGenerate = true;
-        this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => grid.data = d);
+        this.dataService.data.pipe(takeUntil(destructor)).subscribe(d => {
+            grid.data = d;
+            componentRef.changeDetectorRef.markForCheck();
+        });
         grid.columnInit.pipe(takeUntil(destructor)).subscribe((col: IgxColumnComponent) => {
             if (col.field === 'price') {
                 col.cellClasses = this.trends;

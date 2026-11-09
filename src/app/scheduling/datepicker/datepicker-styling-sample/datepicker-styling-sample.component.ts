@@ -9,7 +9,8 @@ import { IgxLabelDirective } from 'igniteui-angular/input-group';
     templateUrl: './datepicker-styling-sample.component.html',
     imports: [IgxDatePickerComponent, IgxLabelDirective]
 })
-export class DatepickerStylingSampleComponent {    element = inject(ElementRef);
+export class DatepickerStylingSampleComponent {
+    element = inject(ElementRef);
     private overlayService = inject(IgxOverlayService);
 
  }

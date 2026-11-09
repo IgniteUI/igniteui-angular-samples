@@ -1,4 +1,4 @@
-import { ComponentFactory, ComponentFactoryResolver, ComponentRef, Directive, EventEmitter, Input, Output, Type, ViewContainerRef, inject } from '@angular/core';
+import { ComponentRef, Directive, EventEmitter, Input, Output, Type, ViewContainerRef, inject } from '@angular/core';
 import {
     IgxAreaSeriesComponent, IgxBarSeriesComponent, IgxBubbleSeriesComponent, IgxColumnSeriesComponent,
     IgxDataChartComponent, IgxItemLegendComponent, IgxLegendComponent, IgxLineSeriesComponent, IgxPieChartComponent,
@@ -20,7 +20,8 @@ export interface IDeterminedChartTypesArgs {
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[chartHost]'
 })
-export class ChartHostDirective {    viewContainerRef = inject(ViewContainerRef);
+export class ChartHostDirective {
+    viewContainerRef = inject(ViewContainerRef);
 
 }
 @Directive({
@@ -28,7 +29,6 @@ export class ChartHostDirective {    viewContainerRef = inject(ViewContainerRef
     selector: '[chartIntegration]'
 })
 export class ChartIntegrationDirective {
-    private factoryResolver = inject(ComponentFactoryResolver);
 
     @Input()
     public get chartData() {
@@ -195,8 +195,8 @@ export class ChartIntegrationDirective {
         this.dataCharts.set(CHART_TYPE.PIE, IgxPieChartComponent);
         const iterable = this.dataCharts.keys();
         for (let head = iterable.next().value; head !== undefined; head = iterable.next().value) {
-            this._dataChartTypes.add(head);
-            this.chartTypesAvailability.set(head, true);
+            this._dataChartTypes.add(head as CHART_TYPE);
+            this.chartTypesAvailability.set(head as CHART_TYPE, true);
         }
     }
 
@@ -239,23 +239,19 @@ export class ChartIntegrationDirective {
         const initializer: ChartInitializer = this.getInitializer(type, chartType);
         let chart;
         if (viewContainerRef) {
-            let componentFactory: ComponentFactory<any>;
             let componentRef: ComponentRef<any>;
             this._sizeScale.maximumValue = 60;
             this._sizeScale.minimumValue = 10;
 
             if (type === CHART_TYPE.PIE) {
-                componentFactory = this.factoryResolver.resolveComponentFactory(IgxPieChartComponent);
-                componentRef = viewContainerRef.createComponent(componentFactory);
+                componentRef = viewContainerRef.createComponent(IgxPieChartComponent);
             } else {
-                componentFactory = this.factoryResolver.resolveComponentFactory(IgxDataChartComponent);
-                componentRef = viewContainerRef.createComponent(componentFactory);
+                componentRef = viewContainerRef.createComponent(IgxDataChartComponent);
             }
 
             if (this.useLegend) {
                 const legendType = type === CHART_TYPE.PIE ? IgxItemLegendComponent : IgxLegendComponent;
-                const legendFactory = this.factoryResolver.resolveComponentFactory(legendType as any);
-                const legendComponentRef: ComponentRef<any> = viewContainerRef.createComponent(legendFactory);
+                const legendComponentRef: ComponentRef<any> = viewContainerRef.createComponent(legendType as any);
                 options.chartOptions['legend'] = legendComponentRef.instance;
             }
             chart = initializer.initChart(componentRef.instance, options);

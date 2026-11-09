@@ -68,7 +68,7 @@ export class ControllerComponent implements OnInit, OnDestroy {
         this.frequencyChanged$ = this.intervalSlider.valueChange.pipe(debounce(() => timer(200)));
         this.frequencyChangedSubscription = this.frequencyChanged$
             .subscribe(() => this.frequencyChanged.emit(this.intervalSlider.value as number));
-        
+
         this.toast.positionSettings.verticalDirection = VerticalAlignment.Middle;
 
         // Hide theme switcher

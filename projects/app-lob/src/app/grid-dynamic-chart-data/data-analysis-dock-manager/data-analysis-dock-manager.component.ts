@@ -7,7 +7,7 @@ import { FloatingPanesService } from '../../services/floating-panes.service';
 import { DockSlotComponent } from './dock-slot/dock-slot.component';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IColumnSelectionEventArgs, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { IgxDividerDirective } from 'igniteui-angular/directives';
+import { IgxDividerComponent } from 'igniteui-angular/directives';
 import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { NgClass, DecimalPipe, TitleCasePipe, CurrencyPipe } from '@angular/common';
 import { debounceTime } from 'rxjs/operators';
@@ -57,7 +57,7 @@ export class HastDuplicateLayouts implements PipeTransform {
     templateUrl: './data-analysis-dock-manager.component.html',
     styleUrls: ['./data-analysis-dock-manager.component.scss'],
     providers: [FloatingPanesService],
-    imports: [IgxGridComponent, IgxConditionalFormattingDirective, IgxChartIntegrationDirective, IgxContextMenuDirective, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgClass, IgxDividerDirective, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
+    imports: [IgxGridComponent, IgxConditionalFormattingDirective, IgxChartIntegrationDirective, IgxContextMenuDirective, IgxBadgeComponent, IgxColumnComponent, IgxCellTemplateDirective, NgClass, IgxDividerComponent, DockSlotComponent, DecimalPipe, TitleCasePipe, CurrencyPipe, FilterTypePipe, HastDuplicateLayouts],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
@@ -209,7 +209,8 @@ export class DataAnalysisDockManagerComponent implements OnInit, AfterViewInit {
     public createChartCommonLogic() {
         if (Object.keys(this.selectedCharts).length !== 0) {
             setTimeout(() => {
-                Object.keys(this.selectedCharts).forEach((c: CHART_TYPE) => {
+                Object.keys(this.selectedCharts).forEach((chart: string) => {
+                    const c = chart as CHART_TYPE;
                     const chartHost = this.getChartHostFromSlot(c);
                     if (this.availableCharts.indexOf(c) !== -1) {
                         if (c !== CHART_TYPE.Pie && typeof this.selectedCharts[c] === 'object') {

@@ -26,29 +26,18 @@ body {
     @include palette($palette);
 }
 .light-theme {
-    @include light-theme($palette);
+    @include theme($palette: $palette, $schema: $light-material-schema);
 }
 .dark-theme {
     background: #333;
     color: #fff;
-    @include dark-theme(
-        $palette: $green-palette
-    );
+    @include theme($palette: $green-palette, $schema: $dark-material-schema);
     .grid-chart-contextmenu-wrapper {
-        @include fluent-dark-theme($fluent-excel-palette);
-    }
-    // remove this workaround after resolving https://github.com/IgniteUI/igniteui-angular/issues/13039
-    igx-grid,
-    igx-hierarchical-grid,
-    igx-pivot-grid,
-    igx-tree-grid {
-        --ig-chip-disabled-background: #616161;
-        --ig-chip-disabled-border-color: #616161;
-        --ig-chip-disabled-text-color: #BDBDBD;
+        @include theme($palette: $dark-fluent-excel-palette, $schema: $dark-fluent-schema);
     }
 }
 .fin-dark-theme {
-    @include dark-theme($green-palette);
+    @include theme($palette: $green-palette, $schema: $dark-material-schema);
     background: #333;
 
     ::-moz-placeholder {

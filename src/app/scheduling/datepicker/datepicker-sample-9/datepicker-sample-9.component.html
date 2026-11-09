@@ -2,7 +2,7 @@
   <div class="form">
     <igx-input-group #inputGroup1 [igxToggleAction]="dropDown1" class="input-group" type="border">
       <input #input1 type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="dropDown1"
-        [(ngModel)]="townFrom" [value]="dropDown1.selectedItem?.value" />
+        [(ngModel)]="townFrom" [value]="$safeNavigationMigration(dropDown1.selectedItem?.value)" />
         <label igxLabel>From</label>
         <igx-prefix>
           <igx-icon>flight_takeoff</igx-icon>
@@ -22,7 +22,7 @@
 
       <igx-input-group #inputGroup2 [igxToggleAction]="dropDown2" class="input-group" type="border">
         <input #input2 type="text" igxInput placeholder="choose a destination" [igxAutocomplete]="dropDown2"
-          [(ngModel)]="townTo" [value]="dropDown2.selectedItem?.value" />
+          [(ngModel)]="townTo" [value]="$safeNavigationMigration(dropDown2.selectedItem?.value)" />
           <label igxLabel>To</label>
           <igx-prefix>
             <igx-icon>flight_land</igx-icon>

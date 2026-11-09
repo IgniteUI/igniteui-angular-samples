@@ -1,6 +1,6 @@
 import { Component, HostBinding, OnInit } from '@angular/core';
-import { IgxColumnComponent, IgxSummaryOperand, IgxSummaryTemplateDirective } from 'igniteui-angular/grids/core';
-import { IgxSummaryResult } from 'igniteui-angular/core';
+import { IgxColumnComponent, IgxSummaryTemplateDirective } from 'igniteui-angular/grids/core';
+import { IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxInputDirective, IgxInputGroupComponent, IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
@@ -11,7 +11,7 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
 
 class PTOSummary {
 
-    public operate(data?: any[], allData = [], fieldName = ''): IgxSummaryResult[] {
+    public operate(data?: any[], allData: any[] = [], fieldName = ''): IgxSummaryResult[] {
         const result = [];
         result.push({
             key: 'totalOnPTO', label: 'Employees On PTO',

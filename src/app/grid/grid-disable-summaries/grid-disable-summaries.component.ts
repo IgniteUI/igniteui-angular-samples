@@ -1,15 +1,16 @@
 import {
-    Component,
-    ViewChild,
-    OnInit,
-    AfterViewInit,
-    ElementRef,
-    QueryList,
-    ViewChildren
+  Component,
+  ViewChild,
+  OnInit,
+  AfterViewInit,
+  ElementRef,
+  QueryList,
+  ViewChildren,
+  ChangeDetectionStrategy
 } from "@angular/core";
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
-import { ConnectedPositioningStrategy, HorizontalAlignment, IgxSummaryResult, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { ConnectedPositioningStrategy, HorizontalAlignment, IgxNumberSummaryOperand, IgxSummaryResult, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxButtonDirective, IgxToggleDirective } from 'igniteui-angular/directives';
 import { IgxCheckboxComponent } from 'igniteui-angular/checkbox';
 import { DATA } from "../../data/nwindData";

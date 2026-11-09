@@ -10,20 +10,67 @@ export class ChipConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
-            component: 'ChipSimpleComponent',
+            component: 'ChipOverviewComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));
 
         configs.push(new Config({
-            component: 'ChipAreaSampleComponent',
+            component: 'ChipLayoutComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/"
+        }));
+
+        configs.push(new Config({
+            component: 'ChipTypesComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/"
+        }));
+
+        configs.push(new Config({
+            component: 'ChipSizeComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/"
+        }));
+
+        configs.push(new Config({
+            component: 'ChipInteractionStateComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/"
+        }));
+
+        configs.push(new Config({
+            component: 'ChipStateComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/"
+        }));
+
+        configs.push(new Config({
+            component: 'ChipRemoveComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/"
+        }));
+
+        configs.push(new Config({
+            component: 'ChipOutlinedComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/"
+        }));
+
+        configs.push(new Config({
+            component: 'ChipVariantsComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-display/"
+        }));
+
+        configs.push(new Config({
+            component: 'ChipAreaComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));
 
         configs.push(new Config({
             component: 'ChipStylingSampleComponent',
-            additionalFiles: ["/src/app/data-display/chip/chip-styling/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-display/"
         }));

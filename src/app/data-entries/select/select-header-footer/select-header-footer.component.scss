@@ -32,6 +32,7 @@ igx-select {
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
+    gap: 1rem;
     background: color($color: 'gray', $variant: 100);
     igx-icon {
         &.important-icon {

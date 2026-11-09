@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/quotes */
 /* eslint-disable @typescript-eslint/naming-convention */
 
 export const INVOICE_DATA = [{

@@ -115,7 +115,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit, AfterViewInit {
             `${tree.returnFields.join(',')}` :
             '*';
 
-        const selectClause = `SELECT ${selectFields}`; 
+        const selectClause = `SELECT ${selectFields}`;
         const fromClause = `FROM ${tree.entity}`;
         const whereClause = this.buildWhereClause(tree);
 
@@ -187,7 +187,7 @@ export class QueryBuilderSqlSampleComponent implements OnInit, AfterViewInit {
                 break;
         }
     }
-    
+
     public onChange() {
         const sqlQuery = this.transformExpressionTreeToSqlQuery(this.expressionTree);
         this.sqlQuery = format(sqlQuery);

@@ -1,0 +1,75 @@
+<div class="sample-wrapper">
+    <article class="calendar-wrapper">
+        <igx-calendar #calendar [value]="selectedDate" (selected)="onSelection($event)">
+            <!-- Header title: the number of events for the selected date -->
+            <ng-template igxCalendarHeaderTitle let-parts>
+                @let count = getEvents(parts.date).length;
+                <span>{{ count ? pluralize(count) : 'No events' }}</span>
+            </ng-template>
+
+            <!-- Header: the selected date, composed from the formatted date parts -->
+            <ng-template igxCalendarHeader let-parts>
+                <span>{{ parts.weekday.value }}, {{ parts.month.value }} {{ parts.day.value }}</span>
+            </ng-template>
+
+            <!-- Subheader: month and year buttons that switch views, plus the month's event count -->
+            <ng-template igxCalendarSubheader let-parts>
+                @if (calendar.activeView === 'month') {
+                    <span
+                        class="igx-calendar-picker__date"
+                        tabindex="0"
+                        role="button"
+                        [attr.aria-label]="(parts.date | date: 'LLLL') + ', select month'"
+                        (click)="switchView($event, calendar, 'year')"
+                        (keydown)="onSubheaderKeydown($event, calendar, 'year')">
+                        {{ parts.month.value }}
+                    </span>
+                }
+                <span
+                    class="igx-calendar-picker__date"
+                    tabindex="0"
+                    role="button"
+                    [attr.aria-label]="(parts.date | date: 'yyyy') + ', select year'"
+                    (click)="switchView($event, calendar, 'decade')"
+                    (keydown)="onSubheaderKeydown($event, calendar, 'decade')">
+                    {{ parts.year.value }}
+                </span>
+                @if (calendar.activeView === 'month') {
+                    @let monthCount = getMonthEventsCount(parts.date);
+                    @if (monthCount) {
+                        <span class="month-badge">{{ pluralize(monthCount) }}</span>
+                    }
+                }
+            </ng-template>
+
+            <!-- Day: the date with a dot for each event -->
+            <ng-template igxCalendarDay let-date let-formattedDate="formattedDate" let-selected="selected">
+                @let events = getEvents(date);
+                <span class="day" [class.day--selected]="selected">
+                    <span>{{ formattedDate }}</span>
+                    <span class="day__dots">
+                        @for (event of events; track $index) {
+                            <span class="day__dot day__dot--{{ event.type }}"></span>
+                        }
+                    </span>
+                    @if (events.length) {
+                        <!-- Readable text for screen readers, announced as the cell description -->
+                        <span class="visually-hidden">{{ pluralize(events.length) }}</span>
+                    }
+                </span>
+            </ng-template>
+        </igx-calendar>
+    </article>
+
+    <section class="agenda">
+        <h5 class="agenda__title">{{ selectedDate | date: 'fullDate' }}</h5>
+        @for (event of getEvents(selectedDate); track $index) {
+            <div class="agenda__item">
+                <span class="agenda__marker day__dot--{{ event.type }}"></span>
+                <span>{{ event.title }}</span>
+            </div>
+        } @empty {
+            <p class="agenda__empty">No events scheduled.</p>
+        }
+    </section>
+</div>

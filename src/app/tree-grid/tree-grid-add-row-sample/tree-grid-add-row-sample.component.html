@@ -12,7 +12,7 @@
         </igx-column>
         <igx-column [field]="'Age'" dataType="number"></igx-column>
         <igx-action-strip #actionstrip>
-            <igx-grid-editing-actions [addRow]="true" [addChild]="actionstrip.context?.treeRow.level < 2">
+            <igx-grid-editing-actions [addRow]="true" [addChild]="$safeNavigationMigration(actionstrip.context?.treeRow.level) < 2">
             </igx-grid-editing-actions>
         </igx-action-strip>
     </igx-tree-grid>

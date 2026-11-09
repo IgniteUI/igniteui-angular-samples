@@ -1,9 +1,10 @@
 import {
-    Component,
-    ElementRef,
-    QueryList,
-    ViewChild,
-    ViewChildren
+  Component,
+  ElementRef,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { IDragBaseEventArgs, IDragMoveEventArgs, IgxDragDirective, IgxDragHandleDirective, IgxDragLocation, IgxDropDirective } from 'igniteui-angular/directives';
 import { IgxListActionDirective, IgxListComponent, IgxListItemComponent, IgxListLineSubTitleDirective, IgxListLineTitleDirective } from 'igniteui-angular/list';

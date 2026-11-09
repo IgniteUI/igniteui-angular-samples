@@ -1,0 +1,14 @@
+:host {
+    display: block;
+    padding: 16px;
+}
+
+.employees__viewport {
+    block-size: 480px;
+}
+
+.employees__bio {
+    padding-block-start: 4px;
+    white-space: normal;
+    color: var(--ig-gray-700);
+}

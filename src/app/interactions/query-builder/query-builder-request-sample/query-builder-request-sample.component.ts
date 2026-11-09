@@ -57,11 +57,11 @@ export class QueryBuilderRequestSampleComponent implements OnInit, AfterViewInit
                 fields: this.ordersFields
             }
         ];
-        
+
         const tree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['orderId', 'customerId', 'employeeId', 'shipperId', 'orderDate', 'requiredDate', 'shipVia', 'freight', 'shipName', 'completed']);
         this.expressionTree = tree;
     }
-    
+
     public ngAfterViewInit(): void {
         this.onChange();
     }

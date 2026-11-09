@@ -1,12 +1,13 @@
 /* eslint-disable @typescript-eslint/member-ordering */
 import {
-    Component,
-    OnInit,
-    Pipe,
-    PipeTransform,
-    Renderer2,
-    forwardRef,
-    inject
+  Component,
+  OnInit,
+  Pipe,
+  PipeTransform,
+  Renderer2,
+  forwardRef,
+  inject,
+  ChangeDetectionStrategy
 } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
 import fileSaver from 'file-saver';
@@ -115,7 +116,7 @@ export class MaterialIconsExtendedComponent implements OnInit {
 
     public allIcons = imxIcons;
     public selectedCategory: IconCategory | 'all' = 'all';
-    
+
     // Floating download button
     public hoveredIcon: IMXIcon | null = null;
 

@@ -1,0 +1,12 @@
+<div class="sample-container">
+  @for (item of variants; track item.label) {
+    <igx-chip
+      [id]="item.label"
+      [variant]="item.variant"
+      [selectable]="true"
+      [removable]="true"
+      (remove)="chipRemoved($event)">
+      {{ item.label }}
+    </igx-chip>
+  }
+</div>

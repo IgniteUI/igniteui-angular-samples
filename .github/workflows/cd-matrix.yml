@@ -124,6 +124,16 @@ jobs:
 
       - name: Build application
         run: npm ${{ matrix.npm_build_command }} --userconfig=./.npmrc
+        env:
+          # The `app` build peaks near the 16GB ubuntu-latest ceiling and the host
+          # OOM-killer reaps the runner agent, which Actions reports as
+          # "The runner has received a shutdown signal" / "The operation was canceled".
+          # esbuild is the dominant consumer (~10GB); it is a Go binary, so Node heap
+          # flags do not constrain it - GOMEMLIMIT/GOGC do. Measured on the failing
+          # commit under 4 CPU / 14GB: esbuild 9999MB -> 3517MB, build passes.
+          GOMEMLIMIT: '6GiB'
+          GOGC: '50'
+          NODE_OPTIONS: '--max_old_space_size=4096'
 
       - name: Copy web.config
         run: |

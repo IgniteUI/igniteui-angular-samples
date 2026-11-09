@@ -1,0 +1,13 @@
+.sample-container {
+    --ig-size: 2;
+
+    display: flex;
+    justify-content: center;
+    padding-block-start: 0.5rem;
+}
+
+igc-color-picker::part(picker) {
+    --picker-elevation: var(--ig-elevation-4);
+
+    margin-top: 0.5rem;
+}

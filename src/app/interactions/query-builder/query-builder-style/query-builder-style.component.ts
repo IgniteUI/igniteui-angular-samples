@@ -54,6 +54,6 @@ export class QueryBuilderStyleComponent implements OnInit {
                 name: "Orders",
                 fields: this.ordersFields
             }
-        ];        
+        ];
     }
 }

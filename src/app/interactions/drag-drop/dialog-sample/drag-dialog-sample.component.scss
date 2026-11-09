@@ -1,37 +1,45 @@
 @use '../../../../variables' as *;
 
-@include dialog(
-    dialog-theme(
-        $schema: $schema
-    )
+$theme: dialog-theme(
+    $schema: $schema
 );
-
-@include dialog-typography();
 
 :host {
     display: block;
     margin: 16px;
 
-    @include b(dialog) {
-        @extend %igx-dialog-window;
+    .dialog {
+        @include tokens($theme);
 
         display: flex;
         flex-direction: column;
-        max-width: rem(280px);
+        width: rem(280px);
+        min-width: rem(280px);
+        border: rem(1px) solid var(--ig-dialog-border-color);
+        border-radius: var(--ig-dialog-border-radius);
+        background: var(--ig-dialog-background);
+        box-shadow: var(--ig-dialog-elevation);
+        overflow: hidden;
 
-        @include e(icon) {
-            position: absolute;
-            right: rem(24px);
-            top: rem(24px);
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: rem(16px) rem(24px);
+        }
+
+        &__title {
+            display: inline-block;
+            color: var(--ig-dialog-title-color);
+        }
+
+        &__icon {
             cursor: move;
         }
 
-        @include e(title) {
-            @extend %igx-dialog-title;
-        }
-
-        @include e(content) {
-            @extend %igx-dialog-content;
-        }
+        &__content {
+            color: var(--ig-dialog-message-color);
+            padding: rem(14px) rem(24px);
+       }
     }
 }

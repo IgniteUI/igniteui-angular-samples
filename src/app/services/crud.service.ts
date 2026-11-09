@@ -13,7 +13,7 @@ export class CRUDService {
     private _data: BehaviorSubject<Invoice[]>;
 
     constructor() {
-        this._data = new BehaviorSubject([]);
+        this._data = new BehaviorSubject<Invoice[]>([]);
         this.data$ = this._data.asObservable();
         this.dataCollection = INVOICE_DATA.map((rec: Invoice, index) => {
             rec['ID'] = 100 + index;
@@ -59,7 +59,9 @@ export class CRUDService {
     public update(rec: Invoice): Observable<Invoice> {
         const data$: Observable<any> = new Observable((observer) => {
             const targetRec = this.dataCollection.find(r => r.ID === rec.ID);
-            Object.assign(targetRec, rec);
+            if (targetRec) {
+                Object.assign(targetRec, rec);
+            }
             observer.next(rec);
             observer.complete();
         }).pipe(delay(300));

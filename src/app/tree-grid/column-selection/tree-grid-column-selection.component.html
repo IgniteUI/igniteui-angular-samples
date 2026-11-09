@@ -22,7 +22,7 @@
         [field] = "c.field"
         [header] = "c.header"
         [selectable] = "c.selectable"
-        [formatter] = "c?.formatter">
+        [formatter] = "$safeNavigationMigration(c?.formatter)">
       </igx-column>
     }
 

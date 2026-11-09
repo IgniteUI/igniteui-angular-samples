@@ -5,6 +5,14 @@
 @use 'app-layout';
 @import "tailwindcss";
 
+// The Ignite UI theme itself is deliberately NOT compiled into this file. Every
+// sample is embedded in the documentation next to a theming widget that can
+// switch it between the Material, Fluent, Bootstrap and Indigo themes in light
+// or dark, so the theme is loaded as a swappable stylesheet instead - see the
+// `igniteui-theme` link in index.html, the `assets/themes` entry in angular.json
+// and `src/app/services/theme.service.ts`. A theme compiled in here would sit
+// later in the cascade and win over the one the visitor picked.
+
 // Specifies large size for all components to match the previous defaults
 // This may not be needed for your project. Please consult https://www.infragistics.com/products/ignite-ui-angular/angular/components/general/update-guide for more details.
 :root {
@@ -19,35 +27,25 @@ body {
     margin: 0;
 }
 
-@include core();
-@include typography();
-@include theme(
-    $palette: $palette,
-    $schema: $schema
-);
-
-:root {
-    @include palette($palette);
-}
+// `core()`, `typography()`, `theme()` and the root palette all ship inside the
+// prebuilt stylesheets loaded through the `igniteui-theme` link (see above).
 
 .light-theme {
-    @include light-theme($palette);
+    @include theme($palette: $palette, $schema: $light-material-schema);
 }
 
 .dark-theme {
     background: #333;
     color: #fff;
-    @include dark-theme(
-        $palette: $green-palette
-    );
+    @include theme($palette: $green-palette, $schema: $dark-material-schema);
 
     .grid-chart-contextmenu-wrapper {
-        @include fluent-dark-theme($fluent-excel-palette);
+        @include theme($palette: $dark-fluent-excel-palette, $schema: $dark-fluent-schema);
     }
 }
 
 .fin-dark-theme {
-    @include dark-theme($green-palette);
+    @include theme($palette: $green-palette, $schema: $dark-material-schema);
     background: #333;
 
     ::-moz-placeholder {

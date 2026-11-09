@@ -1,4 +1,4 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { IgcDockManagerLayout,
          IgcDockManagerPaneType,
          IgcSplitPaneOrientation } from 'igniteui-dockmanager';

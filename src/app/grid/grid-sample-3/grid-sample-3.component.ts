@@ -1,7 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
-import { ColumnType, IgxSummaryResult } from 'igniteui-angular/core';
+import { ColumnType, IgxNumberSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
+import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
-import { IgxCellHeaderTemplateDirective, IgxCellTemplateDirective, IgxColumnComponent, IgxNumberSummaryOperand } from 'igniteui-angular/grids/core';
 import { IgxPaginatorComponent } from 'igniteui-angular/paginator';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { DATA } from '../../data/nwindData';

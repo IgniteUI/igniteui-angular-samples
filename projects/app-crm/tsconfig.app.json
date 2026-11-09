@@ -2,13 +2,13 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "../../out-tsc/app",
+    "strictPropertyInitialization": false,
     "types": [
       "node"
     ]
   },
   "files": [
     "src/main.ts",
-    "src/polyfills.ts",
     "src/main.server.ts",
     "src/server.ts"
   ],
@@ -18,5 +18,13 @@
   "exclude": [
     "src/test.ts",
     "src/**/*.spec.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "extendedDiagnostics": {
+      "checks": {
+        "nullishCoalescingNotNullable": "suppress",
+        "optionalChainNotNullable": "suppress"
+      }
+    }
+  }
 }

@@ -138,7 +138,6 @@ onDrop(event: IDropDroppedEventArgs) {
 Key drag events: `(dragStart)`, `(dragMove)`, `(dragEnd)`, `(dragClick)`, `(transitioned)`.
 Key drop events: `(dragEnter)`, `(dragLeave)`, `(dragOver)`, `(dropped)`.
 
-> **NOTE:** For touch-based drag, add `importProvidersFrom(HammerModule)` to `app.config.ts` providers.
 
 ## See Also
 

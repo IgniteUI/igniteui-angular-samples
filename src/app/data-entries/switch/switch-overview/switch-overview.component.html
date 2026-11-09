@@ -1,0 +1,27 @@
+<div class="notifications">
+    <h6 class="notifications__title">Notifications</h6>
+    <div class="notifications__row">
+        <igx-switch labelPosition="before" [checked]="true">
+            <span class="option">
+                <span class="option__label">Push notifications</span>
+                <span class="option__hint">Deliver alerts to this device</span>
+            </span>
+        </igx-switch>
+    </div>
+    <div class="notifications__row">
+        <igx-switch labelPosition="before">
+            <span class="option">
+                <span class="option__label">Weekly digest</span>
+                <span class="option__hint">Summary email every Monday</span>
+            </span>
+        </igx-switch>
+    </div>
+    <div class="notifications__row">
+        <igx-switch labelPosition="before" [disabled]="true">
+            <span class="option">
+                <span class="option__label">SMS alerts</span>
+                <span class="option__hint">Unavailable on your plan</span>
+            </span>
+        </igx-switch>
+    </div>
+</div>

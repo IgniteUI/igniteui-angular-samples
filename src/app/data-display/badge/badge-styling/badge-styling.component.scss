@@ -1,0 +1,52 @@
+@use "sass:list";
+@use "sass:map";
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(60px);
+    min-height: 7rem;
+}
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    inset-block-start: anchor(85.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
+}
+
+.avatar-green {
+    --ig-avatar-background: var(--ig-success-200);
+    --ig-avatar-icon-color: var(--ig-success-700);
+}
+
+.avatar-pink {
+    --ig-avatar-background: #da64ff;
+    --ig-avatar-icon-color: var(--ig-gray-50);
+}
+
+$badges: (
+    teal: var(--ig-success-700),
+    amber: #c97c00,
+    magenta: #9c27b0,
+    lime: var(--ig-success-700),
+);
+
+@each $name, $color in $badges {
+    $i: list.index(map.keys($badges), $name);
+
+    igx-avatar:nth-of-type(#{$i}) {
+        anchor-name: --#{$name};
+    }
+
+    .badge-#{$name} {
+        --ig-badge-background-color: #{$color};
+
+        position-anchor: --#{$name};
+    }
+}

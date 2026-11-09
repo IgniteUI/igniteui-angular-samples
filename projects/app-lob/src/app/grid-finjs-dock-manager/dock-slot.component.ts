@@ -6,7 +6,8 @@ import { Subject } from 'rxjs';
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[gridHost]'
 })
-export class GridHostDirective {    viewContainerRef = inject(ViewContainerRef);
+export class GridHostDirective {
+    viewContainerRef = inject(ViewContainerRef);
 
 }
 

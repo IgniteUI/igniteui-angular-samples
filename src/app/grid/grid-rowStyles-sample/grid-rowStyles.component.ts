@@ -21,10 +21,8 @@ export class GridRowStylesComponent {
     @ViewChild('grid1', { static: true }) public grid1: IgxGridComponent;
     public data: Observable<any[]>;
 
-    public  rowStyles = {
-        background: (row: RowType) => (+row.data['Change'] < 0  && +row.data['Change On Year(%)'] < 0) ? '#FF000088' : '#00000000',
-        border: (row: RowType) => (+row.data['Change'] < 0  && +row.data['Change On Year(%)'] < 0) ? '2px solid' : '1px solid',
-        'border-color': (row: RowType) => (+row.data['Change'] < 0  && +row.data['Change On Year(%)'] < 0) ? '#FF000099' : '#E9E9E9'
+    public rowClasses = {
+        'negative-row': (row: RowType) => +row.data['Change'] < 0 && +row.data['Change On Year(%)'] < 0
     };
 
     constructor() {

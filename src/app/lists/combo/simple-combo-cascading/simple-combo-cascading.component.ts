@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
 import { ISimpleComboSelectionChangingEventArgs, IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
 import { IgxLinearProgressBarComponent } from 'igniteui-angular/progressbar';
 import { City, Country, getCitiesByCountry, getCountries, Region } from '../../../data/cities15000-regions-countries';
@@ -21,6 +21,7 @@ export class SimpleComboCascadingComponent implements OnInit {
     public isLoadingRegions: boolean = false;
     public isLoadingCities: boolean = false;
     private loadingTime = 0;
+    private cdr = inject(ChangeDetectorRef);
 
     public ngOnInit(): void {
         this.countriesData = getCountries(['United States', 'Japan', 'United Kingdom']);
@@ -41,6 +42,7 @@ export class SimpleComboCascadingComponent implements OnInit {
             .map(c => ({name: c.region, country: c.country}))
             .filter((v, i, a) => a.findIndex(r => r.name === v.name) === i);
             this.isLoadingRegions = false;
+            this.cdr.markForCheck();
         }, this.loadingTime)
         this.citiesData = [];
         this.loadingTime = 0;
@@ -59,6 +61,7 @@ export class SimpleComboCascadingComponent implements OnInit {
             this.citiesData = getCitiesByCountry([this.selectedCountry?.name])
             .filter(c => c.region === this.selectedRegion?.name);
             this.isLoadingCities = false;
+            this.cdr.markForCheck();
         }, this.loadingTime)
         this.loadingTime = 0;
     }

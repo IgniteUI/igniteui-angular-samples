@@ -1,0 +1,14 @@
+<div class="sample-layout">
+    <igx-buttongroup>
+        @for (layout of layouts; track layout.value) {
+            <button igxButton [igxRipple]="rippleColor">{{ layout.label }}</button>
+        }
+    </igx-buttongroup>
+    <igx-buttongroup>
+        @for (layout of layouts; track layout.value) {
+            <button igxButton [igxRipple]="rippleColor">
+                <igx-icon>{{ layout.icon }}</igx-icon>
+            </button>
+        }
+    </igx-buttongroup>
+</div>

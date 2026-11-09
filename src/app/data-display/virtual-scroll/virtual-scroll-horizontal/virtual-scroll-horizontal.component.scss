@@ -1,0 +1,25 @@
+:host {
+    display: block;
+    padding: 16px;
+}
+
+.cards {
+    block-size: 200px;
+}
+
+// Items are measured by their border box, so the spacing between cards is
+// padding on the item wrapper rather than a margin.
+.cards__item {
+    box-sizing: border-box;
+    inline-size: 220px;
+    block-size: 100%;
+    padding: 8px;
+
+    igx-card {
+        block-size: 100%;
+    }
+}
+
+.cards__item--wide {
+    inline-size: 320px;
+}

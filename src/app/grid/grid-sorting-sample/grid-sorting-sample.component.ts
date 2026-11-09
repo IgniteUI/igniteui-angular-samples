@@ -36,7 +36,7 @@ export class SortingSampleComponent implements OnInit, AfterViewInit {
     public ngOnInit(): void {
         this.data = DATA;
     }
-    
+
     public ngAfterViewInit(): void {
         this.grid1.sortingExpressions = [
             {

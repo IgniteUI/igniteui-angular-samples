@@ -36,12 +36,11 @@
     </igx-select>
   </div>
   <div igxButton (click)="createGrid()" [disabled]="docLayout.floatingPanes.length >= 5">Add Floating Pane</div>
-  <div igxOverlayOutlet #outlet></div>
 </div>
 <div slot="gridStockPrices" style="height: 100%;">
   <igx-grid #grid1 [data]="data | async" [isLoading]="isLoading"
     [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
-    [columnSelection]="'multiple'" [cellSelection]="'none'" [outlet]="filteringOverlayOutlet">
+    [columnSelection]="'multiple'" [cellSelection]="'none'">
     <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
     <igx-column [field]="'category'" [width]="'120px'" [sortable]="true"></igx-column>
     <igx-column [field]="'type'" [width]="'100px'" [sortable]="true" [filterable]="false">
@@ -78,7 +77,7 @@
 </div>
 <div slot="forexMarket" style="height: 100%;">
   <igx-grid #grid2 [data]="data | async" [isLoading]="isLoading"
-    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
+    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
     [columnSelection]="'multiple'" [cellSelection]="'none'">
     <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
     <igx-column [field]="'category'" [width]="'120px'" [sortable]="true" [groupable]="true"></igx-column>
@@ -116,7 +115,7 @@
 </div>
 <div slot="content4" style="height: 100%;">
   <igx-grid #grid3 [data]="data | async" [isLoading]="isLoading"
-    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
+    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
     [columnSelection]="'multiple'" [cellSelection]="'none'">
     <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
     <igx-column [field]="'category'" [width]="'120px'" [sortable]="true" [groupable]="true"></igx-column>
@@ -154,7 +153,7 @@
 </div>
 <div slot="etfStockPrices" style="height: 100%;">
   <igx-grid #grid4 [data]="data | async" [isLoading]="isLoading"
-    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'" [outlet]="filteringOverlayOutlet"
+    [allowFiltering]="true" [filterMode]="'excelStyleFilter'" [primaryKey]="'id'"
     [columnSelection]="'multiple'" [cellSelection]="'none'">
     <igx-paginator></igx-paginator>
     <igx-column [field]="'id'" [width]="'70px'" [hidden]="true" [sortable]="true"></igx-column>
@@ -194,4 +193,3 @@
 <ng-template #host gridHost>
 </ng-template>
 </igc-dockmanager>
-<div [class]="isDarkTheme ? 'dark-theme' : 'light-theme'" #filteringOverlayOutlet="overlay-outlet" igxOverlayOutlet></div>

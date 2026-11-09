@@ -1,0 +1,11 @@
+@use 'igniteui-theming' as *;
+
+:host {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+igx-buttongroup {
+    inline-size: rem(180px);
+}

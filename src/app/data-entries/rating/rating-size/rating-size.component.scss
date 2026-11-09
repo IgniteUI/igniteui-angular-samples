@@ -1,0 +1,44 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.sizes {
+    display: flex;
+    align-items: center;
+    gap: 3.75rem;
+}
+
+.size {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+}
+
+.size-label {
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+    color: var(--ig-gray-600);
+}
+
+igc-rating {
+    --ig-rating-label-color: var(--ig-gray-700);
+}
+
+.size-small {
+    --ig-size: var(--ig-size-small);
+}
+
+.size-medium {
+    --ig-size: var(--ig-size-medium);
+}
+
+.size-large {
+    --ig-size: var(--ig-size-large);
+}

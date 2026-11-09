@@ -20,7 +20,7 @@ export class PivotGridBasicSampleComponent {
                 memberFunction: (data) => data.Product.Name,
                 enabled: true
             }
-            
+
         ],
         rows: [
             {

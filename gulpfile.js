@@ -10,8 +10,10 @@ require('ts-node').register({
     transpileOnly: true,
     compilerOptions: {
         module: "commonjs",
-        moduleResolution: "node",
-        allowJs: true
+        moduleResolution: "node10",
+        allowJs: true,
+        rootDir: ".",
+        ignoreDeprecations: "6.0"
     }
 });
 

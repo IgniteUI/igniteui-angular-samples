@@ -82,6 +82,12 @@ export class PivotGridConfigGenerator implements IConfigGenerator {
             component: 'PivotGridLayoutComponent'
         }));
 
+        configs.push(new Config({
+            additionalFiles: ['/src/app/data/pivot-data.ts', '/src/app/pivot-grid/pivot-styling/layout.scss'],
+            appConfig: BaseAppConfig,
+            component: 'PivotStylingComponent'
+        }));
+
         return configs;
     }
 }

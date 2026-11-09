@@ -84,7 +84,7 @@ export class QueryBuilderSample1Component implements OnInit {
             condition: IgxDateFilteringOperand.instance().condition('today'),
             conditionName: IgxDateFilteringOperand.instance().condition('today').name
         });
-        
+
         const tree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['*']);
         tree.filteringOperands.push({
             fieldName: 'CompanyID',
