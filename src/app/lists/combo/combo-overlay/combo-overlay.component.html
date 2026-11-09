@@ -1,7 +1,13 @@
-<igx-combo
-    placeholder="Choose option(s)"
-    [data]="items"
-    valueKey="name"
-    displayKey="name"
-    [overlaySettings]="overlaySettings">
-</igx-combo>
+<div class="combo-column">
+    <igx-combo
+        type="border"
+        [data]="people"
+        valueKey="name"
+        displayKey="name"
+        groupKey="department"
+        searchPlaceholder="Search people…"
+        [(ngModel)]="selectedPeople"
+        [overlaySettings]="overlaySettings">
+        <label igxLabel>Team members</label>
+    </igx-combo>
+</div>

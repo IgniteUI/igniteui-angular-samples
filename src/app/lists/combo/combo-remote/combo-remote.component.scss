@@ -1,4 +1,192 @@
-.combo {
-    margin: 8px;
-    width: 430px;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+
+/* Anchored at the top, so the combo stays put while the panel beside it grows. */
+:host {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: 100%;
+    padding: 4.875rem 1rem 1.5rem;
+}
+
+.remote-binding {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 2.5rem 3.75rem;
+}
+
+.combo-column {
+    width: 22.5rem;
+}
+
+/* The dropdown footer: the chunk being loaded, and how much of the data is loaded. */
+.loading-chunk {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.375rem;
+    padding: 0.625rem 1rem;
+    color: var(--ig-gray-600);
+}
+
+.loading-chunk igx-linear-bar {
+    width: 100%;
+}
+
+.combo-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.375rem 1rem;
+    color: var(--ig-gray-700);
+    background: var(--ig-gray-100);
+}
+
+.loading-chunk,
+.combo-summary {
+    font-family: var(--ig-body-2-font-family, var(--ig-font-family));
+    font-size: var(--ig-body-2-font-size);
+    font-weight: var(--ig-body-2-font-weight);
+    line-height: var(--ig-body-2-line-height);
+    letter-spacing: var(--ig-body-2-letter-spacing);
+}
+
+.combo-summary igx-badge {
+    flex-shrink: 0;
+}
+
+/* The panel beside the combo: its state, and the requests it makes. */
+.monitor {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 20rem;
+    font-family: Inter, sans-serif;
+}
+
+.monitor-title {
+    margin: 0;
+    padding: 0 1rem;
+    color: var(--ig-gray-900);
+    font-family: var(--ig-subtitle-2-font-family, var(--ig-font-family));
+    font-size: var(--ig-subtitle-2-font-size);
+    font-weight: var(--ig-subtitle-2-font-weight);
+    line-height: var(--ig-subtitle-2-line-height);
+    letter-spacing: var(--ig-subtitle-2-letter-spacing);
+}
+
+.state {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.5rem 0 0;
+    padding: 0 1rem;
+    font-size: 0.75rem;
+}
+
+.state-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.state dt {
+    color: var(--ig-gray-700);
+}
+
+.state dd {
+    margin: 0;
+    color: var(--ig-gray-900);
+    font-weight: 500;
+    text-align: end;
+}
+
+/* What the last update changed. */
+.state dd.changed,
+.selection-values {
+    color: var(--ig-info-500);
+}
+
+.selection-values {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    margin: 0.5rem 1rem 0;
+    padding: 0.5rem 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+}
+
+.selection-more {
+    display: flex;
+    gap: 0.375rem;
+    color: var(--ig-gray-700);
+    font-weight: 400;
+}
+
+.selection-more-link {
+    padding: 0;
+    border: 0;
+    color: var(--ig-info-500);
+    background: none;
+    font: inherit;
+    font-weight: 500;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.selection-tooltip {
+    max-width: 20rem;
+}
+
+.log-title {
+    padding-block: 0.5rem;
+}
+
+.log {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.log-entry {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0.1875rem 0.5rem;
+    padding: 0.5rem 1rem;
+}
+
+.log-name {
+    color: var(--ig-gray-900);
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.log-result {
+    color: var(--ig-success-900);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    text-align: end;
+}
+
+.log-result[data-status='pending'],
+.log-result[data-status='cancelled'] {
+    color: var(--ig-warn-700);
+}
+
+.log-result[data-status='error'] {
+    color: var(--ig-error-500);
+}
+
+.log-detail {
+    grid-column: 1 / -1;
+    color: var(--ig-gray-700);
+    font-family: inherit;
+    font-size: 0.625rem;
+    word-break: break-all;
 }

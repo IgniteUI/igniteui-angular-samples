@@ -1,4 +1,12 @@
-.igx-combo {
-    width: 430px;
-    margin: 8px;
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Keeps room below the combo for its open list, so the two stay centered together. */
+.combo-column {
+    width: 22.5rem;
+    min-height: 18.5rem;
 }

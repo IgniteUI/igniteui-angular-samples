@@ -1,4 +1,42 @@
-.combo, igx-switch {
-    margin: 8px;
-    width: 430px;
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* The combo sits in the middle, and the switches in the space on its right. */
+.combo-features {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr minmax(0, 22.5rem) 1fr;
+    align-items: center;
+    column-gap: 6rem;
+    padding: 1rem;
+}
+
+/* Keeps room below the combo for its open dropdown, so the two stay centered together. */
+.combo-column {
+    grid-column: 2;
+    min-height: 17.5rem;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.625rem;
+}
+
+@media (max-width: 50rem) {
+    .combo-features {
+        grid-template-columns: minmax(0, 22.5rem);
+        justify-content: center;
+        row-gap: 2rem;
+    }
+
+    .combo-column {
+        grid-column: 1;
+        min-height: 0;
+    }
 }
