@@ -17,7 +17,7 @@ export class GridRowReorderComponent {
     public data: any[];
 
     constructor() {
-        this.data = DATA;
+        this.data = [...DATA];
     }
 
     public onDropAllowed(args) {
@@ -25,17 +25,16 @@ export class GridRowReorderComponent {
         const currRowIndex = this.getCurrentRowIndex(this.grid.rowList.toArray(),
             { x: event.clientX, y: event.clientY });
         if (currRowIndex === -1) { return; }
-        // remove the row that was dragged and place it onto its new location
         this.grid.deleteRow(args.dragData.key);
         this.data.splice(currRowIndex, 0, args.dragData.data);
+        this.data = [...this.data];
     }
 
     private getCurrentRowIndex(rowList: IgxRowDirective[], cursorPosition) {
         for (const row of rowList) {
             const rowRect = row.nativeElement.getBoundingClientRect();
-            if (cursorPosition.y > rowRect.top + window.scrollY && cursorPosition.y < rowRect.bottom + window.scrollY &&
-                cursorPosition.x > rowRect.left + window.scrollX && cursorPosition.x < rowRect.right + window.scrollX) {
-                // return the index of the targeted row
+            if (cursorPosition.y > rowRect.top && cursorPosition.y < rowRect.bottom &&
+                cursorPosition.x > rowRect.left && cursorPosition.x < rowRect.right) {
                 return this.data.indexOf(this.data.find((r) => r.ID === row.key));
             }
         }
