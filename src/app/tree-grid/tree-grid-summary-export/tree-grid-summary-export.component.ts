@@ -1,4 +1,4 @@
-import { Component, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import { ColumnType } from 'igniteui-angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -12,7 +12,6 @@ import { DatePipe } from '@angular/common';
     selector: 'app-tree-grid-summary-export',
     styleUrls: ['./tree-grid-summary-export.component.scss'],
     templateUrl: './tree-grid-summary-export.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxCellHeaderTemplateDirective, IgxIconComponent, DatePipe]
 })
 export class TreeGridSummaryExportComponent {

@@ -1,50 +1,29 @@
 @use "layout.scss";
 @use "igniteui-angular/theming" as *;
 
-$my-dark-palette: palette(
-  $primary: #2466ff,
-  $secondary: #ffcd0f,
-  $surface: #2a2b2f,
-  $gray: #fff,
+$background: #19171b;
+$foreground: #eeece1;
+$accent: #ffcd0f;
+
+$grid-theme: grid-theme(
+    $background: $background,
+    $foreground: $foreground,
+    $accent-color: $accent,
 );
 
-$my-dark-color: color($my-dark-palette, 'surface');
-
-$dark-button-theme: flat-button-theme(
-  $hover-foreground: color($my-dark-palette, 'secondary')
+$grid-toolbar-theme: grid-toolbar-theme(
+    $background: #170237,
+    $border-color: $accent,
+    $title-text-color: #f6d8d8,
+    $item-hover-background: rgb(246 216 216 / 0.3),
 );
 
-$dark-grid-toolbar-theme: grid-toolbar-theme(
-  $background: $my-dark-color,
-  $title-text-color: color($my-dark-palette, 'secondary'),
-  $dropdown-background: $my-dark-color,
-);
-
-$dark-column-actions-theme: column-actions-theme(
-  $title-color: color($my-dark-palette, 'secondary'),
-  $background: color($my-dark-palette, 'surface')
-);
-
-$dark-checkbox-theme: checkbox-theme(
-  $tick-color: $my-dark-color,
-);
-
-igx-grid {
-  @include palette($my-dark-palette);
-  @include tokens($dark-grid-toolbar-theme);
-  @include tokens($dark-column-actions-theme);
-  @include tokens($dark-checkbox-theme);
-  @include tokens($dark-button-theme);
-}
-
-:host {
-  ::ng-deep {
-    .igx-grid-toolbar__actions {
-      .igx-button--outlined {
-        margin-left: 0.5rem;
-        border: none;
-      }
+:host ::ng-deep {
+    igx-grid {
+        @include tokens($grid-theme);
     }
-  }
+  
+    igx-grid-toolbar {
+        @include tokens($grid-toolbar-theme);
+    }
 }
-

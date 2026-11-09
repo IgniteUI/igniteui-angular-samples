@@ -1,31 +1,44 @@
 import { Routes } from '@angular/router';
 import { AutocompleteBasicComponent } from './autocomplete/autocomplete/autocomplete.component';
 import { MovieComponent } from './autocomplete/movie/movie.component';
-import { ButtonGroupSample1Component } from './buttonGroup/button-group-sample-1/button-group-sample-1.component';
-import { ButtonGroupSample2Component } from './buttonGroup/button-group-sample-2/button-group-sample-2.component';
-import { ButtonGroupSample3Component } from './buttonGroup/button-group-sample-3/button-group-sample-3.component';
-import { ButtonGroupSampleComponent } from './buttonGroup/button-group-sample-4/button-group-sample.component';
-import { ButtonGroupSample5Component } from './buttonGroup/button-group-sample-5/button-group-sample-5.component';
-import { ButtonGroupStyleComponent } from './buttonGroup/button-group-style/button-group-style.component';
-import { ButtonGroupTailwindStyleComponent } from './buttonGroup/button-group-tailwind-style/button-group-tailwind-style.component';
-import { ButtonsDisabledComponent } from './buttons/buttons-disabled-sample/buttons-disabled-sample';
-import { ButtonsDisplayDensityComponent } from './buttons/buttons-display-density/buttons-display-density.component';
-import { ButtonsRoundnessComponent } from './buttons/buttons-roundness-sample/buttons-roundness-sample';
-import { ButtonsSample1Component } from './buttons/buttons-sample-1/buttons-sample-1.component';
-import { ButtonsSample2Component } from './buttons/buttons-sample-2/buttons-sample-2.component';
-import { ButtonsSample3Component } from './buttons/buttons-sample-3/buttons-sample-3.component';
-import { ButtonsSample4Component } from './buttons/buttons-sample-4/buttons-sample-4.component';
-import { ButtonsSample5Component } from './buttons/buttons-sample-5/buttons-sample-5.component';
-import { ButtonsSample6Component } from './buttons/buttons-sample-6/buttons-sample-6.component';
-import { ButtonsSample7Component } from './buttons/buttons-sample-7/buttons-sample-7.component';
-import { ButtonsSample8Component } from './buttons/buttons-sample-8/buttons-sample-8.component';
-import { ButtonsStyleComponent } from './buttons/buttons-style/buttons-style.component';
-import { ButtonsTailwindStyleComponent } from './buttons/buttons-tailwind-style/buttons-tailwind-style.component';
-import { CheckboxSample1Component } from './checkbox/checkbox-sample-1/checkbox-sample-1.component';
-import { CheckboxSample2Component } from './checkbox/checkbox-sample-2/checkbox-sample-2.component';
-import { CheckboxSample3Component } from './checkbox/checkbox-sample-3/checkbox-sample-3.component';
+import { ButtonGroupOverviewComponent } from './buttonGroup/button-group-overview/button-group-overview.component';
+import { ButtonGroupLayoutComponent } from './buttonGroup/button-group-layout/button-group-layout.component';
+import { ButtonGroupAlignmentComponent } from './buttonGroup/button-group-alignment/button-group-alignment.component';
+import { ButtonGroupCustomToggleComponent } from './buttonGroup/button-group-custom-toggle/button-group-custom-toggle.component';
+import { ButtonGroupStatesComponent } from './buttonGroup/button-group-states/button-group-states.component';
+import { ButtonGroupInteractionStatesComponent } from './buttonGroup/button-group-interaction-states/button-group-interaction-states.component';
+import { ButtonGroupSelectionComponent } from './buttonGroup/button-group-selection/button-group-selection.component';
+import { ButtonGroupSizeComponent } from './buttonGroup/button-group-size/button-group-size.component';
+import { ButtonGroupStylingComponent } from './buttonGroup/button-group-styling/button-group-styling.component';
+import { ButtonGroupTailwindStylingComponent } from './buttonGroup/button-group-tailwind-styling/button-group-tailwind-styling.component';
+import { ButtonStatesComponent } from './button/button-states/button-states.component';
+import { ButtonSizeComponent } from './button/button-size/button-size.component';
+import { ButtonDownloadComponent } from './button/button-download/button-download.component';
+import { ButtonOverviewComponent } from './button/button-overview/button-overview.component';
+import { ButtonFlatComponent } from './button/button-flat/button-flat.component';
+import { ButtonInteractionStatesComponent } from './button/button-interaction-states/button-interaction-states.component';
+import { ButtonLayoutComponent } from './button/button-layout/button-layout.component';
+import { ButtonContainedComponent } from './button/button-contained/button-contained.component';
+import { ButtonFabComponent } from './button/button-fab/button-fab.component';
+import { ButtonOutlinedComponent } from './button/button-outlined/button-outlined.component';
+import { ButtonStylingComponent } from './button/button-styling/button-styling.component';
+import { ButtonTailwindStylingComponent } from './button/button-tailwind-styling/button-tailwind-styling.component';
+import { CheckboxOverviewComponent } from './checkbox/checkbox-overview/checkbox-overview.component';
+import { CheckboxStatesComponent } from './checkbox/checkbox-states/checkbox-states.component';
 import { CheckboxStylingComponent } from './checkbox/checkbox-styling/checkbox-styling.component';
 import { CheckboxTailwindStylingComponent } from './checkbox/checkbox-tailwind-styling/checkbox-tailwind-styling.component';
+import { ColorPickerOverviewComponent } from './color-picker/overview/color-picker-overview.component';
+import { ColorPickerValueComponent } from './color-picker/value/color-picker-value.component';
+import { ColorPickerInputComponent } from './color-picker/input/color-picker-input.component';
+import { ColorPickerFormatComponent } from './color-picker/format/color-picker-format.component';
+import { ColorPickerAlphaComponent } from './color-picker/alpha/color-picker-alpha.component';
+import { ColorPickerSwatchesComponent } from './color-picker/swatches/color-picker-swatches.component';
+import { ColorPickerStatesComponent } from './color-picker/states/color-picker-states.component';
+import { ColorPickerSizesComponent } from './color-picker/sizes/color-picker-sizes.component';
+import { ColorPickerInputSizesComponent } from './color-picker/input-sizes/color-picker-input-sizes.component';
+import { ColorPickerStylingComponent } from './color-picker/styling/color-picker-styling.component';
+import { ColorPickerTailwindStylingComponent } from './color-picker/tailwind-styling/color-picker-tailwind-styling.component';
+import { ColorPickerReactiveFormComponent } from './color-picker/reactive-form/color-picker-reactive-form.component';
 import { dataEntriesRoutesData } from './data-entries-routes-data';
 import { DropDownRemoteComponent } from './dropdown/drop-down-remote-virtual/drop-down-remote.component';
 import { DropDownVirtualComponent } from './dropdown/drop-down-virtual/drop-down-virtual.component';
@@ -55,8 +68,14 @@ import { RadioGroupSampleComponent } from './radio/radio-group-sample/radio-grou
 import { RadioSample1Component } from './radio/radio-sample-1/radio-sample-1.component';
 import { RadioSample2Component } from './radio/radio-sample-2/radio-sample-2.component';
 import { RadioSample3Component } from './radio/radio-sample-3/radio-sample-3.component';
-import { RadioStylingSampleComponent } from './radio/radio-styling-sample/radio-styling-sample.component';
-import { RadioTailwindStylingSampleComponent } from './radio/radio-tailwind-styling-sample/radio-tailwind-styling-sample.component';
+import { RadioOverviewComponent } from './radio/radio-overview/radio-overview.component';
+import { RadioLayoutComponent } from './radio/radio-layout/radio-layout.component';
+import { RadioOrientationComponent } from './radio/radio-orientation/radio-orientation.component';
+import { RadioInteractionStateComponent } from './radio/radio-interaction-state/radio-interaction-state.component';
+import { RadioDisabledComponent } from './radio/radio-disabled/radio-disabled.component';
+import { RadioOnOffStateComponent } from './radio/radio-on-off-state/radio-on-off-state.component';
+import { RadioStylingComponent } from './radio/radio-styling/radio-styling.component';
+import { RadioTailwindStylingComponent } from './radio/radio-tailwind-styling/radio-tailwind-styling.component';
 import { SelectHeaderFooterComponent } from './select/select-header-footer/select-header-footer.component';
 import { SelectInputDirectivesComponent } from './select/select-input-directives/select-input-directives';
 import { SelectSample1Component } from './select/select-sample-1/select-sample-1.component';
@@ -64,11 +83,21 @@ import { SelectSample2Component } from './select/select-sample-2/select-sample-2
 import { SelectSample4Component } from './select/select-sample-4/select-sample-4.component';
 import { SelectStylingComponent } from './select/select-styling/select-styling.component';
 import { SelectTailwindStylingComponent } from './select/select-tailwind-styling/select-tailwind-styling.component';
-import { SwitchSample1Component } from './switch/switch-sample-1/switch-sample-1.component';
-import { SwitchSample2Component } from './switch/switch-sample-2/switch-sample-2.component';
+import { SwitchOverviewComponent } from './switch/switch-overview/switch-overview.component';
+import { SwitchEnabledComponent } from './switch/switch-enabled/switch-enabled.component';
+import { SwitchDisabledComponent } from './switch/switch-disabled/switch-disabled.component';
+import { SwitchSelectedComponent } from './switch/switch-selected/switch-selected.component';
+import { SwitchLayoutComponent } from './switch/switch-layout/switch-layout.component';
 import { SwitchStylingComponent } from './switch/switch-styling/switch-styling.component';
 import { SwitchTailwindStylingComponent } from './switch/switch-tailwind-styling/switch-tailwind-styling.component';
 import { RatingInFormComponent } from './rating/rating-form/rating-form.component';
+import { RatingOverviewComponent } from './rating/rating-overview/rating-overview.component';
+import { RatingLayoutComponent } from './rating/rating-layout/rating-layout.component';
+import { RatingInteractionStatesComponent } from './rating/rating-interaction-states/rating-interaction-states.component';
+import { RatingStatesComponent } from './rating/rating-states/rating-states.component';
+import { RatingSizeComponent } from './rating/rating-size/rating-size.component';
+import { RatingStylingComponent } from './rating/rating-styling/rating-styling.component';
+import { RatingTailwindStylingComponent } from './rating/rating-tailwind-styling/rating-tailwind-styling.component';
 import { TemplateDrivenFormValidationComponent } from './input-group/template-driven-form-validation/template-driven-form-validation.component';
 import { ReactiveFormValidationComponent } from './input-group/reactive-form-validation/reactive-form-validation.component';
 import { ReactiveFormCustomValidationComponent } from './input-group/reactive-form-custom-validation/reactive-form-custom-validation.component';
@@ -94,119 +123,124 @@ export const DataEntriesRoutes: Routes = [
         path: 'movie'
     },
     {
-        component: ButtonsDisplayDensityComponent,
-        data: dataEntriesRoutesData['buttons-display-density'],
-        path: 'buttons-display-density'
+        component: ButtonSizeComponent,
+        data: dataEntriesRoutesData['button-size'],
+        path: 'button-size'
     },
     {
-        component: ButtonGroupSample1Component,
-        data: dataEntriesRoutesData['button-group-sample-1'],
-        path: 'button-group-sample-1'
+        component: ButtonGroupOverviewComponent,
+        data: dataEntriesRoutesData['button-group-overview'],
+        path: 'button-group-overview'
     },
     {
-        component: ButtonGroupSample2Component,
-        data: dataEntriesRoutesData['button-group-sample-2'],
-        path: 'button-group-sample-2'
+        component: ButtonGroupLayoutComponent,
+        data: dataEntriesRoutesData['button-group-layout'],
+        path: 'button-group-layout'
     },
     {
-        component: ButtonGroupSample3Component,
-        data: dataEntriesRoutesData['button-group-sample-3'],
-        path: 'button-group-sample-3'
+        component: ButtonGroupAlignmentComponent,
+        data: dataEntriesRoutesData['button-group-alignment'],
+        path: 'button-group-alignment'
     },
     {
-        component: ButtonGroupSampleComponent,
-        data: dataEntriesRoutesData['button-group-sample-4'],
-        path: 'button-group-sample-4'
+        component: ButtonGroupCustomToggleComponent,
+        data: dataEntriesRoutesData['button-group-custom-toggle'],
+        path: 'button-group-custom-toggle'
     },
     {
-        component: ButtonGroupSample5Component,
-        data: dataEntriesRoutesData['button-group-sample-5'],
-        path: 'button-group-sample-5'
+        component: ButtonGroupStatesComponent,
+        data: dataEntriesRoutesData['button-group-states'],
+        path: 'button-group-states'
     },
     {
-        component: ButtonGroupStyleComponent,
-        data: dataEntriesRoutesData['button-group-style'],
-        path: 'button-group-style'
+        component: ButtonGroupInteractionStatesComponent,
+        data: dataEntriesRoutesData['button-group-interaction-states'],
+        path: 'button-group-interaction-states'
     },
     {
-        component: ButtonGroupTailwindStyleComponent,
-        data: dataEntriesRoutesData['button-group-tailwind-style'],
-        path: 'button-group-tailwind-style'
+        component: ButtonGroupSelectionComponent,
+        data: dataEntriesRoutesData['button-group-selection'],
+        path: 'button-group-selection'
     },
     {
-        component: ButtonsRoundnessComponent,
-        data: dataEntriesRoutesData['buttons-roundness-sample'],
-        path: 'buttons-roundness-sample'
+        component: ButtonGroupSizeComponent,
+        data: dataEntriesRoutesData['button-group-size'],
+        path: 'button-group-size'
     },
     {
-        component: ButtonsSample1Component,
-        data: dataEntriesRoutesData['buttons-sample-1'],
-        path: 'buttons-sample-1'
+        component: ButtonGroupStylingComponent,
+        data: dataEntriesRoutesData['button-group-styling'],
+        path: 'button-group-styling'
     },
     {
-        component: ButtonsSample2Component,
-        data: dataEntriesRoutesData['buttons-sample-2'],
-        path: 'buttons-sample-2'
+        component: ButtonGroupTailwindStylingComponent,
+        data: dataEntriesRoutesData['button-group-tailwind-styling'],
+        path: 'button-group-tailwind-styling'
     },
     {
-        component: ButtonsSample3Component,
-        data: dataEntriesRoutesData['buttons-sample-3'],
-        path: 'buttons-sample-3'
+        component: ButtonOverviewComponent,
+        data: dataEntriesRoutesData['button-overview'],
+        path: 'button-overview'
     },
     {
-        component: ButtonsSample4Component,
-        data: dataEntriesRoutesData['buttons-sample-4'],
-        path: 'buttons-sample-4'
+        component: ButtonFlatComponent,
+        data: dataEntriesRoutesData['button-flat'],
+        path: 'button-flat'
     },
     {
-        component: ButtonsSample5Component,
-        data: dataEntriesRoutesData['buttons-sample-5'],
-        path: 'buttons-sample-5'
+        component: ButtonInteractionStatesComponent,
+        data: dataEntriesRoutesData['button-interaction-states'],
+        path: 'button-interaction-states'
     },
     {
-        component: ButtonsSample6Component,
-        data: dataEntriesRoutesData['buttons-sample-6'],
-        path: 'buttons-sample-6'
+        component: ButtonLayoutComponent,
+        data: dataEntriesRoutesData['button-layout'],
+        path: 'button-layout'
     },
     {
-        component: ButtonsSample7Component,
-        data: dataEntriesRoutesData['buttons-sample-7'],
-        path: 'buttons-sample-7'
+        component: ButtonContainedComponent,
+        data: dataEntriesRoutesData['button-contained'],
+        path: 'button-contained'
     },
     {
-        component: ButtonsSample8Component,
-        data: dataEntriesRoutesData['buttons-sample-8'],
-        path: 'buttons-sample-8'
+        component: ButtonFabComponent,
+        data: dataEntriesRoutesData['button-fab'],
+        path: 'button-fab'
     },
     {
-        component: ButtonsDisabledComponent,
-        data: dataEntriesRoutesData['buttons-disabled-sample'],
-        path: 'buttons-disabled-sample'
+        component: ButtonOutlinedComponent,
+        data: dataEntriesRoutesData['button-outlined'],
+        path: 'button-outlined'
     },
     {
-        component: ButtonsStyleComponent,
-        data: dataEntriesRoutesData['buttons-style'],
-        path: 'buttons-style'
+        component: ButtonStatesComponent,
+        data: dataEntriesRoutesData['button-states'],
+        path: 'button-states'
     },
     {
-        component: ButtonsTailwindStyleComponent,
-        data: dataEntriesRoutesData['buttons-tailwind-style'],
-        path: 'buttons-tailwind-style'
+        component: ButtonDownloadComponent,
+        data: dataEntriesRoutesData['button-download'],
+        path: 'button-download'
     },
     {
-        component: CheckboxSample1Component,
-        data: dataEntriesRoutesData['checkbox-sample-1'],
-        path: 'checkbox-sample-1'
+        component: ButtonStylingComponent,
+        data: dataEntriesRoutesData['button-styling'],
+        path: 'button-styling'
     },
     {
-        component: CheckboxSample2Component,
-        data: dataEntriesRoutesData['checkbox-sample-2'],
-        path: 'checkbox-sample-2'
+        component: ButtonTailwindStylingComponent,
+        data: dataEntriesRoutesData['button-tailwind-styling'],
+        path: 'button-tailwind-styling'
     },
     {
-        component: CheckboxSample3Component,
-        data: dataEntriesRoutesData['checkbox-sample-3'],
-        path: 'checkbox-sample-3'
+        component: CheckboxOverviewComponent,
+        data: dataEntriesRoutesData['checkbox-overview'],
+        path: 'checkbox-overview'
+    },
+    {
+        component: CheckboxStatesComponent,
+        data: dataEntriesRoutesData['checkbox-states'],
+        path: 'checkbox-states'
     },
     {
         component: CheckboxStylingComponent,
@@ -217,6 +251,66 @@ export const DataEntriesRoutes: Routes = [
         component: CheckboxTailwindStylingComponent,
         data: dataEntriesRoutesData['checkbox-tailwind-styling'],
         path: 'checkbox-tailwind-styling'
+    },
+    {
+        component: ColorPickerOverviewComponent,
+        data: dataEntriesRoutesData['color-picker-overview'],
+        path: 'color-picker-overview'
+    },
+    {
+        component: ColorPickerValueComponent,
+        data: dataEntriesRoutesData['color-picker-value'],
+        path: 'color-picker-value'
+    },
+    {
+        component: ColorPickerInputComponent,
+        data: dataEntriesRoutesData['color-picker-input'],
+        path: 'color-picker-input'
+    },
+    {
+        component: ColorPickerFormatComponent,
+        data: dataEntriesRoutesData['color-picker-format'],
+        path: 'color-picker-format'
+    },
+    {
+        component: ColorPickerAlphaComponent,
+        data: dataEntriesRoutesData['color-picker-alpha'],
+        path: 'color-picker-alpha'
+    },
+    {
+        component: ColorPickerSwatchesComponent,
+        data: dataEntriesRoutesData['color-picker-swatches'],
+        path: 'color-picker-swatches'
+    },
+    {
+        component: ColorPickerStatesComponent,
+        data: dataEntriesRoutesData['color-picker-states'],
+        path: 'color-picker-states'
+    },
+    {
+        component: ColorPickerSizesComponent,
+        data: dataEntriesRoutesData['color-picker-sizes'],
+        path: 'color-picker-sizes'
+    },
+    {
+        component: ColorPickerInputSizesComponent,
+        data: dataEntriesRoutesData['color-picker-input-sizes'],
+        path: 'color-picker-input-sizes'
+    },
+    {
+        component: ColorPickerStylingComponent,
+        data: dataEntriesRoutesData['color-picker-styling'],
+        path: 'color-picker-styling'
+    },
+    {
+        component: ColorPickerTailwindStylingComponent,
+        data: dataEntriesRoutesData['color-picker-tailwind-styling'],
+        path: 'color-picker-tailwind-styling'
+    },
+    {
+        component: ColorPickerReactiveFormComponent,
+        data: dataEntriesRoutesData['color-picker-reactive-form'],
+        path: 'color-picker-reactive-form'
     },
     {
         component: DropdownMenuComponent,
@@ -369,6 +463,46 @@ export const DataEntriesRoutes: Routes = [
         path: 'reactive-forms'
     },
     {
+        component: RadioOverviewComponent,
+        data: dataEntriesRoutesData['radio-overview'],
+        path: 'radio-overview'
+    },
+    {
+        component: RadioLayoutComponent,
+        data: dataEntriesRoutesData['radio-layout'],
+        path: 'radio-layout'
+    },
+    {
+        component: RadioOrientationComponent,
+        data: dataEntriesRoutesData['radio-orientation'],
+        path: 'radio-orientation'
+    },
+    {
+        component: RadioInteractionStateComponent,
+        data: dataEntriesRoutesData['radio-interaction-state'],
+        path: 'radio-interaction-state'
+    },
+    {
+        component: RadioDisabledComponent,
+        data: dataEntriesRoutesData['radio-disabled'],
+        path: 'radio-disabled'
+    },
+    {
+        component: RadioOnOffStateComponent,
+        data: dataEntriesRoutesData['radio-on-off-state'],
+        path: 'radio-on-off-state'
+    },
+    {
+        component: RadioStylingComponent,
+        data: dataEntriesRoutesData['radio-styling'],
+        path: 'radio-styling'
+    },
+    {
+        component: RadioTailwindStylingComponent,
+        data: dataEntriesRoutesData['radio-tailwind-styling'],
+        path: 'radio-tailwind-styling'
+    },
+    {
         component: RadioSample1Component,
         data: dataEntriesRoutesData['radio-sample-1'],
         path: 'radio-sample-1'
@@ -394,29 +528,69 @@ export const DataEntriesRoutes: Routes = [
         path: 'radio-group-vertical'
     },
     {
-        component: RadioStylingSampleComponent,
-        data: dataEntriesRoutesData['radio-styling-sample'],
-        path: 'radio-styling-sample'
-    },
-    {
-        component: RadioTailwindStylingSampleComponent,
-        data: dataEntriesRoutesData['radio-tailwind-styling-sample'],
-        path: 'radio-tailwind-styling-sample'
-    },
-    {
         component: RatingInFormComponent,
         data: dataEntriesRoutesData['rating-in-form'],
         path: 'rating-form'
     },
     {
-        component: SwitchSample1Component,
-        data: dataEntriesRoutesData['switch-sample-1'],
-        path: 'switch-sample-1'
+        component: RatingOverviewComponent,
+        data: dataEntriesRoutesData['rating-overview'],
+        path: 'rating-overview'
     },
     {
-        component: SwitchSample2Component,
-        data: dataEntriesRoutesData['switch-sample-2'],
-        path: 'switch-sample-2'
+        component: RatingLayoutComponent,
+        data: dataEntriesRoutesData['rating-layout'],
+        path: 'rating-layout'
+    },
+    {
+        component: RatingInteractionStatesComponent,
+        data: dataEntriesRoutesData['rating-interaction-states'],
+        path: 'rating-interaction-states'
+    },
+    {
+        component: RatingStatesComponent,
+        data: dataEntriesRoutesData['rating-states'],
+        path: 'rating-states'
+    },
+    {
+        component: RatingSizeComponent,
+        data: dataEntriesRoutesData['rating-size'],
+        path: 'rating-size'
+    },
+    {
+        component: RatingStylingComponent,
+        data: dataEntriesRoutesData['rating-styling'],
+        path: 'rating-styling'
+    },
+    {
+        component: RatingTailwindStylingComponent,
+        data: dataEntriesRoutesData['rating-tailwind-styling'],
+        path: 'rating-tailwind-styling'
+    },
+    {
+        component: SwitchOverviewComponent,
+        data: dataEntriesRoutesData['switch-overview'],
+        path: 'switch-overview'
+    },
+    {
+        component: SwitchEnabledComponent,
+        data: dataEntriesRoutesData['switch-enabled'],
+        path: 'switch-enabled'
+    },
+    {
+        component: SwitchDisabledComponent,
+        data: dataEntriesRoutesData['switch-disabled'],
+        path: 'switch-disabled'
+    },
+    {
+        component: SwitchSelectedComponent,
+        data: dataEntriesRoutesData['switch-selected'],
+        path: 'switch-selected'
+    },
+    {
+        component: SwitchLayoutComponent,
+        data: dataEntriesRoutesData['switch-layout'],
+        path: 'switch-layout'
     },
     {
         component: SwitchStylingComponent,

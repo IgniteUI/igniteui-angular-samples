@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, ViewChildren, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChildren } from '@angular/core';
 import { IgxColumnComponent, RowType } from 'igniteui-angular/grids/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxDropDirective } from 'igniteui-angular/directives';
@@ -18,7 +18,6 @@ enum HoverClassList {
     selector: 'app-grid-row-drag-sample',
     styleUrls: ['./grid-row-drag.component.scss'],
     templateUrl: 'grid-row-drag.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, PlanetComponent, IgxDropDirective]
 })
 

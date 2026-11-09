@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren, inject } from '@angular/core';
 import { IgxDropDownComponent, IgxDropDownItemComponent } from 'igniteui-angular/drop-down';
 import { ConnectedPositioningStrategy, HorizontalAlignment, OverlaySettings, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxNavbarComponent, IgxNavbarTitleDirective } from 'igniteui-angular/navbar';
@@ -22,7 +22,6 @@ import { MultiLevelDirective } from './multi-level.directive';
     templateUrl: './dropdown-multi-level-menu.component.html',
     styleUrls: ['./dropdown-multi-level-menu.component.scss'],
     providers: [MultiLevelService],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent, IgxNavbarTitleDirective, IgxButtonDirective, IgxToggleActionDirective, IgxIconComponent, IgxDropDownComponent, IgxDropDownItemComponent, MultiLevelDirective, IgxSuffixDirective]
 })
 export class DropdownMultiLevelMenuComponent implements AfterViewInit {

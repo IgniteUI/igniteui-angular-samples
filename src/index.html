@@ -3,6 +3,10 @@
 
 <head>
   <meta charset="utf-8">
+  <!-- Layer order is fixed by first declaration. The theme link below would
+       otherwise declare `ig` first, making it the lowest layer, so Tailwind's
+       Preflight (`base`, from styles.scss) would override the theme. -->
+  <style>@layer properties, theme, base, components, utilities, ig;</style>
   <title>Angular Demos</title>
   <base href="/">
 
@@ -12,6 +16,14 @@
   <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+  <!-- The active Ignite UI theme. ThemeService swaps this href when the
+       documentation site's theming widget posts a new selection into the
+       sample; it stays ahead of the application's own stylesheet so that
+       styles.scss keeps overriding the theme. -->
+  <!-- Declares Tailwind's layers before the theme's `ig.*` layers so Tailwind's preflight can't override the theme. -->
+  <style>@layer theme, base, components, utilities;</style>
+  <link id="igniteui-theme" rel="stylesheet" href="assets/themes/igniteui-angular.css">
 </head>
 
 <body class="ig-typography ig-scrollbar">

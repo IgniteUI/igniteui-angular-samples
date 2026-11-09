@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent, IgxColumnGroupComponent } from 'igniteui-angular/grids/core';
 import { DATA } from '../../data/customers';
@@ -7,7 +7,6 @@ import { DATA } from '../../data/customers';
     selector: 'app-gird-column-group-selection',
     templateUrl: './column-group-selection-sample.component.html',
     styleUrls: ['./column-group-selection-sample.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxColumnGroupComponent, IgxColumnComponent]
 })
 export class GridColumnGroupSelectionComponent implements OnInit, AfterViewInit {

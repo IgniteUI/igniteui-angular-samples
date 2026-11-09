@@ -3,9 +3,10 @@
 }
 
 :host::ng-deep {
-    $primary-color-green: green;
-    $primary-color-red: red;
-    $primary-color-blue: royalblue;
+    $primary-color-green: #195e19;
+    $primary-color-red: #b52626;
+    $primary-color-blue: #4144e1;
+	
     $margin-right-images: 5px;
     $images-font-size: 1.5em;
     $images-font-weight: bold;
@@ -30,7 +31,7 @@
 
     .star {
         @extend .contentStyle;
-        content: "*";
+        content: '*';
     }
 
     .allergens:after {

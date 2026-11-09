@@ -1,0 +1,81 @@
+@use "sass:list";
+@use "igniteui-theming/sass" as *;
+
+:host {
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
+    place-items: center;
+    column-gap: rem(60px);
+    min-height: 100vh;
+    padding-inline: rem(16px);
+
+    ::ng-deep {
+        // NOTE! This is just for the sake of the sample, don't do this in your app.
+        // The stepper body is where the content for each step goes, and it should be visible.
+        // This sample doesn't have any content, so we hide it to avoid the empty space.
+        .igx-stepper__body {
+            display: none;
+        }
+    }
+}
+
+.icon-anchor {
+    display: grid;
+    place-items: center;
+    inline-size: rem(36px);
+    block-size: rem(36px);
+    border-radius: 50%;
+    background: var(--ig-gray-200);
+    color: var(--ig-gray-800);
+
+    igx-icon {
+        font-size: rem(18px);
+    }
+}
+
+igx-badge {
+    --ig-size: var(--ig-size-small);
+
+    position: absolute;
+    inset-block-start: anchor(14.5%);
+    inset-inline-start: anchor(85.5%);
+    translate: -50% -50%;
+
+    &:nth-of-type(1) {
+        inset-block-start: anchor(10%);
+        inset-inline-start: anchor(100%);
+    }
+
+    &:nth-of-type(2) {
+        inset-block-start: anchor(85.5%);
+    }
+}
+
+$anchors: icon, initials, flagged;
+
+@each $anchor in $anchors {
+    $i: list.index($anchors, $anchor);
+
+    .#{$anchor}-anchor {
+        anchor-name: --#{$anchor};
+    }
+
+    :host > igx-badge:nth-of-type(#{$i}) {
+        position-anchor: --#{$anchor};
+    }
+}
+
+igx-stepper {
+    --ig-stepper-step-separator-style: dashed;
+    --ig-stepper-step-separator-color: var(--ig-gray-400);
+
+    inline-size: rem(320px);
+}
+
+span[igxStepIndicator] {
+    display: grid;
+    place-items: center;
+    inline-size: 100%;
+    block-size: 100%;
+}

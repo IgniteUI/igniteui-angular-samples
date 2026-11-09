@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { DefaultSortingStrategy, IGroupingExpression } from 'igniteui-angular/core';
 import { IgxTreeGridComponent, IgxTreeGridGroupByAreaComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -9,7 +9,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-tree-grid-group-by-load-on-demand-sample',
     styleUrls: ['./tree-grid-group-by-load-on-demand-sample.component.scss'],
     templateUrl: './tree-grid-group-by-load-on-demand-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxTreeGridGroupByAreaComponent, IgxColumnComponent]
 })
 

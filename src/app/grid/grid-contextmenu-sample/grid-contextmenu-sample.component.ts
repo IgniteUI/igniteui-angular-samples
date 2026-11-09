@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DefaultSortingStrategy, SortingDirection } from 'igniteui-angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxCellTemplateDirective, IgxColumnComponent } from 'igniteui-angular/grids/core';
@@ -11,7 +11,6 @@ import { ContextmenuComponent } from './contextmenu/contextmenu.component';
     selector: 'app-grid-contextmenu-sample',
     styleUrls: ['./grid-contextmenu-sample.component.scss'],
     templateUrl: './grid-contextmenu-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, ContextmenuComponent]
 })
 

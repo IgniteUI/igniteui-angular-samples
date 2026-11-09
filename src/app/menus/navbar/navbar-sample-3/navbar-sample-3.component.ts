@@ -1,5 +1,5 @@
 import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { IgxNavbarComponent } from 'igniteui-angular/navbar';
 
 @Component({
@@ -7,7 +7,6 @@ import { IgxNavbarComponent } from 'igniteui-angular/navbar';
     selector: 'app-navbar',
     styleUrls: ['./navbar-sample-3.component.scss'],
     templateUrl: './navbar-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent]
 })
 export class NavbarSample3Component {

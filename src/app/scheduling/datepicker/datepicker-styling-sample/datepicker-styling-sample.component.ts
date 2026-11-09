@@ -1,4 +1,4 @@
-import { Component, ElementRef, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, inject } from '@angular/core';
 import { IgxOverlayService } from 'igniteui-angular/core';
 import { IgxDatePickerComponent } from 'igniteui-angular/date-picker';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
@@ -7,10 +7,10 @@ import { IgxLabelDirective } from 'igniteui-angular/input-group';
     selector: 'app-datepicker-sample-1',
     styleUrls: ['./datepicker-styling-sample.component.scss'],
     templateUrl: './datepicker-styling-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxDatePickerComponent, IgxLabelDirective]
 })
-export class DatepickerStylingSampleComponent {    element = inject(ElementRef);
+export class DatepickerStylingSampleComponent {
+    element = inject(ElementRef);
     private overlayService = inject(IgxOverlayService);
 
  }

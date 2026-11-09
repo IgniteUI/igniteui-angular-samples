@@ -1,0 +1,40 @@
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: flex;
+    min-block-size: 100%;
+    box-sizing: border-box;
+    place-content: center;
+    place-items: center;
+    padding: rem(16px);
+}
+
+.variants {
+    --variant-gap: #{rem(60px)};
+    --label-gap: #{rem(30px)};
+
+    display: flex;
+    inline-size: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: var(--variant-gap);
+
+    .variants__item {
+        display: flex;
+        align-items: center;
+        gap: var(--label-gap);
+    }
+
+    .variants__label {
+        @include type-style("body-2") {
+            margin: 0;
+        }
+
+        color: var(--ig-gray-600);
+        font-family: "Aktiv Grotesk", sans-serif;
+        font-size: rem(14px);
+        font-weight: 500;
+        line-height: rem(24px);
+        letter-spacing: rem(0.1px);
+    }
+}

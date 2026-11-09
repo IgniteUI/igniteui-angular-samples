@@ -1,13 +1,13 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ISlideEventArgs, IgxCarouselComponent, IgxSlideComponent } from 'igniteui-angular/carousel';
 import { IListItemClickEventArgs, IgxListComponent, IgxListItemComponent, IgxListThumbnailDirective } from 'igniteui-angular/list';
 import { NgStyle, NgClass, CurrencyPipe } from '@angular/common';
 
 @Component({
     selector: 'app-carousel',
+    host: { class: 'ig-typography' },
     styleUrls: ['./carousel-no-navigation-sample.component.scss'],
     templateUrl: './carousel-no-navigation-sample.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxCarouselComponent, IgxSlideComponent, NgStyle, NgClass, IgxListComponent, IgxListItemComponent, IgxListThumbnailDirective, CurrencyPipe]
 })
 export class CarouselNoNavigationSampleComponent implements OnInit {

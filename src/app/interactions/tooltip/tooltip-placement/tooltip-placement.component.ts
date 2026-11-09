@@ -1,4 +1,4 @@
-import { Component, QueryList, ViewChild, ViewChildren, ChangeDetectionStrategy } from "@angular/core";
+import { Component, QueryList, ViewChild, ViewChildren } from "@angular/core";
 import { IgxButtonDirective, IgxTooltipDirective, TooltipPositionStrategy } from 'igniteui-angular/directives';
 import { HorizontalAlignment, OverlaySettings, PositionSettings, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -7,7 +7,6 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: "app-tooltip-placement",
     styleUrls: ["./tooltip-placement.component.scss"],
     templateUrl: "./tooltip-placement.component.html",
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxTooltipDirective, IgxIconComponent]
 })
 export class TooltipPlacementComponent {

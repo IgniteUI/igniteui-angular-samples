@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxRadioComponent } from 'igniteui-angular/radio';
 import { FormsModule } from '@angular/forms';
 
@@ -6,7 +6,6 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-radio-sample-3',
     styleUrls: ['./radio-sample-3.component.scss'],
     templateUrl: './radio-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxRadioComponent, FormsModule]
 })
 export class RadioSample3Component {

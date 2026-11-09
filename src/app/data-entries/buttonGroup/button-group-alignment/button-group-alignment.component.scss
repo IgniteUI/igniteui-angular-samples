@@ -1,0 +1,36 @@
+@use 'igniteui-theming' as *;
+
+:host {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+.sample-layout {
+    display: flex;
+    gap: rem(32px);
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.sample-inner-layout {
+    display: grid;
+    gap: rem(8px);
+    align-items: start;
+}
+
+igx-buttongroup {
+    min-width: rem(280px);
+}
+
+span {
+    color: var(--ig-gray-600);
+    font-family: "Aktiv Grotesk", sans-serif;
+    font-size: rem(13px);
+    font-weight: 400;
+    line-height: rem(20px);
+    letter-spacing: rem(0.3px);
+    margin: rem(8px);
+    text-align: center;
+}

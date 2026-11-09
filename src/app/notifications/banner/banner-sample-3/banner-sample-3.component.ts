@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxBannerActionsDirective, IgxBannerComponent } from 'igniteui-angular/banner';
 import { IgxNavbarComponent } from 'igniteui-angular/navbar';
 import { IgxIconComponent } from 'igniteui-angular/icon';
@@ -10,7 +10,6 @@ import { slideInLeft, slideOutRight } from 'igniteui-angular/animations';
     selector: 'app-banner-sample-3',
     styleUrls: ['../banner-samples.scss'],
     templateUrl: 'banner-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxNavbarComponent, IgxIconComponent, IgxBannerComponent, IgxBannerActionsDirective, IgxButtonDirective, IgxRippleDirective, IgxCardComponent]
 })
 

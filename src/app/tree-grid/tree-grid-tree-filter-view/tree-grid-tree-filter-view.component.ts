@@ -9,7 +9,6 @@ import { ORDERS_DATA } from '../data/orders';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
-    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-tree-grid-tree-filter-view',
     styleUrls: ['./tree-grid-tree-filter-view.component.scss'],
     templateUrl: 'tree-grid-tree-filter-view.component.html',

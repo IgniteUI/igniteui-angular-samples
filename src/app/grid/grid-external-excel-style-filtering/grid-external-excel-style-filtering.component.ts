@@ -8,7 +8,6 @@ import { CurrencyPipe } from '@angular/common';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 
 @Component({
-    changeDetection: ChangeDetectionStrategy.OnPush,
     selector: 'app-grid-external-excel-style-filtering',
     templateUrl: './grid-external-excel-style-filtering.component.html',
     styleUrls: ['./grid-external-excel-style-filtering.component.scss'],

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
 import { IgxOverlayOutletDirective } from 'igniteui-angular/core';
@@ -7,7 +7,6 @@ import { IgxOverlayOutletDirective } from 'igniteui-angular/core';
     selector: 'app-tooltip-tailwind-style',
     styleUrls: ['./tooltip-tailwind-style.component.scss'],
     templateUrl: './tooltip-tailwind-style.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxAvatarComponent, IgxTooltipTargetDirective, IgxOverlayOutletDirective, IgxTooltipDirective]
 })
 export class TooltipTailwindStyleComponent { }

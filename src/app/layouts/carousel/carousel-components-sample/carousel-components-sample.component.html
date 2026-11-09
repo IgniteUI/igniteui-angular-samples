@@ -1,0 +1,73 @@
+<div class="carousel-container">
+  <igx-carousel>
+    <igx-slide class="slide-frame slide-coast">
+      <article class="slide-shell">
+        <form class="feature-card">
+          <div class="feature-copy">
+            <span class="slide-label">Featured route</span>
+            <h3>Coastal weekend</h3>
+            <p>Browse curated travel ideas and search directly from the active slide.</p>
+          </div>
+          <igx-input-group type="border">
+            <igx-prefix><igx-icon>search</igx-icon></igx-prefix>
+            <input igxInput type="text" placeholder="City or landmark" />
+          </igx-input-group>
+          <div class="chip-row" aria-label="Route highlights">
+            <span>3 stops</span>
+            <span>Sea view</span>
+            <span>Weekend</span>
+          </div>
+          <button igxButton="contained" type="reset">Explore</button>
+        </form>
+        <div class="feature-visual route-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+      </article>
+    </igx-slide>
+
+    <igx-slide class="slide-frame slide-city">
+      <article class="slide-shell">
+        <section class="feature-card event-card">
+          <div class="feature-copy">
+            <span class="slide-label">City guide</span>
+            <h3>Museum night pass</h3>
+            <p>Reserve a late gallery visit and keep the event details visible in the active slide.</p>
+          </div>
+          <div class="event-summary" aria-label="Museum night pass details">
+            <div class="event-date" aria-hidden="true"><span>FRI</span><strong>18</strong><span>OCT</span></div>
+            <div class="event-details"><strong>6:30 PM - 10:00 PM</strong><span>North wing galleries</span></div>
+          </div>
+          <igx-checkbox>Send event reminder</igx-checkbox>
+          <button igxButton="contained">Notify Me</button>
+        </section>
+        <div class="event-visual" aria-hidden="true">
+          <span class="ticket-stack">
+            <span class="ticket ticket--back"></span>
+            <span class="ticket ticket--front"><span></span><span></span><span></span></span>
+          </span>
+        </div>
+      </article>
+    </igx-slide>
+
+    <igx-slide class="slide-frame slide-resort">
+      <article class="slide-shell">
+        <form class="feature-card offer-card">
+          <div class="feature-copy">
+            <span class="slide-label">Seasonal offer</span>
+            <h3>Resort day access</h3>
+            <p>Build a compact offer configuration that lets users review inclusions before applying a code.</p>
+          </div>
+          <div class="offer-summary" aria-label="Day pass summary">
+            <div><span>Day pass</span><strong>$89</strong></div>
+            <span>Pool access and spa credit included</span>
+          </div>
+          <div class="addon-row"><span>Lunch add-on</span><strong>+$18</strong></div>
+          <igx-input-group type="border">
+            <igx-prefix><igx-icon>lock</igx-icon></igx-prefix>
+            <input igxInput type="text" placeholder="Promo code" />
+          </igx-input-group>
+          <button igxButton="contained" type="reset">Apply Code</button>
+        </form>
+        <div class="amenity-visual" aria-hidden="true"><span></span><span></span><span></span></div>
+      </article>
+    </igx-slide>
+  </igx-carousel>
+</div>

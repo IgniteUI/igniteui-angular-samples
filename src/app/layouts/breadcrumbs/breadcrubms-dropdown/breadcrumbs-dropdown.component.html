@@ -1,0 +1,24 @@
+<nav aria-label="Breadcrumb">
+    <igc-breadcrumbs>
+        <igc-breadcrumb>
+            <a href="/my-drive" (click)="$event.preventDefault()">My drive</a>
+        </igc-breadcrumb>
+        <igc-breadcrumb>
+            <igc-dropdown distance="10">
+                <igc-icon slot="target" name="three-dots"></igc-icon>
+                <igc-dropdown-item>
+                    <igc-icon name="folder" slot="prefix"></igc-icon>Projects
+                </igc-dropdown-item>
+                <igc-dropdown-item>
+                    <igc-icon name="folder" slot="prefix"></igc-icon>Website redesign
+                </igc-dropdown-item>
+            </igc-dropdown>
+        </igc-breadcrumb>
+        <igc-breadcrumb>
+            <a href="/my-drive/assets" (click)="$event.preventDefault()">Assets</a>
+        </igc-breadcrumb>
+        <igc-breadcrumb current>
+            <a href="/my-drive/assets/icons" (click)="$event.preventDefault()">Icons</a>
+        </igc-breadcrumb>
+    </igc-breadcrumbs>
+</nav>

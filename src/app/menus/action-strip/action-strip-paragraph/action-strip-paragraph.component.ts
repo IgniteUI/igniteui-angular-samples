@@ -1,4 +1,4 @@
-import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IgxActionStripComponent } from 'igniteui-angular/action-strip';
 import { IgxButtonGroupComponent } from 'igniteui-angular/button-group';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
@@ -8,7 +8,6 @@ import { IgxIconComponent } from 'igniteui-angular/icon';
     selector: 'app-action-strip-paragraph',
     styleUrls: ['./action-strip-paragraph.component.scss'],
     templateUrl: './action-strip-paragraph.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxActionStripComponent, IgxButtonGroupComponent, IgxButtonDirective, IgxIconComponent]
 })
 export class ActionStripParagraphComponent {

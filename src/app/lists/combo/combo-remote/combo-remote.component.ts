@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject, ChangeDetectionStrategy } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IComboSearchInputEventArgs, IComboSelectionChangingEventArgs, IgxComboComponent } from 'igniteui-angular/combo';
 import { IForOfState } from 'igniteui-angular/directives';
 import { IgxToastComponent } from 'igniteui-angular/toast';
@@ -11,7 +11,6 @@ import { AsyncPipe } from '@angular/common';
     selector: 'app-combo-remote',
     styleUrls: ['./combo-remote.component.scss'],
     templateUrl: './combo-remote.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxComboComponent, IgxToastComponent, AsyncPipe]
 })
 export class ComboRemoteComponent implements OnInit, AfterViewInit {
@@ -84,8 +83,9 @@ export class ComboRemoteComponent implements OnInit, AfterViewInit {
     }
 
     public onOpened() {
-        const scroll: number = this.remoteCombo.virtualScrollContainer.getScrollForIndex(this.itemID - 1);
-        this.remoteCombo.virtualScrollContainer.scrollPosition = scroll + this.additionalScroll;
+        // additionalScroll is one row, set when the selection is the last item. Landing a
+        // row further down puts that item at the bottom of the viewport.
+        void this.remoteCombo.virtualScrollContainer.scrollToIndex(this.itemID - 1 + (this.additionalScroll ? 1 : 0), { block: 'start' });
         this.cdr.detectChanges();
     }
 

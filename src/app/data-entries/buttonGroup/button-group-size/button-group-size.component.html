@@ -1,0 +1,10 @@
+<article class="button-group-size">
+    @for (size of sizes; track size) {
+        <span class="sample-label">{{ getLabel(size) }}</span>
+        <igx-buttongroup>
+            @for (city of cities; track city) {
+                <button igxButton [igxRipple]="rippleColor">{{ city }}</button>
+            }
+        </igx-buttongroup>
+    }
+</article>

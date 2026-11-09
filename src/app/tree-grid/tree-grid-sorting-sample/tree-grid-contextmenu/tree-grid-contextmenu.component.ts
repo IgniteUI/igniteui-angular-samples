@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SortingDirection } from 'igniteui-angular/core';
 import { IgxIconComponent } from 'igniteui-angular/icon';
 import { NgStyle } from '@angular/common';
@@ -7,7 +7,6 @@ import { NgStyle } from '@angular/common';
     selector: 'app-tree-grid-contextmenu',
     styleUrls: ['./tree-grid-contextmenu.component.scss'],
     templateUrl: './tree-grid-contextmenu.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [NgStyle, IgxIconComponent]
 })
 export class TreeGridContextmenuComponent {

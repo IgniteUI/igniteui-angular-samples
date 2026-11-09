@@ -1,14 +1,13 @@
 @use "igniteui-angular/theming" as *;
 
 $custom-query-builder: query-builder-theme(
-  $header-foreground: #512da8,
-  $color-expression-group-and:  #eb0000,
-  $color-expression-group-or: #0000f3,
-  $subquery-header-background: var(--ig-gray-300),
-  $subquery-border-color: var(--ig-warn-500),
-  $subquery-border-radius: rem(4px)
+    $background: #1f2836,
+    $foreground: #f5f6e6,
+    $accent-color: #f5f6e6
 );
 
-:host {
-    @include tokens($custom-query-builder);
+:host ::ng-deep {
+    igx-advanced-filtering-dialog {
+        @include tokens($custom-query-builder);
+    }
 }

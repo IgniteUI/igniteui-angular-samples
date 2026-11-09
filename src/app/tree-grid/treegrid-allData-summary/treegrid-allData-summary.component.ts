@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { IgxColumnComponent, IgxSummaryOperand } from 'igniteui-angular/grids/core';
-import { IgxSummaryResult } from 'igniteui-angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { IgxColumnComponent } from 'igniteui-angular/grids/core';
+import { IgxSummaryOperand, IgxSummaryResult } from 'igniteui-angular/core';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { generateEmployeeFlatData } from '../data/employees-flat';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
@@ -45,7 +45,6 @@ class PTOSummary {
     selector: 'app-treegrid-all-data-summary-sample',
     styleUrls: ['./treegrid-allData-summary.component.scss'],
     templateUrl: './treegrid-allData-summary.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 export class TreeGridAllDataSummaryComponent implements OnInit {

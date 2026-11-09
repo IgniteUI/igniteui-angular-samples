@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, ChangeDetectorRef } from '@angular/core';
 import { ORDERS_DATA } from '../data/orders';
 import { IgxTreeGridComponent } from 'igniteui-angular/grids/tree-grid';
 import { IgxCellTemplateDirective, IgxColumnComponent, IgxGridToolbarActionsComponent, IgxGridToolbarComponent, IgxGridToolbarExporterComponent } from 'igniteui-angular/grids/core';
@@ -10,10 +10,10 @@ import { CurrencyPipe } from '@angular/common';
     selector: 'app-tree-grid-export-visualization',
     templateUrl: './tree-grid-export-visualization.component.html',
     styleUrls: ['./tree-grid-export-visualization.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeGridComponent, IgxPreventDocumentScrollDirective, IgxGridToolbarComponent, IgxGridToolbarActionsComponent, IgxButtonDirective, IgxGridToolbarExporterComponent, IgxColumnComponent, IgxCellTemplateDirective, CurrencyPipe]
 })
 export class TreeGridExportVisualizationComponent {
+    private cdr = inject(ChangeDetectorRef);
     public localData = [];
     private data = ORDERS_DATA;
 
@@ -37,6 +37,9 @@ export class TreeGridExportVisualizationComponent {
 
     longRunning(toolbar: any) {
         toolbar.showProgress = true;
-        setTimeout(() => toolbar.showProgress = false, 5000);
+        setTimeout(() => {
+            toolbar.showProgress = false;
+            this.cdr.markForCheck();
+        }, 5000);
     }
 }

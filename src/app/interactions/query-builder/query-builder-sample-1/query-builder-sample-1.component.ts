@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FilteringExpressionsTree, FilteringLogic, IExpressionTree, IgxBooleanFilteringOperand, IgxDateFilteringOperand, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular/core';
 import { IgxQueryBuilderComponent } from 'igniteui-angular/query-builder';
 
@@ -6,7 +6,6 @@ import { IgxQueryBuilderComponent } from 'igniteui-angular/query-builder';
     selector: 'app-query-builder-sample-1',
     styleUrls: ['./query-builder-sample-1.component.scss'],
     templateUrl: 'query-builder-sample-1.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxQueryBuilderComponent]
 })
 export class QueryBuilderSample1Component implements OnInit {
@@ -85,7 +84,7 @@ export class QueryBuilderSample1Component implements OnInit {
             condition: IgxDateFilteringOperand.instance().condition('today'),
             conditionName: IgxDateFilteringOperand.instance().condition('today').name
         });
-        
+
         const tree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['*']);
         tree.filteringOperands.push({
             fieldName: 'CompanyID',

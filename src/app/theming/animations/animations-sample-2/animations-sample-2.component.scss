@@ -3,13 +3,16 @@
 
 @include fade-in-top();
 
-.sample-column {
-    display: block;
-    padding: 16px;
-    @include animation('fade-in-top' 3s $ease-out-quad infinite);
+:host {
+    display: grid;
+    place-content: center;
+    width: 100%;
+    height: 100%;
 }
 
-.card-wrapper {
+igx-card {
+    @include animation('fade-in-top' 3s $ease-out-quad forwards);
+
     max-width: 400px;
     min-width: 250px;
 }

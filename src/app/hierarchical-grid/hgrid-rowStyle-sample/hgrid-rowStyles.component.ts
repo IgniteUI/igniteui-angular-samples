@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IgxCellTemplateDirective, IgxColumnComponent, RowType } from 'igniteui-angular/grids/core';
 import { IgxIconButtonDirective } from 'igniteui-angular/directives';
@@ -10,7 +10,6 @@ import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scro
     selector: 'app-hgrid-row-row-styles',
     styleUrls: ['./hgrid-rowStyles.component.scss'],
     templateUrl: 'hgrid-rowStyles.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxHierarchicalGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent, IgxCellTemplateDirective, IgxIconButtonDirective, IgxIconComponent, IgxRowIslandComponent]
 })
 
@@ -19,12 +18,12 @@ export class HGridRowStylesSampleComponent implements OnInit {
     private hierarchicalGrid: IgxHierarchicalGridComponent;
 
     public localdata;
-    public  rowStyles = {
+    public  rowStyles: any = {
         background:(row: RowType) => row.data['HasGrammyAward'] ? '#eeddd3' : '#f0efeb',
         'border-left': (row: RowType) => row.data['HasGrammyAward'] ? '2px solid #dda15e' : null
     };
 
-    public  childRowStyles = {
+    public  childRowStyles: any = {
         'border-left': (row: RowType) => row.data['BillboardReview'] > 70 ? '3.5px solid #dda15e' : null
     };
     constructor() { }

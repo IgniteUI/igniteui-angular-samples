@@ -1,13 +1,12 @@
-import { Component, ElementRef, OnDestroy, ViewChild, ViewContainerRef, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ElementRef, OnDestroy, ViewChild, ViewContainerRef, inject } from '@angular/core';
 import { ConnectedPositioningStrategy, IgxOverlayService } from 'igniteui-angular/core';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
-import { CardSample1Component } from '../../../layouts/card/card-sample-1/card-sample-1.component';
+import { MyDynamicCardComponent } from '../overlay-dynamic-card/overlay-dynamic-card.component';
 // tslint:disable:object-literal-sort-keys
 @Component({
     selector: 'app-overlay-sample',
     templateUrl: `./overlay-main-sample-2.component.html`,
     styleUrls: [`./overlay-main-sample-2.component.scss`],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective]
 })
 export class OverlaySampleMain2Component implements OnDestroy {
@@ -24,7 +23,7 @@ export class OverlaySampleMain2Component implements OnDestroy {
         if (this._cardHidden) {
             if (!this._overlayId) {
                 const positionStrategy = new ConnectedPositioningStrategy();
-                this._overlayId = this.overlayService.attach(CardSample1Component, this.viewContainerRef, {
+                this._overlayId = this.overlayService.attach(MyDynamicCardComponent, this.viewContainerRef, {
                     target: this.buttonElement.nativeElement,
                     positionStrategy,
                     modal: false,

@@ -1,4 +1,4 @@
-import { Component, ViewChild, inject, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ViewChild, inject } from "@angular/core";
 
 import {
     IPivotConfiguration,
@@ -46,7 +46,6 @@ export class IgxTotalSaleAggregate {
     selector: 'app-pivot-export-sample',
     styleUrls: ['./pivot-export.component.scss'],
     templateUrl: './pivot-export.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxPivotGridComponent]
 })
 export class PivotExportComponent {

@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component } from '@angular/core';
 import { IgxButtonDirective, IgxRippleDirective } from 'igniteui-angular/directives';
 import { IgxDialogComponent } from 'igniteui-angular/dialog';
 
@@ -6,7 +6,6 @@ import { IgxDialogComponent } from 'igniteui-angular/dialog';
     selector: 'app-dialog-sample-1',
     styleUrls: ['./dialog-sample-1.component.scss'],
     templateUrl: './dialog-sample-1.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxButtonDirective, IgxRippleDirective, IgxDialogComponent]
 })
 export class DialogSample1Component { }

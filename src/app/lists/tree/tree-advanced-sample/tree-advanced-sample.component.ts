@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, OnDestroy, PLATFORM_ID, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, AfterViewInit, OnDestroy, PLATFORM_ID, inject, ChangeDetectorRef } from '@angular/core';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { IgxTreeComponent, IgxTreeNodeComponent } from 'igniteui-angular/tree';
 import { IgxTooltipDirective, IgxTooltipTargetDirective } from 'igniteui-angular/directives';
@@ -13,13 +13,13 @@ import { isPlatformBrowser, NgTemplateOutlet } from '@angular/common';
     templateUrl: './tree-advanced-sample.component.html',
     styleUrls: ['./tree-advanced-sample.component.scss'],
     providers: [DataService],
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxTreeComponent, IgxTreeNodeComponent, NgTemplateOutlet, IgxIconComponent, IgxTooltipTargetDirective, IgxTooltipDirective]
 })
 export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
     private iconService = inject(IgxIconService);
     private dataService = inject(DataService);
     private platformId = inject(PLATFORM_ID);
+    private cdr = inject(ChangeDetectorRef);
 
     public family = 'tree-icons';
     public data = DATA;
@@ -32,6 +32,7 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
         this.dataService.data.pipe(takeUntil(this.destroy$)).subscribe((data) => {
             this.loading = false;
             this.remoteData = data;
+            this.cdr.markForCheck();
         });
     }
 
@@ -71,6 +72,7 @@ export class TreeAdvancedSampleComponent implements AfterViewInit, OnDestroy {
                         }
                     });
                 }
+                this.cdr.markForCheck();
             });
         }
     }

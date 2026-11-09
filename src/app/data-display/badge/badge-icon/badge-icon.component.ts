@@ -1,6 +1,4 @@
-import { Component, OnInit, inject, ChangeDetectionStrategy } from '@angular/core';
-import { heartMonitor } from '@igniteui/material-icons-extended';
-import { IgxIconService } from 'igniteui-angular/icon';
+import { Component } from '@angular/core';
 import { IgxAvatarComponent } from 'igniteui-angular/avatar';
 import { IgxBadgeComponent } from 'igniteui-angular/badge';
 
@@ -8,14 +6,14 @@ import { IgxBadgeComponent } from 'igniteui-angular/badge';
     selector: 'app-badge-icon',
     styleUrls: ['./badge-icon.component.scss'],
     templateUrl: './badge-icon.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxAvatarComponent, IgxBadgeComponent]
 })
-export class BadgeIconComponent implements OnInit {
-    protected _iconService = inject(IgxIconService);
-
-
-    public ngOnInit() {
-        this._iconService.addSvgIconFromText(heartMonitor.name, heartMonitor.value, 'imx-icons');
-    }
+export class BadgeIconComponent {
+    public badges = [
+        { icon: 'check', type: 'success', label: 'check' },
+        { icon: 'favorite_border', type: 'error', label: 'favorite' },
+        { icon: 'notifications', type: 'info', label: 'notification' },
+        { icon: 'star_border', type: 'warning', label: 'star' },
+        { icon: 'settings', type: 'info', label: 'settings' }
+    ];
 }

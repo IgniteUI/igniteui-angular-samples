@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { IgxGridComponent } from 'igniteui-angular/grids/grid';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
 import { DATA } from '../../../data/nwindData';
@@ -8,7 +8,6 @@ import { IgxPreventDocumentScrollDirective } from '../../../directives/prevent-s
     selector: 'app-localization-sample-3',
     styleUrls: ['./localization-sample-3.component.scss'],
     templateUrl: 'localization-sample-3.component.html',
-    changeDetection: ChangeDetectionStrategy.Eager,
     imports: [IgxGridComponent, IgxPreventDocumentScrollDirective, IgxColumnComponent]
 })
 

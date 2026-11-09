@@ -10,6 +10,7 @@ import { pivotGridsRoutesData } from './pivot-grid-routes-data';
 import { PivotGridAboutComponent } from './pivot-state-persistence/about.component';
 import { PivotGridStatePersistenceSampleComponent } from './pivot-state-persistence/pivot-grid-state-persistence-sample.component';
 import { PivotGridLayoutComponent } from './pivot-layout/pivot-layout.component'
+import { PivotStylingComponent } from './pivot-styling/pivot-styling.component';
 // tslint:enable:max-line-length
 
 export const PivotGridsRoutes: Routes = [
@@ -51,11 +52,16 @@ export const PivotGridsRoutes: Routes = [
     {
         component: PivotGridAboutComponent,
         data: pivotGridsRoutesData['pivot-grid-about'],
-        path: 'pivot-state-about'
+        path: 'pivot-grid-about'
     },
     {
         component: PivotGridLayoutComponent,
         data: pivotGridsRoutesData['pivot-grid-features'],
         path: 'pivot-grid-layout'
+    },
+    {
+        component: PivotStylingComponent,
+        data: pivotGridsRoutesData['pivot-grid-styling'],
+        path: 'pivot-grid-styling'
     }
 ];

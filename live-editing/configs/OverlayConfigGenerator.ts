@@ -25,11 +25,11 @@ export class OverlayConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'OverlaySampleMain2Component',
-            additionalFiles: ["/src/app/layouts/card/card-sample-1/card-sample-1.component.ts",
-            "/src/app/layouts/card/card-sample-1/card-sample-1.component.scss",
-            "/src/app/layouts/card/card-sample-1/card-sample-1.component.html",
-            "/src/app/layouts/card/card.blueprint.ts"],
-            appConfig: BaseAppConfig
+            additionalFiles: ["/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.ts",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.scss",
+            "/src/app/interactions/overlay/overlay-dynamic-card/overlay-dynamic-card.component.html"],
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/overlay/"
         }));
 
         configs.push(new Config({

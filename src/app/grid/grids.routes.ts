@@ -31,6 +31,7 @@ import { GridGroupByCustomSampleComponent } from './grid-groupby-custom-sample/g
 import { GridGroupByPagingSampleComponent } from './grid-group-by-paging-sample/grid-group-by-paging-sample.component';
 import { GridGroupBySampleComponent } from './grid-groupby-sample/grid-groupby-sample.component';
 import { GridGroupByStylingComponent } from './grid-groupby-styling/grid-groupby-styling.component';
+import { GridThemingComponent } from './grid-theming/grid-theming.component';
 import { GridGroupBySummarySampleComponent } from './grid-groupby-summary-sample/grid-groupby-summary-sample.component';
 import { GridGroupBySummaryStylingSampleComponent } from './grid-groupby-summary-styling-sample/grid-groupby-summary-styling-sample.component';
 import { GridMovingSampleComponent } from './grid-moving-sample/grid-moving-sample.component';
@@ -167,6 +168,11 @@ export const GridsRoutes: Routes = [
         component: GridCellMergeCustomSampleComponent,
         data: gridsRoutesData['grid-cellMerge-custom'],
         path: 'grid-cellMerge-custom'
+    },
+    {
+        component: GridThemingComponent,
+        data: gridsRoutesData['grid-theming'],
+        path: 'grid-theming'
     },
     {
         component: GridGroupByStylingComponent,
