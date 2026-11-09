@@ -9,69 +9,56 @@ import { IgxButtonGroupModule } from 'igniteui-angular/button-group';
 import {AppModuleConfig, Config, IConfigGenerator} from 'igniteui-live-editing'
 import { BaseAppConfig } from './BaseConfig';;
 export class TabsConfigGenerator implements IConfigGenerator {
-    public additionalImports = {
-        TabsSample4Module: '../../src/app/layouts/tabs/tabs-sample-4/tabs-sample-4.module',
-        View1Component: '../../src/app/layouts/tabs/views/view1/view1.component',
-        View2Component: '../../src/app/layouts/tabs/views/view2/view2.component',
-        View3Component: '../../src/app/layouts/tabs/views/view3/view3.component'
-};
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
+        // tabs overview
         configs.push(new Config({
-            component: 'TabsSample1Component',
+            component: 'TabsOverviewComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
+        // tabs type
         configs.push(new Config({
-            component: 'TabsSample2Component',
+            component: 'TabsTypeComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
+        // tabs responsiveness
         configs.push(new Config({
-            component: 'TabsSample3Component',
+            component: 'TabsResponsivenessComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
+        // tabs amount
         configs.push(new Config({
-            component: 'TabsSample4Component',
-            additionalFiles: [
-                "/src/app/layouts/tabs/views/view1/view1.component.ts",
-                "/src/app/layouts/tabs/views/view1/view1.component.html",
-                "/src/app/layouts/tabs/views/view2/view2.component.ts",
-                "/src/app/layouts/tabs/views/view2/view2.component.html",
-                "/src/app/layouts/tabs/views/view3/view3.component.ts",
-                "/src/app/layouts/tabs/views/view3/view3.component.html",
-                "/src/app/layouts/tabs/tabs-sample-4/routes.ts"
-            ],
-             appConfig: {
-                ...BaseAppConfig,
-                routesConfig: {
-                    router: true,
-                    routesImportPath: './tabs-sample-4/routes'
-                }
-            },
-            shortenComponentPathBy: "/layouts/tabs/"
-        }));
-
-        configs.push(new Config({
-            component: 'TabsStyleComponent',
-            additionalFiles: ["/src/app/layouts/tabs/tabs-style/layout.scss"],
+            component: 'TabsAmountComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
+        // tabs states
         configs.push(new Config({
-            component: 'TabsAlignmentComponent',
+            component: 'TabsStatesComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));
 
+        // tabs styling
         configs.push(new Config({
-            component: 'TabsHeaderPrefixSuffixComponent',
+            component: 'TabsStylingComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/layouts/tabs/"
+        }));
+
+        // tabs tailwind styling
+        configs.push(new Config({
+            component: 'TabsTailwindStylingComponent',
+            additionalDependencies: ["tailwindcss", "@tailwindcss/postcss"],
+            additionalFiles: [".postcssrc.json"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/layouts/tabs/"
         }));

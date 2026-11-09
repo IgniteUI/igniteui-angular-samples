@@ -6,6 +6,7 @@ $schema: $light-material-schema;
 
 $default-palette: $palette;
 
+// A dark surface makes the gray shades light for text and borders
 $green-palette: palette(
     $primary: #09f,
     $secondary: #72da67,
@@ -14,6 +15,7 @@ $green-palette: palette(
     $success: #4eb862,
     $warn: #fbb13c,
     $error: #ff134a,
+    $generator: 'legacy',
 );
 
 $gray-btn-color: color($green-palette, 'gray', 800);
