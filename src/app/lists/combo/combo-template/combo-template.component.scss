@@ -1,18 +1,135 @@
-.combo {
-    margin: 8px;
-    width: 430px;
+:host {
+    /* styles.scss asks the page for the large size; the combo keeps its own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    column-gap: 2rem;
+    height: 100%;
+    padding: 2rem 1rem;
 }
 
-.header-item {
-    text-transform: capitalize;
+.destinations-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 6.5rem;
 }
 
-.header-class, .footer-class {
-    text-align: center;
-    padding: 4px;
-    color: var(--ig-secondary-500);
+.destinations,
+.selection {
+    width: 27rem;
+    max-width: 100%;
 }
 
-.empty-class {
-    margin: 8px;
+.destinations igx-suffix {
+    padding-inline-end: 0;
+    margin-inline-end: -0.125rem;
+}
+
+:host ::ng-deep .igx-combo__clear-button {
+    padding-inline-end: 0;
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    box-sizing: border-box;
+    padding: 0 1.25rem;
+    font: 400 14px / 20px "Aktiv Grotesk", sans-serif;
+    color: var(--ig-gray-600);
+}
+
+.selection-title {
+    font-weight: 600;
+    color: var(--ig-gray-900);
+}
+
+.templates {
+    display: flex;
+    flex-direction: column;
+    gap: 1.625rem;
+    align-self: center;
+}
+
+.destination,
+.region {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.flag {
+    width: 1.25rem;
+}
+
+.region {
+    width: 100%;
+}
+
+.region igx-icon {
+    --size: 1.125rem;
+}
+
+.region-count {
+    margin-inline-start: auto;
+    font-weight: 400;
+    color: var(--ig-gray-600);
+}
+
+.list-header,
+.list-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.25rem 0.5rem 0.25rem 1rem;
+    font: 600 14px / 20px "Aktiv Grotesk", sans-serif;
+}
+
+.list-footer {
+    font-weight: 400;
+    color: var(--ig-gray-700);
+}
+
+.empty-list {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    width: 100%;
+    text-align: start;
+    color: var(--ig-gray-700);
+}
+
+.empty-list igx-icon {
+    --size: 1.25rem;
+
+    flex: none;
+}
+
+.add-destination {
+    width: 100%;
+}
+
+.overlay-outlet {
+    position: absolute;
+}
+
+// the combo insets and centers its empty and add content; the design keeps them at the start of the list
+:host ::ng-deep .igx-combo__add {
+    align-items: stretch;
+    padding: 1rem 0.75rem;
+}
+
+:host ::ng-deep .igx-combo__empty {
+    justify-content: flex-start;
+    padding: 0;
+}
+
+:host ::ng-deep .igx-combo__add-item .igx-button--flat {
+    margin-inline-start: -0.75rem;
 }
