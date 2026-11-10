@@ -18,6 +18,7 @@ export class ComboFeaturesComponent implements OnInit{
     public customValues = false;
     public grouping = false;
     public disabled = false;
+    public selection: string[] = [];
 
     public ngOnInit() {
         this.lData = localData;

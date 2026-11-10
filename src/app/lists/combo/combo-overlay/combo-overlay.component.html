@@ -1,5 +1,6 @@
 <div class="combo-column">
     <igx-combo
+        #combo
         type="border"
         [data]="people"
         valueKey="name"
@@ -10,4 +11,17 @@
         [overlaySettings]="overlaySettings">
         <label igxLabel>Team members</label>
     </igx-combo>
+
+    <div class="selection-panel">
+        <span class="selection-title" id="overlay-selection-title">Selection</span>
+        @if (selectedPeople.length) {
+            <ul class="selection-list" aria-labelledby="overlay-selection-title">
+                @for (person of selectedPeople; track person) {
+                    <li>{{ person }}</li>
+                }
+            </ul>
+        } @else {
+            <span class="selection-empty">No items selected</span>
+        }
+    </div>
 </div>

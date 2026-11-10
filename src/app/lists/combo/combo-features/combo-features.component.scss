@@ -21,6 +21,50 @@
     min-height: 17.5rem;
 }
 
+/* The selected values of the combo, under it. */
+.selection-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-top: 1.25rem;
+    padding: 0.75rem 1rem;
+}
+
+.selection-title {
+    color: var(--ig-gray-900);
+    font-family: var(--ig-subtitle-2-font-family, var(--ig-font-family));
+    font-size: var(--ig-subtitle-2-font-size);
+    font-weight: var(--ig-subtitle-2-font-weight);
+    line-height: var(--ig-subtitle-2-line-height);
+    letter-spacing: var(--ig-subtitle-2-letter-spacing);
+}
+
+.selection-list,
+.selection-empty {
+    font-family: var(--ig-body-2-font-family, var(--ig-font-family));
+    font-size: var(--ig-body-2-font-size);
+    font-weight: var(--ig-body-2-font-weight);
+    line-height: var(--ig-body-2-line-height);
+    letter-spacing: var(--ig-body-2-letter-spacing);
+}
+
+/* A long selection scrolls, so the column keeps its height and the combo stays in place. */
+.selection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    max-height: 8rem;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+    color: var(--ig-gray-700);
+}
+
+.selection-empty {
+    color: var(--ig-gray-500);
+}
+
 .controls {
     display: flex;
     flex-direction: column;

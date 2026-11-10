@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { OverlaySettings } from 'igniteui-angular/core';
 import { IgxComboComponent } from 'igniteui-angular/combo';
@@ -10,7 +10,10 @@ import { IgxLabelDirective } from 'igniteui-angular/input-group';
     styleUrls: ['combo-overlay.component.scss'],
     imports: [IgxComboComponent, IgxLabelDirective, FormsModule]
 })
-export class ComboOverlayComponent {
+export class ComboOverlayComponent implements AfterViewInit {
+    @ViewChild('combo', { static: true })
+    public combo: IgxComboComponent;
+
     public people = [
         { name: 'Ana Petrova', department: 'Engineering' },
         { name: 'Marc Lee', department: 'Engineering' },
@@ -36,4 +39,9 @@ export class ComboOverlayComponent {
         modal: true,
         closeOnOutsideClick: true
     };
+
+    // Opens the list on load, so the sample shows the overlay right away.
+    public ngAfterViewInit() {
+        this.combo.open();
+    }
 }

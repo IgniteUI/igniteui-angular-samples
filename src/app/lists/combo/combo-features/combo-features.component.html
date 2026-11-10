@@ -3,9 +3,22 @@
         <igx-combo type="border" [data]="lData" displayKey="field" valueKey="field"
             searchPlaceholder="Search…" [allowCustomValues]="customValues"
             [disableFiltering]="disableFiltering" [showSearchCaseIcon]="showSearchCaseIcon"
-            [groupKey]="grouping ? 'region' : ''" [disabled]="disabled">
+            [groupKey]="grouping ? 'region' : ''" [disabled]="disabled" [(ngModel)]="selection">
             <label igxLabel>Location</label>
         </igx-combo>
+
+        <div class="selection-panel">
+            <span class="selection-title" id="features-selection-title">Selection</span>
+            @if (selection.length) {
+                <ul class="selection-list" aria-labelledby="features-selection-title">
+                    @for (item of selection; track item) {
+                        <li>{{ item }}</li>
+                    }
+                </ul>
+            } @else {
+                <span class="selection-empty">No items selected</span>
+            }
+        </div>
     </div>
 
     <div class="controls">
