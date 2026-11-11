@@ -1,0 +1,36 @@
+<igx-dialog class="sign-in-dialog">
+    <igx-dialog-title class="sign-in-header">
+        <button igxButton="fab" type="button" class="sign-in-avatar" aria-label="Profile">
+            <igx-icon>person</igx-icon>
+        </button>
+        <span class="sign-in-title">Welcome back</span>
+    </igx-dialog-title>
+
+    <span class="sign-in-message">Sign in to your workspace</span>
+    <div class="sign-in-fields">
+        <igx-input-group class="sign-in-input">
+            <igx-prefix>
+                <igx-icon>notifications</igx-icon>
+            </igx-prefix>
+            <label igxLabel for="email">E-mail</label>
+            <input igxInput id="email" type="email" placeholder="dean@company.com" />
+        </igx-input-group>
+        <igx-input-group class="sign-in-input">
+            <igx-prefix>
+                <igx-icon>lock</igx-icon>
+            </igx-prefix>
+            <label igxLabel for="password">Password</label>
+            <input igxInput id="password" type="password" placeholder="***********" />
+        </igx-input-group>
+    </div>
+
+    <div igxDialogActions class="sign-in-footer">
+        <div class="sign-in-actions">
+            <button igxButton="outlined" type="button" class="cancel-button">Cancel</button>
+            <button igxButton="contained" type="button" class="submit-button">Sign in</button>
+        </div>
+        <span class="sign-up">
+            No account? <a href="#" (click)="$event.preventDefault()">Create workspace</a>
+        </span>
+    </div>
+</igx-dialog>

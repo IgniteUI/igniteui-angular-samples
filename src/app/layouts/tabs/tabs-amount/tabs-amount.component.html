@@ -1,0 +1,35 @@
+<div class="amounts">
+    <span class="amount-label">Two Tabs</span>
+    <igx-tabs tabAlignment="justify">
+        @for (category of twoTabs; track category) {
+            <igx-tab-item [selected]="$first">
+                <igx-tab-header>
+                    <span igxTabHeaderLabel>{{ category }}</span>
+                </igx-tab-header>
+                <igx-tab-content></igx-tab-content>
+            </igx-tab-item>
+        }
+    </igx-tabs>
+    <span class="amount-label">Five Tabs</span>
+    <igx-tabs tabAlignment="justify">
+        @for (category of fiveTabs; track category) {
+            <igx-tab-item [selected]="$first">
+                <igx-tab-header>
+                    <span igxTabHeaderLabel>{{ category }}</span>
+                </igx-tab-header>
+                <igx-tab-content></igx-tab-content>
+            </igx-tab-item>
+        }
+    </igx-tabs>
+    <span class="amount-label">5+ Tabs</span>
+    <igx-tabs>
+        @for (category of moreTabs; track category) {
+            <igx-tab-item [selected]="$first">
+                <igx-tab-header>
+                    <span igxTabHeaderLabel>{{ category }}</span>
+                </igx-tab-header>
+                <igx-tab-content></igx-tab-content>
+            </igx-tab-item>
+        }
+    </igx-tabs>
+</div>
