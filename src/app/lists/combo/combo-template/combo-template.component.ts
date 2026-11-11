@@ -1,11 +1,12 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, afterNextRender, inject, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { IGX_COMBO_DIRECTIVES, IComboItemAdditionEvent } from 'igniteui-angular/combo';
+import { IGX_COMBO_DIRECTIVES, IComboItemAdditionEvent, IgxComboComponent } from 'igniteui-angular/combo';
 import { IgxOverlayOutletDirective, SortingDirection } from 'igniteui-angular/core';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { IgxBadgeComponent } from 'igniteui-angular/badge';
 import { IgxButtonDirective } from 'igniteui-angular/directives';
+import { take } from 'rxjs';
 import { Destination, destinations } from './local-data';
 
 const icons: Record<string, string> = {
@@ -61,14 +62,28 @@ export class ComboTemplateComponent {
     };
 
     // the `id` values of the selected destinations
-    public selected: string[] = ['SOF', 'LON'];
+    public selected: string[] = [];
+
+    private combo = viewChild.required(IgxComboComponent);
 
     constructor() {
+        const element = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
         const iconService = inject(IgxIconService);
 
         for (const [name, svg] of Object.entries(icons)) {
             iconService.addSvgIconFromText(name, svg, 'material');
         }
+
+        // The combo is shown open when the sample loads. Opening it moves the focus to its search
+        // input, so the sample is inert until the combo opens and the page keeps its focus.
+        afterNextRender(() => {
+            const combo = this.combo();
+            element.inert = true;
+            combo.opened.pipe(take(1)).subscribe(() => {
+                element.inert = false;
+            });
+            combo.open();
+        });
     }
 
     public get selectedNames(): string[] {

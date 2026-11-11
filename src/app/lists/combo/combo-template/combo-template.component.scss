@@ -3,57 +3,40 @@
        default medium size here. */
     --ig-size: var(--ig-size-medium);
 
+    /* the combo keeps its width and stays in the center of a sample that has room for it: the
+       columns on its two sides share the free space equally, and the switches take the one after
+       the combo */
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    align-items: start;
-    column-gap: 2rem;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 27rem) minmax(max-content, 1fr);
+    align-items: center;
     height: 100%;
     padding: 2rem 1rem;
 }
 
+/* the open dropdown covers the Selection list and ends below it, so the area has the height of
+   the combo with its dropdown, and the two stay in the middle of the sample */
 .destinations-area {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    grid-column: 2;
     gap: 1.5rem;
-    padding-top: 6.5rem;
-}
-
-.destinations,
-.selection {
-    width: 27rem;
-    max-width: 100%;
-}
-
-.destinations igx-suffix {
-    padding-inline-end: 0;
-    margin-inline-end: -0.125rem;
-}
-
-:host ::ng-deep .igx-combo__clear-button {
-    padding-inline-end: 0;
+    height: 21.5rem;
 }
 
 .selection {
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    box-sizing: border-box;
     padding: 0 1.25rem;
-    font: 400 14px / 20px "Aktiv Grotesk", sans-serif;
-    color: var(--ig-gray-600);
-}
-
-.selection-title {
-    font-weight: 600;
-    color: var(--ig-gray-900);
 }
 
 .templates {
     display: flex;
     flex-direction: column;
+    grid-column: 3;
     gap: 1.625rem;
-    align-self: center;
+    justify-self: end;
+    margin-inline-start: 1.5rem;
 }
 
 .destination,
@@ -78,7 +61,6 @@
 .region-count {
     margin-inline-start: auto;
     font-weight: 400;
-    color: var(--ig-gray-600);
 }
 
 .list-header,
@@ -88,12 +70,6 @@
     justify-content: space-between;
     gap: 0.5rem;
     padding: 0.25rem 0.5rem 0.25rem 1rem;
-    font: 600 14px / 20px "Aktiv Grotesk", sans-serif;
-}
-
-.list-footer {
-    font-weight: 400;
-    color: var(--ig-gray-700);
 }
 
 .empty-list {
@@ -102,7 +78,6 @@
     gap: 0.5rem;
     width: 100%;
     text-align: start;
-    color: var(--ig-gray-700);
 }
 
 .empty-list igx-icon {

@@ -34,7 +34,7 @@
         @if (templates.header) {
             <ng-template igxComboHeader>
                 <div class="list-header">
-                    <span>Destinations by region</span>
+                    <span class="ig-typography__subtitle-2">Destinations by region</span>
                     <button igxButton="flat" (click)="combo.selectAllItems()">Select all</button>
                 </div>
             </ng-template>
@@ -42,7 +42,7 @@
         @if (templates.footer) {
             <ng-template igxComboFooter>
                 <div class="list-footer">
-                    <span>{{ combo.selection.length }} selected</span>
+                    <span class="ig-typography__body-2">{{ combo.selection.length }} selected</span>
                     <button igxButton="flat" (click)="combo.deselectAllItems()">Clear</button>
                 </div>
             </ng-template>
@@ -87,13 +87,9 @@
         }
     </igx-combo>
 
-    <div class="selection">
-        <span class="selection-title">Selection</span>
-        @for (name of selectedNames; track name) {
-            <span>{{ name }}</span>
-        } @empty {
-            <span class="selection-empty">No items selected</span>
-        }
+    <div class="selection ig-typography__body-2">
+        <span class="ig-typography__subtitle-2">Selection</span>
+        <span>{{ selectedNames.length ? selectedNames.join(', ') : 'No items selected' }}</span>
     </div>
 </div>
 
