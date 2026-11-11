@@ -79,6 +79,7 @@ export const layoutsRoutesData = {
     'tabs-states': { displayName: 'Tabs States', parentName: 'Tabs' },
     'tabs-styling': { displayName: 'Tabs Styling', parentName: 'Tabs' },
     'tabs-tailwind-styling': { displayName: 'Tabs Tailwind Styling', parentName: 'Tabs' },
+    'tabs-header-position': { displayName: 'Tabs Header Position', parentName: 'Tabs' },
     'card-overview': { displayName: 'Overview', parentName: 'Card' },
     'card-actions': { displayName: 'Card Actions', parentName: 'Card' },
     'card-media': { displayName: 'Card Media', parentName: 'Card' },

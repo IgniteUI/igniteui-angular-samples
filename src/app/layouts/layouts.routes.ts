@@ -101,6 +101,7 @@ import { TabsAmountComponent } from './tabs/tabs-amount/tabs-amount.component';
 import { TabsStatesComponent } from './tabs/tabs-states/tabs-states.component';
 import { TabsStylingComponent } from './tabs/tabs-styling/tabs-styling.component';
 import { TabsTailwindStylingComponent } from './tabs/tabs-tailwind-styling/tabs-tailwind-styling.component';
+import { TabsHeaderPositionComponent } from './tabs/tabs-header-position/tabs-header-position.component';
 import { AccordionSample1Component } from './accordion/accordion-sample-1/accordion-sample-1.component';
 import { AccordionCustomizationComponent } from './accordion/accordion-customization/accordion-customization.component';
 import { AccordionNestedScenarioComponent } from './accordion/accordion-nested-scenario/accordion-nested-scenario.component';
@@ -536,6 +537,11 @@ export const LayoutsRoutes: Routes = [
         component: TabsTailwindStylingComponent,
         data: layoutsRoutesData['tabs-tailwind-styling'],
         path: 'tabs-tailwind-styling'
+    },
+    {
+        component: TabsHeaderPositionComponent,
+        data: layoutsRoutesData['tabs-header-position'],
+        path: 'tabs-header-position'
     },
     {
         component: CardOverviewComponent,
