@@ -1,11 +1,22 @@
-<igx-combo
-    class="styled-combo"
-    type="border"
-    placeholder="Country"
-    searchPlaceholder="Search"
-    valueKey="id"
-    displayKey="name"
-    groupKey="region"
-    [data]="countries"
-    [(ngModel)]="selection">
-</igx-combo>
+<div>
+    <igx-combo
+        #combo
+        class="styled-combo"
+        type="border"
+        placeholder="Country"
+        searchPlaceholder="Search"
+        valueKey="id"
+        displayKey="name"
+        groupKey="region"
+        [data]="countries"
+        [(ngModel)]="selection">
+    </igx-combo>
+    <div class="selection">
+        <span class="selection-title">Selection</span>
+        @for (country of combo.selection; track country.id) {
+            <span>{{ country.name }}</span>
+        } @empty {
+            <span class="selection-empty">No items selected</span>
+        }
+    </div>
+</div>

@@ -6,17 +6,27 @@
     @for (type of types; track type.label) {
         <span class="state-label type-label">{{ type.label }}</span>
         @for (size of sizes; track size.label) {
-            <igx-combo
-                [class]="size.className"
-                [type]="type.type"
-                placeholder="Country"
-                searchPlaceholder="Search"
-                valueKey="id"
-                displayKey="name"
-                groupKey="region"
-                [data]="countries"
-                [overlaySettings]="{ closeOnOutsideClick: false }">
-            </igx-combo>
+            <div [class]="size.className">
+                <igx-combo
+                    #combo
+                    [type]="type.type"
+                    placeholder="Country"
+                    searchPlaceholder="Search"
+                    valueKey="id"
+                    displayKey="name"
+                    groupKey="region"
+                    [data]="countries"
+                    [overlaySettings]="{ closeOnOutsideClick: false }">
+                </igx-combo>
+                <div class="selection">
+                    <span class="selection-title">Selection</span>
+                    @for (country of combo.selection; track country.id) {
+                        <span>{{ country.name }}</span>
+                    } @empty {
+                        <span class="selection-empty">No items selected</span>
+                    }
+                </div>
+            </div>
         }
     }
 </div>

@@ -24,7 +24,7 @@ interface ComboType {
     imports: [IgxComboComponent, IgxLabelDirective, IgxPrefixDirective, IgxIconComponent]
 })
 export class ComboTypeComponent {
-    public options: Option[] = [1, 2, 3, 4, 5].map((id) => ({ id, name: 'Item', group: 'Header' }));
+    public options: Option[] = [1, 2, 3, 4, 5].map((id) => ({ id, name: `Item ${id}`, group: 'Header' }));
 
     public types: ComboType[] = [
         { label: 'Border Type', type: 'border' },

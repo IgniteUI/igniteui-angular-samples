@@ -3,6 +3,7 @@
         <div class="type">
             <span class="type-label">{{ type.label }}</span>
             <igx-combo
+                #combo
                 [type]="type.type"
                 placeholder="Select a value"
                 searchPlaceholder="Search"
@@ -16,6 +17,14 @@
                     <igx-icon family="material" name="language"></igx-icon>
                 </igx-prefix>
             </igx-combo>
+            <div class="selection">
+                <span class="selection-title">Selection</span>
+                @for (option of combo.selection; track option.id) {
+                    <span>{{ option.name }}</span>
+                } @empty {
+                    <span class="selection-empty">No items selected</span>
+                }
+            </div>
         </div>
     }
 </div>

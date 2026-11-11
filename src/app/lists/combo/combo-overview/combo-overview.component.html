@@ -1,14 +1,24 @@
-<igx-combo
-    class="locations"
-    type="border"
-    placeholder="Cities"
-    searchPlaceholder="Search cities"
-    valueKey="id"
-    displayKey="name"
-    groupKey="country"
-    [data]="cities">
-    <label igxLabel>Locations</label>
-    <igx-prefix>
-        <igx-icon family="material" name="place"></igx-icon>
-    </igx-prefix>
-</igx-combo>
+<div class="locations">
+    <igx-combo
+        #combo
+        type="border"
+        placeholder="Cities"
+        searchPlaceholder="Search cities"
+        valueKey="id"
+        displayKey="name"
+        groupKey="country"
+        [data]="cities">
+        <label igxLabel>Locations</label>
+        <igx-prefix>
+            <igx-icon family="material" name="place"></igx-icon>
+        </igx-prefix>
+    </igx-combo>
+    <div class="selection">
+        <span class="selection-title">Selection</span>
+        @for (city of combo.selection; track city.id) {
+            <span>{{ city.name }}</span>
+        } @empty {
+            <span class="selection-empty">No items selected</span>
+        }
+    </div>
+</div>
