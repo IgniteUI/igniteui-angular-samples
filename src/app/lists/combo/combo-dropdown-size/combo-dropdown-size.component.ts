@@ -21,7 +21,7 @@ interface DropdownSize {
     imports: [IgxComboComponent]
 })
 export class ComboDropdownSizeComponent {
-    public options: Option[] = [1, 2, 3].map((id) => ({ id, name: `Item ${id}`, group: 'Header' }));
+    public options: Option[] = [1, 2, 3].map((id) => ({ id, name: 'Item', group: 'Header' }));
 
     public sizes: DropdownSize[] = [
         { label: 'Small', className: 'small' },

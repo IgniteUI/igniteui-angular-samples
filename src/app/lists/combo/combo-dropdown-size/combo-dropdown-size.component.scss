@@ -3,13 +3,13 @@
     align-items: flex-start;
     justify-content: center;
     height: 100%;
-    padding: 2rem 1rem;
+    padding: 2.625rem 1rem 2rem;
 }
 
 .sizes {
     display: grid;
     grid-template-columns: repeat(3, 11.25rem);
-    column-gap: 1rem;
+    column-gap: 1.875rem;
 }
 
 .size {

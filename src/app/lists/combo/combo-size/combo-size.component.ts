@@ -1,4 +1,4 @@
-import { Component, ElementRef, afterNextRender, inject, viewChildren } from '@angular/core';
+import { Component, DestroyRef, ElementRef, afterNextRender, inject, viewChildren } from '@angular/core';
 import { IgxComboComponent } from 'igniteui-angular/combo';
 import { IgxInputGroupType } from 'igniteui-angular/input-group';
 import { forkJoin, take } from 'rxjs';
@@ -44,9 +44,11 @@ export class ComboSizeComponent {
     ];
 
     private combos = viewChildren(IgxComboComponent);
+    private comboElements = viewChildren(IgxComboComponent, { read: ElementRef<HTMLElement> });
 
     constructor() {
         const element = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
+        const destroyRef = inject(DestroyRef);
 
         // The combos are shown open. Opening a combo moves the focus to its search input, so
         // the sample is inert until the combos open and the page keeps its focus.
@@ -57,6 +59,19 @@ export class ComboSizeComponent {
                 element.inert = false;
             });
             combos.forEach((combo) => combo.open());
+
+            // A dropdown keeps the place and the width from the moment it opens, and only the
+            // Material theme shows the box type, so a theme change moves and resizes the combos.
+            // Each combo then publishes its width for its dropdown, and a window resize makes
+            // the open dropdowns take their places again.
+            const observer = new ResizeObserver((entries) => {
+                for (const { target, contentRect } of entries) {
+                    (target as HTMLElement).style.setProperty('--combo-width', `${contentRect.width}px`);
+                }
+                window.dispatchEvent(new Event('resize'));
+            });
+            this.comboElements().forEach((combo) => observer.observe(combo.nativeElement));
+            destroyRef.onDestroy(() => observer.disconnect());
         });
     }
 }

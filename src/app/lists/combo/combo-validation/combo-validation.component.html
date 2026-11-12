@@ -1,13 +1,13 @@
 <div class="states">
-    <span></span>
+    <span class="type-label"></span>
     @for (state of states; track state.label) {
         <span class="state-label state-column">{{ state.label }}</span>
     }
     @for (type of types; track type.label) {
-        <span class="state-label type-label">{{ type.label }}</span>
+        <span class="state-label type-label {{ type.type }}-type">{{ type.label }}</span>
         @for (state of states; track state.label) {
             <igx-combo
-                class="state-combo {{ state.className }}"
+                class="state-combo {{ state.className }} {{ type.type }}-type"
                 [type]="type.type"
                 placeholder="Country"
                 searchPlaceholder="Search"

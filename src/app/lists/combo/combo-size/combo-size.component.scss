@@ -4,6 +4,7 @@
     justify-content: center;
     height: 100%;
     padding: 2rem 1rem;
+    container-name: sample;
 }
 
 .sizes {
@@ -19,6 +20,31 @@
 
 .type-label {
     padding-top: 0.75rem;
+}
+
+/* the box type looks like the border type outside the Material theme, so the other themes show
+   the border type alone, without the type labels */
+@container sample not style(--ig-theme: material) {
+    .sizes {
+        grid-template-columns: repeat(3, minmax(0, 17.4375rem));
+        grid-template-rows: auto 17rem;
+        align-self: center;
+    }
+
+    .type-label,
+    .box-type {
+        display: none;
+    }
+}
+
+/* A dropdown keeps the width from the moment it opens, and a theme change resizes the combos,
+   so each open dropdown takes the current width of its combo. */
+igx-combo ::ng-deep .igx-overlay__content {
+    width: var(--combo-width) !important;
+}
+
+igx-combo ::ng-deep .igx-drop-down {
+    width: auto !important;
 }
 
 .small {

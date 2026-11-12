@@ -4,9 +4,9 @@
     <span class="state-label state-column">Disabled</span>
     @for (row of rows; track $index) {
         @let groupStart = $index === 2;
-        <span class="state-label" [class.group-start]="groupStart">{{ row.label }}</span>
+        <span class="state-label {{ row.type }}-type" [class.group-start]="groupStart">{{ row.label }}</span>
         @for (disabled of [false, true]; track disabled) {
-            <div [class.group-start]="groupStart">
+            <div class="{{ row.type }}-type" [class.group-start]="groupStart">
                 <igx-combo
                     [type]="row.type"
                     [disabled]="disabled"
