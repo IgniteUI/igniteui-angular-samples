@@ -10,10 +10,8 @@
                 class="state-combo {{ state.className }} {{ type.type }}-type"
                 [type]="type.type"
                 placeholder="Country"
-                searchPlaceholder="Search"
                 valueKey="id"
                 displayKey="name"
-                groupKey="region"
                 [data]="countries">
                 @if (state.helperText) {
                     <igx-hint>{{ state.helperText }}</igx-hint>

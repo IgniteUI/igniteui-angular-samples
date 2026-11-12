@@ -11,7 +11,7 @@
                     #combo
                     [type]="type.type"
                     placeholder="Country"
-                    searchPlaceholder="Search"
+                    [resourceStrings]="{ igx_combo_filter_search_placeholder: 'Search' }"
                     valueKey="id"
                     displayKey="name"
                     groupKey="region"
@@ -23,7 +23,7 @@
                     @for (country of combo.selection; track country.id) {
                         <span>{{ country.name }}</span>
                     } @empty {
-                        <span class="selection-empty">No items selected</span>
+                        <span>No items selected</span>
                     }
                 </div>
             </div>

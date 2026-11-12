@@ -6,7 +6,7 @@
                  and a click elsewhere does not close it. -->
             <div #search class="search {{ state.className }}">
                 <igx-combo
-                    [searchPlaceholder]="state.text ?? 'Search'"
+                    [resourceStrings]="{ igx_combo_filter_search_placeholder: state.text ?? 'Search' }"
                     [data]="[]"
                     [overlaySettings]="{ target: search, closeOnOutsideClick: false }">
                 </igx-combo>

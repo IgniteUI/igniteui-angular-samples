@@ -3,7 +3,7 @@
         #combo
         type="border"
         placeholder="Cities"
-        searchPlaceholder="Search cities"
+        [resourceStrings]="{ igx_combo_filter_search_placeholder: 'Search cities' }"
         valueKey="id"
         displayKey="name"
         groupKey="country"
@@ -18,7 +18,7 @@
         @for (city of combo.selection; track city.id) {
             <span>{{ city.name }}</span>
         } @empty {
-            <span class="selection-empty">No items selected</span>
+            <span>No items selected</span>
         }
     </div>
 </div>

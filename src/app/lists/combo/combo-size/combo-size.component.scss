@@ -75,18 +75,11 @@ igx-combo ::ng-deep .igx-drop-down {
     gap: 0.375rem;
     margin-top: 1.625rem;
     padding: 0.75rem 1rem;
-    font: 400 14px / 20px var(--ig-font-family);
-    letter-spacing: 0.25px;
-    color: var(--ig-gray-700);
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
 }
 
 .selection-title {
-    font-weight: 600;
-    line-height: 24px;
-    letter-spacing: 0.1px;
     color: var(--ig-gray-900);
-}
-
-.selection-empty {
-    color: var(--ig-gray-500);
 }

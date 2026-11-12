@@ -50,7 +50,6 @@ export class ComboStatesComponent {
         // to its search input, and the inert sample also keeps the focus on the page.
         inject<ElementRef<HTMLElement>>(ElementRef).nativeElement.inert = true;
 
-        // The last combo is shown with its dropdown open.
         afterNextRender(() => {
             this.combos()
                 .filter((_, index) => this.states[index].open)

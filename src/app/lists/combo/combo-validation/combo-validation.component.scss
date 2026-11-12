@@ -38,10 +38,6 @@
     }
 }
 
-.state-combo {
-    pointer-events: none;
-}
-
 .state-combo.success > ::ng-deep igx-input-group .igx-input-group__bundle::before {
     border-block-end-color: var(--success-secondary-color);
 }

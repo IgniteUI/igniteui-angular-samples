@@ -33,8 +33,8 @@ export class ComboValidationComponent {
         { id: 'BG', name: 'Bulgaria', region: 'Europe' }
     ];
 
-    // The combo has built-in valid and invalid states, so the `warn` class shows the
-    // warning state on the display-only combos.
+    // The combo has built-in valid and invalid states but no warning state, so the `warn` class
+    // shows it; the `success` class colors the bottom line of the valid state.
     public states: ValidationState[] = [
         { label: 'Success', className: 'success', state: IgxInputState.VALID },
         { label: 'Warn', className: 'warn', helperText: 'Additional fees might be included' },

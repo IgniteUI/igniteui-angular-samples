@@ -14,8 +14,8 @@ interface SearchState {
     imports: [IgxComboComponent]
 })
 export class ComboSearchInputComponent {
-    // The search input states come from the pointer and the keyboard, so the `hover`,
-    // `disabled`, `filled` and `focused` classes show them on the display-only combos.
+    // The display-only combos take no pointer or keyboard input, so the `hover`, `disabled`,
+    // `filled` and `focused` classes draw those states of the search input.
     public states: SearchState[] = [
         { label: 'Idle' },
         { label: 'Idle & Hover', className: 'hover' },
@@ -32,7 +32,6 @@ export class ComboSearchInputComponent {
         // focus to its search input, and the inert sample also keeps the focus on the page.
         inject<ElementRef<HTMLElement>>(ElementRef).nativeElement.inert = true;
 
-        // The combos are shown open.
         afterNextRender(() => {
             this.combos().forEach((combo) => combo.open());
         });

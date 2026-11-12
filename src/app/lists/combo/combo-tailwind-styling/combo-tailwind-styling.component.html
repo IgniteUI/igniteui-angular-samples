@@ -3,7 +3,7 @@
         #combo
         type="border"
         placeholder="Country"
-        searchPlaceholder="Search"
+        [resourceStrings]="{ igx_combo_filter_search_placeholder: 'Search' }"
         valueKey="id"
         displayKey="name"
         groupKey="region"
@@ -11,12 +11,12 @@
         [(ngModel)]="selection"
         class="w-[279px] [--ig-font-family:aktiv-grotesk,sans-serif] [--ig-input-group-border-color:var(--color-combo-border)] [--ig-input-group-hover-border-color:var(--color-combo-border)] [--ig-input-group-focused-border-color:var(--color-combo-border)] [--ig-input-group-filled-text-color:var(--color-combo-ink)] [--ig-input-group-focused-bottom-line-color:var(--color-combo-accent)] [--ig-combo-toggle-button-background:var(--color-combo-toggle)] [--ig-combo-toggle-button-background-focus:var(--color-combo-toggle)] [--ig-combo-toggle-button-background-focus--border:var(--color-combo-toggle)] [--ig-combo-toggle-button-foreground:var(--color-combo-ink)] [--ig-combo-toggle-button-foreground-focus:var(--color-combo-ink)] [--ig-combo-toggle-button-foreground-filled:var(--color-combo-ink)] [--ig-drop-down-elevation:none] [--ig-drop-down-background-color:var(--color-combo-surface)] [--ig-drop-down-header-text-color:var(--color-combo-header)] [--ig-drop-down-item-text-color:var(--color-combo-ink)] [--ig-drop-down-hover-item-background:var(--color-combo-toggle)] [--ig-drop-down-focused-item-background:var(--color-combo-toggle)] [--ig-drop-down-selected-item-background:var(--color-combo-selected)] [--ig-drop-down-selected-item-text-color:#000] [--ig-drop-down-selected-hover-item-background:var(--color-combo-selected)] [--ig-drop-down-selected-hover-item-text-color:#000] [--ig-drop-down-selected-focus-item-background:var(--color-combo-selected)] [--ig-drop-down-selected-focus-item-text-color:#000] [--ig-checkbox-empty-color:var(--color-combo-accent)] [--ig-checkbox-fill-color:var(--color-combo-accent)] [&>igx-input-group_input]:!text-sm [&>igx-input-group_input]:!font-medium [&_.igx-drop-down]:!rounded-t-none [&_.igx-drop-down]:!border [&_.igx-drop-down]:!border-t-0 [&_.igx-drop-down]:!border-[color:var(--color-combo-border)] [&_.igx-drop-down]:!pb-4 [&_.igx-drop-down\_\_item]:!font-medium [&_.igx-combo\_\_search_input]:!font-semibold [&_.igx-combo\_\_search_input]:placeholder:!font-normal">
     </igx-combo>
-    <div class="mt-[26px] flex flex-col gap-1.5 px-4 py-3 font-[family-name:var(--ig-font-family)] text-sm tracking-[0.25px] text-[color:var(--ig-gray-700)]">
-        <span class="font-semibold leading-6 tracking-[0.1px] text-[color:var(--ig-gray-900)]">Selection</span>
+    <div class="mt-[26px] flex flex-col gap-1.5 px-4 py-3 font-[family-name:aktiv-grotesk,sans-serif] text-[13px] leading-5 tracking-[0.3px] text-[color:var(--ig-gray-600)]">
+        <span class="text-[color:var(--ig-gray-900)]">Selection</span>
         @for (country of combo.selection; track country.id) {
             <span>{{ country.name }}</span>
         } @empty {
-            <span class="text-[color:var(--ig-gray-500)]">No items selected</span>
+            <span>No items selected</span>
         }
     </div>
 </div>
