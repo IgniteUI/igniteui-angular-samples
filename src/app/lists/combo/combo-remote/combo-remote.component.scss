@@ -132,7 +132,7 @@
 .selection-more-link {
     padding: 0;
     border: 0;
-    color: var(--ig-info-500);
+    color: var(--ig-gray-900);
     background: none;
     font: inherit;
     font-weight: 500;
@@ -176,11 +176,11 @@
 
 .log-result[data-status='pending'],
 .log-result[data-status='cancelled'] {
-    color: var(--ig-warn-700);
+    color: var(--ig-gray-900);
 }
 
 .log-result[data-status='error'] {
-    color: var(--ig-error-500);
+    color: var(--ig-gray-900);
 }
 
 .log-detail {
