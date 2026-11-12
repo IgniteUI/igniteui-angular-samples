@@ -108,7 +108,7 @@
 /* What the last update changed. */
 .state dd.changed,
 .selection-values {
-    color: var(--ig-info-500);
+    color: var(--ig-gray-900);
 }
 
 .selection-values {
@@ -168,7 +168,7 @@
 }
 
 .log-result {
-    color: var(--ig-success-900);
+    color: var(--ig-gray-900);
     font-size: 0.6875rem;
     font-weight: 500;
     text-align: end;
