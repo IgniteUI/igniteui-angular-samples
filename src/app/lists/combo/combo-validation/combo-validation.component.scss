@@ -42,6 +42,9 @@
     pointer-events: none;
 }
 
+.state-combo.success > ::ng-deep igx-input-group .igx-input-group__bundle::before {
+    border-block-end-color: var(--success-secondary-color);
+}
 
 .state-combo.warn > ::ng-deep igx-input-group {
     --border-color: var(--warning-secondary-color);
