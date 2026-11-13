@@ -1,10 +1,11 @@
-<div class="control-wrapper">
-    <igx-combo class="!light-combo ![--toggle-button-background:#99BAA6] ![--clear-button-foreground:#99BAA6]" [width]="'430px'" [data]="weaponsData" [displayKey]="'field'" [valueKey]="'field'" [overlaySettings]="{outlet: elem}"
-        [groupKey]="'weaponRange'" placeholder="Pick up two weapons" searchPlaceholder="Search..."
-        [itemsMaxHeight]="255" (selectionChanging)="setWeaponsLimit($event)">
-    </igx-combo>
-
-    <igx-toast #loadToast [displayTime]="1200"></igx-toast>
-</div>
-
-
+<igx-combo
+    type="border"
+    placeholder="Country"
+    searchPlaceholder="Search"
+    valueKey="id"
+    displayKey="name"
+    groupKey="region"
+    [data]="countries"
+    [(ngModel)]="selection"
+    class="w-[279px] [--ig-font-family:aktiv-grotesk,sans-serif] [--ig-input-group-border-color:var(--color-combo-border)] [--ig-input-group-hover-border-color:var(--color-combo-border)] [--ig-input-group-focused-border-color:var(--color-combo-border)] [--ig-input-group-filled-text-color:var(--color-combo-ink)] [--ig-input-group-focused-bottom-line-color:var(--color-combo-accent)] [--ig-combo-toggle-button-background:var(--color-combo-toggle)] [--ig-combo-toggle-button-background-focus:var(--color-combo-toggle)] [--ig-combo-toggle-button-background-focus--border:var(--color-combo-toggle)] [--ig-combo-toggle-button-foreground:var(--color-combo-ink)] [--ig-combo-toggle-button-foreground-focus:var(--color-combo-ink)] [--ig-combo-toggle-button-foreground-filled:var(--color-combo-ink)] [--ig-drop-down-elevation:none] [--ig-drop-down-background-color:var(--color-combo-surface)] [--ig-drop-down-header-text-color:var(--color-combo-header)] [--ig-drop-down-item-text-color:var(--color-combo-ink)] [--ig-drop-down-hover-item-background:var(--color-combo-toggle)] [--ig-drop-down-focused-item-background:var(--color-combo-toggle)] [--ig-drop-down-selected-item-background:var(--color-combo-selected)] [--ig-drop-down-selected-item-text-color:#000] [--ig-drop-down-selected-hover-item-background:var(--color-combo-selected)] [--ig-drop-down-selected-hover-item-text-color:#000] [--ig-drop-down-selected-focus-item-background:var(--color-combo-selected)] [--ig-drop-down-selected-focus-item-text-color:#000] [--ig-checkbox-empty-color:var(--color-combo-accent)] [--ig-checkbox-fill-color:var(--color-combo-accent)] [&>igx-input-group_input]:!text-sm [&>igx-input-group_input]:!font-medium [&_.igx-drop-down]:!rounded-t-none [&_.igx-drop-down]:!border [&_.igx-drop-down]:!border-t-0 [&_.igx-drop-down]:!border-[color:var(--color-combo-border)] [&_.igx-drop-down]:!pb-4 [&_.igx-drop-down\_\_item]:!font-medium [&_.igx-combo\_\_search_input]:!font-semibold [&_.igx-combo\_\_search_input]:placeholder:!font-normal">
+</igx-combo>

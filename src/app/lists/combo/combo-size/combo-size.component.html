@@ -1,0 +1,22 @@
+<div class="sizes">
+    <span></span>
+    @for (size of sizes; track size.label) {
+        <span class="state-label state-column">{{ size.label }}</span>
+    }
+    @for (type of types; track type.label) {
+        <span class="state-label type-label">{{ type.label }}</span>
+        @for (size of sizes; track size.label) {
+            <igx-combo
+                [class]="size.className"
+                [type]="type.type"
+                placeholder="Country"
+                searchPlaceholder="Search"
+                valueKey="id"
+                displayKey="name"
+                groupKey="region"
+                [data]="countries"
+                [overlaySettings]="{ closeOnOutsideClick: false }">
+            </igx-combo>
+        }
+    }
+</div>

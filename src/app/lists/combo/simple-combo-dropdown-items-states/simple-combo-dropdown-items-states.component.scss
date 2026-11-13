@@ -1,0 +1,95 @@
+:host {
+    /* styles.scss asks the page for the large size; the items keep their own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem 1rem;
+}
+
+.items {
+    display: grid;
+    grid-template-columns: max-content repeat(4, minmax(0, 11.25rem));
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1.875rem;
+    row-gap: 1rem;
+}
+
+/* The second row is further from the first one than the column labels are. */
+.items > :nth-child(n + 11) {
+    margin-top: 2rem;
+}
+
+/* The list floats, so the element takes the height of its one medium item. */
+.dropdown {
+    width: 100%;
+    min-width: 0;
+    height: 2rem;
+}
+
+/* Only the dropdown of the combo is shown, so the input field is hidden. */
+.dropdown ::ng-deep igx-simple-combo > igx-input-group {
+    display: none;
+}
+
+/* Each cell shows an item on its own, so the dropdown around it has no shadow, border,
+   or padding. */
+.dropdown ::ng-deep .igx-drop-down {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* The dropdown focuses its selected item when it opens, so the selected item takes the colors of
+   its own state again, without the focus outline of the Fluent and Indigo themes. */
+.dropdown ::ng-deep .igx-drop-down__item--selected {
+    background: var(--selected-item-background);
+    color: var(--selected-item-text-color);
+    outline: none;
+}
+
+/* The states use the colors of the drop-down theme. */
+.dropdown.hover ::ng-deep .igx-drop-down__item {
+    background: var(--hover-item-background);
+    color: var(--hover-item-text-color);
+}
+
+.dropdown.focus ::ng-deep .igx-drop-down__item {
+    background: var(--focused-item-background);
+    color: var(--focused-item-text-color);
+}
+
+.dropdown.disabled ::ng-deep .igx-drop-down__item {
+    background: var(--disabled-item-background);
+    color: var(--disabled-item-text-color);
+}
+
+.dropdown.hover ::ng-deep .igx-drop-down__item--selected {
+    background: var(--selected-hover-item-background);
+    color: var(--selected-hover-item-text-color);
+}
+
+.dropdown.focus ::ng-deep .igx-drop-down__item--selected {
+    background: var(--selected-focus-item-background);
+    color: var(--selected-focus-item-text-color);
+}
+
+.state-label {
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}
+
+.state-label:not(.state-column) {
+    justify-self: end;
+}
+
+.state-column {
+    justify-self: center;
+}
