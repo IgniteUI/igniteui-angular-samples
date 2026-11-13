@@ -1,17 +1,20 @@
+/* The app clips the page at the frame, so a sample too tall for it scrolls here, from its top. */
 :host {
     display: flex;
-    align-items: center;
+    align-items: safe center;
     justify-content: center;
     height: 100%;
+    overflow: auto;
 }
 
-/* The combo sits in the middle, and the switches in the space on its right. */
+/* The combo sits in the middle, and the switches in the space on its right.
+   When the frame is narrow, the combo moves left to make room for them. */
 .combo-features {
     display: grid;
     flex: 1;
     grid-template-columns: 1fr minmax(0, 22.5rem) 1fr;
     align-items: center;
-    column-gap: 6rem;
+    column-gap: 3rem;
     padding: 1rem;
 }
 
@@ -65,22 +68,33 @@
     color: var(--ig-gray-500);
 }
 
+/* Each label stays on one line. */
 .controls {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 1.625rem;
+    width: max-content;
 }
 
-@media (max-width: 50rem) {
+/* Too narrow for a side column: the switches move under the combo, packed to fit the frame. */
+@media (max-width: 44.5rem) {
     .combo-features {
         grid-template-columns: minmax(0, 22.5rem);
         justify-content: center;
-        row-gap: 2rem;
+        row-gap: 1.5rem;
     }
 
     .combo-column {
         grid-column: 1;
         min-height: 0;
+    }
+
+    .selection-list {
+        max-height: 4rem;
+    }
+
+    .controls {
+        gap: 0.75rem;
     }
 }

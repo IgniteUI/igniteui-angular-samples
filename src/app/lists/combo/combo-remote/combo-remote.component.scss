@@ -1,20 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
 
-/* Anchored at the top, so the combo stays put while the panel beside it grows. */
+/* Anchored at the top, so the combo stays put while the panel beside it grows.
+   The app clips the page at the frame, so a sample too tall for it scrolls here. */
 :host {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     box-sizing: border-box;
-    min-height: 100%;
+    height: 100%;
     padding: 4.875rem 1rem 1.5rem;
+    overflow: auto;
 }
 
-/* The combo sits in the middle, and the monitor in the space on its right. */
+/* The combo sits in the middle, and the monitor in the space on its right, wide enough
+   to keep a request on one line. When the frame is narrow, the combo moves left to make room. */
 .remote-binding {
     display: grid;
     flex: 1;
-    grid-template-columns: 1fr minmax(0, 22.5rem) 1fr;
+    grid-template-columns: 1fr minmax(0, 22.5rem) minmax(17rem, 1fr);
     align-items: start;
     column-gap: 3rem;
 }
@@ -194,11 +197,15 @@
 }
 
 /* Too narrow for a side column: the monitor moves under the combo. */
-@media (max-width: 60rem) {
+@media (max-width: 47.5rem) {
+    :host {
+        padding-block: 1rem;
+    }
+
     .remote-binding {
         grid-template-columns: minmax(0, 22.5rem);
         justify-content: center;
-        row-gap: 2.5rem;
+        row-gap: 1.25rem;
     }
 
     .combo-column {
