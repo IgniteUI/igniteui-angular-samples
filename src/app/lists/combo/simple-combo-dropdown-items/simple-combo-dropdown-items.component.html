@@ -1,0 +1,23 @@
+<div class="items">
+    <span></span>
+    @for (size of sizes; track size.label) {
+        <span class="state-label state-column">{{ size.label }}</span>
+    }
+    @for (row of rows; track row.label) {
+        <span class="state-label">{{ row.label }}</span>
+        @for (size of sizes; track size.label) {
+            <!-- The input field is hidden, so the dropdown opens at the element around the combo,
+                 and a click elsewhere does not close it. -->
+            <div #dropdown class="dropdown {{ row.className }} {{ size.className }}">
+                <igx-simple-combo
+                    valueKey="id"
+                    displayKey="name"
+                    [groupKey]="row.groupKey"
+                    [data]="row.data"
+                    [overlaySettings]="{ target: dropdown, positionStrategy: positionStrategy, closeOnOutsideClick: false }"
+                    (closing)="keepOpen($event)">
+                </igx-simple-combo>
+            </div>
+        }
+    }
+</div>

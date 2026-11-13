@@ -1,19 +1,46 @@
-import { Component, ElementRef, OnInit, inject } from '@angular/core';
-import { City, getCitiesByPopulation } from '../../../data/cities15000-regions-countries';
+import { Component, ElementRef, ViewEncapsulation, afterNextRender, inject, viewChild } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
+import { take } from 'rxjs';
+
+interface Country {
+    id: string;
+    name: string;
+    region: string;
+}
 
 @Component({
     selector: 'app-simple-combo-styling',
-    templateUrl: 'simple-combo-styling.component.html',
-    styleUrls: ['simple-combo-styling.component.scss'],
-    imports: [IgxSimpleComboComponent]
+    encapsulation: ViewEncapsulation.None,
+    styleUrls: ['./simple-combo-styling.component.scss'],
+    templateUrl: './simple-combo-styling.component.html',
+    imports: [IgxSimpleComboComponent, FormsModule]
 })
-export class SimpleComboStylingComponent implements OnInit {
-    element = inject(ElementRef);
+export class SimpleComboStylingComponent {
+    public countries: Country[] = [
+        { id: 'BY', name: 'Belarus', region: 'Europe' },
+        { id: 'BE', name: 'Belgium', region: 'Europe' },
+        { id: 'BG', name: 'Bulgaria', region: 'Europe' }
+    ];
 
-    public cities: City[];
+    public selection = 'BY';
 
-    ngOnInit(): void {
-        this.cities = getCitiesByPopulation(10000000);
+    private combo = viewChild.required(IgxSimpleComboComponent);
+
+    constructor() {
+        const element = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
+
+        // The combo is shown open. Opening it moves the focus to its list, so the sample is inert
+        // until the combo opens and the page keeps its focus. The bound value filters the list by
+        // the text of the selected item, so the filter is cleared once the dropdown opens.
+        afterNextRender(() => {
+            const combo = this.combo();
+            element.inert = true;
+            combo.opened.pipe(take(1)).subscribe(() => {
+                element.inert = false;
+                combo.filterValue = '';
+            });
+            combo.open();
+        });
     }
 }
