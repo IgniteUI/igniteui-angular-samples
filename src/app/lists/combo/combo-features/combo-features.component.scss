@@ -1,4 +1,100 @@
-.combo, igx-switch {
-    margin: 8px;
-    width: 430px;
+/* The app clips the page at the frame, so a sample too tall for it scrolls here, from its top. */
+:host {
+    display: flex;
+    align-items: safe center;
+    justify-content: center;
+    height: 100%;
+    overflow: auto;
+}
+
+/* The combo sits in the middle, and the switches in the space on its right.
+   When the frame is narrow, the combo moves left to make room for them. */
+.combo-features {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr minmax(0, 22.5rem) 1fr;
+    align-items: center;
+    column-gap: 3rem;
+    padding: 1rem;
+}
+
+/* Keeps room below the combo for its open dropdown, so the two stay centered together. */
+.combo-column {
+    grid-column: 2;
+    min-height: 17.5rem;
+}
+
+/* The selected values of the combo, under it. */
+.selection-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-top: 1.25rem;
+    padding: 0.75rem 1rem;
+}
+
+.selection-title {
+    color: var(--ig-gray-900);
+    font-family: var(--ig-subtitle-2-font-family, var(--ig-font-family));
+    font-size: var(--ig-subtitle-2-font-size);
+    font-weight: var(--ig-subtitle-2-font-weight);
+    line-height: var(--ig-subtitle-2-line-height);
+    letter-spacing: var(--ig-subtitle-2-letter-spacing);
+}
+
+.selection-list,
+.selection-empty {
+    font-family: var(--ig-body-2-font-family, var(--ig-font-family));
+    font-size: var(--ig-body-2-font-size);
+    font-weight: var(--ig-body-2-font-weight);
+    line-height: var(--ig-body-2-line-height);
+    letter-spacing: var(--ig-body-2-letter-spacing);
+}
+
+/* A long selection scrolls, so the column keeps its height and the combo stays in place. */
+.selection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    max-height: 8rem;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+    color: var(--ig-gray-700);
+}
+
+.selection-empty {
+    color: var(--ig-gray-500);
+}
+
+/* Each label stays on one line. */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.625rem;
+    width: max-content;
+}
+
+/* Too narrow for a side column: the switches move under the combo, packed to fit the frame. */
+@media (max-width: 44.5rem) {
+    .combo-features {
+        grid-template-columns: minmax(0, 22.5rem);
+        justify-content: center;
+        row-gap: 1.5rem;
+    }
+
+    .combo-column {
+        grid-column: 1;
+        min-height: 0;
+    }
+
+    .selection-list {
+        max-height: 4rem;
+    }
+
+    .controls {
+        gap: 0.75rem;
+    }
 }

@@ -15,19 +15,23 @@ export class RemoteNWindService {
         this.remoteData = new BehaviorSubject([]);
     }
 
-    public getData(data?: IForOfState, searchText?: string, cb?: (any) => void): any {
+    public getData(data?: IForOfState, searchText?: string, cb?: (any) => void, errorCb?: (error: any) => void): any {
         const dataState = data;
         return this.http
             .get(this.buildUrl(dataState, searchText))
-            .subscribe((d: any) => {
-                this.remoteData.next(d.value);
-                if (cb) {
-                    cb(d);
-                }
+            .subscribe({
+                next: (d: any) => {
+                    this.remoteData.next(d.value);
+                    if (cb) {
+                        cb(d);
+                    }
+                },
+                // Without an errorCb, rxjs reports the error as before.
+                error: errorCb
             });
     }
 
-    private buildUrl(dataState: any, searchText?: string): string {
+    public buildUrl(dataState: any, searchText?: string): string {
         let qS = '?';
         let requiredChunkSize: number;
         if (dataState) {

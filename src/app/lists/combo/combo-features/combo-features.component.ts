@@ -1,5 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { IgxComboComponent } from 'igniteui-angular/combo';
+import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { localData } from './local-data';
 import { FormsModule } from '@angular/forms';
@@ -8,25 +9,18 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-combo',
     styleUrls: ['./combo-features.component.scss'],
     templateUrl: './combo-features.component.html',
-    imports: [IgxComboComponent, IgxSwitchComponent, FormsModule]
+    imports: [IgxComboComponent, IgxLabelDirective, IgxSwitchComponent, FormsModule]
 })
 export class ComboFeaturesComponent implements OnInit{
-    @ViewChild('combo', { read: IgxComboComponent, static: true }) public combo: IgxComboComponent;
-    // eslint-disable-next-line @typescript-eslint/naming-convention
-    public GROUP_KEY = 'region';
     public lData: any[];
     public disableFiltering = false;
     public showSearchCaseIcon = false;
-    public customValues = true;
+    public customValues = false;
+    public grouping = false;
     public disabled = false;
+    public selection: string[] = [];
 
     public ngOnInit() {
         this.lData = localData;
-    }
-
-    public handleAddition(event) { }
-
-    public enableGroups(event) {
-        this.combo.groupKey = event.checked ? this.GROUP_KEY : '';
     }
 }
