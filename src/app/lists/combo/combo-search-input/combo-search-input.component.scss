@@ -1,0 +1,70 @@
+:host {
+    /* styles.scss asks the page for the large size; the combos keep their own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 2.375rem 1rem 2rem;
+}
+
+.states {
+    display: grid;
+    grid-template-columns: repeat(3, 11.25rem);
+    grid-template-rows: repeat(2, 5.5rem);
+    column-gap: 1.875rem;
+    row-gap: 1rem;
+}
+
+.state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.search {
+    width: 100%;
+}
+
+/* Only the search input of the combo dropdown is shown. */
+.search ::ng-deep igx-combo > igx-input-group,
+.search ::ng-deep .igx-combo__add {
+    display: none;
+}
+
+/* The open dropdown takes no pointer input either. */
+.search ::ng-deep .igx-overlay__content {
+    pointer-events: none;
+}
+
+.search.hover ::ng-deep .igx-combo__search igx-input-group {
+    --idle-bottom-line-color: var(--hover-bottom-line-color);
+}
+
+.search.disabled ::ng-deep .igx-combo__search igx-input-group {
+    --idle-bottom-line-color: var(--disabled-bottom-line-color);
+    --placeholder-color: var(--disabled-placeholder-color);
+}
+
+.search.filled ::ng-deep .igx-combo__search igx-input-group {
+    --placeholder-color: var(--filled-text-color);
+}
+
+.search.focused ::ng-deep .igx-combo__search igx-input-group {
+    --idle-bottom-line-color: var(--focused-bottom-line-color);
+    --hover-bottom-line-color: var(--focused-bottom-line-color);
+}
+
+/* the input group shows its two pixels thick focused line */
+.search.focused ::ng-deep .igx-combo__search .igx-input-group__bundle::after {
+    scale: 1;
+}
+
+.state-label {
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}

@@ -1,0 +1,64 @@
+:host {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 2.625rem 1rem 2rem;
+}
+
+.sizes {
+    display: grid;
+    grid-template-columns: repeat(3, 11.25rem);
+    column-gap: 1.875rem;
+}
+
+.size {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dropdown {
+    width: 100%;
+}
+
+/* Only the dropdown of the combo is shown, so the input field is hidden. */
+.dropdown ::ng-deep igx-combo > igx-input-group {
+    display: none;
+}
+
+/* A dropdown takes no space in the page, so the selection starts below the large dropdown. */
+.selection {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    gap: 0.375rem;
+    margin-top: 14rem;
+    padding: 0.75rem 1rem;
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}
+
+.selection-title {
+    color: var(--ig-gray-900);
+}
+
+.small {
+    --ig-size: var(--ig-size-small);
+}
+
+.medium {
+    --ig-size: var(--ig-size-medium);
+}
+
+.large {
+    --ig-size: var(--ig-size-large);
+}
+
+.state-label {
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}

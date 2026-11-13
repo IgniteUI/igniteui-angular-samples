@@ -1,0 +1,85 @@
+:host {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem 1rem;
+    container-name: sample;
+}
+
+.sizes {
+    display: grid;
+    grid-template-columns: max-content repeat(3, minmax(0, 17.4375rem));
+    width: 100%;
+    justify-content: center;
+    grid-template-rows: auto repeat(2, 17rem);
+    align-items: start;
+    column-gap: 1.75rem;
+    row-gap: 1rem;
+}
+
+.type-label {
+    padding-top: 0.75rem;
+}
+
+/* the box type looks like the border type outside the Material theme, so the other themes show
+   the border type alone, without the type labels */
+@container sample not style(--ig-theme: material) {
+    .sizes {
+        grid-template-columns: repeat(3, minmax(0, 17.4375rem));
+        grid-template-rows: auto 17rem;
+        align-self: center;
+    }
+
+    .type-label,
+    .box-type {
+        display: none;
+    }
+}
+
+/* A dropdown keeps the width from the moment it opens, and a theme change resizes the combos,
+   so each open dropdown takes the current width of its combo. */
+igx-combo ::ng-deep .igx-overlay__content {
+    width: var(--combo-width) !important;
+}
+
+igx-combo ::ng-deep .igx-drop-down {
+    width: auto !important;
+}
+
+.small {
+    --ig-size: var(--ig-size-small);
+}
+
+.medium {
+    --ig-size: var(--ig-size-medium);
+}
+
+.large {
+    --ig-size: var(--ig-size-large);
+}
+
+.state-label {
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}
+
+.state-column {
+    justify-self: center;
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-top: 1.625rem;
+    padding: 0.75rem 1rem;
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}
+
+.selection-title {
+    color: var(--ig-gray-900);
+}

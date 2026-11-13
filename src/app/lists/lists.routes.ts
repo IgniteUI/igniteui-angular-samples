@@ -8,6 +8,14 @@ import { ComboStylingComponent } from './combo/combo-styling/combo-styling.compo
 import { ComboTailwindStylingComponent } from './combo/combo-tailwind-styling/combo-tailwind-styling.component';
 import { ComboValueKeyComponent } from './combo/combo-valuekey/combo-valuekey.component';
 import { ComboTemplateComponent } from './combo/combo-template/combo-template.component';
+import { ComboOverviewComponent } from './combo/combo-overview/combo-overview.component';
+import { ComboTypeComponent } from './combo/combo-type/combo-type.component';
+import { ComboDisabledComponent } from './combo/combo-disabled/combo-disabled.component';
+import { ComboSizeComponent } from './combo/combo-size/combo-size.component';
+import { ComboStatesComponent } from './combo/combo-states/combo-states.component';
+import { ComboValidationComponent } from './combo/combo-validation/combo-validation.component';
+import { ComboDropdownSizeComponent } from './combo/combo-dropdown-size/combo-dropdown-size.component';
+import { ComboSearchInputComponent } from './combo/combo-search-input/combo-search-input.component';
 import { ListChatSampleComponent } from './list/list-chat-sample/list-chat-sample.component';
 import { ListSample1Component } from './list/list-sample-1/list-sample-1.component';
 import { ListSample2Component } from './list/list-sample-2/list-sample-2.component';
@@ -76,6 +84,46 @@ export const ListsRoutes: Routes = [
         component: ComboOverlayComponent,
         data: listsRoutesData['combo-overlay'],
         path: 'combo-overlay'
+    },
+    {
+        component: ComboOverviewComponent,
+        data: listsRoutesData['combo-overview'],
+        path: 'combo-overview'
+    },
+    {
+        component: ComboTypeComponent,
+        data: listsRoutesData['combo-type'],
+        path: 'combo-type'
+    },
+    {
+        component: ComboDisabledComponent,
+        data: listsRoutesData['combo-disabled'],
+        path: 'combo-disabled'
+    },
+    {
+        component: ComboSizeComponent,
+        data: listsRoutesData['combo-size'],
+        path: 'combo-size'
+    },
+    {
+        component: ComboStatesComponent,
+        data: listsRoutesData['combo-states'],
+        path: 'combo-states'
+    },
+    {
+        component: ComboValidationComponent,
+        data: listsRoutesData['combo-validation'],
+        path: 'combo-validation'
+    },
+    {
+        component: ComboDropdownSizeComponent,
+        data: listsRoutesData['combo-dropdown-size'],
+        path: 'combo-dropdown-size'
+    },
+    {
+        component: ComboSearchInputComponent,
+        data: listsRoutesData['combo-search-input'],
+        path: 'combo-search-input'
     },
     {
         component: SimpleComboMainComponent,

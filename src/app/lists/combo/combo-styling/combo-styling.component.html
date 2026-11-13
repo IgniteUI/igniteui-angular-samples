@@ -1,10 +1,22 @@
-<div class="control-wrapper">
-    <igx-combo [width]="'430px'" [data]="weaponsData" [displayKey]="'field'" [valueKey]="'field'" [overlaySettings]="{outlet: elem}"
-        [groupKey]="'weaponRange'" placeholder="Pick up two weapons" searchPlaceholder="Search..."
-        [itemsMaxHeight]="255" (selectionChanging)="setWeaponsLimit($event)">
+<div>
+    <igx-combo
+        #combo
+        class="styled-combo"
+        type="border"
+        placeholder="Country"
+        [resourceStrings]="{ igx_combo_filter_search_placeholder: 'Search' }"
+        valueKey="id"
+        displayKey="name"
+        groupKey="region"
+        [data]="countries"
+        [(ngModel)]="selection">
     </igx-combo>
-
-    <igx-toast #loadToast [displayTime]="1200"></igx-toast>
+    <div class="selection">
+        <span class="selection-title">Selection</span>
+        @for (country of combo.selection; track country.id) {
+            <span>{{ country.name }}</span>
+        } @empty {
+            <span>No items selected</span>
+        }
+    </div>
 </div>
-
-

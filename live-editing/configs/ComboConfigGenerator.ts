@@ -27,10 +27,76 @@ export class ComboConfigGenerator implements IConfigGenerator {
             shortenComponentPathBy: '/lists/combo/'
         }));
 
+        // combo overview
         configs.push(new Config({
-            additionalFiles: ['/src/app/data/heroData.ts', '/src/app/lists/combo/combo-styling/layout.scss'],
             appConfig: BaseAppConfig,
-            component: 'ComboStylingComponent'
+            component: 'ComboOverviewComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // combo type
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'ComboTypeComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // combo disabled
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'ComboDisabledComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // combo size
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'ComboSizeComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // combo states
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'ComboStatesComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // combo validation
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'ComboValidationComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // combo dropdown size
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'ComboDropdownSizeComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // combo search input
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'ComboSearchInputComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // combo styling
+        configs.push(new Config({
+            appConfig: BaseAppConfig,
+            component: 'ComboStylingComponent',
+            shortenComponentPathBy: '/lists/combo/'
+        }));
+
+        // combo tailwind styling
+        configs.push(new Config({
+            additionalDependencies: ['tailwindcss', '@tailwindcss/postcss'],
+            additionalFiles: ['.postcssrc.json'],
+            appConfig: BaseAppConfig,
+            component: 'ComboTailwindStylingComponent',
+            shortenComponentPathBy: '/lists/combo/'
         }));
 
         configs.push(new Config({
