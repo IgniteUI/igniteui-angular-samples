@@ -8,6 +8,7 @@
     justify-content: center;
     height: 100%;
     padding: 1rem;
+    container-name: sample;
 }
 
 .states {
@@ -24,25 +25,26 @@
     padding-top: 0.75rem;
 }
 
-.state-combo {
-    pointer-events: none;
+/* the box type looks like the border type outside the Material theme, so the other themes show
+   the border type alone, without the type labels */
+@container sample not style(--ig-theme: material) {
+    .states {
+        grid-template-columns: repeat(3, minmax(0, 17.4375rem));
+    }
+
+    .type-label,
+    .box-type {
+        display: none;
+    }
 }
 
-/* The Material theme leaves the bottom line of a valid box combo uncolored, so the
-   success combos color it with the success color. */
-@container style(--ig-theme: material) {
-    .state-combo.success > ::ng-deep igx-input-group .igx-input-group__bundle::before {
-        border-block-end-color: var(--success-secondary-color);
-    }
+.state-combo.success > ::ng-deep igx-input-group .igx-input-group__bundle::before {
+    border-block-end-color: var(--success-secondary-color);
 }
 
 .state-combo.warn > ::ng-deep igx-input-group {
     --border-color: var(--warning-secondary-color);
     --idle-bottom-line-color: var(--warning-secondary-color);
-}
-
-.state-combo.warn igx-hint {
-    color: var(--warning-secondary-color);
 }
 
 .state-label {

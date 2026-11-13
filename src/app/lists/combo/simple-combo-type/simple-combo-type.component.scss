@@ -8,6 +8,7 @@
     justify-content: center;
     height: 100%;
     padding: 2rem 1rem;
+    container-name: sample;
 }
 
 .types {
@@ -26,9 +27,31 @@
 }
 
 .type-label {
-    justify-self: center;
     text-align: center;
     font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
     letter-spacing: 0.3px;
     color: var(--ig-gray-600);
+}
+
+/* the box type looks like the border type outside the Material theme, so the other themes show
+   one combo without the type labels */
+@container sample not style(--ig-theme: material) {
+    .types {
+        grid-template-columns: minmax(0, 22.5rem);
+    }
+
+    .type-label,
+    .box-type {
+        display: none;
+    }
+}
+
+/* A dropdown keeps the width from the moment it opens, and a theme change resizes the combos,
+   so each open dropdown takes the current width of its combo. */
+igx-simple-combo ::ng-deep .igx-overlay__content {
+    width: var(--combo-width) !important;
+}
+
+igx-simple-combo ::ng-deep .igx-drop-down {
+    width: auto !important;
 }

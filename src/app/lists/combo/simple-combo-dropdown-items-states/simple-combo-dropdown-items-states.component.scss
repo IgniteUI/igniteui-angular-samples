@@ -30,12 +30,28 @@
     width: 100%;
     min-width: 0;
     height: 2rem;
-    pointer-events: none;
 }
 
 /* Only the dropdown of the combo is shown, so the input field is hidden. */
 .dropdown ::ng-deep igx-simple-combo > igx-input-group {
     display: none;
+}
+
+/* Each cell shows an item on its own, so the dropdown around it has no shadow, border,
+   or padding. */
+.dropdown ::ng-deep .igx-drop-down {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* The dropdown focuses its selected item when it opens, so the selected item takes the colors of
+   its own state again, without the focus outline of the Fluent and Indigo themes. */
+.dropdown ::ng-deep .igx-drop-down__item--selected {
+    background: var(--selected-item-background);
+    color: var(--selected-item-text-color);
+    outline: none;
 }
 
 /* The states use the colors of the drop-down theme. */

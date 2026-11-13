@@ -1,4 +1,4 @@
-import { Component, ElementRef, afterNextRender, inject, viewChildren } from '@angular/core';
+import { Component, DestroyRef, ElementRef, afterNextRender, inject, viewChildren } from '@angular/core';
 import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
 import { IgxInputGroupType, IgxLabelDirective, IgxPrefixDirective } from 'igniteui-angular/input-group';
@@ -32,9 +32,11 @@ export class SimpleComboTypeComponent {
     ];
 
     private combos = viewChildren(IgxSimpleComboComponent);
+    private comboElements = viewChildren(IgxSimpleComboComponent, { read: ElementRef<HTMLElement> });
 
     constructor() {
         const element = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
+        const destroyRef = inject(DestroyRef);
         inject(IgxIconService).addSvgIconFromText('language', languageIcon, 'material');
 
         // The combos are shown open. Opening a combo moves the focus to its list, so
@@ -46,6 +48,19 @@ export class SimpleComboTypeComponent {
                 element.inert = false;
             });
             combos.forEach((combo) => combo.open());
+
+            // A dropdown keeps the place and the width from the moment it opens, and only the
+            // Material theme shows the box type, so a theme change moves and resizes the combos.
+            // Each combo then publishes its width for its dropdown, and a window resize makes
+            // the open dropdowns take their places again.
+            const observer = new ResizeObserver((entries) => {
+                for (const { target, contentRect } of entries) {
+                    (target as HTMLElement).style.setProperty('--combo-width', `${contentRect.width}px`);
+                }
+                window.dispatchEvent(new Event('resize'));
+            });
+            this.comboElements().forEach((combo) => observer.observe(combo.nativeElement));
+            destroyRef.onDestroy(() => observer.disconnect());
         });
     }
 }

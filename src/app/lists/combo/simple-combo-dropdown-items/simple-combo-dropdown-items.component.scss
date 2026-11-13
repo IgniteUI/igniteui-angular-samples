@@ -31,6 +31,15 @@
     display: none;
 }
 
+/* Each cell shows a header or an item on its own, so the dropdown around it has no shadow, border,
+   or padding. */
+.dropdown ::ng-deep .igx-drop-down {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
 /* The header row shows only the group header. */
 .header-only ::ng-deep igx-combo-item[role="option"] {
     display: none;

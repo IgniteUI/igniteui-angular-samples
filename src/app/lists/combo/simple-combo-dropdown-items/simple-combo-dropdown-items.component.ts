@@ -1,7 +1,6 @@
-import { Component, ElementRef, afterNextRender, inject, viewChildren } from '@angular/core';
+import { Component, afterNextRender, viewChildren } from '@angular/core';
 import { ConnectedPositioningStrategy, IBaseCancelableBrowserEventArgs, VerticalAlignment } from 'igniteui-angular/core';
 import { IgxSimpleComboComponent } from 'igniteui-angular/simple-combo';
-import { forkJoin, take } from 'rxjs';
 
 interface Option {
     id: number;
@@ -49,21 +48,13 @@ export class SimpleComboDropdownItemsComponent {
     private combos = viewChildren(IgxSimpleComboComponent);
 
     constructor() {
-        const element = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
-
-        // The combos are shown open. Opening a combo moves the focus to its list, so
-        // the sample is inert until the combos open and the page keeps its focus.
+        // The dropdowns are shown open.
         afterNextRender(() => {
-            const combos = this.combos();
-            element.inert = true;
-            forkJoin(combos.map((combo) => combo.opened.pipe(take(1)))).subscribe(() => {
-                element.inert = false;
-            });
-            combos.forEach((combo) => combo.open());
+            this.combos().forEach((combo) => combo.open());
         });
     }
 
-    // The input fields are hidden, so the dropdowns stay open and each one works on its own.
+    // The input fields are hidden, so the dropdowns stay open.
     public keepOpen(event: IBaseCancelableBrowserEventArgs): void {
         event.cancel = true;
     }
