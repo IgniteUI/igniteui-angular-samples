@@ -12,6 +12,7 @@ interface ValidationState {
     label: string;
     className: string;
     state?: IgxInputState;
+    warning?: boolean;
     helperText?: string;
 }
 
@@ -33,11 +34,12 @@ export class ComboValidationComponent {
         { id: 'BG', name: 'Bulgaria', region: 'Europe' }
     ];
 
-    // The combo has built-in valid and invalid states but no warning state, so the `warn` class
-    // shows it; the `success` class colors the bottom line of the valid state.
+    // The combo has built-in valid and invalid states but no warning state of its own, so the sample
+    // turns on the warning style of its input group; the `success` class colors the bottom line of
+    // the valid state.
     public states: ValidationState[] = [
         { label: 'Success', className: 'success', state: IgxInputState.VALID },
-        { label: 'Warn', className: 'warn', helperText: 'Additional fees might be included' },
+        { label: 'Warn', className: 'warn', warning: true, helperText: 'Additional fees might be included' },
         { label: 'Error', className: 'error', state: IgxInputState.INVALID, helperText: 'Please select a different region' }
     ];
 
@@ -63,7 +65,9 @@ export class ComboValidationComponent {
 
     private setStates() {
         this.combos().forEach((combo, index) => {
-            combo.valid = this.states[index % this.states.length].state ?? IgxInputState.INITIAL;
+            const state = this.states[index % this.states.length];
+            combo.valid = state.state ?? IgxInputState.INITIAL;
+            combo.inputGroup.hasWarning = state.warning ?? false;
         });
         this.cdr.markForCheck();
     }
