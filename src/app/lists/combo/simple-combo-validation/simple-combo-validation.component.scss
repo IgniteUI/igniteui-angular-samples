@@ -42,11 +42,6 @@
     border-block-end-color: var(--success-secondary-color);
 }
 
-.state-combo.warn > ::ng-deep igx-input-group {
-    --border-color: var(--warning-secondary-color);
-    --idle-bottom-line-color: var(--warning-secondary-color);
-}
-
 .state-label {
     font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
     letter-spacing: 0.3px;
