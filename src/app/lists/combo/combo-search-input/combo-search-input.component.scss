@@ -35,14 +35,24 @@
     display: none;
 }
 
+/* Each cell shows a search input on its own, so the dropdown around it has no background, shadow,
+   border, or padding. */
+.search ::ng-deep .igx-drop-down {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+}
+
+.search ::ng-deep .igx-combo__search {
+    padding: 0;
+    border: none;
+}
+
 /* The open dropdown takes no pointer input either. */
 .search ::ng-deep .igx-overlay__content {
     pointer-events: none;
-}
-
-.search.disabled ::ng-deep .igx-combo__search igx-input-group {
-    --idle-bottom-line-color: var(--disabled-bottom-line-color);
-    --placeholder-color: var(--disabled-placeholder-color);
 }
 
 .state-label {

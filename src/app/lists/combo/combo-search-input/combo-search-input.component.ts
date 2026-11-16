@@ -3,9 +3,9 @@ import { IgxComboComponent } from 'igniteui-angular/combo';
 
 interface SearchState {
     label: string;
-    className?: string;
     // The state that the display-only search input shows.
     shows?: 'hover' | 'focus';
+    disabled?: boolean;
     // The search text of a filled search input.
     text?: string;
 }
@@ -54,11 +54,10 @@ function showHoverStyles() {
     imports: [IgxComboComponent]
 })
 export class ComboSearchInputComponent {
-    // The search input has no disabled state of its own to set, so the `disabled` class draws it.
     public states: SearchState[] = [
         { label: 'Idle' },
         { label: 'Idle & Hover', shows: 'hover' },
-        { label: 'Disabled', className: 'disabled' },
+        { label: 'Disabled', disabled: true },
         { label: 'Filled', text: 'Input text' },
         { label: 'Filled & Hover', shows: 'hover', text: 'Input text' },
         { label: 'Focused', shows: 'focus', text: 'Input text' }
@@ -81,9 +80,14 @@ export class ComboSearchInputComponent {
         });
     }
 
-    // The input group of the search input has a focused state of its own, which a display-only search
-    // input never enters, so the sample turns on the class of that state.
-    public showFocus(combo: IgxComboComponent) {
-        combo.searchInput.nativeElement.closest('igx-input-group')?.classList.add('igx-input-group--focused');
+    // The input group of the search input has a focused and a disabled state of its own, and the combo
+    // sets neither from outside, so the sample turns on the class of the state and disables the input.
+    public showState(combo: IgxComboComponent, state: SearchState) {
+        const input = combo.searchInput.nativeElement;
+        const inputGroup = input.closest('igx-input-group');
+
+        inputGroup?.classList.toggle('igx-input-group--focused', state.shows === 'focus');
+        inputGroup?.classList.toggle('igx-input-group--disabled', state.disabled === true);
+        input.disabled = state.disabled === true;
     }
 }
