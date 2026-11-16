@@ -87,9 +87,17 @@
         }
     </igx-combo>
 
-    <div class="selection ig-typography__body-2">
-        <span class="ig-typography__subtitle-2">Selection</span>
-        <span>{{ selectedNames.length ? selectedNames.join(', ') : 'No items selected' }}</span>
+    <div class="selection-panel">
+        <span class="selection-title" id="templates-selection-title">Selection</span>
+        @if (selectedNames.length) {
+            <ul class="selection-list" aria-labelledby="templates-selection-title">
+                @for (name of selectedNames; track name) {
+                    <li>{{ name }}</li>
+                }
+            </ul>
+        } @else {
+            <span class="selection-empty">No items selected</span>
+        }
     </div>
 </div>
 
