@@ -40,27 +40,9 @@
     pointer-events: none;
 }
 
-.search.hover ::ng-deep .igx-combo__search igx-input-group {
-    --idle-bottom-line-color: var(--hover-bottom-line-color);
-}
-
 .search.disabled ::ng-deep .igx-combo__search igx-input-group {
     --idle-bottom-line-color: var(--disabled-bottom-line-color);
     --placeholder-color: var(--disabled-placeholder-color);
-}
-
-.search.filled ::ng-deep .igx-combo__search igx-input-group {
-    --placeholder-color: var(--filled-text-color);
-}
-
-.search.focused ::ng-deep .igx-combo__search igx-input-group {
-    --idle-bottom-line-color: var(--focused-bottom-line-color);
-    --hover-bottom-line-color: var(--focused-bottom-line-color);
-}
-
-/* the input group shows its two pixels thick focused line */
-.search.focused ::ng-deep .igx-combo__search .igx-input-group__bundle::after {
-    scale: 1;
 }
 
 .state-label {
