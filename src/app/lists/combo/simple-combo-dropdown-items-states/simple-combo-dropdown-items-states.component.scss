@@ -46,40 +46,6 @@
     box-shadow: none;
 }
 
-/* The dropdown focuses its selected item when it opens, so the selected item takes the colors of
-   its own state again, without the focus outline of the Fluent and Indigo themes. */
-.dropdown ::ng-deep .igx-drop-down__item--selected {
-    background: var(--selected-item-background);
-    color: var(--selected-item-text-color);
-    outline: none;
-}
-
-/* The states use the colors of the drop-down theme. */
-.dropdown.hover ::ng-deep .igx-drop-down__item {
-    background: var(--hover-item-background);
-    color: var(--hover-item-text-color);
-}
-
-.dropdown.focus ::ng-deep .igx-drop-down__item {
-    background: var(--focused-item-background);
-    color: var(--focused-item-text-color);
-}
-
-.dropdown.disabled ::ng-deep .igx-drop-down__item {
-    background: var(--disabled-item-background);
-    color: var(--disabled-item-text-color);
-}
-
-.dropdown.hover ::ng-deep .igx-drop-down__item--selected {
-    background: var(--selected-hover-item-background);
-    color: var(--selected-hover-item-text-color);
-}
-
-.dropdown.focus ::ng-deep .igx-drop-down__item--selected {
-    background: var(--selected-focus-item-background);
-    color: var(--selected-focus-item-text-color);
-}
-
 .state-label {
     font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
     letter-spacing: 0.3px;
