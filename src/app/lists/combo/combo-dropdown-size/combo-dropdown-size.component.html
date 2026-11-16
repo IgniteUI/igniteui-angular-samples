@@ -6,7 +6,6 @@
                  and a click elsewhere does not close it. -->
             <div #dropdown class="dropdown {{ size.className }}">
                 <igx-combo
-                    #combo
                     [resourceStrings]="{ igx_combo_filter_search_placeholder: 'Search' }"
                     valueKey="id"
                     displayKey="name"
@@ -15,14 +14,6 @@
                     [overlaySettings]="{ target: dropdown, closeOnOutsideClick: false }"
                     (closing)="keepOpen($event)">
                 </igx-combo>
-            </div>
-            <div class="selection">
-                <span class="selection-title">Selection</span>
-                @for (option of combo.selection; track option.id) {
-                    <span>{{ option.name }}</span>
-                } @empty {
-                    <span>No items selected</span>
-                }
             </div>
         </div>
     }

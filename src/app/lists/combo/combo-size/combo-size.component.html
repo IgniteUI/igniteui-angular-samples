@@ -8,7 +8,6 @@
         @for (size of sizes; track size.label) {
             <div class="{{ size.className }} {{ type.type }}-type">
                 <igx-combo
-                    #combo
                     [type]="type.type"
                     placeholder="Country"
                     [resourceStrings]="{ igx_combo_filter_search_placeholder: 'Search' }"
@@ -18,14 +17,6 @@
                     [data]="countries"
                     [overlaySettings]="{ closeOnOutsideClick: false }">
                 </igx-combo>
-                <div class="selection">
-                    <span class="selection-title">Selection</span>
-                    @for (country of combo.selection; track country.id) {
-                        <span>{{ country.name }}</span>
-                    } @empty {
-                        <span>No items selected</span>
-                    }
-                </div>
             </div>
         }
     }

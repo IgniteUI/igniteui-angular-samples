@@ -1,7 +1,6 @@
 import { Component, DestroyRef, ElementRef, afterNextRender, inject, viewChildren } from '@angular/core';
 import { IgxComboComponent } from 'igniteui-angular/combo';
 import { IgxInputGroupType } from 'igniteui-angular/input-group';
-import { forkJoin, take } from 'rxjs';
 
 interface Country {
     id: string;
@@ -47,18 +46,14 @@ export class ComboSizeComponent {
     private comboElements = viewChildren(IgxComboComponent, { read: ElementRef<HTMLElement> });
 
     constructor() {
-        const element = inject<ElementRef<HTMLElement>>(ElementRef).nativeElement;
         const destroyRef = inject(DestroyRef);
 
-        // The combos are shown open. Opening a combo moves the focus to its search input, so
-        // the sample is inert until the combos open and the page keeps its focus.
+        // The combos are display-only, so the sample is inert. Opening a combo moves the focus
+        // to its search input, and the inert sample also keeps the focus on the page.
+        inject<ElementRef<HTMLElement>>(ElementRef).nativeElement.inert = true;
+
         afterNextRender(() => {
-            const combos = this.combos();
-            element.inert = true;
-            forkJoin(combos.map((combo) => combo.opened.pipe(take(1)))).subscribe(() => {
-                element.inert = false;
-            });
-            combos.forEach((combo) => combo.open());
+            this.combos().forEach((combo) => combo.open());
 
             // A dropdown keeps the place and the width from the moment it opens, and only the
             // Material theme shows the box type, so a theme change moves and resizes the combos.
