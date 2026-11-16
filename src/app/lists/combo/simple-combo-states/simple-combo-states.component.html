@@ -3,7 +3,8 @@
         <div class="state">
             <span class="state-label">{{ state.label }}</span>
             <igx-simple-combo
-                class="state-combo {{ state.className }}"
+                class="state-combo"
+                [class.shows-hover]="state.shows === 'hover'"
                 type="border"
                 placeholder="Country"
                 valueKey="id"
