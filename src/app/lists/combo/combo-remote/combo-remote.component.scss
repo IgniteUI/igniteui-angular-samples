@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+/* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
+@import url("https://use.typekit.net/bng2zgw.css");
 
 /* Anchored at the top, so the combo stays put while the panel beside it grows.
    The app clips the page at the frame, so a sample too tall for it scrolls here. */
@@ -70,14 +71,15 @@
     gap: 1rem;
     width: 100%;
     max-width: 20rem;
-    font-family: Inter, sans-serif;
+    font-family: aktiv-grotesk, sans-serif;
 }
 
+/* The headings get the typeface of the theme otherwise. */
 .monitor-title {
     margin: 0;
     padding: 0 1rem;
     color: var(--ig-gray-900);
-    font-family: var(--ig-subtitle-2-font-family, var(--ig-font-family));
+    font-family: aktiv-grotesk, sans-serif;
     font-size: var(--ig-subtitle-2-font-size);
     font-weight: var(--ig-subtitle-2-font-weight);
     line-height: var(--ig-subtitle-2-line-height);

@@ -1,3 +1,6 @@
+/* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
+@import url("https://use.typekit.net/bng2zgw.css");
+
 /* The app clips the page at the frame, so a sample too tall for it scrolls here, from its top. */
 :host {
     display: flex;
@@ -31,11 +34,11 @@
     gap: 0.375rem;
     margin-top: 1.25rem;
     padding: 0.75rem 1rem;
+    font-family: aktiv-grotesk, sans-serif;
 }
 
 .selection-title {
     color: var(--ig-gray-900);
-    font-family: var(--ig-subtitle-2-font-family, var(--ig-font-family));
     font-size: var(--ig-subtitle-2-font-size);
     font-weight: var(--ig-subtitle-2-font-weight);
     line-height: var(--ig-subtitle-2-line-height);
@@ -44,7 +47,6 @@
 
 .selection-list,
 .selection-empty {
-    font-family: var(--ig-body-2-font-family, var(--ig-font-family));
     font-size: var(--ig-body-2-font-size);
     font-weight: var(--ig-body-2-font-weight);
     line-height: var(--ig-body-2-line-height);
@@ -75,6 +77,11 @@
     align-items: flex-start;
     gap: 1.625rem;
     width: max-content;
+}
+
+/* The switch labels use the typeface of the selection. */
+.controls ::ng-deep .igx-switch__label {
+    font-family: aktiv-grotesk, sans-serif;
 }
 
 /* Too narrow for a side column: the switches move under the combo, packed to fit the frame. */
