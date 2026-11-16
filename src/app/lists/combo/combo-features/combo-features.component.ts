@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IgxComboComponent } from 'igniteui-angular/combo';
+import { IgxIconComponent } from 'igniteui-angular/icon';
 import { IgxLabelDirective } from 'igniteui-angular/input-group';
 import { IgxSwitchComponent } from 'igniteui-angular/switch';
 import { localData } from './local-data';
@@ -9,7 +10,7 @@ import { FormsModule } from '@angular/forms';
     selector: 'app-combo',
     styleUrls: ['./combo-features.component.scss'],
     templateUrl: './combo-features.component.html',
-    imports: [IgxComboComponent, IgxLabelDirective, IgxSwitchComponent, FormsModule]
+    imports: [IgxComboComponent, IgxIconComponent, IgxLabelDirective, IgxSwitchComponent, FormsModule]
 })
 export class ComboFeaturesComponent implements OnInit{
     public lData: any[];
