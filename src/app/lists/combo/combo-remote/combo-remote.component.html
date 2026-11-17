@@ -1,14 +1,90 @@
-<igx-combo #remoteCombo class="combo"
-    [itemsMaxHeight]="250"
-    [itemHeight]="48"
-    [data]="rData | async"
-    [valueKey]="'ProductID'"
-    [displayKey]="'ProductName'"
-    (dataPreLoad)="dataLoading()"
-    (searchInputUpdate)="handleSearchInputUpdate($event)"
-    (selectionChanging)="handleSelectionChanging($event)"
-    (closing)="onClosing()" (opened)="onOpened()"
-    (closed)="onClosed()"
-    placeholder="Location(s)">
-</igx-combo>
-<igx-toast #loadingToast></igx-toast>
+<div class="remote-binding">
+    <div class="combo-column">
+        <igx-combo #remoteCombo
+            type="border"
+            [itemsMaxHeight]="itemsMaxHeight"
+            [itemHeight]="itemHeight"
+            [data]="rData | async"
+            valueKey="ProductID"
+            displayKey="ProductName"
+            placeholder="Pick products"
+            searchPlaceholder="Search…"
+            (dataPreLoad)="onDataPreLoad()"
+            (searchInputUpdate)="onSearchInputUpdate($event)"
+            (selectionChanging)="onSelectionChanging($event)"
+            (opened)="onOpened()"
+            (closing)="onClosing()"
+            (closed)="onClosed()">
+            <label igxLabel>Products</label>
+            @if (selection.length) {
+                <igx-hint>{{ selection.length }} selected · kept by ProductID while chunks reload</igx-hint>
+            }
+
+            <ng-template igxComboFooter>
+                @if (loadingRange) {
+                    <div class="loading-chunk">
+                        <span>Loading items {{ loadingRange.from }}–{{ loadingRange.to }}…</span>
+                        <igx-linear-bar [indeterminate]="true" [textVisibility]="false"></igx-linear-bar>
+                    </div>
+                }
+                <div class="combo-summary">
+                    <span>{{ footerText }}</span>
+                    <igx-badge type="info" [value]="state.totalItemCount + ' total'"></igx-badge>
+                </div>
+            </ng-template>
+        </igx-combo>
+    </div>
+
+    <aside class="monitor" aria-label="Remote binding monitor">
+        <section>
+            <h2 class="monitor-title">Combo state</h2>
+            <dl class="state">
+                <div class="state-row">
+                    <dt>virtualizationState.startIndex</dt>
+                    <dd [class.changed]="changed.has('startIndex')">{{ state.startIndex }}</dd>
+                </div>
+                <div class="state-row">
+                    <dt>virtualizationState.chunkSize</dt>
+                    <dd [class.changed]="changed.has('chunkSize')">{{ state.chunkSize }}</dd>
+                </div>
+                <div class="state-row">
+                    <dt>totalItemCount</dt>
+                    <dd [class.changed]="changed.has('totalItemCount')">{{ state.totalItemCount }}</dd>
+                </div>
+                <div class="state-row">
+                    <dt>searchText</dt>
+                    <dd [class.changed]="changed.has('searchText')">{{ state.searchText }}</dd>
+                </div>
+                <div class="state-row">
+                    <dt>selection (ProductID)</dt>
+                    <dd [class.changed]="changed.has('selection')">{{ state.selection }}</dd>
+                </div>
+            </dl>
+            @if (selection.length > inlineSelection) {
+                <div class="selection-values">
+                    <span>{{ selectionList }}</span>
+                    @if (hiddenSelection) {
+                        <span class="selection-more">
+                            <button type="button" class="selection-more-link" [igxTooltipTarget]="fullSelection">+{{ hiddenSelection }} more</button>
+                            <span>· full list in tooltip</span>
+                        </span>
+                        <div #fullSelection="tooltip" igxTooltip class="selection-tooltip">{{ selectionFull }}</div>
+                    }
+                </div>
+            }
+        </section>
+
+        <section>
+            <h2 class="monitor-title log-title">Requests to remote service</h2>
+            <ol class="log">
+                @for (entry of log; track entry.id) {
+                    <li class="log-entry">
+                        <span class="log-name">{{ entry.title }}</span>
+                        <span class="log-result" [attr.data-status]="entry.status">{{ entry.result }}</span>
+                        <code class="log-detail">{{ entry.detail }}</code>
+                    </li>
+                }
+            </ol>
+        </section>
+    </aside>
+</div>

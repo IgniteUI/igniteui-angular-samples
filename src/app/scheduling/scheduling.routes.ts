@@ -11,6 +11,7 @@ import { CalendarSample7Component } from './calendar/calendar-sample-7/calendar-
 import { CalendarSample8Component } from './calendar/calendar-sample-8/calendar-sample-8.component';
 import { CalendarSample9Component } from './calendar/calendar-sample-9/calendar-sample-9.component';
 import { CalendarRtlComponent } from './calendar/calendar-rtl/calendar-rtl.component';
+import { CalendarTemplatesComponent } from './calendar/calendar-templates/calendar-templates.component';
 import { CalendarStylingSampleComponent } from './calendar/calendar-styling-sample/calendar-styling-sample.component';
 import { CalendarTailwindStylingSampleComponent } from './calendar/calendar-tailwind-styling-sample/calendar-tailwind-styling-sample.component';
 import { CalendarYearsViewComponent } from './calendar/calendar-years-view/calendar-years-view.component';
@@ -101,6 +102,11 @@ export const SchedulingRoutes: Routes = [
         component: CalendarRtlComponent,
         data: schedulingRoutesData['calendar-rtl'],
         path: 'calendar-rtl'
+    },
+    {
+        component: CalendarTemplatesComponent,
+        data: schedulingRoutesData['calendar-templates'],
+        path: 'calendar-templates'
     },
     {
         component: CalendarStylingSampleComponent,
