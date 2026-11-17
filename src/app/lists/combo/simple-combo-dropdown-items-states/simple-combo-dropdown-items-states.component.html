@@ -9,8 +9,10 @@
         @for (state of row.states; track state.label) {
             <!-- The input field is hidden, so the dropdown opens at the element around the combo,
                  and a click elsewhere does not close it. -->
-            <div #dropdown class="dropdown {{ state.className }}">
+            <div #dropdown class="dropdown" [class.shows-hover]="state.shows === 'hover'">
                 <igx-simple-combo
+                    #combo
+                    (opened)="showState(combo, state)"
                     valueKey="id"
                     displayKey="name"
                     [data]="options"

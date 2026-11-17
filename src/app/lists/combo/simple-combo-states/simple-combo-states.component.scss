@@ -29,37 +29,11 @@
 
 .state-combo {
     width: 100%;
-    pointer-events: none;
 }
 
 /* The open dropdown takes no pointer input either. */
 .state-combo ::ng-deep .igx-overlay__content {
     pointer-events: none;
-}
-
-/* The states belong to the combo's own input group, not to the search input in its dropdown. */
-.state-combo.hover > ::ng-deep igx-input-group {
-    --border-color: var(--hover-border-color);
-    --idle-bottom-line-color: var(--hover-bottom-line-color);
-}
-
-.state-combo.focused > ::ng-deep igx-input-group {
-    --border-color: var(--focused-border-color);
-    --idle-bottom-line-color: var(--focused-bottom-line-color);
-}
-
-.state-combo.focused > ::ng-deep igx-input-group .igx-input-group__bundle {
-    box-shadow: inset 0 0 0 0.125rem var(--focused-border-color);
-}
-
-.state-combo.focused > ::ng-deep igx-input-group .igx-input-group__toggle-button {
-    color: var(--toggle-button-foreground-focus);
-    background: var(--toggle-button-background-focus--border);
-}
-
-.state-combo.focused > ::ng-deep igx-input-group .igx-input-group__clear-button {
-    color: var(--clear-button-foreground-focus);
-    background: var(--clear-button-background-focus);
 }
 
 .state-label {

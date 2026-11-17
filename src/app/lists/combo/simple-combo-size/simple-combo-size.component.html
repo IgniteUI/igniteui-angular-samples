@@ -1,13 +1,13 @@
 <div class="sizes">
-    <span></span>
+    <span class="type-label"></span>
     @for (size of sizes; track size.label) {
         <span class="state-label state-column">{{ size.label }}</span>
     }
     @for (type of types; track type.label) {
-        <span class="state-label type-label">{{ type.label }}</span>
+        <span class="state-label type-label {{ type.type }}-type">{{ type.label }}</span>
         @for (size of sizes; track size.label) {
             <igx-simple-combo
-                [class]="size.className"
+                class="{{ size.className }} {{ type.type }}-type"
                 [type]="type.type"
                 placeholder="Country"
                 valueKey="id"
