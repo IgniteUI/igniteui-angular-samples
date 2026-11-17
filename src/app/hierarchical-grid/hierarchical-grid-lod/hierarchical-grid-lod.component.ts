@@ -1,11 +1,12 @@
 import { AfterViewInit, Component, OnInit, ViewChild, inject } from '@angular/core';
 import { IGX_HIERARCHICAL_GRID_DIRECTIVES, IGridCreatedEventArgs, IgxHierarchicalGridComponent, IgxRowIslandComponent } from 'igniteui-angular/grids/hierarchical-grid';
 import { IgxColumnComponent } from 'igniteui-angular/grids/core';
-import { EntityType, FilteringExpressionsTree, FilteringLogic, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular/core';
+import { FilteringExpressionsTree, FilteringLogic, IgxNumberFilteringOperand, IgxStringFilteringOperand } from 'igniteui-angular/core';
 import { IgxPreventDocumentScrollDirective } from '../../directives/prevent-scroll.directive';
 import { HttpClient } from '@angular/common/http';
 
 const API_ENDPOINT = 'https://data-northwind.indigo.design';
+const ROOT_ENTITY = 'Customers';
 
 @Component({
     selector: 'app-hierarchical-grid-lod',
@@ -20,42 +21,6 @@ export class HierarchicalGridLoDSampleComponent implements OnInit, AfterViewInit
     public hGrid: IgxHierarchicalGridComponent;
 
     public remoteData = [];
-    public schema: EntityType[] = [
-        {
-            name: 'Customers',
-            fields: [
-                { field: 'customerId', dataType: 'string' },
-                { field: 'companyName', dataType: 'string' },
-                { field: 'contactName', dataType: 'string' },
-                { field: 'contactTitle', dataType: 'string' }
-            ],
-            childEntities: [
-                {
-                    name: 'Orders',
-                    fields: [
-                        { field: 'customerId', dataType: 'string' }, // first field will be treated as foreign key
-                        { field: 'orderId', dataType: 'number' },
-                        { field: 'employeeId', dataType: 'number' },
-                        { field: 'shipVia', dataType: 'string' },
-                        { field: 'freight', dataType: 'number' }
-                    ],
-                    childEntities: [
-                        {
-                            name: 'Details',
-                            fields: [
-                                { field: 'orderId', dataType: 'number' }, // first field will be treated as foreign key
-                                { field: 'productId', dataType: 'number' },
-                                { field: 'unitPrice', dataType: 'number' },
-                                { field: 'quantity', dataType: 'number' },
-                                { field: 'discount', dataType: 'number' }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        }
-    ];
-
     public ngOnInit() {
         const ordersTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Orders', ['customerId']);
         ordersTree.filteringOperands.push({
@@ -66,7 +31,7 @@ export class HierarchicalGridLoDSampleComponent implements OnInit, AfterViewInit
             searchVal: 500
         });
 
-        const customersTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, 'Customers', ['customerId', 'companyName', 'contactName', 'contactTitle']);
+        const customersTree = new FilteringExpressionsTree(FilteringLogic.And, undefined, ROOT_ENTITY, ['customerId', 'companyName', 'contactName', 'contactTitle']);
         customersTree.filteringOperands.push({
             fieldName: 'customerId',
             condition: IgxStringFilteringOperand.instance().condition('inQuery'),
@@ -85,13 +50,14 @@ export class HierarchicalGridLoDSampleComponent implements OnInit, AfterViewInit
         const tree = this.hGrid.advancedFilteringExpressionsTree;
         this.hGrid.isLoading = true;
         if (tree) {
-            this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, tree).subscribe(data =>{
+            const query = { ...tree, entity: ROOT_ENTITY };
+            this.http.post(`${API_ENDPOINT}/QueryBuilder/ExecuteQuery`, query).subscribe(data =>{
                 this.remoteData = Object.values(data)[0];
                 this.hGrid.isLoading = false;
                 this.hGrid.cdr.detectChanges();
             });
         } else {
-            this.http.get(`${API_ENDPOINT}/Customers`).subscribe(data => {
+            this.http.get(`${API_ENDPOINT}/${ROOT_ENTITY}`).subscribe(data => {
                 this.remoteData = Object.values(data);
                 this.hGrid.isLoading = false;
                 this.hGrid.cdr.detectChanges();
@@ -110,7 +76,7 @@ export class HierarchicalGridLoDSampleComponent implements OnInit, AfterViewInit
     }
 
     private buildUrl(event: IGridCreatedEventArgs) {
-        const parentKey = (event.grid.parent as any).key ?? this.schema[0].name;
+        const parentKey = (event.grid.parent as any).key ?? ROOT_ENTITY;
         const url = `${API_ENDPOINT}/${parentKey}/${event.parentID}/${event.owner.key}`;
         return url;
     }
