@@ -1,0 +1,22 @@
+<div class="team-tabs">
+    <igx-tabs tabAlignment="justify">
+        @for (team of teams; track team.name) {
+            <igx-tab-item [selected]="$first">
+                <igx-tab-header>
+                    <span igxTabHeaderLabel>{{ team.name }}</span>
+                </igx-tab-header>
+                <igx-tab-content>
+                    <igx-list>
+                        @for (person of team.people; track person.name) {
+                            <igx-list-item>
+                                <igx-avatar igxListThumbnail [src]="person.avatar" shape="circle" [attr.aria-label]="person.name"></igx-avatar>
+                                <span igxListLineTitle>{{ person.name }}</span>
+                                <span igxListAction class="team-name">{{ person.team }}</span>
+                            </igx-list-item>
+                        }
+                    </igx-list>
+                </igx-tab-content>
+            </igx-tab-item>
+        }
+    </igx-tabs>
+</div>

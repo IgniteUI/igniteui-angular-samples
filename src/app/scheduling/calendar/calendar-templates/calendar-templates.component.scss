@@ -1,0 +1,104 @@
+.sample-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 8px;
+}
+
+.calendar-wrapper {
+    max-width: 400px;
+    min-width: 200px;
+    flex: 1;
+}
+
+.igx-calendar {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.26),
+    0 1px 1px 0 rgba(0,0,0,.12),
+    0 2px 1px -1px rgba(0,0,0,.08);
+}
+
+.month-badge {
+    align-self: center;
+    margin-inline-start: 8px;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: var(--ig-primary-500-contrast);
+    background: var(--ig-primary-500);
+}
+
+.day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1;
+
+    &__dots {
+        display: flex;
+        gap: 2px;
+        height: 4px;
+        margin-top: 2px;
+    }
+
+    &__dot {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: currentColor;
+
+        &--meeting {
+            color: var(--ig-primary-500);
+        }
+
+        &--deadline {
+            color: var(--ig-error-500);
+        }
+
+        &--personal {
+            color: var(--ig-success-500);
+        }
+    }
+
+    // Fall back to the cell foreground so the dots stay readable on the selected background.
+    &--selected &__dot {
+        color: inherit;
+    }
+}
+
+.agenda {
+    min-width: 200px;
+    padding: 16px;
+
+    &__title {
+        margin: 0 0 12px;
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+
+    &__marker {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: currentColor;
+    }
+
+    &__empty {
+        margin: 0;
+        color: var(--ig-gray-600);
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
