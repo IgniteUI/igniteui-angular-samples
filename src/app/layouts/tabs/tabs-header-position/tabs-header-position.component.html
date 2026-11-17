@@ -1,0 +1,19 @@
+<div class="sample">
+    <igx-buttongroup selectionMode="singleRequired" aria-label="Header position">
+        @for (position of positions; track position.value) {
+            <button igxButton [selected]="position.value === headerPosition" (click)="headerPosition = position.value">{{ position.label }}</button>
+        }
+    </igx-buttongroup>
+    <div class="tabs-container">
+        <igx-tabs [headerPosition]="headerPosition">
+            @for (section of sections; track section.label) {
+                <igx-tab-item>
+                    <igx-tab-header>
+                        <span igxTabHeaderLabel>{{ section.label }}</span>
+                    </igx-tab-header>
+                    <igx-tab-content>{{ section.text }}</igx-tab-content>
+                </igx-tab-item>
+            }
+        </igx-tabs>
+    </div>
+</div>
