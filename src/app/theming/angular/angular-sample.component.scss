@@ -36,6 +36,7 @@ $igx-light-palette: palette(
     $success: #4eb862,
     $warn: #fbb13c,
     $error: #ff134a,
+    $generator: 'legacy',
 );
 
 $custom-dark-palette: palette(
@@ -46,6 +47,7 @@ $custom-dark-palette: palette(
     $success: #4eb862,
     $warn: #fbb13c,
     $error: #ff134a,
+    $generator: 'legacy',
 );
 
 $light-palette-primary: mat.m2-define-palette(material-like-palette('primary', $saturations, $igx-light-palette));
@@ -173,7 +175,7 @@ igx-expansion-panel-body {
         }
 
         ::ng-deep {
-            @include dark-theme($custom-dark-palette);
+            @include theme($palette: $custom-dark-palette, $schema: $dark-material-schema);
             @include mat.all-component-colors($custom-mat-dark-theme);
 
             .primary {

@@ -1,0 +1,26 @@
+@use "sass:meta";
+@import url("https://use.typekit.net/bng2zgw.css");
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-rating-tailwind-styling {
+    /* styles.scss asks the page for the large size; the rating and the button
+       keep their own default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+/* The theme sets the button's padding and typography in a later layer than
+   Tailwind's utilities, so the design's values are set here instead. */
+.submit-review {
+    padding-inline: 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    letter-spacing: 0.1px;
+    text-transform: none;
+}

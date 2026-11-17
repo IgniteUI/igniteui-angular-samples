@@ -1,0 +1,40 @@
+<div class="flex flex-col gap-6 rounded-2xl border border-[#d2dbe8] bg-white px-[27px] py-[31px] [--ig-body-1-font-size:0.875rem] [--ig-font-family:'Aktiv_Grotesk',Arial,sans-serif] [--ig-size:var(--ig-size-medium)]">
+    <igx-input-group class="search-field" [class]="fieldClasses + ' ' + focusClasses">
+        <label igxLabel class="!text-xs !leading-4 !uppercase !text-[#344b65]">Search</label>
+        <igx-prefix class="!ps-2">
+            <igx-icon class="!text-[#344b65]">search</igx-icon>
+        </igx-prefix>
+        <input igxInput type="text" placeholder="Find a report..." />
+    </igx-input-group>
+
+    <igx-input-group [class]="fieldClasses + ' ' + focusClasses">
+        <label igxLabel class="!text-xs !leading-4 !uppercase !text-[#344b65]">Password</label>
+        <input igxInput [type]="passwordVisible ? 'text' : 'password'" value="reports-2026" />
+        <igx-suffix class="!p-0">
+            <button
+                igxIconButton="flat"
+                type="button"
+                class="!h-full !w-[39px] !min-w-0 !rounded-none !p-0"
+                [attr.aria-label]="passwordVisible ? 'Hide password' : 'Show password'"
+                (click)="passwordVisible = !passwordVisible">
+                <igx-icon class="!text-[#344b65]">{{ passwordVisible ? 'visibility' : 'visibility_off' }}</igx-icon>
+            </button>
+        </igx-suffix>
+    </igx-input-group>
+
+    <igx-input-group class="email-field" [class]="fieldClasses + ' ' + (emailInvalid ? invalidClasses : focusClasses)">
+        <label igxLabel class="!text-xs !leading-4 !uppercase !text-[#344b65]">E-mail</label>
+        <igx-prefix class="!ps-2">
+            <igx-icon [class]="emailInvalid ? '!text-[#ff134a]' : '!text-[#344b65]'">mail</igx-icon>
+        </igx-prefix>
+        <input igxInput type="email" [value]="email" [attr.aria-invalid]="emailInvalid" (input)="onEmailInput($event)" />
+        @if (emailInvalid) {
+            <igx-suffix>
+                <igx-icon class="!text-[#ff134a]">info</igx-icon>
+            </igx-suffix>
+        }
+        @if (emailInvalid) {
+            <igx-hint class="text-xs leading-4 tracking-[0.4px] text-[#ff134a]">Enter a complete address</igx-hint>
+        }
+    </igx-input-group>
+</div>

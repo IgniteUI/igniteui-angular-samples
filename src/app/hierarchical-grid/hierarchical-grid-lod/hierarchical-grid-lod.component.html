@@ -8,7 +8,6 @@
                            [width]="'100%'"
                            [igxPreventDocumentScroll]="true"
                            [allowAdvancedFiltering]="true"
-                           [schema]="schema"
                            (advancedFilteringExpressionsTreeChange)="refreshRootGridData()">
             <igx-grid-toolbar></igx-grid-toolbar>
 
@@ -18,17 +17,17 @@
             <igx-column field="contactTitle" [dataType]="'string'"></igx-column>
 
         <igx-row-island #rowIsland1 [key]="'Orders'" [primaryKey]="'orderId'" [autoGenerate]="false" (gridCreated)="gridCreated($event)">
-            <igx-column field="orderId"></igx-column>
-            <igx-column field="customerId"></igx-column>
-            <igx-column field="shipVia"></igx-column>
-            <igx-column field="freight"></igx-column>
+            <igx-column field="orderId" [dataType]="'number'"></igx-column>
+            <igx-column field="customerId" [dataType]="'string'"></igx-column>
+            <igx-column field="shipVia" [dataType]="'string'"></igx-column>
+            <igx-column field="freight" [dataType]="'number'"></igx-column>
 
-            <igx-row-island #rowIsland2 [key]="'Details'" [primaryKey]="'orderId'" [autoGenerate]="false" (gridCreated)="gridCreated($event)">
-                <igx-column field="orderId"></igx-column>
-                <igx-column field="productId"></igx-column>
-                <igx-column field="unitPrice"></igx-column>
-                <igx-column field="quantity"></igx-column>
-                <igx-column field="discount"></igx-column>
+            <igx-row-island #rowIsland2 [key]="'Details'" [primaryKey]="'productId'" [autoGenerate]="false" (gridCreated)="gridCreated($event)">
+                <igx-column field="orderId" [dataType]="'number'"></igx-column>
+                <igx-column field="productId" [dataType]="'number'"></igx-column>
+                <igx-column field="unitPrice" [dataType]="'number'"></igx-column>
+                <igx-column field="quantity" [dataType]="'number'"></igx-column>
+                <igx-column field="discount" [dataType]="'number'"></igx-column>
             </igx-row-island>
         </igx-row-island>
     </igx-hierarchical-grid>

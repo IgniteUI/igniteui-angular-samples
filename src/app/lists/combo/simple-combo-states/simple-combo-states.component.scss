@@ -1,0 +1,43 @@
+:host {
+    /* styles.scss asks the page for the large size; the combos keep their own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem 1rem;
+}
+
+.states {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 17.4375rem));
+    width: 100%;
+    justify-content: center;
+    column-gap: 1.75rem;
+    row-gap: 1.25rem;
+}
+
+.state {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.state-combo {
+    width: 100%;
+}
+
+/* The open dropdown takes no pointer input either. */
+.state-combo ::ng-deep .igx-overlay__content {
+    pointer-events: none;
+}
+
+.state-label {
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}

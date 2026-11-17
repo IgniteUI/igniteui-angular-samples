@@ -11,6 +11,48 @@ export class RadioConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
+            component: 'RadioOverviewComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/radio/"
+        }));
+
+        configs.push(new Config({
+            component: 'RadioLayoutComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/radio/"
+        }));
+
+        configs.push(new Config({
+            component: 'RadioOrientationComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/radio/"
+        }));
+
+        configs.push(new Config({
+            component: 'RadioInteractionStateComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/radio/"
+        }));
+
+        configs.push(new Config({
+            component: 'RadioDisabledComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/radio/"
+        }));
+
+        configs.push(new Config({
+            component: 'RadioOnOffStateComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/radio/"
+        }));
+
+        configs.push(new Config({
+            component: 'RadioStylingComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/data-entries/radio/"
+        }));
+
+        configs.push(new Config({
             component: 'RadioSample1Component',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/radio/"
@@ -30,13 +72,6 @@ export class RadioConfigGenerator implements IConfigGenerator {
 
         configs.push(new Config({
             component: 'RadioGroupVerticalComponent',
-            appConfig: BaseAppConfig,
-            shortenComponentPathBy: "/data-entries/radio/"
-        }));
-
-        configs.push(new Config({
-            component: 'RadioStylingSampleComponent',
-            additionalFiles: ["/src/app/data-entries/radio/radio-styling-sample/layout.scss"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/radio/"
         }));

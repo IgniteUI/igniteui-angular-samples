@@ -7,7 +7,8 @@ $light-gray: #efefef;
 $custom-palette: palette(
   $primary: $blue,
   $secondary: $purple,
-  $surface: $light-gray
+  $surface: $light-gray,
+  $generator: 'legacy'
 );
 
 $today-text: color($custom-palette, 'primary', 500);

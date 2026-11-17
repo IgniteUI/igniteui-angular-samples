@@ -1,0 +1,18 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.menu {
+    height: auto;
+}
+
+/* A pinned drawer fills the height of its container. Here it is only as tall
+   as its items. */
+.menu ::ng-deep .igx-nav-drawer__aside {
+    height: auto;
+    min-height: auto;
+}

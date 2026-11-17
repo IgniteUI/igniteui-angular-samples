@@ -1,0 +1,33 @@
+:host {
+    /* styles.scss asks the page for the large size; the combos keep their own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem 1rem;
+}
+
+.types {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 22.5rem));
+    width: 100%;
+    justify-content: center;
+    column-gap: 3.75rem;
+}
+
+.type {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    gap: 0.75rem;
+}
+
+.type-label {
+    text-align: center;
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}

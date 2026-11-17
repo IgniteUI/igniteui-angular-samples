@@ -1,1 +1,20 @@
-@use "layout.scss";
+/* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
+@import url("https://use.typekit.net/bng2zgw.css");
+
+:host {
+    /* The design's own palette. It lives here instead of coming from the theme
+       palette, so the sample keeps its colors in every theme. */
+    --color-activity-primary: #006ae6;
+    --color-activity-primary-strong: #0055b8;
+    --color-activity-tint: #e6f2ff;
+    --color-activity-tint-strong: #cce4ff;
+    --color-activity-surface: #e5ebf3;
+    --color-activity-ink: #00142b;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}

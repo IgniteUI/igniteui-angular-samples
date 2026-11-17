@@ -1,0 +1,24 @@
+@use "sass:meta";
+@import url("https://use.typekit.net/bng2zgw.css");
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-simple-combo-tailwind-styling {
+    /* The combo palette that the utilities in the template read. */
+    --color-combo-border: #a9b8cc;
+    --color-combo-toggle: #e5ebf3;
+    --color-combo-surface: #f3f6fa;
+    --color-combo-selected: #d2dbe8;
+    --color-combo-accent: #7d91ab;
+    --color-combo-header: #005dcc;
+    --color-combo-ink: #212121;
+
+    /* styles.scss asks the page for the large size; the combo keeps its own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem 1rem;
+}

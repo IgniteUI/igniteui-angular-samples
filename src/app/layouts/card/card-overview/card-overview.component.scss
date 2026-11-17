@@ -1,0 +1,41 @@
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    height: 100vh;
+    gap: rem(72px);
+    padding: rem(56px) rem(24px);
+}
+
+.card-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: rem(32px);
+}
+
+.card-container {
+    --ig-size: var(--ig-size-small);
+
+    width: 100%;
+    max-width: rem(360px);
+    min-width: rem(220px);
+
+    igx-card-media img {
+        width: 100%;
+        aspect-ratio: 15 / 8;
+        object-fit: cover;
+    }
+
+    igx-card-content p {
+        @include type-style("body-2") {
+            margin: 0;
+        }
+
+        font-size: rem(14px);
+        line-height: 1.5;
+    }
+}

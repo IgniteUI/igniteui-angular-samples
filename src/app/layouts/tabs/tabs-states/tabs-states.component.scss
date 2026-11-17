@@ -1,0 +1,61 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
+
+.states {
+    display: grid;
+    grid-template-columns: 4.5rem repeat(3, 8.875rem);
+    align-items: center;
+    row-gap: 1.875rem;
+}
+
+.state-label {
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}
+
+.state-column {
+    justify-self: center;
+}
+
+.state-tabs {
+    grid-column: 2 / -1;
+    pointer-events: none;
+}
+
+.state-tabs ::ng-deep .igx-tabs-header {
+    background: transparent;
+}
+
+.state-tabs ::ng-deep .igx-tabs-header::after {
+    display: none;
+}
+
+/* Each tab header sits centered in its own column, under its state label. */
+.state-tabs ::ng-deep .igx-tabs-header-scroll {
+    display: grid;
+    grid-template-columns: repeat(3, 8.875rem);
+}
+
+.state-tabs igx-tab-header {
+    justify-self: center;
+}
+
+.state-tabs igx-tab-header:not(.igx-tab-header--selected) {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.state-tabs igx-tab-header.hover {
+    color: var(--item-hover-color);
+    background: var(--item-hover-background);
+}
+
+.state-tabs igx-tab-header.hover.igx-tab-header--selected {
+    color: var(--item-active-hover-color);
+    background: var(--item-active-hover-background);
+}

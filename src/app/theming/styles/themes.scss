@@ -56,8 +56,8 @@ $royalblue-color: #4169E1;
 $orange-color: #FFA500;
 
 // Define the palettes:
-$light-theme-palette: palette($primary: $light-color, $secondary: $royalblue-color);
-$dark-theme-palette: palette($primary: $dark-color, $secondary: $orange-color);
+$light-theme-palette: palette($primary: $light-color, $secondary: $royalblue-color, $generator: 'legacy');
+$dark-theme-palette: palette($primary: $dark-color, $secondary: $orange-color, $generator: 'legacy');
 
 // Define light theme for the snackbar
 $light-snackbar-theme: snackbar-theme(

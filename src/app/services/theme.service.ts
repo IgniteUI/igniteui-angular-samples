@@ -1,6 +1,7 @@
 import { isPlatformBrowser } from '@angular/common';
 import { DOCUMENT, Injectable, PLATFORM_ID, inject, signal } from '@angular/core';
 import { THEME_TOKEN, type IgxTheme } from 'igniteui-angular/core';
+import { configureTheme, type Theme, type ThemeVariant } from 'igniteui-webcomponents';
 
 /**
  * Message type posted by the documentation site's theming widget into the
@@ -163,7 +164,11 @@ export class ThemeService {
         const link = this.themeLink();
 
         if (!link.getAttribute('href')?.endsWith(href)) {
-            link.addEventListener('load', () => this.loadTypeface(), { once: true });
+            link.addEventListener('load', () => {
+                this.syncWebComponentsTheme();
+                this.loadTypeface();
+                this.repositionOverlays();
+            }, { once: true });
             link.href = href;
         }
 
@@ -195,6 +200,56 @@ export class ThemeService {
         }
 
         return link;
+    }
+
+    /**
+     * Web components such as igc-rating adopt a stylesheet per theme in their
+     * shadow DOM, and they read the theme off `--ig-theme` only once, when the
+     * first of them connects. Once a theme stylesheet is in place, hand them
+     * the theme it declares. It is read back from the page rather than taken
+     * from the selection, so samples that load a theme of their own keep it.
+     */
+    private syncWebComponentsTheme(): void {
+        const styles = this.document.defaultView?.getComputedStyle(this.document.documentElement);
+
+        if (!styles) {
+            return;
+        }
+
+        configureTheme(
+            styles.getPropertyValue('--ig-theme').trim() as Theme,
+            styles.getPropertyValue('--ig-theme-variant').trim() as ThemeVariant
+        );
+    }
+
+    /**
+     * Each theme sizes and places components differently, for example a label
+     * above an input instead of inside it. An overlay that is already open, such
+     * as the list of a combo, stays where its target was, so once a theme
+     * stylesheet is in place, have the open overlays follow their targets again.
+     * The overlay service repositions them on a window resize.
+     */
+    private repositionOverlays(): void {
+        const view = this.document.defaultView;
+
+        if (!view) {
+            return;
+        }
+
+        const reposition = () => view.dispatchEvent(new Event('resize'));
+
+        // Two frames, so the new styles have applied and the components have re-rendered for the theme.
+        view.requestAnimationFrame(() => view.requestAnimationFrame(() => {
+            reposition();
+
+            // Some themes animate a component into its new size, such as the Indigo input,
+            // so follow the targets again once those transitions end.
+            const transitions = this.document.getAnimations().filter((animation) => animation instanceof CSSTransition);
+
+            if (transitions.length) {
+                void Promise.allSettled(transitions.map((transition) => transition.finished)).then(reposition);
+            }
+        }));
     }
 
     /**

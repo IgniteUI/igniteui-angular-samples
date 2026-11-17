@@ -86,6 +86,8 @@ export class ButtonConfigGenerator implements IConfigGenerator {
         // button tailwind styling
         configs.push(new Config({
             component: 'ButtonTailwindStylingComponent',
+            additionalDependencies: ["tailwindcss", "@tailwindcss/postcss"],
+            additionalFiles: [".postcssrc.json"],
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/data-entries/button/"
         }));

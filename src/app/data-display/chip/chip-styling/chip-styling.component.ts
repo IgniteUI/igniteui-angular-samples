@@ -1,47 +1,22 @@
-import { ChangeDetectorRef, Component, inject, OnInit } from '@angular/core';
-import { facebook, linkedin } from '@igniteui/material-icons-extended';
-import { IgxChipComponent, IgxChipsAreaComponent } from 'igniteui-angular/chips';
+import { Component, inject } from '@angular/core';
+import { IgxChipComponent } from 'igniteui-angular/chips';
 import { IgxIconComponent, IgxIconService } from 'igniteui-angular/icon';
-import { IgxPrefixDirective } from 'igniteui-angular/input-group';
-import { NgClass } from '@angular/common';
+import { IgxPrefixDirective, IgxSuffixDirective } from 'igniteui-angular/input-group';
+
+// The outline takes the chip text color, and the filled half keeps the warning color.
+const halfStarIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 9.24l-7.19-.62L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24zM12 15.4l-3.76 2.27 1-4.28-3.32-2.88 4.38-.38L12 6.1l1.71 4.01 4.38.38-3.32 2.88 1 4.28L12 15.4z"/><path style="fill: var(--ig-warn-400)" d="M12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27z"/></svg>';
+const peopleIcon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>';
 
 @Component({
-  selector: 'app-chip',
-  styleUrls: ['./chip-styling.component.scss'],
-  templateUrl: './chip-styling.component.html',
-  imports: [IgxChipsAreaComponent, IgxChipComponent, IgxIconComponent, IgxPrefixDirective, NgClass]
+    selector: 'app-chip-styling',
+    styleUrls: ['./chip-styling.component.scss'],
+    templateUrl: './chip-styling.component.html',
+    imports: [IgxChipComponent, IgxIconComponent, IgxPrefixDirective, IgxSuffixDirective]
 })
-
-export class ChipStylingSampleComponent implements OnInit {
-  changeDetectionRef = inject(ChangeDetectorRef);
-  private iconService = inject(IgxIconService)
-  public ngOnInit() {
-    this.iconService.addSvgIconFromText('x', '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-twitter-x" viewBox="0 0 16 16"><path d="M12.6.75h2.454l-5.36 6.142L16 15.25h-4.937l-3.867-5.07-4.425 5.07H.316l5.733-6.57L0 .75h5.063l3.495 4.633L12.601.75Zm-.86 13.028h1.36L4.323 2.145H2.865z"/></svg>');
-    this.iconService.addSvgIconFromText('youtube', '<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 13"> <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z"/> </svg>');
-    this.iconService.addSvgIconFromText(facebook.name, facebook.value);
-    this.iconService.addSvgIconFromText(linkedin.name, linkedin.value);
-  }
-
-  public chipList = [
-    {
-      text: 'X.com',
-      class: 'xcom',
-      icon: 'x'
-    },
-    {
-      text: 'Youtube',
-      class: 'youtube',
-      icon: 'youtube'
-    },
-    {
-      text: 'Facebook',
-      class: 'facebook',
-      icon: 'facebook'
-    },
-    {
-      text: 'LinkedIn',
-      class: 'linkedin',
-      icon: 'linkedin'
+export class ChipStylingSampleComponent {
+    constructor() {
+        const iconService = inject(IgxIconService);
+        iconService.addSvgIconFromText('star_half', halfStarIcon, 'styling');
+        iconService.addSvgIconFromText('people', peopleIcon, 'styling');
     }
-  ];
 }
