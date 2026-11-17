@@ -1,0 +1,42 @@
+<div class="states">
+    <span></span>
+    <span class="state-label state-column">Active</span>
+    <span class="state-label state-column">Inactive</span>
+    <span class="state-label state-column">Disabled</span>
+    <span class="state-label">Hover / Off</span>
+    <igx-tabs class="state-tabs" tabAlignment="justify">
+        <igx-tab-item [selected]="true">
+            <igx-tab-header>
+                <span igxTabHeaderLabel>Active</span>
+            </igx-tab-header>
+            <igx-tab-content></igx-tab-content>
+        </igx-tab-item>
+        <igx-tab-item>
+            <igx-tab-header>
+                <span igxTabHeaderLabel>Inactive</span>
+            </igx-tab-header>
+            <igx-tab-content></igx-tab-content>
+        </igx-tab-item>
+        <igx-tab-item [disabled]="true">
+            <igx-tab-header>
+                <span igxTabHeaderLabel>Disabled</span>
+            </igx-tab-header>
+            <igx-tab-content></igx-tab-content>
+        </igx-tab-item>
+    </igx-tabs>
+    <span class="state-label">Hover / On</span>
+    <igx-tabs class="state-tabs" tabAlignment="justify">
+        <igx-tab-item [selected]="true">
+            <igx-tab-header class="hover">
+                <span igxTabHeaderLabel>Active</span>
+            </igx-tab-header>
+            <igx-tab-content></igx-tab-content>
+        </igx-tab-item>
+        <igx-tab-item>
+            <igx-tab-header class="hover">
+                <span igxTabHeaderLabel>Inactive</span>
+            </igx-tab-header>
+            <igx-tab-content></igx-tab-content>
+        </igx-tab-item>
+    </igx-tabs>
+</div>

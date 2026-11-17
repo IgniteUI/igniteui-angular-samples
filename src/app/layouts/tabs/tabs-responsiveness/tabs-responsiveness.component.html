@@ -1,0 +1,24 @@
+<div class="modes">
+    <span class="mode-label">Content Fit</span>
+    <igx-tabs tabAlignment="justify">
+        @for (category of categories; track category) {
+            <igx-tab-item [selected]="$first">
+                <igx-tab-header>
+                    <span igxTabHeaderLabel>{{ category }}</span>
+                </igx-tab-header>
+                <igx-tab-content></igx-tab-content>
+            </igx-tab-item>
+        }
+    </igx-tabs>
+    <span class="mode-label">Content Fix</span>
+    <igx-tabs>
+        @for (day of days; track day) {
+            <igx-tab-item [selected]="$first">
+                <igx-tab-header>
+                    <span igxTabHeaderLabel>{{ day }}</span>
+                </igx-tab-header>
+                <igx-tab-content></igx-tab-content>
+            </igx-tab-item>
+        }
+    </igx-tabs>
+</div>

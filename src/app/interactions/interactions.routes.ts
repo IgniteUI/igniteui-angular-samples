@@ -3,10 +3,10 @@ import { Routes } from '@angular/router';
 import { ChatOverviewSampleComponent } from './chat/overview-sample/overview-sample.component';
 import { ChatFeaturesSampleComponent } from './chat/features-sample/features-sample.component';
 import { ChatStylingSampleComponent } from './chat/styling-sample/styling-sample.component';
-import { DialogSample1Component } from './dialog/dialog-sample-1/dialog-sample-1.component';
-import { DialogSample2Component } from './dialog/dialog-sample-2/dialog-sample-2.component';
-import { DialogSample3Component } from './dialog/dialog-sample-3/dialog-sample-3.component';
-import { DialogStylingSampleComponent } from './dialog/dialog-styling-sample/dialog-styling-sample.component';
+import { DialogOverviewComponent } from './dialog/dialog-overview/dialog-overview.component';
+import { DialogTypesComponent } from './dialog/dialog-types/dialog-types.component';
+import { DialogStylingComponent } from './dialog/dialog-styling/dialog-styling.component';
+import { DialogTailwindStylingComponent } from './dialog/dialog-tailwind-styling/dialog-tailwind-styling.component';
 import { DragDialogSampleComponent } from './drag-drop/dialog-sample/drag-dialog-sample.component';
 import { EmailSampleComponent } from './drag-drop/email-sample/email-sample.component';
 import { IconsSampleComponent } from './drag-drop/icons-sample/icons-sample.component';
@@ -87,24 +87,24 @@ export const InteractionsRoutes: Routes = [
         path: 'chat-styling-sample'
     },
     {
-        component: DialogSample1Component,
-        data: interactionsRoutesData['dialog-sample-1'],
-        path: 'dialog-sample-1'
+        component: DialogOverviewComponent,
+        data: interactionsRoutesData['dialog-overview'],
+        path: 'dialog-overview'
     },
     {
-        component: DialogSample2Component,
-        data: interactionsRoutesData['dialog-sample-2'],
-        path: 'dialog-sample-2'
+        component: DialogTypesComponent,
+        data: interactionsRoutesData['dialog-types'],
+        path: 'dialog-types'
     },
     {
-        component: DialogSample3Component,
-        data: interactionsRoutesData['dialog-sample-3'],
-        path: 'dialog-sample-3'
+        component: DialogStylingComponent,
+        data: interactionsRoutesData['dialog-styling'],
+        path: 'dialog-styling'
     },
     {
-        component: DialogStylingSampleComponent,
-        data: interactionsRoutesData['dialog-styling-sample'],
-        path: 'dialog-styling-sample'
+        component: DialogTailwindStylingComponent,
+        data: interactionsRoutesData['dialog-tailwind-styling'],
+        path: 'dialog-tailwind-styling'
     },
     {
         component: SliderSample1Component,

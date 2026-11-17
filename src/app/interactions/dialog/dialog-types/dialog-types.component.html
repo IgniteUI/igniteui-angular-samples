@@ -1,0 +1,37 @@
+<div class="dialog-types">
+    <igx-dialog title="Notification" message="Your email has been sent successfully!">
+        <div igxDialogActions>
+            <button igxButton="flat" type="button">OK</button>
+        </div>
+    </igx-dialog>
+
+    <igx-dialog title="Confirmation" message="Your email will be permanently deleted">
+        <div igxDialogActions>
+            <button igxButton="flat" type="button">Cancel</button>
+            <button igxButton="flat" type="button">OK</button>
+        </div>
+    </igx-dialog>
+
+    <igx-dialog title="Sign In">
+        <div class="sign-in-form">
+            <igx-input-group type="border">
+                <igx-prefix>
+                    <igx-icon>account_circle</igx-icon>
+                </igx-prefix>
+                <label igxLabel for="username">Username</label>
+                <input igxInput id="username" type="text" value="DeanG" />
+            </igx-input-group>
+            <igx-input-group type="border">
+                <igx-prefix>
+                    <igx-icon>lock</igx-icon>
+                </igx-prefix>
+                <label igxLabel for="password">Password</label>
+                <input igxInput id="password" type="password" value="password123" />
+            </igx-input-group>
+        </div>
+        <div igxDialogActions>
+            <button igxButton="flat" type="button">Cancel</button>
+            <button igxButton="flat" type="button">Sign In</button>
+        </div>
+    </igx-dialog>
+</div>

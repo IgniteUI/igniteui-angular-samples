@@ -175,7 +175,7 @@ igx-expansion-panel-body {
         }
 
         ::ng-deep {
-            @include dark-theme($custom-dark-palette);
+            @include theme($palette: $custom-dark-palette, $schema: $dark-material-schema);
             @include mat.all-component-colors($custom-mat-dark-theme);
 
             .primary {
