@@ -1,4 +1,64 @@
-.igx-combo {
-    width: 430px;
-    margin: 8px;
+/* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
+@import url("https://use.typekit.net/bng2zgw.css");
+
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* Keeps room below the combo for its open list, so the two stay centered together. */
+.combo-column {
+    width: 22.5rem;
+    min-height: 18.5rem;
+}
+
+/* The app makes every component large; the combo keeps the medium size of the design.
+   Its list carries the size into the overlay. */
+igx-combo {
+    --ig-size: var(--ig-size-medium);
+}
+
+/* The selected values of the combo, under it. */
+.selection-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-top: 1.25rem;
+    padding: 0.75rem 1rem;
+    font-family: aktiv-grotesk, sans-serif;
+}
+
+.selection-title {
+    color: var(--ig-gray-900);
+    font-size: var(--ig-subtitle-2-font-size);
+    font-weight: var(--ig-subtitle-2-font-weight);
+    line-height: var(--ig-subtitle-2-line-height);
+    letter-spacing: var(--ig-subtitle-2-letter-spacing);
+}
+
+.selection-list,
+.selection-empty {
+    font-size: var(--ig-body-2-font-size);
+    font-weight: var(--ig-body-2-font-weight);
+    line-height: var(--ig-body-2-line-height);
+    letter-spacing: var(--ig-body-2-letter-spacing);
+}
+
+/* A long selection scrolls, so the column keeps its height and the combo stays in place. */
+.selection-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    max-height: 8rem;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+    list-style: none;
+    color: var(--ig-gray-700);
+}
+
+.selection-empty {
+    color: var(--ig-gray-500);
 }
