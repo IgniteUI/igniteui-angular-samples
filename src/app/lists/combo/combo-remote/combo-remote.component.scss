@@ -27,6 +27,12 @@
     grid-column: 2;
 }
 
+/* The app makes every component large; the combo keeps the medium size of the design.
+   Its list carries the size into the overlay. */
+igx-combo {
+    --ig-size: var(--ig-size-medium);
+}
+
 /* The dropdown footer: the chunk being loaded, and how much of the data is loaded. */
 .loading-chunk {
     display: flex;

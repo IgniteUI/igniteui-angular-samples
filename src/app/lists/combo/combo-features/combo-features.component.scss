@@ -27,6 +27,12 @@
     min-height: 17.5rem;
 }
 
+/* The app makes every component large; the combo keeps the medium size of the design.
+   Its list carries the size into the overlay. */
+igx-combo {
+    --ig-size: var(--ig-size-medium);
+}
+
 /* The selected values of the combo, under it. */
 .selection-panel {
     display: flex;
