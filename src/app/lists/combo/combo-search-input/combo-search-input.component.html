@@ -4,9 +4,10 @@
             <span class="state-label">{{ state.label }}</span>
             <!-- The input field is hidden, so the dropdown opens at the element around the combo,
                  and a click elsewhere does not close it. -->
-            <div #search class="search {{ state.className }}">
-                <igx-combo
-                    [searchPlaceholder]="state.text ?? 'Search'"
+            <div #search class="search" [class.shows-hover]="state.shows === 'hover'">
+                <igx-combo #combo
+                    (opened)="showState(combo, state)"
+                    [resourceStrings]="{ igx_combo_filter_search_placeholder: 'Search' }"
                     [data]="[]"
                     [overlaySettings]="{ target: search, closeOnOutsideClick: false }">
                 </igx-combo>

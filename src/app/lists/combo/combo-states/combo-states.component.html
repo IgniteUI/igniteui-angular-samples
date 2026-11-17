@@ -3,10 +3,11 @@
         <div class="state">
             <span class="state-label">{{ state.label }}</span>
             <igx-combo
-                class="state-combo {{ state.className }}"
+                class="state-combo"
+                [class.shows-hover]="state.shows === 'hover'"
                 type="border"
                 placeholder="Country"
-                searchPlaceholder="Search"
+                [resourceStrings]="{ igx_combo_filter_search_placeholder: 'Search' }"
                 valueKey="id"
                 displayKey="name"
                 groupKey="region"
