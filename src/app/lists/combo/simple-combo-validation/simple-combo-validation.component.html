@@ -1,0 +1,23 @@
+<div class="states">
+    <span></span>
+    @for (state of states; track state.label) {
+        <span class="state-label state-column">{{ state.label }}</span>
+    }
+    @for (type of types; track type.label) {
+        <span class="state-label type-label">{{ type.label }}</span>
+        @for (state of states; track state.label) {
+            <igx-simple-combo
+                class="state-combo {{ state.className }}"
+                [type]="type.type"
+                placeholder="Country"
+                valueKey="id"
+                displayKey="name"
+                groupKey="region"
+                [data]="countries">
+                @if (state.helperText) {
+                    <igx-hint>{{ state.helperText }}</igx-hint>
+                }
+            </igx-simple-combo>
+        }
+    }
+</div>

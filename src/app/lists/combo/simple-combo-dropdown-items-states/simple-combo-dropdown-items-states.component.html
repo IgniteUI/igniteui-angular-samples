@@ -1,0 +1,24 @@
+<!-- The items are display-only, so the sample is inert. -->
+<div class="items" inert>
+    <span></span>
+    @for (state of states; track state.label) {
+        <span class="state-label state-column">{{ state.label }}</span>
+    }
+    @for (row of rows; track row.label) {
+        <span class="state-label">{{ row.label }}</span>
+        @for (state of row.states; track state.label) {
+            <!-- The input field is hidden, so the dropdown opens at the element around the combo,
+                 and a click elsewhere does not close it. -->
+            <div #dropdown class="dropdown {{ state.className }}">
+                <igx-simple-combo
+                    valueKey="id"
+                    displayKey="name"
+                    [data]="options"
+                    [ngModel]="row.value"
+                    [overlaySettings]="{ target: dropdown, positionStrategy: positionStrategy, closeOnOutsideClick: false }"
+                    (closing)="keepOpen($event)">
+                </igx-simple-combo>
+            </div>
+        }
+    }
+</div>

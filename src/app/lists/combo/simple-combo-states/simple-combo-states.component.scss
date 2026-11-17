@@ -1,0 +1,69 @@
+:host {
+    /* styles.scss asks the page for the large size; the combos keep their own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem 1rem;
+}
+
+.states {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 17.4375rem));
+    width: 100%;
+    justify-content: center;
+    column-gap: 1.75rem;
+    row-gap: 1.25rem;
+}
+
+.state {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.state-combo {
+    width: 100%;
+    pointer-events: none;
+}
+
+/* The open dropdown takes no pointer input either. */
+.state-combo ::ng-deep .igx-overlay__content {
+    pointer-events: none;
+}
+
+/* The states belong to the combo's own input group, not to the search input in its dropdown. */
+.state-combo.hover > ::ng-deep igx-input-group {
+    --border-color: var(--hover-border-color);
+    --idle-bottom-line-color: var(--hover-bottom-line-color);
+}
+
+.state-combo.focused > ::ng-deep igx-input-group {
+    --border-color: var(--focused-border-color);
+    --idle-bottom-line-color: var(--focused-bottom-line-color);
+}
+
+.state-combo.focused > ::ng-deep igx-input-group .igx-input-group__bundle {
+    box-shadow: inset 0 0 0 0.125rem var(--focused-border-color);
+}
+
+.state-combo.focused > ::ng-deep igx-input-group .igx-input-group__toggle-button {
+    color: var(--toggle-button-foreground-focus);
+    background: var(--toggle-button-background-focus--border);
+}
+
+.state-combo.focused > ::ng-deep igx-input-group .igx-input-group__clear-button {
+    color: var(--clear-button-foreground-focus);
+    background: var(--clear-button-background-focus);
+}
+
+.state-label {
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}

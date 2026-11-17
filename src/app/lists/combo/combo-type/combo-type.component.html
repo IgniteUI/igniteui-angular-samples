@@ -1,0 +1,21 @@
+<div class="types">
+    @for (type of types; track type.label) {
+        <div class="type">
+            <span class="type-label">{{ type.label }}</span>
+            <igx-combo
+                [type]="type.type"
+                placeholder="Select a value"
+                searchPlaceholder="Search"
+                valueKey="id"
+                displayKey="name"
+                groupKey="group"
+                [data]="options"
+                [overlaySettings]="{ closeOnOutsideClick: false }">
+                <label igxLabel>Label</label>
+                <igx-prefix>
+                    <igx-icon family="material" name="language"></igx-icon>
+                </igx-prefix>
+            </igx-combo>
+        </div>
+    }
+</div>
