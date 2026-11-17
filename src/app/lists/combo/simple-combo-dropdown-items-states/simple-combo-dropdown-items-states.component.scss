@@ -30,7 +30,6 @@
     width: 100%;
     min-width: 0;
     height: 2rem;
-    pointer-events: none;
 }
 
 /* Only the dropdown of the combo is shown, so the input field is hidden. */
@@ -38,30 +37,13 @@
     display: none;
 }
 
-/* The states use the colors of the drop-down theme. */
-.dropdown.hover ::ng-deep .igx-drop-down__item {
-    background: var(--hover-item-background);
-    color: var(--hover-item-text-color);
-}
-
-.dropdown.focus ::ng-deep .igx-drop-down__item {
-    background: var(--focused-item-background);
-    color: var(--focused-item-text-color);
-}
-
-.dropdown.disabled ::ng-deep .igx-drop-down__item {
-    background: var(--disabled-item-background);
-    color: var(--disabled-item-text-color);
-}
-
-.dropdown.hover ::ng-deep .igx-drop-down__item--selected {
-    background: var(--selected-hover-item-background);
-    color: var(--selected-hover-item-text-color);
-}
-
-.dropdown.focus ::ng-deep .igx-drop-down__item--selected {
-    background: var(--selected-focus-item-background);
-    color: var(--selected-focus-item-text-color);
+/* Each cell shows an item on its own, so the dropdown around it has no shadow, border,
+   or padding. */
+.dropdown ::ng-deep .igx-drop-down {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
 }
 
 .state-label {
