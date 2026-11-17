@@ -1,11 +1,11 @@
 /* Aktiv Grotesk, from the same Adobe Fonts kit the docs use. */
 @import url("https://use.typekit.net/bng2zgw.css");
 
-/* The sample fills the frame above the hint at its bottom. The app clips the page at the frame,
-   so a sample too tall for it scrolls here, from its top. */
+/* The app clips the page at the frame, so a sample too tall for it scrolls here, from its top. */
 :host {
     display: flex;
-    flex-direction: column;
+    align-items: safe center;
+    justify-content: center;
     height: 100%;
     overflow: auto;
 }
@@ -14,34 +14,11 @@
    When the frame is narrow, the combo moves left to make room for them. */
 .combo-features {
     display: grid;
-    flex: 1 0 auto;
+    flex: 1;
     grid-template-columns: 1fr minmax(0, 22.5rem) 1fr;
-    align-content: safe center;
     align-items: center;
     column-gap: 3rem;
     padding: 1rem;
-}
-
-/* How to use the sample, across the bottom of the frame. */
-.sample-hint {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    margin: 0;
-    padding: 1rem;
-    color: var(--ig-primary-800);
-    background: var(--ig-primary-50);
-    font-family: aktiv-grotesk, sans-serif;
-    font-size: 0.875rem;
-    line-height: 1.25rem;
-}
-
-/* The icon takes the color of the text. */
-.sample-hint igx-icon {
-    --ig-icon-size: 1rem;
-
-    flex-shrink: 0;
-    color: inherit;
 }
 
 /* Keeps room below the combo for its open dropdown, so the two stay centered together. */
