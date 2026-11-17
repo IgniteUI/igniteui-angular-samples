@@ -31,23 +31,21 @@ body {
 // prebuilt stylesheets loaded through the `igniteui-theme` link (see above).
 
 .light-theme {
-    @include light-theme($palette);
+    @include theme($palette: $palette, $schema: $light-material-schema);
 }
 
 .dark-theme {
     background: #333;
     color: #fff;
-    @include dark-theme(
-        $palette: $green-palette
-    );
+    @include theme($palette: $green-palette, $schema: $dark-material-schema);
 
     .grid-chart-contextmenu-wrapper {
-        @include fluent-dark-theme($fluent-excel-palette);
+        @include theme($palette: $dark-fluent-excel-palette, $schema: $dark-fluent-schema);
     }
 }
 
 .fin-dark-theme {
-    @include dark-theme($green-palette);
+    @include theme($palette: $green-palette, $schema: $dark-material-schema);
     background: #333;
 
     ::-moz-placeholder {

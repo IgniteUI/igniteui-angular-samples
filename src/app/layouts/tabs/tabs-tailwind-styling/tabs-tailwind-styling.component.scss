@@ -1,0 +1,17 @@
+@use "sass:meta";
+@import url("https://use.typekit.net/bng2zgw.css");
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-bootstrap-light");
+
+app-tabs-tailwind-styling {
+    /* The navigation palette that the utilities in the template read. */
+    --color-nav-surface: #112031;
+    --color-nav-hover: #1a314a;
+    --color-nav-active: #006ae6;
+    --color-nav-ink: #3392ff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 1rem;
+}
