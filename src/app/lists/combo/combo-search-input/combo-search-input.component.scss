@@ -7,14 +7,14 @@
     align-items: flex-start;
     justify-content: center;
     height: 100%;
-    padding: 2rem 1rem;
+    padding: 2.375rem 1rem 2rem;
 }
 
 .states {
     display: grid;
     grid-template-columns: repeat(3, 11.25rem);
     grid-template-rows: repeat(2, 5.5rem);
-    column-gap: 1rem;
+    column-gap: 1.875rem;
     row-gap: 1rem;
 }
 
@@ -27,7 +27,6 @@
 
 .search {
     width: 100%;
-    pointer-events: none;
 }
 
 /* Only the search input of the combo dropdown is shown. */
@@ -36,32 +35,24 @@
     display: none;
 }
 
+/* Each cell shows a search input on its own, so the dropdown around it has no background, shadow,
+   border, or padding. */
+.search ::ng-deep .igx-drop-down {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: none;
+}
+
+.search ::ng-deep .igx-combo__search {
+    padding: 0;
+    border: none;
+}
+
 /* The open dropdown takes no pointer input either. */
 .search ::ng-deep .igx-overlay__content {
     pointer-events: none;
-}
-
-.search.hover ::ng-deep .igx-combo__search igx-input-group {
-    --idle-bottom-line-color: var(--hover-bottom-line-color);
-}
-
-.search.disabled ::ng-deep .igx-combo__search igx-input-group {
-    --idle-bottom-line-color: var(--disabled-bottom-line-color);
-    --placeholder-color: var(--disabled-placeholder-color);
-}
-
-.search.filled ::ng-deep .igx-combo__search igx-input-group {
-    --placeholder-color: var(--filled-text-color);
-}
-
-.search.focused ::ng-deep .igx-combo__search igx-input-group {
-    --idle-bottom-line-color: var(--focused-bottom-line-color);
-    --hover-bottom-line-color: var(--focused-bottom-line-color);
-}
-
-/* the input group shows its two pixels thick focused line */
-.search.focused ::ng-deep .igx-combo__search .igx-input-group__bundle::after {
-    scale: 1;
 }
 
 .state-label {
