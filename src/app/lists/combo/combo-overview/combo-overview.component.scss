@@ -1,0 +1,30 @@
+:host {
+    /* styles.scss asks the page for the large size; the combo keeps its own
+       default medium size here. */
+    --ig-size: var(--ig-size-medium);
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100%;
+    padding: 2rem 1rem;
+}
+
+.locations {
+    width: 22.5rem;
+}
+
+.selection {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    margin-top: 1.625rem;
+    padding: 0.75rem 1rem;
+    font: 400 13px / 20px "Aktiv Grotesk", sans-serif;
+    letter-spacing: 0.3px;
+    color: var(--ig-gray-600);
+}
+
+.selection-title {
+    color: var(--ig-gray-900);
+}

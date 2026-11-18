@@ -35,7 +35,7 @@ $dark-color: #282828;
 $orange-color: #FFA500;
 
 // Define the palettes:
-$dark-theme-palette: palette($primary: $dark-color, $secondary: $orange-color);
+$dark-theme-palette: palette($primary: $dark-color, $secondary: $orange-color, $generator: 'legacy');
 
 $dark-grid-theme: grid-theme(
 $content-background: color($dark-theme-palette, "secondary", 100),

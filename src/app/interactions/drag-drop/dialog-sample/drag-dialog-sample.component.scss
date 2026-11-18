@@ -9,16 +9,16 @@ $theme: dialog-theme(
     margin: 16px;
 
     .dialog {
-        @include tokens($theme, $mode: 'scoped');
+        @include tokens($theme);
 
         display: flex;
         flex-direction: column;
         width: rem(280px);
         min-width: rem(280px);
-        border: rem(1px) solid var-get($theme, 'border-color');
-        border-radius: var-get($theme, 'border-radius');
-        background: var-get($theme, 'background');
-        box-shadow: var-get($theme, 'elevation');
+        border: rem(1px) solid var(--ig-dialog-border-color);
+        border-radius: var(--ig-dialog-border-radius);
+        background: var(--ig-dialog-background);
+        box-shadow: var(--ig-dialog-elevation);
         overflow: hidden;
 
         header {
@@ -30,7 +30,7 @@ $theme: dialog-theme(
 
         &__title {
             display: inline-block;
-            color: var-get($theme, 'title-color');
+            color: var(--ig-dialog-title-color);
         }
 
         &__icon {
@@ -38,7 +38,7 @@ $theme: dialog-theme(
         }
 
         &__content {
-            color: var-get($theme, 'message-color');
+            color: var(--ig-dialog-message-color);
             padding: rem(14px) rem(24px);
        }
     }

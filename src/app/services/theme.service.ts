@@ -167,6 +167,7 @@ export class ThemeService {
             link.addEventListener('load', () => {
                 this.syncWebComponentsTheme();
                 this.loadTypeface();
+                this.repositionOverlays();
             }, { once: true });
             link.href = href;
         }
@@ -219,6 +220,36 @@ export class ThemeService {
             styles.getPropertyValue('--ig-theme').trim() as Theme,
             styles.getPropertyValue('--ig-theme-variant').trim() as ThemeVariant
         );
+    }
+
+    /**
+     * Each theme sizes and places components differently, for example a label
+     * above an input instead of inside it. An overlay that is already open, such
+     * as the list of a combo, stays where its target was, so once a theme
+     * stylesheet is in place, have the open overlays follow their targets again.
+     * The overlay service repositions them on a window resize.
+     */
+    private repositionOverlays(): void {
+        const view = this.document.defaultView;
+
+        if (!view) {
+            return;
+        }
+
+        const reposition = () => view.dispatchEvent(new Event('resize'));
+
+        // Two frames, so the new styles have applied and the components have re-rendered for the theme.
+        view.requestAnimationFrame(() => view.requestAnimationFrame(() => {
+            reposition();
+
+            // Some themes animate a component into its new size, such as the Indigo input,
+            // so follow the targets again once those transitions end.
+            const transitions = this.document.getAnimations().filter((animation) => animation instanceof CSSTransition);
+
+            if (transitions.length) {
+                void Promise.allSettled(transitions.map((transition) => transition.finished)).then(reposition);
+            }
+        }));
     }
 
     /**

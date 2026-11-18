@@ -1,0 +1,25 @@
+<div class="types">
+    <span class="type-label">Short Bar</span>
+    <igx-tabs tabAlignment="justify">
+        @for (step of steps; track step.label) {
+            <igx-tab-item [selected]="$first">
+                <igx-tab-header>
+                    <span igxTabHeaderLabel>{{ step.label }}</span>
+                </igx-tab-header>
+                <igx-tab-content></igx-tab-content>
+            </igx-tab-item>
+        }
+    </igx-tabs>
+    <span class="type-label">Tall Bar</span>
+    <igx-tabs tabAlignment="justify">
+        @for (step of steps; track step.label) {
+            <igx-tab-item [selected]="$first">
+                <igx-tab-header>
+                    <igx-icon igxTabHeaderIcon family="material" [name]="step.icon"></igx-icon>
+                    <span igxTabHeaderLabel>{{ step.label }}</span>
+                </igx-tab-header>
+                <igx-tab-content></igx-tab-content>
+            </igx-tab-item>
+        }
+    </igx-tabs>
+</div>

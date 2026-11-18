@@ -1,5 +1,5 @@
 <div class="container sample center">
-  <igx-carousel class="styled-carousel h-[430px] w-full overflow-hidden rounded-lg border border-[var(--ig-gray-300)] bg-[var(--ig-surface-500)]">
+  <igx-carousel class="styled-carousel h-[430px] w-full overflow-hidden rounded-lg border border-[var(--ig-gray-300)] bg-[var(--ig-surface-base)]">
     <ng-template igxCarouselPrevButton>
       <span class="carousel-navigation-button inline-grid h-5 w-5 place-items-center leading-none"><igx-icon>chevron_left</igx-icon></span>
     </ng-template>
@@ -14,7 +14,7 @@
       <igx-slide>
         <article class="m-0 grid h-full w-full overflow-hidden bg-[var(--ig-gray-100)] md:grid-cols-[1.15fr_0.85fr]">
           <img class="h-52 w-full object-cover md:h-full" [src]="slide.image" [alt]="slide.alt" />
-          <section class="grid content-center gap-5 bg-[var(--ig-surface-500)] py-10 pl-8 pr-24 text-[var(--ig-gray-900)]">
+          <section class="grid content-center gap-5 bg-[var(--ig-surface-base)] py-10 pl-8 pr-24 text-[var(--ig-gray-900)]">
             <div>
               <span class="mb-2 block text-xs font-bold leading-none text-[var(--ig-primary-600)]">{{ slide.label }} / ITINERARY</span>
               <h3 class="m-0 !text-2xl !leading-tight">{{ slide.title }}</h3>
