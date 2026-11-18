@@ -30,6 +30,13 @@ export class LocalizationConfigGenerator implements IConfigGenerator {
             appConfig: BaseAppAngularLocaleConfig
         }));
 
+        configs.push(new Config({
+            component: 'LocalizationAllResourcesOldComponent',
+            additionalFiles: ['/src/app/data/nwindData.ts'],
+            additionalDependencies: ['igniteui-angular-i18n'],
+            appConfig: BaseAppAngularLocaleConfig
+        }));
+
         // localization all resources
         configs.push(new Config({
             component: 'LocalizationAllResourcesComponent',
