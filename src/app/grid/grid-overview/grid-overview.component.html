@@ -1,0 +1,87 @@
+<igx-grid
+    [data]="data"
+    primaryKey="SKU"
+    [autoGenerate]="false"
+    width="100%"
+    height="100%"
+    [rowHeight]="51"
+    rowSelection="multiple"
+    [rowEditable]="true"
+    [allowFiltering]="true"
+    filterMode="excelStyleFilter"
+    [allowAdvancedFiltering]="true"
+    [sortingExpressions]="sorting"
+    [groupingExpressions]="grouping"
+    [hideGroupedColumns]="true">
+
+    <igx-grid-toolbar>
+        <igx-grid-toolbar-title>Organic and natural foods</igx-grid-toolbar-title>
+        <igx-grid-toolbar-actions>
+            <igx-grid-toolbar-hiding></igx-grid-toolbar-hiding>
+            <igx-grid-toolbar-pinning></igx-grid-toolbar-pinning>
+            <igx-grid-toolbar-exporter (exportStarted)="excludeActions($event)"></igx-grid-toolbar-exporter>
+            <igx-grid-toolbar-advanced-filtering></igx-grid-toolbar-advanced-filtering>
+        </igx-grid-toolbar-actions>
+    </igx-grid-toolbar>
+
+    <igx-column field="ProductName" header="Product" width="304px" [sortable]="true" [editable]="false">
+        <ng-template igxCell let-cell="cell">
+            <div class="product">
+                <img class="product__photo" [src]="photoFolder + cell.row.data.Image" alt="" />
+                <span class="product__name">{{ cell.value }}</span>
+            </div>
+        </ng-template>
+    </igx-column>
+    <igx-column field="SKU" header="SKU" width="88px" [sortable]="true" [editable]="false"></igx-column>
+    <igx-column field="Category" header="Category" width="160px" [sortable]="true" [groupable]="true" [editable]="false"></igx-column>
+    <igx-column field="Supplier" header="Supplier" width="156px" [sortable]="true" [groupable]="true" [editable]="true"></igx-column>
+    <igx-column field="Organic" header="Organic" dataType="boolean" width="104px" [sortable]="true" [groupable]="true" [editable]="false"></igx-column>
+    <igx-column field="Storage" header="Storage" width="128px" [sortable]="true" [groupable]="true" [editable]="false">
+        <ng-template igxCell let-storage>
+            <igx-chip class="storage" [attr.data-storage]="storage" outlined [tabIndex]="-1">
+                <igx-icon igxPrefix>{{ storageIcons[storage] }}</igx-icon>
+                {{ storage }}
+            </igx-chip>
+        </ng-template>
+    </igx-column>
+    <igx-column field="Quantity" header="Quantity" dataType="number" width="108px" [sortable]="true" [editable]="false"></igx-column>
+    <igx-column field="StockLevel" header="Stock Level" dataType="number" width="132px" [sortable]="true" [editable]="false">
+        <ng-template igxCell let-cell="cell">
+            <igx-linear-bar
+                [value]="cell.value"
+                [type]="cell.row.data.Status === 'Low' ? 'warning' : 'success'"
+                [textVisibility]="false"
+                [animate]="false"
+                [attr.aria-label]="'Stock level ' + cell.value + '%'">
+            </igx-linear-bar>
+        </ng-template>
+    </igx-column>
+    <igx-column field="Unit" header="Unit" width="120px" [sortable]="true" [editable]="false"></igx-column>
+    <igx-column field="Status" header="Status" width="120px" [sortable]="true" [groupable]="true" [editable]="false">
+        <ng-template igxCell let-status>
+            <span class="status">
+                <igx-badge class="status__dot" [attr.data-status]="status" dot aria-hidden="true"></igx-badge>
+                <span class="status__text">{{ status }}</span>
+            </span>
+        </ng-template>
+    </igx-column>
+    <igx-column field="UnitPrice" header="Unit Price" dataType="currency" [pipeArgs]="euro" width="116px" [sortable]="true" [editable]="true"></igx-column>
+    <igx-column field="RetailPrice" header="Retail Price" dataType="currency" [pipeArgs]="euro" width="124px" [sortable]="true" [editable]="true"></igx-column>
+    <igx-column field="ExpiryDate" header="Expiry Date" dataType="date" width="124px" [sortable]="true" [editable]="true"></igx-column>
+    <igx-column header="Actions" width="84px" [pinned]="true" [pinningPosition]="pinToEnd"
+        [filterable]="false" [editable]="false" [disableHiding]="true" [disablePinning]="true">
+        <ng-template igxCell let-cell="cell">
+            <!-- Clicks and keys stay with the buttons, so the grid does not also select the row or edit its active cell. -->
+            <div class="actions" (click)="$event.stopPropagation()" (keydown)="$event.stopPropagation()">
+                <button igxIconButton="flat" type="button" [attr.aria-label]="'Edit ' + cell.row.data.ProductName" (click)="editRow(cell.row)">
+                    <igx-icon>edit</igx-icon>
+                </button>
+                <button igxIconButton="flat" type="button" [attr.aria-label]="'Delete ' + cell.row.data.ProductName" (click)="cell.row.delete()">
+                    <igx-icon>delete</igx-icon>
+                </button>
+            </div>
+        </ng-template>
+    </igx-column>
+
+    <igx-paginator [perPage]="15"></igx-paginator>
+</igx-grid>

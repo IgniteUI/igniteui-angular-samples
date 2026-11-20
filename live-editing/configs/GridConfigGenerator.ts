@@ -54,6 +54,12 @@ export class GridConfigGenerator implements IConfigGenerator {
         const configs = new Array<Config>();
 
         configs.push(new Config({
+            component: 'GridOverviewComponent',
+            additionalFiles: ['/src/app/data/organic-foods.ts'],
+            appConfig: BaseAppConfig
+        }));
+
+        configs.push(new Config({
             component: 'FinancialSampleComponent',
             additionalFiles: [
                 '/src/app/directives/prevent-scroll.directive.ts',

@@ -1,0 +1,105 @@
+@use "igniteui-theming/sass/typography" as *;
+
+:host {
+    --ig-size: var(--ig-size-medium);
+
+    display: block;
+    height: 100%;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.product__photo {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.product__name,
+.status__text {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.product__name {
+    @include type-style("subtitle-2") {
+        margin: 0;
+    }
+
+    color: var(--ig-gray-900);
+}
+
+// The chip border and icon share one colour per storage type. The darker light-mode
+// shades would disappear on a dark surface, so dark mode takes a lighter shade.
+.storage {
+    --ig-chip-border-color: var(--storage-color);
+    --ig-chip-hover-border-color: var(--storage-color);
+    --ig-chip-focus-border-color: var(--storage-color);
+
+    igx-icon {
+        color: var(--storage-color);
+    }
+}
+
+.storage[data-storage="Chilled"] {
+    --storage-color: light-dark(var(--ig-info-800), var(--ig-info-200));
+}
+
+.storage[data-storage="Dry"] {
+    --storage-color: light-dark(var(--ig-warn-800), var(--ig-warn-300));
+}
+
+.storage[data-storage="Ambient"] {
+    --storage-color: light-dark(var(--ig-success-800), var(--ig-success-100));
+}
+
+.status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.status__dot {
+    --ig-badge-elevation: var(--ig-elevation-0);
+}
+
+.status__dot[data-status="In stock"] {
+    --ig-badge-background-color: light-dark(var(--ig-success-900), var(--ig-success-100));
+}
+
+.status__dot[data-status="Low"] {
+    --ig-badge-background-color: light-dark(var(--ig-warn-500), var(--ig-warn-300));
+}
+
+.status__dot[data-status="Out of stock"] {
+    --ig-badge-background-color: light-dark(var(--ig-error-700), var(--ig-error-100));
+}
+
+// Centred across the whole cell, padding included: two stock icon buttons can be wider
+// than the cell's content box (Bootstrap's are 38px each).
+.actions {
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+    gap: 4px;
+}
+
+.actions button {
+    flex: none;
+}
+
+// Some themes give flat icon buttons the primary colour, which fades on hovered and
+// selected rows, so the icons take the same colour as the product name.
+.actions igx-icon {
+    color: var(--ig-gray-900);
+}
