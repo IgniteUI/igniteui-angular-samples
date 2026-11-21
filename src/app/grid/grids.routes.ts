@@ -135,10 +135,16 @@ import { GridCascadingCombosComponent } from './grid-cascading-combos/grid-casca
 import { GridBothSideToolbarPinningSampleComponent } from './grid-sample-pinning-both-sides/grid-toolbar-pinning-both-sides.component';
 import { GridCellMergeSampleComponent } from './grid-cell-merge-sample/grid-cell-merge-sample.component';
 import { GridCellMergeCustomSampleComponent } from './grid-cell-merge-custom-sample/grid-cell-merge-custom-sample.component';
+import { GridOverviewComponent } from './grid-overview/grid-overview.component';
 
 // tslint:enable:max-line-length
 
 export const GridsRoutes: Routes = [
+    {
+        component: GridOverviewComponent,
+        data: gridsRoutesData['grid-overview'],
+        path: 'grid-overview'
+    },
     {
         component: GridSample3Component,
         data: gridsRoutesData['grid-summary'],
