@@ -1,17 +1,23 @@
+export type StorageType = 'Chilled' | 'Dry' | 'Ambient';
+
+export type StockStatus = 'In stock' | 'Low' | 'Out of stock';
+
 export interface OrganicFood {
     SKU: string;
     ProductName: string;
     Category: string;
     Supplier: string;
     Organic: boolean;
-    Storage: 'Chilled' | 'Dry' | 'Ambient';
+    Storage: StorageType;
     Quantity: number;
+    /** Percent of the target stock, 0 to 100. */
     StockLevel: number;
     Unit: string;
-    Status: 'In stock' | 'Low' | 'Out of stock';
+    Status: StockStatus;
     UnitPrice: number;
     RetailPrice: number;
     ExpiryDate: Date;
+    /** The product photo. */
     Image: string;
 }
 
