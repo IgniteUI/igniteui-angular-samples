@@ -43,10 +43,8 @@
 
 // The storage chips and the status dots take one palette colour per value: a dark shade on a
 // light surface and a lighter shade of the same colour on a dark one, so that they keep their
-// contrast against the row. The chip border and its icon share the colour; the transparent
-// background keeps the chip outlined where the installed chip has no outlined style.
+// contrast against the row. The chip border and its icon share the colour.
 .storage {
-    --ig-chip-background: transparent;
     --ig-chip-border-color: var(--storage-color);
     --ig-chip-hover-border-color: var(--storage-color);
     --ig-chip-focus-border-color: var(--storage-color);
