@@ -9,48 +9,56 @@ export class TooltipConfigGenerator implements IConfigGenerator {
     public generateConfigs(): Config[] {
         const configs = new Array<Config>();
 
-        // Simple Tooltip Sample
+        // tooltip overview
         configs.push(new Config({
-            component: 'TooltipSimpleComponent',
+            component: 'TooltipOverviewComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
-        // Rich Tooltip Sample
+        // tooltip variants
         configs.push(new Config({
-            component: 'TooltipRichComponent',
+            component: 'TooltipVariantsComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
-        // Placement Tooltip Sample
+        // tooltip position
         configs.push(new Config({
-            component: 'TooltipPlacementComponent',
+            component: 'TooltipPositionComponent',
             appConfig: BaseAppConfig,
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
-        // Advanced Tooltip Sample
+        // tooltip arrow position
         configs.push(new Config({
-            component: 'TooltipAdvancedComponent',
+            component: 'TooltipArrowPositionComponent',
+            appConfig: BaseAppConfig,
+            shortenComponentPathBy: "/interactions/tooltip/"
+        }));
+
+        // tooltip custom
+        configs.push(new Config({
+            component: 'TooltipCustomComponent',
             appConfig: BaseAppConfig,
             additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core'],
-            additionalFiles: ['/src/app/interactions/tooltip/tooltip-advanced/IncomeTaxes.ts'],
+            additionalFiles: ['/src/app/interactions/tooltip/tooltip-custom/IncomeTaxes.ts'],
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
-        // Tooltip Triggers Sample
+        // tooltip styling
         configs.push(new Config({
-            component: 'TooltipTriggersComponent',
+            component: 'TooltipStylingComponent',
             appConfig: BaseAppConfig,
-            additionalDependencies: ['igniteui-webcomponents'],
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
-        // Style Tooltip Sample
+        // tooltip tailwind styling
         configs.push(new Config({
-            component: 'TooltipStyleComponent',
+            component: 'TooltipTailwindStylingComponent',
             appConfig: BaseAppConfig,
+            additionalDependencies: ['igniteui-angular-charts', 'igniteui-angular-core', 'tailwindcss', '@tailwindcss/postcss'],
+            additionalFiles: ['.postcssrc.json'],
             shortenComponentPathBy: "/interactions/tooltip/"
         }));
 
