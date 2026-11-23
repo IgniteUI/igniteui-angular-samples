@@ -12,6 +12,14 @@ The project is divided into two separate applications:
 
 - A `Line of Business` application, complemented with UI and functionality from the **Ignite UI for Angular Charts** and **Ignite UI for Angular Excel library**.
 
+## AI agent skills
+
+Agent skills for this repo live in [`.claude/skills/`](.claude/skills/). When you write or review the
+styles of a sample, use [`igniteui-sample-styling`](.claude/skills/igniteui-sample-styling/SKILL.md):
+it keeps the sample working in every theme the documentation's theme picker offers. The Ignite UI
+theming MCP server that the skill uses is configured in `.vscode/mcp.json` for VS Code and in
+`.mcp.json` for Claude Code.
+
 ## Setup
 To setup the project run:
 
