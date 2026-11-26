@@ -88,6 +88,13 @@ export class ThemeService {
             this.prefersDark = this.document.defaultView?.matchMedia('(prefers-color-scheme: dark)');
             // Only relevant while the widget is on `system`; `apply` ignores it otherwise.
             this.prefersDark?.addEventListener('change', () => this.apply());
+
+            // "Open in full screen" in the documentation opens the sample in its own
+            // tab, where no theme message arrives; the selection comes in the URL.
+            const params = new URLSearchParams(this.document.location?.search);
+            if (this.set(params.get('igd-theme'), params.get('igd-mode'))) {
+                return;
+            }
         }
 
         this.apply();
