@@ -1,0 +1,8 @@
+{
+    "servers": {
+        "igniteui-theming": {
+            "command": "npx",
+            "args": ["-y", "igniteui-theming", "igniteui-theming-mcp"]
+        }
+    }
+}
