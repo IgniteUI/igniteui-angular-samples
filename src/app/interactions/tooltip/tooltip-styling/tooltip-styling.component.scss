@@ -1,0 +1,65 @@
+@use "sass:meta";
+@include meta.load-css("igniteui-angular/lib/core/styles/themes/presets/igniteui-angular");
+
+app-tooltip-styling {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 6.25rem;
+    padding: 3.9375rem 1rem 1rem;
+}
+
+.trigger {
+    width: 17.5rem;
+    border: 1px solid #e0e0e0;
+}
+
+.trigger .igx-list-item__content {
+    padding: 0.5rem 1rem;
+}
+
+.avatar {
+    position: relative;
+    display: flex;
+}
+
+.avatar igx-badge {
+    position: absolute;
+    right: -0.3125rem;
+    bottom: -0.3125rem;
+}
+
+.avatar igx-icon {
+    --ig-icon-size: 0.75rem;
+
+    color: #fff;
+}
+
+.registration {
+    --ig-size: var(--ig-size-small);
+
+    width: 20.1875rem;
+}
+
+.status-tooltip {
+    --ig-tooltip-background: rgb(255 233 238 / 90%);
+    --ig-tooltip-text-color: #212121;
+    --ig-tooltip-border-radius: 0.125rem;
+    --ig-tooltip-elevation: var(--ig-elevation-1);
+
+    width: 12.5rem;
+    padding: 0.1875rem 0.5rem;
+}
+
+.status-tooltip igx-icon {
+    --ig-icon-size: 1.125rem;
+
+    flex-shrink: 0;
+    color: #ff134a;
+}
+
+.hint-tooltip {
+    --ig-tooltip-background: rgb(1 118 255 / 90%);
+    --ig-tooltip-text-color: #fff;
+}
