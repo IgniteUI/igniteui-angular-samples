@@ -65,3 +65,33 @@ describe('ThemeService theme validation', () => {
         expect(root.style.colorScheme).toBe('light');
     });
 });
+
+describe('ThemeService selection in the URL', () => {
+    it('applies the theme and mode that the documentation passes when it opens the sample in its own tab', () => {
+        const document = window.document.implementation.createHTMLDocument();
+        // A test document has no location, so the query of the sample's URL is stubbed.
+        const withQuery = new Proxy(document, {
+            get: (target, key) => {
+                if (key === 'location') {
+                    return { search: '?igd-theme=fluent&igd-mode=dark' };
+                }
+                const value = Reflect.get(target, key);
+                return typeof value === 'function' ? value.bind(target) : value;
+            }
+        });
+        TestBed.configureTestingModule({
+            providers: [
+                { provide: DOCUMENT, useValue: withQuery },
+                { provide: PLATFORM_ID, useValue: 'browser' },
+                { provide: THEME_TOKEN, useValue: signal<IgxTheme>('material') }
+            ]
+        });
+        const service = TestBed.inject(ThemeService);
+        service.init();
+
+        expect(service.theme()).toBe('fluent');
+        expect(service.mode()).toBe('dark');
+        expect(document.getElementById('igniteui-theme').getAttribute('href'))
+            .toBe('assets/themes/igniteui-fluent-dark.css');
+    });
+});
